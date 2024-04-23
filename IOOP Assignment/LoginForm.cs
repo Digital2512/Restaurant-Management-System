@@ -55,16 +55,25 @@ namespace IOOP_Assignment
                             switch (role)
                             {
                                 case "Admin":
-                                    MessageBox.Show("User's Role: Admin");
+                                    MessageBox.Show("Login Successful. User's Role: Admin");
+                                    AdminHomePage adminHomePage = new AdminHomePage();
+                                    adminHomePage.Show();
+                                    this.Hide();
                                     break;
                                 case "Manager":
-                                    MessageBox.Show("User's Role: Manager");
+                                    MessageBox.Show("Login Successful. User's Role: Manager");
+                                    ManagerHomePage managerHomePage = new ManagerHomePage();
+                                    managerHomePage.Show();
                                     break;
                                 case "Chef":
-                                    MessageBox.Show("User's Role: Chef");
+                                    MessageBox.Show("Login Successful. User's Role: Chef");
+                                    ChefHomePage chefHomePage = new ChefHomePage();
+                                    chefHomePage.Show();
                                     break;
                                 case "Customer":
-                                    MessageBox.Show("User's Role: Customer");
+                                    MessageBox.Show("Login Successful. User's Role: Customer");
+                                    CustomerHomePage customerHomePage = new CustomerHomePage();
+                                    customerHomePage.Show();
                                     break;
                             }
                         }
