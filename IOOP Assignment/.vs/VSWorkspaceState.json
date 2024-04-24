@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Database Table Folder"
   ],
-  "SelectedNode": "\\IOOP Assignment.sln",
+  "SelectedNode": "\\Database Table Folder\\dbo.Table.sql",
   "PreviewInSolutionExplorer": false
 }
