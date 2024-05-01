@@ -93,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,6 +142,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\logoutIcon.png" />
+    <None Include="PictureFolder\feedbackIcon.png" />
+    <None Include="PictureFolder\orderIcon.png" />
+    <None Include="PictureFolder\reservationIcon.png" />
+    <None Include="Resources\booking.png" />
+    <None Include="PictureFolder\OrderButtonResized.png" />
+    <None Include="PictureFolder\ReservationButton.png" />
+    <None Include="PictureFolder\ReservationButtonBGChanged.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized1.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized.png" />
+    <None Include="PictureFolder\OrderButtonBGChanged.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
