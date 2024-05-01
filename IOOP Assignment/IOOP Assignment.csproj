@@ -73,11 +73,35 @@
     <Compile Include="ChefHomePage.Designer.cs">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerFeedbackPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.Designer.cs">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerOrderPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerOrderPage.Designer.cs">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerProfilePage.Designer.cs">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReservationPage.Designer.cs">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +117,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomerFeedbackPage.resx">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +169,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\backIcon.png" />
+    <None Include="PictureFolder\profileIcon.png" />
     <None Include="PictureFolder\logoutIcon.png" />
     <None Include="PictureFolder\feedbackIcon.png" />
     <None Include="PictureFolder\orderIcon.png" />

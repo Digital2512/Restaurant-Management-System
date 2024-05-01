@@ -12,6 +12,11 @@ namespace IOOP_Assignment
 {
     public partial class CustomerHomePage : Form
     {
+        CustomerReservationPage customerReservationPage = new CustomerReservationPage();
+        CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+        CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage();
+        CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+        loginForm loginForm = new loginForm();
         public CustomerHomePage()
         {
             InitializeComponent();
@@ -51,6 +56,7 @@ namespace IOOP_Assignment
                     orderPnl.Width = sidebar.Width;
                     feedbackPnl.Width = sidebar.Width;
                     logoutPnl.Width = sidebar.Width;
+                    profilePnl.Width = sidebar.Width;
                 }
             }
             else
@@ -65,6 +71,7 @@ namespace IOOP_Assignment
                     orderPnl.Width = sidebar.Width;
                     feedbackPnl.Width = sidebar.Width;
                     logoutPnl.Width = sidebar.Width;
+                    profilePnl.Width = sidebar.Width;
                 }
             }
         }
@@ -72,6 +79,41 @@ namespace IOOP_Assignment
         private void btnSidebar_Click(object sender, EventArgs e)
         {
             sidebarTransition.Start();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reservationBtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            customerReservationPage.Visible = true;
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            customerOrderPage.Visible = true;
+        }
+
+        private void feedbackBtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            customerFeedbackPage.Visible = true;
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            loginForm.Visible = true;
+        }
+
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            customerProfilePage.Visible = true;
         }
     }
 }

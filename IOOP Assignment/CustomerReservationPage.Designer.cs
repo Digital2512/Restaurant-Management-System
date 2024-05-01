@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class customerReservation
+    partial class CustomerReservationPage
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class customerReservation : Form
+    public partial class CustomerReservationPage : Form
     {
-        public customerReservation()
+        public CustomerReservationPage()
         {
             InitializeComponent();
         }

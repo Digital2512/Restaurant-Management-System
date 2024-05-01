@@ -73,6 +73,36 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backIcon {
+            get {
+                object obj = ResourceManager.GetObject("backIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("backIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backIcon2 {
+            get {
+                object obj = ResourceManager.GetObject("backIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap booking {
             get {
                 object obj = ResourceManager.GetObject("booking", resourceCulture);
@@ -166,6 +196,16 @@ namespace IOOP_Assignment.Properties {
         internal static System.Drawing.Bitmap orderIcon {
             get {
                 object obj = ResourceManager.GetObject("orderIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profileIcon {
+            get {
+                object obj = ResourceManager.GetObject("profileIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
