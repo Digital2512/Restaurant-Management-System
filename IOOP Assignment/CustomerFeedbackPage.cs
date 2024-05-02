@@ -78,13 +78,13 @@ namespace IOOP_Assignment
         public string produceFeedbackID()
         {
             Database database = new Database(connectionString);
-            return (database.GenerateUniqueFeedbackID());
+            return (database.GenerateUniqueID("FB", "FeedbackID", "Feedback"));
         }
 
         public bool sendFeedbackToDatabase()
         {
             Database database = new Database(connectionString);
-            string uniqueFeedbackID = database.GenerateUniqueFeedbackID();
+            string uniqueFeedbackID = database.GenerateUniqueID("FB", "FeedbackID", "Feedback");
              string feedbackTopic = Topic;
             string feedbackTitle = Title;
             string feedbackDescription = Description;
@@ -186,9 +186,9 @@ namespace IOOP_Assignment
             }
             return result;
         }
-        public string GenerateUniqueFeedbackID()
+        public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
         {
-            string newFeedbackID = null;
+            string newID = null;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 try
@@ -196,19 +196,22 @@ namespace IOOP_Assignment
                     connection.Open();
                     if (connection.State == System.Data.ConnectionState.Open)
                     {
-                        string query = "SELECT MAX(CAST(SUBSTRING(FeedbackID, 3, LEN(FeedbackID) - 2) AS INT)) FROM Feedback WHERE FeedbackID LIKE 'FB%';";
+                        string query = "SELECT MAX(CAST(SUBSTRING(@idName, 3, LEN(@idName) - 2) AS INT)) FROM @tableName WHERE @idName LIKE '@uniqueIdentifier%';";
                         SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@idName", idName);
+                        cmd.Parameters.AddWithValue("@tableName", tableName);
+                        cmd.Parameters.AddWithValue("@uniqueIdentifier", uniqueIdentifier);
                         object result = cmd.ExecuteScalar();
 
                         if (result != DBNull.Value)
                         {
                             int maxNumericPart = Convert.ToInt32(result);
                             maxNumericPart++;
-                            newFeedbackID = "FB" + maxNumericPart.ToString("D2");
+                            newID = $"{uniqueIdentifier}" + maxNumericPart.ToString("D2");
                         }
                         else
                         {
-                            newFeedbackID = "FB001";
+                            newID = $"{uniqueIdentifier}001";
                         }
                     }
                 }
@@ -222,7 +225,7 @@ namespace IOOP_Assignment
                         connection.Close();
                 }
             }
-            return newFeedbackID;
+            return newID;
         }
         public bool insertValuesIntoDatabase(string query)
         {

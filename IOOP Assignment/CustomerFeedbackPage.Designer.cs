@@ -40,11 +40,11 @@
             this.lblFeedbackTopic = new System.Windows.Forms.Label();
             this.lblFeedbackCustomerID = new System.Windows.Forms.Label();
             this.sendButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,15 +162,15 @@
             this.sendButton.UseVisualStyleBackColor = true;
             this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
-            // panel2
+            // headerPnl
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.backBtnPnl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(853, 45);
-            this.panel2.TabIndex = 3;
+            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
+            this.headerPnl.Controls.Add(this.backBtnPnl);
+            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPnl.Location = new System.Drawing.Point(0, 0);
+            this.headerPnl.Name = "headerPnl";
+            this.headerPnl.Size = new System.Drawing.Size(853, 45);
+            this.headerPnl.TabIndex = 3;
             // 
             // backBtnPnl
             // 
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 596);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -205,7 +205,7 @@
             this.Text = "CustomerFeedbackPage";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,7 +224,7 @@
         private System.Windows.Forms.Label lblFeedbackTopic;
         private System.Windows.Forms.Label lblFeedbackCustomerID;
         private System.Windows.Forms.Button sendButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Label lblCustomerID;

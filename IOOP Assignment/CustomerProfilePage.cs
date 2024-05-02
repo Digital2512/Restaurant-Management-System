@@ -16,5 +16,10 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+
+        private void CustomerProfilePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
