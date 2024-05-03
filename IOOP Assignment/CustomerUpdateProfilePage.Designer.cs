@@ -49,8 +49,8 @@
             this.passwordMTextBox = new System.Windows.Forms.MaskedTextBox();
             this.passwordShowBtn = new System.Windows.Forms.Button();
             this.fullNameTxtBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.confirmPasswordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.confirmPasswordShowHideBtn = new System.Windows.Forms.Button();
+            this.confirmPasswordMTextBox = new System.Windows.Forms.MaskedTextBox();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.profilePBox = new System.Windows.Forms.PictureBox();
             this.birthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -175,6 +175,7 @@
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(2, 22);
             this.lblUserID.TabIndex = 19;
+            this.lblUserID.Click += new System.EventHandler(this.lblUserID_Click);
             // 
             // lblUserIDTitle
             // 
@@ -250,12 +251,13 @@
             // passwordShowBtn
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordShowIcon;
+            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
             this.passwordShowBtn.Location = new System.Drawing.Point(355, 277);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
             this.passwordShowBtn.TabIndex = 32;
             this.passwordShowBtn.UseVisualStyleBackColor = false;
+            this.passwordShowBtn.Click += new System.EventHandler(this.passwordShowHideBtn_Click);
             // 
             // fullNameTxtBox
             // 
@@ -265,23 +267,24 @@
             this.fullNameTxtBox.TabIndex = 33;
             this.fullNameTxtBox.TextChanged += new System.EventHandler(this.fullNameTxtBox_TextChanged);
             // 
-            // button1
+            // confirmPasswordShowHideBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::IOOP_Assignment.Properties.Resources.passwordShowIcon;
-            this.button1.Location = new System.Drawing.Point(354, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 24);
-            this.button1.TabIndex = 36;
-            this.button1.UseVisualStyleBackColor = false;
+            this.confirmPasswordShowHideBtn.BackColor = System.Drawing.Color.Transparent;
+            this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
+            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(354, 366);
+            this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
+            this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
+            this.confirmPasswordShowHideBtn.TabIndex = 36;
+            this.confirmPasswordShowHideBtn.UseVisualStyleBackColor = false;
+            this.confirmPasswordShowHideBtn.Click += new System.EventHandler(this.confirmPasswordShowHideBtn_Click);
             // 
-            // confirmPasswordMaskedTextBox
+            // confirmPasswordMTextBox
             // 
-            this.confirmPasswordMaskedTextBox.Location = new System.Drawing.Point(39, 364);
-            this.confirmPasswordMaskedTextBox.Name = "confirmPasswordMaskedTextBox";
-            this.confirmPasswordMaskedTextBox.PasswordChar = '*';
-            this.confirmPasswordMaskedTextBox.Size = new System.Drawing.Size(308, 26);
-            this.confirmPasswordMaskedTextBox.TabIndex = 35;
+            this.confirmPasswordMTextBox.Location = new System.Drawing.Point(39, 364);
+            this.confirmPasswordMTextBox.Name = "confirmPasswordMTextBox";
+            this.confirmPasswordMTextBox.PasswordChar = '*';
+            this.confirmPasswordMTextBox.Size = new System.Drawing.Size(308, 26);
+            this.confirmPasswordMTextBox.TabIndex = 35;
             // 
             // lblConfirmPassword
             // 
@@ -317,8 +320,8 @@
             this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.birthdayDateTimePicker);
             this.Controls.Add(this.profilePBox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.confirmPasswordMaskedTextBox);
+            this.Controls.Add(this.confirmPasswordShowHideBtn);
+            this.Controls.Add(this.confirmPasswordMTextBox);
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.fullNameTxtBox);
             this.Controls.Add(this.passwordShowBtn);
@@ -370,8 +373,8 @@
         private System.Windows.Forms.Button passwordShowBtn;
         private System.Windows.Forms.Label lblUpdateProfile;
         private System.Windows.Forms.TextBox fullNameTxtBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MaskedTextBox confirmPasswordMaskedTextBox;
+        private System.Windows.Forms.Button confirmPasswordShowHideBtn;
+        private System.Windows.Forms.MaskedTextBox confirmPasswordMTextBox;
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.PictureBox profilePBox;
         private System.Windows.Forms.DateTimePicker birthdayDateTimePicker;

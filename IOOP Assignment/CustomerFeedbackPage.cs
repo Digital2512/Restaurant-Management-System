@@ -133,8 +133,43 @@ namespace IOOP_Assignment
                             while (reader.Read())
                             {
                                 result = reader.GetString(0);
+                                connection.Close();
                                 break;
                             }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                    connection.Close();
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }           
+            return result;
+        }
+
+        public DateTime getDateTime(string query)
+        {
+            DateTime result = DateTime.MinValue; 
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        object scalarResult = cmd.ExecuteScalar(); 
+
+                        if (scalarResult != null && scalarResult != DBNull.Value && scalarResult is DateTime)
+                        {
+                            result = (DateTime)scalarResult;
                         }
                     }
                 }
@@ -148,6 +183,7 @@ namespace IOOP_Assignment
                         connection.Close();
                 }
             }
+
             return result;
         }
 
@@ -238,16 +274,19 @@ namespace IOOP_Assignment
                     {
                         SqlCommand cmd = new SqlCommand(query, connection);
                         int rowsAffected = cmd.ExecuteNonQuery();
+                        connection.Close();
                         return rowsAffected == 1; 
                     }
                     else
                     {
+                        connection.Close();
                         return false; 
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show("An Error Occurred: " + ex.Message);
+                    connection.Close();
                     return false; 
                 }
                 finally

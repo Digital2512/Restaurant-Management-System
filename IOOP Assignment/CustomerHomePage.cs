@@ -12,6 +12,8 @@ namespace IOOP_Assignment
 {
     public partial class CustomerHomePage : Form
     {
+        public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
         CustomerReservationPage customerReservationPage = new CustomerReservationPage();
         CustomerOrderPage customerOrderPage = new CustomerOrderPage();
         CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage();
@@ -20,6 +22,8 @@ namespace IOOP_Assignment
         public CustomerHomePage()
         {
             InitializeComponent();
+            Database database = new Database(ConnectionString);
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -103,11 +107,18 @@ namespace IOOP_Assignment
             this.Visible = false;
             customerFeedbackPage.Visible = true;
         }
-
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             loginForm.Visible = true;
+            Database database = new Database(ConnectionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
+            database.insertValuesIntoDatabase(query);
+            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
+            database.insertValuesIntoDatabase(query);
+
         }
 
         private void profileBtn_Click(object sender, EventArgs e)

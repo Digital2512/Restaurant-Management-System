@@ -13,9 +13,44 @@ namespace IOOP_Assignment
 {
     public partial class CustomerUpdateProfilePage : Form
     {
+        public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public CustomerUpdateProfilePage()
         {
             InitializeComponent();
+            Database database = new Database(ConnectionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            lblUserID.Text = userID;
+            query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
+            string customerID = database.getString(query);
+            lblCustomerID.Text = customerID;
+            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+            fullNameTxtBox.Text = database.getString(query);
+            query = $"SELECT Password FROM Users WHERE UserID = '{userID}'";
+            passwordMTextBox.Text = database.getString(query);
+            confirmPasswordMTextBox.Text = database.getString(query);
+            query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}'";
+            birthdayDateTimePicker.Text = database.getDateTime(query).ToString();
+            query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
+            string gender = database.getString(query);
+            if (gender == "MALE")
+            {
+                maleRBtn.Checked = true;
+            }
+            else if (gender == "FEMALE")
+            {
+                femaleRBtn.Checked = true;
+            }
+            else if (gender == "RATHER NOT SAY")
+            {
+                ratherNotSayRBtn.Checked = true;
+            }
+            else
+            {
+                maleRBtn.Checked = false;
+                femaleRBtn.Checked = false;
+                ratherNotSayRBtn.Checked = false;
+            }
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -33,32 +68,81 @@ namespace IOOP_Assignment
 
         }
 
-        public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            string query;
             Database database = new Database(ConnectionString);
+            query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
             string fullName = fullNameTxtBox.Text;
             string password = passwordMTextBox.Text;
-            string confirmPassword = confirmPasswordMaskedTextBox.Text;
-            string gender;
+            string confirmPassword = confirmPasswordMTextBox.Text;
+            string birthday = birthdayDateTimePicker.Text;
+            string gender = "";
             if (maleRBtn.Checked)
             {
                 gender = "MALE";
             }else if (femaleRBtn.Checked)
             {
                 gender = "FEMALE";
-            }else if (ratherNotSayRBtn.Checked)
+            }
+            else if (ratherNotSayRBtn.Checked)
             {
                 gender = "RATHER NOT SAY";
             }
             else
             {
-                gender = "RATHER NOT SAY";
+                MessageBox.Show("Please select a gender");
             }
-            string birthday = birthdayDateTimePicker.Text;
-            string query = "UPDATE TABLE ";
-            database.insertValuesIntoDatabase(query);
+            if (password == confirmPassword)
+            {
+                query = $"UPDATE Users SET [fullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
+                if (database.insertValuesIntoDatabase(query) == true)
+                {
+                    MessageBox.Show("Profile updated successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Profile not updated");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Passwords does not match");
+            }
+        }
+
+        private void passwordShowHideBtn_Click(object sender, EventArgs e)
+        {
+            if(passwordMTextBox.PasswordChar == '\0')
+            {
+                passwordMTextBox.PasswordChar = '*';
+                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+            }
+            else
+            {
+                passwordMTextBox.PasswordChar = '\0';
+                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+            }
+        }
+
+        private void confirmPasswordShowHideBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordMTextBox.PasswordChar == '\0')
+            {
+                confirmPasswordMTextBox.PasswordChar = '*';
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
+            }
+            else
+            {
+                confirmPasswordMTextBox.PasswordChar = '\0';
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordHideIcon;
+            }
+        }
+
+        private void lblUserID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
