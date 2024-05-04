@@ -123,11 +123,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="foodButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="foodButton.Designer.cs">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerOrderPage.resx">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerProfilePage.resx">
       <DependentUpon>CustomerProfilePage.cs</DependentUpon>
@@ -148,6 +157,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="foodButton.resx">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,6 +193,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\pastaImage.jpg" />
+    <None Include="PictureFolder\saladImage.jpg" />
+    <None Include="PictureFolder\smoothieImage.jpg" />
+    <None Include="PictureFolder\pizzaImage.jpg" />
+    <None Include="PictureFolder\burgerImage.jpg" />
+    <None Include="Resources\Burger.bmp" />
+    <None Include="PictureFolder\searchIcon.png" />
     <None Include="PictureFolder\passwordShowIcon.png" />
     <None Include="PictureFolder\passwordHideIcon.png" />
     <None Include="PictureFolder\backIcon.png" />

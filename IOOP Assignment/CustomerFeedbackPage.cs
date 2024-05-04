@@ -152,7 +152,43 @@ namespace IOOP_Assignment
             }           
             return result;
         }
+        
+        public List<string> getListOfStrings(string query)
+        {
+            List<string> result = new List<string>();
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
 
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string stringExtracted = reader.GetString(0);
+                                result.Add(stringExtracted);
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                    connection.Close();
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return result;
+        }
         public DateTime getDateTime(string query)
         {
             DateTime result = DateTime.MinValue; 
@@ -221,6 +257,25 @@ namespace IOOP_Assignment
                 }
             }
             return result;
+        }
+
+        public DataTable getDataTable(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
         }
         public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
         {
