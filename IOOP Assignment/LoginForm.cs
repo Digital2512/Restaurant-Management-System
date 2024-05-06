@@ -82,7 +82,7 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
-                                    ChefHomePage chefHomePage = new ChefHomePage();
+                                    PanelChefHomePage chefHomePage = new PanelChefHomePage();
                                     chefHomePage.Show();
                                     break;
                                 case "Customer":

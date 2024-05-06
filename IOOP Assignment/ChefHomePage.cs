@@ -10,11 +10,39 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class ChefHomePage : Form
+    public partial class PanelChefHomePage : Form
     {
-        public ChefHomePage()
+        bool sidebarExpand;
+        public PanelChefHomePage()
         {
             InitializeComponent();
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void MenusidearButton_Paint(object sender, PaintEventArgs e)
+        {
+            sidebarTimer.Start();
         }
     }
 }

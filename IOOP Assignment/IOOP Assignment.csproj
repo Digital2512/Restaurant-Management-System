@@ -129,6 +129,9 @@
     <Compile Include="foodButton.Designer.cs">
       <DependentUpon>foodButton.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChefHomePage.resx">
+      <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </EmbeddedResource>
