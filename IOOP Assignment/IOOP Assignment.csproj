@@ -85,6 +85,12 @@
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerIndividualProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualProductView.Designer.cs">
+      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIndividualProductView.resx">
+      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrderPage.resx">
       <DependentUpon>CustomerOrderPage.cs</DependentUpon>
@@ -193,6 +202,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\eye.png" />
+    <None Include="PictureFolder\addIcon.png" />
+    <None Include="Resources\add.png" />
+    <None Include="PictureFolder\star.png" />
     <None Include="PictureFolder\pastaImage.jpg" />
     <None Include="PictureFolder\saladImage.jpg" />
     <None Include="PictureFolder\smoothieImage.jpg" />

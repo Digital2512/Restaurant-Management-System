@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
+            this.ratingsCBox = new System.Windows.Forms.ComboBox();
             this.priceRangeCBox = new System.Windows.Forms.ComboBox();
-            this.restrictionsCBox = new System.Windows.Forms.ComboBox();
             this.cuisineCBox = new System.Windows.Forms.ComboBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.productDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,18 +66,6 @@
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
@@ -98,8 +86,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lblFilter);
+            this.panel1.Controls.Add(this.ratingsCBox);
             this.panel1.Controls.Add(this.priceRangeCBox);
-            this.panel1.Controls.Add(this.restrictionsCBox);
             this.panel1.Controls.Add(this.cuisineCBox);
             this.panel1.Controls.Add(this.lblSearch);
             this.panel1.Controls.Add(this.searchButton);
@@ -119,40 +107,52 @@
             this.lblFilter.TabIndex = 12;
             this.lblFilter.Text = "Filter By:";
             // 
+            // ratingsCBox
+            // 
+            this.ratingsCBox.FormattingEnabled = true;
+            this.ratingsCBox.Items.AddRange(new object[] {
+            "0.00 - 1.00",
+            "1.00 - 2.00",
+            "2.00 - 3.00",
+            "3.00 - 4.00",
+            "4.00 - 5.00"});
+            this.ratingsCBox.Location = new System.Drawing.Point(512, 53);
+            this.ratingsCBox.Name = "ratingsCBox";
+            this.ratingsCBox.Size = new System.Drawing.Size(209, 28);
+            this.ratingsCBox.TabIndex = 11;
+            this.ratingsCBox.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
             // priceRangeCBox
             // 
             this.priceRangeCBox.FormattingEnabled = true;
-            this.priceRangeCBox.Location = new System.Drawing.Point(515, 53);
+            this.priceRangeCBox.Items.AddRange(new object[] {
+            "RM1.00 - 10.00",
+            "RM10.00 - 20.00",
+            "RM20.00 - 30.00",
+            "RM30.00 - 40.00",
+            "RM40.00 - 50.00",
+            "RM50.00- 60.00",
+            "RM60.00 - 70.00",
+            "RM70.00 - 80.00",
+            "RM80.00 - 90.00",
+            "RM90.00 - 100.00"});
+            this.priceRangeCBox.Location = new System.Drawing.Point(297, 53);
             this.priceRangeCBox.Name = "priceRangeCBox";
             this.priceRangeCBox.Size = new System.Drawing.Size(209, 28);
-            this.priceRangeCBox.TabIndex = 11;
-            this.priceRangeCBox.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // restrictionsCBox
-            // 
-            this.restrictionsCBox.FormattingEnabled = true;
-            this.restrictionsCBox.Location = new System.Drawing.Point(300, 53);
-            this.restrictionsCBox.Name = "restrictionsCBox";
-            this.restrictionsCBox.Size = new System.Drawing.Size(209, 28);
-            this.restrictionsCBox.TabIndex = 10;
+            this.priceRangeCBox.TabIndex = 10;
             // 
             // cuisineCBox
             // 
             this.cuisineCBox.FormattingEnabled = true;
-            this.cuisineCBox.Location = new System.Drawing.Point(85, 53);
+            this.cuisineCBox.Items.AddRange(new object[] {
+            "Japanese",
+            "Western",
+            "Korean",
+            "Drinks"});
+            this.cuisineCBox.Location = new System.Drawing.Point(82, 53);
             this.cuisineCBox.Name = "cuisineCBox";
             this.cuisineCBox.Size = new System.Drawing.Size(209, 28);
             this.cuisineCBox.TabIndex = 9;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.searchButton.Location = new System.Drawing.Point(684, 10);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(33, 34);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // productDisplayFlowPanel
             // 
@@ -172,6 +172,28 @@
             this.productDisplayPanel.Size = new System.Drawing.Size(735, 355);
             this.productDisplayPanel.TabIndex = 11;
             // 
+            // searchButton
+            // 
+            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
+            this.searchButton.Location = new System.Drawing.Point(679, 13);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(45, 34);
+            this.searchButton.TabIndex = 8;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // CustomerOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -180,6 +202,7 @@
             this.Controls.Add(this.productDisplayPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.headerPnl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerOrderPage";
             this.Text = "customerOrderPage";
             this.headerPnl.ResumeLayout(false);
@@ -201,8 +224,8 @@
         private System.Windows.Forms.TextBox searchTxtBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox ratingsCBox;
         private System.Windows.Forms.ComboBox priceRangeCBox;
-        private System.Windows.Forms.ComboBox restrictionsCBox;
         private System.Windows.Forms.ComboBox cuisineCBox;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.FlowLayoutPanel productDisplayFlowPanel;

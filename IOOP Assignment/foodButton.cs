@@ -12,7 +12,10 @@ namespace IOOP_Assignment
 {
     public partial class foodButton : UserControl
     {
-        public foodButton(string productID,string productName, string productPrice, string productDescription, Image productImagePath)
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
+        private string ProductID { get; }
+        public foodButton(string productID,string productName, string productPrice, string productDescription, Image productImagePath, string productRatingText)
         {
             InitializeComponent();
             this.lblProductID.Text = productID;
@@ -20,6 +23,9 @@ namespace IOOP_Assignment
             this.lblProductPrice.Text = productPrice;
             this.lblProductDescription.Text = productDescription;
             this.productImagePBox.Image = productImagePath;
+            this.lblProductRating.Text = $"{productRatingText} / 5.0";
+            ProductID = productID;
+                
         }
         private void foodButton_Load(object sender, EventArgs e)
         {
@@ -29,6 +35,17 @@ namespace IOOP_Assignment
         private void productImagePBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Database database = new Database(connectionString);
+            string query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
+            database.insertValuesIntoDatabase(query);
+            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+            CustomerIndividualProductView customerIndividualProductView = new CustomerIndividualProductView();
+            customerOrderPage.Hide();
+            customerIndividualProductView.Show();
         }
     }
 }
