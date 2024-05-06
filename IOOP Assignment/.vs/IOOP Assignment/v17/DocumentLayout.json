@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 93,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,19 +23,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChefHomePage.cs",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefHomePage.cs",
-              "RelativeDocumentMoniker": "ChefHomePage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefHomePage.cs",
-              "RelativeToolTip": "ChefHomePage.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAuwDAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:12:15.702Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

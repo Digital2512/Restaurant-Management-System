@@ -42,12 +42,37 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelChefHomePage
@@ -55,11 +80,11 @@
             this.LabelChefHomePage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.LabelChefHomePage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LabelChefHomePage.Font = new System.Drawing.Font("Black Ops One", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChefHomePage.Location = new System.Drawing.Point(304, 21);
+            this.LabelChefHomePage.Location = new System.Drawing.Point(305, 21);
             this.LabelChefHomePage.Name = "LabelChefHomePage";
-            this.LabelChefHomePage.Size = new System.Drawing.Size(258, 34);
+            this.LabelChefHomePage.Size = new System.Drawing.Size(234, 34);
             this.LabelChefHomePage.TabIndex = 1;
-            this.LabelChefHomePage.Text = "Chef Mene Page";
+            this.LabelChefHomePage.Text = "Chef Menu Page";
             // 
             // sidebar
             // 
@@ -69,6 +94,7 @@
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.panel5);
+            this.sidebar.Controls.Add(this.panel4);
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(193, 405);
             this.sidebar.MinimumSize = new System.Drawing.Size(48, 405);
@@ -197,7 +223,212 @@
             // 
             // sidebarTimer
             // 
+            this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(342, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Name : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(342, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Age : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(342, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Gender : ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(404, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(404, 171);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 7;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(404, 137);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-3, -14);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(206, 89);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Exit";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseMnemonic = false;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Location = new System.Drawing.Point(3, 330);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(190, 75);
+            this.panel4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(360, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Chef\'s information";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(251, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Orders\' information";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(470, 223);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Inventory information";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(239, 308);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 16);
+            this.label8.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(221, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 16);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Order uncomplete :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(221, 308);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Order completed :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(341, 308);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(63, 22);
+            this.textBox4.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(341, 264);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(63, 22);
+            this.textBox5.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(453, 267);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Japanese :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(470, 308);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 16);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Korean : ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(461, 343);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 16);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Western : ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(473, 379);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(54, 16);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Drinks : ";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(533, 379);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 22);
+            this.textBox6.TabIndex = 21;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(533, 343);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.TabIndex = 22;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(533, 305);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 22);
+            this.textBox8.TabIndex = 23;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(533, 267);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 22);
+            this.textBox9.TabIndex = 24;
             // 
             // PanelChefHomePage
             // 
@@ -205,11 +436,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(667, 404);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.LabelChefHomePage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PanelChefHomePage";
             this.Text = "ChefHomePage";
+            this.Load += new System.EventHandler(this.PanelChefHomePage_Load);
             this.sidebar.ResumeLayout(false);
             this.MenusidearButton.ResumeLayout(false);
             this.MenusidearButton.PerformLayout();
@@ -217,6 +471,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +491,29 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }

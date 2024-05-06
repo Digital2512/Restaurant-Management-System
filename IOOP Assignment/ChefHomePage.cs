@@ -44,5 +44,10 @@ namespace IOOP_Assignment
         {
             sidebarTimer.Start();
         }
+
+        private void PanelChefHomePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
