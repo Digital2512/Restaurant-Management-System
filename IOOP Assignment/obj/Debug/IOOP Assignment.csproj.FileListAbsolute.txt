@@ -17,22 +17,4 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer.mdf
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer_log.ldf
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.PanelChefHomePage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.loginForm.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.Properties.Resources.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.GenerateResource.cache
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
-C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources

@@ -223,7 +223,7 @@ namespace IOOP_Assignment
             return result;
         }
 
-        public int getInt(string Query)
+        public int getInt(string query)
         {
             int result = 0;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -240,7 +240,10 @@ namespace IOOP_Assignment
                         {
                             while (reader.Read())
                             {
-                                result = reader.GetInt32(32);
+                                decimal decimalValue = reader.GetDecimal(0);
+
+                                result = Decimal.ToInt32(decimalValue); 
+                                
                                 break;
                             }
                         }
@@ -274,9 +277,9 @@ namespace IOOP_Assignment
                     }
                 }
             }
-
             return dataTable;
         }
+        /*
         public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
         {
             string newID = null;
@@ -287,10 +290,9 @@ namespace IOOP_Assignment
                     connection.Open();
                     if (connection.State == System.Data.ConnectionState.Open)
                     {
-                        string query = "SELECT MAX(CAST(SUBSTRING(@idName, 3, LEN(@idName) - 2) AS INT)) FROM @tableName WHERE @idName LIKE '@uniqueIdentifier%';";
+                        string query = $"SELECT MAX(CAST(SUBSTRING(@idName, 3, LEN(@idName) - 2) AS INT)) FROM {tableName} WHERE @idName LIKE @uniqueIdentifier + '%';";
                         SqlCommand cmd = new SqlCommand(query, connection);
                         cmd.Parameters.AddWithValue("@idName", idName);
-                        cmd.Parameters.AddWithValue("@tableName", tableName);
                         cmd.Parameters.AddWithValue("@uniqueIdentifier", uniqueIdentifier);
                         object result = cmd.ExecuteScalar();
 
@@ -318,6 +320,56 @@ namespace IOOP_Assignment
             }
             return newID;
         }
+        */
+        public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
+        {
+            string newID = null;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        string query = $"SELECT MAX({idName}) FROM {tableName} WHERE {idName} LIKE @uniqueIdentifier + '%';";
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@uniqueIdentifier", uniqueIdentifier);
+                        object result = cmd.ExecuteScalar();
+                        MessageBox.Show(result.ToString());
+
+                        if (result != DBNull.Value)
+                        {
+                            string maxID = result.ToString();
+                            int numericPart;
+                            if (int.TryParse(maxID.Substring(uniqueIdentifier.Length), out numericPart))
+                            {
+                                numericPart++;
+                                newID = $"{uniqueIdentifier}{numericPart:D3}";
+                            }
+                            else
+                            {
+                                throw new Exception("Unable to parse numeric part of ID");
+                            }
+                        }
+                        else
+                        {
+                            newID = $"{uniqueIdentifier}001";
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return newID;
+        }
+
         public bool insertValuesIntoDatabase(string query)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
