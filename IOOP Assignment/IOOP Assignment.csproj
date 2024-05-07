@@ -73,63 +73,47 @@
     <Compile Include="ChefHomePage.Designer.cs">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerFeedbackPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.Designer.cs">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPro.cs">
+    <Compile Include="CustomerIndividualProductView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPro.Designer.cs">
-      <DependentUpon>frmAddPro.cs</DependentUpon>
+    <Compile Include="CustomerIndividualProductView.Designer.cs">
+      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManagerHome.cs">
+    <Compile Include="CustomerOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManagerHome.Designer.cs">
-      <DependentUpon>frmManagerHome.cs</DependentUpon>
+    <Compile Include="CustomerOrderPage.Designer.cs">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="CustomerProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
+    <Compile Include="CustomerProfilePage.Designer.cs">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlace.cs">
+    <Compile Include="CustomerReservationPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlace.Designer.cs">
-      <DependentUpon>frmPlace.cs</DependentUpon>
+    <Compile Include="CustomerReservationPage.Designer.cs">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmViewProfile.cs">
+    <Compile Include="CustomerUpdateProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmViewProfile.Designer.cs">
-      <DependentUpon>frmViewProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReservation.Designer.cs">
-      <DependentUpon>frmReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUpdateProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUpdateProfile.Designer.cs">
-      <DependentUpon>frmUpdateProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IOOPDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="IOOPDatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    <Compile Include="CustomerUpdateProfilePage.Designer.cs">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -145,68 +129,46 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAddPro.resx">
-      <DependentUpon>frmAddPro.cs</DependentUpon>
+    <Compile Include="foodButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="foodButton.Designer.cs">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomerFeedbackPage.resx">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManagerHome.resx">
-      <DependentUpon>frmManagerHome.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerIndividualProductView.resx">
+      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlace.resx">
-      <DependentUpon>frmPlace.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerOrderPage.resx">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdateProfile.resx">
-      <DependentUpon>frmUpdateProfile.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerProfilePage.resx">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmViewProfile.resx">
-      <DependentUpon>frmViewProfile.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\frmUpdatePro.resx">
-      <DependentUpon>frmUpdatePro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\frmUpdatePro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\frmUpdatePro.Designer.cs">
-      <DependentUpon>frmUpdatePro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="IOOPDatabaseDataSet.xsc">
-      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="IOOPDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IOOPDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="IOOPDatabaseDataSet.xss">
-      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="IOOPDatabaseDataSet1.xsc">
-      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="IOOPDatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IOOPDatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="IOOPDatabaseDataSet1.xss">
-      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="foodButton.resx">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -240,9 +202,32 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\foodIcon2.jpeg" />
-    <None Include="Resources\foodIcon.jpeg" />
-    <None Include="Resources\food icon.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="PictureFolder\addIcon.png" />
+    <None Include="Resources\add.png" />
+    <None Include="PictureFolder\star.png" />
+    <None Include="PictureFolder\pastaImage.jpg" />
+    <None Include="PictureFolder\saladImage.jpg" />
+    <None Include="PictureFolder\smoothieImage.jpg" />
+    <None Include="PictureFolder\pizzaImage.jpg" />
+    <None Include="PictureFolder\burgerImage.jpg" />
+    <None Include="Resources\Burger.bmp" />
+    <None Include="PictureFolder\searchIcon.png" />
+    <None Include="PictureFolder\passwordShowIcon.png" />
+    <None Include="PictureFolder\passwordHideIcon.png" />
+    <None Include="PictureFolder\backIcon.png" />
+    <None Include="PictureFolder\profileIcon.png" />
+    <None Include="PictureFolder\logoutIcon.png" />
+    <None Include="PictureFolder\feedbackIcon.png" />
+    <None Include="PictureFolder\orderIcon.png" />
+    <None Include="PictureFolder\reservationIcon.png" />
+    <None Include="Resources\booking.png" />
+    <None Include="PictureFolder\OrderButtonResized.png" />
+    <None Include="PictureFolder\ReservationButton.png" />
+    <None Include="PictureFolder\ReservationButtonBGChanged.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized1.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized.png" />
+    <None Include="PictureFolder\OrderButtonBGChanged.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
