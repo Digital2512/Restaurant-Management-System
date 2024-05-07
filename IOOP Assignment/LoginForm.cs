@@ -23,7 +23,7 @@ namespace IOOP_Assignment
 
         }
         //change the connection string when using a different laptop to connect to the database
-        public string connectionString = "";
+        public string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private void loginButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -56,7 +56,7 @@ namespace IOOP_Assignment
                             {
                                 case "Admin":
                                     MessageBox.Show("Login Successful. User's Role: Admin");
-                                    AdminHomePage adminHomePage = new AdminHomePage();
+                                    AdminHomePage adminHomePage = new AdminHomePage("Admin");
                                     adminHomePage.Show();
                                     this.Hide();
                                     break;
