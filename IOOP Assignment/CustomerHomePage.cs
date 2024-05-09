@@ -115,9 +115,9 @@ namespace IOOP_Assignment
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
             query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
+            database.insertOrUpdateValuesIntoDatabase(query);
             query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
+            database.insertOrUpdateValuesIntoDatabase(query);
 
         }
 

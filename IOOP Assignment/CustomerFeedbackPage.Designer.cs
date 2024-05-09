@@ -171,6 +171,7 @@
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(853, 45);
             this.headerPnl.TabIndex = 3;
+            this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // backBtnPnl
             // 
@@ -190,6 +191,7 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerFeedbackPage
             // 

@@ -24,7 +24,7 @@ namespace IOOP_Assignment
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID;
-            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             fullNameTxtBox.Text = database.getString(query);
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}'";
             passwordMTextBox.Text = database.getString(query);
@@ -96,8 +96,8 @@ namespace IOOP_Assignment
             }
             if (password == confirmPassword)
             {
-                query = $"UPDATE Users SET [fullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
-                if (database.insertValuesIntoDatabase(query) == true)
+                query = $"UPDATE Users SET [FullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
+                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Profile updated successfully!");
                 }

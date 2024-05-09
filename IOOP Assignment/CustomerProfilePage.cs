@@ -20,11 +20,11 @@ namespace IOOP_Assignment
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
             lblUserID.Text = userID;
-            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             lblFullName.Text = database.getString(query);
-            query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
             lblPasswordValue.Text = database.getString(query);
-            query = $"SELECT birthday FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}';";
             lblBirthday.Text = database.getDateTime(query).ToString();
             query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}'";
             lblCustomerID.Text = database.getString(query);

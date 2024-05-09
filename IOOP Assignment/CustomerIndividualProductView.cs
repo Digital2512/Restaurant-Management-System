@@ -76,12 +76,12 @@ namespace IOOP_Assignment
                 string orderDateTimeMade = now.ToString();
                 query = "SELECT CustomerID FROM Customer WHERE LoggedIn= 'TRUE';";
                 string customerID = database.getString(query);
-                query = $"INSERT INTO Orders(OrderID, OrderDateTime, CustomerID, OrderStatus) VALUES ('{orderID}', '{orderDateTimeMade}', '{customerID}', 'ORDERING');";
-                if (database.insertValuesIntoDatabase(query) == true)
+                query = $"INSERT INTO Orders(OrderID, OrderDateTime, CustomerID, OrderStatus, PaymentStatus) VALUES ('{orderID}', '{orderDateTimeMade}', '{customerID}', 'ORDERING', 'NOT_PAID');";
+                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Order Created");
                 }
-                else if (database.insertValuesIntoDatabase(query) == true)
+                else if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Order Not Created");
                 }
@@ -90,21 +90,22 @@ namespace IOOP_Assignment
             {
                 orderID = previousOrderID;
             }
+            
             string orderDetailsID = database.GenerateUniqueID("OD", "OrderDetailsID", "OrderDetails");
             query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, specialInstructions) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}')";
-            bool orderDetailsRecorded = database.insertValuesIntoDatabase(query);
-            query = $"SELECT OrderDetailsID FROM Orders WHERE OrderStatus = 'ORDERING';";
+            bool orderDetailsRecorded = database.insertOrUpdateValuesIntoDatabase(query);
+            query = $"SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
             string previousOrderDetailsIDs = database.getString(query);
             string renewedOrderDetailsIDs = null;
             if(renewedOrderDetailsIDs == "")
             {
-                renewedOrderDetailsIDs = $"{previousOrderDetailsIDs}{orderDetailsID},";
+                renewedOrderDetailsIDs = $"{orderDetailsID},";
             }else  if(renewedOrderDetailsIDs != "")
             {
-                renewedOrderDetailsIDs = $"{previousOrderDetailsIDs}, {orderDetailsID}";
+                renewedOrderDetailsIDs = $"{previousOrderDetailsIDs},{orderDetailsID}";
             }
-            query = $"UPDATE Orders SET OrderDetailsID = '{renewedOrderDetailsIDs}' WHERE OrderStatus = 'ORDERING'";
-            bool orderDetailsRecordedWithOrder = database.insertValuesIntoDatabase(query);
+            query = $"UPDATE Orders SET OrderDetailsIDs = '{renewedOrderDetailsIDs}' WHERE OrderStatus = 'ORDERING'";
+            bool orderDetailsRecordedWithOrder = database.insertOrUpdateValuesIntoDatabase(query);
             if (orderDetailsRecorded && orderDetailsRecordedWithOrder == true)
             {
                 MessageBox.Show("Order Details Successfully Added To Cart");
@@ -114,14 +115,12 @@ namespace IOOP_Assignment
                 MessageBox.Show("Order Details Not Added To Cart");
             }
             query = $"UPDATE Menu SET Chosen = 'FALSE' WHERE ProductID = '{productID}'";
-            if (database.insertValuesIntoDatabase(query) == true)
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                CustomerIndividualProductView customerIndividualProductView = new CustomerIndividualProductView();
-                customerIndividualProductView.Hide();
-                customerIndividualProductView.Visible = false;
                 CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+                this.Hide();
                 customerOrderPage.Show();
-            }else if(database.insertValuesIntoDatabase(query) == true)
+            }else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
             {
                 MessageBox.Show("Order Details Reset Failed");
             }

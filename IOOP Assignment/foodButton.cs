@@ -41,10 +41,10 @@ namespace IOOP_Assignment
         {
             Database database = new Database(connectionString);
             string query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
-            database.insertValuesIntoDatabase(query);
+            database.insertOrUpdateValuesIntoDatabase(query);
             CustomerOrderPage customerOrderPage = new CustomerOrderPage();
             CustomerIndividualProductView customerIndividualProductView = new CustomerIndividualProductView();
-            customerOrderPage.Hide();
+            customerOrderPage.Dispose();
             customerIndividualProductView.Show();
         }
     }
