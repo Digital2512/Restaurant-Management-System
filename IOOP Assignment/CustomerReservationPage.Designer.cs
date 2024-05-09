@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReservationPage));
             this.searchButton = new System.Windows.Forms.Button();
             this.headerPnl = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cartButton = new System.Windows.Forms.Button();
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
@@ -41,9 +39,11 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.placeDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.eventsCListBox = new System.Windows.Forms.CheckedListBox();
+            this.minOfPaxCBox = new System.Windows.Forms.ComboBox();
             this.headerPnl.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.productDisplayPanel.SuspendLayout();
@@ -52,39 +52,22 @@
             // searchButton
             // 
             this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.searchButton.Location = new System.Drawing.Point(679, 13);
+            this.searchButton.Location = new System.Drawing.Point(739, 11);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(45, 34);
             this.searchButton.TabIndex = 8;
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // headerPnl
             // 
             this.headerPnl.BackColor = System.Drawing.Color.DimGray;
-            this.headerPnl.Controls.Add(this.panel2);
             this.headerPnl.Controls.Add(this.backBtnPnl);
             this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(897, 45);
+            this.headerPnl.Size = new System.Drawing.Size(982, 45);
             this.headerPnl.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.cartButton);
-            this.panel2.Location = new System.Drawing.Point(673, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(127, 45);
-            this.panel2.TabIndex = 3;
-            // 
-            // cartButton
-            // 
-            this.cartButton.Location = new System.Drawing.Point(-11, 0);
-            this.cartButton.Name = "cartButton";
-            this.cartButton.Size = new System.Drawing.Size(148, 45);
-            this.cartButton.TabIndex = 2;
-            this.cartButton.Text = "Your Cart";
-            this.cartButton.UseVisualStyleBackColor = true;
             // 
             // backBtnPnl
             // 
@@ -119,7 +102,7 @@
             // 
             this.searchTxtBox.Location = new System.Drawing.Point(82, 13);
             this.searchTxtBox.Name = "searchTxtBox";
-            this.searchTxtBox.Size = new System.Drawing.Size(591, 26);
+            this.searchTxtBox.Size = new System.Drawing.Size(651, 26);
             this.searchTxtBox.TabIndex = 7;
             // 
             // panel1
@@ -129,13 +112,13 @@
             this.panel1.Controls.Add(this.searchTxtBox);
             this.panel1.Location = new System.Drawing.Point(26, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(735, 62);
+            this.panel1.Size = new System.Drawing.Size(792, 62);
             this.panel1.TabIndex = 13;
             // 
             // lblFilter
             // 
             this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(767, 64);
+            this.lblFilter.Location = new System.Drawing.Point(832, 64);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(70, 20);
             this.lblFilter.TabIndex = 12;
@@ -145,35 +128,76 @@
             // 
             this.placeDisplayFlowPanel.AutoSize = true;
             this.placeDisplayFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.placeDisplayFlowPanel.Location = new System.Drawing.Point(3, 1);
+            this.placeDisplayFlowPanel.Location = new System.Drawing.Point(3, 0);
             this.placeDisplayFlowPanel.Name = "placeDisplayFlowPanel";
-            this.placeDisplayFlowPanel.Size = new System.Drawing.Size(703, 355);
+            this.placeDisplayFlowPanel.Size = new System.Drawing.Size(789, 407);
             this.placeDisplayFlowPanel.TabIndex = 10;
             // 
             // productDisplayPanel
             // 
             this.productDisplayPanel.AutoScroll = true;
             this.productDisplayPanel.Controls.Add(this.placeDisplayFlowPanel);
-            this.productDisplayPanel.Location = new System.Drawing.Point(26, 166);
+            this.productDisplayPanel.Location = new System.Drawing.Point(26, 132);
             this.productDisplayPanel.Name = "productDisplayPanel";
-            this.productDisplayPanel.Size = new System.Drawing.Size(735, 355);
+            this.productDisplayPanel.Size = new System.Drawing.Size(792, 389);
             this.productDisplayPanel.TabIndex = 14;
             // 
-            // checkedListBox1
+            // label1
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(767, 90);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 418);
-            this.checkedListBox1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(832, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Min of Pax";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(832, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Events";
+            // 
+            // eventsCListBox
+            // 
+            this.eventsCListBox.FormattingEnabled = true;
+            this.eventsCListBox.Items.AddRange(new object[] {
+            "Birthday",
+            "Gathering",
+            "Wedding Party",
+            "Corporate Party"});
+            this.eventsCListBox.Location = new System.Drawing.Point(832, 194);
+            this.eventsCListBox.Name = "eventsCListBox";
+            this.eventsCListBox.Size = new System.Drawing.Size(138, 211);
+            this.eventsCListBox.TabIndex = 16;
+            // 
+            // minOfPaxCBox
+            // 
+            this.minOfPaxCBox.FormattingEnabled = true;
+            this.minOfPaxCBox.Items.AddRange(new object[] {
+            "> 5",
+            "> 10",
+            "> 15",
+            "> 20",
+            "> 25",
+            ">30"});
+            this.minOfPaxCBox.Location = new System.Drawing.Point(836, 132);
+            this.minOfPaxCBox.Name = "minOfPaxCBox";
+            this.minOfPaxCBox.Size = new System.Drawing.Size(121, 28);
+            this.minOfPaxCBox.TabIndex = 18;
             // 
             // CustomerReservationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 526);
+            this.ClientSize = new System.Drawing.Size(982, 526);
+            this.Controls.Add(this.minOfPaxCBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.eventsCListBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFilter);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.productDisplayPanel);
@@ -181,7 +205,6 @@
             this.Name = "CustomerReservationPage";
             this.Text = "customerReservation";
             this.headerPnl.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -196,8 +219,6 @@
 
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Panel headerPnl;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button cartButton;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label lblSearch;
@@ -206,6 +227,9 @@
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.FlowLayoutPanel placeDisplayFlowPanel;
         private System.Windows.Forms.Panel productDisplayPanel;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckedListBox eventsCListBox;
+        private System.Windows.Forms.ComboBox minOfPaxCBox;
     }
 }

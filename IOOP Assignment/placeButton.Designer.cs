@@ -38,6 +38,7 @@
             this.lblDescriptions = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPlaceID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,26 +56,27 @@
             // lblPlaceName
             // 
             this.lblPlaceName.AutoSize = true;
-            this.lblPlaceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPlaceName.Location = new System.Drawing.Point(157, 10);
+            this.lblPlaceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaceName.Location = new System.Drawing.Point(155, 30);
             this.lblPlaceName.Name = "lblPlaceName";
-            this.lblPlaceName.Size = new System.Drawing.Size(74, 29);
+            this.lblPlaceName.Size = new System.Drawing.Size(80, 29);
             this.lblPlaceName.TabIndex = 11;
             this.lblPlaceName.Text = "Hall 1";
             // 
             // lblMinOfPaxTitle
             // 
             this.lblMinOfPaxTitle.AutoSize = true;
-            this.lblMinOfPaxTitle.Location = new System.Drawing.Point(156, 45);
+            this.lblMinOfPaxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinOfPaxTitle.Location = new System.Drawing.Point(156, 67);
             this.lblMinOfPaxTitle.Name = "lblMinOfPaxTitle";
-            this.lblMinOfPaxTitle.Size = new System.Drawing.Size(93, 20);
+            this.lblMinOfPaxTitle.Size = new System.Drawing.Size(105, 20);
             this.lblMinOfPaxTitle.TabIndex = 12;
             this.lblMinOfPaxTitle.Text = "Min Of Pax: ";
             // 
             // lblMinOfPax
             // 
             this.lblMinOfPax.AutoSize = true;
-            this.lblMinOfPax.Location = new System.Drawing.Point(157, 68);
+            this.lblMinOfPax.Location = new System.Drawing.Point(267, 67);
             this.lblMinOfPax.Name = "lblMinOfPax";
             this.lblMinOfPax.Size = new System.Drawing.Size(80, 20);
             this.lblMinOfPax.TabIndex = 13;
@@ -84,16 +86,17 @@
             // lblEventsTitle
             // 
             this.lblEventsTitle.AutoSize = true;
-            this.lblEventsTitle.Location = new System.Drawing.Point(353, 10);
+            this.lblEventsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventsTitle.Location = new System.Drawing.Point(516, 25);
             this.lblEventsTitle.Name = "lblEventsTitle";
-            this.lblEventsTitle.Size = new System.Drawing.Size(66, 20);
+            this.lblEventsTitle.Size = new System.Drawing.Size(74, 20);
             this.lblEventsTitle.TabIndex = 14;
             this.lblEventsTitle.Text = "Events: ";
             // 
             // lblEvents
             // 
             this.lblEvents.AutoSize = true;
-            this.lblEvents.Location = new System.Drawing.Point(355, 33);
+            this.lblEvents.Location = new System.Drawing.Point(596, 23);
             this.lblEvents.MaximumSize = new System.Drawing.Size(110, 60);
             this.lblEvents.Name = "lblEvents";
             this.lblEvents.Size = new System.Drawing.Size(88, 60);
@@ -104,9 +107,9 @@
             // 
             this.lblDescriptions.AutoSize = true;
             this.lblDescriptions.Location = new System.Drawing.Point(155, 100);
-            this.lblDescriptions.MaximumSize = new System.Drawing.Size(270, 50);
+            this.lblDescriptions.MaximumSize = new System.Drawing.Size(425, 50);
             this.lblDescriptions.Name = "lblDescriptions";
-            this.lblDescriptions.Size = new System.Drawing.Size(270, 50);
+            this.lblDescriptions.Size = new System.Drawing.Size(425, 50);
             this.lblDescriptions.TabIndex = 16;
             this.lblDescriptions.Text = resources.GetString("lblDescriptions.Text");
             // 
@@ -119,19 +122,30 @@
             this.addButton.Size = new System.Drawing.Size(46, 52);
             this.addButton.TabIndex = 17;
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.addButton);
-            this.panel1.Location = new System.Drawing.Point(436, 101);
+            this.panel1.Location = new System.Drawing.Point(661, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(39, 49);
             this.panel1.TabIndex = 18;
+            // 
+            // lblPlaceID
+            // 
+            this.lblPlaceID.AutoSize = true;
+            this.lblPlaceID.Location = new System.Drawing.Point(156, 10);
+            this.lblPlaceID.Name = "lblPlaceID";
+            this.lblPlaceID.Size = new System.Drawing.Size(77, 20);
+            this.lblPlaceID.TabIndex = 19;
+            this.lblPlaceID.Text = "HALL001";
             // 
             // placeButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPlaceID);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDescriptions);
             this.Controls.Add(this.lblEvents);
@@ -141,7 +155,7 @@
             this.Controls.Add(this.lblPlaceName);
             this.Controls.Add(this.placeImagePBox);
             this.Name = "placeButton";
-            this.Size = new System.Drawing.Size(475, 150);
+            this.Size = new System.Drawing.Size(700, 150);
             ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Label lblDescriptions;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblPlaceID;
     }
 }
