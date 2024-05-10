@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class PanelChefHomePage : Form
+    public partial class ChefHomePage : Form
     {
         bool sidebarExpand;
-        public PanelChefHomePage()
+        public ChefHomePage()
         {
             InitializeComponent();
         }
+
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
@@ -40,14 +41,21 @@ namespace IOOP_Assignment
             }
         }
 
-        private void MenusidearButton_Paint(object sender, PaintEventArgs e)
+        private void MenuButton_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
         }
 
-        private void PanelChefHomePage_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            Environment.Exit(0);
+        }
 
+        private void buttonViewOrder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Now navigating to Order Details Function Page");
+            ChefOrderDetailsForm OD = new ChefOrderDetailsForm();
+            OD.ShowDialog();
         }
     }
 }

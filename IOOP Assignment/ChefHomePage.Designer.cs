@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class PanelChefHomePage
+    partial class ChefHomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@
             this.LabelChefHomePage = new System.Windows.Forms.TextBox();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.MenusidearButton = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ButtonHome = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,6 +40,8 @@
             this.buttonInventory = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonProfile = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,8 +49,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,11 +80,12 @@
             this.LabelChefHomePage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.LabelChefHomePage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LabelChefHomePage.Font = new System.Drawing.Font("Black Ops One", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChefHomePage.Location = new System.Drawing.Point(305, 21);
+            this.LabelChefHomePage.Location = new System.Drawing.Point(294, 21);
             this.LabelChefHomePage.Name = "LabelChefHomePage";
-            this.LabelChefHomePage.Size = new System.Drawing.Size(234, 34);
+            this.LabelChefHomePage.Size = new System.Drawing.Size(263, 34);
             this.LabelChefHomePage.TabIndex = 1;
             this.LabelChefHomePage.Text = "Chef Menu Page";
+            this.LabelChefHomePage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // sidebar
             // 
@@ -104,22 +105,11 @@
             // 
             // MenusidearButton
             // 
-            this.MenusidearButton.Controls.Add(this.label1);
+            this.MenusidearButton.Controls.Add(this.MenuButton);
             this.MenusidearButton.Location = new System.Drawing.Point(3, 3);
             this.MenusidearButton.Name = "MenusidearButton";
             this.MenusidearButton.Size = new System.Drawing.Size(190, 57);
             this.MenusidearButton.TabIndex = 6;
-            this.MenusidearButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MenusidearButton_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Black Ops One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Menu";
             // 
             // panel2
             // 
@@ -170,6 +160,7 @@
             this.buttonViewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonViewOrder.UseMnemonic = false;
             this.buttonViewOrder.UseVisualStyleBackColor = false;
+            this.buttonViewOrder.Click += new System.EventHandler(this.buttonViewOrder_Click);
             // 
             // panel3
             // 
@@ -220,6 +211,32 @@
             this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonProfile.UseMnemonic = false;
             this.buttonProfile.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Location = new System.Drawing.Point(3, 330);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(190, 75);
+            this.panel4.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-16, -22);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(219, 116);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Exit";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseMnemonic = false;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sidebarTimer
             // 
@@ -273,31 +290,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-3, -14);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(206, 89);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Exit";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(3, 330);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(190, 75);
-            this.panel4.TabIndex = 9;
             // 
             // label5
             // 
@@ -430,7 +422,26 @@
             this.textBox9.Size = new System.Drawing.Size(100, 22);
             this.textBox9.TabIndex = 24;
             // 
-            // PanelChefHomePage
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuButton.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuButton.Location = new System.Drawing.Point(-26, -6);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MenuButton.Size = new System.Drawing.Size(238, 86);
+            this.MenuButton.TabIndex = 5;
+            this.MenuButton.Text = "                 Menu";
+            this.MenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.MenuButton.UseMnemonic = false;
+            this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // ChefHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -461,12 +472,10 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.LabelChefHomePage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PanelChefHomePage";
+            this.Name = "ChefHomePage";
             this.Text = "ChefHomePage";
-            this.Load += new System.EventHandler(this.PanelChefHomePage_Load);
             this.sidebar.ResumeLayout(false);
             this.MenusidearButton.ResumeLayout(false);
-            this.MenusidearButton.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -489,7 +498,6 @@
         private System.Windows.Forms.Button buttonInventory;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -515,5 +523,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button MenuButton;
     }
 }

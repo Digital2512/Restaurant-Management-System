@@ -14,7 +14,7 @@ namespace IOOP_Assignment
     public partial class CustomerFeedbackPage : Form
     {
         //change the connection string when using a different laptop to connect to the database
-        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\IOOPServer.mdf\";Integrated Security=True";
         public CustomerFeedbackPage()
         {
             InitializeComponent();
