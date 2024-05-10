@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualReservationPlacePage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPlaceEventType = new System.Windows.Forms.Label();
+            this.lblEventType = new System.Windows.Forms.Label();
+            this.lblMinOfPax = new System.Windows.Forms.Label();
             this.reserveBtn = new System.Windows.Forms.Button();
+            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
             this.lblPlaceID = new System.Windows.Forms.Label();
             this.lblSpecialInstructions = new System.Windows.Forms.Label();
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
-            this.backButton = new System.Windows.Forms.Button();
-            this.placeImagePBox = new System.Windows.Forms.PictureBox();
-            this.lblMinOfPax = new System.Windows.Forms.Label();
-            this.lblEventType = new System.Windows.Forms.Label();
-            this.lblPlaceEventType = new System.Windows.Forms.Label();
+            this.reservedDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,9 +70,23 @@
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.reservedDateTimePicker);
             this.panel2.Controls.Add(this.lblPlaceEventType);
             this.panel2.Controls.Add(this.lblEventType);
             this.panel2.Controls.Add(this.lblMinOfPax);
@@ -87,9 +103,41 @@
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 12;
             // 
+            // lblPlaceEventType
+            // 
+            this.lblPlaceEventType.AutoSize = true;
+            this.lblPlaceEventType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblPlaceEventType.Location = new System.Drawing.Point(426, 375);
+            this.lblPlaceEventType.MaximumSize = new System.Drawing.Size(140, 60);
+            this.lblPlaceEventType.Name = "lblPlaceEventType";
+            this.lblPlaceEventType.Size = new System.Drawing.Size(132, 60);
+            this.lblPlaceEventType.TabIndex = 18;
+            this.lblPlaceEventType.Text = "Birthday, Gathering, Party, Birthday, Gathering, Party";
+            // 
+            // lblEventType
+            // 
+            this.lblEventType.AutoSize = true;
+            this.lblEventType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEventType.Location = new System.Drawing.Point(423, 345);
+            this.lblEventType.Name = "lblEventType";
+            this.lblEventType.Size = new System.Drawing.Size(118, 25);
+            this.lblEventType.TabIndex = 17;
+            this.lblEventType.Text = "Event Type:";
+            this.lblEventType.Click += new System.EventHandler(this.lblEventType_Click);
+            // 
+            // lblMinOfPax
+            // 
+            this.lblMinOfPax.AutoSize = true;
+            this.lblMinOfPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMinOfPax.Location = new System.Drawing.Point(288, 345);
+            this.lblMinOfPax.Name = "lblMinOfPax";
+            this.lblMinOfPax.Size = new System.Drawing.Size(110, 25);
+            this.lblMinOfPax.TabIndex = 16;
+            this.lblMinOfPax.Text = "Min of Pax:";
+            // 
             // reserveBtn
             // 
-            this.reserveBtn.Location = new System.Drawing.Point(3, 697);
+            this.reserveBtn.Location = new System.Drawing.Point(3, 760);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(593, 53);
             this.reserveBtn.TabIndex = 15;
@@ -97,9 +145,17 @@
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.reserveBtn_Click);
             // 
+            // placeImagePBox
+            // 
+            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.placeImagePBox.Name = "placeImagePBox";
+            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.placeImagePBox.TabIndex = 14;
+            this.placeImagePBox.TabStop = false;
+            // 
             // specialInstructionsRTxtBox
             // 
-            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 608);
+            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 667);
             this.specialInstructionsRTxtBox.Name = "specialInstructionsRTxtBox";
             this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
             this.specialInstructionsRTxtBox.TabIndex = 13;
@@ -118,7 +174,7 @@
             // 
             this.lblSpecialInstructions.AutoSize = true;
             this.lblSpecialInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 576);
+            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 635);
             this.lblSpecialInstructions.Name = "lblSpecialInstructions";
             this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
             this.lblSpecialInstructions.TabIndex = 12;
@@ -128,7 +184,7 @@
             // 
             this.lblPlaceName.AutoSize = true;
             this.lblPlaceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPlaceName.Location = new System.Drawing.Point(12, 368);
+            this.lblPlaceName.Location = new System.Drawing.Point(16, 368);
             this.lblPlaceName.Name = "lblPlaceName";
             this.lblPlaceName.Size = new System.Drawing.Size(74, 29);
             this.lblPlaceName.TabIndex = 9;
@@ -137,7 +193,7 @@
             // lblPlaceDescription
             // 
             this.lblPlaceDescription.AutoSize = true;
-            this.lblPlaceDescription.Location = new System.Drawing.Point(16, 477);
+            this.lblPlaceDescription.Location = new System.Drawing.Point(16, 473);
             this.lblPlaceDescription.MaximumSize = new System.Drawing.Size(550, 80);
             this.lblPlaceDescription.Name = "lblPlaceDescription";
             this.lblPlaceDescription.Size = new System.Drawing.Size(539, 80);
@@ -148,61 +204,28 @@
             // 
             this.lblPlaceMinOfPax.AutoSize = true;
             this.lblPlaceMinOfPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPlaceMinOfPax.Location = new System.Drawing.Point(14, 435);
+            this.lblPlaceMinOfPax.Location = new System.Drawing.Point(292, 376);
             this.lblPlaceMinOfPax.Name = "lblPlaceMinOfPax";
             this.lblPlaceMinOfPax.Size = new System.Drawing.Size(80, 20);
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
-            // backButton
+            // reservedDateTimePicker
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
+            this.reservedDateTimePicker.Location = new System.Drawing.Point(24, 599);
+            this.reservedDateTimePicker.Name = "reservedDateTimePicker";
+            this.reservedDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.reservedDateTimePicker.TabIndex = 19;
             // 
-            // placeImagePBox
+            // label1
             // 
-            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.placeImagePBox.Name = "placeImagePBox";
-            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
-            this.placeImagePBox.TabIndex = 14;
-            this.placeImagePBox.TabStop = false;
-            // 
-            // lblMinOfPax
-            // 
-            this.lblMinOfPax.AutoSize = true;
-            this.lblMinOfPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMinOfPax.Location = new System.Drawing.Point(11, 408);
-            this.lblMinOfPax.Name = "lblMinOfPax";
-            this.lblMinOfPax.Size = new System.Drawing.Size(110, 25);
-            this.lblMinOfPax.TabIndex = 16;
-            this.lblMinOfPax.Text = "Min of Pax:";
-            // 
-            // lblEventType
-            // 
-            this.lblEventType.AutoSize = true;
-            this.lblEventType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblEventType.Location = new System.Drawing.Point(365, 345);
-            this.lblEventType.Name = "lblEventType";
-            this.lblEventType.Size = new System.Drawing.Size(118, 25);
-            this.lblEventType.TabIndex = 17;
-            this.lblEventType.Text = "Event Type:";
-            // 
-            // lblPlaceEventType
-            // 
-            this.lblPlaceEventType.AutoSize = true;
-            this.lblPlaceEventType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPlaceEventType.Location = new System.Drawing.Point(368, 375);
-            this.lblPlaceEventType.MaximumSize = new System.Drawing.Size(140, 60);
-            this.lblPlaceEventType.Name = "lblPlaceEventType";
-            this.lblPlaceEventType.Size = new System.Drawing.Size(132, 60);
-            this.lblPlaceEventType.TabIndex = 18;
-            this.lblPlaceEventType.Text = "Birthday, Gathering, Party, Birthday, Gathering, Party";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(19, 569);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 25);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Reserved Date and Time: ";
             // 
             // CustomerIndividualReservationPlacePage
             // 
@@ -240,5 +263,7 @@
         private System.Windows.Forms.Label lblPlaceEventType;
         private System.Windows.Forms.Label lblEventType;
         private System.Windows.Forms.Label lblMinOfPax;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
     }
 }

@@ -85,5 +85,12 @@ namespace IOOP_Assignment
                 placeDisplayFlowPanel.Controls.Add(placeButton);
             }
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerHomePage customerHomePage = new CustomerHomePage();
+            customerHomePage.Show();
+        }
     }
 }

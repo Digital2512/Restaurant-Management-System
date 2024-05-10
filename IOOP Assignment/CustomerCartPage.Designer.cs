@@ -86,6 +86,8 @@
             // 
             // cartProductShowFlowPnl
             // 
+            this.cartProductShowFlowPnl.AutoSize = true;
+            this.cartProductShowFlowPnl.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.cartProductShowFlowPnl.Location = new System.Drawing.Point(3, 0);
             this.cartProductShowFlowPnl.Name = "cartProductShowFlowPnl";
             this.cartProductShowFlowPnl.Size = new System.Drawing.Size(784, 250);
@@ -176,6 +178,7 @@
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

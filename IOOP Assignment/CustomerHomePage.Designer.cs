@@ -49,23 +49,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.orderStatusPnl = new System.Windows.Forms.Panel();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
+            this.lblOrderStatusTitle = new System.Windows.Forms.Label();
             this.lblEstimatedTime = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
             this.lblOrderIDTitle = new System.Windows.Forms.Label();
             this.pastOrderPnl = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblReservationStatus = new System.Windows.Forms.Label();
+            this.lblReservationStatusTitle = new System.Windows.Forms.Label();
+            this.lblPlaceName = new System.Windows.Forms.Label();
+            this.lblPlaceNameTitle = new System.Windows.Forms.Label();
             this.lblPlaceID = new System.Windows.Forms.Label();
             this.lblReservationID = new System.Windows.Forms.Label();
             this.lblPlaceIDTitle = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
-            this.lblPlaceName = new System.Windows.Forms.Label();
-            this.lblPlaceNameTitle = new System.Windows.Forms.Label();
-            this.lblOrderStatusTitle = new System.Windows.Forms.Label();
-            this.lblOrderStatus = new System.Windows.Forms.Label();
-            this.lblReservationStatus = new System.Windows.Forms.Label();
-            this.lblReservationStatusTitle = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.reservationPnl.SuspendLayout();
@@ -290,6 +290,25 @@
             this.orderStatusPnl.Size = new System.Drawing.Size(462, 104);
             this.orderStatusPnl.TabIndex = 4;
             // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Location = new System.Drawing.Point(205, 72);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(72, 20);
+            this.lblOrderStatus.TabIndex = 6;
+            this.lblOrderStatus.Text = "MAKING";
+            // 
+            // lblOrderStatusTitle
+            // 
+            this.lblOrderStatusTitle.AutoSize = true;
+            this.lblOrderStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblOrderStatusTitle.Location = new System.Drawing.Point(4, 69);
+            this.lblOrderStatusTitle.Name = "lblOrderStatusTitle";
+            this.lblOrderStatusTitle.Size = new System.Drawing.Size(79, 25);
+            this.lblOrderStatusTitle.TabIndex = 5;
+            this.lblOrderStatusTitle.Text = "Status: ";
+            // 
             // lblEstimatedTime
             // 
             this.lblEstimatedTime.AutoSize = true;
@@ -304,9 +323,9 @@
             this.lblOrderID.AutoSize = true;
             this.lblOrderID.Location = new System.Drawing.Point(205, 10);
             this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(105, 20);
+            this.lblOrderID.Size = new System.Drawing.Size(66, 20);
             this.lblOrderID.TabIndex = 3;
-            this.lblOrderID.Text = "OrderNumber";
+            this.lblOrderID.Text = "OrderID";
             this.lblOrderID.Click += new System.EventHandler(this.lblOrderNumber_Click);
             // 
             // pictureBox1
@@ -333,9 +352,9 @@
             this.lblOrderIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblOrderIDTitle.Location = new System.Drawing.Point(4, 6);
             this.lblOrderIDTitle.Name = "lblOrderIDTitle";
-            this.lblOrderIDTitle.Size = new System.Drawing.Size(147, 25);
+            this.lblOrderIDTitle.Size = new System.Drawing.Size(97, 25);
             this.lblOrderIDTitle.TabIndex = 0;
-            this.lblOrderIDTitle.Text = "Order Number: ";
+            this.lblOrderIDTitle.Text = "Order ID: ";
             // 
             // pastOrderPnl
             // 
@@ -353,13 +372,43 @@
             this.pastOrderPnl.Size = new System.Drawing.Size(462, 151);
             this.pastOrderPnl.TabIndex = 5;
             // 
-            // pictureBox2
+            // lblReservationStatus
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(339, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(123, 151);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.lblReservationStatus.AutoSize = true;
+            this.lblReservationStatus.Location = new System.Drawing.Point(161, 121);
+            this.lblReservationStatus.Name = "lblReservationStatus";
+            this.lblReservationStatus.Size = new System.Drawing.Size(82, 20);
+            this.lblReservationStatus.TabIndex = 12;
+            this.lblReservationStatus.Text = "PENDING";
+            // 
+            // lblReservationStatusTitle
+            // 
+            this.lblReservationStatusTitle.AutoSize = true;
+            this.lblReservationStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservationStatusTitle.Location = new System.Drawing.Point(4, 116);
+            this.lblReservationStatusTitle.Name = "lblReservationStatusTitle";
+            this.lblReservationStatusTitle.Size = new System.Drawing.Size(79, 25);
+            this.lblReservationStatusTitle.TabIndex = 11;
+            this.lblReservationStatusTitle.Text = "Status: ";
+            // 
+            // lblPlaceName
+            // 
+            this.lblPlaceName.AutoSize = true;
+            this.lblPlaceName.Location = new System.Drawing.Point(160, 85);
+            this.lblPlaceName.Name = "lblPlaceName";
+            this.lblPlaceName.Size = new System.Drawing.Size(94, 20);
+            this.lblPlaceName.TabIndex = 10;
+            this.lblPlaceName.Text = "Place Name";
+            // 
+            // lblPlaceNameTitle
+            // 
+            this.lblPlaceNameTitle.AutoSize = true;
+            this.lblPlaceNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPlaceNameTitle.Location = new System.Drawing.Point(3, 80);
+            this.lblPlaceNameTitle.Name = "lblPlaceNameTitle";
+            this.lblPlaceNameTitle.Size = new System.Drawing.Size(124, 25);
+            this.lblPlaceNameTitle.TabIndex = 9;
+            this.lblPlaceNameTitle.Text = "Place Name:";
             // 
             // lblPlaceID
             // 
@@ -399,62 +448,13 @@
             this.lblReservationIDTitle.TabIndex = 5;
             this.lblReservationIDTitle.Text = "Reservation ID: ";
             // 
-            // lblPlaceName
+            // pictureBox2
             // 
-            this.lblPlaceName.AutoSize = true;
-            this.lblPlaceName.Location = new System.Drawing.Point(160, 85);
-            this.lblPlaceName.Name = "lblPlaceName";
-            this.lblPlaceName.Size = new System.Drawing.Size(94, 20);
-            this.lblPlaceName.TabIndex = 10;
-            this.lblPlaceName.Text = "Place Name";
-            // 
-            // lblPlaceNameTitle
-            // 
-            this.lblPlaceNameTitle.AutoSize = true;
-            this.lblPlaceNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPlaceNameTitle.Location = new System.Drawing.Point(3, 80);
-            this.lblPlaceNameTitle.Name = "lblPlaceNameTitle";
-            this.lblPlaceNameTitle.Size = new System.Drawing.Size(124, 25);
-            this.lblPlaceNameTitle.TabIndex = 9;
-            this.lblPlaceNameTitle.Text = "Place Name:";
-            // 
-            // lblOrderStatusTitle
-            // 
-            this.lblOrderStatusTitle.AutoSize = true;
-            this.lblOrderStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblOrderStatusTitle.Location = new System.Drawing.Point(4, 69);
-            this.lblOrderStatusTitle.Name = "lblOrderStatusTitle";
-            this.lblOrderStatusTitle.Size = new System.Drawing.Size(79, 25);
-            this.lblOrderStatusTitle.TabIndex = 5;
-            this.lblOrderStatusTitle.Text = "Status: ";
-            // 
-            // lblOrderStatus
-            // 
-            this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Location = new System.Drawing.Point(205, 72);
-            this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(72, 20);
-            this.lblOrderStatus.TabIndex = 6;
-            this.lblOrderStatus.Text = "MAKING";
-            // 
-            // lblReservationStatus
-            // 
-            this.lblReservationStatus.AutoSize = true;
-            this.lblReservationStatus.Location = new System.Drawing.Point(161, 121);
-            this.lblReservationStatus.Name = "lblReservationStatus";
-            this.lblReservationStatus.Size = new System.Drawing.Size(82, 20);
-            this.lblReservationStatus.TabIndex = 12;
-            this.lblReservationStatus.Text = "PENDING";
-            // 
-            // lblReservationStatusTitle
-            // 
-            this.lblReservationStatusTitle.AutoSize = true;
-            this.lblReservationStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblReservationStatusTitle.Location = new System.Drawing.Point(4, 116);
-            this.lblReservationStatusTitle.Name = "lblReservationStatusTitle";
-            this.lblReservationStatusTitle.Size = new System.Drawing.Size(79, 25);
-            this.lblReservationStatusTitle.TabIndex = 11;
-            this.lblReservationStatusTitle.Text = "Status: ";
+            this.pictureBox2.Location = new System.Drawing.Point(339, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(123, 151);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // CustomerHomePage
             // 

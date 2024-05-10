@@ -25,7 +25,15 @@ namespace IOOP_Assignment
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
             lblPasswordValue.Text = database.getString(query);
             query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}';";
-            lblBirthday.Text = database.getDateTime(query).ToString();
+            string birthdayDateTimeString = database.getDateTime(query).ToString();
+            if (birthdayDateTimeString == DateTime.MinValue.ToString())
+            {
+                lblBirthday.Text = DateTime.Now.ToString();
+            }
+            else
+            {
+                lblBirthday.Text = birthdayDateTimeString;
+            }
             query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}'";
             lblCustomerID.Text = database.getString(query);
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";

@@ -170,6 +170,45 @@ namespace IOOP_Assignment
                         {
                             while (reader.Read())
                             {
+                                decimal decimalValue = reader.GetInt32(0);
+
+                                result = Decimal.ToInt32(decimalValue);
+
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return result;
+        }
+
+        public int getDecimal(string query)
+        {
+            int result = 0;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
                                 decimal decimalValue = reader.GetDecimal(0);
 
                                 result = Decimal.ToInt32(decimalValue);

@@ -25,33 +25,36 @@ namespace IOOP_Assignment
             if (orderDetailsIDs != null)
             {
                 string[] orderDetailsIDArray = orderDetailsIDs.Split(',');
+                decimal subtotalAmount = 0; 
 
                 foreach (string orderDetailsID in orderDetailsIDArray)
                 {
                     query = $"SELECT Name, Price, Quantity, SpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
                     DataTable cartDataTable = database.getDataTable(query);
 
-
-                    int subtotalAmount = 0;
                     foreach (DataRow row in cartDataTable.Rows)
                     {
                         string productName = row["Name"].ToString();
                         string productPrice = row["Price"].ToString();
                         string productQuantity = row["Quantity"].ToString();
                         string productSpecialInstructions = row["SpecialInstructions"].ToString();
-                        int productPriceSubtotal = Convert.ToInt32(row["Price"]);
 
-                        subtotalAmount += productPriceSubtotal;
+                        decimal intProductPrice = Convert.ToDecimal(productPrice);
+                        int intProductQuantity = Convert.ToInt32(productQuantity);
+
+                        decimal productSubtotalAmount = intProductPrice * intProductQuantity;
+                        subtotalAmount += productSubtotalAmount;
+
                         var cartProductButton = new cartProductButton(productName, productSpecialInstructions, productPrice, productQuantity);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);
                     }
-
-                    lblSubtotalAmount.Text = subtotalAmount.ToString();
-                    int taxAmount = subtotalAmount * (6 / 100);
-                    lblTaxAmount.Text = taxAmount.ToString();
-                    int totalAmount = subtotalAmount + taxAmount;
-                    lblTotalAmount.Text = totalAmount.ToString();
                 }
+                lblSubtotalAmount.Text = subtotalAmount.ToString();
+
+                decimal taxAmount = subtotalAmount * (6m / 100m); 
+                lblTaxAmount.Text = taxAmount.ToString();
+                decimal totalAmount = subtotalAmount + taxAmount;
+                lblTotalAmount.Text = totalAmount.ToString();
             }
             else
             {
@@ -69,13 +72,13 @@ namespace IOOP_Assignment
             Database database = new Database(connectionString);
             string query = "SELECT OrderID FROM Orders WHERE OrderStatus = 'ORDERING';";
             string orderID = database.getString(query);
-            query = $"UPDATE Order SET PaymentStatus = 'PAID' WHERE OrderID = '{orderID}';";
+            query = $"UPDATE Orders SET PaymentStatus = 'PAID' WHERE OrderID = '{orderID}';";
             database.insertOrUpdateValuesIntoDatabase(query);
             query = $"SELECT PaymentStatus FROM Orders WHERE OrderID = '{orderID}';";
 
             if (database.getString(query) == "PAID")
             {
-                query = $"UPDATE Order SET OrderStatus = 'MAKING' WHERE OrderID = '{orderID}';";
+                query = $"UPDATE Orders SET OrderStatus = 'MAKING' WHERE OrderID = '{orderID}';";
                 database.insertOrUpdateValuesIntoDatabase(query);
                 this.Hide();
                 CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();

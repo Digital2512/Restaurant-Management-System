@@ -27,28 +27,29 @@ namespace IOOP_Assignment
             string customerID = database.getString(query);
             query = $"SELECT FullName FROM Users WHERE UserID = (SELECT UserID FROM Customer WHERE CustomerID = '{customerID}');";
             string customerName = database.getString(query);
-            lblWelcome.Text = $"Welcom ,{customerName}";
-            query = $"SELECT OrderID FROM Orders WHERE OrderID = '{customerID}';";
+            lblWelcome.Text = $"Welcome,{customerName}";
+
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'MAKING';";
             string orderID = database.getString(query);
             query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}';";
             string reservationID = database.getString(query);
-            if (orderID != "")
+            if (orderID != null || orderID != "")
             {
                 this.lblOrderID.Text = orderID;
                 query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 this.lblEstimatedTime.Text = $"{database.getInt(query).ToString()} Mins Left";
-                query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{customerID}';";
+                query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 string orderStatus = database.getString(query);
                 this.lblOrderStatus.Text = orderStatus;
             }
-            else
+            else if(orderID == null || orderID == "") 
             {
                 this.lblOrderID.Text = "N/A";
                 this.lblEstimatedTime.Text = "N/A";
                 this.lblOrderStatus.Text = "N/A";
             }
 
-            if (reservationID != "")
+            if (reservationID != null || reservationID != "")
             {
 
                 this.lblReservationID.Text = reservationID;
@@ -58,20 +59,15 @@ namespace IOOP_Assignment
                 query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 this.lblPlaceName.Text = database.getString(query);
                 query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
-                this.lblPlaceName.Text = database.getString(query);
+                this.lblReservationStatus.Text = database.getString(query);
             }
-            else
+            else if(reservationID == null || reservationID != "")
             {
                 this.lblReservationID.Text = "N/A";
                 this.lblReservationID.Text = "N/A";
                 this.lblPlaceID.Text = "N/A";
                 this.lblReservationStatus.Text = "N/A";
             }
-
-            query = $"SELECT OrderID FROM Orders WHERE OrderID = '{customerID}';";
-            this.lblOrderID.Text = database.getString(query);
-            query = $"SELECT EstimatedTimeLeft FROM Orders WHERE OrderID = '{customerID}';";
-            this.lblOrderID.Text = $"{database.getInt(query).ToString()} Mins Left";
 
         }
 
@@ -163,9 +159,9 @@ namespace IOOP_Assignment
             Database database = new Database(ConnectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
-            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
+            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
             database.insertOrUpdateValuesIntoDatabase(query);
-            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
+            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
             database.insertOrUpdateValuesIntoDatabase(query);
 
         }

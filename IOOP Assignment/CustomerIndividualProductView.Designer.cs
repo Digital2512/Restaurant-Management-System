@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualProductView));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
             this.minusBtn = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.lblProductQuantity = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.productImagePBox = new System.Windows.Forms.PictureBox();
+            this.addToCartBtn = new System.Windows.Forms.Button();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblSpecialInstructions = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
-            this.addToCartBtn = new System.Windows.Forms.Button();
+            this.productImagePBox = new System.Windows.Forms.PictureBox();
+            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,6 +59,7 @@
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(594, 45);
             this.headerPnl.TabIndex = 4;
+            this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // backBtnPnl
             // 
@@ -67,17 +68,7 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
+            this.backBtnPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.backBtnPnl_Paint);
             // 
             // minusBtn
             // 
@@ -107,6 +98,7 @@
             this.lblProductQuantity.Size = new System.Drawing.Size(18, 20);
             this.lblProductQuantity.TabIndex = 9;
             this.lblProductQuantity.Text = "1";
+            this.lblProductQuantity.Click += new System.EventHandler(this.lblProductQuantity_Click);
             // 
             // panel2
             // 
@@ -126,71 +118,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 10;
-            // 
-            // productImagePBox
-            // 
-            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.productImagePBox.Name = "productImagePBox";
-            this.productImagePBox.Size = new System.Drawing.Size(596, 334);
-            this.productImagePBox.TabIndex = 14;
-            this.productImagePBox.TabStop = false;
-            // 
-            // specialInstructionsRTxtBox
-            // 
-            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 608);
-            this.specialInstructionsRTxtBox.Name = "specialInstructionsRTxtBox";
-            this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
-            this.specialInstructionsRTxtBox.TabIndex = 13;
-            this.specialInstructionsRTxtBox.Text = "";
-            // 
-            // lblProductID
-            // 
-            this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(16, 345);
-            this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(55, 20);
-            this.lblProductID.TabIndex = 8;
-            this.lblProductID.Text = "P0001";
-            // 
-            // lblSpecialInstructions
-            // 
-            this.lblSpecialInstructions.AutoSize = true;
-            this.lblSpecialInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 576);
-            this.lblSpecialInstructions.Name = "lblSpecialInstructions";
-            this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
-            this.lblSpecialInstructions.TabIndex = 12;
-            this.lblSpecialInstructions.Text = "Special Instructions: ";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblProductName.Location = new System.Drawing.Point(12, 368);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(125, 29);
-            this.lblProductName.TabIndex = 9;
-            this.lblProductName.Text = "Fried Rice";
-            // 
-            // lblProductDescription
-            // 
-            this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Location = new System.Drawing.Point(16, 477);
-            this.lblProductDescription.MaximumSize = new System.Drawing.Size(550, 80);
-            this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(539, 80);
-            this.lblProductDescription.TabIndex = 11;
-            this.lblProductDescription.Text = resources.GetString("lblProductDescription.Text");
-            // 
-            // lblProductPrice
-            // 
-            this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblProductPrice.Location = new System.Drawing.Point(15, 408);
-            this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(80, 25);
-            this.lblProductPrice.TabIndex = 10;
-            this.lblProductPrice.Text = "RM5.00";
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // addToCartBtn
             // 
@@ -201,6 +129,90 @@
             this.addToCartBtn.Text = "Add To Cart";
             this.addToCartBtn.UseVisualStyleBackColor = true;
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
+            // 
+            // specialInstructionsRTxtBox
+            // 
+            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 608);
+            this.specialInstructionsRTxtBox.Name = "specialInstructionsRTxtBox";
+            this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
+            this.specialInstructionsRTxtBox.TabIndex = 13;
+            this.specialInstructionsRTxtBox.Text = "";
+            this.specialInstructionsRTxtBox.TextChanged += new System.EventHandler(this.specialInstructionsRTxtBox_TextChanged);
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(16, 345);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(55, 20);
+            this.lblProductID.TabIndex = 8;
+            this.lblProductID.Text = "P0001";
+            this.lblProductID.Click += new System.EventHandler(this.lblProductID_Click);
+            // 
+            // lblSpecialInstructions
+            // 
+            this.lblSpecialInstructions.AutoSize = true;
+            this.lblSpecialInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 576);
+            this.lblSpecialInstructions.Name = "lblSpecialInstructions";
+            this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
+            this.lblSpecialInstructions.TabIndex = 12;
+            this.lblSpecialInstructions.Text = "Special Instructions: ";
+            this.lblSpecialInstructions.Click += new System.EventHandler(this.lblSpecialInstructions_Click);
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblProductName.Location = new System.Drawing.Point(12, 368);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(125, 29);
+            this.lblProductName.TabIndex = 9;
+            this.lblProductName.Text = "Fried Rice";
+            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
+            // 
+            // lblProductDescription
+            // 
+            this.lblProductDescription.AutoSize = true;
+            this.lblProductDescription.Location = new System.Drawing.Point(16, 477);
+            this.lblProductDescription.MaximumSize = new System.Drawing.Size(550, 80);
+            this.lblProductDescription.Name = "lblProductDescription";
+            this.lblProductDescription.Size = new System.Drawing.Size(539, 80);
+            this.lblProductDescription.TabIndex = 11;
+            this.lblProductDescription.Text = resources.GetString("lblProductDescription.Text");
+            this.lblProductDescription.Click += new System.EventHandler(this.lblProductDescription_Click);
+            // 
+            // lblProductPrice
+            // 
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblProductPrice.Location = new System.Drawing.Point(15, 408);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(80, 25);
+            this.lblProductPrice.TabIndex = 10;
+            this.lblProductPrice.Text = "RM5.00";
+            this.lblProductPrice.Click += new System.EventHandler(this.lblProductPrice_Click);
+            // 
+            // productImagePBox
+            // 
+            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.productImagePBox.Name = "productImagePBox";
+            this.productImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.productImagePBox.TabIndex = 14;
+            this.productImagePBox.TabStop = false;
+            this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerIndividualProductView
             // 

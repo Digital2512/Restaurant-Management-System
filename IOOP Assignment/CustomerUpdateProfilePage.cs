@@ -30,7 +30,15 @@ namespace IOOP_Assignment
             passwordMTextBox.Text = database.getString(query);
             confirmPasswordMTextBox.Text = database.getString(query);
             query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}'";
-            birthdayDateTimePicker.Text = database.getDateTime(query).ToString();
+            string birthdayDateTimeString = database.getDateTime(query).ToString();
+            if (birthdayDateTimeString == DateTime.MinValue.ToString())
+            {
+                birthdayDateTimePicker.Value = DateTime.Now;
+            }
+            else
+            {
+                birthdayDateTimePicker.Value = database.getDateTime(query);
+            }
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
             string gender = database.getString(query);
             if (gender == "MALE")
@@ -100,6 +108,9 @@ namespace IOOP_Assignment
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Profile updated successfully!");
+                    this.Hide();
+                    CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+                    customerProfilePage.Show();
                 }
                 else
                 {

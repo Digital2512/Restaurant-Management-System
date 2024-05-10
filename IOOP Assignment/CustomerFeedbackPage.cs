@@ -43,6 +43,9 @@ namespace IOOP_Assignment
             if(feedback.sendFeedbackToDatabase() == true)
             {
                 MessageBox.Show("Feedback Sent! ");
+                this.Hide();
+                CustomerHomePage customerHomePage = new CustomerHomePage();
+                customerHomePage.Show();
             }
             else 
             {
@@ -59,7 +62,9 @@ namespace IOOP_Assignment
 
         private void backButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            CustomerHomePage customerHomePage = new CustomerHomePage();
+            customerHomePage.Show();
         }
 
         private void headerPnl_Paint(object sender, PaintEventArgs e)

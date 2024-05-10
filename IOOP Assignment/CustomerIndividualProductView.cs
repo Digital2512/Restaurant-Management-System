@@ -17,15 +17,17 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(connectionString);
-            string query = "SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
+            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string customerID = database.getString(query);
+            query = $"SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
             string productID = database.getString(query);
-            query = "SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
+            query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
             string productName = database.getString(query);
-            query = "SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
-            int productPrice = database.getInt(query);
-            query = "SELECT Description FROM Menu WHERE Chosen = 'TRUE';";
+            query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
+            int productPrice = database.getDecimal(query);
+            query = $"SELECT Description FROM Menu WHERE Chosen = 'TRUE';";
             string productDescription = database.getString(query);
-            query = "SELECT ImageDescription FROM Menu WHERE Chosen = 'TRUE';";
+            query = $"SELECT ImageDescription FROM Menu WHERE Chosen = 'TRUE';";
             string productImageDescription = database.getString(query);
             Image productImage = null;
             if (productImageDescription != null)
@@ -59,10 +61,12 @@ namespace IOOP_Assignment
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
             Database database = new Database(connectionString);
-            string query = "SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
+            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string customerID = database.getString(query);
+            query = $"SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
             string productID = database.getString(query);
-            query = "SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
-            int productPrice = database.getInt(query);
+            query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
+            int productPrice = database.getDecimal(query);
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
             string productSpecialInstructions = this.specialInstructionsRTxtBox.Text;
             query = "SELECT OrderID FROM Orders WHERE OrderStatus = 'ORDERING'";
@@ -74,8 +78,6 @@ namespace IOOP_Assignment
                 orderID = database.GenerateUniqueID("ORDER", "OrderID", "Orders");
                 DateTime now = DateTime.Now;
                 string orderDateTimeMade = now.ToString();
-                query = "SELECT CustomerID FROM Customer WHERE LoggedIn= 'TRUE';";
-                string customerID = database.getString(query);
                 query = $"INSERT INTO Orders(OrderID, OrderDateTime, CustomerID, OrderStatus, PaymentStatus) VALUES ('{orderID}', '{orderDateTimeMade}', '{customerID}', 'ORDERING', 'NOT_PAID');";
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
@@ -145,6 +147,68 @@ namespace IOOP_Assignment
                 int newProductQuantity = productQuantity - 1;
                 this.lblProductQuantity.Text = newProductQuantity.ToString();
             }
+        }
+
+        private void backBtnPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblProductQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void headerPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void specialInstructionsRTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProductID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSpecialInstructions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProductName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProductDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProductPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+            customerOrderPage.Show();
+        }
+
+        private void productImagePBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
