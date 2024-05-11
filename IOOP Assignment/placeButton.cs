@@ -34,13 +34,25 @@ namespace IOOP_Assignment
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Database database = new Database(connectionString);
-            string query = $"UPDATE PlacesOfReservation SET Chosen = 'TRUE' WHERE PlaceID = '{PlaceID}'";
-            database.insertOrUpdateValuesIntoDatabase(query);
-            CustomerReservationPage customerReservationPage = new CustomerReservationPage();
-            customerReservationPage.Hide();
-            CustomerIndividualReservationPlacePage customerIndividualReservationPlacePage = new CustomerIndividualReservationPlacePage();
-            customerIndividualReservationPlacePage.Show();
+            try
+            {
+                Database database = new Database(connectionString);
+                string query = $"UPDATE PlacesOfReservation SET Chosen = 'TRUE' WHERE PlaceID = '{PlaceID}'";
+                database.insertOrUpdateValuesIntoDatabase(query);
+
+                Form parentForm = this.FindForm();
+                if (parentForm != null)
+                {
+                    parentForm.Close();
+                }
+
+                CustomerIndividualReservationPlacePage customerIndividualReservationPlace = new CustomerIndividualReservationPlacePage();
+                customerIndividualReservationPlace.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
     }
 }

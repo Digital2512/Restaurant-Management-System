@@ -155,5 +155,12 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+            customerProfilePage.Show();
+        }
     }
 }

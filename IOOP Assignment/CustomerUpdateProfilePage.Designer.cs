@@ -86,7 +86,7 @@
             this.lblCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblCustomerID.Location = new System.Drawing.Point(508, 130);
             this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(123, 22);
+            this.lblCustomerID.Size = new System.Drawing.Size(2, 22);
             this.lblCustomerID.TabIndex = 28;
             // 
             // ratherNotSayRBtn
@@ -173,7 +173,7 @@
             this.lblUserID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblUserID.Location = new System.Drawing.Point(440, 73);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(78, 22);
+            this.lblUserID.Size = new System.Drawing.Size(2, 22);
             this.lblUserID.TabIndex = 19;
             this.lblUserID.Click += new System.EventHandler(this.lblUserID_Click);
             // 
@@ -207,6 +207,7 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblFullName
             // 
@@ -252,7 +253,7 @@
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
             this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
-            this.passwordShowBtn.Location = new System.Drawing.Point(349, 440);
+            this.passwordShowBtn.Location = new System.Drawing.Point(352, 355);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
             this.passwordShowBtn.TabIndex = 32;
@@ -271,7 +272,7 @@
             // 
             this.confirmPasswordShowHideBtn.BackColor = System.Drawing.Color.Transparent;
             this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
-            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(349, 356);
+            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(353, 442);
             this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
             this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
             this.confirmPasswordShowHideBtn.TabIndex = 36;

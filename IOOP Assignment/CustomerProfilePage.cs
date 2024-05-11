@@ -52,7 +52,7 @@ namespace IOOP_Assignment
             {
                 maleRBtn.Checked = false;
                 femaleRBtn.Checked = false;
-                ratherNotSayRBtn.Checked = false;
+                ratherNotSayRBtn.Checked = true;
             }
         }
 
@@ -84,6 +84,13 @@ namespace IOOP_Assignment
                 lblPasswordValue.Text = "********";
                 passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerHomePage customerHomePage = new CustomerHomePage();
+            customerHomePage.Show();
         }
     }
 }
