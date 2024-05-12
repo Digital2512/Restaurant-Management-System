@@ -32,6 +32,7 @@
             this.LabelChefHomePage = new System.Windows.Forms.TextBox();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.MenusidearButton = new System.Windows.Forms.Panel();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ButtonHome = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,7 +66,6 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.MenuButton = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +110,25 @@
             this.MenusidearButton.Name = "MenusidearButton";
             this.MenusidearButton.Size = new System.Drawing.Size(190, 57);
             this.MenusidearButton.TabIndex = 6;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuButton.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuButton.Location = new System.Drawing.Point(-26, -6);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MenuButton.Size = new System.Drawing.Size(238, 86);
+            this.MenuButton.TabIndex = 5;
+            this.MenuButton.Text = "                 Menu";
+            this.MenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.MenuButton.UseMnemonic = false;
+            this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // panel2
             // 
@@ -186,6 +205,7 @@
             this.buttonInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonInventory.UseMnemonic = false;
             this.buttonInventory.UseVisualStyleBackColor = false;
+            this.buttonInventory.Click += new System.EventHandler(this.buttonInventory_Click);
             // 
             // panel5
             // 
@@ -421,25 +441,6 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 22);
             this.textBox9.TabIndex = 24;
-            // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuButton.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuButton.Location = new System.Drawing.Point(-26, -6);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MenuButton.Size = new System.Drawing.Size(238, 86);
-            this.MenuButton.TabIndex = 5;
-            this.MenuButton.Text = "                 Menu";
-            this.MenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.MenuButton.UseMnemonic = false;
-            this.MenuButton.UseVisualStyleBackColor = false;
-            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // ChefHomePage
             // 

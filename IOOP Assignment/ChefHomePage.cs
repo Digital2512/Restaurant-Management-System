@@ -57,5 +57,12 @@ namespace IOOP_Assignment
             ChefOrderDetailsForm OD = new ChefOrderDetailsForm();
             OD.ShowDialog();
         }
+
+        private void buttonInventory_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Now navigating to Order Details Function Page");
+            ChefInventoryForm IS = new ChefInventoryForm ();
+            IS.ShowDialog();
+        }
     }
 }
