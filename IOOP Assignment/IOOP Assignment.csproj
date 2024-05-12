@@ -123,11 +123,11 @@
     <Compile Include="CustomerUpdateProfilePage.Designer.cs">
       <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChefInventoryPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ChefInventoryPage.Designer.cs">
+      <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </Compile>
     <Compile Include="IOOPDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
       <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ChefInventoryPage.resx">
+      <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
