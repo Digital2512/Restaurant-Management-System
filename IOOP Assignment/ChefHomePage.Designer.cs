@@ -39,40 +39,34 @@
             this.buttonViewOrder = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonInventory = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtChefID = new System.Windows.Forms.TextBox();
+            this.LogInButton = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelChefHomePage
@@ -207,31 +201,6 @@
             this.buttonInventory.UseVisualStyleBackColor = false;
             this.buttonInventory.Click += new System.EventHandler(this.buttonInventory_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.buttonProfile);
-            this.panel5.Location = new System.Drawing.Point(3, 267);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 57);
-            this.panel5.TabIndex = 6;
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.Location = new System.Drawing.Point(-16, -9);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonProfile.Size = new System.Drawing.Size(228, 92);
-            this.buttonProfile.TabIndex = 6;
-            this.buttonProfile.Text = " Profile";
-            this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonProfile.UseMnemonic = false;
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button1);
@@ -290,27 +259,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Gender : ";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(404, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(404, 171);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(404, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -323,25 +271,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(251, 223);
+            this.label6.Location = new System.Drawing.Point(355, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Orders\' information";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(470, 223);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Inventory information";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(239, 308);
+            this.label8.Location = new System.Drawing.Point(343, 325);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 16);
             this.label8.TabIndex = 12;
@@ -349,7 +288,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(221, 267);
+            this.label9.Location = new System.Drawing.Point(325, 284);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 16);
             this.label9.TabIndex = 13;
@@ -358,89 +297,108 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(221, 308);
+            this.label10.Location = new System.Drawing.Point(325, 325);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 16);
             this.label10.TabIndex = 14;
             this.label10.Text = "Order completed :";
             // 
-            // textBox4
+            // panel5
             // 
-            this.textBox4.Location = new System.Drawing.Point(341, 308);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(63, 22);
-            this.textBox4.TabIndex = 15;
+            this.panel5.Controls.Add(this.buttonProfile);
+            this.panel5.Location = new System.Drawing.Point(3, 267);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(190, 57);
+            this.panel5.TabIndex = 6;
             // 
-            // textBox5
+            // buttonProfile
             // 
-            this.textBox5.Location = new System.Drawing.Point(341, 264);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(63, 22);
-            this.textBox5.TabIndex = 16;
+            this.buttonProfile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.Location = new System.Drawing.Point(-16, -9);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonProfile.Size = new System.Drawing.Size(228, 92);
+            this.buttonProfile.TabIndex = 6;
+            this.buttonProfile.Text = " Profile";
+            this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProfile.UseMnemonic = false;
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(421, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(421, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "label7";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(453, 267);
+            this.label11.Location = new System.Drawing.Point(421, 140);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.Size = new System.Drawing.Size(51, 16);
             this.label11.TabIndex = 17;
-            this.label11.Text = "Japanese :";
+            this.label11.Text = "label11";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(470, 308);
+            this.label12.Location = new System.Drawing.Point(445, 330);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 16);
+            this.label12.Size = new System.Drawing.Size(51, 16);
             this.label12.TabIndex = 18;
-            this.label12.Text = "Korean : ";
+            this.label12.Text = "label12";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(461, 343);
+            this.label13.Location = new System.Drawing.Point(451, 284);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 16);
+            this.label13.Size = new System.Drawing.Size(51, 16);
             this.label13.TabIndex = 19;
-            this.label13.Text = "Western : ";
+            this.label13.Text = "label13";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(473, 379);
+            this.label14.Location = new System.Drawing.Point(296, 379);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 16);
+            this.label14.Size = new System.Drawing.Size(56, 16);
             this.label14.TabIndex = 20;
-            this.label14.Text = "Drinks : ";
+            this.label14.Text = "Cehf ID: ";
             // 
-            // textBox6
+            // txtChefID
             // 
-            this.textBox6.Location = new System.Drawing.Point(533, 379);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 21;
+            this.txtChefID.Location = new System.Drawing.Point(358, 376);
+            this.txtChefID.Name = "txtChefID";
+            this.txtChefID.Size = new System.Drawing.Size(100, 22);
+            this.txtChefID.TabIndex = 21;
             // 
-            // textBox7
+            // LogInButton
             // 
-            this.textBox7.Location = new System.Drawing.Point(533, 343);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 22;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(533, 305);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 23;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(533, 267);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 24;
+            this.LogInButton.Location = new System.Drawing.Point(494, 372);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(75, 23);
+            this.LogInButton.TabIndex = 22;
+            this.LogInButton.Text = "Log in";
+            this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
             // ChefHomePage
             // 
@@ -448,25 +406,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(667, 404);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.LogInButton);
+            this.Controls.Add(this.txtChefID);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -480,8 +432,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,33 +449,27 @@
         private System.Windows.Forms.Button buttonViewOrder;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonInventory;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.TextBox txtChefID;
+        private System.Windows.Forms.Button LogInButton;
     }
 }

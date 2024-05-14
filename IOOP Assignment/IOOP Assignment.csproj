@@ -129,6 +129,12 @@
     <Compile Include="ChefInventoryPage.Designer.cs">
       <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefProfileForm.Designer.cs">
+      <DependentUpon>ChefProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IOOPDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefOrderDetailsForm.resx">
       <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefProfileForm.resx">
+      <DependentUpon>ChefProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
