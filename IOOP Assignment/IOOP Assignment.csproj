@@ -186,6 +186,9 @@
     <EmbeddedResource Include="ManagerHomePage.resx">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMenuPage.resx">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -199,8 +202,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -232,28 +235,22 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\3LinesSidebarIconResized.png" />
+    <None Include="PictureFolder\FeedbackButtonBGChanged1.png" />
+    <None Include="PictureFolder\FeedbackButtonBGChanged.png" />
     <None Include="Resources\managerIcon21.png" />
     <None Include="Resources\managerIcon2.png" />
     <None Include="Resources\managerIcon1.png" />
-    <None Include="Resources\FoodIcon1.png" />
-    <None Include="Resources\FoodIcon.png" />
     <None Include="Resources\managerIcon.png" />
     <None Include="Resources\DeliciousIcon.png" />
     <None Include="Resources\DeliciousIcon.jpg" />
-    <None Include="Resources\imageIcon3.png" />
     <None Include="Resources\4PaxImage1.png" />
     <None Include="Resources\8PaxImage3.png" />
-    <None Include="Resources\exitButton1.png" />
     <None Include="Resources\backButton.png" />
-    <None Include="Resources\exitButton.png" />
     <None Include="Resources\2PaxImage2.png" />
-    <None Include="Resources\editIcon.png" />
-    <None Include="Resources\imageIcon2.png" />
     <None Include="Resources\profileIcon2.png" />
     <None Include="Resources\profileIcon1.png" />
-    <None Include="Resources\imageIcon1.png" />
     <None Include="Resources\profileIcon.png" />
-    <None Include="Resources\imageIcon.png" />
     <None Include="Resources\menuIcon.png" />
     <None Include="Resources\reservationIcon.png" />
     <None Include="Resources\tablesIcon.png" />

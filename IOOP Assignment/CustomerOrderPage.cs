@@ -29,24 +29,7 @@ namespace IOOP_Assignment
 
                 if (!string.IsNullOrEmpty(productImageDescription))
                 {
-                    switch (productImageDescription)
-                    {
-                        case "Burger":
-                            productImage = Properties.Resources.burgerImage;
-                            break;
-                        case "Salad":
-                            productImage = Properties.Resources.saladImage;
-                            break;
-                        case "Pizza":
-                            productImage = Properties.Resources.pizzaImage;
-                            break;
-                        case "Smoothie":
-                            productImage = Properties.Resources.smoothieImage;
-                            break;
-                        case "Pasta":
-                            productImage = Properties.Resources.pastaImage;
-                            break;
-                    }
+                    productImage = Properties.Resources.DeliciousIcon;
                 }
 
                 var productButton = new foodButton(productID, productName, productPrice, productDescription, productImage, productRatingText);
@@ -154,24 +137,7 @@ namespace IOOP_Assignment
 
                 if (!string.IsNullOrEmpty(productImageDescription))
                 {
-                    switch (productImageDescription)
-                    {
-                        case "Burger":
-                            productImage = Properties.Resources.burgerImage;
-                            break;
-                        case "Salad":
-                            productImage = Properties.Resources.saladImage;
-                            break;
-                        case "Pizza":
-                            productImage = Properties.Resources.pizzaImage;
-                            break;
-                        case "Smoothie":
-                            productImage = Properties.Resources.smoothieImage;
-                            break;
-                        case "Pasta":
-                            productImage = Properties.Resources.pastaImage;
-                            break;
-                    }
+                    productImage = Properties.Resources.DeliciousIcon;
                 }
 
                 var productButton = new foodButton(productID, productName, productPrice, productDescription, productImage, productRatingText);

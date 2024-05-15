@@ -11,7 +11,6 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
-<<<<<<< HEAD
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
@@ -20,4 +19,23 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
 =======
->>>>>>> parent of 0fafc54 (commit)
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.loginForm.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerHomePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.Properties.Resources.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.GenerateResource.cache
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer.mdf
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer_log.ldf
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb

@@ -24,12 +24,7 @@ namespace IOOP_Assignment
             frmViewProfile.ShowDialog();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ManagerMenuPage frmMenu = new ManagerMenuPage();
-            frmMenu.ShowDialog();
-        }
+        
 
         private void btnTables_Click(object sender, EventArgs e)
         {
@@ -43,6 +38,13 @@ namespace IOOP_Assignment
             this.Hide();
             ManagerReservationReportPage frmReport = new ManagerReservationReportPage();
             frmReport.ShowDialog();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManagerMenuPage frmMenu = new ManagerMenuPage();
+            frmMenu.ShowDialog();
         }
     }
 }
