@@ -235,6 +235,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\vipImage.png" />
+    <None Include="PictureFolder\tablesIcon.png" />
+    <None Include="PictureFolder\searchIcon2.png" />
+    <None Include="PictureFolder\ReservationIcon1.png" />
+    <None Include="PictureFolder\menuIcon.png" />
+    <None Include="PictureFolder\FoodIcon.png" />
+    <None Include="PictureFolder\exitButton.png" />
+    <None Include="PictureFolder\editIcon.png" />
+    <None Include="PictureFolder\8PaxImage.png" />
+    <None Include="PictureFolder\4PaxImage.png" />
+    <None Include="PictureFolder\2PaxImage.png" />
     <None Include="PictureFolder\3LinesSidebarIconResized.png" />
     <None Include="PictureFolder\FeedbackButtonBGChanged1.png" />
     <None Include="PictureFolder\FeedbackButtonBGChanged.png" />

@@ -39,3 +39,4 @@ C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOO
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerMenuPage.resources
