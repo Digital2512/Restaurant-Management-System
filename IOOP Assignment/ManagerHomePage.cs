@@ -17,12 +17,6 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        private void ManagerHomePage_Load(object sender, EventArgs e)
-        {
-
-        }
-        
-
         private void picManager_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -1,4 +1,6 @@
-﻿namespace IOOP_Assignment
+﻿using IOOP_Assignment.Properties;
+
+namespace IOOP_Assignment
 {
     partial class ManagerHomePage
     {
@@ -28,30 +30,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerHomePage));
-            this.label2 = new System.Windows.Forms.Label();
             this.lblGreetMng = new System.Windows.Forms.Label();
-            this.lblResv = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblResv = new System.Windows.Forms.Label();
             this.btnResvReport = new System.Windows.Forms.Button();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picManager = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(461, 236);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "What would you like to do?";
             // 
             // lblGreetMng
             // 
@@ -63,15 +54,15 @@
             this.lblGreetMng.TabIndex = 2;
             this.lblGreetMng.Text = "Hello, Manager";
             // 
-            // lblResv
+            // label2
             // 
-            this.lblResv.AutoSize = true;
-            this.lblResv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResv.Location = new System.Drawing.Point(36, 534);
-            this.lblResv.Name = "lblResv";
-            this.lblResv.Size = new System.Drawing.Size(165, 20);
-            this.lblResv.TabIndex = 9;
-            this.lblResv.Text = "Reservation Report";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(461, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "What would you like to do?";
             // 
             // panel1
             // 
@@ -81,6 +72,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 213);
             this.panel1.TabIndex = 17;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::IOOP_Assignment.Properties.Resources.DeliciousIcon;
+            this.pictureBox2.Location = new System.Drawing.Point(-12, -15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(269, 231);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblResv
+            // 
+            this.lblResv.AutoSize = true;
+            this.lblResv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResv.Location = new System.Drawing.Point(36, 534);
+            this.lblResv.Name = "lblResv";
+            this.lblResv.Size = new System.Drawing.Size(165, 20);
+            this.lblResv.TabIndex = 9;
+            this.lblResv.Text = "Reservation Report";
             // 
             // btnResvReport
             // 
@@ -124,28 +136,17 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-12, -15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(269, 231);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
             // picManager
             // 
             this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.managerIcon;
             this.picManager.Location = new System.Drawing.Point(554, 30);
             this.picManager.Name = "picManager";
             this.picManager.Size = new System.Drawing.Size(146, 140);
             this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picManager.TabIndex = 15;
             this.picManager.TabStop = false;
-            this.picManager.Click += new System.EventHandler(this.picManager_Click);
             // 
             // ManagerHomePage
             // 
@@ -164,7 +165,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManagerHomePage";
             this.Text = "ManagerHomePage";
-            this.Load += new System.EventHandler(this.ManagerHomePage_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picManager)).EndInit();
@@ -174,14 +174,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
+
         private System.Windows.Forms.Label lblGreetMng;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblResv;
         private System.Windows.Forms.PictureBox picManager;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResvReport;
         private System.Windows.Forms.Button btnTables;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnMenu;
     }
 }

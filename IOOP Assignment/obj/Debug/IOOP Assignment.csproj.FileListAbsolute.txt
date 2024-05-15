@@ -11,6 +11,7 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+<<<<<<< HEAD
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
@@ -18,3 +19,5 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
+=======
+>>>>>>> parent of 0fafc54 (commit)

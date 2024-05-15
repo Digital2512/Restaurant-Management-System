@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmmanagerhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmmanagerhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmmanagerhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmmanagerhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmviewprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmviewprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmupdateprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmupdateprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\frmupdateprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmupdateprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmviewprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:frmviewprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managerhomepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerhomepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,25 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 93,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBIAAAAuAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAIAywBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T06:01:55.698Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagerHomePage.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs",
+              "RelativeDocumentMoniker": "ManagerHomePage.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs",
+              "RelativeToolTip": "ManagerHomePage.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAiwC4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T01:47:27.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManagerHomePage.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.Designer.cs",
+              "RelativeDocumentMoniker": "ManagerHomePage.Designer.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.Designer.cs",
+              "RelativeToolTip": "ManagerHomePage.Designer.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAmwK0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T01:38:40.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerHomePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs",
+              "RelativeDocumentMoniker": "ManagerHomePage.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs [Design]",
+              "RelativeToolTip": "ManagerHomePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T01:38:30.818Z",
+              "EditorCaption": " [Design]"
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -77,106 +95,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmUpdateProfile.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmUpdateProfile.cs",
-              "RelativeDocumentMoniker": "frmUpdateProfile.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmUpdateProfile.cs [Design]",
-              "RelativeToolTip": "frmUpdateProfile.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T12:39:37.141Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmViewProfile.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmViewProfile.cs",
-              "RelativeDocumentMoniker": "frmViewProfile.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmViewProfile.cs",
-              "RelativeToolTip": "frmViewProfile.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAqwBoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T12:39:07.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "frmViewProfile.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmViewProfile.cs",
-              "RelativeDocumentMoniker": "frmViewProfile.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmViewProfile.cs [Design]",
-              "RelativeToolTip": "frmViewProfile.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T12:38:33.338Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmManagerHome.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmManagerHome.cs",
-              "RelativeDocumentMoniker": "frmManagerHome.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmManagerHome.cs [Design]",
-              "RelativeToolTip": "frmManagerHome.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T05:59:56.339Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmManagerHome.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmManagerHome.cs",
-              "RelativeDocumentMoniker": "frmManagerHome.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmManagerHome.cs",
-              "RelativeToolTip": "frmManagerHome.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T06:00:05.659Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmMenu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmMenu.cs",
-              "RelativeDocumentMoniker": "frmMenu.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmMenu.cs [Design]",
-              "RelativeToolTip": "frmMenu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T06:11:08.59Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMenu.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmMenu.cs",
-              "RelativeDocumentMoniker": "frmMenu.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmMenu.cs",
-              "RelativeToolTip": "frmMenu.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAowCoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T06:58:31.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmUpdateProfile.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmUpdateProfile.cs",
-              "RelativeDocumentMoniker": "frmUpdateProfile.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\frmUpdateProfile.cs",
-              "RelativeToolTip": "frmUpdateProfile.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAuwBUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T06:36:02.413Z",
-              "EditorCaption": ""
             }
           ]
         }

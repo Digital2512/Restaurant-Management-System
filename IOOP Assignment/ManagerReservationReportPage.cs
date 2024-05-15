@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class frmPlace : Form
+    public partial class ManagerReservationReportPage : Form
     {
-        public frmPlace()
+        public ManagerReservationReportPage()
         {
             InitializeComponent();
         }

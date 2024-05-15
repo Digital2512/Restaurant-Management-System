@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -121,11 +123,36 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerHomePage.Designer.cs">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMenuPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMenuPage.Designer.cs">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.Designer.cs">
+      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTablesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTablesPage.Designer.cs">
+      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.Designer.cs">
+      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,16 +183,14 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerHomePage.resx">
+      <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="foodButton.resx">
       <DependentUpon>foodButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +198,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -202,6 +232,41 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\managerIcon21.png" />
+    <None Include="Resources\managerIcon2.png" />
+    <None Include="Resources\managerIcon1.png" />
+    <None Include="Resources\FoodIcon1.png" />
+    <None Include="Resources\FoodIcon.png" />
+    <None Include="Resources\managerIcon.png" />
+    <None Include="Resources\DeliciousIcon.png" />
+    <None Include="Resources\DeliciousIcon.jpg" />
+    <None Include="Resources\imageIcon3.png" />
+    <None Include="Resources\4PaxImage1.png" />
+    <None Include="Resources\8PaxImage3.png" />
+    <None Include="Resources\exitButton1.png" />
+    <None Include="Resources\backButton.png" />
+    <None Include="Resources\exitButton.png" />
+    <None Include="Resources\2PaxImage2.png" />
+    <None Include="Resources\editIcon.png" />
+    <None Include="Resources\imageIcon2.png" />
+    <None Include="Resources\profileIcon2.png" />
+    <None Include="Resources\profileIcon1.png" />
+    <None Include="Resources\imageIcon1.png" />
+    <None Include="Resources\profileIcon.png" />
+    <None Include="Resources\imageIcon.png" />
+    <None Include="Resources\menuIcon.png" />
+    <None Include="Resources\reservationIcon.png" />
+    <None Include="Resources\tablesIcon.png" />
+    <None Include="Resources\resvReportIcon.png" />
+    <None Include="Resources\upcomingIcon.png" />
+    <None Include="Resources\pendingIcon.png" />
+    <None Include="Resources\8PaxImage2.png" />
+    <None Include="Resources\8PaxImage1.png" />
+    <None Include="Resources\2PaxImage1.png" />
+    <None Include="Resources\8PaxImage.png" />
+    <None Include="Resources\2PaxImage.png" />
+    <None Include="Resources\4PaxImage.png" />
+    <None Include="Resources\vipImage.png" />
     <None Include="Resources\eye.png" />
     <None Include="PictureFolder\addIcon.png" />
     <None Include="Resources\add.png" />
