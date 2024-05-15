@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class frmViewProfile : Form
+    public partial class ManagerReservationApprovalPage : Form
     {
-        public frmViewProfile()
+        public ManagerReservationApprovalPage()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEditPro_Click(object sender, EventArgs e)
-        {
-            frmViewProfile frm = new frmViewProfile();
-
         }
     }
 }

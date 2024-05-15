@@ -22,11 +22,14 @@ namespace IOOP_Assignment
             frmViewProfile form = new frmViewProfile();
             form.Show();
         }
-
+        public sting connecionString = ""
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             frmMenu form = new frmMenu();
             form.Show();
+            Database database = new Database(connecionString);
+            database.
+
         }
     }
 }
