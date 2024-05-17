@@ -40,3 +40,9 @@ C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOO
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerMenuPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationReportPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerTablesPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerViewProfilePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManageUpdateProfilePage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerAddReservationPage.resources
+C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationSuccessfulPage.resources

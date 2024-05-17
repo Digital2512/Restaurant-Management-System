@@ -17,7 +17,7 @@ namespace IOOP_Assignment
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ManagerHomePage());
+            Application.Run(new ManagerTablesPage());
 
         }
     }

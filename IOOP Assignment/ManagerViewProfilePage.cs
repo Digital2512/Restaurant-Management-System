@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,41 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
+
+
+        private void ManagerViewProfilePage_Load(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connetionString);
+            SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday FROM Users", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                lblUserID.Text = "User ID: " + row["UserID"].ToString();
+                lblPsw.Text = "Password: " + row["Password"].ToString();
+                lblRole.Text = "Role: " + row["Role"].ToString();
+                lblName.Text = "Name: " + row["FullName"].ToString();
+                lblGender.Text = "Gender: " + row["Gender"].ToString();
+                lblBirthday.Text = "Birthday: " + row["Birthday"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("No data found.");
+            }
+        }
+
+
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }
