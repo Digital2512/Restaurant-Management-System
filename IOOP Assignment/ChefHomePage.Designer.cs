@@ -39,6 +39,8 @@
             this.buttonViewOrder = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonInventory = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonProfile = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
@@ -50,8 +52,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,13 +60,15 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtChefID = new System.Windows.Forms.TextBox();
             this.LogInButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelChefHomePage
@@ -201,6 +203,32 @@
             this.buttonInventory.UseVisualStyleBackColor = false;
             this.buttonInventory.Click += new System.EventHandler(this.buttonInventory_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.buttonProfile);
+            this.panel5.Location = new System.Drawing.Point(3, 267);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(190, 57);
+            this.panel5.TabIndex = 6;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.Location = new System.Drawing.Point(-16, -9);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonProfile.Size = new System.Drawing.Size(228, 92);
+            this.buttonProfile.TabIndex = 6;
+            this.buttonProfile.Text = " Profile";
+            this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProfile.UseMnemonic = false;
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button1);
@@ -303,32 +331,6 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Order completed :";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.buttonProfile);
-            this.panel5.Location = new System.Drawing.Point(3, 267);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 57);
-            this.panel5.TabIndex = 6;
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.Location = new System.Drawing.Point(-16, -9);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonProfile.Size = new System.Drawing.Size(228, 92);
-            this.buttonProfile.TabIndex = 6;
-            this.buttonProfile.Text = " Profile";
-            this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonProfile.UseMnemonic = false;
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -400,12 +402,22 @@
             this.LogInButton.UseVisualStyleBackColor = true;
             this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(535, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ChefHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(667, 404);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.txtChefID);
             this.Controls.Add(this.label14);
@@ -432,8 +444,9 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,5 +484,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtChefID;
         private System.Windows.Forms.Button LogInButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
