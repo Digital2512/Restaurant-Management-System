@@ -15,9 +15,11 @@ namespace IOOP_Assignment
     public partial class ChefHomePage : Form
     {
         bool sidebarExpand;
-        public ChefHomePage()
+        private string username;
+        public ChefHomePage(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
 
@@ -70,7 +72,7 @@ namespace IOOP_Assignment
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Now navigating to Chef Profile Page");
-            ChefProfileForm CP = new ChefProfileForm();
+            ChefProfileForm CP = new ChefProfileForm(username);
             CP.ShowDialog();
         }
 
