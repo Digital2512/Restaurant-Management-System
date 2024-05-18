@@ -29,11 +29,12 @@ namespace IOOP_Assignment
 
                 foreach (string orderDetailsID in orderDetailsIDArray)
                 {
-                    query = $"SELECT Name, Price, Quantity, SpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
+                    query = $"SELECT ProductID, Name, Price, Quantity, SpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
                     DataTable cartDataTable = database.getDataTable(query);
 
                     foreach (DataRow row in cartDataTable.Rows)
                     {
+                        string productID = row["ProductID"].ToString();
                         string productName = row["Name"].ToString();
                         string productPrice = row["Price"].ToString();
                         string productQuantity = row["Quantity"].ToString();
@@ -45,7 +46,10 @@ namespace IOOP_Assignment
                         decimal productSubtotalAmount = intProductPrice * intProductQuantity;
                         subtotalAmount += productSubtotalAmount;
 
-                        var cartProductButton = new cartProductButton(productName, productSpecialInstructions, productPrice, productQuantity);
+                        query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
+                        Image productImage = database.getImage(query);
+
+                        var cartProductButton = new cartProductButton(productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);
                     }
                 }
@@ -60,6 +64,7 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("The cart has no items");
             }
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -127,7 +127,7 @@ namespace IOOP_Assignment
                 string productDescription = row["Description"].ToString();
                 string productRatingText = row["Ratings"].ToString();
 
-                query = $"SELECT ProductImge FROM Menu WHERE ProductID = '{productID}';";
+                query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                 Image productImage = database.getImage(query);
 
                 var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
