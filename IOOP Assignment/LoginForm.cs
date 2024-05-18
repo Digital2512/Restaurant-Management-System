@@ -18,10 +18,6 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
         private void loginButton_Click(object sender, EventArgs e)

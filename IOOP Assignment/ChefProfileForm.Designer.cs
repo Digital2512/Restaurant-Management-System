@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ProfileUserID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtBirthday = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBirthday = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
@@ -42,14 +47,15 @@
             this.ProfilePassword = new System.Windows.Forms.Label();
             this.ProfileName = new System.Windows.Forms.Label();
             this.ProfileRole = new System.Windows.Forms.Label();
-            this.UpdateButton = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnPassword = new System.Windows.Forms.Button();
+            this.BtnUsername = new System.Windows.Forms.Button();
+            this.BtnGender = new System.Windows.Forms.Button();
+            this.BtnBirthday = new System.Windows.Forms.Button();
             this.ButtonProfileCancel = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +71,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.txtGender);
+            this.groupBox1.Controls.Add(this.txtBirthday);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.lblBirthday);
             this.groupBox1.Controls.Add(this.lblGender);
@@ -84,6 +94,34 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Current Profile";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(210, 200);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.TabIndex = 31;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(210, 262);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 22);
+            this.txtName.TabIndex = 33;
+            // 
+            // txtGender
+            // 
+            this.txtGender.Location = new System.Drawing.Point(210, 291);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(100, 22);
+            this.txtGender.TabIndex = 34;
+            // 
+            // txtBirthday
+            // 
+            this.txtBirthday.Location = new System.Drawing.Point(210, 322);
+            this.txtBirthday.Name = "txtBirthday";
+            this.txtBirthday.Size = new System.Drawing.Size(100, 22);
+            this.txtBirthday.TabIndex = 35;
             // 
             // pictureBox1
             // 
@@ -192,14 +230,15 @@
             this.ProfileRole.TabIndex = 3;
             this.ProfileRole.Text = "Role: ";
             // 
-            // UpdateButton
+            // BtnUpdate
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(466, 353);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
-            this.UpdateButton.TabIndex = 20;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Location = new System.Drawing.Point(466, 353);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.BtnUpdate.TabIndex = 20;
+            this.BtnUpdate.Text = "Update";
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // ButtonBack
             // 
@@ -219,41 +258,45 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Choose the information that you want to change";
             // 
-            // button1
+            // BtnPassword
             // 
-            this.button1.Location = new System.Drawing.Point(535, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Password";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnPassword.Location = new System.Drawing.Point(535, 218);
+            this.BtnPassword.Name = "BtnPassword";
+            this.BtnPassword.Size = new System.Drawing.Size(94, 23);
+            this.BtnPassword.TabIndex = 23;
+            this.BtnPassword.Text = "Password";
+            this.BtnPassword.UseVisualStyleBackColor = true;
+            this.BtnPassword.Click += new System.EventHandler(this.BtnPassword_Click);
             // 
-            // button2
+            // BtnUsername
             // 
-            this.button2.Location = new System.Drawing.Point(535, 247);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Username";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnUsername.Location = new System.Drawing.Point(535, 247);
+            this.BtnUsername.Name = "BtnUsername";
+            this.BtnUsername.Size = new System.Drawing.Size(94, 23);
+            this.BtnUsername.TabIndex = 24;
+            this.BtnUsername.Text = "Username";
+            this.BtnUsername.UseVisualStyleBackColor = true;
+            this.BtnUsername.Click += new System.EventHandler(this.BtnUsername_Click);
             // 
-            // button3
+            // BtnGender
             // 
-            this.button3.Location = new System.Drawing.Point(535, 276);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Gender";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnGender.Location = new System.Drawing.Point(535, 276);
+            this.BtnGender.Name = "BtnGender";
+            this.BtnGender.Size = new System.Drawing.Size(94, 23);
+            this.BtnGender.TabIndex = 25;
+            this.BtnGender.Text = "Gender";
+            this.BtnGender.UseVisualStyleBackColor = true;
+            this.BtnGender.Click += new System.EventHandler(this.BtnGender_Click);
             // 
-            // button4
+            // BtnBirthday
             // 
-            this.button4.Location = new System.Drawing.Point(535, 305);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Birthday";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnBirthday.Location = new System.Drawing.Point(535, 305);
+            this.BtnBirthday.Name = "BtnBirthday";
+            this.BtnBirthday.Size = new System.Drawing.Size(94, 23);
+            this.BtnBirthday.TabIndex = 26;
+            this.BtnBirthday.Text = "Birthday";
+            this.BtnBirthday.UseVisualStyleBackColor = true;
+            this.BtnBirthday.Click += new System.EventHandler(this.BtnBirthday_Click);
             // 
             // ButtonProfileCancel
             // 
@@ -263,20 +306,27 @@
             this.ButtonProfileCancel.TabIndex = 27;
             this.ButtonProfileCancel.Text = "Cancel";
             this.ButtonProfileCancel.UseVisualStyleBackColor = true;
+            this.ButtonProfileCancel.Click += new System.EventHandler(this.ButtonProfileCancel_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ChefProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 495);
+            this.ClientSize = new System.Drawing.Size(802, 495);
             this.Controls.Add(this.ButtonProfileCancel);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnBirthday);
+            this.Controls.Add(this.BtnGender);
+            this.Controls.Add(this.BtnUsername);
+            this.Controls.Add(this.BtnPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonBack);
-            this.Controls.Add(this.UpdateButton);
+            this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChefProfileForm";
             this.Text = "Chef Profile ";
@@ -304,13 +354,18 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnPassword;
+        private System.Windows.Forms.Button BtnUsername;
+        private System.Windows.Forms.Button BtnGender;
+        private System.Windows.Forms.Button BtnBirthday;
         private System.Windows.Forms.Button ButtonProfileCancel;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.TextBox txtBirthday;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

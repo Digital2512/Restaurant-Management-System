@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
@@ -20,8 +12,9 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             this.username = username;
+            LoadChefInfo(username);
+            LoadOrderInfo(username);
         }
-
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
@@ -57,31 +50,31 @@ namespace IOOP_Assignment
 
         private void buttonViewOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Now navigating to Order Details Function Page");
+            MessageBox.Show("Now navigating to Order Details Function Page");
             ChefOrderDetailsForm OD = new ChefOrderDetailsForm();
             OD.ShowDialog();
         }
 
         private void buttonInventory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Now navigating to Inventory Function Page");
-            ChefInventoryForm IS = new ChefInventoryForm ();
+            MessageBox.Show("Now navigating to Inventory Function Page");
+            ChefInventoryForm IS = new ChefInventoryForm();
             IS.ShowDialog();
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Now navigating to Chef Profile Page");
+            MessageBox.Show("Now navigating to Chef Profile Page");
             ChefProfileForm CP = new ChefProfileForm(username);
             CP.ShowDialog();
         }
 
-        private void LoadChefInfo(int chefId)
+        private void LoadChefInfo(string chefId)
         {
             using (SqlConnection conn = new SqlConnection("Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;"))
             {
                 conn.Open();
-                string query = "SELECT Name, Age, Gender FROM Chef WHERE ChefID = @ChefID";
+                string query = "SELECT FullName, Gender, Role FROM Users WHERE UserID = @ChefID";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@ChefID", chefId);
@@ -90,9 +83,9 @@ namespace IOOP_Assignment
                     {
                         if (reader.Read())
                         {
-                            label1.Text = reader["Name"].ToString();
-                            label11.Text = reader["Age"].ToString();
-                            label7.Text = reader["Gender"].ToString();
+                            label1.Text = reader["FullName"].ToString();
+                            label11.Text = reader["Gender"].ToString();
+                            label7.Text = reader["Role"].ToString();
                         }
                         else
                         {
@@ -102,46 +95,34 @@ namespace IOOP_Assignment
                 }
             }
         }
-        private void LoadOrderInfo()
+
+        private void LoadOrderInfo(string chefID)
         {
             using (SqlConnection conn = new SqlConnection("Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;"))
             {
                 conn.Open();
-                string queryCompleted = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'Completed'";
-                string queryUncompleted = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'Uncompleted'";
+                string queryCompleted = "SELECT COUNT(*) FROM Orders WHERE Status = 'Completed' AND ChefID = @chefID";
+                string queryUncompleted = "SELECT COUNT(*) FROM Orders WHERE Status = 'Uncompleted' AND ChefID = @chefID";
+                string queryPending = "SELECT COUNT(*) FROM Orders WHERE Status = 'Pending' AND ChefID = @chefID";
 
                 using (SqlCommand cmdCompleted = new SqlCommand(queryCompleted, conn))
                 {
+                    cmdCompleted.Parameters.AddWithValue("@chefID", chefID);
                     label12.Text = cmdCompleted.ExecuteScalar().ToString();
                 }
 
                 using (SqlCommand cmdUncompleted = new SqlCommand(queryUncompleted, conn))
                 {
+                    cmdUncompleted.Parameters.AddWithValue("@chefID", chefID);
                     label13.Text = cmdUncompleted.ExecuteScalar().ToString();
+                }
+
+                using (SqlCommand cmdPending = new SqlCommand(queryPending, conn))
+                {
+                    cmdPending.Parameters.AddWithValue("@chefID", chefID);
+                    label14.Text = cmdPending.ExecuteScalar().ToString();
                 }
             }
         }
-
-        private void LogInButton_Click(object sender, EventArgs e)
-        {
-            if (int.TryParse(txtChefID.Text, out int chefId))
-            {
-                LoadChefInfo(chefId);
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid ChefID.");
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-
-    
-
-    
-
 }

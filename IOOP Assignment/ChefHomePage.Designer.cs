@@ -58,9 +58,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtChefID = new System.Windows.Forms.TextBox();
-            this.LogInButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.MenusidearButton.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,7 +66,6 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelChefHomePage
@@ -274,18 +271,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(342, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Age : ";
+            this.label3.Text = "Gender : ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(342, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.Size = new System.Drawing.Size(42, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Gender : ";
+            this.label4.Text = "Role :";
             // 
             // label5
             // 
@@ -352,7 +349,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(421, 140);
+            this.label11.Location = new System.Drawing.Point(421, 141);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 16);
             this.label11.TabIndex = 17;
@@ -361,7 +358,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(445, 330);
+            this.label12.Location = new System.Drawing.Point(451, 325);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 16);
             this.label12.TabIndex = 18;
@@ -379,37 +376,20 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(296, 379);
+            this.label14.Location = new System.Drawing.Point(451, 359);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
+            this.label14.Size = new System.Drawing.Size(51, 16);
             this.label14.TabIndex = 20;
-            this.label14.Text = "Cehf ID: ";
+            this.label14.Text = "label14";
             // 
-            // txtChefID
+            // label15
             // 
-            this.txtChefID.Location = new System.Drawing.Point(358, 376);
-            this.txtChefID.Name = "txtChefID";
-            this.txtChefID.Size = new System.Drawing.Size(100, 22);
-            this.txtChefID.TabIndex = 21;
-            // 
-            // LogInButton
-            // 
-            this.LogInButton.Location = new System.Drawing.Point(494, 372);
-            this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(75, 23);
-            this.LogInButton.TabIndex = 22;
-            this.LogInButton.Text = "Log in";
-            this.LogInButton.UseVisualStyleBackColor = true;
-            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(535, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(325, 359);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(107, 16);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Pending Orders :";
             // 
             // ChefHomePage
             // 
@@ -417,9 +397,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(667, 404);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.LogInButton);
-            this.Controls.Add(this.txtChefID);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -446,7 +424,6 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,8 +459,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtChefID;
-        private System.Windows.Forms.Button LogInButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label15;
     }
 }
