@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace IOOP_Assignment
 {
@@ -59,6 +60,8 @@ namespace IOOP_Assignment
                 femaleRBtn.Checked = false;
                 ratherNotSayRBtn.Checked = false;
             }
+            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+            profilePBox.Image = database.getImage(query);
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -68,6 +71,35 @@ namespace IOOP_Assignment
 
         private void profilePBox_Click(object sender, EventArgs e)
         {
+            Database database = new Database(ConnectionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;)|*.jpg;*.jpeg;*.png;|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    query = $"UPDATE Users SET ProfileImage = @ImageData WHERE UserID = '{userID}';";
+
+                    if (database.insertOrUpdateImageToFile(imagePath, query) == true)
+                    {
+                        query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+                        profilePBox.Image = database.getImage(query);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Picture not updated");
+                        profilePBox.Image = Properties.Resources.close;
+                    }
+                }
+            }
 
         }
 

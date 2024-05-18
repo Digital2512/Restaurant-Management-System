@@ -54,6 +54,9 @@ namespace IOOP_Assignment
                 femaleRBtn.Checked = false;
                 ratherNotSayRBtn.Checked = true;
             }
+            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+            profilePBox.Image = database.getImage(query);
+
         }
 
         private void CustomerProfilePage_Load(object sender, EventArgs e)

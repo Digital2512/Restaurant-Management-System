@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 
 
 namespace IOOP_Assignment
@@ -354,25 +355,90 @@ namespace IOOP_Assignment
                 }
             }
         }
-        public Image sortImage(string ImageDescription)
+
+        public Image getImage(string query)
         {
-            Image imageReturn = null;
-            switch (ImageDescription)
+            Image resultImage = Properties.Resources.close;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                case "Burgers":
-                    imageReturn = Properties.Resources.burgerImage;
-                    return imageReturn;
-                case "Pizza":
-                    imageReturn = Properties.Resources.pizzaImage;
-                    return imageReturn;
-                case "Pasta":
-                    imageReturn = Properties.Resources.pastaImage;
-                    return imageReturn;
-                case "Salad":
-                    imageReturn = Properties.Resources.saladImage;
-                    return imageReturn;
-                default:
-                    return imageReturn;
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        object resultDB = cmd.ExecuteScalar();
+                        if(resultDB != null && resultDB != DBNull.Value)
+                        {
+                            byte[] imageBytes = (byte[])cmd.ExecuteScalar();
+                            if(imageBytes != null && imageBytes.Length > 0)
+                            {
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    resultImage = Image.FromStream(ms);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            resultImage = Properties.Resources.close;   
+                        }
+                    }
+                    else
+                    {
+                        connection.Close();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                    connection.Close();
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return resultImage; 
+        }
+    public bool insertOrUpdateImageToFile(string imagePath, string query)
+        {
+            bool result = false;
+
+            byte[] imageBytes = File.ReadAllBytes(imagePath);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@ImageData", imageBytes);
+                        
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if(rowsAffected > 0)
+                        {
+                            result = true; 
+                        }
+                        else
+                        {
+                            result = false;
+                        }
+                    }
+                }catch (SqlException ex) {
+                    MessageBox.Show("An error occured: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+                return result;
             }
         }
     }

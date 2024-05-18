@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class CustomerIndividualProductView : Form
+    public partial class CustomerIndividualProductPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public CustomerIndividualProductView()
+        public CustomerIndividualProductPage()
         {
             InitializeComponent();
             Database database = new Database(connectionString);
@@ -27,30 +27,9 @@ namespace IOOP_Assignment
             int productPrice = database.getDecimal(query);
             query = $"SELECT Description FROM Menu WHERE Chosen = 'TRUE';";
             string productDescription = database.getString(query);
-            query = $"SELECT ImageDescription FROM Menu WHERE Chosen = 'TRUE';";
-            string productImageDescription = database.getString(query);
-            Image productImage = null;
-            if (productImageDescription != null)
-            {
-                switch (productImageDescription) {
-                    case "Burgers":
-                        productImage = Properties.Resources.burgerImage;
-                        break;
-                    case "Pizza":
-                        productImage = Properties.Resources.pizzaImage;
-                        break;
-                    case "Pasta":
-                        productImage = Properties.Resources.pastaImage;
-                        break;
-                    case "Salad":
-                        productImage = Properties.Resources.saladImage;
-                        break;
-                    case "Smoothie":
-                        productImage = Properties.Resources.smoothieImage;
-                        break;
-                }
-            }
-            this.productImagePBox.Image = productImage;
+            query = $"SELECT ProductImage FROM Menu WHERE Chosen = 'TRUE';";
+            this.productImagePBox.Image = database.getImage(query);
+
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;
             this.lblProductPrice.Text = $"RM {productPrice}";

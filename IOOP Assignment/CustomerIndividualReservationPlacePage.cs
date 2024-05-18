@@ -27,6 +27,8 @@ namespace IOOP_Assignment
             this.lblMinOfPax.Text = database.getInt(query).ToString();
             query = $"SELECT EventType FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceEventType.Text = database.getString(query);
+            query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
+            this.placeImagePBox.Image = database.getImage(query);
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)

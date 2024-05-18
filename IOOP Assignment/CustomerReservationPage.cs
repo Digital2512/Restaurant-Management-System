@@ -28,7 +28,10 @@ namespace IOOP_Assignment
                 string placeMinofPax = $"{rows["MinOfPax"].ToString()} People";
                 string placeEventType = rows["EventType"].ToString();
 
-                var placeButton = new placeButton(placeID, placeName, placeMinofPax, placeDescription, placeEventType);
+                query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
+                Image PlaceImage = database.getImage(query);
+
+                var placeButton = new placeButton(placeID, placeName, placeMinofPax, placeDescription, placeEventType, PlaceImage);
 
                 placeDisplayFlowPanel.Controls.Add(placeButton);
             }
@@ -79,8 +82,10 @@ namespace IOOP_Assignment
                 string placeDescription = rows["Description"].ToString().ToLower();
                 string placeMinOfPax = rows["MinOfPax"].ToString();
                 string placeEventType = rows["EventType"].ToString();
+                query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
+                Image PlaceImage = database.getImage(query);
 
-                var placeButton = new placeButton(placeID, placeName, placeMinOfPax, placeDescription, placeEventType);
+                var placeButton = new placeButton(placeID, placeName, placeMinOfPax, placeDescription, placeEventType, PlaceImage);
 
                 placeDisplayFlowPanel.Controls.Add(placeButton);
             }

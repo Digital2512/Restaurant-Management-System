@@ -12,7 +12,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(connectionString);
-            string query = "SELECT ProductID, Name, Price, Description, ImageDescription, Ratings FROM Menu";
+            string query = "SELECT ProductID, Name, Price, Description, Ratings FROM Menu";
 
             DataTable foodsData = database.getDataTable(query);
 
@@ -22,34 +22,12 @@ namespace IOOP_Assignment
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();
-                string productImageDescription = row["ImageDescription"].ToString();
                 string productRatingText = row["Ratings"].ToString();
 
-                Image productImage = null;
+                query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
+                Image productImage = database.getImage(query);
 
-                if (!string.IsNullOrEmpty(productImageDescription))
-                {
-                    switch (productImageDescription)
-                    {
-                        case "Burger":
-                            productImage = Properties.Resources.burgerImage;
-                            break;
-                        case "Salad":
-                            productImage = Properties.Resources.saladImage;
-                            break;
-                        case "Pizza":
-                            productImage = Properties.Resources.pizzaImage;
-                            break;
-                        case "Smoothie":
-                            productImage = Properties.Resources.smoothieImage;
-                            break;
-                        case "Pasta":
-                            productImage = Properties.Resources.pastaImage;
-                            break;
-                    }
-                }
-
-                var productButton = new foodButton(productID, productName, productPrice, productDescription, productImage, productRatingText);
+                var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 
                 productDisplayFlowPanel.Controls.Add(productButton);
             }
@@ -71,7 +49,7 @@ namespace IOOP_Assignment
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
             //string query = $"SELECT ProductID, Name, Price, Description, ImageDescription, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
-            string query = $"SELECT ProductID, Name, Price, Description, ImageDescription, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
+            string query = $"SELECT ProductID, Name, Price, Description, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
             
             if (cuisineCBox.Text != null && cuisineCBox.Text != "")
             {
@@ -147,17 +125,12 @@ namespace IOOP_Assignment
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();
-                string productImageDescription = row["ImageDescription"].ToString();
                 string productRatingText = row["Ratings"].ToString();
 
-                Image productImage = null;
+                query = $"SELECT ProductImge FROM Menu WHERE ProductID = '{productID}';";
+                Image productImage = database.getImage(query);
 
-                if (!string.IsNullOrEmpty(productImageDescription))
-                {
-                    productImage = database.sortImage(productImageDescription);
-                }
-
-                var productButton = new foodButton(productID, productName, productPrice, productDescription, productImage, productRatingText);
+                var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 
                 productDisplayFlowPanel.Controls.Add(productButton);
             }

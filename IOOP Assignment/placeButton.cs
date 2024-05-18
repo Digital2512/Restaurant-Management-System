@@ -15,7 +15,7 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public string PlaceID { get; set; }
-        public placeButton(string placeID, string placeName, string placeMinOfPax, string placeDescription, string placeEvents)
+        public placeButton(string placeID, string placeName, string placeMinOfPax, string placeDescription, string placeEvents, Image placeImage)
         {
             InitializeComponent();
             this.lblPlaceID.Text = placeID;
@@ -23,6 +23,7 @@ namespace IOOP_Assignment
             this.lblDescriptions.Text = placeDescription;
             this.lblMinOfPax.Text = placeMinOfPax;
             this.lblEvents.Text = placeEvents;
+            this.placeImagePBox.Image = placeImage;
             PlaceID = placeID;
 
         }

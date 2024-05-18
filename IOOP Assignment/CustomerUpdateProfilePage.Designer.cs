@@ -300,6 +300,7 @@
             // 
             // profilePBox
             // 
+            this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.close;
             this.profilePBox.Location = new System.Drawing.Point(43, 58);
             this.profilePBox.Name = "profilePBox";
             this.profilePBox.Size = new System.Drawing.Size(249, 180);
