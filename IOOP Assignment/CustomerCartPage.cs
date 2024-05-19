@@ -15,17 +15,26 @@ namespace IOOP_Assignment
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
+        private decimal subtotalAmount;
+        public decimal getSetSubtotalAmount { get { return subtotalAmount; } set { subtotalAmount = value; } }
+
+        private decimal taxAmount;
+        public decimal getSetTaxAmount { get { return taxAmount; } set { taxAmount = value; } }
+
+        private decimal totalAmount;
+        public decimal getSetTotalAmount { get { return totalAmount; } set { totalAmount = value; } }
+
         public CustomerCartPage()
         {
             InitializeComponent();
             Database database = new Database(connectionString);
             string query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
-            string orderDetailsIDs = database.getString(query);
+            string orderDetailsIDs =  database.getString(query);
 
             if (orderDetailsIDs != null)
             {
                 string[] orderDetailsIDArray = orderDetailsIDs.Split(',');
-                decimal subtotalAmount = 0; 
+                decimal subtotalAmount = 0;
 
                 foreach (string orderDetailsID in orderDetailsIDArray)
                 {
@@ -55,7 +64,7 @@ namespace IOOP_Assignment
                 }
                 lblSubtotalAmount.Text = subtotalAmount.ToString();
 
-                decimal taxAmount = subtotalAmount * (6m / 100m); 
+                decimal taxAmount = subtotalAmount * (6m / 100m);
                 lblTaxAmount.Text = taxAmount.ToString();
                 decimal totalAmount = subtotalAmount + taxAmount;
                 lblTotalAmount.Text = totalAmount.ToString();
@@ -93,6 +102,13 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("Order has not been paid. Please pay first");
             }
+        }
+
+        private void cartProductShowFlowPnl_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            this.lblSubtotalAmount.Text = getSetSubtotalAmount.ToString();
+            this.lblTaxAmount.Text = getSetTaxAmount.ToString();
+            this.lblTotalAmount.Text = getSetTotalAmount.ToString();
         }
     }
 }

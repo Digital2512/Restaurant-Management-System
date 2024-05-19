@@ -92,6 +92,7 @@
             this.cartProductShowFlowPnl.Name = "cartProductShowFlowPnl";
             this.cartProductShowFlowPnl.Size = new System.Drawing.Size(784, 250);
             this.cartProductShowFlowPnl.TabIndex = 0;
+            this.cartProductShowFlowPnl.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.cartProductShowFlowPnl_ControlRemoved);
             // 
             // lblSubtotalAmountTitle
             // 

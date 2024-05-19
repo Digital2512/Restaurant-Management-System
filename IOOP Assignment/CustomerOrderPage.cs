@@ -8,6 +8,15 @@ namespace IOOP_Assignment
     public partial class CustomerOrderPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
+        private decimal subtotalAmount;
+        public decimal getSetSubtotalAmount { get { return subtotalAmount; } set { subtotalAmount = value; } }
+
+        private decimal taxAmount;
+        public decimal getSetTaxAmount { get { return taxAmount; } set { taxAmount = value; } }
+
+        private decimal totalAmount;
+        public decimal getSetTotalAmount { get { return totalAmount; } set { totalAmount = value; } }
         public CustomerOrderPage()
         {
             InitializeComponent();
