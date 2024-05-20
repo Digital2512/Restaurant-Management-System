@@ -32,7 +32,7 @@
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cartDetailsPnl = new System.Windows.Forms.Panel();
             this.cartProductShowFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubtotalAmountTitle = new System.Windows.Forms.Label();
             this.lblTaxAmountNaming = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.payBtn = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.cartDetailsPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPnl
@@ -74,25 +74,25 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // panel1
+            // cartDetailsPnl
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.cartProductShowFlowPnl);
-            this.panel1.Location = new System.Drawing.Point(13, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 253);
-            this.panel1.TabIndex = 5;
+            this.cartDetailsPnl.AutoScroll = true;
+            this.cartDetailsPnl.Controls.Add(this.cartProductShowFlowPnl);
+            this.cartDetailsPnl.Location = new System.Drawing.Point(13, 62);
+            this.cartDetailsPnl.Name = "cartDetailsPnl";
+            this.cartDetailsPnl.Size = new System.Drawing.Size(775, 253);
+            this.cartDetailsPnl.TabIndex = 5;
             // 
             // cartProductShowFlowPnl
             // 
             this.cartProductShowFlowPnl.AutoSize = true;
             this.cartProductShowFlowPnl.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.cartProductShowFlowPnl.Location = new System.Drawing.Point(3, 0);
+            this.cartProductShowFlowPnl.Location = new System.Drawing.Point(0, 0);
             this.cartProductShowFlowPnl.Name = "cartProductShowFlowPnl";
             this.cartProductShowFlowPnl.Size = new System.Drawing.Size(784, 250);
             this.cartProductShowFlowPnl.TabIndex = 0;
-            this.cartProductShowFlowPnl.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.cartProductShowFlowPnl_ControlRemoved);
             // 
             // lblSubtotalAmountTitle
             // 
@@ -170,15 +170,15 @@
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.lblTaxAmountNaming);
             this.Controls.Add(this.lblSubtotalAmountTitle);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cartDetailsPnl);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerCartPage";
             this.Text = "CustomerCartPage";
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.cartDetailsPnl.ResumeLayout(false);
+            this.cartDetailsPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +189,7 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Panel backBtnPnl;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel cartDetailsPnl;
         private System.Windows.Forms.FlowLayoutPanel cartProductShowFlowPnl;
         private System.Windows.Forms.Label lblSubtotalAmountTitle;
         private System.Windows.Forms.Label lblTaxAmountNaming;

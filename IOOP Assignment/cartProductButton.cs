@@ -42,72 +42,42 @@ namespace IOOP_Assignment
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-            Database database = new Database(ConnectionString);
-            string query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
-            string orderDetailsIDs = database.getString(query);
-            MessageBox.Show(orderDetailsIDs);
+            Database database = new Database(connectionString);
+            string query = $"DELETE FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
+            MessageBox.Show(orderDetailsID);
+            database.insertOrUpdateValuesIntoDatabase(query);
 
-            List<String> orderDetailsIDsList = new List<String>(orderDetailsIDs.Split(','));
+            query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
+            string orderDetailsIDs = database.getString(query);
+
+            List<string> orderDetailsIDsList = new List<string>(orderDetailsIDs.Split(','));
             if (orderDetailsIDsList.Contains(orderDetailsID))
             {
                 orderDetailsIDsList.Remove(orderDetailsID);
             }
             string newOrderDetailsIDsString = string.Join(",", orderDetailsIDsList);
 
-            query = $"UPDATE Orders SET OrderDetailsIDs = '{newOrderDetailsIDsString}' WHERE OrderStatus = 'ORDERING'";
-            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+            query = $"UPDATE Orders SET OrderDetailsIDs = '{newOrderDetailsIDsString}' WHERE OrderStatus = 'ORDERING';";
+            if (database.insertOrUpdateValuesIntoDatabase(query))
             {
-                this.Parent.Controls.Remove(this);
-                query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
-                orderDetailsIDs = database.getString(query);
+                FlowLayoutPanel flowLayoutPanel = this.Parent as FlowLayoutPanel;
+                Form mainForm = flowLayoutPanel?.FindForm();
 
-                if (orderDetailsIDs != null)
+                if(mainForm != null)
                 {
-                    string[] orderDetailsIDArray = orderDetailsIDs.Split(',');
-                    decimal subtotalAmount = 0;
-                    decimal taxAmount = 0;
-                    decimal totalAmount = 0;
-
-                    foreach (string orderDetailsID in orderDetailsIDArray)
-                    {
-                        query = $"SELECT ProductID, Name, Price, Quantity, SpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
-                        DataTable cartDataTable = database.getDataTable(query);
-
-                        foreach (DataRow row in cartDataTable.Rows)
-                        {
-                            string productID = row["ProductID"].ToString();
-                            string productName = row["Name"].ToString();
-                            string productPrice = row["Price"].ToString();
-                            string productQuantity = row["Quantity"].ToString();
-                            string productSpecialInstructions = row["SpecialInstructions"].ToString();
-
-                            decimal intProductPrice = Convert.ToDecimal(productPrice);
-                            int intProductQuantity = Convert.ToInt32(productQuantity);
-
-                            decimal productSubtotalAmount = intProductPrice * intProductQuantity;
-                            subtotalAmount += productSubtotalAmount;
-
-                            taxAmount = subtotalAmount * (6m / 100m);
-                            totalAmount = subtotalAmount + taxAmount;
-                        }
-                    }
-                    updateParentLabels(subtotalAmount, taxAmount, totalAmount);  
+                    mainForm.Hide();
+                    CustomerCartPage CustomerCartPage = new CustomerCartPage();
+                    CustomerCartPage.Show();
                 }
                 else
                 {
-                    MessageBox.Show("The cart has no items");
-
+                    MessageBox.Show("Parent Form Not Found");
                 }
             }
-        }
-
-        private void updateParentLabels(decimal subtotal, decimal tax, decimal total)
-        {
-            CustomerCartPage customerCartPage = new CustomerCartPage();
-            customerCartPage.getSetSubtotalAmount = subtotal;
-            customerCartPage.getSetTaxAmount = tax;
-            customerCartPage.getSetTotalAmount = total;
+            else
+            {
+                MessageBox.Show("Failed to update the order details.");
+            }
         }
     }
 }

@@ -48,7 +48,6 @@
             this.lblProductName.Size = new System.Drawing.Size(125, 29);
             this.lblProductName.TabIndex = 1;
             this.lblProductName.Text = "Fried Rice";
-            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // lblProductSpecialInstructions
             // 
@@ -59,7 +58,6 @@
             this.lblProductSpecialInstructions.Size = new System.Drawing.Size(96, 20);
             this.lblProductSpecialInstructions.TabIndex = 2;
             this.lblProductSpecialInstructions.Text = "More onions";
-            this.lblProductSpecialInstructions.Click += new System.EventHandler(this.lblSpecialInstructions_Click);
             // 
             // lblProductPrice
             // 

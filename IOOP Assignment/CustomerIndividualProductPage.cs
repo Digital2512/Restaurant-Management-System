@@ -55,9 +55,12 @@ namespace IOOP_Assignment
             if (previousOrderID == null || previousOrderID == "")
             {
                 orderID = database.GenerateUniqueID("ORDER", "OrderID", "Orders");
+                DateTime dateTime = new DateTime();
                 DateTime now = DateTime.Now;
                 string orderDateTimeMade = now.ToString();
-                query = $"INSERT INTO Orders(OrderID, OrderDateTime, CustomerID, OrderStatus, PaymentStatus) VALUES ('{orderID}', '{orderDateTimeMade}', '{customerID}', 'ORDERING', 'NOT_PAID');";
+                DateTime orderDateTimeString = DateTime.ParseExact(orderDateTimeMade, "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                string formattedOrderDateTimeString = orderDateTimeString.ToString("yyyy-MM-dd HH:mm:ss");
+                query = $"INSERT INTO Orders(OrderID, OrderDateTime, CustomerID, OrderStatus, PaymentStatus) VALUES ('{orderID}', '{formattedOrderDateTimeString}', '{customerID}', 'ORDERING', 'NOT_PAID');";
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Order Created");
@@ -180,9 +183,19 @@ namespace IOOP_Assignment
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            Database database = new Database(connectionString);
             this.Hide();
-            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
-            customerOrderPage.Show();
+            string query = $"UPDATE Menu SET Chosen = 'FALSE' WHERE Chosen = 'TRUE'";
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+            {
+                CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+                this.Hide();
+                customerOrderPage.Show();
+            }
+            else if (database.insertOrUpdateValuesIntoDatabase(query) == false)
+            {
+                MessageBox.Show("Order Details Reset Failed");
+            }
         }
 
         private void productImagePBox_Click(object sender, EventArgs e)
