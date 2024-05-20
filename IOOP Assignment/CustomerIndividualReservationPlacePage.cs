@@ -47,9 +47,44 @@ namespace IOOP_Assignment
             query = $"SELECT Name FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
             string placeName = database.getString(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
+
+            string duration = durationCBox.Text;
+            int durationTime = 0;
+            if(duration == "30 Minutes")
+            {
+                durationTime = 30;
+            }
+            else if (duration == "1 Hour and 30 Minutes")
+            {
+                durationTime = 60;
+            }
+            else if (duration == "2 Hours")
+            {
+                durationTime = 90;
+            }
+            else if (duration == "2 Hours and 30 Minutes")
+            {
+                durationTime = 120;
+            }
+            else if (duration == "3 Hours")
+            {
+                durationTime = 150;
+            }
+            else if (duration == "3 Hours and 30 Minutes")
+            {
+                durationTime = 180;
+            }
+            else if (duration == "4 Hours")
+            {
+                durationTime = 210;
+            }
+            else if (duration == "")
+            {
+                durationTime = 240;
+            }
             if (noOfPax > minOfPax)
             {
-                query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}')";
+                query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID, Duration) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime})";
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Reservation Request Sent");

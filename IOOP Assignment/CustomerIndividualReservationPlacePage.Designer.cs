@@ -48,6 +48,8 @@
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.durationCBox = new System.Windows.Forms.ComboBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,6 +89,8 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.durationCBox);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.noOfPaxTxtBox);
             this.panel2.Controls.Add(this.lblNoOfPax);
             this.panel2.Controls.Add(this.lblReservedDateTime);
@@ -102,7 +106,7 @@
             this.panel2.Controls.Add(this.lblPlaceName);
             this.panel2.Controls.Add(this.lblPlaceDescription);
             this.panel2.Controls.Add(this.lblPlaceMinOfPax);
-            this.panel2.Location = new System.Drawing.Point(-12, 11);
+            this.panel2.Location = new System.Drawing.Point(-12, 66);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 12;
@@ -175,7 +179,7 @@
             // 
             // reserveBtn
             // 
-            this.reserveBtn.Location = new System.Drawing.Point(3, 760);
+            this.reserveBtn.Location = new System.Drawing.Point(3, 809);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(593, 53);
             this.reserveBtn.TabIndex = 15;
@@ -193,7 +197,7 @@
             // 
             // specialInstructionsRTxtBox
             // 
-            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 667);
+            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 716);
             this.specialInstructionsRTxtBox.Name = "specialInstructionsRTxtBox";
             this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
             this.specialInstructionsRTxtBox.TabIndex = 13;
@@ -212,7 +216,7 @@
             // 
             this.lblSpecialInstructions.AutoSize = true;
             this.lblSpecialInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 635);
+            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 684);
             this.lblSpecialInstructions.Name = "lblSpecialInstructions";
             this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
             this.lblSpecialInstructions.TabIndex = 12;
@@ -248,11 +252,38 @@
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(288, 639);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Duration";
+            // 
+            // durationCBox
+            // 
+            this.durationCBox.FormattingEnabled = true;
+            this.durationCBox.Items.AddRange(new object[] {
+            "30 Minutes",
+            "1 Hour",
+            "1 Hour and 30 Minutes",
+            "2 Hours",
+            "2 Hours and 30 Minutes",
+            "3 hours",
+            "3 Hours and 30 Minutes",
+            "4 Hours"});
+            this.durationCBox.Location = new System.Drawing.Point(292, 669);
+            this.durationCBox.Name = "durationCBox";
+            this.durationCBox.Size = new System.Drawing.Size(223, 28);
+            this.durationCBox.TabIndex = 24;
+            // 
             // CustomerIndividualReservationPlacePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 719);
+            this.ClientSize = new System.Drawing.Size(572, 775);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -288,5 +319,7 @@
         private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
         private System.Windows.Forms.TextBox noOfPaxTxtBox;
         private System.Windows.Forms.Label lblNoOfPax;
+        private System.Windows.Forms.ComboBox durationCBox;
+        private System.Windows.Forms.Label label1;
     }
 }
