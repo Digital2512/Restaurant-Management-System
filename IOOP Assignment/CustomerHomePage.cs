@@ -41,6 +41,17 @@ namespace IOOP_Assignment
                 query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 string orderStatus = database.getString(query);
                 this.lblOrderStatus.Text = orderStatus;
+                if(orderStatus == "IN_PROGRESS")
+                {
+                    orderStatusPBox.Image = Properties.Resources.inKitchenResized;
+                }else if(orderStatus == "COMPLETED")
+                {
+                    orderStatusPBox.Image = Properties.Resources.completedResized;
+                }
+                else
+                {
+                    orderStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                }
             }
             else if(orderID == null || orderID == "") 
             {
@@ -59,7 +70,23 @@ namespace IOOP_Assignment
                 query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 this.lblPlaceName.Text = database.getString(query);
                 query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
-                this.lblReservationStatus.Text = database.getString(query);
+                string reservationStatus = database.getString(query);
+                this.lblReservationStatus.Text = reservationStatus;
+                if (reservationStatus == "IN_PROGRESS")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
+                }
+                else if (reservationStatus == "APPROVED")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.approvedResized;
+                }else if(reservationStatus == "DENIED")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.deniedResized;
+                }
+                else
+                {
+                    reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                }
             }
             else if(reservationID == null || reservationID != "")
             {
