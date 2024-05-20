@@ -37,15 +37,14 @@ namespace IOOP_Assignment
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             string PlaceID = database.getString(query);
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string noOfPax = noOfPaxTxtBox.Text;
             string customerID = database.getString(query);
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
             string reservedDateTime = reservedDateTimePicker.Text;
             query = $"SELECT Name FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
             string placeName = database.getString(query);
-            query = $"SELECT MinOfPax FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
-            int placeMinOfPax = database.getInt(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
-            query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceMinOfPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{placeMinOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}')";
+            query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}')";
             if(database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
                 MessageBox.Show("Reservation Request Sent");

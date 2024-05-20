@@ -46,6 +46,8 @@
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
+            this.lblNoOfPax = new System.Windows.Forms.Label();
+            this.noOfPaxTxtBox = new System.Windows.Forms.TextBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,6 +87,8 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.noOfPaxTxtBox);
+            this.panel2.Controls.Add(this.lblNoOfPax);
             this.panel2.Controls.Add(this.lblReservedDateTime);
             this.panel2.Controls.Add(this.reservedDateTimePicker);
             this.panel2.Controls.Add(this.lblPlaceEventType);
@@ -227,6 +231,23 @@
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
+            // lblNoOfPax
+            // 
+            this.lblNoOfPax.AutoSize = true;
+            this.lblNoOfPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblNoOfPax.Location = new System.Drawing.Point(288, 569);
+            this.lblNoOfPax.Name = "lblNoOfPax";
+            this.lblNoOfPax.Size = new System.Drawing.Size(157, 25);
+            this.lblNoOfPax.TabIndex = 21;
+            this.lblNoOfPax.Text = "Number Of Pax: ";
+            // 
+            // noOfPaxTxtBox
+            // 
+            this.noOfPaxTxtBox.Location = new System.Drawing.Point(292, 601);
+            this.noOfPaxTxtBox.Name = "noOfPaxTxtBox";
+            this.noOfPaxTxtBox.Size = new System.Drawing.Size(223, 26);
+            this.noOfPaxTxtBox.TabIndex = 22;
+            // 
             // CustomerIndividualReservationPlacePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -265,5 +286,7 @@
         private System.Windows.Forms.Label lblMinOfPax;
         private System.Windows.Forms.Label lblReservedDateTime;
         private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
+        private System.Windows.Forms.TextBox noOfPaxTxtBox;
+        private System.Windows.Forms.Label lblNoOfPax;
     }
 }
