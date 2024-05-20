@@ -130,56 +130,6 @@ namespace IOOP_Assignment
             }
         }
 
-        private void backBtnPnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblProductQuantity_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void headerPnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void specialInstructionsRTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProductID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSpecialInstructions_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProductName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProductDescription_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProductPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             Database database = new Database(connectionString);

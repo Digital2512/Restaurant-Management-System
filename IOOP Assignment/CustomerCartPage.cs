@@ -29,11 +29,6 @@ namespace IOOP_Assignment
             InitializeComponent();
             loadCartDetails();
         }
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void payBtn_Click(object sender, EventArgs e)
         {
             Database database = new Database(connectionString);

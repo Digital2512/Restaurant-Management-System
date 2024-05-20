@@ -59,7 +59,6 @@
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(594, 45);
             this.headerPnl.TabIndex = 4;
-            this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // backBtnPnl
             // 
@@ -68,7 +67,6 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            this.backBtnPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.backBtnPnl_Paint);
             // 
             // minusBtn
             // 
@@ -98,7 +96,6 @@
             this.lblProductQuantity.Size = new System.Drawing.Size(18, 20);
             this.lblProductQuantity.TabIndex = 9;
             this.lblProductQuantity.Text = "1";
-            this.lblProductQuantity.Click += new System.EventHandler(this.lblProductQuantity_Click);
             // 
             // panel2
             // 
@@ -118,7 +115,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 10;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // addToCartBtn
             // 
@@ -137,7 +133,6 @@
             this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
             this.specialInstructionsRTxtBox.TabIndex = 13;
             this.specialInstructionsRTxtBox.Text = "";
-            this.specialInstructionsRTxtBox.TextChanged += new System.EventHandler(this.specialInstructionsRTxtBox_TextChanged);
             // 
             // lblProductID
             // 
@@ -147,7 +142,6 @@
             this.lblProductID.Size = new System.Drawing.Size(55, 20);
             this.lblProductID.TabIndex = 8;
             this.lblProductID.Text = "P0001";
-            this.lblProductID.Click += new System.EventHandler(this.lblProductID_Click);
             // 
             // lblSpecialInstructions
             // 
@@ -158,7 +152,6 @@
             this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
             this.lblSpecialInstructions.TabIndex = 12;
             this.lblSpecialInstructions.Text = "Special Instructions: ";
-            this.lblSpecialInstructions.Click += new System.EventHandler(this.lblSpecialInstructions_Click);
             // 
             // lblProductName
             // 
@@ -169,7 +162,6 @@
             this.lblProductName.Size = new System.Drawing.Size(125, 29);
             this.lblProductName.TabIndex = 9;
             this.lblProductName.Text = "Fried Rice";
-            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // lblProductDescription
             // 
@@ -180,7 +172,6 @@
             this.lblProductDescription.Size = new System.Drawing.Size(539, 80);
             this.lblProductDescription.TabIndex = 11;
             this.lblProductDescription.Text = resources.GetString("lblProductDescription.Text");
-            this.lblProductDescription.Click += new System.EventHandler(this.lblProductDescription_Click);
             // 
             // lblProductPrice
             // 
@@ -191,7 +182,6 @@
             this.lblProductPrice.Size = new System.Drawing.Size(80, 25);
             this.lblProductPrice.TabIndex = 10;
             this.lblProductPrice.Text = "RM5.00";
-            this.lblProductPrice.Click += new System.EventHandler(this.lblProductPrice_Click);
             // 
             // productImagePBox
             // 

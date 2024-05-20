@@ -66,11 +66,6 @@ namespace IOOP_Assignment
             CustomerHomePage customerHomePage = new CustomerHomePage();
             customerHomePage.Show();
         }
-
-        private void headerPnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
 

@@ -171,7 +171,6 @@
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(853, 45);
             this.headerPnl.TabIndex = 3;
-            this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // backBtnPnl
             // 

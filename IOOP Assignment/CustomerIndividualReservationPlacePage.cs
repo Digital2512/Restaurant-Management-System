@@ -24,7 +24,8 @@ namespace IOOP_Assignment
             query = $"SELECT Description FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceDescription.Text = database.getString(query);
             query = $"SELECT MinOfPax FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
-            this.lblMinOfPax.Text = database.getInt(query).ToString();
+            string MinOfPax = database.getInt(query).ToString();
+            this.lblPlaceMinOfPax.Text = $"{MinOfPax} People";
             query = $"SELECT EventType FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceEventType.Text = database.getString(query);
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
@@ -36,32 +37,41 @@ namespace IOOP_Assignment
             Database database = new Database(connectionString);
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             string PlaceID = database.getString(query);
+            query = $"SELECT MinOfPax FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}';";
+            int minOfPax = database.getInt(query);
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
-            string noOfPax = noOfPaxTxtBox.Text;
+            int noOfPax = int.Parse(noOfPaxTxtBox.Text);
             string customerID = database.getString(query);
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
             string reservedDateTime = reservedDateTimePicker.Text;
             query = $"SELECT Name FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
             string placeName = database.getString(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
-            query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}')";
-            if(database.insertOrUpdateValuesIntoDatabase(query) == true)
+            if (noOfPax > minOfPax)
             {
-                MessageBox.Show("Reservation Request Sent");
-                query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
-                this.Hide();
-                CustomerHomePage customerHomePage = new CustomerHomePage();
-                customerHomePage.Show();
-            }
-            else if (database.insertOrUpdateValuesIntoDatabase(query) != true)
-            {
-                MessageBox.Show("Error: Reservation Request Not Sent");
+                query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}')";
+                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                {
+                    MessageBox.Show("Reservation Request Sent");
+                    query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
+                    this.Hide();
+                    CustomerHomePage customerHomePage = new CustomerHomePage();
+                    customerHomePage.Show();
+                }
+                else if (database.insertOrUpdateValuesIntoDatabase(query) != true)
+                {
+                    MessageBox.Show("Error: Reservation Request Not Sent");
+                }
+                else
+                {
+                    MessageBox.Show("An error occured");
+                }
+
             }
             else
             {
-                MessageBox.Show("An error occured");
+                MessageBox.Show("The min of pax has not been achieved. Please reinput the min of pax again");
             }
-            
         }
 
         private void lblEventType_Click(object sender, EventArgs e)
@@ -75,5 +85,6 @@ namespace IOOP_Assignment
             CustomerReservationPage customerReservationPage = new CustomerReservationPage();
             customerReservationPage.Show();
         }
+
     }
 }

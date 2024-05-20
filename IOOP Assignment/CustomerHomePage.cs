@@ -71,16 +71,6 @@ namespace IOOP_Assignment
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CustomerHomePage_Load(object sender, EventArgs e)
         {
 
@@ -130,11 +120,6 @@ namespace IOOP_Assignment
             sidebarTransition.Start();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reservationBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -170,16 +155,6 @@ namespace IOOP_Assignment
         {
             this.Visible = false;
             customerProfilePage.Visible = true;
-        }
-
-        private void lblOrderNumber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

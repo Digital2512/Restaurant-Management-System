@@ -264,7 +264,6 @@
             this.label2.Size = new System.Drawing.Size(211, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Order Status";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
@@ -326,7 +325,6 @@
             this.lblOrderID.Size = new System.Drawing.Size(66, 20);
             this.lblOrderID.TabIndex = 3;
             this.lblOrderID.Text = "OrderID";
-            this.lblOrderID.Click += new System.EventHandler(this.lblOrderNumber_Click);
             // 
             // pictureBox1
             // 
