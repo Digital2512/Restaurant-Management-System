@@ -14,9 +14,13 @@ namespace IOOP_Assignment
     public partial class ManagerAddReservationPage : Form
     {
         private Manager manager;
+        private ManagerReservation managerReservation;
+        private DateTimePicker datetimepicker1 = new DateTimePicker();
+        private DateTimePicker datetimepicker2 = new DateTimePicker();
         public ManagerAddReservationPage()
         {
             InitializeComponent();
+            managerReservation = new ManagerReservation();
         }
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
@@ -49,13 +53,20 @@ namespace IOOP_Assignment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            manager.CombineAndInsert(dateTimePicker1, dateTimePicker2);
+            string reservationID = "123456";
+            string customerID = "789";
+            string placeID = "ABC";
+            string placeName = "Place Name";
+            int placeMinOfPax = 2;
+            int duration = 2;
+
+            ManagerReservation.AddReservation(reservationID, customerID, placeID, placeName, placeMinOfPax, datetimepicker1.Value, datetimepicker2.Value, duration);
             MessageBox.Show("Reservation added successfully.");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Manager.CloseCurrentPage();
+            Manager.CloseCurrentPage(this);
         }
     }
 }

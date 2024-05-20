@@ -142,6 +142,7 @@
     <Compile Include="ManagerMenuPage.Designer.cs">
       <DependentUpon>ManagerMenuPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerReservation.cs" />
     <Compile Include="ManagerReservationApprovalPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +172,12 @@
     </Compile>
     <Compile Include="ManagerTablesPage.Designer.cs">
       <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUpdateReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUpdateReservationPage.Designer.cs">
+      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerViewProfilePage.cs">
       <SubType>Form</SubType>
@@ -222,14 +229,23 @@
     <EmbeddedResource Include="ManagerMenuPage.resx">
       <DependentUpon>ManagerMenuPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerReservationApprovalPage.resx">
+      <DependentUpon>ManagerReservationApprovalPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerReservationReportPage.resx">
       <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerReservationSuccessfulPage.resx">
       <DependentUpon>ManagerReservationSuccessfulPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTableInformationPage.resx">
+      <DependentUpon>ManagerTableInformationPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerTablesPage.resx">
       <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUpdateReservationPage.resx">
+      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewProfilePage.resx">
       <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
@@ -283,6 +299,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\SuccessfullyIcon.png" />
     <None Include="PictureFolder\vipImage.png" />
     <None Include="PictureFolder\tablesIcon.png" />
     <None Include="PictureFolder\searchIcon2.png" />

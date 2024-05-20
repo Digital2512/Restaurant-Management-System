@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Data.Common;
 using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
 namespace IOOP_Assignment
 {
@@ -28,33 +29,21 @@ namespace IOOP_Assignment
             frmMngHome.ShowDialog();
         }
 
+        public static void CloseCurrentPage(Form form)
+        {
+            form.Close();
+        }
+
         public static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private SqlConnection con;
         private SqlCommand cmd;
-        public void CombineAndInsert(DateTimePicker datetimepicker1, DateTimePicker datetimepicker2)
-        {
-            // Combine the date from datetimepicker1 and the time from datetimepicker2 into a single DateTime object
-            DateTime combinedDateTime = datetimepicker1.Value.Date.Add(datetimepicker2.Value.TimeOfDay);
+        
 
-            SqlConnection con = new SqlConnection(connetionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Reservation ReservedDateTime VALUES (@ReservedDateTime)", con);
-            cmd.Parameters.AddWithValue("@ReservedDateTime", combinedDateTime);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
+        
+      
 
-        public static void CloseCurrentPage()
-        {
-            // Hide the current form
-            Form frmcurrent = Form.ActiveForm;
-            if (frmcurrent != null)
-            {
-                frmcurrent.Hide();
-            }
-          
-        }
 
+        //ManagerTablesPage
         public void ShowVacantPlaces(PictureBox pictureBox, Button button)
         {
             UpdatePictureBoxAndButton(pictureBox, button, true);
@@ -105,28 +94,6 @@ namespace IOOP_Assignment
             }
 
         }
-
-        public static DataTable SearchReservation(string searchInput)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connetionString))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Menu WHERE ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDateTime LIKE @SearchInput OR Duration LIKE @SearchInput", con);
-                    cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while searching: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
+        
     }
 }

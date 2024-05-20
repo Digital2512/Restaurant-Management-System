@@ -14,6 +14,8 @@ namespace IOOP_Assignment
     public partial class ManagerTablesPage : Form
     {
         private Manager manager;
+
+
         public ManagerTablesPage()
         {
             InitializeComponent();
@@ -42,14 +44,43 @@ namespace IOOP_Assignment
         }
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
-        private void RefreshDataGridView()
+
+
+        private ManagerTableInformationPage tableInformationPage;
+
+        private void OpenManagerTableInformationPage(string placeID)
+        {
+            // Check if the form is already open
+            if (tableInformationPage == null || tableInformationPage.IsDisposed)
+            {
+                // If not, create a new instance
+                tableInformationPage = new ManagerTableInformationPage(placeID);
+                tableInformationPage.FormClosed += TableInformationPage_FormClosed; // Handle the form closed event
+                tableInformationPage.Show(); // Show the form
+            }
+            else
+            {
+                // If the form is already open, bring it to the front
+                tableInformationPage.BringToFront();
+            }
+        }
+
+        // Event handler for when the table information page form is closed
+        private void TableInformationPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Set the reference to null when the form is closed
+            tableInformationPage = null;
+        }
+
+        private void RefreshDataGridViewUpcoming()
         {
             SqlConnection con = new SqlConnection(connetionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PlaceOfReservation", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            
+            dataGridViewUpcoming.DataSource = dt;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -59,132 +90,92 @@ namespace IOOP_Assignment
 
         private void ManagerTablesPage_Load(object sender, EventArgs e)
         {
+
             SqlConnection con = new SqlConnection(connetionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PlaceOfReservation WHERE ReservationID IS NULL AND CustomerID IS NULL", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationID IS NOT NULL AND CustomerID IS NOT NULL ORDER BY ReservedDateTime", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            
+            dataGridViewUpcoming.DataSource = dt;
 
             SqlConnection con2 = new SqlConnection(connetionString);
             con2.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT * FROM Reservation WHERE ReservationID IS NOT NULL AND CustomerID IS NOT NULL ORDER BY ReservedDateTime", con2);
+            SqlCommand cmd2 = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'Pending' ", con2);
             SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
-            dataGridViewUpcoming.DataSource = dt2;
+            dataGridViewPending.DataSource = dt2;
 
         }
 
-      
+
 
         private void btnT01_Click(object sender, EventArgs e)
         {
-            string placeID = "T01"; // Example place ID
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T01");
 
         }
 
         private void btnT02_Click(object sender, EventArgs e)
         {
-            string placeID = "T02";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T02");
 
         }
 
         private void btnT03_Click(object sender, EventArgs e)
         {
-            string placeID = "T03";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T03");
 
         }
 
         private void btnT04_Click(object sender, EventArgs e)
         {
-            string placeID = "T04";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T04");
 
         }
 
         private void btnT05_Click(object sender, EventArgs e)
         {
-            string placeID = "T05";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T05");
 
         }
 
         private void btnT06_Click(object sender, EventArgs e)
         {
-            string placeID = "T06";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
-
+            OpenManagerTableInformationPage("T06");
         }
-        
-            
-        
 
-        
-            
+
         private void btnT07_Click(object sender, EventArgs e)
         {
-            string placeID = "T07";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T07");
         }
-    
-
-    
-
-        
 
         private void btnT08_Click(object sender, EventArgs e)
         {
-            string placeID = "T08";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T08");
 
         }
 
         private void btnT09_Click(object sender, EventArgs e)
         {
-            string placeID = "T09";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T09");
         }
 
         private void btnT10_Click(object sender, EventArgs e)
         {
-            string placeID = "T10";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
-        }
-
-        private void btnVIP1_Click_1(object sender, EventArgs e)
-        {
-            string placeID = "VIP01";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("T10");
         }
 
         private void btnVIP1_Click(object sender, EventArgs e)
         {
-            string placeID = "VIP01";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("VIP01");
         }
 
         private void btnVIP2_Click(object sender, EventArgs e)
         {
-            string placeID = "VIP02";
-            ManagerTableInformationPage frmTableInfo = new ManagerTableInformationPage(placeID);
-            frmTableInfo.ShowDialog();
+            OpenManagerTableInformationPage("VIP02");
         }
 
         private void btnVacant_Click(object sender, EventArgs e)
@@ -242,7 +233,8 @@ namespace IOOP_Assignment
             try
             {
                 string searchInput = txtResvSearch.Text.Trim();
-                DataTable dt = Manager.SearchReservation(searchInput);
+                ManagerReservation managerReservation = new ManagerReservation();
+                DataTable dt = ManagerReservation.SearchReservation(searchInput);
                 if (dt != null)
                 {
                     dataGridViewUpcoming.DataSource = dt;
@@ -252,6 +244,74 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show($"An error occurred while searching: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = dateTimePicker1.Value.Date;
+            // Create an instance of ManagerReservation
+            ManagerReservation managerReservation = new ManagerReservation();
+            DataTable reservations = managerReservation.ReservationSearchDate(selectedDate); // Call the method on the instance
+            dataGridViewUpcoming.DataSource = reservations;
+        }
+
+        private void dataGridViewUpcoming_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridViewUpcoming.CurrentRow;
+            if (row != null)
+            {
+                // Extract the data from the selected row
+                string reservationID = row.Cells["ReservationID"].Value.ToString();
+                string customerID = row.Cells["CustomerID"].Value.ToString();
+                string placeID = row.Cells["PlaceID"].Value.ToString();
+                string placeName = row.Cells["PlaceName"].Value.ToString();
+                string minOfPax = row.Cells["PlaceMinOfPax"].Value.ToString();
+                string reservedDateTime = row.Cells["ReservedDateTime"].Value.ToString();
+                string duration = row.Cells["Duration"].Value.ToString();
+
+                // Open ManagerReservationSuccessfulPage with the extracted data
+                ManagerReservationSuccessfulPage frmSuccess = new ManagerReservationSuccessfulPage();
+                frmSuccess.ShowDialog();
+            }
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewUpcoming.CurrentRow;
+            if (row != null)
+            {
+                // Extract the data from the selected row
+                if (dataGridViewUpcoming.SelectedRows.Count > 0)
+                {
+                    string reservationID = dataGridViewUpcoming.SelectedRows[0].Cells["ReservationID"].Value.ToString();
+                    ManagerUpdateReservationPage updatePage = new ManagerUpdateReservationPage(reservationID);
+                    updatePage.ShowDialog();
+                }
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewUpcoming.CurrentRow;
+            if (row != null)
+            {
+                // Extract the reservation ID from the selected row
+                string reservationID = row.Cells["ReservationID"].Value.ToString();
+                ManagerReservation managerReservation = new ManagerReservation();
+                managerReservation.DeleteReservation(reservationID);
+                RefreshDataGridViewUpcoming();
+
+
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ManagerAddReservationPage addReservationPage = new ManagerAddReservationPage();
+            addReservationPage.ShowDialog();
         }
     }
 

@@ -57,19 +57,19 @@
             this.picT02 = new System.Windows.Forms.PictureBox();
             this.picT01 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtResvSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewUpcoming = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPending = new System.Windows.Forms.DataGridView();
             this.btnVacant = new System.Windows.Forms.Button();
             this.btnReserved = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picVIP02)).BeginInit();
@@ -88,7 +88,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPending)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -157,9 +157,9 @@
             // btnVIP2
             // 
             this.btnVIP2.BackColor = System.Drawing.Color.LightGreen;
-            this.btnVIP2.Location = new System.Drawing.Point(436, 396);
+            this.btnVIP2.Location = new System.Drawing.Point(438, 396);
             this.btnVIP2.Name = "btnVIP2";
-            this.btnVIP2.Size = new System.Drawing.Size(103, 30);
+            this.btnVIP2.Size = new System.Drawing.Size(90, 35);
             this.btnVIP2.TabIndex = 78;
             this.btnVIP2.Text = "VIP02";
             this.btnVIP2.UseVisualStyleBackColor = false;
@@ -168,9 +168,9 @@
             // btnVIP1
             // 
             this.btnVIP1.BackColor = System.Drawing.Color.LightGreen;
-            this.btnVIP1.Location = new System.Drawing.Point(22, 396);
+            this.btnVIP1.Location = new System.Drawing.Point(24, 396);
             this.btnVIP1.Name = "btnVIP1";
-            this.btnVIP1.Size = new System.Drawing.Size(103, 30);
+            this.btnVIP1.Size = new System.Drawing.Size(90, 35);
             this.btnVIP1.TabIndex = 77;
             this.btnVIP1.Text = "VIP01";
             this.btnVIP1.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.btnT06.BackColor = System.Drawing.Color.LightGreen;
             this.btnT06.Location = new System.Drawing.Point(171, 227);
             this.btnT06.Name = "btnT06";
-            this.btnT06.Size = new System.Drawing.Size(70, 30);
+            this.btnT06.Size = new System.Drawing.Size(70, 35);
             this.btnT06.TabIndex = 74;
             this.btnT06.Text = "T06";
             this.btnT06.UseVisualStyleBackColor = false;
@@ -212,7 +212,7 @@
             this.btnT01.BackColor = System.Drawing.Color.LightGreen;
             this.btnT01.Location = new System.Drawing.Point(35, 93);
             this.btnT01.Name = "btnT01";
-            this.btnT01.Size = new System.Drawing.Size(70, 30);
+            this.btnT01.Size = new System.Drawing.Size(70, 35);
             this.btnT01.TabIndex = 73;
             this.btnT01.Text = "T01";
             this.btnT01.UseVisualStyleBackColor = false;
@@ -283,7 +283,7 @@
             this.btnT10.BackColor = System.Drawing.Color.LightGreen;
             this.btnT10.Location = new System.Drawing.Point(312, 396);
             this.btnT10.Name = "btnT10";
-            this.btnT10.Size = new System.Drawing.Size(79, 30);
+            this.btnT10.Size = new System.Drawing.Size(70, 35);
             this.btnT10.TabIndex = 66;
             this.btnT10.Text = "T10";
             this.btnT10.UseVisualStyleBackColor = false;
@@ -294,7 +294,7 @@
             this.btnT09.BackColor = System.Drawing.Color.LightGreen;
             this.btnT09.Location = new System.Drawing.Point(171, 396);
             this.btnT09.Name = "btnT09";
-            this.btnT09.Size = new System.Drawing.Size(70, 30);
+            this.btnT09.Size = new System.Drawing.Size(70, 35);
             this.btnT09.TabIndex = 65;
             this.btnT09.Text = "T09";
             this.btnT09.UseVisualStyleBackColor = false;
@@ -305,7 +305,7 @@
             this.btnT08.BackColor = System.Drawing.Color.LightGreen;
             this.btnT08.Location = new System.Drawing.Point(449, 227);
             this.btnT08.Name = "btnT08";
-            this.btnT08.Size = new System.Drawing.Size(70, 30);
+            this.btnT08.Size = new System.Drawing.Size(70, 35);
             this.btnT08.TabIndex = 64;
             this.btnT08.Text = "T08";
             this.btnT08.UseVisualStyleBackColor = false;
@@ -316,7 +316,7 @@
             this.btnT07.BackColor = System.Drawing.Color.LightGreen;
             this.btnT07.Location = new System.Drawing.Point(310, 227);
             this.btnT07.Name = "btnT07";
-            this.btnT07.Size = new System.Drawing.Size(70, 30);
+            this.btnT07.Size = new System.Drawing.Size(70, 35);
             this.btnT07.TabIndex = 63;
             this.btnT07.Text = "T07";
             this.btnT07.UseVisualStyleBackColor = false;
@@ -327,7 +327,7 @@
             this.btnT05.BackColor = System.Drawing.Color.LightGreen;
             this.btnT05.Location = new System.Drawing.Point(37, 230);
             this.btnT05.Name = "btnT05";
-            this.btnT05.Size = new System.Drawing.Size(70, 30);
+            this.btnT05.Size = new System.Drawing.Size(70, 35);
             this.btnT05.TabIndex = 62;
             this.btnT05.Text = "T05";
             this.btnT05.UseVisualStyleBackColor = false;
@@ -338,7 +338,7 @@
             this.btnT04.BackColor = System.Drawing.Color.LightGreen;
             this.btnT04.Location = new System.Drawing.Point(449, 93);
             this.btnT04.Name = "btnT04";
-            this.btnT04.Size = new System.Drawing.Size(70, 30);
+            this.btnT04.Size = new System.Drawing.Size(70, 35);
             this.btnT04.TabIndex = 61;
             this.btnT04.Text = "T04";
             this.btnT04.UseVisualStyleBackColor = false;
@@ -349,7 +349,7 @@
             this.btnT03.BackColor = System.Drawing.Color.LightGreen;
             this.btnT03.Location = new System.Drawing.Point(310, 93);
             this.btnT03.Name = "btnT03";
-            this.btnT03.Size = new System.Drawing.Size(70, 30);
+            this.btnT03.Size = new System.Drawing.Size(70, 35);
             this.btnT03.TabIndex = 60;
             this.btnT03.Text = "T03";
             this.btnT03.UseVisualStyleBackColor = false;
@@ -360,7 +360,7 @@
             this.btnT02.BackColor = System.Drawing.Color.LightGreen;
             this.btnT02.Location = new System.Drawing.Point(170, 93);
             this.btnT02.Name = "btnT02";
-            this.btnT02.Size = new System.Drawing.Size(70, 30);
+            this.btnT02.Size = new System.Drawing.Size(70, 35);
             this.btnT02.TabIndex = 59;
             this.btnT02.Text = "T02";
             this.btnT02.UseVisualStyleBackColor = false;
@@ -410,20 +410,31 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Linen;
             this.panel4.Controls.Add(this.btnSearch);
-            this.panel4.Controls.Add(this.dateTimePicker2);
+            this.panel4.Controls.Add(this.dateTimePicker1);
             this.panel4.Controls.Add(this.txtResvSearch);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(31, 84);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(583, 45);
+            this.panel4.Size = new System.Drawing.Size(591, 45);
             this.panel4.TabIndex = 3;
             // 
-            // dateTimePicker2
+            // btnSearch
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(148, 10);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(183, 26);
-            this.dateTimePicker2.TabIndex = 19;
+            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
+            this.btnSearch.Location = new System.Drawing.Point(534, 7);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 34);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(148, 10);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(183, 26);
+            this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtResvSearch
             // 
@@ -466,40 +477,44 @@
             this.dataGridViewUpcoming.RowTemplate.Height = 28;
             this.dataGridViewUpcoming.Size = new System.Drawing.Size(574, 179);
             this.dataGridViewUpcoming.TabIndex = 1;
+            this.dataGridViewUpcoming.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewUpcoming_RowHeaderMouseDoubleClick);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.button1.Location = new System.Drawing.Point(1048, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 35);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Add Reservation";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnAdd.Location = new System.Drawing.Point(1048, 94);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(145, 38);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "Add Reservation";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.button2.Location = new System.Drawing.Point(220, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 31);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnEdit.Location = new System.Drawing.Point(220, 376);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(87, 35);
+            this.btnEdit.TabIndex = 22;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.button3.Location = new System.Drawing.Point(328, 376);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 31);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnDelete.Location = new System.Drawing.Point(328, 376);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(87, 35);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Controls.Add(this.dataGridViewPending);
             this.groupBox1.Location = new System.Drawing.Point(31, 401);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(611, 234);
@@ -507,23 +522,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pending";
             // 
-            // dataGridView2
+            // dataGridViewPending
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.OldLace;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 35);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(574, 179);
-            this.dataGridView2.TabIndex = 1;
+            this.dataGridViewPending.BackgroundColor = System.Drawing.Color.OldLace;
+            this.dataGridViewPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPending.Location = new System.Drawing.Point(17, 35);
+            this.dataGridViewPending.Name = "dataGridViewPending";
+            this.dataGridViewPending.RowHeadersWidth = 62;
+            this.dataGridViewPending.RowTemplate.Height = 28;
+            this.dataGridViewPending.Size = new System.Drawing.Size(574, 179);
+            this.dataGridViewPending.TabIndex = 1;
             // 
             // btnVacant
             // 
             this.btnVacant.BackColor = System.Drawing.Color.LightGreen;
             this.btnVacant.Location = new System.Drawing.Point(690, 94);
             this.btnVacant.Name = "btnVacant";
-            this.btnVacant.Size = new System.Drawing.Size(115, 35);
+            this.btnVacant.Size = new System.Drawing.Size(115, 38);
             this.btnVacant.TabIndex = 17;
             this.btnVacant.Text = "Vacant";
             this.btnVacant.UseVisualStyleBackColor = false;
@@ -534,21 +549,11 @@
             this.btnReserved.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnReserved.Location = new System.Drawing.Point(819, 94);
             this.btnReserved.Name = "btnReserved";
-            this.btnReserved.Size = new System.Drawing.Size(115, 35);
+            this.btnReserved.Size = new System.Drawing.Size(115, 38);
             this.btnReserved.TabIndex = 19;
             this.btnReserved.Text = "Reserved";
             this.btnReserved.UseVisualStyleBackColor = false;
             this.btnReserved.Click += new System.EventHandler(this.btnReserved_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.btnSearch.Location = new System.Drawing.Point(534, 7);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(34, 34);
-            this.btnSearch.TabIndex = 23;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // ManagerTablesPage
             // 
@@ -556,12 +561,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1230, 658);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnReserved);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnVacant);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -590,7 +595,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPending)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,11 +608,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewUpcoming;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtResvSearch;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox picT01;
         private System.Windows.Forms.PictureBox picT04;
         private System.Windows.Forms.PictureBox picT03;
@@ -634,7 +639,7 @@
         private System.Windows.Forms.PictureBox picVIP01;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewPending;
         private System.Windows.Forms.Button btnVacant;
         private System.Windows.Forms.Button btnReserved;
         private System.Windows.Forms.Button btnSearch;
