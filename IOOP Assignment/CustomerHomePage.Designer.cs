@@ -500,7 +500,6 @@
         private System.Windows.Forms.Panel feedbackPnl;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Button feedbackBtn;
         private System.Windows.Forms.Button reservationBtn;

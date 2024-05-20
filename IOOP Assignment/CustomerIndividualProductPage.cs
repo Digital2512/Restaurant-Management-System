@@ -55,7 +55,6 @@ namespace IOOP_Assignment
             if (previousOrderID == null || previousOrderID == "")
             {
                 orderID = database.GenerateUniqueID("ORDER", "OrderID", "Orders");
-                DateTime dateTime = new DateTime();
                 DateTime now = DateTime.Now;
                 string orderDateTimeMade = now.ToString();
                 DateTime orderDateTimeString = DateTime.ParseExact(orderDateTimeMade, "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);

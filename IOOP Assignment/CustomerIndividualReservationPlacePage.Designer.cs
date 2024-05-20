@@ -33,6 +33,8 @@
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblReservedDateTime = new System.Windows.Forms.Label();
+            this.reservedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lblPlaceEventType = new System.Windows.Forms.Label();
             this.lblEventType = new System.Windows.Forms.Label();
             this.lblMinOfPax = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
-            this.reservedDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,7 +85,7 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblReservedDateTime);
             this.panel2.Controls.Add(this.reservedDateTimePicker);
             this.panel2.Controls.Add(this.lblPlaceEventType);
             this.panel2.Controls.Add(this.lblEventType);
@@ -102,6 +102,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 12;
+            // 
+            // lblReservedDateTime
+            // 
+            this.lblReservedDateTime.AutoSize = true;
+            this.lblReservedDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservedDateTime.Location = new System.Drawing.Point(19, 569);
+            this.lblReservedDateTime.Name = "lblReservedDateTime";
+            this.lblReservedDateTime.Size = new System.Drawing.Size(239, 25);
+            this.lblReservedDateTime.TabIndex = 20;
+            this.lblReservedDateTime.Text = "Reserved Date and Time: ";
+            // 
+            // reservedDateTimePicker
+            // 
+            this.reservedDateTimePicker.Location = new System.Drawing.Point(24, 599);
+            this.reservedDateTimePicker.Name = "reservedDateTimePicker";
+            this.reservedDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.reservedDateTimePicker.TabIndex = 19;
             // 
             // lblPlaceEventType
             // 
@@ -210,23 +227,6 @@
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
-            // reservedDateTimePicker
-            // 
-            this.reservedDateTimePicker.Location = new System.Drawing.Point(24, 599);
-            this.reservedDateTimePicker.Name = "reservedDateTimePicker";
-            this.reservedDateTimePicker.Size = new System.Drawing.Size(200, 26);
-            this.reservedDateTimePicker.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(19, 569);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 25);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Reserved Date and Time: ";
-            // 
             // CustomerIndividualReservationPlacePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Label lblPlaceEventType;
         private System.Windows.Forms.Label lblEventType;
         private System.Windows.Forms.Label lblMinOfPax;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblReservedDateTime;
         private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
     }
 }
