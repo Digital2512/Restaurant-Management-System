@@ -209,14 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="foodButton.resx">
       <DependentUpon>foodButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +219,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -253,6 +253,26 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\searchIconResized.png" />
+    <None Include="PictureFolder\starResized.png" />
+    <None Include="PictureFolder\errorImageSmaller.png" />
+    <None Include="PictureFolder\errorImage.png" />
+    <None Include="PictureFolder\pendingResized.png" />
+    <None Include="PictureFolder\deniedResized.png" />
+    <None Include="PictureFolder\completedResized.png" />
+    <None Include="PictureFolder\approvedResized.png" />
+    <None Include="PictureFolder\cartResized.png" />
+    <None Include="PictureFolder\logoutResized.png" />
+    <None Include="PictureFolder\feedbackResized.png" />
+    <None Include="PictureFolder\orderReszied.png" />
+    <None Include="PictureFolder\reservationResized.png" />
+    <None Include="PictureFolder\orderResized.png" />
+    <None Include="PictureFolder\menuResized.png" />
+    <None Include="PictureFolder\passwordlHideIconResized.png" />
+    <None Include="PictureFolder\passwordShowIconResized.png" />
+    <None Include="PictureFolder\passwordlHideIcon.png" />
+    <None Include="PictureFolder\checkedResized.png" />
+    <None Include="PictureFolder\checked.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\success.png" />
     <None Include="Resources\recycle-bin.png" />

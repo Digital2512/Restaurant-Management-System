@@ -118,11 +118,12 @@
             // 
             // addToCartBtn
             // 
+            this.addToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addToCartBtn.Location = new System.Drawing.Point(216, 697);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.Size = new System.Drawing.Size(352, 53);
             this.addToCartBtn.TabIndex = 15;
-            this.addToCartBtn.Text = "Add To Cart";
+            this.addToCartBtn.Text = "ADD TO CART";
             this.addToCartBtn.UseVisualStyleBackColor = true;
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
@@ -185,6 +186,7 @@
             // 
             // productImagePBox
             // 
+            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(596, 334);
@@ -204,7 +206,7 @@
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // CustomerIndividualProductView
+            // CustomerIndividualProductPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,7 +214,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CustomerIndividualProductView";
+            this.Name = "CustomerIndividualProductPage";
             this.Text = "customerIndividualProductView";
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);

@@ -80,12 +80,12 @@ namespace IOOP_Assignment
                 string userID = database.getString(query);
                 query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
                 lblPasswordValue.Text = database.getString(query);
-                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
             else if (lblPasswordValue.Text != "********")
             {
                 lblPasswordValue.Text = "********";
-                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
         }
 

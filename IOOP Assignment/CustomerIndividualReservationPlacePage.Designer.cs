@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualReservationPlacePage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.durationCBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.noOfPaxTxtBox = new System.Windows.Forms.TextBox();
             this.lblNoOfPax = new System.Windows.Forms.Label();
             this.lblReservedDateTime = new System.Windows.Forms.Label();
@@ -41,15 +42,14 @@
             this.lblEventType = new System.Windows.Forms.Label();
             this.lblMinOfPax = new System.Windows.Forms.Label();
             this.reserveBtn = new System.Windows.Forms.Button();
-            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
             this.lblPlaceID = new System.Windows.Forms.Label();
             this.lblSpecialInstructions = new System.Windows.Forms.Label();
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.durationCBox = new System.Windows.Forms.ComboBox();
+            this.backButton = new System.Windows.Forms.Button();
+            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,18 +73,6 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // panel2
             // 
@@ -110,6 +98,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 737);
             this.panel2.TabIndex = 12;
+            // 
+            // durationCBox
+            // 
+            this.durationCBox.FormattingEnabled = true;
+            this.durationCBox.Items.AddRange(new object[] {
+            "30 Minutes",
+            "1 Hour",
+            "1 Hour and 30 Minutes",
+            "2 Hours",
+            "2 Hours and 30 Minutes",
+            "3 hours",
+            "3 Hours and 30 Minutes",
+            "4 Hours"});
+            this.durationCBox.Location = new System.Drawing.Point(292, 669);
+            this.durationCBox.Name = "durationCBox";
+            this.durationCBox.Size = new System.Drawing.Size(223, 28);
+            this.durationCBox.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(288, 639);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Duration";
             // 
             // noOfPaxTxtBox
             // 
@@ -179,6 +194,7 @@
             // 
             // reserveBtn
             // 
+            this.reserveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.Location = new System.Drawing.Point(3, 809);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(593, 53);
@@ -186,14 +202,6 @@
             this.reserveBtn.Text = "RESERVE";
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.reserveBtn_Click);
-            // 
-            // placeImagePBox
-            // 
-            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.placeImagePBox.Name = "placeImagePBox";
-            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
-            this.placeImagePBox.TabIndex = 14;
-            this.placeImagePBox.TabStop = false;
             // 
             // specialInstructionsRTxtBox
             // 
@@ -252,32 +260,26 @@
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
-            // label1
+            // backButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(288, 639);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Duration";
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // durationCBox
+            // placeImagePBox
             // 
-            this.durationCBox.FormattingEnabled = true;
-            this.durationCBox.Items.AddRange(new object[] {
-            "30 Minutes",
-            "1 Hour",
-            "1 Hour and 30 Minutes",
-            "2 Hours",
-            "2 Hours and 30 Minutes",
-            "3 hours",
-            "3 Hours and 30 Minutes",
-            "4 Hours"});
-            this.durationCBox.Location = new System.Drawing.Point(292, 669);
-            this.durationCBox.Name = "durationCBox";
-            this.durationCBox.Size = new System.Drawing.Size(223, 28);
-            this.durationCBox.TabIndex = 24;
+            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
+            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.placeImagePBox.Name = "placeImagePBox";
+            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.placeImagePBox.TabIndex = 14;
+            this.placeImagePBox.TabStop = false;
             // 
             // CustomerIndividualReservationPlacePage
             // 

@@ -63,9 +63,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3LinesSidebarIconResized {
+        internal static System.Drawing.Bitmap approvedResized {
             get {
-                object obj = ResourceManager.GetObject("3LinesSidebarIconResized", resourceCulture);
+                object obj = ResourceManager.GetObject("approvedResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap cartResized {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("cartResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap addIcon {
+        internal static System.Drawing.Bitmap checkedResized {
             get {
-                object obj = ResourceManager.GetObject("addIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("checkedResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backIcon {
+        internal static System.Drawing.Bitmap completedResized {
             get {
-                object obj = ResourceManager.GetObject("backIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("completedResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backIcon1 {
+        internal static System.Drawing.Bitmap deniedResized {
             get {
-                object obj = ResourceManager.GetObject("backIcon1", resourceCulture);
+                object obj = ResourceManager.GetObject("deniedResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backIcon2 {
+        internal static System.Drawing.Bitmap errorImage {
             get {
-                object obj = ResourceManager.GetObject("backIcon2", resourceCulture);
+                object obj = ResourceManager.GetObject("errorImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap booking {
+        internal static System.Drawing.Bitmap errorImageSmaller {
             get {
-                object obj = ResourceManager.GetObject("booking", resourceCulture);
+                object obj = ResourceManager.GetObject("errorImageSmaller", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap burgerImage {
+        internal static System.Drawing.Bitmap feedbackResized {
             get {
-                object obj = ResourceManager.GetObject("burgerImage", resourceCulture);
+                object obj = ResourceManager.GetObject("feedbackResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close {
+        internal static System.Drawing.Bitmap inKitchenResized {
             get {
-                object obj = ResourceManager.GetObject("close", resourceCulture);
+                object obj = ResourceManager.GetObject("inKitchenResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye {
+        internal static System.Drawing.Bitmap logoutResized {
             get {
-                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                object obj = ResourceManager.GetObject("logoutResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FeedbackButtonBGChanged1 {
+        internal static System.Drawing.Bitmap menuResized {
             get {
-                object obj = ResourceManager.GetObject("FeedbackButtonBGChanged1", resourceCulture);
+                object obj = ResourceManager.GetObject("menuResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap feedbackIcon {
+        internal static System.Drawing.Bitmap orderReszied {
             get {
-                object obj = ResourceManager.GetObject("feedbackIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("orderReszied", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoutIcon {
+        internal static System.Drawing.Bitmap passwordlHideIconResized {
             get {
-                object obj = ResourceManager.GetObject("logoutIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("passwordlHideIconResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrderButtonBGChanged {
+        internal static System.Drawing.Bitmap passwordShowIconResized {
             get {
-                object obj = ResourceManager.GetObject("OrderButtonBGChanged", resourceCulture);
+                object obj = ResourceManager.GetObject("passwordShowIconResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrderButtonBGChanged1 {
+        internal static System.Drawing.Bitmap pendingResized {
             get {
-                object obj = ResourceManager.GetObject("OrderButtonBGChanged1", resourceCulture);
+                object obj = ResourceManager.GetObject("pendingResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrderButtonBGChangedResized {
+        internal static System.Drawing.Bitmap reservationResized {
             get {
-                object obj = ResourceManager.GetObject("OrderButtonBGChangedResized", resourceCulture);
+                object obj = ResourceManager.GetObject("reservationResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrderButtonBGChangedResized1 {
+        internal static System.Drawing.Bitmap searchIconResized {
             get {
-                object obj = ResourceManager.GetObject("OrderButtonBGChangedResized1", resourceCulture);
+                object obj = ResourceManager.GetObject("searchIconResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,179 +233,9 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrderButtonResized {
+        internal static System.Drawing.Bitmap starResized {
             get {
-                object obj = ResourceManager.GetObject("OrderButtonResized", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap orderIcon {
-            get {
-                object obj = ResourceManager.GetObject("orderIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap passwordHideIcon {
-            get {
-                object obj = ResourceManager.GetObject("passwordHideIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap passwordShowIcon {
-            get {
-                object obj = ResourceManager.GetObject("passwordShowIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pastaImage {
-            get {
-                object obj = ResourceManager.GetObject("pastaImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pizzaImage {
-            get {
-                object obj = ResourceManager.GetObject("pizzaImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap profileIcon {
-            get {
-                object obj = ResourceManager.GetObject("profileIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap recycle_bin {
-            get {
-                object obj = ResourceManager.GetObject("recycle-bin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReservationButton {
-            get {
-                object obj = ResourceManager.GetObject("ReservationButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReservationButtonBGChanged {
-            get {
-                object obj = ResourceManager.GetObject("ReservationButtonBGChanged", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReservationButtonBGChanged1 {
-            get {
-                object obj = ResourceManager.GetObject("ReservationButtonBGChanged1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReservationButtonBGChanged2 {
-            get {
-                object obj = ResourceManager.GetObject("ReservationButtonBGChanged2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reservationIcon {
-            get {
-                object obj = ResourceManager.GetObject("reservationIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap saladImage {
-            get {
-                object obj = ResourceManager.GetObject("saladImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap searchIcon {
-            get {
-                object obj = ResourceManager.GetObject("searchIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap smoothieImage {
-            get {
-                object obj = ResourceManager.GetObject("smoothieImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap star {
-            get {
-                object obj = ResourceManager.GetObject("star", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap success {
-            get {
-                object obj = ResourceManager.GetObject("success", resourceCulture);
+                object obj = ResourceManager.GetObject("starResized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

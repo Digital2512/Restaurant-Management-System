@@ -103,7 +103,6 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.White;
-            this.addButton.Image = global::IOOP_Assignment.Properties.Resources.addIcon;
             this.addButton.Location = new System.Drawing.Point(-2, -7);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(46, 52);
@@ -113,7 +112,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.star;
+            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.starResized;
             this.pictureBox1.Location = new System.Drawing.Point(357, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 34);
@@ -123,7 +122,7 @@
             // productImagePBox
             // 
             this.productImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.pastaImage;
+            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(150, 150);

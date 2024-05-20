@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.homePageBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.approvedPBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.approvedPBox)).BeginInit();
             this.SuspendLayout();
             // 
             // homePageBtn
@@ -44,16 +44,6 @@
             this.homePageBtn.UseVisualStyleBackColor = true;
             this.homePageBtn.Click += new System.EventHandler(this.homePageBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.success;
-            this.pictureBox1.Location = new System.Drawing.Point(272, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 264);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -64,6 +54,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Payment Successful";
             // 
+            // approvedPBox
+            // 
+            this.approvedPBox.Image = global::IOOP_Assignment.Properties.Resources.checkedResized;
+            this.approvedPBox.Location = new System.Drawing.Point(288, 112);
+            this.approvedPBox.Name = "approvedPBox";
+            this.approvedPBox.Size = new System.Drawing.Size(204, 199);
+            this.approvedPBox.TabIndex = 0;
+            this.approvedPBox.TabStop = false;
+            // 
             // CustomerSuccessfulPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -71,10 +70,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.homePageBtn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.approvedPBox);
             this.Name = "CustomerSuccessfulPayment";
             this.Text = "CustomerSuccessfulPayment";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvedPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,7 +81,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox approvedPBox;
         private System.Windows.Forms.Button homePageBtn;
         private System.Windows.Forms.Label label1;
     }

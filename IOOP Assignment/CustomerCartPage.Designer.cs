@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerCartPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
             this.cartDetailsPnl = new System.Windows.Forms.Panel();
             this.cartProductShowFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubtotalAmountTitle = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.lblSubtotalAmount = new System.Windows.Forms.Label();
             this.lblTaxAmount = new System.Windows.Forms.Label();
             this.payBtn = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.cartDetailsPnl.SuspendLayout();
@@ -63,18 +63,6 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // cartDetailsPnl
             // 
@@ -154,9 +142,21 @@
             this.payBtn.Name = "payBtn";
             this.payBtn.Size = new System.Drawing.Size(804, 62);
             this.payBtn.TabIndex = 13;
-            this.payBtn.Text = "Pay";
+            this.payBtn.Text = "PAY";
             this.payBtn.UseVisualStyleBackColor = true;
             this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerCartPage
             // 

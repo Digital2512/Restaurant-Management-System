@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(placeButton));
-            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblMinOfPaxTitle = new System.Windows.Forms.Label();
             this.lblMinOfPax = new System.Windows.Forms.Label();
@@ -39,19 +38,10 @@
             this.addButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPlaceID = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).BeginInit();
+            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // placeImagePBox
-            // 
-            this.placeImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.pastaImage;
-            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.placeImagePBox.Name = "placeImagePBox";
-            this.placeImagePBox.Size = new System.Drawing.Size(150, 150);
-            this.placeImagePBox.TabIndex = 10;
-            this.placeImagePBox.TabStop = false;
             // 
             // lblPlaceName
             // 
@@ -116,7 +106,6 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.White;
-            this.addButton.Image = global::IOOP_Assignment.Properties.Resources.addIcon;
             this.addButton.Location = new System.Drawing.Point(-4, -3);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(46, 52);
@@ -141,6 +130,16 @@
             this.lblPlaceID.TabIndex = 19;
             this.lblPlaceID.Text = "HALL001";
             // 
+            // placeImagePBox
+            // 
+            this.placeImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.placeImagePBox.Name = "placeImagePBox";
+            this.placeImagePBox.Size = new System.Drawing.Size(150, 150);
+            this.placeImagePBox.TabIndex = 10;
+            this.placeImagePBox.TabStop = false;
+            // 
             // placeButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -157,8 +156,8 @@
             this.Controls.Add(this.placeImagePBox);
             this.Name = "placeButton";
             this.Size = new System.Drawing.Size(700, 150);
-            ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
