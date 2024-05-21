@@ -20,6 +20,10 @@ namespace IOOP_Assignment
         }
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
+<<<<<<< HEAD
+=======
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
+>>>>>>> parent of 45003f4 (commitMenuPage)
 
         private void ManagerMenuPage_Load(object sender, EventArgs e)
         {
@@ -33,8 +37,11 @@ namespace IOOP_Assignment
 
 
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of 45003f4 (commitMenuPage)
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -73,6 +80,51 @@ namespace IOOP_Assignment
 
         }
 
+<<<<<<< HEAD
+=======
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            byte[] images = null;
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(stream);
+            images = br.ReadBytes((int)stream.Length);
+
+            try
+            {
+                SqlConnection con = new SqlConnection(connetionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, Image=@Image WHERE ProductID=@ProductID", con);
+                cmd.Parameters.AddWithValue("@ProductID", txtProductID.Text);
+                cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
+                cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
+                cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
+                cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
+                cmd.Parameters.AddWithValue("@Image", images);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    // Refresh the DataGridView
+                    RefreshDataGridView();
+
+                    MessageBox.Show("Product Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No rows were updated. Please check the selected product ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                // Disable editing for ProductID textbox after update
+                txtProductID.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+>>>>>>> parent of 45003f4 (commitMenuPage)
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {

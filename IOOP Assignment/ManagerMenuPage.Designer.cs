@@ -254,7 +254,17 @@ namespace IOOP_Assignment
             this.lblProPrice.Size = new System.Drawing.Size(56, 22);
             this.lblProPrice.TabIndex = 10;
             this.lblProPrice.Text = "Price:";
+<<<<<<< HEAD
 
+=======
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(373, 289);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(123, 26);
+            this.txtProductID.TabIndex = 9;
+>>>>>>> parent of 45003f4 (commitMenuPage)
             // 
             // lblProID
             // 

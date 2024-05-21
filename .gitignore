@@ -1,3 +1,5 @@
 
 *.vsidx
 *.sqlite
+*.cache
+*.sln

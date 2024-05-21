@@ -50,5 +50,8 @@ C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOO
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerTableInformationPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerUpdateReservationPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationApprovalPage.resources
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
+=======
+>>>>>>> parent of 45003f4 (commitMenuPage)

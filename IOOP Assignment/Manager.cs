@@ -100,7 +100,10 @@ namespace IOOP_Assignment
 
         }
         
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
+=======
+>>>>>>> parent of 45003f4 (commitMenuPage)
     }
 }
