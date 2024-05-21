@@ -17,13 +17,8 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         //change the connection string when using a different laptop to connect to the database
-        public string connectionString = "";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private void loginButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -56,22 +51,50 @@ namespace IOOP_Assignment
                             {
                                 case "Admin":
                                     MessageBox.Show("Login Successful. User's Role: Admin");
+                                    string loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
+                                    this.Hide();
                                     AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();
-                                    this.Hide();
                                     break;
                                 case "Manager":
                                     MessageBox.Show("Login Successful. User's Role: Manager");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
+                                    this.Hide();
                                     ManagerHomePage managerHomePage = new ManagerHomePage();
                                     managerHomePage.Show();
                                     break;
                                 case "Chef":
                                     MessageBox.Show("Login Successful. User's Role: Chef");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
+                                    this.Hide();
                                     ChefHomePage chefHomePage = new ChefHomePage();
                                     chefHomePage.Show();
                                     break;
                                 case "Customer":
                                     MessageBox.Show("Login Successful. User's Role: Customer");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+
+                                    string loggedInUpdateCustomerQuery = $"UPDATE Customer SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    SqlCommand secondcmd = new SqlCommand(loggedInUpdateCustomerQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+                                    secondcmd.Parameters.AddWithValue("@Username", username);
+                                    secondcmd.ExecuteNonQuery();
+
+                                    this.Hide();
                                     CustomerHomePage customerHomePage = new CustomerHomePage();
                                     customerHomePage.Show();
                                     break;

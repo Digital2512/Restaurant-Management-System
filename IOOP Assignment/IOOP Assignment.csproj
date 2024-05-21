@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,11 +69,29 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="cartProductButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cartProductButton.Designer.cs">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChefHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChefHomePage.Designer.cs">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCartPage.Designer.cs">
+      <DependentUpon>CustomerCartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.Designer.cs">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
@@ -79,6 +99,49 @@
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerIndividualProductPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualProductPage.Designer.cs">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.Designer.cs">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerOrderPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerOrderPage.Designer.cs">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerProfilePage.Designer.cs">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReservationPage.Designer.cs">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerSuccessfulPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSuccessfulPayment.Designer.cs">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUpdateProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerUpdateProfilePage.Designer.cs">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,24 +154,76 @@
     <Compile Include="ManagerHomePage.Designer.cs">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="placeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="placeButton.Designer.cs">
+      <DependentUpon>placeButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="foodButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="foodButton.Designer.cs">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cartProductButton.resx">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCartPage.resx">
+      <DependentUpon>CustomerCartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFeedbackPage.resx">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIndividualProductPage.resx">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIndividualReservationPlacePage.resx">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerOrderPage.resx">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfilePage.resx">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerReservationPage.resx">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSuccessfulPayment.resx">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="placeButton.resx">
+      <DependentUpon>placeButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="foodButton.resx">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -138,6 +253,58 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\defaultImage.jpg" />
+    <None Include="PictureFolder\recycleBinResized.png" />
+    <None Include="PictureFolder\inKitchenResized.png" />
+    <None Include="PictureFolder\searchIconResized.png" />
+    <None Include="PictureFolder\starResized.png" />
+    <None Include="PictureFolder\errorImageSmaller.png" />
+    <None Include="PictureFolder\errorImage.png" />
+    <None Include="PictureFolder\pendingResized.png" />
+    <None Include="PictureFolder\deniedResized.png" />
+    <None Include="PictureFolder\completedResized.png" />
+    <None Include="PictureFolder\approvedResized.png" />
+    <None Include="PictureFolder\cartResized.png" />
+    <None Include="PictureFolder\logoutResized.png" />
+    <None Include="PictureFolder\feedbackResized.png" />
+    <None Include="PictureFolder\orderReszied.png" />
+    <None Include="PictureFolder\reservationResized.png" />
+    <None Include="PictureFolder\orderResized.png" />
+    <None Include="PictureFolder\menuResized.png" />
+    <None Include="PictureFolder\passwordlHideIconResized.png" />
+    <None Include="PictureFolder\passwordShowIconResized.png" />
+    <None Include="PictureFolder\passwordlHideIcon.png" />
+    <None Include="PictureFolder\checkedResized.png" />
+    <None Include="PictureFolder\checked.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\recycle-bin.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="PictureFolder\addIcon.png" />
+    <None Include="Resources\add.png" />
+    <None Include="PictureFolder\star.png" />
+    <None Include="PictureFolder\pastaImage.jpg" />
+    <None Include="PictureFolder\saladImage.jpg" />
+    <None Include="PictureFolder\smoothieImage.jpg" />
+    <None Include="PictureFolder\pizzaImage.jpg" />
+    <None Include="PictureFolder\burgerImage.jpg" />
+    <None Include="Resources\Burger.bmp" />
+    <None Include="PictureFolder\searchIcon.png" />
+    <None Include="PictureFolder\passwordShowIcon.png" />
+    <None Include="PictureFolder\passwordHideIcon.png" />
+    <None Include="PictureFolder\backIcon.png" />
+    <None Include="PictureFolder\profileIcon.png" />
+    <None Include="PictureFolder\logoutIcon.png" />
+    <None Include="PictureFolder\feedbackIcon.png" />
+    <None Include="PictureFolder\orderIcon.png" />
+    <None Include="PictureFolder\reservationIcon.png" />
+    <None Include="Resources\booking.png" />
+    <None Include="PictureFolder\OrderButtonResized.png" />
+    <None Include="PictureFolder\ReservationButton.png" />
+    <None Include="PictureFolder\ReservationButtonBGChanged.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized1.png" />
+    <None Include="PictureFolder\OrderButtonBGChangedResized.png" />
+    <None Include="PictureFolder\OrderButtonBGChanged.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
