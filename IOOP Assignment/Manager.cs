@@ -34,7 +34,7 @@ namespace IOOP_Assignment
             form.Close();
         }
 
-        public static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private SqlConnection con;
         private SqlCommand cmd;
         
@@ -61,8 +61,8 @@ namespace IOOP_Assignment
                 SqlConnection con = new SqlConnection(connetionString);
                 con.Open();
                 string sqlQuery = isVacant ?
-                    "SELECT ReservationID FROM PlaceOfReservation WHERE ReservationID IS NULL" :
-                    "SELECT ReservationID FROM PlaceOfReservation WHERE ReservationID IS NOT NULL";
+                    "SELECT ReservationID, CustomerID FROM PlaceOfReservation WHERE ReservationID IS NULL AND CustomerID IS NULL" :
+                    "SELECT ReservationID, CustomerID FROM PlaceOfReservation WHERE ReservationID IS NOT NULL AND CustomerID IS NOT NULL";
                 cmd = new SqlCommand(sqlQuery, con);
 
 
@@ -94,28 +94,6 @@ namespace IOOP_Assignment
             }
 
         }
-
-        public DataTable GetPlaceIDs()
-        {
-            DataTable dataTable = new DataTable();
-            try
-            {
-                SqlConnection con = new SqlConnection(connetionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE PlaceID = @PlaceID");
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
-            
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                return null;
-            }
-            
-        }
+        
     }
 }

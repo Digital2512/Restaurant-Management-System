@@ -12,7 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class ManagerReservationReportPage : Form
     {
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
         DataTable reservationData;
         public ManagerReservationReportPage()
         {
@@ -29,7 +29,7 @@ namespace IOOP_Assignment
         {
             // Get initial filter values
             string selectedMonth = cbbMonth.SelectedItem?.ToString();
-            string selectedReservationType = cbbPlaceID.SelectedItem?.ToString();
+            string selectedReservationType = cbbResvType.SelectedItem?.ToString();
             
 
             // Get reservation data based on initial filters

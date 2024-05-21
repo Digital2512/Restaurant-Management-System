@@ -42,7 +42,7 @@ namespace IOOP_Assignment
 
 
         }
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
 
 
@@ -99,13 +99,13 @@ namespace IOOP_Assignment
             da.Fill(dt);
             dataGridViewUpcoming.DataSource = dt;
 
-            /*SqlConnection con2 = new SqlConnection(connetionString);
+            SqlConnection con2 = new SqlConnection(connetionString);
             con2.Open();
             SqlCommand cmd2 = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'Pending' ", con2);
             SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
-            dataGridViewPending.DataSource = dt2;*/
+            dataGridViewPending.DataSource = dt2;
 
         }
 

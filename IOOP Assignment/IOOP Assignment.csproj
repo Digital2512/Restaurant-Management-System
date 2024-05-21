@@ -157,8 +157,62 @@
     <Compile Include="placeButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="placeButton.Designer.cs">
       <DependentUpon>placeButton.cs</DependentUpon>
+=======
+    <Compile Include="ManagerMenuPage.Designer.cs">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReservation.cs" />
+    <Compile Include="ManagerReservationApprovalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReservationApprovalPage.Designer.cs">
+      <DependentUpon>ManagerReservationApprovalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.Designer.cs">
+      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReservationSuccessfulPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReservationSuccessfulPage.Designer.cs">
+      <DependentUpon>ManagerReservationSuccessfulPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTableInformationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTableInformationPage.Designer.cs">
+      <DependentUpon>ManagerTableInformationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTablesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTablesPage.Designer.cs">
+      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUpdateReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUpdateReservationPage.Designer.cs">
+      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.Designer.cs">
+      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
+>>>>>>> parent of 45003f4 (commitMenuPage)
+    </Compile>
+    <Compile Include="ManageUpdateProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUpdateProfilePage.Designer.cs">
+      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,8 +258,43 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="placeButton.resx">
       <DependentUpon>placeButton.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="ManagerAddReservationPage.resx">
+      <DependentUpon>ManagerAddReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerHomePage.resx">
+      <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMenuPage.resx">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerReservationApprovalPage.resx">
+      <DependentUpon>ManagerReservationApprovalPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerReservationReportPage.resx">
+      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerReservationSuccessfulPage.resx">
+      <DependentUpon>ManagerReservationSuccessfulPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTableInformationPage.resx">
+      <DependentUpon>ManagerTableInformationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTablesPage.resx">
+      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUpdateReservationPage.resx">
+      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewProfilePage.resx">
+      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
+>>>>>>> parent of 45003f4 (commitMenuPage)
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUpdateProfilePage.resx">
+      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

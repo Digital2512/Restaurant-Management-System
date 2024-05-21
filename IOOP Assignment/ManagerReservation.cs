@@ -12,7 +12,7 @@ namespace IOOP_Assignment
 {
     public class ManagerReservation
     {
-        private static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        private static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public string ReservationID;
         public string CustomerID;
@@ -132,134 +132,75 @@ namespace IOOP_Assignment
         //ManagerTablesInformationPage
         public DataTable GetVacantTableInfo(string placeID)
         {
-            SqlConnection con = new SqlConnection(connetionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT PlaceID, Name, MinOfPax, EventType FROM PlaceOfReservation WHERE PlaceID = @PlaceID AND ReservationID IS NULL", con);
-            cmd.Parameters.AddWithValue("@PlaceID", placeID);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            using (SqlConnection con = new SqlConnection(connetionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT PlaceID, Description, MinOfPax, EventType FROM PlaceOfReservation WHERE PlaceID = @PlaceID AND ReservationID IS NULL AND CustomerID IS NULL", con);
+                cmd.Parameters.AddWithValue("@PlaceID", placeID);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
 
-            
+            }
         }
         public DataTable GetReservedTableInfo(string placeID)
         {
-            SqlConnection con = new SqlConnection(connetionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ReservationID, PlaceID, CustomerID, PlaceName, CustomerPax, ReservedDateTime, Duration FROM Reservation WHERE PlaceID = @PlaceID AND ReservationID IS NOT NULL AND CustomerID IS NOT NULL", con);
-            cmd.Parameters.AddWithValue("@PlaceID", placeID);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-            
+            using (SqlConnection con = new SqlConnection(connetionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ReservationID, CustomerID, PlaceID, PlaceName, PlaceMinOfPax, ReservedDateTime, Duration FROM Reservation WHERE PlaceID = @PlaceID AND ReservationID IS NOT NULL AND CustomerID IS NOT NULL", con);
+                cmd.Parameters.AddWithValue("@PlaceID", placeID);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
 
 
         //ManagerAddReservationPage
+        
 
-        // Method to generate the next ReservationID
-        public string GenerateNextReservationID()
-        {
-            string lastReservationID = GetLastReservationID();
-            int nextID = 1;
-
-            if (!string.IsNullOrEmpty(lastReservationID) && lastReservationID.Length >= 4)
-            {
-                string numericPart = lastReservationID.Substring(1);
-                if (int.TryParse(numericPart, out int lastID))
-                {
-                    nextID = lastID + 1;
-                }
-            }
-
-            return "R" + nextID.ToString("D3");
-        }
-
-        // Method to get the last ReservationID from the database
-        private string GetLastReservationID()
-        {
-            string lastReservationID = null;
-            try
-            {
-                
-                SqlConnection con = new SqlConnection(connetionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ReservationID FROM Reservation ORDER BY ReservationID DESC", con);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    lastReservationID = reader["ReservationID"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while retrieving the last reservation ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return lastReservationID;
-
-        }
-
-        // Method to add a new reservation to the database
-        public static void AddReservation(string customerID, string placeID, string placeName, int customerPax, DateTime reservedDate, DateTime reservedTime, int duration)
+        public static void AddReservation(string reservationID, string customerID, string placeID, string placeName, int placeMinOfPax, DateTime reservedDate, DateTime reservedTime, int duration)
         {
             try
             {
                 // Combine the date from reservedDate and the time from reservedTime into a single DateTime object
                 DateTime combinedDateTime = reservedDate.Date.Add(reservedTime.TimeOfDay);
 
-                if (!PlaceExists(placeID))
-                {
-                    MessageBox.Show("Invalid PlaceID. Please select a valid place.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Exit the method if the placeID is invalid
-                }
-
-                ManagerReservation managerReservation = new ManagerReservation();
-                string newReservationID = managerReservation.GenerateNextReservationID();
 
                 SqlConnection con = new SqlConnection(connetionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Reservation (ReservationID, PlaceID, CustomerID, PlaceName, CustomerPax, ReservedDateTime, Duration) VALUES (@ReservationID, @PlaceID, @CustomerID, @PlaceName, @CustomerPax, @ReservedDateTime, @Duration)", con);
-                
-                cmd.Parameters.AddWithValue("@ReservationID", newReservationID);
-                cmd.Parameters.AddWithValue("@PlaceID", placeID);
-                cmd.Parameters.AddWithValue("@CustomerID", customerID);
-                cmd.Parameters.AddWithValue("@PlaceName", placeName);
-                cmd.Parameters.AddWithValue("@CustomerPax", customerPax);
-                cmd.Parameters.AddWithValue("@ReservedDateTime", combinedDateTime);
-                cmd.Parameters.AddWithValue("@Duration", duration);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Reservation (ReservationID, CustomerID, PlaceID, PlaceName, PlaceMinOfPax, ReservedDateTime, Duration) " +
+                    "VALUES (@ReservationID, @CustomerID, @PlaceID, @PlaceName, @PlaceMinOfPax, @ReservedDateTime, @Duration) " +
+                    "WHERE PlaceID = @PlaceID AND ReservationID IS NOT NULL AND CustomerID IS NOT NULL",con);
 
-                int rowsAffected = cmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Reservation added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmd.Parameters.AddWithValue("@ReservationID", reservationID);
+                    cmd.Parameters.AddWithValue("@CustomerID", customerID);
+                    cmd.Parameters.AddWithValue("@PlaceID", placeID);
+                    cmd.Parameters.AddWithValue("@PlaceName", placeName);
+                    cmd.Parameters.AddWithValue("@PlaceMinOfPax", placeMinOfPax);
+                    cmd.Parameters.AddWithValue("@ReservedDateTime", combinedDateTime);
+                    cmd.Parameters.AddWithValue("@Duration", duration);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Reservation added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Show ReservationSuccessfulPage after the user clicks "OK" on the message box
                     ManagerReservationSuccessfulPage reservationSuccessPage = new ManagerReservationSuccessfulPage();
                     reservationSuccessPage.Show();
+
                 }
-                else
-                {
-                    MessageBox.Show("No matching place found to add the reservation.");
-                }
-                
+                    else
+                    {
+                        MessageBox.Show("No matching place found to add the reservation.");
+                    }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while adding the reservation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Method to check if the provided placeID exists in the PlaceOfReservation table
-        private static bool PlaceExists(string placeID)
-        {
-            using (SqlConnection con = new SqlConnection(connetionString))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM PlaceOfReservation WHERE PlaceID = @PlaceID", con);
-                cmd.Parameters.AddWithValue("@PlaceID", placeID);
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
             }
         }
 
@@ -291,7 +232,7 @@ namespace IOOP_Assignment
                 reader.Close();
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // Handle exception
             }

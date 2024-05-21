@@ -34,10 +34,10 @@ namespace IOOP_Assignment
             this.btnExit = new System.Windows.Forms.Button();
             this.lblHeaderResv = new System.Windows.Forms.Label();
             this.dataGridViewResvReport = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbbMonth = new System.Windows.Forms.ComboBox();
-            this.cbbPlaceID = new System.Windows.Forms.ComboBox();
+            this.cbbResvType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResvReport)).BeginInit();
             this.SuspendLayout();
@@ -83,14 +83,14 @@ namespace IOOP_Assignment
             this.dataGridViewResvReport.Size = new System.Drawing.Size(955, 374);
             this.dataGridViewResvReport.TabIndex = 3;
             // 
-            // txtSearch
+            // txtSearchProduct
             // 
-            this.txtSearch.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.Location = new System.Drawing.Point(819, 101);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(126, 26);
-            this.txtSearch.TabIndex = 28;
-            this.txtSearch.Text = "Search..";
+            this.txtSearchProduct.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearchProduct.Location = new System.Drawing.Point(819, 101);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(126, 26);
+            this.txtSearchProduct.TabIndex = 28;
+            this.txtSearchProduct.Text = "Search..";
             // 
             // btnSearch
             // 
@@ -109,13 +109,13 @@ namespace IOOP_Assignment
             this.cbbMonth.Size = new System.Drawing.Size(121, 28);
             this.cbbMonth.TabIndex = 30;
             // 
-            // cbbPlaceID
+            // cbbResvType
             // 
-            this.cbbPlaceID.FormattingEnabled = true;
-            this.cbbPlaceID.Location = new System.Drawing.Point(641, 103);
-            this.cbbPlaceID.Name = "cbbPlaceID";
-            this.cbbPlaceID.Size = new System.Drawing.Size(121, 28);
-            this.cbbPlaceID.TabIndex = 31;
+            this.cbbResvType.FormattingEnabled = true;
+            this.cbbResvType.Location = new System.Drawing.Point(641, 103);
+            this.cbbResvType.Name = "cbbResvType";
+            this.cbbResvType.Size = new System.Drawing.Size(121, 28);
+            this.cbbResvType.TabIndex = 31;
             // 
             // ManagerReservationReportPage
             // 
@@ -123,9 +123,9 @@ namespace IOOP_Assignment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1052, 578);
-            this.Controls.Add(this.cbbPlaceID);
+            this.Controls.Add(this.cbbResvType);
             this.Controls.Add(this.cbbMonth);
-            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.txtSearchProduct);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewResvReport);
@@ -145,9 +145,9 @@ namespace IOOP_Assignment
         private System.Windows.Forms.Label lblHeaderResv;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dataGridViewResvReport;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtSearchProduct;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbbMonth;
-        private System.Windows.Forms.ComboBox cbbPlaceID;
+        private System.Windows.Forms.ComboBox cbbResvType;
     }
 }

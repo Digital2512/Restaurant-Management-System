@@ -23,17 +23,15 @@ namespace IOOP_Assignment
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
-            string reservationID = "R001";
-            string customerID = "C01";
-            string placeID = "T001";
-            string placeName = "Table 1";
-            int customerPax = 2;
+            string reservationID = "123456";
+            string customerID = "789";
+            string placeID = "ABC";
+            string placeName = "Place Name";
+            int placeMinOfPax = 2;
             int duration = 2;
-            DateTime reservedDate = datetimepicker1.Value.Date;
-            DateTime reservedTime = datetimepicker2.Value;
 
-            ManagerReservation.AddReservation(customerID, placeID, placeName, customerPax, reservedDate, reservedTime, duration);
-            
+            ManagerReservation.AddReservation(reservationID, customerID, placeID, placeName, placeMinOfPax, datetimepicker1.Value, datetimepicker2.Value, duration);
+            MessageBox.Show("Reservation added successfully.");
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,28 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IOOP_Assignment
 {
-    public partial class ManagerUpdateProfilePage : Form
+    public partial class ManageUpdateProfilePage : Form
     {
-
-        public ManagerUpdateProfilePage(string userID, string password, string role, string fullName, string gender, string birthday)
+        public ManageUpdateProfilePage()
         {
             InitializeComponent();
-            lblUserID.Text = userID; 
-            txtPsw.Text = password;
-            lblRole.Text = role;
-            txtName.Text = fullName;
-            cbbGender.Text = gender;
-            pickerDOB.Text = birthday;
+        }
 
-            
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
-
-    }
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -38,6 +27,8 @@ namespace IOOP_Assignment
                 SqlConnection con = new SqlConnection(connetionString);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("UPDATE Users SET Name=@FullName, Password=@Password, Gender=@Gender, Birthday=@Birthday WHERE UserID=@UserID", con);
+
+                cmd.Parameters.AddWithValue("@UserID", textBox1.Text);
                 cmd.Parameters.AddWithValue("@FullName", txtName.Text);
                 cmd.Parameters.AddWithValue("@Password", txtPsw.Text);
                 cmd.Parameters.AddWithValue("@Gender", cbbGender.Text);
@@ -55,5 +46,7 @@ namespace IOOP_Assignment
                 MessageBox.Show($"An error occurred while updating the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
+

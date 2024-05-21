@@ -19,20 +19,19 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private void ManagerMenuPage_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connetionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, Description, Price, Cuisine, Ratings, ProductImage FROM Menu", con);
+            SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, Description, Price, Cuisine, Ratings, Image FROM Menu", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewMenu.DataSource = dt;
 
         }
-
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -53,13 +52,13 @@ namespace IOOP_Assignment
 
             SqlConnection con = new SqlConnection(connetionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, ProductImage) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @ProductImage)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, Image) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @Image)", con);
             cmd.Parameters.AddWithValue("@ProductID", txtProductID.Text);
             cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
             cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
             cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
             cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
-            cmd.Parameters.AddWithValue("@ProductImage", images);
+            cmd.Parameters.AddWithValue("@Image", images);
             cmd.ExecuteNonQuery();
 
             RefreshDataGridView();
@@ -83,13 +82,13 @@ namespace IOOP_Assignment
             {
                 SqlConnection con = new SqlConnection(connetionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, ProductImage=@ProductImage WHERE ProductID=@ProductID", con);
+                SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, Image=@Image WHERE ProductID=@ProductID", con);
                 cmd.Parameters.AddWithValue("@ProductID", txtProductID.Text);
                 cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
                 cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
                 cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
                 cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
-                cmd.Parameters.AddWithValue("@ProductImage", images);
+                cmd.Parameters.AddWithValue("@Image", images);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
@@ -226,10 +225,9 @@ namespace IOOP_Assignment
                     cbbCuisine.Text = row.Cells["Cuisine"].Value.ToString();
                     picMenu.Image = Properties.Resources.FoodIcon;
 
-                    
-                    if (row.Cells["ProductImage"].Value != DBNull.Value)
+                    if (row.Cells["Image"].Value != DBNull.Value)
                     {
-                        byte[] imageData = (byte[])row.Cells["ProductImage"].Value;
+                        byte[] imageData = (byte[])row.Cells["Image"].Value;
                         using (MemoryStream memoryStream = new MemoryStream(imageData))
                         {
                             picMenu.Image = Image.FromStream(memoryStream);

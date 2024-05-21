@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class ManagerUpdateProfilePage
+    partial class ManageUpdateProfilePage
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,8 @@
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPsw = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.picManager = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderProfile = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
@@ -42,10 +44,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
             this.pickerDOB = new System.Windows.Forms.DateTimePicker();
-            this.picManager = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
@@ -94,6 +95,26 @@
             this.txtPsw.Name = "txtPsw";
             this.txtPsw.Size = new System.Drawing.Size(100, 26);
             this.txtPsw.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::IOOP_Assignment.Properties.Resources.editIcon;
+            this.button1.Location = new System.Drawing.Point(256, 139);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 38);
+            this.button1.TabIndex = 25;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // picManager
+            // 
+            this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.managerIcon;
+            this.picManager.Location = new System.Drawing.Point(142, 67);
+            this.picManager.Name = "picManager";
+            this.picManager.Size = new System.Drawing.Size(110, 110);
+            this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picManager.TabIndex = 33;
+            this.picManager.TabStop = false;
             // 
             // panel2
             // 
@@ -178,31 +199,19 @@
             this.pickerDOB.Size = new System.Drawing.Size(110, 26);
             this.pickerDOB.TabIndex = 40;
             // 
-            // picManager
+            // textBox1
             // 
-            this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.managerIcon;
-            this.picManager.Location = new System.Drawing.Point(142, 67);
-            this.picManager.Name = "picManager";
-            this.picManager.Size = new System.Drawing.Size(110, 110);
-            this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picManager.TabIndex = 33;
-            this.picManager.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(200, 216);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 41;
             // 
-            // button1
-            // 
-            this.button1.Image = global::IOOP_Assignment.Properties.Resources.editIcon;
-            this.button1.Location = new System.Drawing.Point(256, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 38);
-            this.button1.TabIndex = 25;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // ManagerUpdateProfilePage
+            // ManageUpdateProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 510);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pickerDOB);
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.lblPsw);
@@ -219,11 +228,11 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ManagerUpdateProfilePage";
+            this.Name = "ManageUpdateProfilePage";
             this.Text = "UpcomingList";
+            ((System.ComponentModel.ISupportInitialize)(this.picManager)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +255,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.DateTimePicker pickerDOB;
+        private System.Windows.Forms.TextBox textBox1;
+
     }
 }

@@ -16,7 +16,13 @@ namespace IOOP_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new loginForm());
+=======
+
+            Application.Run(new ManagerTablesPage());
+
+>>>>>>> parent of 45003f4 (commitMenuPage)
         }
     }
 }
