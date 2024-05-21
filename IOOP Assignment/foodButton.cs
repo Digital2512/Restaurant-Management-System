@@ -14,16 +14,16 @@ namespace IOOP_Assignment
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
-        private string ProductID { get; }
-        public foodButton(string productID,string productName, string productPrice, string productDescription, Image productImagePath, string productRatingText)
+        private string ProductID { get; set; }
+        public foodButton(string productID,string productName, string productPrice, string productDescription, string productRatingText, Image productImage)
         {
             InitializeComponent();
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;
             this.lblProductPrice.Text = productPrice;
             this.lblProductDescription.Text = productDescription;
-            this.productImagePBox.Image = productImagePath;
             this.lblProductRating.Text = $"{productRatingText} / 5.0";
+            this.productImagePBox.Image = productImage;
             ProductID = productID;
                 
         }
@@ -39,13 +39,25 @@ namespace IOOP_Assignment
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Database database = new Database(connectionString);
-            string query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
-            database.insertValuesIntoDatabase(query);
-            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
-            CustomerIndividualProductView customerIndividualProductView = new CustomerIndividualProductView();
-            customerOrderPage.Hide();
-            customerIndividualProductView.Show();
+            try
+            {
+                Database database = new Database(connectionString);
+                string query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
+                database.insertOrUpdateValuesIntoDatabase(query);
+
+                Form parentForm = this.FindForm();
+                if (parentForm != null)
+                {
+                    parentForm.Close();
+                }
+
+                CustomerIndividualProductPage customerIndividualProductView = new CustomerIndividualProductPage();
+                customerIndividualProductView.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
     }
 }

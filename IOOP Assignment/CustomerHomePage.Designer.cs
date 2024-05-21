@@ -35,25 +35,32 @@
             this.reservationPnl = new System.Windows.Forms.Panel();
             this.orderPnl = new System.Windows.Forms.Panel();
             this.feedbackPnl = new System.Windows.Forms.Panel();
-            this.menuTransition = new System.Windows.Forms.Timer(this.components);
-            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.logoutPnl = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.orderStatusPnl = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblOrderNumber = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pastOrderPnl = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.profilePnl = new System.Windows.Forms.Panel();
             this.profileBtn = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuTransition = new System.Windows.Forms.Timer(this.components);
+            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.orderStatusPnl = new System.Windows.Forms.Panel();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
+            this.lblOrderStatusTitle = new System.Windows.Forms.Label();
+            this.lblEstimatedTime = new System.Windows.Forms.Label();
+            this.lblOrderID = new System.Windows.Forms.Label();
+            this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
+            this.lblOrderIDTitle = new System.Windows.Forms.Label();
+            this.pastOrderPnl = new System.Windows.Forms.Panel();
+            this.lblReservationStatus = new System.Windows.Forms.Label();
+            this.lblReservationStatusTitle = new System.Windows.Forms.Label();
+            this.lblPlaceName = new System.Windows.Forms.Label();
+            this.lblPlaceNameTitle = new System.Windows.Forms.Label();
+            this.lblPlaceID = new System.Windows.Forms.Label();
+            this.lblReservationID = new System.Windows.Forms.Label();
+            this.lblPlaceIDTitle = new System.Windows.Forms.Label();
+            this.lblReservationIDTitle = new System.Windows.Forms.Label();
+            this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
+            this.orderStatusPBox = new System.Windows.Forms.PictureBox();
             this.reservationBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
@@ -65,12 +72,11 @@
             this.orderPnl.SuspendLayout();
             this.feedbackPnl.SuspendLayout();
             this.logoutPnl.SuspendLayout();
+            this.profilePnl.SuspendLayout();
             this.orderStatusPnl.SuspendLayout();
             this.pastOrderPnl.SuspendLayout();
-            this.profilePnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,15 +138,6 @@
             this.feedbackPnl.Size = new System.Drawing.Size(179, 57);
             this.feedbackPnl.TabIndex = 3;
             // 
-            // menuTransition
-            // 
-            this.menuTransition.Interval = 10;
-            // 
-            // sidebarTransition
-            // 
-            this.sidebarTransition.Interval = 10;
-            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
-            // 
             // logoutPnl
             // 
             this.logoutPnl.Controls.Add(this.logoutBtn);
@@ -148,105 +145,6 @@
             this.logoutPnl.Name = "logoutPnl";
             this.logoutPnl.Size = new System.Drawing.Size(179, 57);
             this.logoutPnl.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Order Status";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(232, 263);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 37);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Past Order";
-            // 
-            // orderStatusPnl
-            // 
-            this.orderStatusPnl.Controls.Add(this.label6);
-            this.orderStatusPnl.Controls.Add(this.lblOrderNumber);
-            this.orderStatusPnl.Controls.Add(this.pictureBox1);
-            this.orderStatusPnl.Controls.Add(this.label5);
-            this.orderStatusPnl.Controls.Add(this.label4);
-            this.orderStatusPnl.Location = new System.Drawing.Point(237, 139);
-            this.orderStatusPnl.Name = "orderStatusPnl";
-            this.orderStatusPnl.Size = new System.Drawing.Size(462, 104);
-            this.orderStatusPnl.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Order Number: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Estimated Time Left: ";
-            // 
-            // lblOrderNumber
-            // 
-            this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Location = new System.Drawing.Point(16, 30);
-            this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(105, 20);
-            this.lblOrderNumber.TabIndex = 3;
-            this.lblOrderNumber.Text = "OrderNumber";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "EstimatedTime";
-            // 
-            // pastOrderPnl
-            // 
-            this.pastOrderPnl.Controls.Add(this.pictureBox3);
-            this.pastOrderPnl.Controls.Add(this.label8);
-            this.pastOrderPnl.Controls.Add(this.pictureBox2);
-            this.pastOrderPnl.Controls.Add(this.label10);
-            this.pastOrderPnl.Location = new System.Drawing.Point(237, 306);
-            this.pastOrderPnl.Name = "pastOrderPnl";
-            this.pastOrderPnl.Size = new System.Drawing.Size(462, 104);
-            this.pastOrderPnl.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Food\'s Price";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(4, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 25);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Food\'s Title";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel2
             // 
@@ -268,7 +166,6 @@
             this.profileBtn.BackColor = System.Drawing.Color.DimGray;
             this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileBtn.ForeColor = System.Drawing.Color.White;
-            this.profileBtn.Image = global::IOOP_Assignment.Properties.Resources.profileIcon;
             this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.profileBtn.Location = new System.Drawing.Point(-3, -6);
             this.profileBtn.Name = "profileBtn";
@@ -278,36 +175,224 @@
             this.profileBtn.UseVisualStyleBackColor = false;
             this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
-            // pictureBox3
+            // menuTransition
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(6, 62);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(172, 36);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.menuTransition.Interval = 10;
             // 
-            // pictureBox2
+            // sidebarTransition
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(339, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(123, 104);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 104);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(231, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(211, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Order Status";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(232, 238);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(303, 37);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Reservation Status";
+            // 
+            // orderStatusPnl
+            // 
+            this.orderStatusPnl.Controls.Add(this.lblOrderStatus);
+            this.orderStatusPnl.Controls.Add(this.lblOrderStatusTitle);
+            this.orderStatusPnl.Controls.Add(this.lblEstimatedTime);
+            this.orderStatusPnl.Controls.Add(this.lblOrderID);
+            this.orderStatusPnl.Controls.Add(this.orderStatusPBox);
+            this.orderStatusPnl.Controls.Add(this.lblEstimatedTimeLeftTitle);
+            this.orderStatusPnl.Controls.Add(this.lblOrderIDTitle);
+            this.orderStatusPnl.Location = new System.Drawing.Point(237, 119);
+            this.orderStatusPnl.Name = "orderStatusPnl";
+            this.orderStatusPnl.Size = new System.Drawing.Size(462, 104);
+            this.orderStatusPnl.TabIndex = 4;
+            // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Location = new System.Drawing.Point(205, 72);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(72, 20);
+            this.lblOrderStatus.TabIndex = 6;
+            this.lblOrderStatus.Text = "MAKING";
+            // 
+            // lblOrderStatusTitle
+            // 
+            this.lblOrderStatusTitle.AutoSize = true;
+            this.lblOrderStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblOrderStatusTitle.Location = new System.Drawing.Point(4, 69);
+            this.lblOrderStatusTitle.Name = "lblOrderStatusTitle";
+            this.lblOrderStatusTitle.Size = new System.Drawing.Size(79, 25);
+            this.lblOrderStatusTitle.TabIndex = 5;
+            this.lblOrderStatusTitle.Text = "Status: ";
+            // 
+            // lblEstimatedTime
+            // 
+            this.lblEstimatedTime.AutoSize = true;
+            this.lblEstimatedTime.Location = new System.Drawing.Point(205, 41);
+            this.lblEstimatedTime.Name = "lblEstimatedTime";
+            this.lblEstimatedTime.Size = new System.Drawing.Size(115, 20);
+            this.lblEstimatedTime.TabIndex = 4;
+            this.lblEstimatedTime.Text = "EstimatedTime";
+            // 
+            // lblOrderID
+            // 
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(205, 10);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(66, 20);
+            this.lblOrderID.TabIndex = 3;
+            this.lblOrderID.Text = "OrderID";
+            // 
+            // lblEstimatedTimeLeftTitle
+            // 
+            this.lblEstimatedTimeLeftTitle.AutoSize = true;
+            this.lblEstimatedTimeLeftTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEstimatedTimeLeftTitle.Location = new System.Drawing.Point(4, 37);
+            this.lblEstimatedTimeLeftTitle.Name = "lblEstimatedTimeLeftTitle";
+            this.lblEstimatedTimeLeftTitle.Size = new System.Drawing.Size(195, 25);
+            this.lblEstimatedTimeLeftTitle.TabIndex = 1;
+            this.lblEstimatedTimeLeftTitle.Text = "Estimated Time Left: ";
+            // 
+            // lblOrderIDTitle
+            // 
+            this.lblOrderIDTitle.AutoSize = true;
+            this.lblOrderIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblOrderIDTitle.Location = new System.Drawing.Point(4, 6);
+            this.lblOrderIDTitle.Name = "lblOrderIDTitle";
+            this.lblOrderIDTitle.Size = new System.Drawing.Size(97, 25);
+            this.lblOrderIDTitle.TabIndex = 0;
+            this.lblOrderIDTitle.Text = "Order ID: ";
+            // 
+            // pastOrderPnl
+            // 
+            this.pastOrderPnl.Controls.Add(this.lblReservationStatus);
+            this.pastOrderPnl.Controls.Add(this.lblReservationStatusTitle);
+            this.pastOrderPnl.Controls.Add(this.lblPlaceName);
+            this.pastOrderPnl.Controls.Add(this.lblPlaceNameTitle);
+            this.pastOrderPnl.Controls.Add(this.lblPlaceID);
+            this.pastOrderPnl.Controls.Add(this.lblReservationID);
+            this.pastOrderPnl.Controls.Add(this.lblPlaceIDTitle);
+            this.pastOrderPnl.Controls.Add(this.lblReservationIDTitle);
+            this.pastOrderPnl.Controls.Add(this.reservationStatusPBox);
+            this.pastOrderPnl.Location = new System.Drawing.Point(237, 281);
+            this.pastOrderPnl.Name = "pastOrderPnl";
+            this.pastOrderPnl.Size = new System.Drawing.Size(462, 151);
+            this.pastOrderPnl.TabIndex = 5;
+            // 
+            // lblReservationStatus
+            // 
+            this.lblReservationStatus.AutoSize = true;
+            this.lblReservationStatus.Location = new System.Drawing.Point(161, 121);
+            this.lblReservationStatus.Name = "lblReservationStatus";
+            this.lblReservationStatus.Size = new System.Drawing.Size(82, 20);
+            this.lblReservationStatus.TabIndex = 12;
+            this.lblReservationStatus.Text = "PENDING";
+            // 
+            // lblReservationStatusTitle
+            // 
+            this.lblReservationStatusTitle.AutoSize = true;
+            this.lblReservationStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservationStatusTitle.Location = new System.Drawing.Point(4, 116);
+            this.lblReservationStatusTitle.Name = "lblReservationStatusTitle";
+            this.lblReservationStatusTitle.Size = new System.Drawing.Size(79, 25);
+            this.lblReservationStatusTitle.TabIndex = 11;
+            this.lblReservationStatusTitle.Text = "Status: ";
+            // 
+            // lblPlaceName
+            // 
+            this.lblPlaceName.AutoSize = true;
+            this.lblPlaceName.Location = new System.Drawing.Point(160, 85);
+            this.lblPlaceName.Name = "lblPlaceName";
+            this.lblPlaceName.Size = new System.Drawing.Size(94, 20);
+            this.lblPlaceName.TabIndex = 10;
+            this.lblPlaceName.Text = "Place Name";
+            // 
+            // lblPlaceNameTitle
+            // 
+            this.lblPlaceNameTitle.AutoSize = true;
+            this.lblPlaceNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPlaceNameTitle.Location = new System.Drawing.Point(3, 80);
+            this.lblPlaceNameTitle.Name = "lblPlaceNameTitle";
+            this.lblPlaceNameTitle.Size = new System.Drawing.Size(124, 25);
+            this.lblPlaceNameTitle.TabIndex = 9;
+            this.lblPlaceNameTitle.Text = "Place Name:";
+            // 
+            // lblPlaceID
+            // 
+            this.lblPlaceID.AutoSize = true;
+            this.lblPlaceID.Location = new System.Drawing.Point(160, 46);
+            this.lblPlaceID.Name = "lblPlaceID";
+            this.lblPlaceID.Size = new System.Drawing.Size(69, 20);
+            this.lblPlaceID.TabIndex = 8;
+            this.lblPlaceID.Text = "Place ID";
+            // 
+            // lblReservationID
+            // 
+            this.lblReservationID.AutoSize = true;
+            this.lblReservationID.Location = new System.Drawing.Point(160, 10);
+            this.lblReservationID.Name = "lblReservationID";
+            this.lblReservationID.Size = new System.Drawing.Size(115, 20);
+            this.lblReservationID.TabIndex = 7;
+            this.lblReservationID.Text = "Reservation ID";
+            // 
+            // lblPlaceIDTitle
+            // 
+            this.lblPlaceIDTitle.AutoSize = true;
+            this.lblPlaceIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPlaceIDTitle.Location = new System.Drawing.Point(4, 42);
+            this.lblPlaceIDTitle.Name = "lblPlaceIDTitle";
+            this.lblPlaceIDTitle.Size = new System.Drawing.Size(91, 25);
+            this.lblPlaceIDTitle.TabIndex = 6;
+            this.lblPlaceIDTitle.Text = "Place ID:";
+            // 
+            // lblReservationIDTitle
+            // 
+            this.lblReservationIDTitle.AutoSize = true;
+            this.lblReservationIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservationIDTitle.Location = new System.Drawing.Point(3, 6);
+            this.lblReservationIDTitle.Name = "lblReservationIDTitle";
+            this.lblReservationIDTitle.Size = new System.Drawing.Size(150, 25);
+            this.lblReservationIDTitle.TabIndex = 5;
+            this.lblReservationIDTitle.Text = "Reservation ID: ";
+            // 
+            // reservationStatusPBox
+            // 
+            this.reservationStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            this.reservationStatusPBox.Location = new System.Drawing.Point(339, 0);
+            this.reservationStatusPBox.Name = "reservationStatusPBox";
+            this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
+            this.reservationStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.reservationStatusPBox.TabIndex = 2;
+            this.reservationStatusPBox.TabStop = false;
+            // 
+            // orderStatusPBox
+            // 
+            this.orderStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            this.orderStatusPBox.Location = new System.Drawing.Point(339, 0);
+            this.orderStatusPBox.Name = "orderStatusPBox";
+            this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
+            this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.orderStatusPBox.TabIndex = 2;
+            this.orderStatusPBox.TabStop = false;
             // 
             // reservationBtn
             // 
             this.reservationBtn.BackColor = System.Drawing.Color.DimGray;
             this.reservationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.White;
-            this.reservationBtn.Image = global::IOOP_Assignment.Properties.Resources.reservationIcon;
+            this.reservationBtn.Image = global::IOOP_Assignment.Properties.Resources.reservationResized;
             this.reservationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reservationBtn.Location = new System.Drawing.Point(-3, -10);
             this.reservationBtn.Name = "reservationBtn";
@@ -322,7 +407,7 @@
             this.orderBtn.BackColor = System.Drawing.Color.DimGray;
             this.orderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.Color.White;
-            this.orderBtn.Image = global::IOOP_Assignment.Properties.Resources.orderIcon;
+            this.orderBtn.Image = global::IOOP_Assignment.Properties.Resources.orderReszied;
             this.orderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.orderBtn.Location = new System.Drawing.Point(-3, -7);
             this.orderBtn.Name = "orderBtn";
@@ -337,7 +422,7 @@
             this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
             this.feedbackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackBtn.ForeColor = System.Drawing.Color.White;
-            this.feedbackBtn.Image = global::IOOP_Assignment.Properties.Resources.feedbackIcon;
+            this.feedbackBtn.Image = global::IOOP_Assignment.Properties.Resources.feedbackResized;
             this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.feedbackBtn.Location = new System.Drawing.Point(-3, -7);
             this.feedbackBtn.Name = "feedbackBtn";
@@ -352,7 +437,7 @@
             this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.White;
-            this.logoutBtn.Image = global::IOOP_Assignment.Properties.Resources.logoutIcon;
+            this.logoutBtn.Image = global::IOOP_Assignment.Properties.Resources.logoutResized;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(-3, -6);
             this.logoutBtn.Name = "logoutBtn";
@@ -364,7 +449,7 @@
             // 
             // btnSidebar
             // 
-            this.btnSidebar.Image = global::IOOP_Assignment.Properties.Resources._3LinesSidebarIconResized;
+            this.btnSidebar.Image = global::IOOP_Assignment.Properties.Resources.menuResized;
             this.btnSidebar.Location = new System.Drawing.Point(0, 0);
             this.btnSidebar.Name = "btnSidebar";
             this.btnSidebar.Size = new System.Drawing.Size(51, 62);
@@ -393,14 +478,13 @@
             this.orderPnl.ResumeLayout(false);
             this.feedbackPnl.ResumeLayout(false);
             this.logoutPnl.ResumeLayout(false);
+            this.profilePnl.ResumeLayout(false);
             this.orderStatusPnl.ResumeLayout(false);
             this.orderStatusPnl.PerformLayout();
             this.pastOrderPnl.ResumeLayout(false);
             this.pastOrderPnl.PerformLayout();
-            this.profilePnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +501,6 @@
         private System.Windows.Forms.Panel feedbackPnl;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Button feedbackBtn;
         private System.Windows.Forms.Button reservationBtn;
@@ -426,18 +509,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel orderStatusPnl;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblOrderNumber;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEstimatedTime;
+        private System.Windows.Forms.Label lblOrderID;
+        private System.Windows.Forms.PictureBox orderStatusPBox;
+        private System.Windows.Forms.Label lblEstimatedTimeLeftTitle;
+        private System.Windows.Forms.Label lblOrderIDTitle;
         private System.Windows.Forms.Panel pastOrderPnl;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox reservationStatusPBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel profilePnl;
         private System.Windows.Forms.Button profileBtn;
+        private System.Windows.Forms.Label lblPlaceID;
+        private System.Windows.Forms.Label lblReservationID;
+        private System.Windows.Forms.Label lblPlaceIDTitle;
+        private System.Windows.Forms.Label lblReservationIDTitle;
+        private System.Windows.Forms.Label lblPlaceName;
+        private System.Windows.Forms.Label lblPlaceNameTitle;
+        private System.Windows.Forms.Label lblOrderStatus;
+        private System.Windows.Forms.Label lblOrderStatusTitle;
+        private System.Windows.Forms.Label lblReservationStatus;
+        private System.Windows.Forms.Label lblReservationStatusTitle;
     }
 }

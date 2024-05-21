@@ -84,7 +84,7 @@
             // 
             this.lblCustomerID.AutoSize = true;
             this.lblCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCustomerID.Location = new System.Drawing.Point(575, 270);
+            this.lblCustomerID.Location = new System.Drawing.Point(508, 130);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(2, 22);
             this.lblCustomerID.TabIndex = 28;
@@ -127,7 +127,7 @@
             this.lblCustomerIDTitle.AutoSize = true;
             this.lblCustomerIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblCustomerIDTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomerIDTitle.Location = new System.Drawing.Point(566, 233);
+            this.lblCustomerIDTitle.Location = new System.Drawing.Point(344, 128);
             this.lblCustomerIDTitle.Name = "lblCustomerIDTitle";
             this.lblCustomerIDTitle.Size = new System.Drawing.Size(158, 29);
             this.lblCustomerIDTitle.TabIndex = 27;
@@ -138,7 +138,7 @@
             this.genderGBox.Controls.Add(this.ratherNotSayRBtn);
             this.genderGBox.Controls.Add(this.femaleRBtn);
             this.genderGBox.Controls.Add(this.maleRBtn);
-            this.genderGBox.Location = new System.Drawing.Point(566, 341);
+            this.genderGBox.Location = new System.Drawing.Point(444, 322);
             this.genderGBox.Name = "genderGBox";
             this.genderGBox.Size = new System.Drawing.Size(200, 144);
             this.genderGBox.TabIndex = 26;
@@ -150,7 +150,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(31, 410);
+            this.label7.Location = new System.Drawing.Point(435, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 29);
             this.label7.TabIndex = 24;
@@ -161,7 +161,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(31, 233);
+            this.lblPassword.Location = new System.Drawing.Point(38, 322);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(132, 29);
             this.lblPassword.TabIndex = 22;
@@ -171,7 +171,7 @@
             // 
             this.lblUserID.AutoSize = true;
             this.lblUserID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblUserID.Location = new System.Drawing.Point(40, 111);
+            this.lblUserID.Location = new System.Drawing.Point(440, 73);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(2, 22);
             this.lblUserID.TabIndex = 19;
@@ -182,7 +182,7 @@
             this.lblUserIDTitle.AutoSize = true;
             this.lblUserIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblUserIDTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblUserIDTitle.Location = new System.Drawing.Point(31, 74);
+            this.lblUserIDTitle.Location = new System.Drawing.Point(344, 73);
             this.lblUserIDTitle.Name = "lblUserIDTitle";
             this.lblUserIDTitle.Size = new System.Drawing.Size(99, 29);
             this.lblUserIDTitle.TabIndex = 18;
@@ -207,13 +207,14 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblFullName.ForeColor = System.Drawing.Color.Black;
-            this.lblFullName.Location = new System.Drawing.Point(31, 153);
+            this.lblFullName.Location = new System.Drawing.Point(34, 241);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(136, 29);
             this.lblFullName.TabIndex = 20;
@@ -242,7 +243,7 @@
             // 
             // passwordMTextBox
             // 
-            this.passwordMTextBox.Location = new System.Drawing.Point(40, 275);
+            this.passwordMTextBox.Location = new System.Drawing.Point(39, 354);
             this.passwordMTextBox.Name = "passwordMTextBox";
             this.passwordMTextBox.PasswordChar = '*';
             this.passwordMTextBox.Size = new System.Drawing.Size(308, 26);
@@ -251,8 +252,8 @@
             // passwordShowBtn
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
-            this.passwordShowBtn.Location = new System.Drawing.Point(355, 277);
+            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
+            this.passwordShowBtn.Location = new System.Drawing.Point(352, 355);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
             this.passwordShowBtn.TabIndex = 32;
@@ -261,7 +262,7 @@
             // 
             // fullNameTxtBox
             // 
-            this.fullNameTxtBox.Location = new System.Drawing.Point(36, 191);
+            this.fullNameTxtBox.Location = new System.Drawing.Point(35, 277);
             this.fullNameTxtBox.Name = "fullNameTxtBox";
             this.fullNameTxtBox.Size = new System.Drawing.Size(312, 26);
             this.fullNameTxtBox.TabIndex = 33;
@@ -270,8 +271,8 @@
             // confirmPasswordShowHideBtn
             // 
             this.confirmPasswordShowHideBtn.BackColor = System.Drawing.Color.Transparent;
-            this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
-            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(354, 366);
+            this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
+            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(353, 442);
             this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
             this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
             this.confirmPasswordShowHideBtn.TabIndex = 36;
@@ -280,7 +281,7 @@
             // 
             // confirmPasswordMTextBox
             // 
-            this.confirmPasswordMTextBox.Location = new System.Drawing.Point(39, 364);
+            this.confirmPasswordMTextBox.Location = new System.Drawing.Point(39, 440);
             this.confirmPasswordMTextBox.Name = "confirmPasswordMTextBox";
             this.confirmPasswordMTextBox.PasswordChar = '*';
             this.confirmPasswordMTextBox.Size = new System.Drawing.Size(308, 26);
@@ -291,7 +292,7 @@
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(30, 322);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(38, 408);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(222, 29);
             this.lblConfirmPassword.TabIndex = 34;
@@ -299,16 +300,17 @@
             // 
             // profilePBox
             // 
-            this.profilePBox.Location = new System.Drawing.Point(566, 64);
+            this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            this.profilePBox.Location = new System.Drawing.Point(43, 58);
             this.profilePBox.Name = "profilePBox";
-            this.profilePBox.Size = new System.Drawing.Size(203, 153);
+            this.profilePBox.Size = new System.Drawing.Size(249, 180);
             this.profilePBox.TabIndex = 37;
             this.profilePBox.TabStop = false;
             this.profilePBox.Click += new System.EventHandler(this.profilePBox_Click);
             // 
             // birthdayDateTimePicker
             // 
-            this.birthdayDateTimePicker.Location = new System.Drawing.Point(40, 459);
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(440, 275);
             this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
             this.birthdayDateTimePicker.Size = new System.Drawing.Size(307, 26);
             this.birthdayDateTimePicker.TabIndex = 38;

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderPage));
             this.headerPnl = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
@@ -38,11 +39,13 @@
             this.ratingsCBox = new System.Windows.Forms.ComboBox();
             this.priceRangeCBox = new System.Windows.Forms.ComboBox();
             this.cuisineCBox = new System.Windows.Forms.ComboBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.productDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.cartButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.productDisplayPanel.SuspendLayout();
@@ -51,12 +54,22 @@
             // headerPnl
             // 
             this.headerPnl.BackColor = System.Drawing.Color.DimGray;
+            this.headerPnl.Controls.Add(this.panel2);
             this.headerPnl.Controls.Add(this.backBtnPnl);
             this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(800, 45);
             this.headerPnl.TabIndex = 5;
+            this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cartButton);
+            this.panel2.Location = new System.Drawing.Point(673, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(127, 45);
+            this.panel2.TabIndex = 3;
             // 
             // backBtnPnl
             // 
@@ -154,6 +167,16 @@
             this.cuisineCBox.Size = new System.Drawing.Size(209, 28);
             this.cuisineCBox.TabIndex = 9;
             // 
+            // searchButton
+            // 
+            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
+            this.searchButton.Location = new System.Drawing.Point(679, 3);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(45, 44);
+            this.searchButton.TabIndex = 8;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // productDisplayFlowPanel
             // 
             this.productDisplayFlowPanel.AutoSize = true;
@@ -162,6 +185,7 @@
             this.productDisplayFlowPanel.Name = "productDisplayFlowPanel";
             this.productDisplayFlowPanel.Size = new System.Drawing.Size(703, 355);
             this.productDisplayFlowPanel.TabIndex = 10;
+            this.productDisplayFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.productDisplayFlowPanel_Paint);
             // 
             // productDisplayPanel
             // 
@@ -172,15 +196,17 @@
             this.productDisplayPanel.Size = new System.Drawing.Size(735, 355);
             this.productDisplayPanel.TabIndex = 11;
             // 
-            // searchButton
+            // cartButton
             // 
-            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.searchButton.Location = new System.Drawing.Point(679, 13);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(45, 34);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.cartButton.Image = global::IOOP_Assignment.Properties.Resources.cartResized;
+            this.cartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cartButton.Location = new System.Drawing.Point(5, 0);
+            this.cartButton.Name = "cartButton";
+            this.cartButton.Size = new System.Drawing.Size(157, 45);
+            this.cartButton.TabIndex = 2;
+            this.cartButton.Text = "Your Cart";
+            this.cartButton.UseVisualStyleBackColor = true;
+            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
             // 
             // backButton
             // 
@@ -206,6 +232,7 @@
             this.Name = "CustomerOrderPage";
             this.Text = "customerOrderPage";
             this.headerPnl.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -230,5 +257,7 @@
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.FlowLayoutPanel productDisplayFlowPanel;
         private System.Windows.Forms.Panel productDisplayPanel;
+        private System.Windows.Forms.Button cartButton;
+        private System.Windows.Forms.Panel panel2;
     }
 }

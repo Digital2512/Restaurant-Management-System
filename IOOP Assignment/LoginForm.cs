@@ -17,11 +17,6 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True;Trust Server Certificate=True";
         private void loginButton_Click(object sender, EventArgs e)
@@ -61,9 +56,9 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+                                    this.Hide();
                                     AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();
-                                    this.Hide();
                                     break;
                                 case "Manager":
                                     MessageBox.Show("Login Successful. User's Role: Manager");
@@ -72,6 +67,7 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+                                    this.Hide();
                                     ManagerHomePage managerHomePage = new ManagerHomePage();
                                     managerHomePage.Show();
                                     break;
@@ -82,6 +78,7 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+                                    this.Hide();
                                     ChefHomePage chefHomePage = new ChefHomePage();
                                     chefHomePage.Show();
                                     break;
@@ -97,6 +94,7 @@ namespace IOOP_Assignment
                                     secondcmd.Parameters.AddWithValue("@Username", username);
                                     secondcmd.ExecuteNonQuery();
 
+                                    this.Hide();
                                     CustomerHomePage customerHomePage = new CustomerHomePage();
                                     customerHomePage.Show();
                                     break;
