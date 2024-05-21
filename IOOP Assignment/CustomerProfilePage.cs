@@ -20,12 +20,20 @@ namespace IOOP_Assignment
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
             lblUserID.Text = userID;
-            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             lblFullName.Text = database.getString(query);
-            query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
             lblPasswordValue.Text = database.getString(query);
-            query = $"SELECT birthday FROM Users WHERE UserID = '{userID}';";
-            lblBirthday.Text = database.getDateTime(query).ToString();
+            query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}';";
+            string birthdayDateTimeString = database.getDateTime(query).ToString();
+            if (birthdayDateTimeString == DateTime.MinValue.ToString())
+            {
+                lblBirthday.Text = DateTime.Now.ToString();
+            }
+            else
+            {
+                lblBirthday.Text = birthdayDateTimeString;
+            }
             query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}'";
             lblCustomerID.Text = database.getString(query);
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
@@ -44,8 +52,11 @@ namespace IOOP_Assignment
             {
                 maleRBtn.Checked = false;
                 femaleRBtn.Checked = false;
-                ratherNotSayRBtn.Checked = false;
+                ratherNotSayRBtn.Checked = true;
             }
+            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+            profilePBox.Image = database.getImage(query, );
+
         }
 
         private void CustomerProfilePage_Load(object sender, EventArgs e)
@@ -69,13 +80,20 @@ namespace IOOP_Assignment
                 string userID = database.getString(query);
                 query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
                 lblPasswordValue.Text = database.getString(query);
-                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
             else if (lblPasswordValue.Text != "********")
             {
                 lblPasswordValue.Text = "********";
-                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerHomePage customerHomePage = new CustomerHomePage();
+            customerHomePage.Show();
         }
     }
 }

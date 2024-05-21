@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,11 +69,23 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="cartProductButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cartProductButton.Designer.cs">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChefHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChefHomePage.Designer.cs">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCartPage.Designer.cs">
+      <DependentUpon>CustomerCartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
@@ -87,11 +99,17 @@
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerIndividualProductView.cs">
+    <Compile Include="CustomerIndividualProductPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerIndividualProductView.Designer.cs">
-      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
+    <Compile Include="CustomerIndividualProductPage.Designer.cs">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.Designer.cs">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerOrderPage.cs">
       <SubType>Form</SubType>
@@ -111,24 +129,24 @@
     <Compile Include="CustomerReservationPage.Designer.cs">
       <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSuccessfulPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSuccessfulPayment.Designer.cs">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerUpdateProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerUpdateProfilePage.Designer.cs">
       <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="ManagerAddReservationPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerAddReservationPage.Designer.cs">
-      <DependentUpon>ManagerAddReservationPage.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
@@ -136,60 +154,11 @@
     <Compile Include="ManagerHomePage.Designer.cs">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerMenuPage.cs">
-      <SubType>Form</SubType>
+    <Compile Include="placeButton.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerMenuPage.Designer.cs">
-      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerReservation.cs" />
-    <Compile Include="ManagerReservationApprovalPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerReservationApprovalPage.Designer.cs">
-      <DependentUpon>ManagerReservationApprovalPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerReservationReportPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerReservationReportPage.Designer.cs">
-      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerReservationSuccessfulPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerReservationSuccessfulPage.Designer.cs">
-      <DependentUpon>ManagerReservationSuccessfulPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerTableInformationPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerTableInformationPage.Designer.cs">
-      <DependentUpon>ManagerTableInformationPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerTablesPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerTablesPage.Designer.cs">
-      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerUpdateReservationPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerUpdateReservationPage.Designer.cs">
-      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerViewProfilePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerViewProfilePage.Designer.cs">
-      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageUpdateProfilePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageUpdateProfilePage.Designer.cs">
-      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
+    <Compile Include="placeButton.Designer.cs">
+      <DependentUpon>placeButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,14 +168,23 @@
     <Compile Include="foodButton.Designer.cs">
       <DependentUpon>foodButton.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="cartProductButton.resx">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCartPage.resx">
+      <DependentUpon>CustomerCartPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIndividualProductView.resx">
-      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerIndividualProductPage.resx">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIndividualReservationPlacePage.resx">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrderPage.resx">
       <DependentUpon>CustomerOrderPage.cs</DependentUpon>
@@ -214,44 +192,20 @@
     <EmbeddedResource Include="CustomerProfilePage.resx">
       <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerReservationPage.resx">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSuccessfulPayment.resx">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
       <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerAddReservationPage.resx">
-      <DependentUpon>ManagerAddReservationPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerHomePage.resx">
-      <DependentUpon>ManagerHomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerMenuPage.resx">
-      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerReservationApprovalPage.resx">
-      <DependentUpon>ManagerReservationApprovalPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerReservationReportPage.resx">
-      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerReservationSuccessfulPage.resx">
-      <DependentUpon>ManagerReservationSuccessfulPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerTableInformationPage.resx">
-      <DependentUpon>ManagerTableInformationPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerTablesPage.resx">
-      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUpdateReservationPage.resx">
-      <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerViewProfilePage.resx">
-      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageUpdateProfilePage.resx">
-      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
+    <EmbeddedResource Include="placeButton.resx">
+      <DependentUpon>placeButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -266,8 +220,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -299,50 +253,33 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-<<<<<<< HEAD
-    <None Include="PictureFolder\SuccessfullyIcon.png" />
-    <None Include="PictureFolder\vipImage.png" />
-    <None Include="PictureFolder\tablesIcon.png" />
-    <None Include="PictureFolder\searchIcon2.png" />
-    <None Include="PictureFolder\ReservationIcon1.png" />
-    <None Include="PictureFolder\menuIcon.png" />
-    <None Include="PictureFolder\FoodIcon.png" />
-    <None Include="PictureFolder\exitButton.png" />
-    <None Include="PictureFolder\editIcon.png" />
-    <None Include="PictureFolder\8PaxImage.png" />
-    <None Include="PictureFolder\4PaxImage.png" />
-    <None Include="PictureFolder\2PaxImage.png" />
-=======
->>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
-    <None Include="PictureFolder\3LinesSidebarIconResized.png" />
-    <None Include="PictureFolder\FeedbackButtonBGChanged1.png" />
-    <None Include="PictureFolder\FeedbackButtonBGChanged.png" />
-    <None Include="Resources\managerIcon21.png" />
-    <None Include="Resources\managerIcon2.png" />
-    <None Include="Resources\managerIcon1.png" />
-    <None Include="Resources\managerIcon.png" />
-    <None Include="Resources\DeliciousIcon.png" />
-    <None Include="Resources\DeliciousIcon.jpg" />
-    <None Include="Resources\4PaxImage1.png" />
-    <None Include="Resources\8PaxImage3.png" />
-    <None Include="Resources\backButton.png" />
-    <None Include="Resources\2PaxImage2.png" />
-    <None Include="Resources\profileIcon2.png" />
-    <None Include="Resources\profileIcon1.png" />
-    <None Include="Resources\profileIcon.png" />
-    <None Include="Resources\menuIcon.png" />
-    <None Include="Resources\reservationIcon.png" />
-    <None Include="Resources\tablesIcon.png" />
-    <None Include="Resources\resvReportIcon.png" />
-    <None Include="Resources\upcomingIcon.png" />
-    <None Include="Resources\pendingIcon.png" />
-    <None Include="Resources\8PaxImage2.png" />
-    <None Include="Resources\8PaxImage1.png" />
-    <None Include="Resources\2PaxImage1.png" />
-    <None Include="Resources\8PaxImage.png" />
-    <None Include="Resources\2PaxImage.png" />
-    <None Include="Resources\4PaxImage.png" />
-    <None Include="Resources\vipImage.png" />
+    <None Include="PictureFolder\profile-userResized.png" />
+    <None Include="PictureFolder\defaultImage.jpg" />
+    <None Include="PictureFolder\recycleBinResized.png" />
+    <None Include="PictureFolder\inKitchenResized.png" />
+    <None Include="PictureFolder\searchIconResized.png" />
+    <None Include="PictureFolder\starResized.png" />
+    <None Include="PictureFolder\errorImageSmaller.png" />
+    <None Include="PictureFolder\errorImage.png" />
+    <None Include="PictureFolder\pendingResized.png" />
+    <None Include="PictureFolder\deniedResized.png" />
+    <None Include="PictureFolder\completedResized.png" />
+    <None Include="PictureFolder\approvedResized.png" />
+    <None Include="PictureFolder\cartResized.png" />
+    <None Include="PictureFolder\logoutResized.png" />
+    <None Include="PictureFolder\feedbackResized.png" />
+    <None Include="PictureFolder\orderReszied.png" />
+    <None Include="PictureFolder\reservationResized.png" />
+    <None Include="PictureFolder\orderResized.png" />
+    <None Include="PictureFolder\menuResized.png" />
+    <None Include="PictureFolder\passwordlHideIconResized.png" />
+    <None Include="PictureFolder\passwordShowIconResized.png" />
+    <None Include="PictureFolder\passwordlHideIcon.png" />
+    <None Include="PictureFolder\checkedResized.png" />
+    <None Include="PictureFolder\checked.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\recycle-bin.png" />
     <None Include="Resources\eye.png" />
     <None Include="PictureFolder\addIcon.png" />
     <None Include="Resources\add.png" />

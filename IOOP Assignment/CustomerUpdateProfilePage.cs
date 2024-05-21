@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace IOOP_Assignment
 {
@@ -24,13 +25,21 @@ namespace IOOP_Assignment
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID;
-            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             fullNameTxtBox.Text = database.getString(query);
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}'";
             passwordMTextBox.Text = database.getString(query);
             confirmPasswordMTextBox.Text = database.getString(query);
             query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}'";
-            birthdayDateTimePicker.Text = database.getDateTime(query).ToString();
+            string birthdayDateTimeString = database.getDateTime(query).ToString();
+            if (birthdayDateTimeString == DateTime.MinValue.ToString())
+            {
+                birthdayDateTimePicker.Value = DateTime.Now;
+            }
+            else
+            {
+                birthdayDateTimePicker.Value = database.getDateTime(query);
+            }
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
             string gender = database.getString(query);
             if (gender == "MALE")
@@ -51,6 +60,8 @@ namespace IOOP_Assignment
                 femaleRBtn.Checked = false;
                 ratherNotSayRBtn.Checked = false;
             }
+            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+            profilePBox.Image = database.getImage(query);
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -60,6 +71,35 @@ namespace IOOP_Assignment
 
         private void profilePBox_Click(object sender, EventArgs e)
         {
+            Database database = new Database(ConnectionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;)|*.jpg;*.jpeg;*.png;|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    query = $"UPDATE Users SET ProfileImage = @ImageData WHERE UserID = '{userID}';";
+
+                    if (database.insertOrUpdateImageToFile(imagePath, query) == true)
+                    {
+                        query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+                        profilePBox.Image = database.getImage(query);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Picture not updated");
+                        profilePBox.Image = Properties.Resources.errorImage;
+                    }
+                }
+            }
 
         }
 
@@ -96,10 +136,13 @@ namespace IOOP_Assignment
             }
             if (password == confirmPassword)
             {
-                query = $"UPDATE Users SET [fullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
-                if (database.insertValuesIntoDatabase(query) == true)
+                query = $"UPDATE Users SET [FullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
+                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     MessageBox.Show("Profile updated successfully!");
+                    this.Hide();
+                    CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+                    customerProfilePage.Show();
                 }
                 else
                 {
@@ -117,12 +160,12 @@ namespace IOOP_Assignment
             if(passwordMTextBox.PasswordChar == '\0')
             {
                 passwordMTextBox.PasswordChar = '*';
-                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
             else
             {
                 passwordMTextBox.PasswordChar = '\0';
-                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+                passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
         }
 
@@ -131,18 +174,25 @@ namespace IOOP_Assignment
             if (passwordMTextBox.PasswordChar == '\0')
             {
                 confirmPasswordMTextBox.PasswordChar = '*';
-                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
             }
             else
             {
                 confirmPasswordMTextBox.PasswordChar = '\0';
-                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordHideIcon;
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
         }
 
         private void lblUserID_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+            customerProfilePage.Show();
         }
     }
 }

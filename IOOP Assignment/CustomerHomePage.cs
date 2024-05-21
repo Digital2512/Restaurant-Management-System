@@ -23,16 +23,78 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(ConnectionString);
-            
-        }
+            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string customerID = database.getString(query);
+            query = $"SELECT FullName FROM Users WHERE UserID = (SELECT UserID FROM Customer WHERE CustomerID = '{customerID}');";
+            string customerName = database.getString(query);
+            lblWelcome.Text = $"Welcome,{customerName}";
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'MAKING';";
+            string orderID = database.getString(query);
+            query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}';";
+            string reservationID = database.getString(query);
+            if (orderID != null || orderID != "")
+            {
+                this.lblOrderID.Text = orderID;
+                query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
+                this.lblEstimatedTime.Text = $"{database.getInt(query).ToString()} Mins Left";
+                query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
+                string orderStatus = database.getString(query);
+                this.lblOrderStatus.Text = orderStatus;
+                if(orderStatus == "IN_PROGRESS")
+                {
+                    orderStatusPBox.Image = Properties.Resources.inKitchenResized;
+                }else if(orderStatus == "COMPLETED")
+                {
+                    orderStatusPBox.Image = Properties.Resources.completedResized;
+                }
+                else
+                {
+                    orderStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                }
+            }
+            else if(orderID == null || orderID == "") 
+            {
+                this.lblOrderID.Text = "N/A";
+                this.lblEstimatedTime.Text = "N/A";
+                this.lblOrderStatus.Text = "N/A";
+            }
 
-        }
+            if (reservationID != null || reservationID != "")
+            {
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+                this.lblReservationID.Text = reservationID;
+                query = $"SELECT PlaceID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                string placeID = database.getString(query);
+                this.lblPlaceID.Text = placeID;
+                query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
+                this.lblPlaceName.Text = database.getString(query);
+                query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
+                string reservationStatus = database.getString(query);
+                this.lblReservationStatus.Text = reservationStatus;
+                if (reservationStatus == "IN_PROGRESS")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
+                }
+                else if (reservationStatus == "APPROVED")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.approvedResized;
+                }else if(reservationStatus == "DENIED")
+                {
+                    reservationStatusPBox.Image = Properties.Resources.deniedResized;
+                }
+                else
+                {
+                    reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                }
+            }
+            else if(reservationID == null || reservationID != "")
+            {
+                this.lblReservationID.Text = "N/A";
+                this.lblReservationID.Text = "N/A";
+                this.lblPlaceID.Text = "N/A";
+                this.lblReservationStatus.Text = "N/A";
+            }
 
         }
 
@@ -85,11 +147,6 @@ namespace IOOP_Assignment
             sidebarTransition.Start();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reservationBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -114,10 +171,10 @@ namespace IOOP_Assignment
             Database database = new Database(ConnectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
-            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
-            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
+            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
+            database.insertOrUpdateValuesIntoDatabase(query);
+            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
+            database.insertOrUpdateValuesIntoDatabase(query);
 
         }
 
@@ -128,3 +185,4 @@ namespace IOOP_Assignment
         }
     }
 }
+
