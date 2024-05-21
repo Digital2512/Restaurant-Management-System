@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
   "Documents": [
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 45003f4 (commitMenuPage)
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managertableinformationpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertableinformationpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -17,9 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managermenupage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -28,7 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\documents\\github\\ioop-assignment\\ioop assignment\\managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
     },
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,15 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 93,
-<<<<<<< HEAD
-<<<<<<< HEAD
           "SelectedChildIndex": 7,
-=======
-          "SelectedChildIndex": 3,
->>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
-=======
-          "SelectedChildIndex": 7,
->>>>>>> parent of 45003f4 (commitMenuPage)
           "Children": [
             {
               "$type": "Document",
@@ -72,7 +56,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-<<<<<<< HEAD
               "Title": "ManagerMenuPage.cs",
               "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs",
               "RelativeDocumentMoniker": "ManagerMenuPage.cs",
@@ -137,7 +120,6 @@
               "EditorCaption": ""
             },
             {
-=======
               "Title": "Manager.cs",
               "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Manager.cs",
               "RelativeDocumentMoniker": "Manager.cs",
@@ -164,7 +146,32 @@
               "EditorCaption": ""
             },
             {
->>>>>>> parent of 45003f4 (commitMenuPage)
+              "Title": "Manager.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Manager.cs",
+              "RelativeDocumentMoniker": "Manager.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Manager.cs",
+              "RelativeToolTip": "Manager.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAwwF8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T06:23:04.2Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerReservation.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservation.cs",
+              "RelativeDocumentMoniker": "ManagerReservation.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservation.cs",
+              "RelativeToolTip": "ManagerReservation.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAmwOoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T14:40:24.112Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
@@ -181,22 +188,6 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Document",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 45003f4 (commitMenuPage)
-              "DocumentIndex": 0,
-              "Title": "ManagerTableInformationPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTableInformationPage.cs",
-              "RelativeDocumentMoniker": "ManagerTableInformationPage.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTableInformationPage.cs [Design]",
-              "RelativeToolTip": "ManagerTableInformationPage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T00:32:15.698Z",
-              "EditorCaption": " [Design]"
-<<<<<<< HEAD
-=======
               "DocumentIndex": 4,
               "Title": "Resources.resx",
               "DocumentMoniker": "C:\\Users\\QiaoQian\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\Resources.resx",
@@ -206,9 +197,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2024-05-15T02:24:44.469Z",
               "EditorCaption": ""
->>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
-=======
->>>>>>> parent of 45003f4 (commitMenuPage)
             }
           ]
         }

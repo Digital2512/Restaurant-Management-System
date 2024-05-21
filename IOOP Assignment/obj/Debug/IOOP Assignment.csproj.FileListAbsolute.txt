@@ -18,7 +18,6 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
-=======
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
@@ -39,7 +38,6 @@ C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOO
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
-<<<<<<< HEAD
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerMenuPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationReportPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerTablesPage.resources
@@ -50,8 +48,3 @@ C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOO
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerTableInformationPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerUpdateReservationPage.resources
 C:\Users\QiaoQian\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationApprovalPage.resources
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
-=======
->>>>>>> parent of 45003f4 (commitMenuPage)

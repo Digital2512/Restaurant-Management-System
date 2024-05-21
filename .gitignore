@@ -3,3 +3,4 @@
 *.sqlite
 *.cache
 *.sln
+*.sqlite

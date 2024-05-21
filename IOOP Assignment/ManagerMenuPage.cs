@@ -19,12 +19,6 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
-
-<<<<<<< HEAD
-=======
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
->>>>>>> parent of 45003f4 (commitMenuPage)
-
         private void ManagerMenuPage_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -35,13 +29,8 @@ namespace IOOP_Assignment
             da.Fill(dt);
             dataGridViewMenu.DataSource = dt;
 
-
         }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> parent of 45003f4 (commitMenuPage)
+        }
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -80,8 +69,6 @@ namespace IOOP_Assignment
 
         }
 
-<<<<<<< HEAD
-=======
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
             byte[] images = null;
@@ -124,7 +111,6 @@ namespace IOOP_Assignment
             }
 
         }
->>>>>>> parent of 45003f4 (commitMenuPage)
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
