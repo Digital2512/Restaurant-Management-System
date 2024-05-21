@@ -24,7 +24,7 @@ namespace IOOP_Assignment
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string username = txtUsername.Text.ToString();
-            string password = txtPassword.Text.ToString();
+            string password = passwordMTxtBox.Text.ToString();
 
             if(connection.State == System.Data.ConnectionState.Open)
             {

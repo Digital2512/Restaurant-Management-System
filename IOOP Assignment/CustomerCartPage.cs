@@ -201,7 +201,7 @@ namespace IOOP_Assignment
                         subtotalAmount += productSubtotalAmount;
 
                         query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
-                        Image productImage = database.getImage(query, Properties.Resources.errorImage);
+                        Image productImage = database.getImage(query);
 
                         var cartProductButton = new cartProductButton(productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);

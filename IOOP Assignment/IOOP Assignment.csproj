@@ -253,8 +253,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-    <None Include="PictureFolder\defaultImage.jpg" />
-    <None Include="PictureFolder\recycleBinResized.png" />
     <None Include="PictureFolder\inKitchenResized.png" />
     <None Include="PictureFolder\searchIconResized.png" />
     <None Include="PictureFolder\starResized.png" />

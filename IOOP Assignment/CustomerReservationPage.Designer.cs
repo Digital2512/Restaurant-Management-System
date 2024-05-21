@@ -181,7 +181,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
+            //this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
             this.searchButton.Location = new System.Drawing.Point(739, 6);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(45, 42);

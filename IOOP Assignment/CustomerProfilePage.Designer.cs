@@ -128,7 +128,7 @@
             // passwordShowBtn
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
+            //this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
             this.passwordShowBtn.Location = new System.Drawing.Point(317, 269);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
@@ -265,7 +265,7 @@
             // 
             // profilePBox
             // 
-            this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            //this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.profilePBox.Location = new System.Drawing.Point(556, 59);
             this.profilePBox.Name = "profilePBox";
             this.profilePBox.Size = new System.Drawing.Size(199, 153);
