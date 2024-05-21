@@ -28,7 +28,7 @@ namespace IOOP_Assignment
             query = $"SELECT Description FROM Menu WHERE Chosen = 'TRUE';";
             string productDescription = database.getString(query);
             query = $"SELECT ProductImage FROM Menu WHERE Chosen = 'TRUE';";
-            this.productImagePBox.Image = database.getImage(query);
+            this.productImagePBox.Image = database.getImage(query, Properties.Resources.defaultImage);
 
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;

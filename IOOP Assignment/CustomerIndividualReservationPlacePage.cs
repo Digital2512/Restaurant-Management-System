@@ -29,7 +29,7 @@ namespace IOOP_Assignment
             query = $"SELECT EventType FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceEventType.Text = database.getString(query);
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
-            this.placeImagePBox.Image = database.getImage(query);
+            this.placeImagePBox.Image = database.getImage(query, Properties.Resources.defaultImage);
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)

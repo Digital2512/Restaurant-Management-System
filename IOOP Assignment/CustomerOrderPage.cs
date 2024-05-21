@@ -34,7 +34,7 @@ namespace IOOP_Assignment
                 string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
-                Image productImage = database.getImage(query);
+                Image productImage = database.getImage(query, Properties.Resources.defaultImage);
 
                 var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 
@@ -137,7 +137,7 @@ namespace IOOP_Assignment
                 string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
-                Image productImage = database.getImage(query);
+                Image productImage = database.getImage(query, Properties.Resources.defaultImage);
 
                 var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 

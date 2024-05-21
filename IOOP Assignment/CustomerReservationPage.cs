@@ -29,7 +29,7 @@ namespace IOOP_Assignment
                 string placeEventType = rows["EventType"].ToString();
 
                 query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
-                Image PlaceImage = database.getImage(query);
+                Image PlaceImage = database.getImage(query, Properties.Resources.defaultImage);
 
                 var placeButton = new placeButton(placeID, placeName, placeMinofPax, placeDescription, placeEventType, PlaceImage);
 
@@ -83,7 +83,7 @@ namespace IOOP_Assignment
                 string placeMinOfPax = rows["MinOfPax"].ToString();
                 string placeEventType = rows["EventType"].ToString();
                 query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
-                Image PlaceImage = database.getImage(query);
+                Image PlaceImage = database.getImage(query, Properties.Resources.defaultImage);
 
                 var placeButton = new placeButton(placeID, placeName, placeMinOfPax, placeDescription, placeEventType, PlaceImage);
 

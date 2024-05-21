@@ -61,7 +61,7 @@ namespace IOOP_Assignment
                 ratherNotSayRBtn.Checked = false;
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
-            profilePBox.Image = database.getImage(query);
+            profilePBox.Image = database.getImage(query, Properties.Resources.profile_userResized);
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace IOOP_Assignment
                     if (database.insertOrUpdateImageToFile(imagePath, query) == true)
                     {
                         query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
-                        profilePBox.Image = database.getImage(query);
+                        profilePBox.Image = database.getImage(query, Properties.Resources.profile_userResized);
                     }
                     else
                     {
