@@ -18,14 +18,14 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
 
 
 
         private void ManagerViewProfilePage_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connetionString);
-            SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday FROM Users", con);
+            SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday FROM [User] WHERE LoggedIn = 'TRUE'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -38,7 +38,7 @@ namespace IOOP_Assignment
                 lblRole.Text = "Role: " + row["Role"].ToString();
                 lblName.Text = "Name: " + row["FullName"].ToString();
                 lblGender.Text = "Gender: " + row["Gender"].ToString();
-                lblBirthday.Text = "Birthday: " + row["Birthday"].ToString();
+                lblBirthday.Text = "Birthday: " + ((DateTime)row["Birthday"]).ToString("yyyy-MM-dd");
             }
             else
             {
@@ -50,7 +50,14 @@ namespace IOOP_Assignment
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            
+            ManagerUpdateProfilePage frmUpdateProfile = new ManagerUpdateProfilePage(lblUserID.Text,
+        lblPsw.Text,
+        lblRole.Text,
+        lblName.Text,
+        lblGender.Text,
+        lblBirthday.Text);
+            frmUpdateProfile.ShowDialog();
         }
     }
     

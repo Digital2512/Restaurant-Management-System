@@ -214,7 +214,7 @@ namespace IOOP_Assignment
             // 
             // txtProductID
             // 
-            this.txtProductID.Location = new System.Drawing.Point(373, 289);
+            this.txtProductID.Location = new System.Drawing.Point(396, 301);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(123, 26);
             this.txtProductID.TabIndex = 9;

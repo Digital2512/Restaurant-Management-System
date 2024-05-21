@@ -173,6 +173,12 @@
     <Compile Include="ManagerTablesPage.Designer.cs">
       <DependentUpon>ManagerTablesPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUpdateProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUpdateProfilePage.Designer.cs">
+      <DependentUpon>ManagerUpdateProfilePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUpdateReservationPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +190,6 @@
     </Compile>
     <Compile Include="ManagerViewProfilePage.Designer.cs">
       <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageUpdateProfilePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageUpdateProfilePage.Designer.cs">
-      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,14 +244,14 @@
     <EmbeddedResource Include="ManagerTablesPage.resx">
       <DependentUpon>ManagerTablesPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUpdateProfilePage.resx">
+      <DependentUpon>ManagerUpdateProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUpdateReservationPage.resx">
       <DependentUpon>ManagerUpdateReservationPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewProfilePage.resx">
       <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageUpdateProfilePage.resx">
-      <DependentUpon>ManageUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
