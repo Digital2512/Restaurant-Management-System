@@ -31,10 +31,10 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblLoginForm = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.passwordMTxtBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -61,13 +61,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(195, 26);
             this.txtUsername.TabIndex = 2;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(197, 160);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(194, 26);
-            this.txtPassword.TabIndex = 3;
             // 
             // lblLoginForm
             // 
@@ -99,15 +92,23 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // passwordMTxtBox
+            // 
+            this.passwordMTxtBox.Location = new System.Drawing.Point(196, 160);
+            this.passwordMTxtBox.Name = "passwordMTxtBox";
+            this.passwordMTxtBox.PasswordChar = '*';
+            this.passwordMTxtBox.Size = new System.Drawing.Size(195, 26);
+            this.passwordMTxtBox.TabIndex = 7;
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 314);
+            this.Controls.Add(this.passwordMTxtBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.lblLoginForm);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -123,9 +124,9 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblLoginForm;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.MaskedTextBox passwordMTxtBox;
     }
 }

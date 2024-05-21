@@ -169,7 +169,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
+            //this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
             this.searchButton.Location = new System.Drawing.Point(679, 3);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(45, 44);
@@ -198,7 +198,7 @@
             // 
             // cartButton
             // 
-            this.cartButton.Image = global::IOOP_Assignment.Properties.Resources.cartResized;
+            //this.cartButton.Image = global::IOOP_Assignment.Properties.Resources.cartResized;
             this.cartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cartButton.Location = new System.Drawing.Point(5, 0);
             this.cartButton.Name = "cartButton";

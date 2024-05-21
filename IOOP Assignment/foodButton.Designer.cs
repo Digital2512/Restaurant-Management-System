@@ -112,7 +112,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.starResized;
             this.pictureBox1.Location = new System.Drawing.Point(357, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 34);
@@ -122,10 +121,10 @@
             // productImagePBox
             // 
             this.productImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(150, 150);
+            this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productImagePBox.TabIndex = 0;
             this.productImagePBox.TabStop = false;
             this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);

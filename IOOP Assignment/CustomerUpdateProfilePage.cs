@@ -96,7 +96,7 @@ namespace IOOP_Assignment
                     else
                     {
                         MessageBox.Show("Picture not updated");
-                        profilePBox.Image = Properties.Resources.errorImage;
+                        //profilePBox.Image = Properties.Resources.errorImage;
                     }
                 }
             }
@@ -160,12 +160,12 @@ namespace IOOP_Assignment
             if(passwordMTextBox.PasswordChar == '\0')
             {
                 passwordMTextBox.PasswordChar = '*';
-                passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
+                //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
             else
             {
                 passwordMTextBox.PasswordChar = '\0';
-                passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
+                //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
         }
 
@@ -174,12 +174,12 @@ namespace IOOP_Assignment
             if (passwordMTextBox.PasswordChar == '\0')
             {
                 confirmPasswordMTextBox.PasswordChar = '*';
-                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
+                //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
             }
             else
             {
                 confirmPasswordMTextBox.PasswordChar = '\0';
-                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
+                //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
         }
 

@@ -43,10 +43,10 @@ namespace IOOP_Assignment
                 this.lblOrderStatus.Text = orderStatus;
                 if(orderStatus == "IN_PROGRESS")
                 {
-                    orderStatusPBox.Image = Properties.Resources.inKitchenResized;
+                    //orderStatusPBox.Image = Properties.Resources.inKitchenResized;
                 }else if(orderStatus == "COMPLETED")
                 {
-                    orderStatusPBox.Image = Properties.Resources.completedResized;
+                    //orderStatusPBox.Image = Properties.Resources.completedResized;
                 }
                 else
                 {
@@ -74,14 +74,14 @@ namespace IOOP_Assignment
                 this.lblReservationStatus.Text = reservationStatus;
                 if (reservationStatus == "IN_PROGRESS")
                 {
-                    reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
+                    //reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
                 }
                 else if (reservationStatus == "APPROVED")
                 {
-                    reservationStatusPBox.Image = Properties.Resources.approvedResized;
+                    //reservationStatusPBox.Image = Properties.Resources.approvedResized;
                 }else if(reservationStatus == "DENIED")
                 {
-                    reservationStatusPBox.Image = Properties.Resources.deniedResized;
+                    //reservationStatusPBox.Image = Properties.Resources.deniedResized;
                 }
                 else
                 {
