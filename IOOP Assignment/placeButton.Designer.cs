@@ -133,10 +133,11 @@
             // placeImagePBox
             // 
             this.placeImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
+            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.defaultImage;
             this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
             this.placeImagePBox.Name = "placeImagePBox";
             this.placeImagePBox.Size = new System.Drawing.Size(150, 150);
+            this.placeImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.placeImagePBox.TabIndex = 10;
             this.placeImagePBox.TabStop = false;
             // 

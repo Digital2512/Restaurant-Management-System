@@ -55,7 +55,7 @@ namespace IOOP_Assignment
                 ratherNotSayRBtn.Checked = true;
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
-            profilePBox.Image = database.getImage(query);
+            profilePBox.Image = database.getImage(query, );
 
         }
 

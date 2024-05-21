@@ -89,7 +89,7 @@
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.Image = global::IOOP_Assignment.Properties.Resources.recycle_bin;
+            this.deleteBtn.Image = global::IOOP_Assignment.Properties.Resources.recycleBinResized;
             this.deleteBtn.Location = new System.Drawing.Point(-3, -7);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(54, 66);
@@ -99,10 +99,11 @@
             // 
             // productImagePBox
             // 
-            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.burgerImage;
+            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.defaultImage;
             this.productImagePBox.Location = new System.Drawing.Point(103, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(170, 150);
+            this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productImagePBox.TabIndex = 0;
             this.productImagePBox.TabStop = false;
             // 

@@ -124,6 +124,9 @@
   <data name="orderReszied" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\orderReszied.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="recycleBinResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\recycleBinResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="passwordlHideIconResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\passwordlHideIconResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,6 +160,9 @@
   <data name="completedResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\completedResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inKitchenResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\inKitchenResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="errorImageSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\errorImageSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,7 +175,7 @@
   <data name="searchIconResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\searchIconResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inKitchenResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\PictureFolder\inKitchenResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="defaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\defaultImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
