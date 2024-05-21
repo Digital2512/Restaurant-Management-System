@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Data.SqlClient;
 using System.Data;
+=======
+using System.IO;
+>>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +17,10 @@ using System.Runtime.CompilerServices;
 
 namespace IOOP_Assignment
 {
-    class Manager
+    internal class Manager
     {
         
+<<<<<<< HEAD
         public static void OpenManagerHomePage()
         {
             // Hide the current form
@@ -95,5 +100,7 @@ namespace IOOP_Assignment
 
         }
         
+=======
+>>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
     }
 }

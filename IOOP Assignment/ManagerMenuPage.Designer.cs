@@ -31,6 +31,7 @@ namespace IOOP_Assignment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerMenuPage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picMenu = new System.Windows.Forms.PictureBox();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
@@ -58,6 +59,92 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+
+            // 
+            // lblProDesc
+            // 
+            this.lblProDesc.AutoSize = true;
+            this.lblProDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProDesc.Location = new System.Drawing.Point(262, 379);
+            this.lblProDesc.Name = "lblProDesc";
+            this.lblProDesc.Size = new System.Drawing.Size(105, 22);
+            this.lblProDesc.TabIndex = 7;
+            this.lblProDesc.Text = "Description:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(305, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Name:";
+            // 
+            // picMenu
+            // 
+            this.picMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMenu.Location = new System.Drawing.Point(86, 281);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(140, 140);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMenu.TabIndex = 21;
+            this.picMenu.TabStop = false;
+
+            // 
+            // dataGridViewMenu
+            // 
+            this.dataGridViewMenu.BackgroundColor = System.Drawing.Color.Bisque;
+            this.dataGridViewMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMenu.Location = new System.Drawing.Point(63, 53);
+            this.dataGridViewMenu.Name = "dataGridViewMenu";
+            this.dataGridViewMenu.RowHeadersWidth = 62;
+            this.dataGridViewMenu.RowTemplate.Height = 28;
+            this.dataGridViewMenu.Size = new System.Drawing.Size(748, 201);
+            this.dataGridViewMenu.TabIndex = 25;
+            this.dataGridViewMenu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMenu_RowHeaderMouseClick);
+
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(373, 289);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(123, 26);
+            this.txtProductID.TabIndex = 9;
+
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(373, 333);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(167, 26);
+            this.txtProductName.TabIndex = 4;
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.Location = new System.Drawing.Point(681, 290);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(117, 26);
+            this.txtProductPrice.TabIndex = 11;
+
+            // 
+            // txtProductDesc
+            // 
+            this.txtProductDesc.Location = new System.Drawing.Point(373, 379);
+            this.txtProductDesc.Name = "txtProductDesc";
+            this.txtProductDesc.Size = new System.Drawing.Size(167, 26);
+            this.txtProductDesc.TabIndex = 23;
+
+            // 
+            // txtSearchProduct
+            // 
+            this.txtSearchProduct.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearchProduct.Location = new System.Drawing.Point(648, 13);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(126, 26);
+            this.txtSearchProduct.TabIndex = 26;
+            this.txtSearchProduct.Text = "Search..";
+
             // 
             // panel1
             // 
@@ -85,59 +172,18 @@ namespace IOOP_Assignment
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 489);
             this.panel1.TabIndex = 1;
-            // 
-            // picMenu
-            // 
-            this.picMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picMenu.Image = global::IOOP_Assignment.Properties.Resources.FoodIcon;
-            this.picMenu.Location = new System.Drawing.Point(86, 281);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(140, 140);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMenu.TabIndex = 21;
-            this.picMenu.TabStop = false;
-            // 
-            // txtSearchProduct
-            // 
-            this.txtSearchProduct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearchProduct.Location = new System.Drawing.Point(648, 13);
-            this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(126, 26);
-            this.txtSearchProduct.TabIndex = 26;
-            this.txtSearchProduct.Text = "Search..";
-            // 
-            // dataGridViewMenu
-            // 
-            this.dataGridViewMenu.BackgroundColor = System.Drawing.Color.Bisque;
-            this.dataGridViewMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMenu.Location = new System.Drawing.Point(63, 53);
-            this.dataGridViewMenu.Name = "dataGridViewMenu";
-            this.dataGridViewMenu.RowHeadersWidth = 62;
-            this.dataGridViewMenu.RowTemplate.Height = 28;
-            this.dataGridViewMenu.Size = new System.Drawing.Size(748, 201);
-            this.dataGridViewMenu.TabIndex = 25;
-            this.dataGridViewMenu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMenu_RowHeaderMouseClick);
+
             // 
             // cbbCuisine
             // 
             this.cbbCuisine.FormattingEnabled = true;
-            this.cbbCuisine.Items.AddRange(new object[] {
-            "Japanese",
-            "Western",
-            "Korean",
-            "Beverages"});
+            this.cbbCuisine.Items.AddRange(new object[] {"Japanese","Western","Korean","Beverages"});
             this.cbbCuisine.Location = new System.Drawing.Point(681, 332);
             this.cbbCuisine.Name = "cbbCuisine";
             this.cbbCuisine.Size = new System.Drawing.Size(117, 28);
             this.cbbCuisine.TabIndex = 24;
             this.cbbCuisine.Text = "Select";
-            // 
-            // txtProductDesc
-            // 
-            this.txtProductDesc.Location = new System.Drawing.Point(373, 379);
-            this.txtProductDesc.Name = "txtProductDesc";
-            this.txtProductDesc.Size = new System.Drawing.Size(167, 26);
-            this.txtProductDesc.TabIndex = 23;
+
             // 
             // btnSearch
             // 
@@ -160,6 +206,7 @@ namespace IOOP_Assignment
             this.btnDeleteProduct.Text = "Delete";
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
             this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+
             // 
             // btnAddProduct
             // 
@@ -172,6 +219,7 @@ namespace IOOP_Assignment
             this.btnAddProduct.Text = "Add";
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+
             // 
             // btnUpdateProduct
             // 
@@ -184,6 +232,7 @@ namespace IOOP_Assignment
             this.btnUpdateProduct.Text = "Update";
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
             this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
+
             // 
             // lblCuisine
             // 
@@ -194,13 +243,7 @@ namespace IOOP_Assignment
             this.lblCuisine.Size = new System.Drawing.Size(75, 22);
             this.lblCuisine.TabIndex = 13;
             this.lblCuisine.Text = "Cuisine:";
-            // 
-            // txtProductPrice
-            // 
-            this.txtProductPrice.Location = new System.Drawing.Point(681, 290);
-            this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(117, 26);
-            this.txtProductPrice.TabIndex = 11;
+
             // 
             // lblProPrice
             // 
@@ -211,13 +254,7 @@ namespace IOOP_Assignment
             this.lblProPrice.Size = new System.Drawing.Size(56, 22);
             this.lblProPrice.TabIndex = 10;
             this.lblProPrice.Text = "Price:";
-            // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(373, 289);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(123, 26);
-            this.txtProductID.TabIndex = 9;
+
             // 
             // lblProID
             // 
@@ -228,33 +265,30 @@ namespace IOOP_Assignment
             this.lblProID.Size = new System.Drawing.Size(99, 22);
             this.lblProID.TabIndex = 8;
             this.lblProID.Text = "Product ID:";
+
             // 
-            // lblProDesc
+            // label1
             // 
-            this.lblProDesc.AutoSize = true;
-            this.lblProDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProDesc.Location = new System.Drawing.Point(262, 379);
-            this.lblProDesc.Name = "lblProDesc";
-            this.lblProDesc.Size = new System.Drawing.Size(105, 22);
-            this.lblProDesc.TabIndex = 7;
-            this.lblProDesc.Text = "Description:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(319, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 55);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Menu";
             // 
-            // txtProductName
+            // pictureBox1
             // 
-            this.txtProductName.Location = new System.Drawing.Point(373, 333);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(167, 26);
-            this.txtProductName.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(305, 334);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Name:";
+            this.pictureBox1.Location = new System.Drawing.Point(474, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.SandyBrown;
+            
+            
+
             // 
             // btnUpload
             // 
@@ -268,37 +302,16 @@ namespace IOOP_Assignment
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(319, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 55);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Menu";
-            // 
             // btnExit
             // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Image = global::IOOP_Assignment.Properties.Resources.exitButton;
             this.btnExit.Location = new System.Drawing.Point(823, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 5;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SandyBrown;
-            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.menuIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(474, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+
             // 
             // ManagerMenuPage
             // 

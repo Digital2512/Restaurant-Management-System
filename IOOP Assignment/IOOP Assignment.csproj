@@ -299,6 +299,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <None Include="PictureFolder\SuccessfullyIcon.png" />
     <None Include="PictureFolder\vipImage.png" />
     <None Include="PictureFolder\tablesIcon.png" />
@@ -311,6 +312,8 @@
     <None Include="PictureFolder\8PaxImage.png" />
     <None Include="PictureFolder\4PaxImage.png" />
     <None Include="PictureFolder\2PaxImage.png" />
+=======
+>>>>>>> parent of 3a951e5 (commit ManagerMenuPage)
     <None Include="PictureFolder\3LinesSidebarIconResized.png" />
     <None Include="PictureFolder\FeedbackButtonBGChanged1.png" />
     <None Include="PictureFolder\FeedbackButtonBGChanged.png" />
