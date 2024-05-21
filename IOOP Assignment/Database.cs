@@ -356,9 +356,9 @@ namespace IOOP_Assignment
             }
         }
 
-        public Image getImage(string query, Image errorImage)
+        public Image getImage(string query)
         {
-            Image resultImage = Properties.Resources.errorImageSmaller;
+            Image resultImage = Properties.Resources.close;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 try
@@ -381,7 +381,7 @@ namespace IOOP_Assignment
                         }
                         else
                         {
-                            resultImage = errorImage;   
+                            resultImage = Properties.Resources.close;   
                         }
                     }
                     else

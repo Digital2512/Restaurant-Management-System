@@ -373,7 +373,6 @@
             this.reservationStatusPBox.Location = new System.Drawing.Point(339, 0);
             this.reservationStatusPBox.Name = "reservationStatusPBox";
             this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
-            this.reservationStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.reservationStatusPBox.TabIndex = 2;
             this.reservationStatusPBox.TabStop = false;
             // 
@@ -383,7 +382,6 @@
             this.orderStatusPBox.Location = new System.Drawing.Point(339, 0);
             this.orderStatusPBox.Name = "orderStatusPBox";
             this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
-            this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.orderStatusPBox.TabIndex = 2;
             this.orderStatusPBox.TabStop = false;
             // 
