@@ -10,7 +10,7 @@ namespace IOOP_Assignment
     public partial class ChefOrderDetailsForm : Form
     {
         private System.Timers.Timer timer;
-        private string[] ButtonsToUpdate = { "V01", "V02", "V03", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08" };
+        private string[] ButtonsToUpdate = { "V01", "V02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
 
         public ChefOrderDetailsForm()
         {
@@ -66,6 +66,10 @@ namespace IOOP_Assignment
                 {
                     button.BackColor = Color.Green; // Changed from Black for better visibility
                 }
+                else if (orderStatus == "Pending")
+                {
+                    button.BackColor = Color.LightGray;
+                }
                 else
                 {
                     button.BackColor = SystemColors.Control; // Default color if status is unknown
@@ -77,7 +81,7 @@ namespace IOOP_Assignment
         private string GetOrderStatusForTable(string tableNumber)
         {
             string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
-            string query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = '{tableNumber}' ORDER BY OrderDateTime DESC";
+            string query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = '{tableNumber}' and  ORDER BY OrderDateTime DESC";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
