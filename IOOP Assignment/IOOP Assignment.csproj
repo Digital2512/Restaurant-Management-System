@@ -81,6 +81,7 @@
     <Compile Include="ChefOrderDetailsForm.Designer.cs">
       <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
     </Compile>

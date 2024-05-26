@@ -35,6 +35,8 @@
             this.V02 = new System.Windows.Forms.Button();
             this.V01 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.T10 = new System.Windows.Forms.Button();
+            this.T09 = new System.Windows.Forms.Button();
             this.T01 = new System.Windows.Forms.Button();
             this.T02 = new System.Windows.Forms.Button();
             this.T03 = new System.Windows.Forms.Button();
@@ -45,9 +47,7 @@
             this.T08 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.BbackH = new System.Windows.Forms.Button();
-            this.T09 = new System.Windows.Forms.Button();
-            this.T10 = new System.Windows.Forms.Button();
-            this.PendingOrderReceived = new System.Windows.Forms.ListBox();
+            this.OrderReceived = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,11 +58,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,7 +126,6 @@
             this.V01.TabIndex = 0;
             this.V01.Text = "Hall 1";
             this.V01.UseVisualStyleBackColor = true;
-            this.V01.Click += new System.EventHandler(this.V01_Click);
             // 
             // groupBox2
             // 
@@ -149,6 +145,24 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tables";
+            // 
+            // T10
+            // 
+            this.T10.Location = new System.Drawing.Point(482, 48);
+            this.T10.Name = "T10";
+            this.T10.Size = new System.Drawing.Size(97, 55);
+            this.T10.TabIndex = 8;
+            this.T10.Text = "Table 10";
+            this.T10.UseVisualStyleBackColor = true;
+            // 
+            // T09
+            // 
+            this.T09.Location = new System.Drawing.Point(349, 245);
+            this.T09.Name = "T09";
+            this.T09.Size = new System.Drawing.Size(97, 55);
+            this.T09.TabIndex = 7;
+            this.T09.Text = "Table 9";
+            this.T09.UseVisualStyleBackColor = true;
             // 
             // T01
             // 
@@ -225,7 +239,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(637, 479);
+            this.button10.Location = new System.Drawing.Point(522, 473);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(8, 8);
             this.button10.TabIndex = 3;
@@ -241,37 +255,19 @@
             this.BbackH.UseVisualStyleBackColor = true;
             this.BbackH.Click += new System.EventHandler(this.BbackH_Click);
             // 
-            // T09
+            // OrderReceived
             // 
-            this.T09.Location = new System.Drawing.Point(349, 245);
-            this.T09.Name = "T09";
-            this.T09.Size = new System.Drawing.Size(97, 55);
-            this.T09.TabIndex = 7;
-            this.T09.Text = "Table 9";
-            this.T09.UseVisualStyleBackColor = true;
-            // 
-            // T10
-            // 
-            this.T10.Location = new System.Drawing.Point(482, 48);
-            this.T10.Name = "T10";
-            this.T10.Size = new System.Drawing.Size(97, 55);
-            this.T10.TabIndex = 8;
-            this.T10.Text = "Table 10";
-            this.T10.UseVisualStyleBackColor = true;
-            // 
-            // PendingOrderReceived
-            // 
-            this.PendingOrderReceived.FormattingEnabled = true;
-            this.PendingOrderReceived.ItemHeight = 16;
-            this.PendingOrderReceived.Location = new System.Drawing.Point(35, 448);
-            this.PendingOrderReceived.Name = "PendingOrderReceived";
-            this.PendingOrderReceived.Size = new System.Drawing.Size(221, 132);
-            this.PendingOrderReceived.TabIndex = 10;
+            this.OrderReceived.FormattingEnabled = true;
+            this.OrderReceived.ItemHeight = 16;
+            this.OrderReceived.Location = new System.Drawing.Point(217, 457);
+            this.OrderReceived.Name = "OrderReceived";
+            this.OrderReceived.Size = new System.Drawing.Size(186, 132);
+            this.OrderReceived.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(321, 448);
+            this.label1.Location = new System.Drawing.Point(519, 442);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 11;
@@ -280,7 +276,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(321, 475);
+            this.label2.Location = new System.Drawing.Point(519, 469);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 12;
@@ -289,7 +285,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(321, 506);
+            this.label3.Location = new System.Drawing.Point(519, 500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 13;
@@ -298,7 +294,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(321, 535);
+            this.label4.Location = new System.Drawing.Point(519, 529);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 14;
@@ -307,7 +303,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(321, 564);
+            this.label5.Location = new System.Drawing.Point(519, 558);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 16);
             this.label5.TabIndex = 15;
@@ -316,7 +312,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(444, 448);
+            this.label6.Location = new System.Drawing.Point(657, 442);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 16;
@@ -325,7 +321,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(444, 479);
+            this.label7.Location = new System.Drawing.Point(657, 473);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 17;
@@ -334,7 +330,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(444, 506);
+            this.label8.Location = new System.Drawing.Point(657, 500);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 16);
             this.label8.TabIndex = 18;
@@ -343,7 +339,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(444, 535);
+            this.label9.Location = new System.Drawing.Point(657, 529);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 19;
@@ -352,57 +348,37 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(444, 564);
+            this.label10.Location = new System.Drawing.Point(657, 558);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 16);
             this.label10.TabIndex = 20;
             this.label10.Text = "label10";
             // 
-            // textBox1
+            // label11
             // 
-            this.textBox1.Location = new System.Drawing.Point(529, 529);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 21;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(519, 587);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(134, 16);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Estimated Time Left : ";
             // 
-            // textBox2
+            // label12
             // 
-            this.textBox2.Location = new System.Drawing.Point(529, 442);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 22;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(529, 473);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 23;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(529, 500);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 24;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(529, 561);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 25;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(657, 587);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "label12";
             // 
             // ChefOrderDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 612);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -413,7 +389,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.PendingOrderReceived);
+            this.Controls.Add(this.OrderReceived);
             this.Controls.Add(this.BbackH);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.groupBox2);
@@ -452,7 +428,7 @@
         private System.Windows.Forms.Button BbackH;
         private System.Windows.Forms.Button T10;
         private System.Windows.Forms.Button T09;
-        private System.Windows.Forms.ListBox PendingOrderReceived;
+        private System.Windows.Forms.ListBox OrderReceived;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -463,10 +439,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

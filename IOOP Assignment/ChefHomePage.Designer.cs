@@ -315,9 +315,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(325, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 16);
+            this.label9.Size = new System.Drawing.Size(118, 16);
             this.label9.TabIndex = 13;
-            this.label9.Text = "Order uncomplete :";
+            this.label9.Text = "Order In Progress :";
             // 
             // label10
             // 

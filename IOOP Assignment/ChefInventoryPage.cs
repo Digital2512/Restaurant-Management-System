@@ -1,18 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
     public partial class ChefInventoryForm : Form
     {
+        private enum ActionState
+        {
+            None,
+            NewItem,
+            UpdateItem,
+            DeleteItem
+        }
+
+        private ActionState currentAction = ActionState.None;
+
         Timer timer = new Timer();
         public ChefInventoryForm()
         {
@@ -20,22 +25,46 @@ namespace IOOP_Assignment
             timer.Interval = 1000;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            InitializeDataGridView();
             LoadInventoryData();
             dataGridView1.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView1_CellFormatting);
+            dataGridView1.SelectionChanged += new EventHandler(dataGridView1_SelectionChanged);
+
+            ToggleTextBoxVisibility(false);
+            BtnDone.Visible = false;
+
+            checkBoxAdequate.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
+            checkBoxLack.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
+            checkBoxOut.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
+
+            numericUpDownQuantity.Maximum = decimal.MaxValue;
+            numericUpDownPrice.Maximum = decimal.MaxValue;
+        }
+
+        private void InitializeDataGridView()
+        {
+            dataGridView1.Columns.Clear(); // Clear existing columns if any
+
+            // Adding columns programmatically
+            dataGridView1.Columns.Add("StockID", "StockID");
+            dataGridView1.Columns.Add("Name", "Name");
+            dataGridView1.Columns.Add("Quantity", "Quantity");
+            dataGridView1.Columns.Add("IndividualPrice", "Individual Price");
+            dataGridView1.Columns.Add("Status", "Status");
+
+            // Set DataPropertyName for each column
+            dataGridView1.Columns["StockID"].DataPropertyName = "StockID";
+            dataGridView1.Columns["Name"].DataPropertyName = "Name";
+            dataGridView1.Columns["Quantity"].DataPropertyName = "Quantity";
+            dataGridView1.Columns["IndividualPrice"].DataPropertyName = "IndividualPrice";
+            dataGridView1.Columns["Status"].DataPropertyName = "Status";
         }
 
         private void LoadInventoryData()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
             string query = "SELECT StockID, Name, Quantity, IndividualPrice, Status FROM Inventory ORDER BY StockID ASC";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable;
-            }
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
+            dataGridView1.DataSource = dataTable;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -48,22 +77,11 @@ namespace IOOP_Assignment
             this.Close();
         }
 
-        private void ChefInventoryForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'iOOPDatabaseDataSet.Inventory' table. You can move, or remove it, as needed.
-            this.inventoryTableAdapter.Fill(this.iOOPDatabaseDataSet.Inventory);
-
-        }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            Console.WriteLine("CellFormatting called");  // Debug output
-
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Status")
             {
                 string status = e.Value as string;
-                Console.WriteLine($"Status: {status}");  // More detailed debug output
-
                 if (status == "Out of Stock")
                 {
                     dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
@@ -74,190 +92,282 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;  // Ensuring other statuses are clear
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
                 }
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0 && currentAction == ActionState.None)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                LBLStockID.Text = selectedRow.Cells["StockID"].Value.ToString();
+                LBLName.Text = selectedRow.Cells["Name"].Value.ToString();
+                LBLQuantity.Text = selectedRow.Cells["Quantity"].Value.ToString();
+                LBLPrice.Text = selectedRow.Cells["IndividualPrice"].Value.ToString();
+                LBLStatus.Text = selectedRow.Cells["Status"].Value.ToString();
+
+                numericUpDownQuantity.Value = Convert.ToDecimal(selectedRow.Cells["Quantity"].Value);
+                numericUpDownPrice.Value = Convert.ToDecimal(selectedRow.Cells["IndividualPrice"].Value);
+                ToggleCheckBox(selectedRow.Cells["Status"].Value.ToString());
             }
         }
 
         private bool ConfirmAction(string details)
         {
-            return MessageBox.Show(details, "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
-        }
-        private void BtnInventoryAdd_Click_1(object sender, EventArgs e)
-        {
-            string id = TBInventoryID.Text.Trim();
-            if (string.IsNullOrEmpty(id) || !int.TryParse(TBInventoryQuantity.Text, out int quantity))
-            {
-                MessageBox.Show("Please enter valid Inventory ID and Quantity.");
-                return;
-            }
-
-            if (ConfirmAction($"Are you sure you want to add {quantity} int0 Inventory ID: {id}?"))
-            {
-                AddInventory(id, quantity);
-            }
-
+            return Utility.ShowConfirmationDialog(details);
         }
 
-        private void AddInventory(string id, int quantity)
+        private void ButtonAddNewInventory_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
-            string query = "UPDATE Inventory SET Quantity += @Quantity WHERE StockID = @StockID";
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Quantity", quantity);
-                    command.Parameters.AddWithValue("@StockID", id);
-                    connection.Open();
-                    if (command.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Inventory updated successfully.");
-                    else
-                        MessageBox.Show("No inventory updated.");
-                }
-                LoadInventoryData();
-            }
+            currentAction = ActionState.NewItem;
+            ClearDetails();
+            ToggleTextBoxVisibility(true);
+            LBLStockID.Text = GenerateNewID();
+            BtnDone.Visible = true;
         }
 
         private void BtnInventoryDelete_Click_1(object sender, EventArgs e)
         {
-            string id = TBInventoryID.Text.Trim();
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(LBLStockID.Text))
             {
-                MessageBox.Show("Please enter an Inventory ID.");
+                MessageBox.Show("Please select an item to delete.");
+                return;
+            }
+            currentAction = ActionState.DeleteItem;
+            ToggleTextBoxVisibility(false);
+            BtnDone.Visible = true;
+        }
+
+        private void BtnInventoryAdd_Click(object sender, EventArgs e)
+        //update inventory
+        {
+            if (string.IsNullOrEmpty(LBLStockID.Text))
+            {
+                MessageBox.Show("Please select an item to update.");
+                return;
+            }
+            currentAction = ActionState.UpdateItem;
+            ToggleTextBoxVisibility(true);
+            BtnDone.Visible = true;
+        }
+
+        private void BtnDone_Click_1(object sender, EventArgs e)
+        {
+            string id = LBLStockID.Text.Trim();
+            string name = TBInventoryName.Text.Trim();
+            int quantity = (int)numericUpDownQuantity.Value;
+            decimal price = numericUpDownPrice.Value;
+            string status = GetSelectedStatus();
+
+            if (!ValidateStatus(status, quantity))
+            {
                 return;
             }
 
-            if (ConfirmAction($"Are you sure you want to delete Inventory ID: {id}?"))
+            if (currentAction == ActionState.NewItem)
             {
-                DeleteInventory(id);
+                if (InventoryExists(id))
+                {
+                    MessageBox.Show("An inventory item with this ID already exists.");
+                    return;
+                }
+
+                string details = $"Are you sure you want to add a new inventory item?\nID: {id}\nName: {name}\nQuantity: {quantity}\nPrice: {price}\nStatus: {status}";
+                if (ConfirmAction(details))
+                {
+                    AddNewInventory(id, name, quantity, price, status);
+                }
+            }
+            else if (currentAction == ActionState.UpdateItem)
+            {
+                string details = "Are you sure you want to update the following fields?\n";
+                if (name != LBLName.Text) details += $"Name: {LBLName.Text} -> {name}\n";
+                if (quantity.ToString() != LBLQuantity.Text) details += $"Quantity: {LBLQuantity.Text} -> {quantity}\n";
+                if (price.ToString() != LBLPrice.Text) details += $"Price: {LBLPrice.Text} -> {price}\n";
+                if (status != LBLStatus.Text) details += $"Status: {LBLStatus.Text} -> {status}\n";
+
+                if (ConfirmAction(details))
+                {
+                    EditInventory(id, name, quantity, price, status);
+                }
+            }
+            else if (currentAction == ActionState.DeleteItem)
+            {
+                if (ConfirmAction($"Are you sure you want to delete Inventory ID: {id}?"))
+                {
+                    DeleteInventory(id);
+                }
+            }
+
+            ClearDetails();
+            ToggleTextBoxVisibility(false);
+            BtnDone.Visible = false;
+            currentAction = ActionState.None;
+        }
+
+        private void AddNewInventory(string id, string name, int quantity, decimal price, string status)
+        {
+            string query = "INSERT INTO Inventory (StockID, Name, Quantity, IndividualPrice, Status) VALUES (@StockID, @Name, @Quantity, @Price, @Status)";
+            SqlParameter[] parameters = {
+                new SqlParameter("@StockID", id),
+                new SqlParameter("@Name", name),
+                new SqlParameter("@Quantity", quantity),
+                new SqlParameter("@Price", price),
+                new SqlParameter("@Status", status)
+            };
+
+            int result = Utility.ExecuteSqlCommand(query, parameters);
+            if (result > 0)
+            {
+                MessageBox.Show("New inventory item added successfully.");
+                LoadInventoryData();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add new inventory item.");
             }
         }
 
+        private void EditInventory(string id, string name, int quantity, decimal price, string status)
+        {
+            string query = "UPDATE Inventory SET Name = @Name, Quantity = @Quantity, IndividualPrice = @Price, Status = @Status WHERE StockID = @StockID";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Name", name),
+                new SqlParameter("@Quantity", quantity),
+                new SqlParameter("@Price", price),
+                new SqlParameter("@Status", status),
+                new SqlParameter("@StockID", id)
+            };
+
+            int result = Utility.ExecuteSqlCommand(query, parameters);
+            if (result > 0)
+            {
+                MessageBox.Show("Inventory updated successfully.");
+                LoadInventoryData();
+            }
+            else
+            {
+                MessageBox.Show("No inventory updated.");
+            }
+        }
 
         private void DeleteInventory(string id)
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
             string query = "DELETE FROM Inventory WHERE StockID = @StockID";
+            SqlParameter[] parameters = { new SqlParameter("@StockID", id) };
 
-            using (var connection = new SqlConnection(connectionString))
+            int result = Utility.ExecuteSqlCommand(query, parameters);
+            if (result > 0)
             {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@StockID", id);
-                    connection.Open();
-                    if (command.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Inventory deleted successfully.");
-                    else
-                        MessageBox.Show("No inventory deleted.");
-                }
+                MessageBox.Show("Inventory deleted successfully.");
                 LoadInventoryData();
             }
-        }
-
-        private void BtnInventoryEdit_Click_1(object sender, EventArgs e)
-        {
-            string id = TBInventoryID.Text.Trim();
-            if (string.IsNullOrEmpty(id) || !int.TryParse(TBInventoryQuantity.Text, out int quantity) || !decimal.TryParse(TbInventoryPrice.Text, out decimal price))
+            else
             {
-                MessageBox.Show("Please enter valid Inventory ID, Quantity, and Price.");
-                return;
-            }
-
-            if (ConfirmAction($"Are you sure you want to update Inventory ID: {id} with Quantity: {quantity} and Price: {price}?"))
-            {
-                EditInventory(id, quantity, price);
-            }
-        }
-
-        private void EditInventory(string id, int quantity, decimal price)
-        {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
-            string query = "UPDATE Inventory SET Quantity = @Quantity, IndividualPrice = @Price WHERE StockID = @StockID";
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Quantity", quantity);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@StockID", id);
-                    connection.Open();
-                    if (command.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Inventory updated successfully.");
-                    else
-                        MessageBox.Show("No inventory updated.");
-                }
-                LoadInventoryData();
+                MessageBox.Show("No inventory deleted.");
             }
         }
 
         private bool InventoryExists(string id)
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
             string query = "SELECT COUNT(*) FROM Inventory WHERE StockID = @StockID";
+            SqlParameter[] parameters = { new SqlParameter("@StockID", id) };
 
-            using (var connection = new SqlConnection(connectionString))
+            return (int)Utility.ExecuteSqlQuery(query, parameters).Rows[0][0] > 0;
+        }
+
+        private string GenerateNewID()
+        {
+            string query = "SELECT MAX(CAST(SUBSTRING(StockID, 4, LEN(StockID) - 3) AS INT)) FROM Inventory";
+            int maxID = (int)Utility.ExecuteSqlQuery(query, null).Rows[0][0];
+            return "INV" + (maxID + 1).ToString("D3");
+        }
+
+        private bool ValidateStatus(string status, int quantity)
+        {
+            if (status == "Out of Stock" && quantity > 0)
             {
-                using (var command = new SqlCommand(query, connection))
+                MessageBox.Show("Cannot set status to 'Out of Stock' when there is a quantity.");
+                return false;
+            }
+            return status == "Adequate" || status == "Lack of Stock" || status == "Out of Stock";
+        }
+
+        private void ToggleTextBoxVisibility(bool visible)
+        {
+            TBInventoryName.Visible = visible;
+            numericUpDownQuantity.Visible = visible;
+            numericUpDownPrice.Visible = visible;
+            checkBoxAdequate.Visible = visible;
+            checkBoxLack.Visible = visible;
+            checkBoxOut.Visible = visible;
+
+            LBLName.Visible = !visible;
+            LBLQuantity.Visible = !visible;
+            LBLPrice.Visible = !visible;
+            LBLStatus.Visible = !visible;
+        }
+
+        private void ClearDetails()
+        {
+            LBLStockID.Text = string.Empty;
+            LBLName.Text = string.Empty;
+            LBLQuantity.Text = string.Empty;
+            LBLPrice.Text = string.Empty;
+            LBLStatus.Text = string.Empty;
+
+            TBInventoryName.Text = string.Empty;
+            numericUpDownQuantity.Value = 0;
+            numericUpDownPrice.Value = 0;
+            UncheckAllCheckBoxes();
+        }
+
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is CheckBox currentCheckBox && currentCheckBox.Checked)
+            {
+                foreach (CheckBox cb in new[] { checkBoxAdequate, checkBoxLack, checkBoxOut })
                 {
-                    command.Parameters.AddWithValue("@StockID", id);
-                    connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;
+                    if (cb != currentCheckBox)
+                    {
+                        cb.Checked = false;
+                    }
                 }
             }
         }
 
-
-        private void ButtonAddNewInventory_Click(object sender, EventArgs e)
+        private void ToggleCheckBox(string status)
         {
-            string id = TBInventoryID.Text.Trim();
-            if (string.IsNullOrEmpty(id) || !int.TryParse(TBInventoryQuantity.Text, out int quantity) || !decimal.TryParse(TbInventoryPrice.Text, out decimal price))
+            UncheckAllCheckBoxes();
+            if (status == "Adequate")
             {
-                MessageBox.Show("Please enter valid Inventory ID, Quantity, and Price.");
-                return;
+                checkBoxAdequate.Checked = true;
             }
-
-            if (InventoryExists(id))
+            else if (status == "Lack of Stock")
             {
-                MessageBox.Show("An inventory item with this ID already exists.");
-                return;
+                checkBoxLack.Checked = true;
             }
-
-            string details = $"Are you sure you want to add a new inventory item?\nID: {id}\nQuantity: {quantity}\nPrice: {price}";
-            if (ConfirmAction(details))
+            else if (status == "Out of Stock")
             {
-                AddNewInventory(id, quantity, price);
+                checkBoxOut.Checked = true;
             }
         }
 
-        private void AddNewInventory(string id, int quantity, decimal price)
+        private void UncheckAllCheckBoxes()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
-            string query = "INSERT INTO Inventory (StockID, Name, Quantity, IndividualPrice, Status) VALUES (@StockID, @Name, @Quantity, @Price, 'Adequate')";
+            checkBoxAdequate.Checked = false;
+            checkBoxLack.Checked = false;
+            checkBoxOut.Checked = false;
+        }
 
-            using (var connection = new SqlConnection(connectionString))
-            {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@StockID", id);
-                    command.Parameters.AddWithValue("@Name", "New Item");  // Assuming a default name, this should ideally be input by the user
-                    command.Parameters.AddWithValue("@Quantity", quantity);
-                    command.Parameters.AddWithValue("@Price", price);
-                    connection.Open();
-                    if (command.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("New inventory item added successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to add new inventory item.");
-                    }
-                    LoadInventoryData();  // Refresh data grid
-                }
-            }
+        private string GetSelectedStatus()
+        {
+            if (checkBoxAdequate.Checked) return "Adequate";
+            if (checkBoxLack.Checked) return "Lack of Stock";
+            if (checkBoxOut.Checked) return "Out of Stock";
+            return string.Empty;
         }
     }
 }

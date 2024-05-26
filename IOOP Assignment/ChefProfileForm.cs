@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace IOOP_Assignment
 {
@@ -19,7 +19,6 @@ namespace IOOP_Assignment
 
         private void ToggleEditMode(string field, bool editMode)
         {
-            // Hide all labels and textboxes initially
             lblPassword.Visible = !editMode;
             lblUsername.Visible = !editMode;
             lblGender.Visible = !editMode;
@@ -30,7 +29,6 @@ namespace IOOP_Assignment
             txtGender.Visible = false;
             txtBirthday.Visible = false;
 
-            // Show the specific textbox and label based on the field
             switch (field)
             {
                 case "Password":
@@ -89,10 +87,10 @@ namespace IOOP_Assignment
         {
             ToggleEditMode("Birthday", true);
         }
+
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to update?", "Confirm Update", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (Utility.ShowConfirmationDialog("Are you sure you want to update?"))
             {
                 UpdateChefProfile();
                 ToggleEditMode(fieldToEdit, false);
@@ -104,53 +102,36 @@ namespace IOOP_Assignment
             ToggleEditMode(fieldToEdit, false);
         }
 
-
-
         private void LoadChefProfile(string userID)
         {
             txtPassword.Visible = false;
             txtName.Visible = false;
             txtGender.Visible = false;
             txtBirthday.Visible = false;
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
-            string query = "SELECT * FROM Users WHERE UserID = @UserID";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            string query = "SELECT * FROM Users WHERE UserID = @UserID";
+            SqlParameter[] parameters = { new SqlParameter("@UserID", userID) };
+
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
+
+            if (dataTable.Rows.Count > 0)
             {
-                try
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@UserID", userID);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                lblUserID.Text = reader["UserID"].ToString().Trim();
-                                lblUsername.Text = reader["FullName"].ToString().Trim();
-                                lblRole.Text = reader["Role"].ToString().Trim();
-                                lblPassword.Text = reader["Password"].ToString().Trim();
-                                lblGender.Text = reader["Gender"].ToString().Trim();
-                                lblBirthday.Text = reader["Birthday"].ToString().Trim();
-                            }
-                            else
-                            {
-                                MessageBox.Show("UserID not found.");
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
+                DataRow row = dataTable.Rows[0];
+                lblUserID.Text = row["UserID"].ToString().Trim();
+                lblUsername.Text = row["FullName"].ToString().Trim();
+                lblRole.Text = row["Role"].ToString().Trim();
+                lblPassword.Text = row["Password"].ToString().Trim();
+                lblGender.Text = row["Gender"].ToString().Trim();
+                lblBirthday.Text = row["Birthday"].ToString().Trim();
+            }
+            else
+            {
+                MessageBox.Show("UserID not found.");
             }
         }
 
         private void UpdateChefProfile()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
             string query = "";
 
             switch (fieldToEdit)
@@ -169,26 +150,14 @@ namespace IOOP_Assignment
                     break;
             }
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@UserID", username);
-                        command.Parameters.AddWithValue("@Value", GetEditedValue());
+            SqlParameter[] parameters = {
+                new SqlParameter("@UserID", username),
+                new SqlParameter("@Value", GetEditedValue())
+            };
 
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Profile updated successfully.");
-                        LoadChefProfile(username);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
-            }
+            Utility.ExecuteSqlCommand(query, parameters);
+            MessageBox.Show("Profile updated successfully.");
+            LoadChefProfile(username);
         }
 
         private string GetEditedValue()
@@ -207,7 +176,5 @@ namespace IOOP_Assignment
                     return "";
             }
         }
-
-        
     }
 }
