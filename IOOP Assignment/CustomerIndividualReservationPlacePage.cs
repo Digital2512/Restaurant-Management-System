@@ -40,7 +40,8 @@ namespace IOOP_Assignment
             query = $"SELECT MinOfPax FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}';";
             int minOfPax = database.getInt(query);
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
-            int noOfPax = int.Parse(noOfPaxTxtBox.Text);
+            string noOfPaxString = noOfPaxTxtBox.Text;
+            int noOfPax = int.Parse(noOfPaxString);
             string customerID = database.getString(query);
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
             string reservedDateTime = reservedDateTimePicker.Text;
@@ -82,30 +83,37 @@ namespace IOOP_Assignment
             {
                 durationTime = 240;
             }
-            if (noOfPax > minOfPax)
+            if(noOfPax != 0)
             {
-                query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID, Duration) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime})";
-                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                if (noOfPax > minOfPax)
                 {
-                    MessageBox.Show("Reservation Request Sent");
-                    query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
-                    this.Hide();
-                    CustomerHomePage customerHomePage = new CustomerHomePage();
-                    customerHomePage.Show();
-                }
-                else if (database.insertOrUpdateValuesIntoDatabase(query) != true)
-                {
-                    MessageBox.Show("Error: Reservation Request Not Sent");
+                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDateTime, ReservationStatus, PlaceID, Duration) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime})";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        MessageBox.Show("Reservation Request Sent");
+                        query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
+                        this.Hide();
+                        CustomerHomePage customerHomePage = new CustomerHomePage();
+                        customerHomePage.Show();
+                    }
+                    else if (database.insertOrUpdateValuesIntoDatabase(query) != true)
+                    {
+                        MessageBox.Show("Error: Reservation Request Not Sent");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("An error occured");
+                    MessageBox.Show("The min of pax has not been achieved. Please reinput the min of pax again");
                 }
-
             }
             else
             {
-                MessageBox.Show("The min of pax has not been achieved. Please reinput the min of pax again");
+                MessageBox.Show("Please enter a valid number of pax");
             }
         }
 

@@ -162,11 +162,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="foodButton.cs">
+    <Compile Include="productButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="foodButton.Designer.cs">
-      <DependentUpon>foodButton.cs</DependentUpon>
+    <Compile Include="productButton.Designer.cs">
+      <DependentUpon>productButton.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="cartProductButton.resx">
       <DependentUpon>cartProductButton.cs</DependentUpon>
@@ -212,8 +212,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="foodButton.resx">
-      <DependentUpon>foodButton.cs</DependentUpon>
+    <EmbeddedResource Include="productButton.resx">
+      <DependentUpon>productButton.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

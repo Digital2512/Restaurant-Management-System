@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class foodButton : UserControl
+    public partial class productButton : UserControl
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private string ProductID { get; set; }
-        public foodButton(string productID,string productName, string productPrice, string productDescription, string productRatingText, Image productImage)
+        public productButton(string productID,string productName, string productPrice, string productDescription, string productRatingText, Image productImage)
         {
             InitializeComponent();
             this.lblProductID.Text = productID;

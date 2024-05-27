@@ -76,7 +76,7 @@
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(800, 47);
             this.updateBtn.TabIndex = 0;
-            this.updateBtn.Text = "Update";
+            this.updateBtn.Text = "UPDATE";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
@@ -252,7 +252,6 @@
             // passwordShowBtn
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            //this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
             this.passwordShowBtn.Location = new System.Drawing.Point(352, 355);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
@@ -270,8 +269,6 @@
             // 
             // confirmPasswordShowHideBtn
             // 
-            //this.confirmPasswordShowHideBtn.BackColor = System.Drawing.Color.Transparent;
-            //this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
             this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(353, 442);
             this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
             this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
@@ -300,7 +297,6 @@
             // 
             // profilePBox
             // 
-            //this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.profilePBox.Location = new System.Drawing.Point(43, 58);
             this.profilePBox.Name = "profilePBox";
             this.profilePBox.Size = new System.Drawing.Size(249, 180);
