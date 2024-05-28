@@ -56,22 +56,47 @@ namespace IOOP_Assignment
                             {
                                 case "Admin":
                                     MessageBox.Show("Login Successful. User's Role: Admin");
-                                    AdminHomePage adminHomePage = new AdminHomePage("Admin");
+                                    string loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
+                                    AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();
                                     this.Hide();
                                     break;
                                 case "Manager":
                                     MessageBox.Show("Login Successful. User's Role: Manager");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
                                     ManagerHomePage managerHomePage = new ManagerHomePage();
                                     managerHomePage.Show();
                                     break;
                                 case "Chef":
                                     MessageBox.Show("Login Successful. User's Role: Chef");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+
                                     ChefHomePage chefHomePage = new ChefHomePage();
                                     chefHomePage.Show();
                                     break;
                                 case "Customer":
                                     MessageBox.Show("Login Successful. User's Role: Customer");
+                                    loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+
+                                    string loggedInUpdateCustomerQuery = $"UPDATE Customer SET LoggedIn = 'TRUE' WHERE UserID = @username;";
+                                    cmd = new SqlCommand(loggedInUpdateQuery, connection);
+                                    SqlCommand secondcmd = new SqlCommand(loggedInUpdateCustomerQuery, connection);
+                                    cmd.Parameters.AddWithValue("@Username", username);
+                                    cmd.ExecuteNonQuery();
+                                    secondcmd.Parameters.AddWithValue("@Username", username);
+                                    secondcmd.ExecuteNonQuery();
+
                                     CustomerHomePage customerHomePage = new CustomerHomePage();
                                     customerHomePage.Show();
                                     break;
