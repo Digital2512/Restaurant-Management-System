@@ -10,7 +10,10 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Huey-Shin
 namespace IOOP_Assignment
 {
     public class Database
