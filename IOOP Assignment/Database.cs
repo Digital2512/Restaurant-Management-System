@@ -121,6 +121,61 @@ namespace IOOP_Assignment
             }
             return result;
         }
+
+        public string getTopString(string query)
+        {
+            string result = null;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            // Only read the first row
+                            if (reader.Read())
+                            {
+                                try
+                                {
+                                    if (!reader.IsDBNull(0))
+                                    {
+                                        result = reader.GetString(0);
+                                        if (result == null)
+                                        {
+                                            result = "";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        result = "";
+                                    }
+                                }
+                                catch (SqlException ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return result;
+        }
+
         public DateTime getDateTime(string query)
         {
             DateTime result = DateTime.MinValue;
@@ -154,6 +209,52 @@ namespace IOOP_Assignment
 
             return result;
         }
+
+        public DateTime? getDateTimeToProcess(string query)
+        {
+            DateTime? result = null;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                try
+                                {
+                                    if (!reader.IsDBNull(0))
+                                    {
+                                        result = reader.GetDateTime(0);
+                                    }
+                                }
+                                catch (SqlException ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }
+            return result;
+        }
+
         public int getInt(string query)
         {
             int result = 0;

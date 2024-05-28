@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewFeedback : Form
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        SqlConnection con = new SqlConnection("");
         public AdminViewFeedback()
         {
             InitializeComponent();

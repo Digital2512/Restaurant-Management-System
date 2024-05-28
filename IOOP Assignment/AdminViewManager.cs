@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewManager()
         {
             InitializeComponent();
-            string conectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string conectionString = "";
             con = new SqlConnection(conectionString);
             manager = new Manager(conectionString);
         }

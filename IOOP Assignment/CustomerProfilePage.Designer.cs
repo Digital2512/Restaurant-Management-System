@@ -91,7 +91,7 @@
             // 
             this.backButton.BackColor = System.Drawing.Color.DimGray;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            //this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.Location = new System.Drawing.Point(-34, -7);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(104, 59);

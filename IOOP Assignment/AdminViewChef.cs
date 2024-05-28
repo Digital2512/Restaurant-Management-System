@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewChef()
         {
             InitializeComponent();
-            string conectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string conectionString = "";
             con = new SqlConnection(conectionString);
             chef = new Chef(conectionString);
         }

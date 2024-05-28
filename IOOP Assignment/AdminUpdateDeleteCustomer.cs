@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteCustomer()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connectionString = "";
             customer = new Customer(connectionString);
         }
 

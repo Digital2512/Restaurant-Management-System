@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteManager()
         {
             InitializeComponent();
-            string connctionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connctionString = "";
             manager = new Manager(connctionString);
         }
 

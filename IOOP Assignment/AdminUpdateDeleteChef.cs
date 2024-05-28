@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteChef()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connectionString = "";
             chef = new Chef(connectionString);
         }
 

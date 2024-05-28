@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewCustomer()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connectionString = "";
             con = new SqlConnection(connectionString);
             customer = new Customer(connectionString);
         }

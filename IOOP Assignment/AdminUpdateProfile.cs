@@ -20,23 +20,23 @@ namespace IOOP_Assignment
         public AdminUpdateProfile()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
-            Databases database = new Databases(connectionString);
+            connectionString = "";
+            Database database = new Database(connectionString);
             string query = "Select UserID from Users where LoggedIn = 'True';";
-            string userID = database.GetString(query);
+            string userID = database.getString(query);
             lblUserID.Text = userID;
 
             query = $"Select fullName From Users where UserID = '{userID} ';";
-            txtFullName.Text = database.GetString(query);
+            txtFullName.Text = database.getString(query);
 
             query = $"Select Password from Users where UserID = '{userID} ';";
-            txtPassword.Text = database.GetString(query);
+            txtPassword.Text = database.getString(query);
 
             query = $"Select Birthday from Users where UserID = '{userID}';";
-            dtpBirthday.Text = database.GetDateTime(query).ToString();
+            dtpBirthday.Text = database.getDateTime(query).ToString();
 
             query = $"Select Gender from Users where UserID = '{userID}';";
-            string gender = database.GetString(query);
+            string gender = database.getString(query);
             if (gender == "Male")
             {
                 rdbMale.Checked = true;
@@ -55,9 +55,9 @@ namespace IOOP_Assignment
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string query;
-            Databases database = new Databases(connectionString);
+            Database database = new Database(connectionString);
             query = "Select UserID from Users where LoggedIn = 'True';";
-            string userID = database.GetString(query);
+            string userID = database.getString(query);
             string FullName = txtFullName.Text;
             string Password = txtPassword.Text;
             string Birthday = dtpBirthday.Text;

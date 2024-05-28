@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewSalesReport : Form
     {
-        string conectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+        string conectionString = "";
         private DataTable salesData = new DataTable();
         public AdminViewSalesReport()
         {

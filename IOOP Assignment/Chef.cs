@@ -20,7 +20,7 @@ namespace IOOP_Assignment
         private string skills;
         private string chefPositions;
 
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        static SqlConnection con = new SqlConnection("");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
