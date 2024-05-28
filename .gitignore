@@ -2,5 +2,3 @@
 *.vsidx
 *.sqlite
 *.cache
-*.mdf
-*.ldf
