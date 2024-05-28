@@ -87,6 +87,66 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+	  <Compile Include="AdminManageUsers.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminManageUsers.Designer.cs">
+		  <DependentUpon>AdminManageUsers.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteChef.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteChef.Designer.cs">
+		  <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteCustomer.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteCustomer.Designer.cs">
+		  <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteManager.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminUpdateDeleteManager.Designer.cs">
+		  <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminUpdateProfile.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminUpdateProfile.Designer.cs">
+		  <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminViewChef.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminViewChef.Designer.cs">
+		  <DependentUpon>AdminViewChef.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminViewCustomer.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminViewCustomer.Designer.cs">
+		  <DependentUpon>AdminViewCustomer.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminViewFeedback.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminViewFeedback.Designer.cs">
+		  <DependentUpon>AdminViewFeedback.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminViewManager.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminViewManager.Designer.cs">
+		  <DependentUpon>AdminViewManager.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="AdminViewSalesReport.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="AdminViewSalesReport.Designer.cs">
+		  <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+	  </Compile>
     <Compile Include="cartProductButton.cs" />
     <Compile Include="cartProductButton.Designer.cs">
       <DependentUpon>cartProductButton.cs</DependentUpon>
