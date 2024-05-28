@@ -16,6 +16,7 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
+<<<<<<< HEAD
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.cartProductButton.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerCartPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerReservationPage.resources
@@ -24,3 +25,46 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualReservationPlacePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.productButton.resources
+=======
+C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
+C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer.mdf
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer_log.ldf
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminHomePage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminManageUsers.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewFeedback.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewSalesReport.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductView.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.loginForm.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.Properties.Resources.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.foodButton.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.GenerateResource.cache
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateProfile.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddChef.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddCustomer.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddManager.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminHomePage.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminManageUsers.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteChef.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteCustomer.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteManager.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateProfile.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewChef.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewCustomer.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewFeedback.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewManager.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewSalesReport.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.CustomerHomePage.resources
+>>>>>>> Huey-Shin

@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment
+﻿namespace trial_2
 {
     partial class CustomerHomePage
     {
