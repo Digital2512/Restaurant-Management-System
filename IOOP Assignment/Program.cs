@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     internal static class Program
     {

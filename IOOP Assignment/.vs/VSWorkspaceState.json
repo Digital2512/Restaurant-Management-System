@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Database Table Folder",
+    "\\obj",
+    "\\PictureFolder"
   ],
-  "SelectedNode": "\\Database.cs",
+  "SelectedNode": "\\IOOP Assignment.csproj",
   "PreviewInSolutionExplorer": false
 }

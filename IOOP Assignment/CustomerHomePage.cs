@@ -8,10 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class CustomerHomePage : Form
     {
+        public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
+        CustomerReservationPage customerReservationPage = new CustomerReservationPage();
+        CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+        CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage();
+        CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+        loginForm loginForm = new loginForm();
         public CustomerHomePage()
         {
             InitializeComponent();
