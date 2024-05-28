@@ -14,6 +14,7 @@ namespace IOOP_Assignment
     public partial class CustomerIndividualProductPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string productID;
         public CustomerIndividualProductPage()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace IOOP_Assignment
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string customerID = database.getString(query);
             query = $"SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
-            string productID = database.getString(query);
+            this.productID = database.getString(query);
             query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
             string productName = database.getString(query);
             query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
@@ -109,7 +110,6 @@ namespace IOOP_Assignment
                 MessageBox.Show("Order Details Reset Failed");
             }
         }
-
         private void addButton_Click(object sender, EventArgs e)
         {
 
@@ -199,6 +199,7 @@ namespace IOOP_Assignment
                 this.lblProductQuantity.Text = newProductQuantity.ToString();
             }
         }
+
 
         private void minusBtn_Click(object sender, EventArgs e)
         {
