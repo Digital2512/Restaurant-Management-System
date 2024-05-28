@@ -29,24 +29,37 @@ namespace IOOP_Assignment
             string customerName = database.getString(query);
             lblWelcome.Text = $"Welcome,{customerName}";
 
-            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING';";
-            string orderID = database.getString(query);
-            query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}';";
-            string reservationID = database.getString(query);
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING_FOR_CHEF';";
+            string orderID = database.getTopString(query);
+            query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+            string reservationID = database.getTopString(query);
             if (orderID != null || orderID != "")
             {
-                MessageBox.Show($"Order ID Found : {orderID}");
-                this.lblOrderID.Text = orderID;
                 query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
-                this.lblEstimatedTime.Text = $"{database.getInt(query).ToString()} Mins Left";
+                string estimatedTimeString = $"{database.getInt(query).ToString()} Mins Left";
                 query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 string orderStatus = database.getString(query);
+                MessageBox.Show(orderStatus);
                 this.lblOrderStatus.Text = orderStatus;
                 if(orderStatus == "IN_PROGRESS")
                 {
+                    this.lblOrderID.Text = orderID;
+                    this.lblOrderStatus.Text = orderStatus;
+                    this.lblEstimatedTime.Text = estimatedTimeString;
                     //orderStatusPBox.Image = Properties.Resources.inKitchenResized;
-                }else if(orderStatus == "COMPLETED")
+                }
+                else if(orderStatus == "COMPLETED")
                 {
+                    this.lblOrderID.Text = orderID;
+                    this.lblOrderStatus.Text = orderStatus;
+                    this.lblEstimatedTime.Text = "N/A";
+                    //orderStatusPBox.Image = Properties.Resources.completedResized;
+                }
+                else if (orderStatus == "WAITING_FOR_CHEF")
+                {
+                    this.lblOrderID.Text = orderID;
+                    this.lblOrderStatus.Text = orderStatus;
+                    this.lblEstimatedTime.Text = "N/A";
                     //orderStatusPBox.Image = Properties.Resources.completedResized;
                 }
                 else
@@ -60,34 +73,70 @@ namespace IOOP_Assignment
 
             if (reservationID != null || reservationID != "")
             {
-                MessageBox.Show($"Reservation ID Found : {reservationID}");
                 this.lblReservationID.Text = reservationID;
                 query = $"SELECT PlaceID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                 string placeID = database.getString(query);
-                this.lblPlaceID.Text = placeID;
-                query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
-                this.lblPlaceName.Text = database.getString(query);
                 query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 string reservationStatus = database.getString(query);
-                this.lblReservationStatus.Text = reservationStatus;
-                if (reservationStatus == "IN_PROGRESS")
+                query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
+                string placeName = database.getString(query);
+                query = $"SELECT Duration FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
+                int durationMinutes = database.getInt(query);
+                if (!string.IsNullOrEmpty(reservationID))
                 {
-                    //reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
-                }
-                else if (reservationStatus == "APPROVED")
-                {
-                    //reservationStatusPBox.Image = Properties.Resources.approvedResized;
-                }else if(reservationStatus == "DENIED")
-                {
-                    //reservationStatusPBox.Image = Properties.Resources.deniedResized;
-                }
-                else
-                {
-                    this.lblReservationID.Text = "N/A";
-                    this.lblReservationID.Text = "N/A";
-                    this.lblPlaceID.Text = "N/A";
-                    this.lblReservationStatus.Text = "N/A";
-                    reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                    query = $"SELECT ReservedDateTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                    DateTime? reservedDateTime = database.getDateTimeToProcess(query);
+
+                    string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
+                    string reservedTime = reservedDateTime?.ToString("HH:mm:ss") ?? "N/A";
+
+                 // Calculate end time by adding duration to reserved date and time
+    DateTime? endDateTime = reservedDateTime?.AddMinutes(durationMinutes);
+                    string endDate = endDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
+                    string endTime = endDateTime?.ToString("HH:mm:ss") ?? "N/A";
+
+                    // Display reservation details based on status
+                    if (reservationStatus == "IN_PROGRESS")
+                    {
+                        this.lblReservationID.Text = $"{reservationID}";
+                        this.lblPlaceName.Text = $"{placeName}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblReservationStatus.Text = reservationStatus;
+                        //reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
+                    }
+                    else if (reservationStatus == "APPROVED")
+                    {
+                        this.lblReservationID.Text = $"{reservationID}";
+                        this.lblPlaceName.Text = $"{placeName}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblReservationStatus.Text = reservationStatus;
+                        //reservationStatusPBox.Image = Properties.Resources.approvedResized;
+                    }
+                    else if (reservationStatus == "DENIED")
+                    {
+                        this.lblReservationID.Text = $"{reservationID}";
+                        this.lblPlaceName.Text = $"{placeName}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblReservationStatus.Text = reservationStatus;
+                        //reservationStatusPBox.Image = Properties.Resources.deniedResized;
+                    }
+                    else if (reservationStatus == "PENDING")
+                    {
+
+                        this.lblReservationID.Text = $"{reservationID}";
+                        this.lblPlaceName.Text = $"{placeName}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblReservationStatus.Text = reservationStatus;
+                        //reservationStatusPBox.Image = Properties.Resources.pendingResized;
+                    }
+                    else
+                    {
+                        this.lblReservationID.Text = "N/A";
+                        this.lblPlaceName.Text = "N/A";
+                        this.lblDateTimeRange.Text = "N/A";
+                        this.lblReservationStatus.Text = "N/A";
+                        reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
+                    }
                 }
             }
 
@@ -177,6 +226,11 @@ namespace IOOP_Assignment
         {
             this.Visible = false;
             customerProfilePage.Visible = true;
+        }
+
+        private void lblPlaceID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

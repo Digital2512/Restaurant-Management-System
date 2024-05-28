@@ -40,9 +40,7 @@ namespace IOOP_Assignment
 
             if (database.getString(query) == "PAID")
             {
-                query = $"UPDATE Orders SET OrderStatus = 'WAITING' WHERE OrderID = '{orderID}';";
-                database.insertOrUpdateValuesIntoDatabase(query);
-                query = $"UPDATE Orders SET OrderStatus = 'IN_PROGRESS' WHERE OrderID = '{orderID}';";
+                query = $"UPDATE Orders SET OrderStatus = 'WAITING_FOR_CHEF' WHERE OrderID = '{orderID}';";
                 database.insertOrUpdateValuesIntoDatabase(query);
                 query = $"SELECT OrderDetailsIDs FROM Orders where OrderID = '{orderID}';";
                 List<String> orderDetailsIDsList = new List<String>(database.getString(query).Split(','));
