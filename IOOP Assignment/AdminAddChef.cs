@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddChef : Form
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        SqlConnection con = new SqlConnection("");
         public AdminAddChef()
         {
             InitializeComponent();

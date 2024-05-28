@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddCustomer : Form
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        SqlConnection con = new SqlConnection("");
         public AdminAddCustomer()
         {
             InitializeComponent();

@@ -8,26 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("IOOP Assignment")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-<<<<<<< HEAD
-<<<<<<< HEAD
 [assembly: AssemblyCompany("HP")]
 [assembly: AssemblyProduct("IOOP Assignment")]
 [assembly: AssemblyCopyright("Copyright © HP 2024")]
-=======
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IOOP Assignment")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
->>>>>>> Huey-Shin
-=======
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IOOP Assignment")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
-=======
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("IOOP Assignment")]
-[assembly: AssemblyCopyright("Copyright © HP 2024")]
->>>>>>> parent of 777523d (commit admin)
->>>>>>> Huey-Shin
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
