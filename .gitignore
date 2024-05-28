@@ -3,3 +3,4 @@
 *.sqlite
 *.cache
 *.vsidx
+*.json
