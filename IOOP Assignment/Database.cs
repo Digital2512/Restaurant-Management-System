@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment
 {
-    internal class Database
+    public class Databases
     {
         private string connectionString;
 
-        public Database(string connectionString)
+        public Databases(string connectionString)
         {
             this.connectionString = connectionString;
         }
@@ -21,10 +21,10 @@ namespace IOOP_Assignment
             string result = string.Empty;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand(query,con);
+                SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                if(reader.Read())
+                if (reader.Read())
                 {
                     result = reader[0].ToString();
                 }
@@ -51,6 +51,5 @@ namespace IOOP_Assignment
             }
             return result;
         }
-
     }
 }

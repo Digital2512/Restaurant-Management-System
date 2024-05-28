@@ -53,7 +53,7 @@
             this.lblViewSalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewSalesReport.Location = new System.Drawing.Point(355, 57);
             this.lblViewSalesReport.Name = "lblViewSalesReport";
-            this.lblViewSalesReport.Size = new System.Drawing.Size(315, 39);
+            this.lblViewSalesReport.Size = new System.Drawing.Size(303, 38);
             this.lblViewSalesReport.TabIndex = 0;
             this.lblViewSalesReport.Text = "View Sales Report";
             // 
