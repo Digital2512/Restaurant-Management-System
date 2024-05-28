@@ -234,8 +234,9 @@
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="placeButton.cs">
-      <SubType>UserControl</SubType>
+	<Compile Include="placeButton.cs">
+	    <SubType>UserControl</SubType>
+	</Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
