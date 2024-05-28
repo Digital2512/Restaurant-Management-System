@@ -8,20 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     public partial class CustomerHomePage : Form
     {
-        public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-
-        CustomerReservationPage customerReservationPage = new CustomerReservationPage();
-        CustomerOrderPage customerOrderPage = new CustomerOrderPage();
-        CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage();
-        CustomerProfilePage customerProfilePage = new CustomerProfilePage();
-        loginForm loginForm = new loginForm();
         public CustomerHomePage()
         {
             InitializeComponent();
+<<<<<<< HEAD
             Database database = new Database(ConnectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string customerID = database.getString(query);
@@ -183,6 +177,8 @@ namespace IOOP_Assignment
         {
             this.Visible = false;
             customerProfilePage.Visible = true;
+=======
+>>>>>>> Huey-Shin
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment
+﻿namespace trial_2
 {
     partial class CustomerHomePage
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnSidebar = new System.Windows.Forms.Button();
@@ -523,5 +524,13 @@
         private System.Windows.Forms.Label lblOrderStatusTitle;
         private System.Windows.Forms.Label lblReservationStatus;
         private System.Windows.Forms.Label lblReservationStatusTitle;
+=======
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "CustomerHomePage";
+        }
+
+        #endregion
+>>>>>>> Huey-Shin
     }
 }
