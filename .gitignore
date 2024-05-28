@@ -1,6 +1,4 @@
+
 *.vsidx
 *.sqlite
 *.cache
-*.json
-*.sqlite
-*.json
