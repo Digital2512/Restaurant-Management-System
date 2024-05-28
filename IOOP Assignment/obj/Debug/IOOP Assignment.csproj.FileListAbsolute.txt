@@ -24,3 +24,6 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualReservationPlacePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductPage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.productButton.resources
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
+C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb

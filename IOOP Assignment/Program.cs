@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace IOOP_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerIndividualProductPage());
+            Application.Run(new AdminViewSalesReport());
         }
     }
 }
