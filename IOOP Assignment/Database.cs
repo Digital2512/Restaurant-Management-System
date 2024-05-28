@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
-    public class Databases
+    internal class Database
     {
         private string connectionString;
 
-        public Databases(string connectionString)
+        public Database(string connectionString)
         {
             this.connectionString = connectionString;
         }
@@ -21,10 +21,10 @@ namespace IOOP_Assignment
             string result = string.Empty;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand(query, con);
+                SqlCommand cmd = new SqlCommand(query,con);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                if(reader.Read())
                 {
                     result = reader[0].ToString();
                 }
@@ -51,5 +51,6 @@ namespace IOOP_Assignment
             }
             return result;
         }
+
     }
 }

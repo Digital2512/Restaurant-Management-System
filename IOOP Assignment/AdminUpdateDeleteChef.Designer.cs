@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment
+﻿namespace trial_2
 {
     partial class AdminUpdateDeleteChef
     {
@@ -269,9 +269,10 @@
             this.lblUpdateDeleteChef.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateDeleteChef.Location = new System.Drawing.Point(333, 43);
             this.lblUpdateDeleteChef.Name = "lblUpdateDeleteChef";
-            this.lblUpdateDeleteChef.Size = new System.Drawing.Size(388, 38);
+            this.lblUpdateDeleteChef.Size = new System.Drawing.Size(404, 39);
             this.lblUpdateDeleteChef.TabIndex = 30;
             this.lblUpdateDeleteChef.Text = "Update and Delete Chef";
+            this.lblUpdateDeleteChef.Click += new System.EventHandler(this.lblUpdateDeleteChef_Click);
             // 
             // btnUpdate
             // 

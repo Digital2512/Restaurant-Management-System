@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     public partial class AdminViewManager : Form
     {
@@ -24,7 +25,7 @@ namespace IOOP_Assignment
             manager = new Manager(conectionString);
         }
 
-        private void AdminViewManager_Load(object sender, EventArgs e)
+        private void ViewManager_Load(object sender, EventArgs e)
         {
             FillData();
             FillComboSearchCode();
@@ -55,6 +56,11 @@ namespace IOOP_Assignment
             da.Fill(dt);
             dgvViewManager.DataSource = dt;
             con.Close();
+        }
+
+        private void cmbManagerID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void FillComboSearchCode()

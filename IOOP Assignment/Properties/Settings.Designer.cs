@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IOOP_Assignment.Properties
+namespace trial_2.Properties
 {
 
 
