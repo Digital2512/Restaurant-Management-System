@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerCartPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
@@ -198,5 +199,14 @@
         private System.Windows.Forms.Label lblSubtotalAmount;
         private System.Windows.Forms.Label lblTaxAmount;
         private System.Windows.Forms.Button payBtn;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "CustomerCartPage";
+        }
+
+        #endregion
+>>>>>>> Huey-Shin
     }
 }

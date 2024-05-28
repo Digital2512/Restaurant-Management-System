@@ -14,16 +14,26 @@ namespace IOOP_Assignment
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
+<<<<<<< HEAD
         private string ProductID { get; set; }
         public foodButton(string productID,string productName, string productPrice, string productDescription, string productRatingText, Image productImage)
+=======
+        private string ProductID { get; }
+        public foodButton(string productID,string productName, string productPrice, string productDescription, Image productImagePath, string productRatingText)
+>>>>>>> Huey-Shin
         {
             InitializeComponent();
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;
             this.lblProductPrice.Text = productPrice;
             this.lblProductDescription.Text = productDescription;
+<<<<<<< HEAD
             this.lblProductRating.Text = $"{productRatingText} / 5.0";
             this.productImagePBox.Image = productImage;
+=======
+            this.productImagePBox.Image = productImagePath;
+            this.lblProductRating.Text = $"{productRatingText} / 5.0";
+>>>>>>> Huey-Shin
             ProductID = productID;
                 
         }
@@ -39,6 +49,7 @@ namespace IOOP_Assignment
 
         private void addButton_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 Database database = new Database(connectionString);
@@ -58,6 +69,15 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+=======
+            Database database = new Database(connectionString);
+            string query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
+            database.insertValuesIntoDatabase(query);
+            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+            CustomerIndividualProductView customerIndividualProductView = new CustomerIndividualProductView();
+            customerOrderPage.Hide();
+            customerIndividualProductView.Show();
+>>>>>>> Huey-Shin
         }
     }
 }

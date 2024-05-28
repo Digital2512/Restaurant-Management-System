@@ -103,6 +103,10 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
+=======
+            this.addButton.Image = global::IOOP_Assignment.Properties.Resources.addIcon;
+>>>>>>> Huey-Shin
             this.addButton.Location = new System.Drawing.Point(-2, -7);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(46, 52);
@@ -112,6 +116,10 @@
             // 
             // pictureBox1
             // 
+<<<<<<< HEAD
+=======
+            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.star;
+>>>>>>> Huey-Shin
             this.pictureBox1.Location = new System.Drawing.Point(357, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 34);
@@ -121,10 +129,17 @@
             // productImagePBox
             // 
             this.productImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
+<<<<<<< HEAD
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(150, 150);
             this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+=======
+            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.pastaImage;
+            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.productImagePBox.Name = "productImagePBox";
+            this.productImagePBox.Size = new System.Drawing.Size(150, 150);
+>>>>>>> Huey-Shin
             this.productImagePBox.TabIndex = 0;
             this.productImagePBox.TabStop = false;
             this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);

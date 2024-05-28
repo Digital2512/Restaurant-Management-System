@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReservationPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
@@ -232,5 +233,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox eventsCListBox;
         private System.Windows.Forms.ComboBox minOfPaxCBox;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "customerReservation";
+        }
+
+        #endregion
+>>>>>>> Huey-Shin
     }
 }

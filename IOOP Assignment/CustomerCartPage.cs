@@ -12,6 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerCartPage : Form
     {
+<<<<<<< HEAD
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
@@ -222,6 +223,11 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("The cart has no items");
             }
+=======
+        public CustomerCartPage()
+        {
+            InitializeComponent();
+>>>>>>> Huey-Shin
         }
     }
 }

@@ -12,6 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerReservationPage : Form
     {
+<<<<<<< HEAD
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public CustomerReservationPage()
         {
@@ -96,6 +97,11 @@ namespace IOOP_Assignment
             this.Hide();
             CustomerHomePage customerHomePage = new CustomerHomePage();
             customerHomePage.Show();
+=======
+        public CustomerReservationPage()
+        {
+            InitializeComponent();
+>>>>>>> Huey-Shin
         }
     }
 }

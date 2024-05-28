@@ -32,10 +32,18 @@
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblViewProfile = new System.Windows.Forms.Label();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.backButton = new System.Windows.Forms.Button();
+>>>>>>> Huey-Shin
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblPasswordValue = new System.Windows.Forms.Label();
             this.updatePnl = new System.Windows.Forms.Panel();
             this.updateBtn = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.profilePBox = new System.Windows.Forms.PictureBox();
+>>>>>>> Huey-Shin
             this.passwordShowBtn = new System.Windows.Forms.Button();
             this.genderGBox = new System.Windows.Forms.GroupBox();
             this.ratherNotSayRBtn = new System.Windows.Forms.RadioButton();
@@ -49,6 +57,7 @@
             this.lblBirthday = new System.Windows.Forms.Label();
             this.lblCustomerIDTitle = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.profilePBox = new System.Windows.Forms.PictureBox();
             this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
@@ -56,6 +65,13 @@
             this.updatePnl.SuspendLayout();
             this.genderGBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).BeginInit();
+=======
+            this.headerPnl.SuspendLayout();
+            this.backBtnPnl.SuspendLayout();
+            this.updatePnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).BeginInit();
+            this.genderGBox.SuspendLayout();
+>>>>>>> Huey-Shin
             this.SuspendLayout();
             // 
             // headerPnl
@@ -87,6 +103,20 @@
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
+<<<<<<< HEAD
+=======
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            // 
+>>>>>>> Huey-Shin
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
@@ -116,11 +146,15 @@
             // 
             // updateBtn
             // 
+<<<<<<< HEAD
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+>>>>>>> Huey-Shin
             this.updateBtn.Location = new System.Drawing.Point(0, 0);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(800, 47);
             this.updateBtn.TabIndex = 0;
+<<<<<<< HEAD
             this.updateBtn.Text = "UPDATE";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
@@ -129,6 +163,24 @@
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
             //this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
+=======
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // profilePBox
+            // 
+            this.profilePBox.Location = new System.Drawing.Point(556, 59);
+            this.profilePBox.Name = "profilePBox";
+            this.profilePBox.Size = new System.Drawing.Size(199, 153);
+            this.profilePBox.TabIndex = 53;
+            this.profilePBox.TabStop = false;
+            // 
+            // passwordShowBtn
+            // 
+            this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
+            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
+>>>>>>> Huey-Shin
             this.passwordShowBtn.Location = new System.Drawing.Point(317, 269);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
@@ -263,6 +315,7 @@
             this.lblCustomerID.Size = new System.Drawing.Size(2, 22);
             this.lblCustomerID.TabIndex = 46;
             // 
+<<<<<<< HEAD
             // profilePBox
             // 
             //this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
@@ -284,6 +337,8 @@
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+=======
+>>>>>>> Huey-Shin
             // CustomerProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -313,9 +368,15 @@
             this.headerPnl.PerformLayout();
             this.backBtnPnl.ResumeLayout(false);
             this.updatePnl.ResumeLayout(false);
+<<<<<<< HEAD
             this.genderGBox.ResumeLayout(false);
             this.genderGBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).EndInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).EndInit();
+            this.genderGBox.ResumeLayout(false);
+            this.genderGBox.PerformLayout();
+>>>>>>> Huey-Shin
             this.ResumeLayout(false);
             this.PerformLayout();
 

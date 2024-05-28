@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> Huey-Shin
 
 namespace IOOP_Assignment
 {
@@ -25,12 +28,17 @@ namespace IOOP_Assignment
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID;
+<<<<<<< HEAD
             query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
+=======
+            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
+>>>>>>> Huey-Shin
             fullNameTxtBox.Text = database.getString(query);
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}'";
             passwordMTextBox.Text = database.getString(query);
             confirmPasswordMTextBox.Text = database.getString(query);
             query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}'";
+<<<<<<< HEAD
             string birthdayDateTimeString = database.getDateTime(query).ToString();
             if (birthdayDateTimeString == DateTime.MinValue.ToString())
             {
@@ -40,6 +48,9 @@ namespace IOOP_Assignment
             {
                 birthdayDateTimePicker.Value = database.getDateTime(query);
             }
+=======
+            birthdayDateTimePicker.Text = database.getDateTime(query).ToString();
+>>>>>>> Huey-Shin
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
             string gender = database.getString(query);
             if (gender == "MALE")
@@ -60,8 +71,11 @@ namespace IOOP_Assignment
                 femaleRBtn.Checked = false;
                 ratherNotSayRBtn.Checked = false;
             }
+<<<<<<< HEAD
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
             profilePBox.Image = database.getImage(query);
+=======
+>>>>>>> Huey-Shin
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -71,6 +85,7 @@ namespace IOOP_Assignment
 
         private void profilePBox_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Database database = new Database(ConnectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
@@ -100,6 +115,8 @@ namespace IOOP_Assignment
                     }
                 }
             }
+=======
+>>>>>>> Huey-Shin
 
         }
 
@@ -136,6 +153,7 @@ namespace IOOP_Assignment
             }
             if (password == confirmPassword)
             {
+<<<<<<< HEAD
                 query = $"UPDATE Users SET [FullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
@@ -143,6 +161,12 @@ namespace IOOP_Assignment
                     this.Hide();
                     CustomerProfilePage customerProfilePage = new CustomerProfilePage();
                     customerProfilePage.Show();
+=======
+                query = $"UPDATE Users SET [fullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
+                if (database.insertValuesIntoDatabase(query) == true)
+                {
+                    MessageBox.Show("Profile updated successfully!");
+>>>>>>> Huey-Shin
                 }
                 else
                 {
@@ -160,12 +184,20 @@ namespace IOOP_Assignment
             if(passwordMTextBox.PasswordChar == '\0')
             {
                 passwordMTextBox.PasswordChar = '*';
+<<<<<<< HEAD
                 //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
+=======
+                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+>>>>>>> Huey-Shin
             }
             else
             {
                 passwordMTextBox.PasswordChar = '\0';
+<<<<<<< HEAD
                 //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
+=======
+                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+>>>>>>> Huey-Shin
             }
         }
 
@@ -174,12 +206,20 @@ namespace IOOP_Assignment
             if (passwordMTextBox.PasswordChar == '\0')
             {
                 confirmPasswordMTextBox.PasswordChar = '*';
+<<<<<<< HEAD
                 //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
+=======
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
+>>>>>>> Huey-Shin
             }
             else
             {
                 confirmPasswordMTextBox.PasswordChar = '\0';
+<<<<<<< HEAD
                 //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
+=======
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordHideIcon;
+>>>>>>> Huey-Shin
             }
         }
 
@@ -187,6 +227,7 @@ namespace IOOP_Assignment
         {
 
         }
+<<<<<<< HEAD
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -194,5 +235,7 @@ namespace IOOP_Assignment
             CustomerProfilePage customerProfilePage = new CustomerProfilePage();
             customerProfilePage.Show();
         }
+=======
+>>>>>>> Huey-Shin
     }
 }

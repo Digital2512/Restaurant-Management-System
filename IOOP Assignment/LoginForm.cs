@@ -18,7 +18,11 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
         //change the connection string when using a different laptop to connect to the database
+<<<<<<< HEAD
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+=======
+        public string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+>>>>>>> Huey-Shin
         private void loginButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -56,7 +60,10 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+<<<<<<< HEAD
                                     this.Hide();
+=======
+>>>>>>> Huey-Shin
                                     AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();
                                     break;
@@ -67,7 +74,10 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+<<<<<<< HEAD
                                     this.Hide();
+=======
+>>>>>>> Huey-Shin
                                     ManagerHomePage managerHomePage = new ManagerHomePage();
                                     managerHomePage.Show();
                                     break;
@@ -78,7 +88,10 @@ namespace IOOP_Assignment
                                     cmd.Parameters.AddWithValue("@Username", username);
                                     cmd.ExecuteNonQuery();
 
+<<<<<<< HEAD
                                     this.Hide();
+=======
+>>>>>>> Huey-Shin
                                     ChefHomePage chefHomePage = new ChefHomePage();
                                     chefHomePage.Show();
                                     break;
@@ -94,7 +107,10 @@ namespace IOOP_Assignment
                                     secondcmd.Parameters.AddWithValue("@Username", username);
                                     secondcmd.ExecuteNonQuery();
 
+<<<<<<< HEAD
                                     this.Hide();
+=======
+>>>>>>> Huey-Shin
                                     CustomerHomePage customerHomePage = new CustomerHomePage();
                                     customerHomePage.Show();
                                     break;
