@@ -41,15 +41,7 @@ namespace IOOP_Assignment
             int minOfPax = database.getInt(query);
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string noOfPaxString = noOfPaxTxtBox.Text;
-            int noOfPax;
-            if (noOfPaxString == "")
-            {
-                noOfPax = 0;
-            }
-            else
-            {
-                noOfPax = int.Parse(noOfPaxString);
-            }
+            int noOfPax = int.Parse(noOfPaxString);
             string customerID = database.getString(query);
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
             string reservedDateTime = reservedDateTimePicker.Text;
@@ -63,19 +55,34 @@ namespace IOOP_Assignment
             {
                 durationTime = 30;
             }
+            else if (duration == "1 Hour and 30 Minutes")
+            {
+                durationTime = 60;
+            }
             else if (duration == "2 Hours")
             {
                 durationTime = 90;
+            }
+            else if (duration == "2 Hours and 30 Minutes")
+            {
+                durationTime = 120;
             }
             else if (duration == "3 Hours")
             {
                 durationTime = 150;
             }
+            else if (duration == "3 Hours and 30 Minutes")
+            {
+                durationTime = 180;
+            }
+            else if (duration == "4 Hours")
+            {
+                durationTime = 210;
+            }
             else if (duration == "")
             {
                 durationTime = 240;
             }
-
             if(noOfPax != 0)
             {
                 if (noOfPax > minOfPax)

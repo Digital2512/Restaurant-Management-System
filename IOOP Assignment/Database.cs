@@ -68,7 +68,7 @@ namespace IOOP_Assignment
                                     if (!reader.IsDBNull(0))
                                     {
                                         result = reader.GetString(0);
-                                        if (result == null)
+                                        if(result == null)
                                         {
                                             result = "";
                                         }
@@ -78,12 +78,11 @@ namespace IOOP_Assignment
                                         result = "";
                                     }
                                     //result = reader.GetString(0);
-                                }
-                                catch (SqlException ex)
+                                }catch (SqlException ex)
                                 {
                                     MessageBox.Show(ex.Message);
                                 }
-                                connection.Close();
+                                    connection.Close();
                                 break;
                             }
                         }
@@ -102,61 +101,6 @@ namespace IOOP_Assignment
             }
             return result;
         }
-
-        public string getTopString(string query)
-        {
-            string result = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.HasRows)
-                        {
-                            // Only read the first row
-                            if (reader.Read())
-                            {
-                                try
-                                {
-                                    if (!reader.IsDBNull(0))
-                                    {
-                                        result = reader.GetString(0);
-                                        if (result == null)
-                                        {
-                                            result = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        result = "";
-                                    }
-                                }
-                                catch (SqlException ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("An Error Occurred: " + ex.Message);
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                        connection.Close();
-                }
-            }
-            return result;
-        }
-
 
         public List<string> getListOfStrings(string query)
         {
@@ -227,52 +171,6 @@ namespace IOOP_Assignment
 
             return result;
         }
-
-        public DateTime? getDateTimeToProcess(string query)
-        {
-            DateTime? result = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.HasRows)
-                        {
-                            if (reader.Read())
-                            {
-                                try
-                                {
-                                    if (!reader.IsDBNull(0))
-                                    {
-                                        result = reader.GetDateTime(0);
-                                    }
-                                }
-                                catch (SqlException ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("An Error Occurred: " + ex.Message);
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                        connection.Close();
-                }
-            }
-            return result;
-        }
-
         public int getInt(string query)
         {
             int result = 0;
@@ -291,7 +189,7 @@ namespace IOOP_Assignment
                             {
                                 result = reader.GetInt32(0);
                             }
-                        }
+                        }                          
                     }
                 }
                 catch (SqlException ex)
@@ -493,10 +391,10 @@ namespace IOOP_Assignment
                     {
                         SqlCommand cmd = new SqlCommand(query, connection);
                         object resultDB = cmd.ExecuteScalar();
-                        if (resultDB != null && resultDB != DBNull.Value)
+                        if(resultDB != null && resultDB != DBNull.Value)
                         {
                             byte[] imageBytes = (byte[])cmd.ExecuteScalar();
-                            if (imageBytes != null && imageBytes.Length > 0)
+                            if(imageBytes != null && imageBytes.Length > 0)
                             {
                                 using (MemoryStream ms = new MemoryStream(imageBytes))
                                 {
@@ -506,7 +404,7 @@ namespace IOOP_Assignment
                         }
                         else
                         {
-                            resultImage = Properties.Resources.errorImage;
+                            resultImage = Properties.Resources.errorImage;   
                         }
                     }
                     else
@@ -525,9 +423,9 @@ namespace IOOP_Assignment
                         connection.Close();
                 }
             }
-            return resultImage;
+            return resultImage; 
         }
-        public bool insertOrUpdateImageToFile(string imagePath, string query)
+    public bool insertOrUpdateImageToFile(string imagePath, string query)
         {
             bool result = false;
 
@@ -542,20 +440,18 @@ namespace IOOP_Assignment
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@ImageData", imageBytes);
-
+                        
                         int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        if(rowsAffected > 0)
                         {
-                            result = true;
+                            result = true; 
                         }
                         else
                         {
                             result = false;
                         }
                     }
-                }
-                catch (SqlException ex)
-                {
+                }catch (SqlException ex) {
                     MessageBox.Show("An error occured: " + ex.Message);
                 }
                 finally
@@ -572,3 +468,4 @@ namespace IOOP_Assignment
 >>>>>>> Huey-Shin
     }
 }
+              
