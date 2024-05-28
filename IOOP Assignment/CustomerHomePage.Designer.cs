@@ -87,7 +87,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 62);
+            this.panel1.Size = new System.Drawing.Size(853, 62);
             this.panel1.TabIndex = 0;
             // 
             // lblWelcome
@@ -280,7 +280,7 @@
             this.orderStatusPnl.Controls.Add(this.lblOrderIDTitle);
             this.orderStatusPnl.Location = new System.Drawing.Point(237, 119);
             this.orderStatusPnl.Name = "orderStatusPnl";
-            this.orderStatusPnl.Size = new System.Drawing.Size(504, 104);
+            this.orderStatusPnl.Size = new System.Drawing.Size(575, 104);
             this.orderStatusPnl.TabIndex = 4;
             // 
             // lblOrderStatus
@@ -322,7 +322,7 @@
             // 
             // orderStatusPBox
             // 
-            this.orderStatusPBox.Location = new System.Drawing.Point(381, 0);
+            this.orderStatusPBox.Location = new System.Drawing.Point(452, 0);
             this.orderStatusPBox.Name = "orderStatusPBox";
             this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
             this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,7 +362,7 @@
             this.pastOrderPnl.Controls.Add(this.reservationStatusPBox);
             this.pastOrderPnl.Location = new System.Drawing.Point(237, 281);
             this.pastOrderPnl.Name = "pastOrderPnl";
-            this.pastOrderPnl.Size = new System.Drawing.Size(504, 151);
+            this.pastOrderPnl.Size = new System.Drawing.Size(575, 151);
             this.pastOrderPnl.TabIndex = 5;
             // 
             // lblReservationStatus
@@ -443,7 +443,7 @@
             // 
             // reservationStatusPBox
             // 
-            this.reservationStatusPBox.Location = new System.Drawing.Point(381, 0);
+            this.reservationStatusPBox.Location = new System.Drawing.Point(452, 0);
             this.reservationStatusPBox.Name = "reservationStatusPBox";
             this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
             this.reservationStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -454,7 +454,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 450);
+            this.ClientSize = new System.Drawing.Size(853, 450);
             this.Controls.Add(this.pastOrderPnl);
             this.Controls.Add(this.orderStatusPnl);
             this.Controls.Add(this.label3);
