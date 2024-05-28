@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminAddManager : Form
     {

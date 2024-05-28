@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class CustomerHomePage : Form
     {

@@ -8,7 +8,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     internal class Chef
     {

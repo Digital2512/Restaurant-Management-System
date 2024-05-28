@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminManageUsers : Form
     {
