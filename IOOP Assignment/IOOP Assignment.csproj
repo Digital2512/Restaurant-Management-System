@@ -234,9 +234,18 @@
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="placeButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+	  <Compile Include="productButton.cs">
+		  <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Include="productButton.Designer.cs">
+		  <DependentUpon>productButton.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="placeButton.cs">
+		  <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Include="placeButton.Designer.cs">
+		  <DependentUpon>placeButton.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Manager.cs" />
 	<Compile Include="Chef.cs" />
     <Compile Include="ManagerHomePage.cs">
@@ -319,6 +328,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+	  <EmbeddedResource Include="productButton.resx">
+		  <DependentUpon>productButton.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="placeButton.resx">
       <DependentUpon>placeButton.cs</DependentUpon>
     </EmbeddedResource>

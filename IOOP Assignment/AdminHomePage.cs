@@ -16,8 +16,6 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-=======
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
@@ -46,6 +44,5 @@ namespace IOOP_Assignment
             this.Hide();
             up.Show();  
         }
->>>>>>> Huey-Shin
     }
 }
