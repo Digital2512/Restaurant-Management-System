@@ -29,7 +29,7 @@ namespace IOOP_Assignment
             con.Open();
             string query;
 
-            if (string.IsNullOrEmpty(chefId))
+            if(string.IsNullOrEmpty(chefId))
             {
                 query = "Select * from chef";
             }
@@ -38,9 +38,9 @@ namespace IOOP_Assignment
                 query = "Select * from chef where Id = @ChefId";
             }
 
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(query,con);
 
-            if (!string.IsNullOrEmpty(chefId))
+            if(!string.IsNullOrEmpty(chefId))
             {
                 da.SelectCommand.Parameters.AddWithValue("@ChefId", chefId);
             }
@@ -56,7 +56,7 @@ namespace IOOP_Assignment
             cmbChefID.Items.Clear();
             DataTable dt = chef.GetChefId();
 
-            foreach (DataRow dr in dt.Rows)
+            foreach(DataRow dr in dt.Rows)
             {
                 cmbChefID.Items.Add(dr["Id"].ToString());
 

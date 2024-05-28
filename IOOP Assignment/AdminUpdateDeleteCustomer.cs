@@ -67,16 +67,18 @@ namespace IOOP_Assignment
                txtEmail.Text);
 
             MessageBox.Show(status);
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string id = cmbCustomerID.Text;
+            string id = cmbCustomerID.Text; 
             string status = customer.deleteCustomer(id);
             MessageBox.Show(status);
 
             FillComboSearchCode();
             ClearForm();
+
         }
 
         private void ClearForm()
@@ -86,8 +88,8 @@ namespace IOOP_Assignment
             dtpDob.Text = string.Empty;
             rdbtnMale.Checked = false;
             rdbtnFemale.Checked = false;
-            txtphoneNumber.Text = string.Empty;
-            txtEmail.Text = string.Empty;
+            txtphoneNumber.Text= string.Empty;
+            txtEmail.Text= string.Empty;
         }
 
         private void AdminUpdateDeleteCustomer_Load(object sender, EventArgs e)

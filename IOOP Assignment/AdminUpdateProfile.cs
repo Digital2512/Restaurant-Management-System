@@ -21,7 +21,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
-            Databases database = new Databases(connectionString);
+            Database database = new Database(connectionString);
             string query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
             lblUserID.Text = userID;
@@ -36,7 +36,7 @@ namespace IOOP_Assignment
             dtpBirthday.Text = database.GetDateTime(query).ToString();
 
             query = $"Select Gender from Users where UserID = '{userID}';";
-            string gender = database.GetString(query);
+            string gender = database.GetString(query);  
             if (gender == "Male")
             {
                 rdbMale.Checked = true;
@@ -52,10 +52,30 @@ namespace IOOP_Assignment
             }
         }
 
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pboxAdmin.Image = new Bitmap(openFileDialog.FileName);
+            }
+        }
+
+        private byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream  ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string query;
-            Databases database = new Databases(connectionString);
+            Database database = new Database(connectionString);
             query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
             string FullName = txtFullName.Text;
@@ -64,10 +84,12 @@ namespace IOOP_Assignment
             string Gender = rdbMale.Checked ? "Male" : rdbFemale.Checked ? "Female" : "";
 
             byte[] Image = null;
-            if (pboxAdmin.Image != null)
+            if(pboxAdmin.Image != null)
             {
                 Image = ConvertImageToByteArray(pboxAdmin.Image);
             }
+
+
 
             query = $"Update Users Set fullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, Image= @profile where UserID =@userID";
 
@@ -76,8 +98,8 @@ namespace IOOP_Assignment
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@fn", FullName);
                 cmd.Parameters.AddWithValue("@pw", Password);
-                cmd.Parameters.AddWithValue("@birthday", Birthday);
-                cmd.Parameters.AddWithValue("@gender", Gender);
+                cmd.Parameters.AddWithValue("@birthday",Birthday);
+                cmd.Parameters.AddWithValue("@gender",Gender);
                 cmd.Parameters.AddWithValue("@profile", Image);
                 cmd.Parameters.AddWithValue("@userID", userID);
 
@@ -96,24 +118,7 @@ namespace IOOP_Assignment
                 }
 
             }
-        }
-        private byte[] ConvertImageToByteArray(Image image)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, ImageFormat.Png);
-                return ms.ToArray();
-            }
-        }
 
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pboxAdmin.Image = new Bitmap(openFileDialog.FileName);
-            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

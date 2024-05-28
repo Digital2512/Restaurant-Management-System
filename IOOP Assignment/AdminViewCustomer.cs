@@ -24,12 +24,13 @@ namespace IOOP_Assignment
             customer = new Customer(connectionString);
         }
 
+
         private void FillData(string customerId = null)
         {
             con.Open();
             string query;
 
-            if (string.IsNullOrEmpty(customerId))
+            if(string.IsNullOrEmpty(customerId))
             {
                 query = "Select * from customers";
             }
@@ -40,9 +41,9 @@ namespace IOOP_Assignment
 
             SqlDataAdapter da = new SqlDataAdapter(query, con);
 
-            if (!string.IsNullOrEmpty(customerId))
+            if(!string.IsNullOrEmpty(customerId))
             {
-                da.SelectCommand.Parameters.AddWithValue("@CustomerId", customerId);
+                da.SelectCommand.Parameters.AddWithValue("@CustomerId",customerId);
             }
 
             DataTable dt = new DataTable();
@@ -58,13 +59,13 @@ namespace IOOP_Assignment
 
             foreach (DataRow dr in dt.Rows)
             {
-                cmbCustomerID.Items.Add(dr["Id"].ToString());
+                cmbCustomerID.Items.Add(dr["Id"].ToString());   
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string selectedCustomerId = cmbCustomerID.SelectedItem?.ToString();
+            string selectedCustomerId = cmbCustomerID.SelectedItem?.ToString(); 
             FillData(selectedCustomerId);
         }
 

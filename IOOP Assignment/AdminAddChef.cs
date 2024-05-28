@@ -15,11 +15,16 @@ namespace IOOP_Assignment
     public partial class AdminAddChef : Form
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
         public AdminAddChef()
         {
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         string gender = "";
         private bool CheckedGender()
@@ -47,13 +52,13 @@ namespace IOOP_Assignment
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
 
-            string newId = "CH" + (count + 1).ToString("D2");
+            string newId = "CH" + (count +1).ToString("D2");
             return newId;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!CheckedGender())
+            if(!CheckedGender())
             {
                 MessageBox.Show("Choose a gender");
                 return;
@@ -61,7 +66,7 @@ namespace IOOP_Assignment
 
             string skills = string.Join(",", grpboxSkills.Controls.OfType<CheckBox>().Where(cb => cb.Checked).Select(cb => cb.Text));
 
-            if (lstchefPosition.SelectedItem == null)
+            if(lstchefPosition.SelectedItem == null)
             {
                 MessageBox.Show("Select an chef position");
                 return;
@@ -71,7 +76,7 @@ namespace IOOP_Assignment
 
             string newId = AutoNewId();
 
-            Chef obj1 = new Chef(newId, txtfullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text, skills, chefPositions);
+            Chef obj1 = new Chef (newId,txtfullName.Text,dtpDob.Text,gender,txtphoneNumber.Text,txtEmail.Text,skills,chefPositions);
             MessageBox.Show(obj1.addChef());
         }
 
@@ -82,9 +87,9 @@ namespace IOOP_Assignment
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            AdminManageUsers mu = new AdminManageUsers();
+            AdminManageUsers mu = new AdminManageUsers ();
             this.Hide();
-            mu.Show();
+            mu.Show ();
         }
     }
 }
