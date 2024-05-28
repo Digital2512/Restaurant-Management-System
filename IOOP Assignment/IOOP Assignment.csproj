@@ -71,6 +71,99 @@
 		  <DependentUpon>cartProductButton.cs</DependentUpon>
 	  </Compile>
     <Compile Include="CustomerFeedbackPage.cs">
+    <Compile Include="AdminAddChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.Designer.cs">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHomePage.Designer.cs">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIndividualProductPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualProductPage.Designer.cs">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIndividualReservationPlacePage.Designer.cs">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerOrderPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerOrderPage.Designer.cs">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerProfilePage.Designer.cs">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReservationPage.Designer.cs">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerSuccessfulPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSuccessfulPayment.Designer.cs">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUpdateProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerUpdateProfilePage.Designer.cs">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewChef.Designer.cs">
+      <DependentUpon>AdminViewChef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewCustomer.Designer.cs">
+      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewFeedback.Designer.cs">
+      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewManager.Designer.cs">
+      <DependentUpon>AdminViewManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewSalesReport.Designer.cs">
+      <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef.cs" />
+    <Compile Include="ChefHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefHomePage.Designer.cs">
+      <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerFeedbackPage.Designer.cs">
@@ -131,12 +224,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="ManagerHomePage.cs">
-      <SubType>Form</SubType>
+    <Compile Include="placeButton.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerHomePage.Designer.cs">
-      <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    <Compile Include="placeButton.Designer.cs">
+      <DependentUpon>placeButton.cs</DependentUpon>
     </Compile>
     <Compile Include="placeButton.cs">
       <SubType>UserControl</SubType>
@@ -157,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIndividualProductView.resx">
-      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrderPage.resx">
       <DependentUpon>CustomerOrderPage.cs</DependentUpon>
@@ -183,9 +272,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="foodButton.resx">
-      <DependentUpon>foodButton.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
