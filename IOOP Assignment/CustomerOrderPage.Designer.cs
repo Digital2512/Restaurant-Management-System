@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderPage));
             this.headerPnl = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.panel2 = new System.Windows.Forms.Panel();
-=======
->>>>>>> Huey-Shin
+            this.cartButton = new System.Windows.Forms.Button();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,21 +41,11 @@
             this.ratingsCBox = new System.Windows.Forms.ComboBox();
             this.priceRangeCBox = new System.Windows.Forms.ComboBox();
             this.cuisineCBox = new System.Windows.Forms.ComboBox();
-<<<<<<< HEAD
             this.searchButton = new System.Windows.Forms.Button();
             this.productDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
-            this.cartButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.panel2.SuspendLayout();
-=======
-            this.productDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.productDisplayPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
-            this.headerPnl.SuspendLayout();
->>>>>>> Huey-Shin
             this.backBtnPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.productDisplayPanel.SuspendLayout();
@@ -65,17 +54,13 @@
             // headerPnl
             // 
             this.headerPnl.BackColor = System.Drawing.Color.DimGray;
-<<<<<<< HEAD
             this.headerPnl.Controls.Add(this.panel2);
-=======
->>>>>>> Huey-Shin
             this.headerPnl.Controls.Add(this.backBtnPnl);
             this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Name = "headerPnl";
             this.headerPnl.Size = new System.Drawing.Size(800, 45);
             this.headerPnl.TabIndex = 5;
-<<<<<<< HEAD
             this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // panel2
@@ -85,8 +70,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(127, 45);
             this.panel2.TabIndex = 3;
-=======
->>>>>>> Huey-Shin
+            // 
+            // cartButton
+            // 
+            this.cartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cartButton.Location = new System.Drawing.Point(5, 0);
+            this.cartButton.Name = "cartButton";
+            this.cartButton.Size = new System.Drawing.Size(157, 45);
+            this.cartButton.TabIndex = 2;
+            this.cartButton.Text = "Your Cart";
+            this.cartButton.UseVisualStyleBackColor = true;
+            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
             // 
             // backBtnPnl
             // 
@@ -95,6 +89,18 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblSearch
             // 
@@ -184,10 +190,8 @@
             this.cuisineCBox.Size = new System.Drawing.Size(209, 28);
             this.cuisineCBox.TabIndex = 9;
             // 
-<<<<<<< HEAD
             // searchButton
             // 
-            //this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
             this.searchButton.Location = new System.Drawing.Point(679, 3);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(45, 44);
@@ -195,8 +199,6 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-=======
->>>>>>> Huey-Shin
             // productDisplayFlowPanel
             // 
             this.productDisplayFlowPanel.AutoSize = true;
@@ -205,10 +207,7 @@
             this.productDisplayFlowPanel.Name = "productDisplayFlowPanel";
             this.productDisplayFlowPanel.Size = new System.Drawing.Size(703, 355);
             this.productDisplayFlowPanel.TabIndex = 10;
-<<<<<<< HEAD
             this.productDisplayFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.productDisplayFlowPanel_Paint);
-=======
->>>>>>> Huey-Shin
             // 
             // productDisplayPanel
             // 
@@ -218,42 +217,6 @@
             this.productDisplayPanel.Name = "productDisplayPanel";
             this.productDisplayPanel.Size = new System.Drawing.Size(735, 355);
             this.productDisplayPanel.TabIndex = 11;
-            // 
-<<<<<<< HEAD
-            // cartButton
-            // 
-            //this.cartButton.Image = global::IOOP_Assignment.Properties.Resources.cartResized;
-            this.cartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cartButton.Location = new System.Drawing.Point(5, 0);
-            this.cartButton.Name = "cartButton";
-            this.cartButton.Size = new System.Drawing.Size(157, 45);
-            this.cartButton.TabIndex = 2;
-            this.cartButton.Text = "Your Cart";
-            this.cartButton.UseVisualStyleBackColor = true;
-            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
-=======
-            // searchButton
-            // 
-            this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.searchButton.Location = new System.Drawing.Point(679, 13);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(45, 34);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
->>>>>>> Huey-Shin
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerOrderPage
             // 
@@ -267,10 +230,7 @@
             this.Name = "CustomerOrderPage";
             this.Text = "customerOrderPage";
             this.headerPnl.ResumeLayout(false);
-<<<<<<< HEAD
             this.panel2.ResumeLayout(false);
-=======
->>>>>>> Huey-Shin
             this.backBtnPnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -295,10 +255,7 @@
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.FlowLayoutPanel productDisplayFlowPanel;
         private System.Windows.Forms.Panel productDisplayPanel;
-<<<<<<< HEAD
         private System.Windows.Forms.Button cartButton;
         private System.Windows.Forms.Panel panel2;
-=======
->>>>>>> Huey-Shin
     }
 }

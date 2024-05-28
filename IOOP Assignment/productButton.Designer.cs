@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class foodButton
+    partial class productButton
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(foodButton));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(productButton));
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductDescription = new System.Windows.Forms.Label();
@@ -103,23 +103,17 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-=======
-            this.addButton.Image = global::IOOP_Assignment.Properties.Resources.addIcon;
->>>>>>> Huey-Shin
-            this.addButton.Location = new System.Drawing.Point(-2, -7);
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.Location = new System.Drawing.Point(-2, -11);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(46, 52);
             this.addButton.TabIndex = 8;
+            this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // pictureBox1
             // 
-<<<<<<< HEAD
-=======
-            this.pictureBox1.Image = global::IOOP_Assignment.Properties.Resources.star;
->>>>>>> Huey-Shin
             this.pictureBox1.Location = new System.Drawing.Point(357, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 34);
@@ -129,22 +123,15 @@
             // productImagePBox
             // 
             this.productImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
-<<<<<<< HEAD
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(150, 150);
             this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-=======
-            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.pastaImage;
-            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.productImagePBox.Name = "productImagePBox";
-            this.productImagePBox.Size = new System.Drawing.Size(150, 150);
->>>>>>> Huey-Shin
             this.productImagePBox.TabIndex = 0;
             this.productImagePBox.TabStop = false;
             this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);
             // 
-            // foodButton
+            // productButton
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -156,7 +143,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblProductID);
             this.Controls.Add(this.productImagePBox);
-            this.Name = "foodButton";
+            this.Name = "productButton";
             this.Size = new System.Drawing.Size(475, 150);
             this.Load += new System.EventHandler(this.foodButton_Load);
             this.addButtonPnl.ResumeLayout(false);

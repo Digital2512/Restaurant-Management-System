@@ -32,18 +32,11 @@
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblViewProfile = new System.Windows.Forms.Label();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
             this.backButton = new System.Windows.Forms.Button();
->>>>>>> Huey-Shin
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblPasswordValue = new System.Windows.Forms.Label();
             this.updatePnl = new System.Windows.Forms.Panel();
             this.updateBtn = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
-            this.profilePBox = new System.Windows.Forms.PictureBox();
->>>>>>> Huey-Shin
             this.passwordShowBtn = new System.Windows.Forms.Button();
             this.genderGBox = new System.Windows.Forms.GroupBox();
             this.ratherNotSayRBtn = new System.Windows.Forms.RadioButton();
@@ -57,21 +50,12 @@
             this.lblBirthday = new System.Windows.Forms.Label();
             this.lblCustomerIDTitle = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.profilePBox = new System.Windows.Forms.PictureBox();
-            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.updatePnl.SuspendLayout();
             this.genderGBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).BeginInit();
-=======
-            this.headerPnl.SuspendLayout();
-            this.backBtnPnl.SuspendLayout();
-            this.updatePnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).BeginInit();
-            this.genderGBox.SuspendLayout();
->>>>>>> Huey-Shin
             this.SuspendLayout();
             // 
             // headerPnl
@@ -103,8 +87,6 @@
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-<<<<<<< HEAD
-=======
             // backButton
             // 
             this.backButton.BackColor = System.Drawing.Color.DimGray;
@@ -115,13 +97,13 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
->>>>>>> Huey-Shin
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFullName.Location = new System.Drawing.Point(40, 190);
+            this.lblFullName.Location = new System.Drawing.Point(40, 265);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(2, 22);
             this.lblFullName.TabIndex = 6;
@@ -130,7 +112,7 @@
             // 
             this.lblPasswordValue.AutoSize = true;
             this.lblPasswordValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPasswordValue.Location = new System.Drawing.Point(41, 271);
+            this.lblPasswordValue.Location = new System.Drawing.Point(41, 343);
             this.lblPasswordValue.Name = "lblPasswordValue";
             this.lblPasswordValue.Size = new System.Drawing.Size(2, 22);
             this.lblPasswordValue.TabIndex = 8;
@@ -146,15 +128,11 @@
             // 
             // updateBtn
             // 
-<<<<<<< HEAD
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
->>>>>>> Huey-Shin
             this.updateBtn.Location = new System.Drawing.Point(0, 0);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(800, 47);
             this.updateBtn.TabIndex = 0;
-<<<<<<< HEAD
             this.updateBtn.Text = "UPDATE";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
@@ -162,26 +140,7 @@
             // passwordShowBtn
             // 
             this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            //this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordlHideIconResized;
-=======
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // profilePBox
-            // 
-            this.profilePBox.Location = new System.Drawing.Point(556, 59);
-            this.profilePBox.Name = "profilePBox";
-            this.profilePBox.Size = new System.Drawing.Size(199, 153);
-            this.profilePBox.TabIndex = 53;
-            this.profilePBox.TabStop = false;
-            // 
-            // passwordShowBtn
-            // 
-            this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordHideIcon;
->>>>>>> Huey-Shin
-            this.passwordShowBtn.Location = new System.Drawing.Point(317, 269);
+            this.passwordShowBtn.Location = new System.Drawing.Point(317, 320);
             this.passwordShowBtn.Name = "passwordShowBtn";
             this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
             this.passwordShowBtn.TabIndex = 48;
@@ -193,9 +152,9 @@
             this.genderGBox.Controls.Add(this.ratherNotSayRBtn);
             this.genderGBox.Controls.Add(this.femaleRBtn);
             this.genderGBox.Controls.Add(this.maleRBtn);
-            this.genderGBox.Location = new System.Drawing.Point(556, 290);
+            this.genderGBox.Location = new System.Drawing.Point(509, 290);
             this.genderGBox.Name = "genderGBox";
-            this.genderGBox.Size = new System.Drawing.Size(200, 144);
+            this.genderGBox.Size = new System.Drawing.Size(252, 144);
             this.genderGBox.TabIndex = 44;
             this.genderGBox.TabStop = false;
             this.genderGBox.Text = "Gender: ";
@@ -238,7 +197,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(31, 315);
+            this.label7.Location = new System.Drawing.Point(31, 377);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 29);
             this.label7.TabIndex = 43;
@@ -249,7 +208,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(34, 233);
+            this.lblPassword.Location = new System.Drawing.Point(34, 304);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(132, 29);
             this.lblPassword.TabIndex = 42;
@@ -259,7 +218,7 @@
             // 
             this.lblUserID.AutoSize = true;
             this.lblUserID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblUserID.Location = new System.Drawing.Point(44, 113);
+            this.lblUserID.Location = new System.Drawing.Point(41, 116);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(2, 22);
             this.lblUserID.TabIndex = 40;
@@ -269,7 +228,7 @@
             this.lblUserIDTitle.AutoSize = true;
             this.lblUserIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblUserIDTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblUserIDTitle.Location = new System.Drawing.Point(35, 82);
+            this.lblUserIDTitle.Location = new System.Drawing.Point(30, 82);
             this.lblUserIDTitle.Name = "lblUserIDTitle";
             this.lblUserIDTitle.Size = new System.Drawing.Size(99, 29);
             this.lblUserIDTitle.TabIndex = 39;
@@ -280,7 +239,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(33, 150);
+            this.label1.Location = new System.Drawing.Point(33, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 29);
             this.label1.TabIndex = 41;
@@ -290,7 +249,7 @@
             // 
             this.lblBirthday.AutoSize = true;
             this.lblBirthday.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBirthday.Location = new System.Drawing.Point(41, 355);
+            this.lblBirthday.Location = new System.Drawing.Point(41, 413);
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.Size = new System.Drawing.Size(2, 22);
             this.lblBirthday.TabIndex = 10;
@@ -300,7 +259,7 @@
             this.lblCustomerIDTitle.AutoSize = true;
             this.lblCustomerIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblCustomerIDTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomerIDTitle.Location = new System.Drawing.Point(553, 218);
+            this.lblCustomerIDTitle.Location = new System.Drawing.Point(29, 155);
             this.lblCustomerIDTitle.Name = "lblCustomerIDTitle";
             this.lblCustomerIDTitle.Size = new System.Drawing.Size(158, 29);
             this.lblCustomerIDTitle.TabIndex = 45;
@@ -310,35 +269,19 @@
             // 
             this.lblCustomerID.AutoSize = true;
             this.lblCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCustomerID.Location = new System.Drawing.Point(562, 255);
+            this.lblCustomerID.Location = new System.Drawing.Point(41, 192);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(2, 22);
             this.lblCustomerID.TabIndex = 46;
             // 
-<<<<<<< HEAD
             // profilePBox
             // 
-            //this.profilePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
-            this.profilePBox.Location = new System.Drawing.Point(556, 59);
+            this.profilePBox.Location = new System.Drawing.Point(512, 59);
             this.profilePBox.Name = "profilePBox";
-            this.profilePBox.Size = new System.Drawing.Size(199, 153);
+            this.profilePBox.Size = new System.Drawing.Size(249, 180);
             this.profilePBox.TabIndex = 53;
             this.profilePBox.TabStop = false;
             // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-=======
->>>>>>> Huey-Shin
             // CustomerProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -368,15 +311,9 @@
             this.headerPnl.PerformLayout();
             this.backBtnPnl.ResumeLayout(false);
             this.updatePnl.ResumeLayout(false);
-<<<<<<< HEAD
             this.genderGBox.ResumeLayout(false);
             this.genderGBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).EndInit();
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.profilePBox)).EndInit();
-            this.genderGBox.ResumeLayout(false);
-            this.genderGBox.PerformLayout();
->>>>>>> Huey-Shin
             this.ResumeLayout(false);
             this.PerformLayout();
 
