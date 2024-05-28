@@ -32,9 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReservationPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
             this.placeDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
@@ -42,8 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.eventsCListBox = new System.Windows.Forms.CheckedListBox();
             this.minOfPaxCBox = new System.Windows.Forms.ComboBox();
-            this.backButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +67,18 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblSearch
             // 
@@ -94,6 +106,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(792, 62);
             this.panel1.TabIndex = 13;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(739, 6);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(45, 42);
+            this.searchButton.TabIndex = 8;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // lblFilter
             // 
@@ -163,32 +184,10 @@
             "> 20",
             "> 25",
             ">30"});
-            this.minOfPaxCBox.Location = new System.Drawing.Point(836, 132);
+            this.minOfPaxCBox.Location = new System.Drawing.Point(836, 122);
             this.minOfPaxCBox.Name = "minOfPaxCBox";
             this.minOfPaxCBox.Size = new System.Drawing.Size(121, 28);
             this.minOfPaxCBox.TabIndex = 18;
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // searchButton
-            // 
-            //this.searchButton.Image = global::IOOP_Assignment.Properties.Resources.searchIconResized;
-            this.searchButton.Location = new System.Drawing.Point(739, 6);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(45, 42);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // CustomerReservationPage
             // 

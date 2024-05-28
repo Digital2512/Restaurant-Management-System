@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
     public partial class CustomerIndividualProductPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string productID;
         public CustomerIndividualProductPage()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace IOOP_Assignment
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string customerID = database.getString(query);
             query = $"SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
-            string productID = database.getString(query);
+            this.productID = database.getString(query);
             query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
             string productName = database.getString(query);
             query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
@@ -108,13 +110,96 @@ namespace IOOP_Assignment
                 MessageBox.Show("Order Details Reset Failed");
             }
         }
-
         private void addButton_Click(object sender, EventArgs e)
         {
+
+            // Parse current product quantity and calculate new quantity
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
             int newProductQuantity = productQuantity + 1;
-            this.lblProductQuantity.Text = newProductQuantity.ToString();
+
+            // Initialize database connection
+            Database database = new Database(connectionString);
+
+            // Get stock quantity used for the product from the recipe
+            string query = $"SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = '{productID}';";
+            string stockQuantityList = database.getString(query);
+            string[] stockQuantityParts = stockQuantityList.Split(',');
+
+            bool shouldDisableButton = false;
+
+            // Iterate over each stock quantity part
+            foreach (string part in stockQuantityParts)
+            {
+                string[] stockQuantityPart = part.Split('*');
+
+                // Check if the stock quantity part format is valid
+                if (stockQuantityPart.Length != 2)
+                {
+                    MessageBox.Show("Invalid stock quantity part format.");
+                    continue;
+                }
+
+                string stockID = stockQuantityPart[0];
+                string stockQuantityString = stockQuantityPart[1];
+
+                // Check if the stock quantity value is a valid integer
+                if (!int.TryParse(stockQuantityString, out int stockQuantityInt))
+                {
+                    MessageBox.Show("Invalid stock quantity value.");
+                    continue;
+                }
+
+                int quantityNeeded = stockQuantityInt * newProductQuantity;
+
+                // Get current quantity from the inventory for the current stock ID
+                query = $"SELECT Quantity FROM Inventory WHERE StockID = '{stockID}';";
+                MessageBox.Show(query.ToString());
+                //int currentQuantity = database.getInt(query);
+                int currentQuantity = 0;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                        connection.Open();
+                        if (connection.State == System.Data.ConnectionState.Open)
+                        {
+                            SqlCommand cmd = new SqlCommand(query, connection);
+                        MessageBox.Show(query.ToString());
+                        MessageBox.Show(connection.State.ToString());
+                            SqlDataReader reader = cmd.ExecuteReader();
+                            if (reader.HasRows)
+                            {
+                                if (reader.Read())
+                                {
+                                    currentQuantity = reader.GetInt32(0);
+                                }
+                            }
+                        }
+                        connection.Close();
+                }
+                MessageBox.Show(currentQuantity.ToString()); // Log the result for debugging
+
+                if (quantityNeeded > currentQuantity)
+                {
+                    shouldDisableButton = true;
+                }
+
+                // Debug information (optional)
+                MessageBox.Show($"StockID: {stockID}");
+                MessageBox.Show($"Quantity needed: {quantityNeeded}");
+                MessageBox.Show($"Current inventory quantity: {currentQuantity}");
+            }
+
+            // Disable button if necessary, otherwise update product quantity label
+            if (shouldDisableButton)
+            {
+                this.addButton.Enabled = false;
+            }
+            else
+            {
+                this.lblProductQuantity.Text = newProductQuantity.ToString();
+            }
         }
+
 
         private void minusBtn_Click(object sender, EventArgs e)
         {

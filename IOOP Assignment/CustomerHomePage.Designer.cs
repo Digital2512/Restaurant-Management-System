@@ -722,6 +722,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerHomePage";
             this.Text = "CustomerHomePage";
             this.Load += new System.EventHandler(this.CustomerHomePage_Load);
