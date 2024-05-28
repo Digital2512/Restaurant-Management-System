@@ -16,11 +16,7 @@ namespace trial_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new CustomerIndividualProductPage());
-=======
-            Application.Run(new AdminViewSalesReport());
->>>>>>> Huey-Shin
         }
     }
 }

@@ -15,7 +15,6 @@ namespace trial_2
         public CustomerHomePage()
         {
             InitializeComponent();
-<<<<<<< HEAD
             Database database = new Database(ConnectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string customerID = database.getString(query);
@@ -177,8 +176,6 @@ namespace trial_2
         {
             this.Visible = false;
             customerProfilePage.Visible = true;
-=======
->>>>>>> Huey-Shin
         }
     }
 }

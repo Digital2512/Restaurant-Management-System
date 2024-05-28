@@ -17,8 +17,6 @@ namespace trial_2
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-=======
 
 
 
@@ -33,6 +31,5 @@ namespace trial_2
             up.ShowDialog();
             
         }
->>>>>>> Huey-Shin
     }
 }

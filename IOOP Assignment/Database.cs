@@ -13,15 +13,10 @@ using System.IO;
 
 namespace trial_2
 {
-<<<<<<< HEAD
     public class Database
-=======
-    internal class Database
->>>>>>> Huey-Shin
     {
         private string ConnectionString;
 
-<<<<<<< HEAD
         public string connectionString { get => ConnectionString; set => ConnectionString = value; }
 
         private string Query;
@@ -29,9 +24,6 @@ namespace trial_2
         public string query { get => Query; set => Query = value; }
 
         public Database(string ConnectionString)
-=======
-        public Database(string connectionString)
->>>>>>> Huey-Shin
         {
             this.ConnectionString = ConnectionString;
         }
@@ -41,14 +33,7 @@ namespace trial_2
             string result = null;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-<<<<<<< HEAD
                 try
-=======
-                SqlCommand cmd = new SqlCommand(query,con);
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if(reader.Read())
->>>>>>> Huey-Shin
                 {
                     connection.Open();
                     if (connection.State == System.Data.ConnectionState.Open)
@@ -202,7 +187,6 @@ namespace trial_2
             return result;
         }
 
-<<<<<<< HEAD
         public int getDecimal(string query)
         {
             int result = 0;
@@ -461,8 +445,6 @@ namespace trial_2
                 return result;
             }
         }
-=======
->>>>>>> Huey-Shin
     }
 }
               

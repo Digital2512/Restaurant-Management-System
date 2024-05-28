@@ -91,8 +91,9 @@
     <Compile Include="cartProductButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="cartProductButton.Designer.cs">
-      <DependentUpon>cartProductButton.cs</DependentUpon>
+	  <Compile Include="cartProductButton.Designer.cs">
+		  <DependentUpon>cartProductButton.cs</DependentUpon>
+	  </Compile>
     <Compile Include="AdminManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
