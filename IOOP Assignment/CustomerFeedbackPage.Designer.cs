@@ -190,10 +190,7 @@
             this.backButton.Size = new System.Drawing.Size(104, 59);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
-=======
->>>>>>> Huey-Shin
             // 
             // CustomerFeedbackPage
             // 

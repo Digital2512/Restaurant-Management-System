@@ -20,7 +20,6 @@ namespace IOOP_Assignment
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
             lblUserID.Text = userID;
-<<<<<<< HEAD
             query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             lblFullName.Text = database.getString(query);
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
@@ -35,14 +34,6 @@ namespace IOOP_Assignment
             {
                 lblBirthday.Text = birthdayDateTimeString;
             }
-=======
-            query = $"SELECT fullName FROM Users WHERE UserID = '{userID}';";
-            lblFullName.Text = database.getString(query);
-            query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
-            lblPasswordValue.Text = database.getString(query);
-            query = $"SELECT birthday FROM Users WHERE UserID = '{userID}';";
-            lblBirthday.Text = database.getDateTime(query).ToString();
->>>>>>> Huey-Shin
             query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}'";
             lblCustomerID.Text = database.getString(query);
             query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
@@ -61,16 +52,11 @@ namespace IOOP_Assignment
             {
                 maleRBtn.Checked = false;
                 femaleRBtn.Checked = false;
-<<<<<<< HEAD
                 ratherNotSayRBtn.Checked = true;
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
             profilePBox.Image = database.getImage(query);
 
-=======
-                ratherNotSayRBtn.Checked = false;
-            }
->>>>>>> Huey-Shin
         }
 
         private void CustomerProfilePage_Load(object sender, EventArgs e)
@@ -94,16 +80,11 @@ namespace IOOP_Assignment
                 string userID = database.getString(query);
                 query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
                 lblPasswordValue.Text = database.getString(query);
-<<<<<<< HEAD
                 //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
-=======
-                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
->>>>>>> Huey-Shin
             }
             else if (lblPasswordValue.Text != "********")
             {
                 lblPasswordValue.Text = "********";
-<<<<<<< HEAD
                 //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
         }
@@ -114,10 +95,5 @@ namespace IOOP_Assignment
             CustomerHomePage customerHomePage = new CustomerHomePage();
             customerHomePage.Show();
         }
-=======
-                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
-            }
-        }
->>>>>>> Huey-Shin
     }
 }

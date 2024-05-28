@@ -23,7 +23,6 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(ConnectionString);
-<<<<<<< HEAD
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             string customerID = database.getString(query);
             query = $"SELECT FullName FROM Users WHERE UserID = (SELECT UserID FROM Customer WHERE CustomerID = '{customerID}');";
@@ -97,18 +96,6 @@ namespace IOOP_Assignment
                 this.lblPlaceID.Text = "N/A";
                 this.lblReservationStatus.Text = "N/A";
             }
-=======
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
->>>>>>> Huey-Shin
 
         }
 
@@ -161,14 +148,6 @@ namespace IOOP_Assignment
             sidebarTransition.Start();
         }
 
-<<<<<<< HEAD
-=======
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
->>>>>>> Huey-Shin
         private void reservationBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -193,17 +172,10 @@ namespace IOOP_Assignment
             Database database = new Database(ConnectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
-<<<<<<< HEAD
             query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
             database.insertOrUpdateValuesIntoDatabase(query);
             query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
             database.insertOrUpdateValuesIntoDatabase(query);
-=======
-            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
-            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = {userID}";
-            database.insertValuesIntoDatabase(query);
->>>>>>> Huey-Shin
 
         }
 
