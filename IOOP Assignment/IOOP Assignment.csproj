@@ -156,48 +156,6 @@
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
-    <Compile Include="CustomerFeedbackPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerFeedbackPage.Designer.cs">
-      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerHomePage.Designer.cs">
-      <DependentUpon>CustomerHomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerIndividualProductView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerIndividualProductView.Designer.cs">
-      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerOrderPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerOrderPage.Designer.cs">
-      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerProfilePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerProfilePage.Designer.cs">
-      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerReservationPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerReservationPage.Designer.cs">
-      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerUpdateProfilePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerUpdateProfilePage.Designer.cs">
-      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -261,24 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminViewSalesReport.resx">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerFeedbackPage.resx">
-      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerHomePage.resx">
-      <DependentUpon>CustomerHomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIndividualProductView.resx">
-      <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerOrderPage.resx">
-      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerProfilePage.resx">
-      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
-      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
