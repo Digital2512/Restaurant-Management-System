@@ -239,7 +239,6 @@
             this.feedbackBtn.Text = "      Feedback";
             this.feedbackBtn.UseVisualStyleBackColor = false;
             this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
-=======
             // menuTransition
             // 
             this.menuTransition.Interval = 10;
@@ -248,7 +247,6 @@
             // 
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
->>>>>>> Huey-Shin
             // 
             // logoutPnl
             // 
@@ -258,7 +256,6 @@
             this.logoutPnl.Size = new System.Drawing.Size(179, 57);
             this.logoutPnl.TabIndex = 4;
             // 
-<<<<<<< HEAD
             // logoutBtn
             // 
             this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
@@ -272,7 +269,6 @@
             this.logoutBtn.Text = "  Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
-=======
             // label2
             // 
             this.label2.AutoSize = true;
@@ -371,7 +367,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Food\'s Title";
             this.label10.Click += new System.EventHandler(this.label10_Click);
->>>>>>> Huey-Shin
             // 
             // panel2
             // 
@@ -393,10 +388,7 @@
             this.profileBtn.BackColor = System.Drawing.Color.DimGray;
             this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileBtn.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-=======
             this.profileBtn.Image = global::IOOP_Assignment.Properties.Resources.profileIcon;
->>>>>>> Huey-Shin
             this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.profileBtn.Location = new System.Drawing.Point(-3, -6);
             this.profileBtn.Name = "profileBtn";
@@ -406,7 +398,6 @@
             this.profileBtn.UseVisualStyleBackColor = false;
             this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
-<<<<<<< HEAD
             // menuTransition
             // 
             this.menuTransition.Interval = 10;
@@ -616,7 +607,6 @@
             this.reservationStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.reservationStatusPBox.TabIndex = 2;
             this.reservationStatusPBox.TabStop = false;
-=======
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(6, 62);
@@ -710,7 +700,6 @@
             this.btnSidebar.TabIndex = 1;
             this.btnSidebar.UseVisualStyleBackColor = true;
             this.btnSidebar.Click += new System.EventHandler(this.btnSidebar_Click);
->>>>>>> Huey-Shin
             // 
             // CustomerHomePage
             // 
@@ -723,7 +712,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
-<<<<<<< HEAD
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerHomePage";
             this.Text = "CustomerHomePage";
@@ -744,8 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerCartPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
@@ -880,7 +866,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<<< HEAD:IOOP Assignment/CustomerCartPage.Designer.cs
             this.ClientSize = new System.Drawing.Size(800, 542);
             this.Controls.Add(this.payBtn);
             this.Controls.Add(this.lblTaxAmount);
@@ -900,13 +885,7 @@
             this.cartDetailsPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-========
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CustomerHomePage";
->>>>>>>> Huey-Shin:IOOP Assignment/CustomerHomePage.Designer.cs
->>>>>>> Huey-Shin
-=======
             this.Name = "CustomerHomePage";
             this.Text = "CustomerHomePage";
             this.Load += new System.EventHandler(this.CustomerHomePage_Load);
@@ -927,16 +906,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
->>>>>>> Huey-Shin
         }
 
         #endregion
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Huey-Shin
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnSidebar;
