@@ -110,7 +110,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1025, 541);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.btnUpdateProfile);
+            this.Controls.Add(this.btnViewFeedback);
+            this.Controls.Add(this.btnViewSalesReport);
+            this.Controls.Add(this.btnManageUsers);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "AdminHomePage";
             this.Text = "AdminHomePage";
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -119,5 +127,13 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Button btnViewSalesReport;
+        private System.Windows.Forms.Button btnViewFeedback;
+        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Button btnBack;
     }
 }
