@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     public partial class AdminAddCustomer : Form
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
         public AdminAddCustomer()
         {
             InitializeComponent();
@@ -46,13 +47,13 @@ namespace IOOP_Assignment
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
 
-            string newId = "C" + (count + 1).ToString("D2");
+            string newId = "C" + (count +1).ToString("D2");
             return newId;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!CheckedGender())
+            if(!CheckedGender())
             {
                 MessageBox.Show("Choose a gender");
                 return;
@@ -60,7 +61,7 @@ namespace IOOP_Assignment
 
             string newId = AutoNewId();
 
-            Customer obj1 = new Customer(newId, txtFullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text);
+            Customer obj1 = new Customer(newId,txtFullName.Text,dtpDob.Text,gender,txtphoneNumber.Text,txtEmail.Text);
             MessageBox.Show(obj1.addCustomer());
         }
 

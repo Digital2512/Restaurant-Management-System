@@ -1,0 +1,26 @@
+C:\Users\yaphu\source\repos\trial 2\trial 2\bin\Debug\trial 2.exe.config
+C:\Users\yaphu\source\repos\trial 2\trial 2\bin\Debug\trial 2.exe
+C:\Users\yaphu\source\repos\trial 2\trial 2\bin\Debug\trial 2.pdb
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial 2.csproj.AssemblyReference.cache
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.Properties.Resources.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial 2.csproj.GenerateResource.cache
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial 2.csproj.CoreCompileInputs.cache
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial 2.exe
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial 2.pdb
+C:\Users\yaphu\source\repos\trial 2\trial 2\bin\Debug\myDb.mdf
+C:\Users\yaphu\source\repos\trial 2\trial 2\bin\Debug\myDb_log.ldf
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.Login.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminManageUsers.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminAddManager.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminViewManager.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminUpdateDeleteManager.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminAddChef.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminUpdateDeleteChef.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminViewChef.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminAddCustomer.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminUpdateDeleteCustomer.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminViewCustomer.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminHomePage.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminViewFeedback.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminViewSalesReport.resources
+C:\Users\yaphu\source\repos\trial 2\trial 2\obj\Debug\trial_2.AdminUpdateProfile.resources

@@ -1,20 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     public partial class AdminManageUsers : Form
     {
+
+
+        public static string name;
         public AdminManageUsers()
         {
             InitializeComponent();
+        }
+        public AdminManageUsers(string n)
+        {
+            InitializeComponent();
+            name = n;
+        }
+        private void AdminManageUsers_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAddManager_Click(object sender, EventArgs e)
@@ -23,16 +38,16 @@ namespace IOOP_Assignment
             am.ShowDialog();
         }
 
-        private void btnUpdateDeleteManager_Click(object sender, EventArgs e)
-        {
-            AdminUpdateDeleteManager udm = new AdminUpdateDeleteManager();
-            udm.ShowDialog();
-        }
-
         private void btnViewManager_Click(object sender, EventArgs e)
         {
             AdminViewManager vm = new AdminViewManager();
             vm.ShowDialog();
+        }
+
+        private void btnUpdateDeleteManager_Click(object sender, EventArgs e)
+        {
+            AdminUpdateDeleteManager udm = new AdminUpdateDeleteManager();
+            udm.ShowDialog();
         }
 
         private void btnAddChef_Click(object sender, EventArgs e)
@@ -49,7 +64,7 @@ namespace IOOP_Assignment
 
         private void btnViewChef_Click(object sender, EventArgs e)
         {
-            AdminViewChef vch = new AdminViewChef();
+            AdminViewChef vch = new AdminViewChef();    
             vch.ShowDialog();
         }
 
@@ -67,7 +82,7 @@ namespace IOOP_Assignment
 
         private void btnViewCustomer_Click(object sender, EventArgs e)
         {
-            AdminViewCustomer vc = new AdminViewCustomer();
+            AdminViewCustomer vc = new AdminViewCustomer(); 
             vc.ShowDialog();
         }
 
