@@ -170,7 +170,7 @@
             this.lblUpdateDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateDeleteCustomer.Location = new System.Drawing.Point(289, 63);
             this.lblUpdateDeleteCustomer.Name = "lblUpdateDeleteCustomer";
-            this.lblUpdateDeleteCustomer.Size = new System.Drawing.Size(483, 39);
+            this.lblUpdateDeleteCustomer.Size = new System.Drawing.Size(465, 38);
             this.lblUpdateDeleteCustomer.TabIndex = 12;
             this.lblUpdateDeleteCustomer.Text = "Update and Delete Customer";
             // 

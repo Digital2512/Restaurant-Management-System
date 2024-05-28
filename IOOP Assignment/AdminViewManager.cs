@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -25,7 +24,7 @@ namespace IOOP_Assignment
             manager = new Manager(conectionString);
         }
 
-        private void ViewManager_Load(object sender, EventArgs e)
+        private void AdminViewManager_Load(object sender, EventArgs e)
         {
             FillData();
             FillComboSearchCode();
@@ -56,11 +55,6 @@ namespace IOOP_Assignment
             da.Fill(dt);
             dgvViewManager.DataSource = dt;
             con.Close();
-        }
-
-        private void cmbManagerID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void FillComboSearchCode()

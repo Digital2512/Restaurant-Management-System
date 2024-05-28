@@ -66,10 +66,9 @@
             this.lblUpdateDeleteManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateDeleteManager.Location = new System.Drawing.Point(320, 46);
             this.lblUpdateDeleteManager.Name = "lblUpdateDeleteManager";
-            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(469, 39);
+            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(450, 38);
             this.lblUpdateDeleteManager.TabIndex = 0;
             this.lblUpdateDeleteManager.Text = "Update and Delete Manager";
-            this.lblUpdateDeleteManager.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblManagerIDTitle
             // 
@@ -243,7 +242,6 @@
             this.lbleducationalBackground.Size = new System.Drawing.Size(218, 20);
             this.lbleducationalBackground.TabIndex = 23;
             this.lbleducationalBackground.Text = "Educational Background:";
-            this.lbleducationalBackground.Click += new System.EventHandler(this.lbleducationalBackground_Click);
             // 
             // lblEmail
             // 
@@ -359,7 +357,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminUpdateDeleteManager";
             this.Text = "AdminUpdateManager";
-            this.Load += new System.EventHandler(this.AdminUpdateManager_Load);
+            this.Load += new System.EventHandler(this.AdminUpdateDeleteManager_Load);
             this.grpboxSkills.ResumeLayout(false);
             this.grpboxSkills.PerformLayout();
             this.grpboxGender.ResumeLayout(false);

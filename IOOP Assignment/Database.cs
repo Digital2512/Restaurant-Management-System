@@ -16,10 +16,15 @@ using System.IO;
 >>>>>>> Huey-Shin
 namespace IOOP_Assignment
 {
+<<<<<<< HEAD
     public class Database
+=======
+    public class Databases
+>>>>>>> Huey-Shin
     {
         private string ConnectionString;
 
+<<<<<<< HEAD
         public string connectionString { get => ConnectionString; set => ConnectionString = value; }
 
         private string Query;
@@ -27,6 +32,9 @@ namespace IOOP_Assignment
         public string query { get => Query; set => Query = value; }
 
         public Database(string ConnectionString)
+=======
+        public Databases(string connectionString)
+>>>>>>> Huey-Shin
         {
             this.ConnectionString = ConnectionString;
         }
@@ -36,7 +44,14 @@ namespace IOOP_Assignment
             string result = null;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
+<<<<<<< HEAD
                 try
+=======
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+>>>>>>> Huey-Shin
                 {
                     connection.Open();
                     if (connection.State == System.Data.ConnectionState.Open)
@@ -189,6 +204,7 @@ namespace IOOP_Assignment
             }
             return result;
         }
+<<<<<<< HEAD
 
         public int getDecimal(string query)
         {
@@ -448,6 +464,8 @@ namespace IOOP_Assignment
                 return result;
             }
         }
+=======
+>>>>>>> Huey-Shin
     }
 }
               

@@ -16,7 +16,11 @@ namespace IOOP_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new CustomerIndividualProductPage());
+=======
+            Application.Run(new AdminViewFeedback());
+>>>>>>> Huey-Shin
         }
     }
 }

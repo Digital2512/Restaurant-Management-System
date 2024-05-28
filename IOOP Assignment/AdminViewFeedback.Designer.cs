@@ -45,7 +45,7 @@
             this.lblViewFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewFeedback.Location = new System.Drawing.Point(388, 61);
             this.lblViewFeedback.Name = "lblViewFeedback";
-            this.lblViewFeedback.Size = new System.Drawing.Size(264, 39);
+            this.lblViewFeedback.Size = new System.Drawing.Size(254, 38);
             this.lblViewFeedback.TabIndex = 0;
             this.lblViewFeedback.Text = "View Feedback";
             // 
