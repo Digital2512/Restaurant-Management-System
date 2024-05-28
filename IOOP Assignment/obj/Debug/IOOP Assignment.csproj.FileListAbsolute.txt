@@ -42,18 +42,3 @@ C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignme
 C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
 C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
 C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateProfile.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddChef.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddCustomer.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminAddManager.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminHomePage.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminManageUsers.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteChef.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteCustomer.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateDeleteManager.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminUpdateProfile.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewChef.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewCustomer.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewFeedback.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewManager.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.AdminViewSalesReport.resources
-C:\Users\yaphu\OneDrive - Asia Pacific University\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\trial_2.CustomerHomePage.resources

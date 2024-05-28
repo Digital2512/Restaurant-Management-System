@@ -9,15 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminAddManager : Form
     {
-        
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-
         public AdminAddManager()
         {
             InitializeComponent();
@@ -42,6 +39,7 @@ namespace trial_2
             }
 
         }
+
         private string AutoNewId()
         {
             con.Open();
@@ -53,7 +51,6 @@ namespace trial_2
             string newId = "M" + (count + 1).ToString("D2");
             return newId;
         }
-
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -76,13 +73,11 @@ namespace trial_2
             string newId = AutoNewId();
 
 
-            Manager obj1 = new Manager( newId,txtfullName.Text,dtpDob.Text,gender,txtphoneNumber.Text,txtEmail.Text,skills,educationalBackground);
+            Manager obj1 = new Manager(newId, txtfullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text, skills, educationalBackground);
             MessageBox.Show(obj1.addManager());
         }
 
-
-
-        private void AddManager_Load(object sender, EventArgs e)
+        private void AdminAddManager_Load(object sender, EventArgs e)
         {
             lblManagerID.Text = AutoNewId();
         }

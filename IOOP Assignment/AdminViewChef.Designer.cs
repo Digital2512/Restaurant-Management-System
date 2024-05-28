@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminViewChef
     {
@@ -45,7 +45,7 @@
             this.lblviewChef.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblviewChef.Location = new System.Drawing.Point(479, 60);
             this.lblviewChef.Name = "lblviewChef";
-            this.lblviewChef.Size = new System.Drawing.Size(211, 46);
+            this.lblviewChef.Size = new System.Drawing.Size(175, 38);
             this.lblviewChef.TabIndex = 0;
             this.lblviewChef.Text = "View Chef";
             // 
