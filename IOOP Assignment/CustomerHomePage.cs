@@ -29,7 +29,7 @@ namespace IOOP_Assignment
             string customerName = database.getString(query);
             lblWelcome.Text = $"Welcome,{customerName}";
 
-            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'MAKING';";
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING';";
             string orderID = database.getString(query);
             query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}';";
             string reservationID = database.getString(query);
@@ -51,14 +51,11 @@ namespace IOOP_Assignment
                 }
                 else
                 {
+                    this.lblOrderID.Text = "N/A";
+                    this.lblEstimatedTime.Text = "N/A";
+                    this.lblOrderStatus.Text = "N/A";
                     orderStatusPBox.Image = Properties.Resources.errorImageSmaller;
                 }
-            }
-            else if(orderID == null|| orderID == "" || orderID == " ")
-            {
-                this.lblOrderID.Text = "N/A";
-                this.lblEstimatedTime.Text = "N/A";
-                this.lblOrderStatus.Text = "N/A";
             }
 
             if (reservationID != null || reservationID != "")
@@ -86,15 +83,12 @@ namespace IOOP_Assignment
                 }
                 else
                 {
+                    this.lblReservationID.Text = "N/A";
+                    this.lblReservationID.Text = "N/A";
+                    this.lblPlaceID.Text = "N/A";
+                    this.lblReservationStatus.Text = "N/A";
                     reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
                 }
-            }
-            else if(reservationID == null || reservationID == "" || reservationID == " ")
-            {
-                this.lblReservationID.Text = "N/A";
-                this.lblReservationID.Text = "N/A";
-                this.lblPlaceID.Text = "N/A";
-                this.lblReservationStatus.Text = "N/A";
             }
 
         }

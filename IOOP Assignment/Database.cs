@@ -50,7 +50,7 @@ namespace IOOP_Assignment
                                     if (!reader.IsDBNull(0))
                                     {
                                         result = reader.GetString(0);
-                                        if(result == null)
+                                        if (result == null)
                                         {
                                             result = "";
                                         }
@@ -60,11 +60,12 @@ namespace IOOP_Assignment
                                         result = "";
                                     }
                                     //result = reader.GetString(0);
-                                }catch (SqlException ex)
+                                }
+                                catch (SqlException ex)
                                 {
                                     MessageBox.Show(ex.Message);
                                 }
-                                    connection.Close();
+                                connection.Close();
                                 break;
                             }
                         }
@@ -171,7 +172,7 @@ namespace IOOP_Assignment
                             {
                                 result = reader.GetInt32(0);
                             }
-                        }                          
+                        }
                     }
                 }
                 catch (SqlException ex)
@@ -372,10 +373,10 @@ namespace IOOP_Assignment
                     {
                         SqlCommand cmd = new SqlCommand(query, connection);
                         object resultDB = cmd.ExecuteScalar();
-                        if(resultDB != null && resultDB != DBNull.Value)
+                        if (resultDB != null && resultDB != DBNull.Value)
                         {
                             byte[] imageBytes = (byte[])cmd.ExecuteScalar();
-                            if(imageBytes != null && imageBytes.Length > 0)
+                            if (imageBytes != null && imageBytes.Length > 0)
                             {
                                 using (MemoryStream ms = new MemoryStream(imageBytes))
                                 {
@@ -385,7 +386,7 @@ namespace IOOP_Assignment
                         }
                         else
                         {
-                            resultImage = Properties.Resources.errorImage;   
+                            resultImage = Properties.Resources.errorImage;
                         }
                     }
                     else
@@ -404,9 +405,9 @@ namespace IOOP_Assignment
                         connection.Close();
                 }
             }
-            return resultImage; 
+            return resultImage;
         }
-    public bool insertOrUpdateImageToFile(string imagePath, string query)
+        public bool insertOrUpdateImageToFile(string imagePath, string query)
         {
             bool result = false;
 
@@ -421,18 +422,20 @@ namespace IOOP_Assignment
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@ImageData", imageBytes);
-                        
+
                         int rowsAffected = cmd.ExecuteNonQuery();
-                        if(rowsAffected > 0)
+                        if (rowsAffected > 0)
                         {
-                            result = true; 
+                            result = true;
                         }
                         else
                         {
                             result = false;
                         }
                     }
-                }catch (SqlException ex) {
+                }
+                catch (SqlException ex)
+                {
                     MessageBox.Show("An error occured: " + ex.Message);
                 }
                 finally
@@ -447,4 +450,3 @@ namespace IOOP_Assignment
         }
     }
 }
-              

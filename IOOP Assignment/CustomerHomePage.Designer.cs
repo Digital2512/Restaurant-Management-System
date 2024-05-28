@@ -290,7 +290,7 @@
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(72, 20);
             this.lblOrderStatus.TabIndex = 6;
-            this.lblOrderStatus.Text = "MAKING";
+            this.lblOrderStatus.Text = "WAITING";
             // 
             // lblOrderStatusTitle
             // 

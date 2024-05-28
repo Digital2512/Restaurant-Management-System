@@ -40,7 +40,7 @@ namespace IOOP_Assignment
 
             if (database.getString(query) == "PAID")
             {
-                query = $"UPDATE Orders SET OrderStatus = 'MAKING' WHERE OrderID = '{orderID}';";
+                query = $"UPDATE Orders SET OrderStatus = 'WAITING' WHERE OrderID = '{orderID}';";
                 database.insertOrUpdateValuesIntoDatabase(query);
                 query = $"UPDATE Orders SET OrderStatus = 'IN_PROGRESS' WHERE OrderID = '{orderID}';";
                 database.insertOrUpdateValuesIntoDatabase(query);
