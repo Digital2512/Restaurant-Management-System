@@ -168,6 +168,139 @@
     <Compile Include="productButton.Designer.cs">
       <DependentUpon>productButton.cs</DependentUpon>
     </Compile>
+        <Compile Include="AdminAddChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddChef.Designer.cs">
+      <DependentUpon>AdminAddChef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddCustomer.Designer.cs">
+      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddManager.Designer.cs">
+      <DependentUpon>AdminAddManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHomePage.Designer.cs">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManageUsers.Designer.cs">
+      <DependentUpon>AdminManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteChef.Designer.cs">
+      <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteCustomer.Designer.cs">
+      <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateDeleteManager.Designer.cs">
+      <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateProfile.Designer.cs">
+      <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewChef.Designer.cs">
+      <DependentUpon>AdminViewChef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewCustomer.Designer.cs">
+      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewFeedback.Designer.cs">
+      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewManager.Designer.cs">
+      <DependentUpon>AdminViewManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewSalesReport.Designer.cs">
+      <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef.cs" />
+    <Compile Include="ChefHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefHomePage.Designer.cs">
+      <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+        <EmbeddedResource Include="AdminAddChef.resx">
+      <DependentUpon>AdminAddChef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddCustomer.resx">
+      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddManager.resx">
+      <DependentUpon>AdminAddManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHomePage.resx">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminManageUsers.resx">
+      <DependentUpon>AdminManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateDeleteChef.resx">
+      <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateDeleteCustomer.resx">
+      <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateDeleteManager.resx">
+      <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateProfile.resx">
+      <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewChef.resx">
+      <DependentUpon>AdminViewChef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewCustomer.resx">
+      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewFeedback.resx">
+      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewManager.resx">
+      <DependentUpon>AdminViewManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewSalesReport.resx">
+      <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
     <EmbeddedResource Include="cartProductButton.resx">
       <DependentUpon>cartProductButton.cs</DependentUpon>
     </EmbeddedResource>
