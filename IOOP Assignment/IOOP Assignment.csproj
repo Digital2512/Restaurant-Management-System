@@ -271,6 +271,9 @@
     <EmbeddedResource Include="AdminAddCustomer.resx">
       <DependentUpon>AdminAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerIndividualProductPage.resx">
       <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
     </EmbeddedResource>
