@@ -112,93 +112,70 @@ namespace IOOP_Assignment
         }
         private void addButton_Click(object sender, EventArgs e)
         {
-
-            // Parse current product quantity and calculate new quantity
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
             int newProductQuantity = productQuantity + 1;
-
-            // Initialize database connection
-            Database database = new Database(connectionString);
-
-            // Get stock quantity used for the product from the recipe
-            string query = $"SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = '{productID}';";
-            string stockQuantityList = database.getString(query);
-            string[] stockQuantityParts = stockQuantityList.Split(',');
-
-            bool shouldDisableButton = false;
-
-            // Iterate over each stock quantity part
-            foreach (string part in stockQuantityParts)
+            this.lblProductQuantity.Text = newProductQuantity.ToString();
+            /*
+            try
             {
-                string[] stockQuantityPart = part.Split('*');
+                int productQuantity = int.Parse(this.lblProductQuantity.Text);
+                int newProductQuantity = productQuantity + 1;
 
-                // Check if the stock quantity part format is valid
-                if (stockQuantityPart.Length != 2)
-                {
-                    MessageBox.Show("Invalid stock quantity part format.");
-                    continue;
-                }
-
-                string stockID = stockQuantityPart[0];
-                string stockQuantityString = stockQuantityPart[1];
-
-                // Check if the stock quantity value is a valid integer
-                if (!int.TryParse(stockQuantityString, out int stockQuantityInt))
-                {
-                    MessageBox.Show("Invalid stock quantity value.");
-                    continue;
-                }
-
-                int quantityNeeded = stockQuantityInt * newProductQuantity;
-
-                // Get current quantity from the inventory for the current stock ID
-                query = $"SELECT Quantity FROM Inventory WHERE StockID = '{stockID}';";
-                MessageBox.Show(query.ToString());
-                //int currentQuantity = database.getInt(query);
-                int currentQuantity = 0;
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    connection.Open();
 
-                        connection.Open();
-                        if (connection.State == System.Data.ConnectionState.Open)
+                    string query = $"SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = @ProductID";
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@ProductID", productID);
+
+                    string stockQuantityList = Convert.ToString(cmd.ExecuteScalar());
+                    string[] stockQuantityParts = stockQuantityList.Split(',');
+
+                    bool shouldDisableButton = false;
+
+                    foreach (string part in stockQuantityParts)
+                    {
+                        string[] stockQuantityPart = part.Split('*');
+
+                        if (stockQuantityPart.Length != 2 || !int.TryParse(stockQuantityPart[1], out int stockQuantityInt))
                         {
-                            SqlCommand cmd = new SqlCommand(query, connection);
-                        MessageBox.Show(query.ToString());
-                        MessageBox.Show(connection.State.ToString());
-                            SqlDataReader reader = cmd.ExecuteReader();
-                            if (reader.HasRows)
-                            {
-                                if (reader.Read())
-                                {
-                                    currentQuantity = reader.GetInt32(0);
-                                }
-                            }
+                            continue;
                         }
-                        connection.Close();
+
+                        int quantityNeeded = stockQuantityInt * newProductQuantity;
+
+                        query = $"SELECT Quantity FROM Inventory WHERE StockID = @StockID";
+                        cmd.CommandText = query;
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@StockID", stockQuantityPart[0]);
+
+                        int currentQuantity = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (quantityNeeded > currentQuantity)
+                        {
+                            shouldDisableButton = true;
+                            break; // No need to continue if one stock is not enough
+                        }
+                    }
+
+                    if (shouldDisableButton)
+                    {
+                        this.addButton.Enabled = false;
+                    }
+                    else
+                    {
+                        this.lblProductQuantity.Text = newProductQuantity.ToString();
+                    }
                 }
-                MessageBox.Show(currentQuantity.ToString()); // Log the result for debugging
-
-                if (quantityNeeded > currentQuantity)
-                {
-                    shouldDisableButton = true;
-                }
-
-                // Debug information (optional)
-                MessageBox.Show($"StockID: {stockID}");
-                MessageBox.Show($"Quantity needed: {quantityNeeded}");
-                MessageBox.Show($"Current inventory quantity: {currentQuantity}");
             }
-
-            // Disable button if necessary, otherwise update product quantity label
-            if (shouldDisableButton)
+            catch (Exception ex)
             {
-                this.addButton.Enabled = false;
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
-            else
-            {
-                this.lblProductQuantity.Text = newProductQuantity.ToString();
-            }
+            */
         }
+
 
 
         private void minusBtn_Click(object sender, EventArgs e)
