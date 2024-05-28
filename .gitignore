@@ -3,3 +3,6 @@
 *.sqlite
 *.cache
 *.json
+*.vsidx
+*.cache
+*.txt
