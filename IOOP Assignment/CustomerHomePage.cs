@@ -35,7 +35,6 @@ namespace IOOP_Assignment
             string reservationID = database.getString(query);
             if (orderID != null || orderID != "")
             {
-                MessageBox.Show($"Order ID Found : {orderID}");
                 this.lblOrderID.Text = orderID;
                 query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 this.lblEstimatedTime.Text = $"{database.getInt(query).ToString()} Mins Left";
@@ -54,7 +53,7 @@ namespace IOOP_Assignment
                     orderStatusPBox.Image = Properties.Resources.errorImageSmaller;
                 }
             }
-            else if(orderID == null|| orderID == "" || orderID == " ")
+            else if(orderID == null || orderID == "") 
             {
                 this.lblOrderID.Text = "N/A";
                 this.lblEstimatedTime.Text = "N/A";
@@ -63,7 +62,7 @@ namespace IOOP_Assignment
 
             if (reservationID != null || reservationID != "")
             {
-                MessageBox.Show($"Reservation ID Found : {reservationID}");
+
                 this.lblReservationID.Text = reservationID;
                 query = $"SELECT PlaceID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                 string placeID = database.getString(query);
@@ -89,7 +88,7 @@ namespace IOOP_Assignment
                     reservationStatusPBox.Image = Properties.Resources.errorImageSmaller;
                 }
             }
-            else if(reservationID == null || reservationID == "" || reservationID == " ")
+            else if(reservationID == null || reservationID != "")
             {
                 this.lblReservationID.Text = "N/A";
                 this.lblReservationID.Text = "N/A";

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualReservationPlacePage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.durationCBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,13 +42,14 @@
             this.lblEventType = new System.Windows.Forms.Label();
             this.lblMinOfPax = new System.Windows.Forms.Label();
             this.reserveBtn = new System.Windows.Forms.Button();
-            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
             this.lblPlaceID = new System.Windows.Forms.Label();
             this.lblSpecialInstructions = new System.Windows.Forms.Label();
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceDescription = new System.Windows.Forms.Label();
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.placeImagePBox = new System.Windows.Forms.PictureBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,7 +63,7 @@
             this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(573, 45);
+            this.headerPnl.Size = new System.Drawing.Size(572, 45);
             this.headerPnl.TabIndex = 11;
             // 
             // backBtnPnl
@@ -73,18 +73,6 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // panel2
             // 
@@ -120,7 +108,9 @@
             "1 Hour and 30 Minutes",
             "2 Hours",
             "2 Hours and 30 Minutes",
-            "3 hours"});
+            "3 hours",
+            "3 Hours and 30 Minutes",
+            "4 Hours"});
             this.durationCBox.Location = new System.Drawing.Point(292, 669);
             this.durationCBox.Name = "durationCBox";
             this.durationCBox.Size = new System.Drawing.Size(223, 28);
@@ -169,8 +159,6 @@
             this.reservedDateTimePicker.Name = "reservedDateTimePicker";
             this.reservedDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.reservedDateTimePicker.TabIndex = 19;
-            this.reservedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.reservedDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm tt";
             // 
             // lblPlaceEventType
             // 
@@ -214,15 +202,6 @@
             this.reserveBtn.Text = "RESERVE";
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.reserveBtn_Click);
-            // 
-            // placeImagePBox
-            // 
-            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
-            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.placeImagePBox.Name = "placeImagePBox";
-            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
-            this.placeImagePBox.TabIndex = 14;
-            this.placeImagePBox.TabStop = false;
             // 
             // specialInstructionsRTxtBox
             // 
@@ -281,11 +260,32 @@
             this.lblPlaceMinOfPax.TabIndex = 10;
             this.lblPlaceMinOfPax.Text = "20 People";
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // placeImagePBox
+            // 
+            this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
+            this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.placeImagePBox.Name = "placeImagePBox";
+            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.placeImagePBox.TabIndex = 14;
+            this.placeImagePBox.TabStop = false;
+            // 
             // CustomerIndividualReservationPlacePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 775);
+            this.ClientSize = new System.Drawing.Size(572, 775);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

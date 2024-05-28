@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class productButton
+    partial class foodButton
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(productButton));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(foodButton));
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductDescription = new System.Windows.Forms.Label();
@@ -103,12 +103,10 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.White;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(-2, -11);
+            this.addButton.Location = new System.Drawing.Point(-2, -7);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(46, 52);
             this.addButton.TabIndex = 8;
-            this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -131,7 +129,7 @@
             this.productImagePBox.TabStop = false;
             this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);
             // 
-            // productButton
+            // foodButton
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -143,7 +141,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblProductID);
             this.Controls.Add(this.productImagePBox);
-            this.Name = "productButton";
+            this.Name = "foodButton";
             this.Size = new System.Drawing.Size(475, 150);
             this.Load += new System.EventHandler(this.foodButton_Load);
             this.addButtonPnl.ResumeLayout(false);
