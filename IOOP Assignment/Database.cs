@@ -153,7 +153,6 @@ namespace IOOP_Assignment
 
             return result;
         }
-
         public int getInt(string query)
         {
             int result = 0;
@@ -166,18 +165,13 @@ namespace IOOP_Assignment
                     {
                         SqlCommand cmd = new SqlCommand(query, connection);
                         SqlDataReader reader = cmd.ExecuteReader();
-
                         if (reader.HasRows)
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
-                                decimal decimalValue = reader.GetInt32(0);
-
-                                result = Decimal.ToInt32(decimalValue);
-
-                                break;
+                                result = reader.GetInt32(0);
                             }
-                        }
+                        }                          
                     }
                 }
                 catch (SqlException ex)
@@ -230,6 +224,16 @@ namespace IOOP_Assignment
                 }
             }
             return result;
+        }
+        public int getRecipeStockInt(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                object result = command.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
         }
         /*
         public DataTable getDataTable(string query)
