@@ -51,10 +51,7 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-=======
     <Reference Include="System.Configuration" />
->>>>>>> Huey-Shin
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,14 +88,6 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="cartProductButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="cartProductButton.Designer.cs">
-      <DependentUpon>cartProductButton.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="AdminManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,23 +149,13 @@
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Chef.cs" />
->>>>>>> Huey-Shin
     <Compile Include="ChefHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChefHomePage.Designer.cs">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="CustomerCartPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerCartPage.Designer.cs">
-      <DependentUpon>CustomerCartPage.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="Customer.cs" />
->>>>>>> Huey-Shin
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,25 +168,11 @@
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="CustomerIndividualProductPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerIndividualProductPage.Designer.cs">
-      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerIndividualReservationPlacePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerIndividualReservationPlacePage.Designer.cs">
-      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
-=======
     <Compile Include="CustomerIndividualProductView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerIndividualProductView.Designer.cs">
       <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
->>>>>>> Huey-Shin
     </Compile>
     <Compile Include="CustomerOrderPage.cs">
       <SubType>Form</SubType>
@@ -227,15 +192,6 @@
     <Compile Include="CustomerReservationPage.Designer.cs">
       <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="CustomerSuccessfulPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerSuccessfulPayment.Designer.cs">
-      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
-    </Compile>
-=======
->>>>>>> Huey-Shin
     <Compile Include="CustomerUpdateProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,12 +212,6 @@
     <Compile Include="ManagerHomePage.Designer.cs">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="placeButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="placeButton.Designer.cs">
-      <DependentUpon>placeButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="foodButton.cs">
@@ -270,13 +220,6 @@
     <Compile Include="foodButton.Designer.cs">
       <DependentUpon>foodButton.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <EmbeddedResource Include="cartProductButton.resx">
-      <DependentUpon>cartProductButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerCartPage.resx">
-      <DependentUpon>CustomerCartPage.cs</DependentUpon>
-=======
     <EmbeddedResource Include="AdminAddChef.resx">
       <DependentUpon>AdminAddChef.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,7 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminViewSalesReport.resx">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
->>>>>>> Huey-Shin
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
@@ -326,16 +268,8 @@
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="CustomerIndividualProductPage.resx">
-      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIndividualReservationPlacePage.resx">
-      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
-=======
     <EmbeddedResource Include="CustomerIndividualProductView.resx">
       <DependentUpon>CustomerIndividualProductView.cs</DependentUpon>
->>>>>>> Huey-Shin
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrderPage.resx">
       <DependentUpon>CustomerOrderPage.cs</DependentUpon>
@@ -343,34 +277,17 @@
     <EmbeddedResource Include="CustomerProfilePage.resx">
       <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="CustomerReservationPage.resx">
-      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerSuccessfulPayment.resx">
-      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
-    </EmbeddedResource>
-=======
->>>>>>> Huey-Shin
     <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
       <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="placeButton.resx">
-      <DependentUpon>placeButton.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="foodButton.resx">
-      <DependentUpon>foodButton.cs</DependentUpon>
-    </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -379,16 +296,10 @@
     <EmbeddedResource Include="foodButton.resx">
       <DependentUpon>foodButton.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> Huey-Shin
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -418,33 +329,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-<<<<<<< HEAD
-    <None Include="PictureFolder\inKitchenResized.png" />
-    <None Include="PictureFolder\searchIconResized.png" />
-    <None Include="PictureFolder\starResized.png" />
-    <None Include="PictureFolder\errorImageSmaller.png" />
-    <None Include="PictureFolder\errorImage.png" />
-    <None Include="PictureFolder\pendingResized.png" />
-    <None Include="PictureFolder\deniedResized.png" />
-    <None Include="PictureFolder\completedResized.png" />
-    <None Include="PictureFolder\approvedResized.png" />
-    <None Include="PictureFolder\cartResized.png" />
-    <None Include="PictureFolder\logoutResized.png" />
-    <None Include="PictureFolder\feedbackResized.png" />
-    <None Include="PictureFolder\orderReszied.png" />
-    <None Include="PictureFolder\reservationResized.png" />
-    <None Include="PictureFolder\orderResized.png" />
-    <None Include="PictureFolder\menuResized.png" />
-    <None Include="PictureFolder\passwordlHideIconResized.png" />
-    <None Include="PictureFolder\passwordShowIconResized.png" />
-    <None Include="PictureFolder\passwordlHideIcon.png" />
-    <None Include="PictureFolder\checkedResized.png" />
-    <None Include="PictureFolder\checked.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\success.png" />
-    <None Include="Resources\recycle-bin.png" />
-=======
->>>>>>> Huey-Shin
     <None Include="Resources\eye.png" />
     <None Include="PictureFolder\addIcon.png" />
     <None Include="Resources\add.png" />
