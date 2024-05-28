@@ -11,7 +11,7 @@ using System.Drawing;
 using System.IO;
 
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public class Database
     {
