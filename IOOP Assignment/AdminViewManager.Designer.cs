@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment
+﻿namespace trial_2
 {
     partial class AdminViewManager
     {
@@ -45,7 +45,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(392, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 38);
+            this.label1.Size = new System.Drawing.Size(247, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "View Manager";
             // 
@@ -66,6 +66,7 @@
             this.cmbManagerID.Name = "cmbManagerID";
             this.cmbManagerID.Size = new System.Drawing.Size(218, 24);
             this.cmbManagerID.TabIndex = 3;
+            this.cmbManagerID.SelectedIndexChanged += new System.EventHandler(this.cmbManagerID_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -120,7 +121,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminViewManager";
             this.Text = "ViewManager";
-            this.Load += new System.EventHandler(this.AdminViewManager_Load);
+            this.Load += new System.EventHandler(this.ViewManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewManager)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);

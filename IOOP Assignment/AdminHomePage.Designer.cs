@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment
+﻿namespace trial_2
 {
     partial class AdminHomePage
     {
@@ -44,7 +44,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(342, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 38);
+            this.label1.Size = new System.Drawing.Size(358, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "ADMIN HOME PAGE";
             // 
@@ -56,7 +56,6 @@
             this.btnManageUsers.TabIndex = 1;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
-            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // btnViewSalesReport
             // 
@@ -66,7 +65,6 @@
             this.btnViewSalesReport.TabIndex = 2;
             this.btnViewSalesReport.Text = "View Sales Report";
             this.btnViewSalesReport.UseVisualStyleBackColor = true;
-            this.btnViewSalesReport.Click += new System.EventHandler(this.btnViewSalesReport_Click);
             // 
             // btnViewFeedback
             // 
@@ -76,7 +74,6 @@
             this.btnViewFeedback.TabIndex = 3;
             this.btnViewFeedback.Text = "View Feedback";
             this.btnViewFeedback.UseVisualStyleBackColor = true;
-            this.btnViewFeedback.Click += new System.EventHandler(this.btnViewFeedback_Click);
             // 
             // btnUpdateProfile
             // 
@@ -86,7 +83,7 @@
             this.btnUpdateProfile.TabIndex = 4;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
-            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
+            this.btnUpdateProfile.Click += new System.EventHandler(this.button4_Click);
             // 
             // panelHeader
             // 
@@ -120,6 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminHomePage";
             this.Text = "AdminHomePage";
+            this.Load += new System.EventHandler(this.AdminHomePage_Load);
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

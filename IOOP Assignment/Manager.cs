@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     internal class Manager
     {
@@ -21,7 +22,7 @@ namespace IOOP_Assignment
         private string educationalBackground;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public string Id { get => id; set => id = value; }
+
         public string FullName { get => fullName; set => fullName = value; }
         public string DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
         public string Gender { get => gender; set => gender = value; }
@@ -29,6 +30,8 @@ namespace IOOP_Assignment
         public string Email { get => email; set => email = value; }
         public string Skills { get => skills; set => skills = value; }
         public string EducationalBackground { get => educationalBackground; set => educationalBackground = value; }
+        public string Id { get => id; set => id = value; }
+        public static SqlConnection Con { get => con; set => con = value; }
 
         public Manager(string Id, string fullName, string dateOfBirth, string gender, string phoneNumber, string email, string skills, string educationalBackground)
         {
@@ -41,7 +44,6 @@ namespace IOOP_Assignment
             this.skills = skills;
             this.educationalBackground = educationalBackground;
         }
-
         private string AutoNewId()
         {
             con.Open();
@@ -111,7 +113,7 @@ namespace IOOP_Assignment
 
 
 
-
+        
         public Manager(string connectionString)
         {
             con = new SqlConnection(connectionString);
@@ -138,16 +140,15 @@ namespace IOOP_Assignment
             }
             return dt;
         }
-
         //update manager
-        public string updateManager(string id, string fullName, string dob, string gender, string phoneNumber, string email, string educationalBackground, string skills)
+        public string updateManager(string id,string fullName,string dob,string gender,string phoneNumber,string email,string educationalBackground,string skills)
         {
             string status;
 
             con.Open();
             //update manager table
             SqlCommand cmd = new SqlCommand("Update manager set fullName= @fn,dateOfBirth =@dob, Gender =@gender,phoneNumber = @pn,Email = @em, educationalBackground = @eb,Skills =@skills where Id = @id", con);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id",id);
             cmd.Parameters.AddWithValue("@fn", fullName);
             cmd.Parameters.AddWithValue("@dob", dob);
             cmd.Parameters.AddWithValue("@gender", gender);
@@ -158,7 +159,7 @@ namespace IOOP_Assignment
 
             int rowAffected = cmd.ExecuteNonQuery();
 
-            if (rowAffected != 0)
+            if(rowAffected!=0)
             {
                 status = "Manager update successful.";
             }
@@ -170,6 +171,7 @@ namespace IOOP_Assignment
             return status;
 
         }
+
         //delete manager
         public string deleteManager(string id)
         {
@@ -200,14 +202,16 @@ namespace IOOP_Assignment
                 }
             }
 
-            if (success)
+            if(success)
             {
-                status = "Manager Deleted Successfully.";
+                    status = "Manager Deleted Successfully.";
             }
 
-            con.Close();
+            con.Close() ;
             return status;
 
         }
+
     }
+
 }

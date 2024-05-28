@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment
+namespace trial_2
 {
     public partial class ChefHomePage : Form
     {
