@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminViewChef : Form
     {
@@ -29,7 +29,7 @@ namespace trial_2
             con.Open();
             string query;
 
-            if(string.IsNullOrEmpty(chefId))
+            if (string.IsNullOrEmpty(chefId))
             {
                 query = "Select * from chef";
             }
@@ -38,9 +38,9 @@ namespace trial_2
                 query = "Select * from chef where Id = @ChefId";
             }
 
-            SqlDataAdapter da = new SqlDataAdapter(query,con);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
 
-            if(!string.IsNullOrEmpty(chefId))
+            if (!string.IsNullOrEmpty(chefId))
             {
                 da.SelectCommand.Parameters.AddWithValue("@ChefId", chefId);
             }
@@ -56,7 +56,7 @@ namespace trial_2
             cmbChefID.Items.Clear();
             DataTable dt = chef.GetChefId();
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 cmbChefID.Items.Add(dr["Id"].ToString());
 

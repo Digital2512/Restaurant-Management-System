@@ -9,22 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminUpdateDeleteChef : Form
     {
         private Chef chef;
-
         public AdminUpdateDeleteChef()
         {
             InitializeComponent();
             string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
             chef = new Chef(connectionString);
-        }
-
-        private void lblUpdateDeleteChef_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FillComboSearchCode()
@@ -43,25 +37,25 @@ namespace trial_2
         {
             DataTable dt = chef.GetChefById(cmbChefID.Text);
 
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
                 txtFullName.Text = row["fullName"].ToString();
                 dtpDob.Value = DateTime.Parse(row["dateOfBirth"].ToString());
 
                 string gender = row["Gender"].ToString();
-                if(gender =="Male")
+                if (gender == "Male")
                 {
                     rdbtnMale.Checked = true;
 
                 }
-                else if(gender =="Female")
+                else if (gender == "Female")
                 {
                     rdbtnFemale.Checked = true;
                 }
 
                 txtPhoneNumber.Text = row["phoneNumber"].ToString();
-                txtEmail.Text = row["Email"].ToString() ;
+                txtEmail.Text = row["Email"].ToString();
 
                 string chefPositions = row["chefPositions"].ToString();
                 lstchefPosition.SelectedItem = chefPositions;
@@ -76,10 +70,10 @@ namespace trial_2
             string[] selectedSkills = skills.Split(',');
             foreach (string s in selectedSkills)
             {
-                switch(s.Trim())
+                switch (s.Trim())
                 {
                     case "Knife Skills":
-                        checkBox1.Checked = true; 
+                        checkBox1.Checked = true;
                         break;
                     case "Cookig Techniques":
                         checkBox2.Checked = true;
@@ -99,6 +93,7 @@ namespace trial_2
                 }
             }
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -120,7 +115,7 @@ namespace trial_2
         {
             List<string> selectedSkills = new List<string>();
 
-            foreach(CheckBox chk in grpboxSkills.Controls.OfType<CheckBox>())
+            foreach (CheckBox chk in grpboxSkills.Controls.OfType<CheckBox>())
             {
                 if (chk.Checked)
                 {
@@ -139,7 +134,6 @@ namespace trial_2
             FillComboSearchCode(); //refresh combo box
             ClearForm();
         }
-
         private void ClearForm()
         {
             cmbChefID.Text = string.Empty;
@@ -150,7 +144,7 @@ namespace trial_2
             txtPhoneNumber.Text = string.Empty;
             txtEmail.Text = string.Empty;
             lstchefPosition.SelectedItem = null;
-            foreach(CheckBox check in grpboxSkills.Controls.OfType<CheckBox>())
+            foreach (CheckBox check in grpboxSkills.Controls.OfType<CheckBox>())
             {
                 check.Checked = false;
             }
@@ -169,4 +163,5 @@ namespace trial_2
             mu.Show();
         }
     }
+
 }
