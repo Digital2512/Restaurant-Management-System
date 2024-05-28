@@ -123,5 +123,100 @@
   </data>
   <data name="errorImageSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\errorImageSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="burgerImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\burgerImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizzaImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\pizzaImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smoothieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\smoothieImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pastaImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\pastaImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profileIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\profileIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReservationButtonBGChanged1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\ReservationButtonBGChanged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\searchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passwordShowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\passwordShowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\backIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReservationButtonBGChanged2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\ReservationButtonBGChanged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orderIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\orderIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrderButtonBGChanged1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\OrderButtonBGChanged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrderButtonResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\OrderButtonResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3LinesSidebarIconResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\3LinesSidebarIconResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passwordHideIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\passwordHideIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReservationButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\ReservationButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FeedbackButtonBGChanged1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\FeedbackButtonBGChanged1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\backIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feedbackIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\feedbackIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrderButtonBGChangedResized1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\OrderButtonBGChangedResized1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reservationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\reservationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\backIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrderButtonBGChanged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\OrderButtonBGChanged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrderButtonBGChangedResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\OrderButtonBGChangedResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\logoutIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReservationButtonBGChanged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\ReservationButtonBGChanged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\addIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saladImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\saladImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="booking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\booking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
