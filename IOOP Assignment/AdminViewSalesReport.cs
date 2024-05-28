@@ -5,7 +5,6 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,12 +22,11 @@ namespace IOOP_Assignment
             LoadSalesData();
             dgvSalesReport.DataSource = salesData;
             FilterData();
-
         }
 
         private void LoadSalesData()
         {
-            using(SqlConnection con = new SqlConnection(conectionString))
+            using (SqlConnection con = new SqlConnection(conectionString))
             {
                 string query = "Select * From SalesReport";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -36,7 +34,6 @@ namespace IOOP_Assignment
                 da.Fill(salesData);
             }
         }
-
         private void FilterData()
         {
             cmbMonth.Items.AddRange(new string[]
@@ -53,19 +50,17 @@ namespace IOOP_Assignment
                     con.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while(reader.Read())
+                        while (reader.Read())
                         {
                             cmbCategory.Items.Add(reader["Cuisines"].ToString());
                         }
                     }
                 }
             }
-
-
             using (SqlConnection con = new SqlConnection(conectionString))
             {
                 string query = "Select distinct UserID from Users where UserID like 'CH%'";
-                using(SqlCommand cmd = new SqlCommand(query,con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     con.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -79,7 +74,10 @@ namespace IOOP_Assignment
             }
         }
 
+        private void AdminViewSalesReport_Load(object sender, EventArgs e)
+        {
 
+        }
 
         private void LoadSalesData(int month, string Cuisines, string chefID)
         {
@@ -113,8 +111,6 @@ namespace IOOP_Assignment
                 lblTotalAmount.Text = $"Total Amount: {totalAmount:C}";
                 lblOrderCount.Text = $"Order Count: {orderCount}";
             }
-
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -124,14 +120,7 @@ namespace IOOP_Assignment
             string chefID = cmbChefID.SelectedItem?.ToString();
 
             LoadSalesData(month, category, chefID);
-
-
         }
-
-        private void AdminViewSalesReport_Load(object sender, EventArgs e)
-        {
-
-            }
 
         private void btnBack_Click(object sender, EventArgs e)
         {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUpdateProfile));
             this.lblAdminUpdateProfile = new System.Windows.Forms.Label();
             this.lblUserIDTitle = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@
             this.lblAdminUpdateProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdminUpdateProfile.Location = new System.Drawing.Point(306, 54);
             this.lblAdminUpdateProfile.Name = "lblAdminUpdateProfile";
-            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(359, 39);
+            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(344, 38);
             this.lblAdminUpdateProfile.TabIndex = 0;
             this.lblAdminUpdateProfile.Text = "Admin Update Profile";
             // 
@@ -179,7 +178,6 @@
             // 
             // pboxAdmin
             // 
-            this.pboxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pboxAdmin.Image")));
             this.pboxAdmin.Location = new System.Drawing.Point(609, 154);
             this.pboxAdmin.Name = "pboxAdmin";
             this.pboxAdmin.Size = new System.Drawing.Size(210, 127);

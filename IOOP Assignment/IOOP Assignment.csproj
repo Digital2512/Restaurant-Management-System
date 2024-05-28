@@ -64,98 +64,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminAddChef.cs">
+    <Compile Include="cartProductButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cartProductButton.Designer.cs">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminAddChef.Designer.cs">
-      <DependentUpon>AdminAddChef.cs</DependentUpon>
+    <Compile Include="CustomerFeedbackPage.Designer.cs">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminAddCustomer.cs">
+    <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminAddCustomer.Designer.cs">
-      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
+    <Compile Include="CustomerHomePage.Designer.cs">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminAddManager.cs">
+    <Compile Include="CustomerIndividualProductPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminAddManager.Designer.cs">
-      <DependentUpon>AdminAddManager.cs</DependentUpon>
+    <Compile Include="CustomerIndividualProductPage.Designer.cs">
+      <DependentUpon>CustomerIndividualProductPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminHomePage.cs">
+    <Compile Include="CustomerIndividualReservationPlacePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminHomePage.Designer.cs">
-      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    <Compile Include="CustomerIndividualReservationPlacePage.Designer.cs">
+      <DependentUpon>CustomerIndividualReservationPlacePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminManageUsers.cs">
+    <Compile Include="CustomerOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminManageUsers.Designer.cs">
-      <DependentUpon>AdminManageUsers.cs</DependentUpon>
+    <Compile Include="CustomerOrderPage.Designer.cs">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminUpdateDeleteChef.cs">
+    <Compile Include="CustomerProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminUpdateDeleteChef.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
+    <Compile Include="CustomerProfilePage.Designer.cs">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminUpdateDeleteCustomer.cs">
+    <Compile Include="CustomerReservationPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminUpdateDeleteCustomer.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
+    <Compile Include="CustomerReservationPage.Designer.cs">
+      <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminUpdateDeleteManager.cs">
+    <Compile Include="CustomerSuccessfulPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminUpdateDeleteManager.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
+    <Compile Include="CustomerSuccessfulPayment.Designer.cs">
+      <DependentUpon>CustomerSuccessfulPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminUpdateProfile.cs">
+    <Compile Include="CustomerUpdateProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminUpdateProfile.Designer.cs">
-      <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
+    <Compile Include="CustomerUpdateProfilePage.Designer.cs">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminViewChef.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminViewChef.Designer.cs">
-      <DependentUpon>AdminViewChef.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminViewCustomer.Designer.cs">
-      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewFeedback.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminViewFeedback.Designer.cs">
-      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminViewManager.Designer.cs">
-      <DependentUpon>AdminViewManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewSalesReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminViewSalesReport.Designer.cs">
-      <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef.cs" />
-    <Compile Include="ChefHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChefHomePage.Designer.cs">
-      <DependentUpon>ChefHomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -163,62 +131,34 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="ManagerHomePage.cs">
-      <SubType>Form</SubType>
+    <Compile Include="placeButton.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerHomePage.Designer.cs">
-      <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    <Compile Include="placeButton.Designer.cs">
+      <DependentUpon>placeButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="foodButton.cs">
+    <Compile Include="productButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="foodButton.Designer.cs">
-      <DependentUpon>foodButton.cs</DependentUpon>
+    <Compile Include="productButton.Designer.cs">
+      <DependentUpon>productButton.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminAddChef.resx">
-      <DependentUpon>AdminAddChef.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerFeedbackPage.resx">
+      <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminAddCustomer.resx">
-      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminAddManager.resx">
-      <DependentUpon>AdminAddManager.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerOrderPage.resx">
+      <DependentUpon>CustomerOrderPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminHomePage.resx">
-      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerProfilePage.resx">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminManageUsers.resx">
-      <DependentUpon>AdminManageUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminUpdateDeleteChef.resx">
-      <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminUpdateDeleteCustomer.resx">
-      <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminUpdateDeleteManager.resx">
-      <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminUpdateProfile.resx">
-      <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminViewChef.resx">
-      <DependentUpon>AdminViewChef.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminViewCustomer.resx">
-      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminViewFeedback.resx">
-      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminViewManager.resx">
-      <DependentUpon>AdminViewManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminViewSalesReport.resx">
-      <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerUpdateProfilePage.resx">
+      <DependentUpon>CustomerUpdateProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -233,9 +173,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="foodButton.resx">
-      <DependentUpon>foodButton.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

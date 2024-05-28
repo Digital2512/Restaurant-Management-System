@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,19 +13,12 @@ namespace IOOP_Assignment
 {
     public partial class AdminUpdateDeleteManager : Form
     {
-
         private Manager manager;
         public AdminUpdateDeleteManager()
-
         {
             InitializeComponent();
-            string connctionString =ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connctionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
             manager = new Manager(connctionString);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FillComboSearchCode()
@@ -39,11 +30,6 @@ namespace IOOP_Assignment
             {
                 cmbManagerID.Items.Add(dr["Id"].ToString());
             }
-        }
-
-        private void AdminUpdateManager_Load(object sender, EventArgs e)
-        {
-            FillComboSearchCode();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -76,17 +62,16 @@ namespace IOOP_Assignment
 
             }
         }
-
         private void SetSkillsCheckBoxes(string skills)
         {
             string[] selectedSkills = skills.Split(',');
 
             foreach (string s in selectedSkills)
             {
-                switch(s.Trim())
+                switch (s.Trim())
                 {
                     case "Food And Beverage Knowledge":
-                        checkBox1.Checked= true; 
+                        checkBox1.Checked = true;
                         break;
                     case "Inventory Management":
                         checkBox2.Checked = true;
@@ -120,7 +105,6 @@ namespace IOOP_Assignment
                 selectedSkills);
 
             MessageBox.Show(status);
-
         }
 
         private string GetSelectedSkills()
@@ -152,7 +136,7 @@ namespace IOOP_Assignment
         private void ClearForm()
         {
             cmbManagerID.Text = string.Empty;
-            txtfullName.Text = string.Empty;    
+            txtfullName.Text = string.Empty;
             dtpDob.Text = string.Empty;
             rdbtnMale.Checked = false;
             rdbtnFemale.Checked = false;
@@ -165,9 +149,9 @@ namespace IOOP_Assignment
             }
         }
 
-        private void lbleducationalBackground_Click(object sender, EventArgs e)
+        private void AdminUpdateDeleteManager_Load(object sender, EventArgs e)
         {
-
+            FillComboSearchCode();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -177,5 +161,4 @@ namespace IOOP_Assignment
             mu.Show();
         }
     }
-
 }
