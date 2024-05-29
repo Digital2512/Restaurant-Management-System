@@ -168,5 +168,10 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void headerPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

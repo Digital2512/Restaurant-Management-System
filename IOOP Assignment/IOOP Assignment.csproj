@@ -154,6 +154,10 @@
     <Compile Include="AdminViewSalesReport.Designer.cs">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="cartProductButton.cs" />
+    <Compile Include="cartProductButton.Designer.cs">
+      <DependentUpon>cartProductButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChefHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,7 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerCartPage.resx">
       <DependentUpon>CustomerCartPage.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="foodButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="foodButton.Designer.cs">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChefHomePage.resx">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,7 +382,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminViewSalesReport.resx">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChefInventoryPage.resx">
       <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </EmbeddedResource>
