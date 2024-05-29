@@ -52,6 +52,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -169,6 +170,29 @@
     <Compile Include="CustomerCartPage.Designer.cs">
       <DependentUpon>CustomerCartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefOrderDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefOrderDetailsForm.Designer.cs">
+      <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefRecipeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefRecipeManagement.Designer.cs">
+      <DependentUpon>ChefRecipeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOOPDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IOOPDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +249,23 @@
     </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="ChefInventoryPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefInventoryPage.Designer.cs">
+      <DependentUpon>ChefInventoryPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefProfileForm.Designer.cs">
+      <DependentUpon>ChefProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOOPDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +302,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerCartPage.resx">
       <DependentUpon>CustomerCartPage.cs</DependentUpon>
+    <Compile Include="foodButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="foodButton.Designer.cs">
+      <DependentUpon>foodButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChefHomePage.resx">
+      <DependentUpon>ChefHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefOrderDetailsForm.resx">
+      <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefProfileForm.resx">
+      <DependentUpon>ChefProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerFeedbackPage.resx">
       <DependentUpon>CustomerFeedbackPage.cs</DependentUpon>
@@ -327,6 +382,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminViewSalesReport.resx">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+    <EmbeddedResource Include="ChefInventoryPage.resx">
+      <DependentUpon>ChefInventoryPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefRecipeManagement.resx">
+      <DependentUpon>ChefRecipeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -342,6 +402,39 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="IOOPDatabaseDataSet.xsc">
+      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOOPDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOOPDatabaseDataSet.xss">
+      <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xsc">
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOOPDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xss">
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xsc">
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOOPDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xss">
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -404,6 +497,8 @@
     <None Include="Resources\close.png" />
     <None Include="Resources\success.png" />
     <None Include="Resources\recycle-bin.png" />
+    <None Include="Resources\menu icon %281%29.png" />
+    <None Include="Resources\menu icon.png" />
     <None Include="Resources\eye.png" />
     <None Include="PictureFolder\addIcon.png" />
     <None Include="Resources\add.png" />
