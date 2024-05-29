@@ -47,19 +47,26 @@
             this.T08 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.BbackH = new System.Windows.Forms.Button();
-            this.OrderReceived = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.LblTableSelectedShow = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.BtnOrderUpdate = new System.Windows.Forms.Button();
+            this.LblChefID = new System.Windows.Forms.Label();
+            this.LblChefIDShow = new System.Windows.Forms.Label();
+            this.comboBoxOrderTable = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxProductID = new System.Windows.Forms.ComboBox();
+            this.comboBoxChefReceived = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnOrderCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,7 +81,7 @@
             this.panel1.Controls.Add(this.LBvieworder);
             this.panel1.Location = new System.Drawing.Point(-15, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(980, 75);
+            this.panel1.Size = new System.Drawing.Size(1049, 75);
             this.panel1.TabIndex = 0;
             // 
             // lblrealtime
@@ -239,7 +246,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(522, 473);
+            this.button10.Location = new System.Drawing.Point(426, 565);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(8, 8);
             this.button10.TabIndex = 3;
@@ -247,27 +254,18 @@
             // 
             // BbackH
             // 
-            this.BbackH.Location = new System.Drawing.Point(876, 577);
+            this.BbackH.Location = new System.Drawing.Point(921, 657);
             this.BbackH.Name = "BbackH";
-            this.BbackH.Size = new System.Drawing.Size(70, 23);
+            this.BbackH.Size = new System.Drawing.Size(92, 35);
             this.BbackH.TabIndex = 9;
             this.BbackH.Text = "Back";
             this.BbackH.UseVisualStyleBackColor = true;
             this.BbackH.Click += new System.EventHandler(this.BbackH_Click);
             // 
-            // OrderReceived
-            // 
-            this.OrderReceived.FormattingEnabled = true;
-            this.OrderReceived.ItemHeight = 16;
-            this.OrderReceived.Location = new System.Drawing.Point(217, 457);
-            this.OrderReceived.Name = "OrderReceived";
-            this.OrderReceived.Size = new System.Drawing.Size(186, 132);
-            this.OrderReceived.TabIndex = 10;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(519, 442);
+            this.label1.Location = new System.Drawing.Point(423, 534);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 11;
@@ -276,25 +274,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(519, 469);
+            this.label2.Location = new System.Drawing.Point(423, 561);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Quantity :";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(519, 500);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Price : ";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(519, 529);
+            this.label4.Location = new System.Drawing.Point(426, 592);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 14;
@@ -303,7 +292,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(519, 558);
+            this.label5.Location = new System.Drawing.Point(82, 592);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 16);
             this.label5.TabIndex = 15;
@@ -312,7 +301,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(657, 442);
+            this.label6.Location = new System.Drawing.Point(561, 534);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 16;
@@ -321,43 +310,34 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(657, 473);
+            this.label7.Location = new System.Drawing.Point(561, 565);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "label7";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(657, 500);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "label8";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(657, 529);
+            this.label9.Location = new System.Drawing.Point(564, 592);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 19;
             this.label9.Text = "label9";
             // 
-            // label10
+            // LblTableSelectedShow
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(657, 558);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 16);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "label10";
+            this.LblTableSelectedShow.AutoSize = true;
+            this.LblTableSelectedShow.Location = new System.Drawing.Point(220, 592);
+            this.LblTableSelectedShow.Name = "LblTableSelectedShow";
+            this.LblTableSelectedShow.Size = new System.Drawing.Size(51, 16);
+            this.LblTableSelectedShow.TabIndex = 20;
+            this.LblTableSelectedShow.Text = "label10";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(519, 587);
+            this.label11.Location = new System.Drawing.Point(423, 630);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(134, 16);
             this.label11.TabIndex = 21;
@@ -366,30 +346,126 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(657, 587);
+            this.label12.Location = new System.Drawing.Point(561, 630);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 16);
             this.label12.TabIndex = 22;
             this.label12.Text = "label12";
             // 
+            // BtnOrderUpdate
+            // 
+            this.BtnOrderUpdate.Location = new System.Drawing.Point(723, 610);
+            this.BtnOrderUpdate.Name = "BtnOrderUpdate";
+            this.BtnOrderUpdate.Size = new System.Drawing.Size(78, 57);
+            this.BtnOrderUpdate.TabIndex = 23;
+            this.BtnOrderUpdate.Text = "Update Status";
+            this.BtnOrderUpdate.UseVisualStyleBackColor = true;
+            this.BtnOrderUpdate.Click += new System.EventHandler(this.BtnOrderUpdate_Click_1);
+            // 
+            // LblChefID
+            // 
+            this.LblChefID.AutoSize = true;
+            this.LblChefID.Location = new System.Drawing.Point(423, 503);
+            this.LblChefID.Name = "LblChefID";
+            this.LblChefID.Size = new System.Drawing.Size(116, 16);
+            this.LblChefID.TabIndex = 24;
+            this.LblChefID.Text = "Chef In Charged ： ";
+            // 
+            // LblChefIDShow
+            // 
+            this.LblChefIDShow.AutoSize = true;
+            this.LblChefIDShow.Location = new System.Drawing.Point(561, 503);
+            this.LblChefIDShow.Name = "LblChefIDShow";
+            this.LblChefIDShow.Size = new System.Drawing.Size(98, 16);
+            this.LblChefIDShow.TabIndex = 25;
+            this.LblChefIDShow.Text = "LblChefIDShow";
+            // 
+            // comboBoxOrderTable
+            // 
+            this.comboBoxOrderTable.FormattingEnabled = true;
+            this.comboBoxOrderTable.Location = new System.Drawing.Point(206, 454);
+            this.comboBoxOrderTable.Name = "comboBoxOrderTable";
+            this.comboBoxOrderTable.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxOrderTable.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 457);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 16);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Order in the table ： ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(441, 465);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 16);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Product ID ; ";
+            // 
+            // comboBoxProductID
+            // 
+            this.comboBoxProductID.FormattingEnabled = true;
+            this.comboBoxProductID.Location = new System.Drawing.Point(564, 457);
+            this.comboBoxProductID.Name = "comboBoxProductID";
+            this.comboBoxProductID.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxProductID.TabIndex = 31;
+            // 
+            // comboBoxChefReceived
+            // 
+            this.comboBoxChefReceived.FormattingEnabled = true;
+            this.comboBoxChefReceived.Location = new System.Drawing.Point(206, 514);
+            this.comboBoxChefReceived.Name = "comboBoxChefReceived";
+            this.comboBoxChefReceived.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxChefReceived.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 522);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(158, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Order Received by chef : ";
+            // 
+            // BtnOrderCancel
+            // 
+            this.BtnOrderCancel.Location = new System.Drawing.Point(249, 630);
+            this.BtnOrderCancel.Name = "BtnOrderCancel";
+            this.BtnOrderCancel.Size = new System.Drawing.Size(78, 57);
+            this.BtnOrderCancel.TabIndex = 34;
+            this.BtnOrderCancel.Text = "cancel";
+            this.BtnOrderCancel.UseVisualStyleBackColor = true;
+            this.BtnOrderCancel.Click += new System.EventHandler(this.BtnOrderCancel_Click_1);
+            // 
             // ChefOrderDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 612);
+            this.ClientSize = new System.Drawing.Size(1025, 704);
+            this.Controls.Add(this.BtnOrderCancel);
+            this.Controls.Add(this.comboBoxChefReceived);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.comboBoxProductID);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxOrderTable);
+            this.Controls.Add(this.LblChefIDShow);
+            this.Controls.Add(this.LblChefID);
+            this.Controls.Add(this.BtnOrderUpdate);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.LblTableSelectedShow);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.OrderReceived);
             this.Controls.Add(this.BbackH);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.groupBox2);
@@ -397,7 +473,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChefOrderDetailsForm";
-            this.Text = "Form1";
+            this.Text = "Update Status";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -428,18 +504,25 @@
         private System.Windows.Forms.Button BbackH;
         private System.Windows.Forms.Button T10;
         private System.Windows.Forms.Button T09;
-        private System.Windows.Forms.ListBox OrderReceived;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label LblTableSelectedShow;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button BtnOrderUpdate;
+        private System.Windows.Forms.Label LblChefID;
+        private System.Windows.Forms.Label LblChefIDShow;
+        private System.Windows.Forms.ComboBox comboBoxOrderTable;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxProductID;
+        private System.Windows.Forms.ComboBox comboBoxChefReceived;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BtnOrderCancel;
     }
 }

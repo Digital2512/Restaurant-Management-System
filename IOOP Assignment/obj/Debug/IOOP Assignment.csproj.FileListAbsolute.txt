@@ -41,3 +41,4 @@ C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\
 C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefOrderDetailsForm.resources
 C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefInventoryForm.resources
 C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefProfileForm.resources
+C:\Users\VIVOBOOK\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefRecipeManagement.resources

@@ -13,6 +13,7 @@ namespace IOOP_Assignment
         private System.Timers.Timer timer;
         private string[] ButtonsToUpdate = { "V01", "V02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
         private string userid;
+        private string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
 
         public ChefOrderDetailsForm(string userid)
         {
@@ -37,7 +38,10 @@ namespace IOOP_Assignment
                 }
             }
 
-            OrderReceived.SelectedIndexChanged += OrderReceived_SelectedIndexChanged;
+            comboBoxOrderTable.SelectedIndexChanged += comboBoxOrderTable_SelectedIndexChanged;
+            comboBoxChefReceived.SelectedIndexChanged += comboBoxChefReceived_SelectedIndexChanged;
+            comboBoxProductID.SelectedIndexChanged += comboBoxProductID_SelectedIndexChanged;
+            LoadChefOrders();
         }
 
         private void UpdateButtonColor(Button button)
@@ -48,42 +52,29 @@ namespace IOOP_Assignment
             {
                 if (orderStatus == "In Progress")
                 {
-                    button.BackColor = Color.Yellow;
-                }
-                else if (orderStatus == "Completed")
-                {
-                    button.BackColor = Color.Green;
+                    button.BackColor = Color.Red;
                 }
                 else if (orderStatus == "Pending")
                 {
-                    button.BackColor = Color.DarkGray;
+                    button.BackColor = Color.Yellow;
                 }
                 else
                 {
-                    button.BackColor = SystemColors.Control;
+                    button.BackColor = Color.Green;
                 }
             });
         }
 
         private string GetOrderStatusForTable(string tableNumber)
         {
-            string query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = @TableNumber AND ChefID IS NULL ORDER BY OrderDateTime ASC";
+            string query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = @TableNumber ORDER BY OrderDateTime DESC";
             SqlParameter[] parameters = { new SqlParameter("@TableNumber", tableNumber) };
 
-            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
                 return dataTable.Rows[0]["Status"].ToString();
-            }
-            else
-            {
-                query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = @TableNumber ORDER BY OrderDateTime DESC";
-                dataTable = Utility.ExecuteSqlQuery(query, parameters);
-                if (dataTable.Rows.Count > 0)
-                {
-                    return dataTable.Rows[0]["Status"].ToString();
-                }
             }
 
             return "Unknown";
@@ -96,72 +87,93 @@ namespace IOOP_Assignment
 
             if (tableNumber != null)
             {
-                string query = @"
-                        SELECT TOP 1 
-                            o.OrderID, 
-                            od.ProductID, 
-                            od.Quantity, 
-                            o.OrderDateTime, 
-                            o.TableNumber, 
-                            o.Status, 
-                            o.EstimatedTimeLeft, 
-                            od.OrderSpecialInstructions, 
-                            od.Price
-                        FROM Orders o
-                        JOIN OrderDetails od ON o.OrderID = od.OrderID
-                        WHERE o.TableNumber = @TableNumber AND o.ChefID IS NULL
-                        ORDER BY o.OrderDateTime ASC";
+                MessageBox.Show($"Table {tableNumber} chosen. Please select the order ID from the combo box below.");
+                comboBoxChefReceived.Enabled = false;
+
+                // Clear previous selection and reset UI
+                BtnOrderCancel_Click_1(sender, e);
+
+                // Set table number in label
+                LblTableSelectedShow.Text = tableNumber;
+
+                string query = "SELECT OrderID FROM Orders WHERE TableNumber = @TableNumber AND (Status = 'Pending' OR Status = 'In Progress')";
                 SqlParameter[] parameters = { new SqlParameter("@TableNumber", tableNumber) };
 
-                DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
+                DataTable dataTable = ExecuteSqlQuery(query, parameters);
 
-                if (dataTable.Rows.Count > 0)
+                comboBoxOrderTable.Items.Clear();
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    DataRow row = dataTable.Rows[0];
-                    string orderID = row["OrderID"].ToString();
-                    string productID = row["ProductID"].ToString();
-                    int quantity = Convert.ToInt32(row["Quantity"]);
-                    DateTime orderDateTime = Convert.ToDateTime(row["OrderDateTime"]);
-                    string status = row["Status"].ToString();
-                    string estimatedTimeLeft = row["EstimatedTimeLeft"].ToString();
-                    string specialInstructions = row["OrderSpecialInstructions"].ToString();
-                    string price = row["Price"].ToString();
+                    comboBoxOrderTable.Items.Add(row["OrderID"].ToString());
+                }
+            }
+        }
 
-                    string message = $"Order ID: {orderID}\nProduct ID: {productID}\nQuantity: {quantity}\nOrder Date Time: {orderDateTime}\nTable Number: {tableNumber}\nStatus: {status}\nEstimated Time Left: {estimatedTimeLeft}\nSpecial Instructions: {specialInstructions}\nPrice: {price}";
-                    string caption = "Order Details";
+        private void comboBoxOrderTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxOrderTable.SelectedItem != null)
+            {
+                string orderID = comboBoxOrderTable.SelectedItem.ToString();
+                LoadOrderDetails(orderID);
+                comboBoxChefReceived.Enabled = false;
+                BtnOrderCancel.Enabled = true;
+            }
+        }
 
-                    var result = MessageBox.Show(message + "\n\nReceive this order?", caption, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+        private void comboBoxChefReceived_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxChefReceived.SelectedItem != null)
+            {
+                string orderID = comboBoxChefReceived.SelectedItem.ToString();
+                LoadOrderDetails(orderID);
+                comboBoxOrderTable.Enabled = false;
+            }
+        }
 
-                    if (result == DialogResult.Yes)
+        private void comboBoxProductID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxProductID.SelectedItem != null)
+            {
+                string productID = comboBoxProductID.SelectedItem.ToString();
+                if (comboBoxOrderTable.SelectedItem != null)
+                {
+                    string orderID = comboBoxOrderTable.SelectedItem.ToString();
+
+                    string query = @"
+                        SELECT 
+                            od.ProductID,
+                            od.Quantity,
+                            od.Price,
+                            m.Name AS ProductName
+                        FROM 
+                            OrderDetails od
+                        JOIN
+                            Menu m ON od.ProductID = m.ProductID
+                        WHERE 
+                            od.OrderID = @OrderID AND od.ProductID = @ProductID";
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@OrderID", orderID),
+                        new SqlParameter("@ProductID", productID)
+                    };
+
+                    DataTable dataTable = ExecuteSqlQuery(query, parameters);
+
+                    if (dataTable.Rows.Count > 0)
                     {
-                        string updateQuery = $"UPDATE Orders SET ChefID = @ChefID, Status = 'In Progress' WHERE OrderID = @OrderID";
-                        SqlParameter[] updateParameters = {
-                            new SqlParameter("@ChefID", this.userid),
-                            new SqlParameter("@OrderID", orderID)
-                        };
-                        Utility.ExecuteSqlCommand(updateQuery, updateParameters);
-
-                        OrderReceived.Items.Add(orderID);
-                        UpdateButtonColor(clickedButton);
+                        DataRow row = dataTable.Rows[0];
+                        label6.Text = row["ProductName"].ToString();
+                        label7.Text = row["Quantity"].ToString();
+                        label8.Text = row["Price"].ToString(); // Ensure this label is updated if it exists
+                    }
+                    else
+                    {
+                        MessageBox.Show("No details found for the selected product.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No order found for this table.");
+                    MessageBox.Show("Please select an order from the order table combo box first.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Invalid button clicked.");
-            }
-        }
-
-        private void OrderReceived_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (OrderReceived.SelectedItem != null)
-            {
-                string orderID = OrderReceived.SelectedItem.ToString();
-                LoadOrderDetails(orderID);
             }
         }
 
@@ -173,30 +185,271 @@ namespace IOOP_Assignment
                     od.ProductID,
                     od.Quantity,
                     od.Price,
-                    od.OrderSpecialInstructions,
                     o.Status,
+                    o.ChefID,
                     o.TableNumber,
-                    o.EstimatedTimeLeft
+                    o.EstimatedTimeLeft,
+                    m.Name AS ProductName
                 FROM 
                     Orders o
                 JOIN 
                     OrderDetails od ON o.OrderID = od.OrderID
+                JOIN
+                    Menu m ON od.ProductID = m.ProductID
                 WHERE 
-                    o.OrderID = @orderID;";
-            SqlParameter[] parameters = { new SqlParameter("@orderID", orderID) };
+                    o.OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+
+            comboBoxProductID.Items.Clear(); // Clear previous items
 
             if (dataTable.Rows.Count > 0)
             {
-                DataRow row = dataTable.Rows[0];
-                label6.Text = row["ProductID"].ToString();
-                label7.Text = row["Quantity"].ToString();
-                label8.Text = row["Price"].ToString();
-                label9.Text = row["Status"].ToString();
-                label10.Text = row["TableNumber"].ToString();
-                label12.Text = row["EstimatedTimeLeft"].ToString();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    comboBoxProductID.Items.Add(row["ProductID"].ToString());
+                }
+
+                // Load the first product details by default
+                DataRow firstRow = dataTable.Rows[0];
+                LblChefIDShow.Text = firstRow["ChefID"].ToString();
+                label6.Text = firstRow["ProductName"].ToString();
+                label7.Text = firstRow["Quantity"].ToString();
+                label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
+                label9.Text = firstRow["Status"].ToString();
+                LblTableSelectedShow.Text = firstRow["TableNumber"].ToString();
+                label12.Text = firstRow["EstimatedTimeLeft"].ToString();
+
+                comboBoxProductID.SelectedIndex = 0; // Select the first item by default
+
+                label6.Visible = true;
+                label7.Visible = true;
+                label8.Visible = true;
+                label9.Visible = true;
+                LblTableSelectedShow.Visible = true;
+                label12.Visible = true;
             }
+        }
+
+        private void BtnOrderUpdate_Click_1(object sender, EventArgs e)
+        {
+            if (comboBoxOrderTable.SelectedItem != null || comboBoxChefReceived.SelectedItem != null)
+            {
+                string orderID = comboBoxOrderTable.SelectedItem != null ? comboBoxOrderTable.SelectedItem.ToString() : comboBoxChefReceived.SelectedItem.ToString();
+                string query = "SELECT Status FROM Orders WHERE OrderID = @OrderID";
+                SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+                DataTable dataTable = ExecuteSqlQuery(query, parameters);
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    string status = row["Status"].ToString();
+
+                    if (status == "Pending")
+                    {
+                        int totalQuantity = CalculateTotalQuantity(orderID);
+                        string productNames = GetProductNamesFromOrder(orderID);
+
+                        // Calculate estimated time left (10 minutes per product)
+                        int estimatedTimeLeft = totalQuantity * 10;
+
+                        var result = MessageBox.Show($"Do you want to update the order status to 'In Progress'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            string updateQuery = "UPDATE Orders SET Status = 'In Progress', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
+                            SqlParameter[] updateParameters = {
+                                new SqlParameter("@OrderID", orderID),
+                                new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft + " minutes"),
+                                new SqlParameter("@ChefID", this.userid)
+                            };
+                            ExecuteSqlCommand(updateQuery, updateParameters);
+                            MessageBox.Show("Order status updated to In Progress.");
+                            LoadOrderDetails(orderID); // Update the labels with the new details
+                            LoadChefOrders();
+                        }
+                    }
+                    else if (status == "In Progress")
+                    {
+                        string productID = GetProductIDFromOrder(orderID);
+                        int quantity = GetQuantityFromOrder(orderID);
+
+                        var result = MessageBox.Show($"Do you want to update the order status to 'Completed'?\n\nOrder ID: {orderID}\nProduct Name: {productID}", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            DeductInventory(productID, quantity);
+
+                            string updateQuery = "UPDATE Orders SET Status = 'Completed', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
+                            SqlParameter[] updateParameters = { new SqlParameter("@OrderID", orderID) };
+                            ExecuteSqlCommand(updateQuery, updateParameters);
+                            MessageBox.Show("Order status updated to Completed.");
+                            LoadOrderDetails(orderID); // Update the labels with the new details
+                            LoadChefOrders();
+                            UpdateButtonColorAfterCompletion(orderID);
+                        }
+                    }
+                    else if (status == "Completed")
+                    {
+                        MessageBox.Show("Order is already completed.");
+                    }
+                }
+            }
+        }
+
+        private int CalculateTotalQuantity(string orderID)
+        {
+            string query = "SELECT SUM(Quantity) AS TotalQuantity FROM OrderDetails WHERE OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            if (dataTable.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dataTable.Rows[0]["TotalQuantity"]);
+            }
+            return 0;
+        }
+
+        private string GetProductNamesFromOrder(string orderID)
+        {
+            string query = "SELECT m.Name FROM OrderDetails od JOIN Menu m ON od.ProductID = m.ProductID WHERE od.OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            string productNames = string.Join(", ", dataTable.Rows.Cast<DataRow>().Select(row => row["Name"].ToString()));
+            return productNames;
+        }
+
+        private string GetProductIDFromOrder(string orderID)
+        {
+            string query = "SELECT TOP 1 ProductID FROM OrderDetails WHERE OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            if (dataTable.Rows.Count > 0)
+            {
+                return dataTable.Rows[0]["ProductID"].ToString();
+            }
+            return string.Empty;
+        }
+
+        private int GetQuantityFromOrder(string orderID)
+        {
+            string query = "SELECT SUM(Quantity) AS TotalQuantity FROM OrderDetails WHERE OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            if (dataTable.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dataTable.Rows[0]["TotalQuantity"]);
+            }
+            return 0;
+        }
+
+        private void UpdateButtonColorAfterCompletion(string orderID)
+        {
+            string query = "SELECT TableNumber FROM Orders WHERE OrderID = @OrderID";
+            SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            if (dataTable.Rows.Count > 0)
+            {
+                string tableNumber = dataTable.Rows[0]["TableNumber"].ToString();
+                Button button = Controls.Find(tableNumber, true).FirstOrDefault() as Button;
+                if (button != null)
+                {
+                    button.BackColor = Color.Green;
+                }
+            }
+        }
+
+        private void BtnOrderCancel_Click_1(object sender, EventArgs e)
+        {
+            // Clear the selected items in the combo boxes
+            comboBoxOrderTable.SelectedItem = null;
+            comboBoxChefReceived.SelectedItem = null;
+            comboBoxProductID.SelectedItem = null;
+
+            // Re-enable the combo boxes
+            comboBoxOrderTable.Enabled = true;
+            comboBoxChefReceived.Enabled = true;
+
+            // Clear the product ID combo box items
+            comboBoxProductID.Items.Clear();
+
+            // Clear the labels
+            LblTableSelectedShow.Text = string.Empty;
+            LblChefIDShow.Text = string.Empty;
+            label6.Text = string.Empty;
+            label7.Text = string.Empty;
+            label8.Text = string.Empty;
+            label9.Text = string.Empty;
+            label12.Text = string.Empty;
+
+            // Hide the labels
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            LblTableSelectedShow.Visible = false;
+            label12.Visible = false;
+        }
+
+        private void LoadChefOrders()
+        {
+            comboBoxChefReceived.Items.Clear();
+            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (Status = 'Pending' OR Status = 'In Progress')";
+            SqlParameter[] parameters = { new SqlParameter("@ChefID", this.userid) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string orderId = row["OrderID"].ToString();
+                    comboBoxChefReceived.Items.Add(orderId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No orders found for the logged-in chef.");
+            }
+        }
+
+        private void DeductInventory(string productID, int quantity)
+        {
+            string query = "SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = @ProductID";
+            SqlParameter[] parameters = { new SqlParameter("@ProductID", productID) };
+
+            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                string stockQuantityUsed = dataTable.Rows[0]["StockQuantityUsed"].ToString();
+                var inventoryItems = stockQuantityUsed.Split(',');
+
+                foreach (var item in inventoryItems)
+                {
+                    var parts = item.Split('*');
+                    string inventoryID = parts[0].Trim();
+                    int usedQuantity = Convert.ToInt32(parts[1]) * quantity;
+
+                    UpdateInventory(inventoryID, usedQuantity);
+                }
+            }
+        }
+
+        private void UpdateInventory(string inventoryID, int usedQuantity)
+        {
+            string query = "UPDATE Inventory SET Quantity = Quantity - @UsedQuantity WHERE StockID = @StockID";
+            SqlParameter[] parameters = {
+                new SqlParameter("@UsedQuantity", usedQuantity),
+                new SqlParameter("@StockID", inventoryID)
+            };
+
+            ExecuteSqlCommand(query, parameters);
         }
 
         private void UpdateTimeLabel(object sender, ElapsedEventArgs e)
@@ -209,6 +462,49 @@ namespace IOOP_Assignment
             else
             {
                 updateLabel();
+            }
+        }
+
+        private DataTable ExecuteSqlQuery(string query, SqlParameter[] parameters)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.Add(param);
+                        }
+                    }
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        private void ExecuteSqlCommand(string query, SqlParameter[] parameters)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.Add(param);
+                        }
+                    }
+                    command.ExecuteNonQuery();
+                }
             }
         }
 

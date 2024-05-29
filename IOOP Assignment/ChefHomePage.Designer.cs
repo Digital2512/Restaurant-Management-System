@@ -34,7 +34,7 @@
             this.MenusidearButton = new System.Windows.Forms.Panel();
             this.MenuButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ButtonHome = new System.Windows.Forms.Button();
+            this.ButtonRecipe = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonViewOrder = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -125,28 +125,29 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ButtonHome);
+            this.panel2.Controls.Add(this.ButtonRecipe);
             this.panel2.Location = new System.Drawing.Point(3, 66);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 69);
             this.panel2.TabIndex = 4;
             // 
-            // ButtonHome
+            // ButtonRecipe
             // 
-            this.ButtonHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ButtonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonHome.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonHome.Location = new System.Drawing.Point(-16, -7);
-            this.ButtonHome.Name = "ButtonHome";
-            this.ButtonHome.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ButtonHome.Size = new System.Drawing.Size(219, 83);
-            this.ButtonHome.TabIndex = 4;
-            this.ButtonHome.Text = "Home";
-            this.ButtonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonHome.UseMnemonic = false;
-            this.ButtonHome.UseVisualStyleBackColor = false;
+            this.ButtonRecipe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ButtonRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ButtonRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonRecipe.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonRecipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonRecipe.Location = new System.Drawing.Point(-16, -7);
+            this.ButtonRecipe.Name = "ButtonRecipe";
+            this.ButtonRecipe.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ButtonRecipe.Size = new System.Drawing.Size(219, 83);
+            this.ButtonRecipe.TabIndex = 4;
+            this.ButtonRecipe.Text = "Recipe Management";
+            this.ButtonRecipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonRecipe.UseMnemonic = false;
+            this.ButtonRecipe.UseVisualStyleBackColor = false;
+            this.ButtonRecipe.Click += new System.EventHandler(this.ButtonHome_Click_1);
             // 
             // panel1
             // 
@@ -433,7 +434,7 @@
         private System.Windows.Forms.TextBox LabelChefHomePage;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button ButtonHome;
+        private System.Windows.Forms.Button ButtonRecipe;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel MenusidearButton;
         private System.Windows.Forms.Button buttonViewOrder;

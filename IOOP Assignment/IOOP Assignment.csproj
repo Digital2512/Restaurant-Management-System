@@ -52,6 +52,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +81,22 @@
     </Compile>
     <Compile Include="ChefOrderDetailsForm.Designer.cs">
       <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefRecipeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefRecipeManagement.Designer.cs">
+      <DependentUpon>ChefRecipeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOOPDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IOOPDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="CustomerFeedbackPage.cs">
@@ -191,6 +208,9 @@
     <EmbeddedResource Include="ChefInventoryPage.resx">
       <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChefRecipeManagement.resx">
+      <DependentUpon>ChefRecipeManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +237,28 @@
     </None>
     <None Include="IOOPDatabaseDataSet.xss">
       <DependentUpon>IOOPDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xsc">
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOOPDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOOPDatabaseDataSet1.xss">
+      <DependentUpon>IOOPDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xsc">
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOOPDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOOPDatabaseDataSet2.xss">
+      <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

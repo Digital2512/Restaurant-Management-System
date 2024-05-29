@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelTopicInventory = new System.Windows.Forms.Panel();
             this.LblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@
             this.checkBoxOut = new System.Windows.Forms.CheckBox();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
+            this.BtnInventoryCancel = new System.Windows.Forms.Button();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.PanelTopicInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
@@ -81,7 +83,7 @@
             this.PanelTopicInventory.Controls.Add(this.flowLayoutPanel1);
             this.PanelTopicInventory.Location = new System.Drawing.Point(-8, -8);
             this.PanelTopicInventory.Name = "PanelTopicInventory";
-            this.PanelTopicInventory.Size = new System.Drawing.Size(910, 77);
+            this.PanelTopicInventory.Size = new System.Drawing.Size(941, 77);
             this.PanelTopicInventory.TabIndex = 0;
             // 
             // LblTime
@@ -112,7 +114,7 @@
             // 
             // Btnback
             // 
-            this.Btnback.Location = new System.Drawing.Point(800, 611);
+            this.Btnback.Location = new System.Drawing.Point(606, 586);
             this.Btnback.Name = "Btnback";
             this.Btnback.Size = new System.Drawing.Size(75, 23);
             this.Btnback.TabIndex = 1;
@@ -135,18 +137,18 @@
             this.dataGridView1.DataSource = this.inventoryBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.PeachPuff;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 92);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 91);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(858, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 254);
             this.dataGridView1.TabIndex = 2;
             // 
             // stockIDDataGridViewTextBoxColumn
@@ -205,7 +207,8 @@
             // 
             // BtnInventoryUpdate
             // 
-            this.BtnInventoryUpdate.Location = new System.Drawing.Point(516, 469);
+            this.BtnInventoryUpdate.AutoEllipsis = true;
+            this.BtnInventoryUpdate.Location = new System.Drawing.Point(401, 503);
             this.BtnInventoryUpdate.Name = "BtnInventoryUpdate";
             this.BtnInventoryUpdate.Size = new System.Drawing.Size(84, 23);
             this.BtnInventoryUpdate.TabIndex = 3;
@@ -215,7 +218,7 @@
             // 
             // BtnInventoryDelete
             // 
-            this.BtnInventoryDelete.Location = new System.Drawing.Point(516, 435);
+            this.BtnInventoryDelete.Location = new System.Drawing.Point(401, 469);
             this.BtnInventoryDelete.Name = "BtnInventoryDelete";
             this.BtnInventoryDelete.Size = new System.Drawing.Size(84, 23);
             this.BtnInventoryDelete.TabIndex = 5;
@@ -226,7 +229,7 @@
             // labelquestionInventory
             // 
             this.labelquestionInventory.AutoSize = true;
-            this.labelquestionInventory.Location = new System.Drawing.Point(50, 398);
+            this.labelquestionInventory.Location = new System.Drawing.Point(153, 366);
             this.labelquestionInventory.Name = "labelquestionInventory";
             this.labelquestionInventory.Size = new System.Drawing.Size(66, 16);
             this.labelquestionInventory.TabIndex = 6;
@@ -234,7 +237,7 @@
             // 
             // ButtonAddNewInventory
             // 
-            this.ButtonAddNewInventory.Location = new System.Drawing.Point(516, 398);
+            this.ButtonAddNewInventory.Location = new System.Drawing.Point(401, 432);
             this.ButtonAddNewInventory.Name = "ButtonAddNewInventory";
             this.ButtonAddNewInventory.Size = new System.Drawing.Size(84, 28);
             this.ButtonAddNewInventory.TabIndex = 8;
@@ -244,7 +247,7 @@
             // 
             // TBInventoryName
             // 
-            this.TBInventoryName.Location = new System.Drawing.Point(170, 430);
+            this.TBInventoryName.Location = new System.Drawing.Point(273, 398);
             this.TBInventoryName.Name = "TBInventoryName";
             this.TBInventoryName.Size = new System.Drawing.Size(100, 22);
             this.TBInventoryName.TabIndex = 10;
@@ -252,7 +255,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 501);
+            this.label3.Location = new System.Drawing.Point(153, 469);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 11;
@@ -261,7 +264,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 466);
+            this.label2.Location = new System.Drawing.Point(153, 434);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 9;
@@ -270,7 +273,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 430);
+            this.label4.Location = new System.Drawing.Point(153, 398);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 13;
@@ -279,7 +282,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 537);
+            this.label5.Location = new System.Drawing.Point(153, 505);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 16);
             this.label5.TabIndex = 14;
@@ -288,7 +291,7 @@
             // LBLStockID
             // 
             this.LBLStockID.AutoSize = true;
-            this.LBLStockID.Location = new System.Drawing.Point(167, 398);
+            this.LBLStockID.Location = new System.Drawing.Point(270, 366);
             this.LBLStockID.Name = "LBLStockID";
             this.LBLStockID.Size = new System.Drawing.Size(44, 16);
             this.LBLStockID.TabIndex = 15;
@@ -297,7 +300,7 @@
             // LBLName
             // 
             this.LBLName.AutoSize = true;
-            this.LBLName.Location = new System.Drawing.Point(167, 433);
+            this.LBLName.Location = new System.Drawing.Point(270, 401);
             this.LBLName.Name = "LBLName";
             this.LBLName.Size = new System.Drawing.Size(44, 16);
             this.LBLName.TabIndex = 16;
@@ -306,7 +309,7 @@
             // LBLQuantity
             // 
             this.LBLQuantity.AutoSize = true;
-            this.LBLQuantity.Location = new System.Drawing.Point(167, 466);
+            this.LBLQuantity.Location = new System.Drawing.Point(270, 434);
             this.LBLQuantity.Name = "LBLQuantity";
             this.LBLQuantity.Size = new System.Drawing.Size(44, 16);
             this.LBLQuantity.TabIndex = 17;
@@ -315,7 +318,7 @@
             // LBLPrice
             // 
             this.LBLPrice.AutoSize = true;
-            this.LBLPrice.Location = new System.Drawing.Point(167, 501);
+            this.LBLPrice.Location = new System.Drawing.Point(270, 469);
             this.LBLPrice.Name = "LBLPrice";
             this.LBLPrice.Size = new System.Drawing.Size(44, 16);
             this.LBLPrice.TabIndex = 18;
@@ -324,7 +327,7 @@
             // LBLStatus
             // 
             this.LBLStatus.AutoSize = true;
-            this.LBLStatus.Location = new System.Drawing.Point(167, 537);
+            this.LBLStatus.Location = new System.Drawing.Point(270, 505);
             this.LBLStatus.Name = "LBLStatus";
             this.LBLStatus.Size = new System.Drawing.Size(51, 16);
             this.LBLStatus.TabIndex = 19;
@@ -332,7 +335,7 @@
             // 
             // BtnDone
             // 
-            this.BtnDone.Location = new System.Drawing.Point(516, 587);
+            this.BtnDone.Location = new System.Drawing.Point(156, 586);
             this.BtnDone.Name = "BtnDone";
             this.BtnDone.Size = new System.Drawing.Size(84, 28);
             this.BtnDone.TabIndex = 22;
@@ -343,7 +346,7 @@
             // checkBoxAdequate
             // 
             this.checkBoxAdequate.AutoSize = true;
-            this.checkBoxAdequate.Location = new System.Drawing.Point(170, 537);
+            this.checkBoxAdequate.Location = new System.Drawing.Point(273, 505);
             this.checkBoxAdequate.Name = "checkBoxAdequate";
             this.checkBoxAdequate.Size = new System.Drawing.Size(88, 20);
             this.checkBoxAdequate.TabIndex = 23;
@@ -353,7 +356,7 @@
             // checkBoxLack
             // 
             this.checkBoxLack.AutoSize = true;
-            this.checkBoxLack.Location = new System.Drawing.Point(170, 563);
+            this.checkBoxLack.Location = new System.Drawing.Point(273, 531);
             this.checkBoxLack.Name = "checkBoxLack";
             this.checkBoxLack.Size = new System.Drawing.Size(109, 20);
             this.checkBoxLack.TabIndex = 24;
@@ -363,7 +366,7 @@
             // checkBoxOut
             // 
             this.checkBoxOut.AutoSize = true;
-            this.checkBoxOut.Location = new System.Drawing.Point(170, 592);
+            this.checkBoxOut.Location = new System.Drawing.Point(273, 560);
             this.checkBoxOut.Name = "checkBoxOut";
             this.checkBoxOut.Size = new System.Drawing.Size(100, 20);
             this.checkBoxOut.TabIndex = 25;
@@ -372,23 +375,40 @@
             // 
             // numericUpDownQuantity
             // 
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(170, 467);
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(273, 435);
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
             this.numericUpDownQuantity.Size = new System.Drawing.Size(106, 22);
             this.numericUpDownQuantity.TabIndex = 26;
             // 
             // numericUpDownPrice
             // 
-            this.numericUpDownPrice.Location = new System.Drawing.Point(170, 501);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(273, 469);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(106, 22);
             this.numericUpDownPrice.TabIndex = 27;
+            // 
+            // BtnInventoryCancel
+            // 
+            this.BtnInventoryCancel.Location = new System.Drawing.Point(256, 586);
+            this.BtnInventoryCancel.Name = "BtnInventoryCancel";
+            this.BtnInventoryCancel.Size = new System.Drawing.Size(84, 28);
+            this.BtnInventoryCancel.TabIndex = 28;
+            this.BtnInventoryCancel.Text = "Cancel";
+            this.BtnInventoryCancel.UseVisualStyleBackColor = true;
+            this.BtnInventoryCancel.Click += new System.EventHandler(this.BtnInventoryCancel_Click_1);
+            // 
+            // directorySearcher1
+            // 
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // ChefInventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 646);
+            this.ClientSize = new System.Drawing.Size(797, 641);
+            this.Controls.Add(this.BtnInventoryCancel);
             this.Controls.Add(this.checkBoxOut);
             this.Controls.Add(this.checkBoxLack);
             this.Controls.Add(this.BtnDone);
@@ -463,5 +483,7 @@
         private System.Windows.Forms.CheckBox checkBoxOut;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
+        private System.Windows.Forms.Button BtnInventoryCancel;
+        private System.DirectoryServices.DirectorySearcher directorySearcher1;
     }
 }

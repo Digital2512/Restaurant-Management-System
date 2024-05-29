@@ -79,7 +79,9 @@ namespace IOOP_Assignment
                                     cmd.ExecuteNonQuery();
 
                                     ChefHomePage chefHomePage = new ChefHomePage(username);
+                                    this.Hide ();
                                     chefHomePage.Show();
+                                    
                                     break;
                                 case "Customer":
                                     MessageBox.Show("Login Successful. User's Role: Customer");

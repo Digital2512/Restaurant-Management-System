@@ -3,6 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
+
 public static class Utility
 {
     private static string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
@@ -62,7 +64,7 @@ public static class Utility
                 {
                     foreach (var param in parameters)
                     {
-                        command.Parameters.Add(param.Clone());
+                        command.Parameters.Add(param.Clone()); // Clone the parameter to avoid reuse issues
                     }
                 }
                 using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -82,23 +84,21 @@ public static class Utility
     }
 }
 
-// Extension method to clone SqlParameter
+// SqlParameterExtensions class
+
 public static class SqlParameterExtensions
 {
-    public static SqlParameter Clone(this SqlParameter param)
+    public static SqlParameter Clone(this SqlParameter original)
     {
-        return new SqlParameter(param.ParameterName, param.Value)
+        return new SqlParameter
         {
-            DbType = param.DbType,
-            Direction = param.Direction,
-            IsNullable = param.IsNullable,
-            Offset = param.Offset,
-            Precision = param.Precision,
-            Scale = param.Scale,
-            Size = param.Size,
-            SourceColumn = param.SourceColumn,
-            SourceColumnNullMapping = param.SourceColumnNullMapping,
-            SourceVersion = param.SourceVersion
+            ParameterName = original.ParameterName,
+            SqlDbType = original.SqlDbType,
+            Direction = original.Direction,
+            IsNullable = original.IsNullable,
+            Size = original.Size,
+            Value = original.Value
         };
     }
 }
+

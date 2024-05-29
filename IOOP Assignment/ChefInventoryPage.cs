@@ -32,6 +32,7 @@ namespace IOOP_Assignment
 
             ToggleTextBoxVisibility(false);
             BtnDone.Visible = false;
+            BtnInventoryCancel.Visible = false;
 
             checkBoxAdequate.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
             checkBoxLack.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
@@ -62,9 +63,16 @@ namespace IOOP_Assignment
 
         private void LoadInventoryData()
         {
+            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
             string query = "SELECT StockID, Name, Quantity, IndividualPrice, Status FROM Inventory ORDER BY StockID ASC";
-            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
-            dataGridView1.DataSource = dataTable;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -126,6 +134,8 @@ namespace IOOP_Assignment
             ToggleTextBoxVisibility(true);
             LBLStockID.Text = GenerateNewID();
             BtnDone.Visible = true;
+            BtnInventoryCancel.Visible = true;
+            DisableActionButtons();
         }
 
         private void BtnInventoryDelete_Click_1(object sender, EventArgs e)
@@ -138,6 +148,8 @@ namespace IOOP_Assignment
             currentAction = ActionState.DeleteItem;
             ToggleTextBoxVisibility(false);
             BtnDone.Visible = true;
+            BtnInventoryCancel.Visible = true;
+            DisableActionButtons();
         }
 
         private void BtnInventoryAdd_Click(object sender, EventArgs e)
@@ -151,6 +163,8 @@ namespace IOOP_Assignment
             currentAction = ActionState.UpdateItem;
             ToggleTextBoxVisibility(true);
             BtnDone.Visible = true;
+            BtnInventoryCancel.Visible = true;
+            DisableActionButtons();
         }
 
         private void BtnDone_Click_1(object sender, EventArgs e)
@@ -204,8 +218,21 @@ namespace IOOP_Assignment
             ClearDetails();
             ToggleTextBoxVisibility(false);
             BtnDone.Visible = false;
+            BtnInventoryCancel.Visible = false;
+            EnableActionButtons();
             currentAction = ActionState.None;
         }
+
+        private void BtnInventoryCancel_Click_1(object sender, EventArgs e)
+        {
+            ClearDetails();
+            ToggleTextBoxVisibility(false);
+            BtnDone.Visible = false;
+            BtnInventoryCancel.Visible = false;
+            EnableActionButtons();
+            currentAction = ActionState.None;
+        }
+
 
         private void AddNewInventory(string id, string name, int quantity, decimal price, string status)
         {
@@ -368,6 +395,22 @@ namespace IOOP_Assignment
             if (checkBoxLack.Checked) return "Lack of Stock";
             if (checkBoxOut.Checked) return "Out of Stock";
             return string.Empty;
+        }
+
+        private void DisableActionButtons()
+        {
+            ButtonAddNewInventory.Enabled = false;
+            BtnInventoryDelete.Enabled = false;
+            BtnInventoryUpdate.Enabled = false;
+            dataGridView1.Enabled = false;
+        }
+
+        private void EnableActionButtons()
+        {
+            ButtonAddNewInventory.Enabled = true;
+            BtnInventoryDelete.Enabled = true;
+            BtnInventoryUpdate.Enabled = true;
+            dataGridView1.Enabled = true;
         }
     }
 }

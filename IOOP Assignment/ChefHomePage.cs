@@ -68,6 +68,12 @@ namespace IOOP_Assignment
             Utility.OpenForm(this, new ChefProfileForm(username));
         }
 
+        private void ButtonHome_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Now navigating to Recipe Management Page");
+            Utility.OpenForm(this, new ChefRecipeManagement());
+        }
+
         private void LoadChefInfo(string chefId)
         {
             string query = "SELECT FullName, Gender, Role FROM Users WHERE UserID = @ChefID";
@@ -100,5 +106,6 @@ namespace IOOP_Assignment
             label13.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
             label14.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
         }
+
     }
 }
