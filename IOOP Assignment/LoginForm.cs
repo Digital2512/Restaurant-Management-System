@@ -79,7 +79,7 @@ namespace IOOP_Assignment
                                     cmd.ExecuteNonQuery();
 
                                     this.Hide();
-                                    ChefHomePage chefHomePage = new ChefHomePage();
+                                    ChefHomePage chefHomePage = new ChefHomePage(username);
                                     chefHomePage.Show();
                                     
                                     break;

@@ -302,12 +302,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerCartPage.resx">
       <DependentUpon>CustomerCartPage.cs</DependentUpon>
-    <Compile Include="foodButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="foodButton.Designer.cs">
-      <DependentUpon>foodButton.cs</DependentUpon>
-    </Compile>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChefHomePage.resx">
       <DependentUpon>ChefHomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +377,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminViewSalesReport.resx">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChefInventoryPage.resx">
       <DependentUpon>ChefInventoryPage.cs</DependentUpon>
     </EmbeddedResource>
