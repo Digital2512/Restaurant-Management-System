@@ -33,6 +33,8 @@
             this.backBtnPnl = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.startTimeCBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.durationCBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.noOfPaxTxtBox = new System.Windows.Forms.TextBox();
@@ -89,6 +91,8 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.startTimeCBox);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.durationCBox);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.noOfPaxTxtBox);
@@ -106,20 +110,42 @@
             this.panel2.Controls.Add(this.lblPlaceName);
             this.panel2.Controls.Add(this.lblPlaceDescription);
             this.panel2.Controls.Add(this.lblPlaceMinOfPax);
-            this.panel2.Location = new System.Drawing.Point(-12, 66);
+            this.panel2.Location = new System.Drawing.Point(-1, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 737);
+            this.panel2.Size = new System.Drawing.Size(574, 730);
             this.panel2.TabIndex = 12;
+            // 
+            // startTimeCBox
+            // 
+            this.startTimeCBox.FormattingEnabled = true;
+            this.startTimeCBox.Items.AddRange(new object[] {
+            "17:00 (5:00 PM)",
+            "18:00 (6:00 PM)",
+            "19:00 (7:00 PM)",
+            "20:00 (8:00 PM)",
+            "21:00 (9:00 PM)",
+            "22:00 (10:00 PM)"});
+            this.startTimeCBox.Location = new System.Drawing.Point(24, 669);
+            this.startTimeCBox.Name = "startTimeCBox";
+            this.startTimeCBox.Size = new System.Drawing.Size(223, 28);
+            this.startTimeCBox.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(19, 633);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(196, 25);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Reserved Start Time:";
             // 
             // durationCBox
             // 
             this.durationCBox.FormattingEnabled = true;
             this.durationCBox.Items.AddRange(new object[] {
-            "30 Minutes",
             "1 Hour",
-            "1 Hour and 30 Minutes",
             "2 Hours",
-            "2 Hours and 30 Minutes",
             "3 hours"});
             this.durationCBox.Location = new System.Drawing.Point(292, 669);
             this.durationCBox.Name = "durationCBox";
@@ -165,12 +191,12 @@
             // 
             // reservedDateTimePicker
             // 
+            this.reservedDateTimePicker.CustomFormat = "MM/dd/yyyy";
+            this.reservedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.reservedDateTimePicker.Location = new System.Drawing.Point(24, 599);
             this.reservedDateTimePicker.Name = "reservedDateTimePicker";
-            this.reservedDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.reservedDateTimePicker.Size = new System.Drawing.Size(234, 26);
             this.reservedDateTimePicker.TabIndex = 19;
-            this.reservedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.reservedDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm tt";
             // 
             // lblPlaceEventType
             // 
@@ -207,7 +233,7 @@
             // reserveBtn
             // 
             this.reserveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reserveBtn.Location = new System.Drawing.Point(3, 809);
+            this.reserveBtn.Location = new System.Drawing.Point(3, 830);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(593, 53);
             this.reserveBtn.TabIndex = 15;
@@ -226,7 +252,7 @@
             // 
             // specialInstructionsRTxtBox
             // 
-            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 716);
+            this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 735);
             this.specialInstructionsRTxtBox.Name = "specialInstructionsRTxtBox";
             this.specialInstructionsRTxtBox.Size = new System.Drawing.Size(548, 91);
             this.specialInstructionsRTxtBox.TabIndex = 13;
@@ -245,7 +271,7 @@
             // 
             this.lblSpecialInstructions.AutoSize = true;
             this.lblSpecialInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 684);
+            this.lblSpecialInstructions.Location = new System.Drawing.Point(17, 703);
             this.lblSpecialInstructions.Name = "lblSpecialInstructions";
             this.lblSpecialInstructions.Size = new System.Drawing.Size(192, 25);
             this.lblSpecialInstructions.TabIndex = 12;
@@ -323,5 +349,7 @@
         private System.Windows.Forms.Label lblNoOfPax;
         private System.Windows.Forms.ComboBox durationCBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox startTimeCBox;
+        private System.Windows.Forms.Label label2;
     }
 }
