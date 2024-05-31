@@ -74,9 +74,9 @@ namespace IOOP_Assignment
             if (reservationID != null || reservationID != "")
             {
                 this.lblReservationID.Text = reservationID;
-                query = $"SELECT PlaceID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                query = $"SELECT PlaceID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = '{reservationID}';";
                 string placeID = database.getString(query);
-                query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
+                query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = '{reservationID}';";
                 string reservationStatus = database.getString(query);
                 query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 string placeName = database.getString(query);
@@ -114,9 +114,23 @@ namespace IOOP_Assignment
                         endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
                     }
                     
+
                     // Display reservation details based on status
                     if (reservationStatus == "APPROVED")
                     {
+                        query = $"SELECT ReservedDate FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                        DateTime? reservedDateTime = database.getDateTimeToProcess(query);
+
+                        string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
+
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedStartTime = database.getInt(query);
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedEndTime = database.getInt(query);
+
+                        string startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        string endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
+
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
                         this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
@@ -125,6 +139,19 @@ namespace IOOP_Assignment
                     }
                     else if (reservationStatus == "DENIED")
                     {
+                        query = $"SELECT ReservedDate FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                        DateTime? reservedDateTime = database.getDateTimeToProcess(query);
+
+                        string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
+
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedStartTime = database.getInt(query);
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedEndTime = database.getInt(query);
+
+                        string startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        string endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
+
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
                         this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
@@ -133,6 +160,18 @@ namespace IOOP_Assignment
                     }
                     else if (reservationStatus == "PENDING")
                     {
+                        query = $"SELECT ReservedDate FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                        DateTime? reservedDateTime = database.getDateTimeToProcess(query);
+
+                        string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
+
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedStartTime = database.getInt(query);
+                        query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = 'PENDING';";
+                        int reservedEndTime = database.getInt(query);
+
+                        string startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        string endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
 
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
@@ -150,8 +189,6 @@ namespace IOOP_Assignment
                     }
                 }
             }
-
-        }
 
         private void CustomerHomePage_Load(object sender, EventArgs e)
         {
