@@ -288,9 +288,9 @@
             this.lblOrderStatus.AutoSize = true;
             this.lblOrderStatus.Location = new System.Drawing.Point(205, 72);
             this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(78, 20);
+            this.lblOrderStatus.Size = new System.Drawing.Size(35, 20);
             this.lblOrderStatus.TabIndex = 6;
-            this.lblOrderStatus.Text = "WAITING";
+            this.lblOrderStatus.Text = "N/A";
             // 
             // lblOrderStatusTitle
             // 
@@ -307,18 +307,18 @@
             this.lblEstimatedTime.AutoSize = true;
             this.lblEstimatedTime.Location = new System.Drawing.Point(205, 41);
             this.lblEstimatedTime.Name = "lblEstimatedTime";
-            this.lblEstimatedTime.Size = new System.Drawing.Size(115, 20);
+            this.lblEstimatedTime.Size = new System.Drawing.Size(35, 20);
             this.lblEstimatedTime.TabIndex = 4;
-            this.lblEstimatedTime.Text = "EstimatedTime";
+            this.lblEstimatedTime.Text = "N/A";
             // 
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
             this.lblOrderID.Location = new System.Drawing.Point(205, 10);
             this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(66, 20);
+            this.lblOrderID.Size = new System.Drawing.Size(35, 20);
             this.lblOrderID.TabIndex = 3;
-            this.lblOrderID.Text = "OrderID";
+            this.lblOrderID.Text = "N/A";
             // 
             // orderStatusPBox
             // 
@@ -370,9 +370,9 @@
             this.lblReservationStatus.AutoSize = true;
             this.lblReservationStatus.Location = new System.Drawing.Point(159, 121);
             this.lblReservationStatus.Name = "lblReservationStatus";
-            this.lblReservationStatus.Size = new System.Drawing.Size(82, 20);
+            this.lblReservationStatus.Size = new System.Drawing.Size(35, 20);
             this.lblReservationStatus.TabIndex = 12;
-            this.lblReservationStatus.Text = "PENDING";
+            this.lblReservationStatus.Text = "N/A";
             // 
             // lblReservationStatusTitle
             // 
@@ -389,9 +389,9 @@
             this.lblPlaceName.AutoSize = true;
             this.lblPlaceName.Location = new System.Drawing.Point(159, 46);
             this.lblPlaceName.Name = "lblPlaceName";
-            this.lblPlaceName.Size = new System.Drawing.Size(94, 20);
+            this.lblPlaceName.Size = new System.Drawing.Size(35, 20);
             this.lblPlaceName.TabIndex = 10;
-            this.lblPlaceName.Text = "Place Name";
+            this.lblPlaceName.Text = "N/A";
             // 
             // lblPlaceNameTitle
             // 
@@ -408,9 +408,9 @@
             this.lblDateTimeRange.AutoSize = true;
             this.lblDateTimeRange.Location = new System.Drawing.Point(159, 84);
             this.lblDateTimeRange.Name = "lblDateTimeRange";
-            this.lblDateTimeRange.Size = new System.Drawing.Size(165, 20);
+            this.lblDateTimeRange.Size = new System.Drawing.Size(35, 20);
             this.lblDateTimeRange.TabIndex = 8;
-            this.lblDateTimeRange.Text = "Date and Time Range";
+            this.lblDateTimeRange.Text = "N/A";
             this.lblDateTimeRange.Click += new System.EventHandler(this.lblPlaceID_Click);
             // 
             // lblReservationID
@@ -418,9 +418,9 @@
             this.lblReservationID.AutoSize = true;
             this.lblReservationID.Location = new System.Drawing.Point(159, 10);
             this.lblReservationID.Name = "lblReservationID";
-            this.lblReservationID.Size = new System.Drawing.Size(115, 20);
+            this.lblReservationID.Size = new System.Drawing.Size(35, 20);
             this.lblReservationID.TabIndex = 7;
-            this.lblReservationID.Text = "Reservation ID";
+            this.lblReservationID.Text = "N/A";
             // 
             // lblDateTimeTitle
             // 

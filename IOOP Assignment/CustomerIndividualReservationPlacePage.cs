@@ -16,6 +16,8 @@ namespace IOOP_Assignment
         public CustomerIndividualReservationPlacePage()
         {
             InitializeComponent();
+            endTimeCBox.Enabled = false;
+
             Database database = new Database(connectionString);
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             string placeID = database.getString(query);
@@ -34,37 +36,36 @@ namespace IOOP_Assignment
             
             query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND (TimeStatus = 'AVAILABLE' OR TimeStatus = 'PENDING');";
             startTimeCBox.Items.Clear();
-            string placeTimeCBoxInput = null;
-            DataTable placeTimeDataTable =  database.getDataTable(query);
-            foreach(DataRow row in placeTimeDataTable.Rows)
+            string placeStartTimeCBoxInput = null;
+            DataTable placeStartTimeDataTable =  database.getDataTable(query);
+            foreach(DataRow row in placeStartTimeDataTable.Rows)
             {
                 int PlaceTime = int.Parse(row["PlaceTime"].ToString());
                 if(PlaceTime == 1700)
                 {
-                    placeTimeCBoxInput = "17:00 (5:00 PM)";
+                    placeStartTimeCBoxInput = "17:00 (5:00 PM)";
                 }else if (PlaceTime == 1800)
                 {
-                    placeTimeCBoxInput = "18:00 (6:00 PM)";
+                    placeStartTimeCBoxInput = "18:00 (6:00 PM)";
                 }
                 else if (PlaceTime == 1900)
                 {
-                    placeTimeCBoxInput = "19:00 (7:00 PM)";
+                    placeStartTimeCBoxInput = "19:00 (7:00 PM)";
                 }
                 else if (PlaceTime == 2000)
                 {
-                    placeTimeCBoxInput = "20:00 (8:00 PM)";
+                    placeStartTimeCBoxInput = "20:00 (8:00 PM)";
                 }
                 else if (PlaceTime == 2100)
                 {
-                    placeTimeCBoxInput = "21:00 (9:00 PM)";
+                    placeStartTimeCBoxInput = "21:00 (9:00 PM)";
                 }
                 else if (PlaceTime == 2200)
                 {
-                    placeTimeCBoxInput = "22:00 (10:00 PM)";
+                    placeStartTimeCBoxInput = "22:00 (10:00 PM)";
                 }
-                startTimeCBox.Items.Add(placeTimeCBoxInput);
+                startTimeCBox.Items.Add(placeStartTimeCBoxInput);
             }
-
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)
@@ -92,21 +93,6 @@ namespace IOOP_Assignment
             string placeName = database.getString(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
 
-            string duration = durationCBox.Text;
-            int durationTime = 0;
-            if(duration == "1 Hour")
-            {
-                durationTime = 60;
-            }
-            else if (duration == "2 Hours")
-            {
-                durationTime = 120;
-            }
-            else if (duration == "3 Hours")
-            {
-                durationTime = 180;
-            }
-
             string startTimeString = startTimeCBox.Text;
             int startTime = 0;
             if (startTimeString == "17:00 (5:00 PM)")
@@ -131,6 +117,56 @@ namespace IOOP_Assignment
             else if (startTimeString == "22:00 (10:00 PM)")
             {
                 startTime = 2200;
+            }
+
+            string endTimeString = endTimeCBox.Text;
+            int endTime = 0;
+            if (endTimeString == "17:00 (5:00 PM)")
+            {
+                endTime = 1700;
+            }
+            else if (endTimeString == "18:00 (6:00 PM)")
+            {
+                endTime = 1800;
+            }
+            else if (endTimeString == "19:00 (7:00 PM)")
+            {
+                endTime = 1900;
+            }
+            else if (endTimeString == "20:00 (8:00 PM)")
+            {
+                endTime = 2000;
+            }
+            else if (endTimeString == "21:00 (9:00 PM)")
+            {
+                endTime = 2100;
+            }
+            else if (endTimeString == "22:00 (10:00 PM)")
+            {
+                endTime = 2200;
+            }
+
+            int durationInt = startTime - endTime;
+            int durationTime = 0;
+            if (durationInt == 100)
+            {
+                durationTime = 60;
+            }
+            else if (durationInt == 200)
+            {
+                durationTime = 120;
+            }
+            else if (durationInt == 300)
+            {
+                durationTime = 180;
+            }
+            else if (durationInt == 400)
+            {
+                durationTime = 240;
+            }
+            else if (durationInt == 500)
+            {
+                durationTime = 300;
             }
 
             if (noOfPax != 0)
@@ -169,7 +205,7 @@ namespace IOOP_Assignment
                 {
                     bool reservationChanged = false;
                     bool dateReservationChanged = false;
-                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}')";
+                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
                     if(database.insertOrUpdateValuesIntoDatabase(query) == true)
                     {
                         reservationChanged = true;
@@ -235,6 +271,97 @@ namespace IOOP_Assignment
             customerReservationPage.Show();
         }
 
-        
+        private void startTimeCBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblReservedEndTime.Visible = true;
+            endTimeCBox.Enabled = true;
+
+            string startTimeString = startTimeCBox.Text;
+            int startTime = 0;
+            if (startTimeString == "17:00 (5:00 PM)")
+            {
+                startTime = 1700;
+            }else if (startTimeString == "18:00 (6:00 PM)")
+            {
+                startTime = 1800;
+            }
+            else if (startTimeString == "19:00 (7:00 PM)")
+            {
+                startTime = 1900;
+            }
+            else if (startTimeString == "20:00 (8:00 PM)")
+            {
+                startTime = 2000;
+            }
+            else if (startTimeString == "21:00 (9:00 PM)")
+            {
+                startTime = 2100;
+            }
+            else if (startTimeString == "22:00 (10:00 PM)")
+            {
+                startTime = 2200;
+            }
+
+            Database database = new Database(connectionString);
+
+            string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
+            string placeID = database.getString(query);
+
+            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND PlaceTime > {startTime} AND (TimeStatus = 'AVAILABLE' OR TimeStatus = 'PENDING');";
+            endTimeCBox.Items.Clear();
+            string placeEndTimeCBoxInput = null;
+            DataTable placeEndTimeDataTable = database.getDataTable(query);
+
+            int previousPlaceTime = 0;
+
+            bool jumpDetected = false;
+
+            foreach (DataRow row in placeEndTimeDataTable.Rows)
+            {
+                if (jumpDetected)
+                {
+                    break;
+                }
+                else
+                {
+                    int placeTime = int.Parse(row["PlaceTime"].ToString());
+
+                    if (previousPlaceTime != 0 && placeTime - previousPlaceTime > 100)
+                    {
+                        jumpDetected = true;
+                    }
+                    else
+                    {
+                        if (placeTime == 1700)
+                        {
+                            placeEndTimeCBoxInput = "17:00 (5:00 PM)";
+                        }
+                        else if (placeTime == 1800)
+                        {
+                            placeEndTimeCBoxInput = "18:00 (6:00 PM)";
+                        }
+                        else if (placeTime == 1900)
+                        {
+                            placeEndTimeCBoxInput = "19:00 (7:00 PM)";
+                        }
+                        else if (placeTime == 2000)
+                        {
+                            placeEndTimeCBoxInput = "20:00 (8:00 PM)";
+                        }
+                        else if (placeTime == 2100)
+                        {
+                            placeEndTimeCBoxInput = "21:00 (9:00 PM)";
+                        }
+                        else if (placeTime == 2200)
+                        {
+                            placeEndTimeCBoxInput = "22:00 (10:00 PM)";
+                        }
+                        endTimeCBox.Items.Add(placeEndTimeCBoxInput);
+                    }
+
+                    previousPlaceTime = placeTime;
+                }
+            }
+        }
     }
 }

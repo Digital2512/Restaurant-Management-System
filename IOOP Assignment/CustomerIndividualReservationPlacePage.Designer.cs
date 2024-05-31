@@ -34,9 +34,9 @@
             this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.startTimeCBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.durationCBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblReservedStartTime = new System.Windows.Forms.Label();
+            this.endTimeCBox = new System.Windows.Forms.ComboBox();
+            this.lblReservedEndTime = new System.Windows.Forms.Label();
             this.noOfPaxTxtBox = new System.Windows.Forms.TextBox();
             this.lblNoOfPax = new System.Windows.Forms.Label();
             this.lblReservedDateTime = new System.Windows.Forms.Label();
@@ -92,9 +92,9 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.startTimeCBox);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.durationCBox);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblReservedStartTime);
+            this.panel2.Controls.Add(this.endTimeCBox);
+            this.panel2.Controls.Add(this.lblReservedEndTime);
             this.panel2.Controls.Add(this.noOfPaxTxtBox);
             this.panel2.Controls.Add(this.lblNoOfPax);
             this.panel2.Controls.Add(this.lblReservedDateTime);
@@ -129,38 +129,39 @@
             this.startTimeCBox.Name = "startTimeCBox";
             this.startTimeCBox.Size = new System.Drawing.Size(223, 28);
             this.startTimeCBox.TabIndex = 26;
+            this.startTimeCBox.SelectedIndexChanged += new System.EventHandler(this.startTimeCBox_SelectedIndexChanged);
             // 
-            // label2
+            // lblReservedStartTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(19, 633);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 25);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Reserved Start Time:";
+            this.lblReservedStartTime.AutoSize = true;
+            this.lblReservedStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservedStartTime.Location = new System.Drawing.Point(19, 640);
+            this.lblReservedStartTime.Name = "lblReservedStartTime";
+            this.lblReservedStartTime.Size = new System.Drawing.Size(196, 25);
+            this.lblReservedStartTime.TabIndex = 25;
+            this.lblReservedStartTime.Text = "Reserved Start Time:";
             // 
-            // durationCBox
+            // endTimeCBox
             // 
-            this.durationCBox.FormattingEnabled = true;
-            this.durationCBox.Items.AddRange(new object[] {
+            this.endTimeCBox.FormattingEnabled = true;
+            this.endTimeCBox.Items.AddRange(new object[] {
             "1 Hour",
             "2 Hours",
             "3 hours"});
-            this.durationCBox.Location = new System.Drawing.Point(292, 669);
-            this.durationCBox.Name = "durationCBox";
-            this.durationCBox.Size = new System.Drawing.Size(223, 28);
-            this.durationCBox.TabIndex = 24;
+            this.endTimeCBox.Location = new System.Drawing.Point(292, 669);
+            this.endTimeCBox.Name = "endTimeCBox";
+            this.endTimeCBox.Size = new System.Drawing.Size(223, 28);
+            this.endTimeCBox.TabIndex = 24;
             // 
-            // label1
+            // lblReservedEndTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(288, 639);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Duration";
+            this.lblReservedEndTime.AutoSize = true;
+            this.lblReservedEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservedEndTime.Location = new System.Drawing.Point(288, 639);
+            this.lblReservedEndTime.Name = "lblReservedEndTime";
+            this.lblReservedEndTime.Size = new System.Drawing.Size(184, 25);
+            this.lblReservedEndTime.TabIndex = 23;
+            this.lblReservedEndTime.Text = "Reserved End Time";
             // 
             // noOfPaxTxtBox
             // 
@@ -347,9 +348,9 @@
         private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
         private System.Windows.Forms.TextBox noOfPaxTxtBox;
         private System.Windows.Forms.Label lblNoOfPax;
-        private System.Windows.Forms.ComboBox durationCBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox endTimeCBox;
+        private System.Windows.Forms.Label lblReservedEndTime;
         private System.Windows.Forms.ComboBox startTimeCBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblReservedStartTime;
     }
 }
