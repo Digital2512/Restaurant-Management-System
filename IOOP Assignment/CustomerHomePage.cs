@@ -88,19 +88,12 @@ namespace IOOP_Assignment
                     DateTime? reservedDateTime = database.getDateTimeToProcess(query);
         
                     string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
-
-<<<<<<< HEAD
-                    // Calculate end time by adding duration to reserved date and time
-                    DateTime? endDateTime = reservedDateTime?.AddMinutes(durationMinutes);
-                    string endDate = endDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
-                    string endTime = endDateTime?.ToString("HH:mm:ss") ?? "N/A";
-=======
+ 
                     query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                     int reservedStartTime = database.getInt(query);
                     int reservedEndTime = 0;
                     string startTimeFormatted = null;
                     string endTimeFormatted = null;
->>>>>>> Valerie
 
                     if (durationMinutes == 60)
                     {

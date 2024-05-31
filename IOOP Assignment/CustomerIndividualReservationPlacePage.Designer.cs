@@ -114,6 +114,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(574, 730);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // startTimeCBox
             // 
@@ -146,7 +147,7 @@
             this.durationCBox.Items.AddRange(new object[] {
             "1 Hour",
             "2 Hours",
-            "3 hours"});
+            "3 Hours"});
             this.durationCBox.Location = new System.Drawing.Point(292, 669);
             this.durationCBox.Name = "durationCBox";
             this.durationCBox.Size = new System.Drawing.Size(223, 28);

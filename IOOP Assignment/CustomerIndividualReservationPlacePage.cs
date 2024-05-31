@@ -90,44 +90,18 @@ namespace IOOP_Assignment
             {
                 durationTime = 60;
             }
-            else if (duration == "1 Hour and 30 Minutes")
-            {
-                durationTime = 60;
-            }
             else if (duration == "2 Hours")
-            {
-                durationTime = 120;
-            }
-            else if (duration == "2 Hours and 30 Minutes")
             {
                 durationTime = 120;
             }
             else if (duration == "3 Hours")
             {
-<<<<<<< HEAD
-                durationTime = 150;
-            }
-            else if (duration == "3 Hours and 30 Minutes")
-            {
-                durationTime = 180;
-            }
-            else if (duration == "4 Hours")
-            {
-                durationTime = 210;
-            }
-            else if (duration == "")
-            {
-                durationTime = 240;
-            }
-            if(noOfPax != 0)
-=======
                 durationTime = 180;
             }
 
             string startTimeString = startTimeCBox.Text;
             int startTime = 0;
             if (startTimeString == "17:00 (5:00 PM)")
->>>>>>> Valerie
             {
                 startTime = 1700;
             }else if (startTimeString == "18:00 (6:00 PM)")
@@ -253,6 +227,9 @@ namespace IOOP_Assignment
             customerReservationPage.Show();
         }
 
-        
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
