@@ -146,27 +146,36 @@ namespace IOOP_Assignment
                 endTime = 2200;
             }
 
-            int durationInt = startTime - endTime;
+
+            MessageBox.Show(startTime.ToString());
+            MessageBox.Show(endTime.ToString());
+            int durationInt = endTime - startTime;
+            MessageBox.Show(durationInt.ToString());
             int durationTime = 0;
             if (durationInt == 100)
             {
                 durationTime = 60;
+                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 200)
             {
                 durationTime = 120;
+                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 300)
             {
                 durationTime = 180;
+                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 400)
             {
                 durationTime = 240;
+                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 500)
             {
                 durationTime = 300;
+                MessageBox.Show(durationTime.ToString());
             }
 
             if (noOfPax != 0)
