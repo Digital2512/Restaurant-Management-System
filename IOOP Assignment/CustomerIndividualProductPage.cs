@@ -112,6 +112,7 @@ namespace IOOP_Assignment
         }
         private void addButton_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
             int newProductQuantity = productQuantity + 1;
             this.lblProductQuantity.Text = newProductQuantity.ToString();
@@ -168,6 +169,89 @@ namespace IOOP_Assignment
                         this.lblProductQuantity.Text = newProductQuantity.ToString();
                     }
                 }
+=======
+            Database database = new Database(connectionString);
+            // Parse current product quantity and calculate new quantity
+            int productQuantity = int.Parse(this.lblProductQuantity.Text);
+            int newProductQuantity = productQuantity + 1;
+
+            bool shouldDisableButton = false;
+
+            // Initialize database connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Get stock quantity used for the product from the recipe
+                string query = $"SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = '{productID}';";
+                string stockQuantityList = database.getString(query);
+                string[] stockQuantityParts = stockQuantityList.Split(',');
+
+                // Iterate over each stock quantity part
+                foreach (string part in stockQuantityParts)
+                {
+                    string[] stockQuantityPart = part.Split('*');
+
+                    // Check if the stock quantity part format is valid
+                    if (stockQuantityPart.Length != 2)
+                    {
+                        MessageBox.Show("Invalid stock quantity part format.");
+                        continue;
+                    }
+
+                    string stockID = stockQuantityPart[0];
+                    string stockQuantityString = stockQuantityPart[1];
+
+                    // Check if the stock quantity value is a valid integer
+                    if (!int.TryParse(stockQuantityString, out int stockQuantityInt))
+                    {
+                        MessageBox.Show("Invalid stock quantity value.");
+                        continue;
+                    }
+
+                    int quantityNeeded = stockQuantityInt * newProductQuantity;
+
+                    // Get current quantity from the inventory for the current stock ID
+                    string quantityQuery = $"SELECT Quantity FROM Inventory WHERE StockID = '{stockID}';";
+                    MessageBox.Show($"Executing query: {quantityQuery}"); // Log the query for debugging
+                    int currentQuantity = 0;
+
+                    using (SqlCommand cmd = new SqlCommand(quantityQuery, connection))
+                    {
+                        try
+                        {
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    if (reader.Read())
+                                    {
+                                        currentQuantity = reader.GetInt32(0);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error executing query: {ex.Message}");
+                        }
+                    }
+
+                    MessageBox.Show($"Retrieved current quantity: {currentQuantity}"); // Log the retrieved quantity for debugging
+
+                    if (quantityNeeded > currentQuantity)
+                    {
+                        shouldDisableButton = true;
+                    }
+
+                    // Debug information (optional)
+                    MessageBox.Show($"StockID: {stockID}");
+                    MessageBox.Show($"Quantity needed: {quantityNeeded}");
+                    MessageBox.Show($"Current inventory quantity: {currentQuantity}");
+                }
+
+                connection.Close();
+>>>>>>> Valerie
             }
             catch (Exception ex)
             {
@@ -176,8 +260,11 @@ namespace IOOP_Assignment
             */
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Valerie
         private void minusBtn_Click(object sender, EventArgs e)
         {
             int productQuantity = int.Parse(this.lblProductQuantity.Text);

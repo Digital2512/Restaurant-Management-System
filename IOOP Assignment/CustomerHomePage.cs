@@ -84,31 +84,49 @@ namespace IOOP_Assignment
                 int durationMinutes = database.getInt(query);
                 if (!string.IsNullOrEmpty(reservationID))
                 {
-                    query = $"SELECT ReservedDateTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                    query = $"SELECT ReservedDate FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                     DateTime? reservedDateTime = database.getDateTimeToProcess(query);
-
+        
                     string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
-                    string reservedTime = reservedDateTime?.ToString("HH:mm:ss") ?? "N/A";
 
+<<<<<<< HEAD
                     // Calculate end time by adding duration to reserved date and time
                     DateTime? endDateTime = reservedDateTime?.AddMinutes(durationMinutes);
                     string endDate = endDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
                     string endTime = endDateTime?.ToString("HH:mm:ss") ?? "N/A";
+=======
+                    query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                    int reservedStartTime = database.getInt(query);
+                    int reservedEndTime = 0;
+                    string startTimeFormatted = null;
+                    string endTimeFormatted = null;
+>>>>>>> Valerie
 
-                    // Display reservation details based on status
-                    if (reservationStatus == "IN_PROGRESS")
+                    if (durationMinutes == 60)
                     {
-                        this.lblReservationID.Text = $"{reservationID}";
-                        this.lblPlaceName.Text = $"{placeName}";
-                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
-                        this.lblReservationStatus.Text = reservationStatus;
-                        //reservationStatusPBox.Image = Properties.Resources.inKitchenResized;
+                        reservedEndTime = reservedStartTime + 100;
+                        startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
                     }
-                    else if (reservationStatus == "APPROVED")
+                    else if (durationMinutes == 120)
+                    {
+                        reservedEndTime = reservedStartTime + 200;
+                        startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
+                    }
+                    else if (durationMinutes == 180)
+                    {
+                        reservedEndTime = reservedStartTime + 300;
+                        startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
+                        endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
+                    }
+                    
+                    // Display reservation details based on status
+                    if (reservationStatus == "APPROVED")
                     {
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
-                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                         this.lblReservationStatus.Text = reservationStatus;
                         //reservationStatusPBox.Image = Properties.Resources.approvedResized;
                     }
@@ -116,7 +134,7 @@ namespace IOOP_Assignment
                     {
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
-                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                         this.lblReservationStatus.Text = reservationStatus;
                         //reservationStatusPBox.Image = Properties.Resources.deniedResized;
                     }
@@ -125,7 +143,7 @@ namespace IOOP_Assignment
 
                         this.lblReservationID.Text = $"{reservationID}";
                         this.lblPlaceName.Text = $"{placeName}";
-                        this.lblDateTimeRange.Text = $"{reservedDate} {reservedTime} - {endDate} {endTime}";
+                        this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                         this.lblReservationStatus.Text = reservationStatus;
                         //reservationStatusPBox.Image = Properties.Resources.pendingResized;
                     }
