@@ -86,9 +86,9 @@ namespace IOOP_Assignment
                 {
                     query = $"SELECT ReservedDate FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                     DateTime? reservedDateTime = database.getDateTimeToProcess(query);
-        
+
                     string reservedDate = reservedDateTime?.ToString("yyyy-MM-dd") ?? "N/A";
- 
+
                     query = $"SELECT ReservedStartTime FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                     int reservedStartTime = database.getInt(query);
                     int reservedEndTime = 0;
@@ -113,7 +113,7 @@ namespace IOOP_Assignment
                         startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
                         endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
                     }
-                    
+
 
                     // Display reservation details based on status
                     if (reservationStatus == "APPROVED")
@@ -189,6 +189,7 @@ namespace IOOP_Assignment
                     }
                 }
             }
+        }
 
         private void CustomerHomePage_Load(object sender, EventArgs e)
         {
