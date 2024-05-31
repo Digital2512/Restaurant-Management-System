@@ -17,14 +17,12 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        private void picManager_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManagerViewProfilePage frmViewProfile = new ManagerViewProfilePage();
-            frmViewProfile.ShowDialog();
+            ManagerMenuPage frmMenu = new ManagerMenuPage();
+            frmMenu.ShowDialog();
         }
-
-        
 
         private void btnTables_Click(object sender, EventArgs e)
         {
@@ -40,11 +38,11 @@ namespace IOOP_Assignment
             frmReport.ShowDialog();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void picManager_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManagerMenuPage frmMenu = new ManagerMenuPage();
-            frmMenu.ShowDialog();
+            ManagerViewProfilePage profilePage = new ManagerViewProfilePage();
+            profilePage.ShowDialog();
         }
     }
 }

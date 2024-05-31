@@ -55,7 +55,7 @@ namespace IOOP_Assignment
                 ratherNotSayRBtn.Checked = true;
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
-            profilePBox.Image = database.getImage(query, Properties.Resources.profile_userResized);
+            //profilePBox.Image = database.getImage(query, Properties.Resources.profile_userResized);
 
         }
 
@@ -80,12 +80,12 @@ namespace IOOP_Assignment
                 string userID = database.getString(query);
                 query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
                 lblPasswordValue.Text = database.getString(query);
-                passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
+                //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
             else if (lblPasswordValue.Text != "********")
             {
                 lblPasswordValue.Text = "********";
-                passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
+                //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
         }
 
