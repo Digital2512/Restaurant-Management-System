@@ -255,10 +255,16 @@ namespace IOOP_Assignment
         {
             Database database = new Database(ConnectionString);
             string query = $"DELETE FROM Reservation WHERE ReservationID = {reservationID} AND (ReservationStatus = 'APPROVED' OR ReservationStatus = 'DENIED')";
-            if(database.insertOrUpdateValuesIntoDatabase(query) == true)
+            bool deletedFromReservation = database.insertOrUpdateValuesIntoDatabase(query);
+
+            query = $"UPDATE Customer SET ReservationID = NULL WHERE ReservationID = '{reservationID}'";
+            bool deletedFromCustomer = database.insertOrUpdateValuesIntoDatabase(query);
+
+            if (deletedFromReservation == true && deletedFromCustomer == true)
             {
-                notedButton.Visible = false;   
+                notedButton.Visible = false;
             }
+
         }
     }
 }
