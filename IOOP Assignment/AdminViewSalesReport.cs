@@ -5,13 +5,12 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminViewSalesReport : Form
     {
@@ -23,7 +22,6 @@ namespace trial_2
             LoadSalesData();
             dgvSalesReport.DataSource = salesData;
             FilterData();
-
         }
 
         private void LoadSalesData()
@@ -59,7 +57,6 @@ namespace trial_2
 
             }
         }
-
         private void FilterData()
         {
             cmbMonth.Items.Clear();
@@ -85,7 +82,9 @@ namespace trial_2
                 }
             }
 
+
             cmbMonth.Items.Clear();
+
             using (SqlConnection con = new SqlConnection(conectionString))
             {
                 string query = "Select distinct UserID from Users where UserID like 'CH%'";
@@ -103,7 +102,10 @@ namespace trial_2
             }
         }
 
+        private void AdminViewSalesReport_Load(object sender, EventArgs e)
+        {
 
+        }
 
         private void LoadSalesData(int month, string cuisines, string chefID)
         {
@@ -158,8 +160,10 @@ namespace trial_2
                 orderCount++;
             }
 
+
             lblTotalAmount.Text = $"RM{totalAmount:F2}";
             lblOrderCount.Text = $"{orderCount}";
+
 
         }
 
@@ -172,14 +176,14 @@ namespace trial_2
             string chefID = cmbChefID.SelectedItem?.ToString();
 
             LoadSalesData(month, category, chefID);
-
-
         }
+
 
         private void AdminViewSalesReport_Load(object sender, EventArgs e)
         {
 
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

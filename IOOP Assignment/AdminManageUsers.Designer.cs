@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminManageUsers
     {

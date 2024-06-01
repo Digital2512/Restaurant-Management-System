@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     internal static class Program
     {
@@ -17,7 +17,11 @@ namespace trial_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new loginForm());
+
+            Application.Run(new AdminViewFeedback());
+
         }
     }
 }

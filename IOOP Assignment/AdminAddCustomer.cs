@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminAddCustomer : Form
     {
@@ -47,13 +47,13 @@ namespace trial_2
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
 
-            string newId = "C" + (count +1).ToString("D2");
+            string newId = "C" + (count + 1).ToString("D2");
             return newId;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if(!CheckedGender())
+            if (!CheckedGender())
             {
                 MessageBox.Show("Choose a gender");
                 return;
@@ -61,7 +61,7 @@ namespace trial_2
 
             string newId = AutoNewId();
 
-            Customer obj1 = new Customer(newId,txtFullName.Text,dtpDob.Text,gender,txtphoneNumber.Text,txtEmail.Text);
+            Customer obj1 = new Customer(newId, txtFullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text);
             MessageBox.Show(obj1.addCustomer());
         }
 

@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminUpdateProfile : Form
     {
@@ -20,8 +20,10 @@ namespace trial_2
         public AdminUpdateProfile()
         {
             InitializeComponent();
+
             connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             Database database = new Database(connectionString);
+
             string query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
             lblUserID.Text = userID;
@@ -36,7 +38,7 @@ namespace trial_2
             dtpBirthday.Text = database.GetDateTime(query).ToString();
 
             query = $"Select Gender from Users where UserID = '{userID}';";
-            string gender = database.GetString(query);  
+            string gender = database.GetString(query);
             if (gender == "Male")
             {
                 rdbMale.Checked = true;
@@ -52,30 +54,10 @@ namespace trial_2
             }
         }
 
-
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pboxAdmin.Image = new Bitmap(openFileDialog.FileName);
-            }
-        }
-
-        private byte[] ConvertImageToByteArray(Image image)
-        {
-            using (MemoryStream  ms = new MemoryStream())
-            {
-                image.Save(ms, ImageFormat.Png);
-                return ms.ToArray();
-            }
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string query;
-            Database database = new Database(connectionString);
+            Databases database = new Databases(connectionString);
             query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
             string FullName = txtFullName.Text;
@@ -84,12 +66,10 @@ namespace trial_2
             string Gender = rdbMale.Checked ? "Male" : rdbFemale.Checked ? "Female" : "";
 
             byte[] Image = null;
-            if(pboxAdmin.Image != null)
+            if (pboxAdmin.Image != null)
             {
                 Image = ConvertImageToByteArray(pboxAdmin.Image);
             }
-
-
 
             query = $"Update Users Set fullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, Image= @profile where UserID =@userID";
 
@@ -98,8 +78,8 @@ namespace trial_2
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@fn", FullName);
                 cmd.Parameters.AddWithValue("@pw", Password);
-                cmd.Parameters.AddWithValue("@birthday",Birthday);
-                cmd.Parameters.AddWithValue("@gender",Gender);
+                cmd.Parameters.AddWithValue("@birthday", Birthday);
+                cmd.Parameters.AddWithValue("@gender", Gender);
                 cmd.Parameters.AddWithValue("@profile", Image);
                 cmd.Parameters.AddWithValue("@userID", userID);
 
@@ -118,7 +98,24 @@ namespace trial_2
                 }
 
             }
+        }
+        private byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
 
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pboxAdmin.Image = new Bitmap(openFileDialog.FileName);
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

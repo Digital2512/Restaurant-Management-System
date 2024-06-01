@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     internal class Customer
     {
@@ -35,7 +35,7 @@ namespace trial_2
             this.Gender = gender;
             this.PhoneNumber = phoneNumber;
             this.Email = email;
-           
+
         }
 
         private string AutoNewID()
@@ -45,7 +45,7 @@ namespace trial_2
             object result = cmd.ExecuteScalar();
             con.Close();
 
-            string lastId = result!= null ? result.ToString() : "C00";
+            string lastId = result != null ? result.ToString() : "C00";
             string newId = GenerateNextId(lastId);
 
             return newId;
@@ -68,7 +68,7 @@ namespace trial_2
             con.Open();
             SqlCommand cmd = new SqlCommand("Insert into customers(Id,fullName,dateOfBirth,Gender,phoneNumber,Email) values (@id,@name,@dob,@gender,@num,@em)", con);
             cmd.Parameters.AddWithValue("@id", newId);
-            cmd.Parameters.AddWithValue("@name",fullName);
+            cmd.Parameters.AddWithValue("@name", fullName);
             cmd.Parameters.AddWithValue("@dob", dateOfBirth);
             cmd.Parameters.AddWithValue("@gender", Gender);
             cmd.Parameters.AddWithValue("@num", phoneNumber);
@@ -81,7 +81,7 @@ namespace trial_2
             {
                 con.Open();
                 SqlCommand cmd2 = new SqlCommand("insert into Users(UserID, password, role, LoggedIn) values(@id,'123','customer','True')", con);
-                cmd2.Parameters.AddWithValue("@id",newId);
+                cmd2.Parameters.AddWithValue("@id", newId);
 
                 int userRowsAffected = cmd2.ExecuteNonQuery();
                 con.Close();
@@ -107,7 +107,7 @@ namespace trial_2
         public DataTable GetCustomerId()
         {
             DataTable dt = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("Select Id from customers",con))
+            using (SqlCommand cmd = new SqlCommand("Select Id from customers", con))
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -118,9 +118,9 @@ namespace trial_2
         public DataTable GetCustomerById(string id)
         {
             DataTable dt = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("Select * from customers where Id = @id",con))
+            using (SqlCommand cmd = new SqlCommand("Select * from customers where Id = @id", con))
             {
-                cmd.Parameters.AddWithValue("id", id);  
+                cmd.Parameters.AddWithValue("id", id);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
 
@@ -135,7 +135,7 @@ namespace trial_2
             con.Open();
 
             SqlCommand cmd = new SqlCommand("Update customers set fullName = @fn, dateOfBirth = @dob, Gender =@gender, phoneNumber = @pn, Email = @em where Id = @id", con);
-            cmd.Parameters.AddWithValue("@id",id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fn", fullName);
             cmd.Parameters.AddWithValue("@dob", dob);
             cmd.Parameters.AddWithValue("@gender", gender);
@@ -164,10 +164,10 @@ namespace trial_2
             bool success = true;
             con.Open();
             SqlCommand cmd = new SqlCommand("delete from users where UserId = @userid", con);
-            cmd.Parameters.AddWithValue("@userid",id);
+            cmd.Parameters.AddWithValue("@userid", id);
             int rowAffected = cmd.ExecuteNonQuery();
 
-            if (rowAffected ==0)
+            if (rowAffected == 0)
             {
                 status = "Unable to delete customer from Users table.";
                 success = false;
@@ -178,7 +178,7 @@ namespace trial_2
                 cmd2.Parameters.AddWithValue("@id", id);
                 int rowAffected2 = cmd2.ExecuteNonQuery();
 
-                if (rowAffected2 ==0)
+                if (rowAffected2 == 0)
                 {
                     status = "Unable to delete customer from customers table.";
                     success = false;
@@ -192,7 +192,5 @@ namespace trial_2
             con.Close();
             return status;
         }
-
     }
-
 }

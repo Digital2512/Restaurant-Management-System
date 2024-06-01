@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminViewCustomer
     {
@@ -45,7 +45,7 @@
             this.lblViewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewCustomer.Location = new System.Drawing.Point(385, 64);
             this.lblViewCustomer.Name = "lblViewCustomer";
-            this.lblViewCustomer.Size = new System.Drawing.Size(261, 39);
+            this.lblViewCustomer.Size = new System.Drawing.Size(252, 38);
             this.lblViewCustomer.TabIndex = 0;
             this.lblViewCustomer.Text = "View Customer";
             // 

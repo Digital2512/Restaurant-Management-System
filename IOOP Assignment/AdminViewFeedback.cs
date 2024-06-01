@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminViewFeedback : Form
     {
@@ -25,7 +25,7 @@ namespace trial_2
             con.Open();
             string query;
 
-            if(string.IsNullOrEmpty(feedbackId))
+            if (string.IsNullOrEmpty(feedbackId))
             {
                 query = "Select * from Feedback";
             }
@@ -36,9 +36,9 @@ namespace trial_2
 
             SqlDataAdapter da = new SqlDataAdapter(query, con);
 
-            if(! string.IsNullOrEmpty(feedbackId) )
+            if (!string.IsNullOrEmpty(feedbackId))
             {
-                da.SelectCommand.Parameters.AddWithValue("@feedbackId",feedbackId);
+                da.SelectCommand.Parameters.AddWithValue("@feedbackId", feedbackId);
             }
 
             DataTable dt = new DataTable();
@@ -52,7 +52,7 @@ namespace trial_2
             cmbFeedbackID.Items.Clear();
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select FeedbackID from Feedback",con);
+            SqlCommand cmd = new SqlCommand("Select FeedbackID from Feedback", con);
 
             cmd.ExecuteNonQuery();
 
@@ -60,11 +60,11 @@ namespace trial_2
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 cmbFeedbackID.Items.Add(dr["FeedbackID"].ToString());
             }
-            con.Close() ;
+            con.Close();
         }
 
         private void AdminViewFeedback_Load(object sender, EventArgs e)

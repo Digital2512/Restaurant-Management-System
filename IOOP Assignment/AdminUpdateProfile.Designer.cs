@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminUpdateProfile
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUpdateProfile));
             this.lblAdminUpdateProfile = new System.Windows.Forms.Label();
             this.lblUserIDTitle = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -179,7 +178,6 @@
             // 
             // pboxAdmin
             // 
-            this.pboxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pboxAdmin.Image")));
             this.pboxAdmin.Location = new System.Drawing.Point(609, 154);
             this.pboxAdmin.Name = "pboxAdmin";
             this.pboxAdmin.Size = new System.Drawing.Size(210, 127);

@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminAddManager
     {
@@ -64,7 +64,7 @@
             this.lblAddManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddManager.Location = new System.Drawing.Point(391, 48);
             this.lblAddManager.Name = "lblAddManager";
-            this.lblAddManager.Size = new System.Drawing.Size(232, 39);
+            this.lblAddManager.Size = new System.Drawing.Size(223, 38);
             this.lblAddManager.TabIndex = 0;
             this.lblAddManager.Text = "Add Manager";
             // 
@@ -334,7 +334,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminAddManager";
             this.Text = "AddManager";
-            this.Load += new System.EventHandler(this.AddManager_Load);
+            this.Load += new System.EventHandler(this.AdminAddManager_Load);
             this.grpboxGender.ResumeLayout(false);
             this.grpboxGender.PerformLayout();
             this.grpboxSkills.ResumeLayout(false);

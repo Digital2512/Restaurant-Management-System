@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminUpdateDeleteCustomer : Form
     {
@@ -67,18 +67,16 @@ namespace trial_2
                txtEmail.Text);
 
             MessageBox.Show(status);
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string id = cmbCustomerID.Text; 
+            string id = cmbCustomerID.Text;
             string status = customer.deleteCustomer(id);
             MessageBox.Show(status);
 
             FillComboSearchCode();
             ClearForm();
-
         }
 
         private void ClearForm()
@@ -88,8 +86,8 @@ namespace trial_2
             dtpDob.Text = string.Empty;
             rdbtnMale.Checked = false;
             rdbtnFemale.Checked = false;
-            txtphoneNumber.Text= string.Empty;
-            txtEmail.Text= string.Empty;
+            txtphoneNumber.Text = string.Empty;
+            txtEmail.Text = string.Empty;
         }
 
         private void AdminUpdateDeleteCustomer_Load(object sender, EventArgs e)

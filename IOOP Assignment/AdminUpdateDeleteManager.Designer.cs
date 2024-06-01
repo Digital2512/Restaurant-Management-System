@@ -1,4 +1,4 @@
-﻿namespace trial_2
+﻿namespace IOOP_Assignment
 {
     partial class AdminUpdateDeleteManager
     {
@@ -69,7 +69,6 @@
             this.lblUpdateDeleteManager.Size = new System.Drawing.Size(450, 38);
             this.lblUpdateDeleteManager.TabIndex = 0;
             this.lblUpdateDeleteManager.Text = "Update and Delete Manager";
-            this.lblUpdateDeleteManager.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblManagerIDTitle
             // 
@@ -243,7 +242,6 @@
             this.lbleducationalBackground.Size = new System.Drawing.Size(218, 20);
             this.lbleducationalBackground.TabIndex = 23;
             this.lbleducationalBackground.Text = "Educational Background:";
-            this.lbleducationalBackground.Click += new System.EventHandler(this.lbleducationalBackground_Click);
             // 
             // lblEmail
             // 
@@ -359,7 +357,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminUpdateDeleteManager";
             this.Text = "AdminUpdateManager";
-            this.Load += new System.EventHandler(this.AdminUpdateManager_Load);
+            this.Load += new System.EventHandler(this.AdminUpdateDeleteManager_Load);
             this.grpboxSkills.ResumeLayout(false);
             this.grpboxSkills.PerformLayout();
             this.grpboxGender.ResumeLayout(false);

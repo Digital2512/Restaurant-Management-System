@@ -5,12 +5,18 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("trial 2")]
+[assembly: AssemblyTitle("IOOP Assignment")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+<<<<<<< HEAD
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("trial 2")]
+[assembly: AssemblyProduct("IOOP Assignment")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
+=======
+[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyProduct("IOOP Assignment")]
+[assembly: AssemblyCopyright("Copyright © HP 2024")]
+>>>>>>> parent of 777523d (commit admin)
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +26,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c0434354-982f-45d2-bc1c-87518dd38fe6")]
+[assembly: Guid("33abfcbe-ecb3-4b6a-9edb-a07faf8aa28d")]
 
 // Version information for an assembly consists of the following four values:
 //

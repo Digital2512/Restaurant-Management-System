@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trial_2
+namespace IOOP_Assignment
 {
     public partial class AdminViewCustomer : Form
     {
@@ -24,13 +24,12 @@ namespace trial_2
             customer = new Customer(connectionString);
         }
 
-
         private void FillData(string customerId = null)
         {
             con.Open();
             string query;
 
-            if(string.IsNullOrEmpty(customerId))
+            if (string.IsNullOrEmpty(customerId))
             {
                 query = "Select * from customers";
             }
@@ -41,9 +40,9 @@ namespace trial_2
 
             SqlDataAdapter da = new SqlDataAdapter(query, con);
 
-            if(!string.IsNullOrEmpty(customerId))
+            if (!string.IsNullOrEmpty(customerId))
             {
-                da.SelectCommand.Parameters.AddWithValue("@CustomerId",customerId);
+                da.SelectCommand.Parameters.AddWithValue("@CustomerId", customerId);
             }
 
             DataTable dt = new DataTable();
@@ -59,13 +58,13 @@ namespace trial_2
 
             foreach (DataRow dr in dt.Rows)
             {
-                cmbCustomerID.Items.Add(dr["Id"].ToString());   
+                cmbCustomerID.Items.Add(dr["Id"].ToString());
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string selectedCustomerId = cmbCustomerID.SelectedItem?.ToString(); 
+            string selectedCustomerId = cmbCustomerID.SelectedItem?.ToString();
             FillData(selectedCustomerId);
         }
 
