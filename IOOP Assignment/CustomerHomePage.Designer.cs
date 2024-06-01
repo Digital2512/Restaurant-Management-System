@@ -67,6 +67,7 @@
             this.lblDateTimeTitle = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.reservationPnl.SuspendLayout();
@@ -272,6 +273,7 @@
             // 
             // orderStatusPnl
             // 
+            this.orderStatusPnl.Controls.Add(this.refreshButton);
             this.orderStatusPnl.Controls.Add(this.lblOrderStatus);
             this.orderStatusPnl.Controls.Add(this.lblOrderStatusTitle);
             this.orderStatusPnl.Controls.Add(this.lblEstimatedTime);
@@ -373,7 +375,7 @@
             this.notedButton.Name = "notedButton";
             this.notedButton.Size = new System.Drawing.Size(96, 34);
             this.notedButton.TabIndex = 13;
-            this.notedButton.Text = "NOTED!";
+            this.notedButton.Text = "NOTED";
             this.notedButton.UseVisualStyleBackColor = true;
             this.notedButton.Click += new System.EventHandler(this.notedButton_Click);
             // 
@@ -462,6 +464,16 @@
             this.reservationStatusPBox.TabIndex = 2;
             this.reservationStatusPBox.TabStop = false;
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(354, 68);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(96, 34);
+            this.refreshButton.TabIndex = 14;
+            this.refreshButton.Text = "REFRESH";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // CustomerHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -536,5 +548,6 @@
         private System.Windows.Forms.Label lblReservationStatus;
         private System.Windows.Forms.Label lblReservationStatusTitle;
         private System.Windows.Forms.Button notedButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }

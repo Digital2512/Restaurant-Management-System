@@ -13,7 +13,9 @@ namespace IOOP_Assignment
     public partial class CustomerHomePage : Form
     {
         public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public string reservationID; 
+        public string customerID;
+        public string reservationID;
+        public string orderID;
 
         CustomerReservationPage customerReservationPage = new CustomerReservationPage();
         CustomerOrderPage customerOrderPage = new CustomerOrderPage();
@@ -26,13 +28,13 @@ namespace IOOP_Assignment
             notedButton.Visible = false;
             Database database = new Database(ConnectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
-            string customerID = database.getString(query);
+            customerID = database.getString(query);
             query = $"SELECT FullName FROM Users WHERE UserID = (SELECT UserID FROM Customer WHERE CustomerID = '{customerID}');";
             string customerName = database.getString(query);
             lblWelcome.Text = $"Welcome,{customerName}";
 
             query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING_FOR_CHEF';";
-            string orderID = database.getTopString(query);
+            orderID = database.getTopString(query);
             query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
             reservationID = database.getTopString(query);
             if (orderID != null || orderID != "")
@@ -254,13 +256,41 @@ namespace IOOP_Assignment
         private void notedButton_Click(object sender, EventArgs e)
         {
             Database database = new Database(ConnectionString);
-            string query = $"DELETE FROM Reservation WHERE ReservationID = {reservationID} AND (ReservationStatus = 'APPROVED' OR ReservationStatus = 'DENIED')";
-            bool deletedFromReservation = database.insertOrUpdateValuesIntoDatabase(query);
+            string query = $"SELECT ReservationID WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+            string updatedReservationID = database.getString(query);
 
-            query = $"UPDATE Customer SET ReservationID = NULL WHERE ReservationID = '{reservationID}'";
-            bool deletedFromCustomer = database.insertOrUpdateValuesIntoDatabase(query);
+            if (updatedReservationID != null || updatedReservationID != "")
+            {
+                query = $"UPDATE Customer SET ReservationID = '{updatedReservationID}' WHERE ReservationID = '{reservationID}'";
+            }
+            else
+            {
+                query = $"UPDATE Customer SET OrderID = NULL WHERE ReservationID = '{reservationID}'";
+            }
 
-            if (deletedFromReservation == true && deletedFromCustomer == true)
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+            {
+                notedButton.Visible = false;
+            }
+
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            Database database = new Database(ConnectionString);
+            string query = $"SELECT OrderID WHERE CustomerID = '{customerID}' AND (OrderStatus = 'WAITING_FOR_CHEF' OR OrderStatus = 'IN_PROGRESS');";
+            string updatedOrderID = database.getString(query);
+
+            if(updatedOrderID != null || updatedOrderID != "")
+            {
+                query = $"UPDATE Customer SET OrderID = '{updatedOrderID}' WHERE OrderID = '{orderID}'";
+            }
+            else
+            {
+                query = $"UPDATE Customer SET OrderID = NULL WHERE OrderID = '{orderID}'";
+            }
+
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
                 notedButton.Visible = false;
             }

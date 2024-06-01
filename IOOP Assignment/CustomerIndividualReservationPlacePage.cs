@@ -34,7 +34,7 @@ namespace IOOP_Assignment
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.placeImagePBox.Image = database.getImage(query);
             
-            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND (TimeStatus = 'AVAILABLE' OR TimeStatus = 'PENDING');";
+            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND TimeStatus = 'AVAILABLE';";
             startTimeCBox.Items.Clear();
             string placeStartTimeCBoxInput = null;
             DataTable placeStartTimeDataTable =  database.getDataTable(query);
@@ -308,7 +308,7 @@ namespace IOOP_Assignment
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             string placeID = database.getString(query);
 
-            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND PlaceTime > {startTime} AND (TimeStatus = 'AVAILABLE' OR TimeStatus = 'PENDING');";
+            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND PlaceTime > {startTime} AND TimeStatus = 'AVAILABLE';";
             endTimeCBox.Items.Clear();
             string placeEndTimeCBoxInput = null;
             DataTable placeEndTimeDataTable = database.getDataTable(query);
