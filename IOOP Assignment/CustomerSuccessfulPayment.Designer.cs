@@ -56,6 +56,7 @@
             // 
             // approvedPBox
             // 
+            this.approvedPBox.Image = global::IOOP_Assignment.Properties.Resources.checkedResized;
             this.approvedPBox.Location = new System.Drawing.Point(288, 112);
             this.approvedPBox.Name = "approvedPBox";
             this.approvedPBox.Size = new System.Drawing.Size(204, 199);

@@ -369,6 +369,7 @@
             // 
             // reservationStatusPBox
             // 
+            this.reservationStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.reservationStatusPBox.Location = new System.Drawing.Point(339, 0);
             this.reservationStatusPBox.Name = "reservationStatusPBox";
             this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
@@ -378,6 +379,7 @@
             // 
             // orderStatusPBox
             // 
+            this.orderStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.errorImageSmaller;
             this.orderStatusPBox.Location = new System.Drawing.Point(339, 0);
             this.orderStatusPBox.Name = "orderStatusPBox";
             this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
@@ -390,6 +392,7 @@
             this.reservationBtn.BackColor = System.Drawing.Color.DimGray;
             this.reservationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.White;
+            this.reservationBtn.Image = global::IOOP_Assignment.Properties.Resources.reservationResized;
             this.reservationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reservationBtn.Location = new System.Drawing.Point(-3, -10);
             this.reservationBtn.Name = "reservationBtn";
@@ -404,6 +407,7 @@
             this.orderBtn.BackColor = System.Drawing.Color.DimGray;
             this.orderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.Color.White;
+            this.orderBtn.Image = global::IOOP_Assignment.Properties.Resources.orderReszied;
             this.orderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.orderBtn.Location = new System.Drawing.Point(-3, -7);
             this.orderBtn.Name = "orderBtn";
@@ -418,6 +422,7 @@
             this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
             this.feedbackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackBtn.ForeColor = System.Drawing.Color.White;
+            this.feedbackBtn.Image = global::IOOP_Assignment.Properties.Resources.feedbackResized;
             this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.feedbackBtn.Location = new System.Drawing.Point(-3, -7);
             this.feedbackBtn.Name = "feedbackBtn";
@@ -432,6 +437,7 @@
             this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.White;
+            this.logoutBtn.Image = global::IOOP_Assignment.Properties.Resources.logoutResized;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(-3, -6);
             this.logoutBtn.Name = "logoutBtn";
@@ -443,6 +449,7 @@
             // 
             // btnSidebar
             // 
+            this.btnSidebar.Image = global::IOOP_Assignment.Properties.Resources.menuResized;
             this.btnSidebar.Location = new System.Drawing.Point(0, 0);
             this.btnSidebar.Name = "btnSidebar";
             this.btnSidebar.Size = new System.Drawing.Size(51, 62);

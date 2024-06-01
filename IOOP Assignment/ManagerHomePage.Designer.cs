@@ -1,4 +1,6 @@
-﻿namespace IOOP_Assignment
+﻿using IOOP_Assignment.Properties;
+
+namespace IOOP_Assignment
 {
     partial class ManagerHomePage
     {
@@ -31,11 +33,11 @@
             this.lblGreetMng = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblResv = new System.Windows.Forms.Label();
             this.btnResvReport = new System.Windows.Forms.Button();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picManager = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -70,16 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 213);
             this.panel1.TabIndex = 17;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(-12, -15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(269, 231);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
             // 
             // lblResv
             // 
@@ -133,17 +125,28 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::IOOP_Assignment.Properties.Resources.DeliciousIcon;
+            this.pictureBox2.Location = new System.Drawing.Point(-12, -15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(269, 231);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
             // picManager
             // 
             this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.managerIcon;
             this.picManager.Location = new System.Drawing.Point(554, 30);
             this.picManager.Name = "picManager";
             this.picManager.Size = new System.Drawing.Size(146, 140);
             this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picManager.TabIndex = 15;
             this.picManager.TabStop = false;
-            this.picManager.Click += new System.EventHandler(this.picManager_Click);
             // 
             // ManagerHomePage
             // 

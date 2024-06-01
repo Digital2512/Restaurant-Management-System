@@ -34,11 +34,11 @@ namespace IOOP_Assignment
                 string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
-                //Image productImage = database.getImage(query, Properties.Resources.defaultImage);
+                Image productImage = database.getImage(query, Properties.Resources.defaultImage);
 
-                //var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
+                var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 
-                //productDisplayFlowPanel.Controls.Add(productButton);
+                productDisplayFlowPanel.Controls.Add(productButton);
             }
         }
 
@@ -137,11 +137,11 @@ namespace IOOP_Assignment
                 string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
-                //Image productImage = database.getImage(query, Properties.Resources.defaultImage);
+                Image productImage = database.getImage(query, Properties.Resources.defaultImage);
 
-                //var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
+                var productButton = new foodButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
 
-                //productDisplayFlowPanel.Controls.Add(productButton);
+                productDisplayFlowPanel.Controls.Add(productButton);
             }
         }
 

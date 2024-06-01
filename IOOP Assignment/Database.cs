@@ -358,6 +358,7 @@ namespace IOOP_Assignment
 
         public Image getImage(string query, Image errorImage)
         {
+            Image resultImage = Properties.Resources.errorImageSmaller;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 try
@@ -374,13 +375,13 @@ namespace IOOP_Assignment
                             {
                                 using (MemoryStream ms = new MemoryStream(imageBytes))
                                 {
-                                    //resultImage = Image.FromStream(ms);
+                                    resultImage = Image.FromStream(ms);
                                 }
                             }
                         }
                         else
                         {
-                            //resultImage = errorImage;   
+                            resultImage = errorImage;   
                         }
                     }
                     else
