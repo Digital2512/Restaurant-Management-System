@@ -42,17 +42,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(342, 98);
+            this.label1.Location = new System.Drawing.Point(385, 122);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 38);
+            this.label1.Size = new System.Drawing.Size(417, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "ADMIN HOME PAGE";
             // 
             // btnManageUsers
             // 
-            this.btnManageUsers.Location = new System.Drawing.Point(-1, 260);
+            this.btnManageUsers.Location = new System.Drawing.Point(-1, 324);
+            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Size = new System.Drawing.Size(1027, 72);
+            this.btnManageUsers.Size = new System.Drawing.Size(1155, 90);
             this.btnManageUsers.TabIndex = 1;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@
             // 
             // btnViewSalesReport
             // 
-            this.btnViewSalesReport.Location = new System.Drawing.Point(-1, 328);
+            this.btnViewSalesReport.Location = new System.Drawing.Point(-1, 410);
+            this.btnViewSalesReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewSalesReport.Name = "btnViewSalesReport";
-            this.btnViewSalesReport.Size = new System.Drawing.Size(1027, 70);
+            this.btnViewSalesReport.Size = new System.Drawing.Size(1155, 88);
             this.btnViewSalesReport.TabIndex = 2;
             this.btnViewSalesReport.Text = "View Sales Report";
             this.btnViewSalesReport.UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@
             // 
             // btnViewFeedback
             // 
-            this.btnViewFeedback.Location = new System.Drawing.Point(-1, 394);
+            this.btnViewFeedback.Location = new System.Drawing.Point(-1, 492);
+            this.btnViewFeedback.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewFeedback.Name = "btnViewFeedback";
-            this.btnViewFeedback.Size = new System.Drawing.Size(1027, 74);
+            this.btnViewFeedback.Size = new System.Drawing.Size(1155, 92);
             this.btnViewFeedback.TabIndex = 3;
             this.btnViewFeedback.Text = "View Feedback";
             this.btnViewFeedback.UseVisualStyleBackColor = true;
@@ -80,9 +83,10 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(-1, 464);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(-1, 580);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(1027, 82);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(1155, 102);
             this.btnUpdateProfile.TabIndex = 4;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -93,24 +97,26 @@
             this.panelHeader.BackColor = System.Drawing.Color.DimGray;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1027, 34);
+            this.panelHeader.Size = new System.Drawing.Size(1155, 42);
             this.panelHeader.TabIndex = 5;
             // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(53, 34);
+            this.btnBack.Size = new System.Drawing.Size(60, 42);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "<";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
             // AdminHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 541);
+            this.ClientSize = new System.Drawing.Size(1153, 676);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.btnViewFeedback);
@@ -118,6 +124,7 @@
             this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminHomePage";
             this.Text = "AdminHomePage";
             this.panelHeader.ResumeLayout(false);
