@@ -14,7 +14,7 @@ namespace trial_2
 {
     public partial class AdminAddCustomer : Form
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public AdminAddCustomer()
         {

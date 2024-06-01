@@ -20,7 +20,7 @@ namespace trial_2
         public AdminUpdateProfile()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             Database database = new Database(connectionString);
             string query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
@@ -126,6 +126,11 @@ namespace trial_2
             AdminHomePage hp = new AdminHomePage();
             this.Hide();
             hp.Show();
+        }
+
+        private void AdminUpdateProfile_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

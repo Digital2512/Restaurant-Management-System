@@ -58,7 +58,7 @@
             this.lblAdminUpdateProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdminUpdateProfile.Location = new System.Drawing.Point(306, 54);
             this.lblAdminUpdateProfile.Name = "lblAdminUpdateProfile";
-            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(359, 39);
+            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(344, 38);
             this.lblAdminUpdateProfile.TabIndex = 0;
             this.lblAdminUpdateProfile.Text = "Admin Update Profile";
             // 
@@ -251,6 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminUpdateProfile";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.AdminUpdateProfile_Load);
             this.grpboxGender.ResumeLayout(false);
             this.grpboxGender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAdmin)).EndInit();

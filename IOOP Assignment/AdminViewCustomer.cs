@@ -19,7 +19,7 @@ namespace trial_2
         public AdminViewCustomer()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             con = new SqlConnection(connectionString);
             customer = new Customer(connectionString);
         }

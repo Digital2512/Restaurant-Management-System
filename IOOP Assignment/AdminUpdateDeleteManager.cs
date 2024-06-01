@@ -21,7 +21,7 @@ namespace trial_2
 
         {
             InitializeComponent();
-            string connctionString =ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connctionString ="Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             manager = new Manager(connctionString);
         }
 

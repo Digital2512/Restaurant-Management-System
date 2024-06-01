@@ -19,7 +19,7 @@ namespace trial_2
         public AdminViewChef()
         {
             InitializeComponent();
-            string conectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             con = new SqlConnection(conectionString);
             chef = new Chef(conectionString);
         }

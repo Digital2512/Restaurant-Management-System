@@ -18,7 +18,7 @@ namespace trial_2
         public AdminUpdateDeleteChef()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True"; 
             chef = new Chef(connectionString);
         }
 

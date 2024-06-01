@@ -66,7 +66,7 @@
             this.lblUpdateDeleteManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateDeleteManager.Location = new System.Drawing.Point(320, 46);
             this.lblUpdateDeleteManager.Name = "lblUpdateDeleteManager";
-            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(469, 39);
+            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(450, 38);
             this.lblUpdateDeleteManager.TabIndex = 0;
             this.lblUpdateDeleteManager.Text = "Update and Delete Manager";
             this.lblUpdateDeleteManager.Click += new System.EventHandler(this.label1_Click);
@@ -75,7 +75,7 @@
             // 
             this.lblManagerIDTitle.AutoSize = true;
             this.lblManagerIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManagerIDTitle.Location = new System.Drawing.Point(143, 133);
+            this.lblManagerIDTitle.Location = new System.Drawing.Point(89, 131);
             this.lblManagerIDTitle.Name = "lblManagerIDTitle";
             this.lblManagerIDTitle.Size = new System.Drawing.Size(112, 20);
             this.lblManagerIDTitle.TabIndex = 1;
@@ -89,9 +89,9 @@
             this.grpboxSkills.Controls.Add(this.checkBox3);
             this.grpboxSkills.Controls.Add(this.checkBox1);
             this.grpboxSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpboxSkills.Location = new System.Drawing.Point(573, 232);
+            this.grpboxSkills.Location = new System.Drawing.Point(548, 230);
             this.grpboxSkills.Name = "grpboxSkills";
-            this.grpboxSkills.Size = new System.Drawing.Size(376, 177);
+            this.grpboxSkills.Size = new System.Drawing.Size(413, 177);
             this.grpboxSkills.TabIndex = 31;
             this.grpboxSkills.TabStop = false;
             this.grpboxSkills.Text = "Skills";
@@ -148,24 +148,24 @@
             // 
             // lsteducationalBackground
             // 
-            this.lsteducationalBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsteducationalBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsteducationalBackground.FormattingEnabled = true;
-            this.lsteducationalBackground.ItemHeight = 20;
+            this.lsteducationalBackground.ItemHeight = 16;
             this.lsteducationalBackground.Items.AddRange(new object[] {
             "Diploma",
             "Bachelor Degree",
             "Master Degree",
             "Certification"});
-            this.lsteducationalBackground.Location = new System.Drawing.Point(816, 186);
+            this.lsteducationalBackground.Location = new System.Drawing.Point(799, 182);
             this.lsteducationalBackground.Name = "lsteducationalBackground";
-            this.lsteducationalBackground.Size = new System.Drawing.Size(133, 24);
+            this.lsteducationalBackground.Size = new System.Drawing.Size(162, 36);
             this.lsteducationalBackground.TabIndex = 30;
             // 
             // lblDob
             // 
             this.lblDob.AutoSize = true;
             this.lblDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDob.Location = new System.Drawing.Point(143, 231);
+            this.lblDob.Location = new System.Drawing.Point(89, 229);
             this.lblDob.Name = "lblDob";
             this.lblDob.Size = new System.Drawing.Size(124, 20);
             this.lblDob.TabIndex = 29;
@@ -174,7 +174,7 @@
             // dtpDob
             // 
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDob.Location = new System.Drawing.Point(316, 231);
+            this.dtpDob.Location = new System.Drawing.Point(262, 229);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(186, 22);
             this.dtpDob.TabIndex = 28;
@@ -184,7 +184,7 @@
             this.grpboxGender.Controls.Add(this.rdbtnFemale);
             this.grpboxGender.Controls.Add(this.rdbtnMale);
             this.grpboxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpboxGender.Location = new System.Drawing.Point(147, 269);
+            this.grpboxGender.Location = new System.Drawing.Point(93, 267);
             this.grpboxGender.Name = "grpboxGender";
             this.grpboxGender.Size = new System.Drawing.Size(172, 100);
             this.grpboxGender.TabIndex = 27;
@@ -215,21 +215,21 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(316, 434);
+            this.txtEmail.Location = new System.Drawing.Point(262, 432);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(186, 22);
             this.txtEmail.TabIndex = 26;
             // 
             // txtphoneNumber
             // 
-            this.txtphoneNumber.Location = new System.Drawing.Point(316, 387);
+            this.txtphoneNumber.Location = new System.Drawing.Point(262, 385);
             this.txtphoneNumber.Name = "txtphoneNumber";
             this.txtphoneNumber.Size = new System.Drawing.Size(186, 22);
             this.txtphoneNumber.TabIndex = 25;
             // 
             // txtfullName
             // 
-            this.txtfullName.Location = new System.Drawing.Point(316, 184);
+            this.txtfullName.Location = new System.Drawing.Point(262, 182);
             this.txtfullName.Name = "txtfullName";
             this.txtfullName.Size = new System.Drawing.Size(186, 22);
             this.txtfullName.TabIndex = 24;
@@ -238,7 +238,7 @@
             // 
             this.lbleducationalBackground.AutoSize = true;
             this.lbleducationalBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbleducationalBackground.Location = new System.Drawing.Point(571, 186);
+            this.lbleducationalBackground.Location = new System.Drawing.Point(544, 182);
             this.lbleducationalBackground.Name = "lbleducationalBackground";
             this.lbleducationalBackground.Size = new System.Drawing.Size(218, 20);
             this.lbleducationalBackground.TabIndex = 23;
@@ -249,7 +249,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(143, 434);
+            this.lblEmail.Location = new System.Drawing.Point(89, 432);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(62, 20);
             this.lblEmail.TabIndex = 22;
@@ -259,7 +259,7 @@
             // 
             this.lblphoneNumber.AutoSize = true;
             this.lblphoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblphoneNumber.Location = new System.Drawing.Point(143, 389);
+            this.lblphoneNumber.Location = new System.Drawing.Point(89, 387);
             this.lblphoneNumber.Name = "lblphoneNumber";
             this.lblphoneNumber.Size = new System.Drawing.Size(138, 20);
             this.lblphoneNumber.TabIndex = 21;
@@ -269,7 +269,7 @@
             // 
             this.lblfullName.AutoSize = true;
             this.lblfullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfullName.Location = new System.Drawing.Point(143, 186);
+            this.lblfullName.Location = new System.Drawing.Point(89, 184);
             this.lblfullName.Name = "lblfullName";
             this.lblfullName.Size = new System.Drawing.Size(100, 20);
             this.lblfullName.TabIndex = 20;
@@ -288,14 +288,14 @@
             // cmbManagerID
             // 
             this.cmbManagerID.FormattingEnabled = true;
-            this.cmbManagerID.Location = new System.Drawing.Point(316, 127);
+            this.cmbManagerID.Location = new System.Drawing.Point(262, 125);
             this.cmbManagerID.Name = "cmbManagerID";
             this.cmbManagerID.Size = new System.Drawing.Size(143, 24);
             this.cmbManagerID.TabIndex = 33;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(486, 127);
+            this.btnSearch.Location = new System.Drawing.Point(432, 125);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 30);
             this.btnSearch.TabIndex = 34;

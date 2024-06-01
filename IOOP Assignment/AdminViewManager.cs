@@ -20,7 +20,7 @@ namespace trial_2
         public AdminViewManager()
         {
             InitializeComponent();
-            string conectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             con = new SqlConnection(conectionString);
             manager = new Manager(conectionString);
         }

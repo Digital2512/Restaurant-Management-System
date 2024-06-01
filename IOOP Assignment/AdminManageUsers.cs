@@ -92,5 +92,10 @@ namespace trial_2
             this.Hide();
             hp.Show();
         }
+
+        private void AdminManageUsers_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

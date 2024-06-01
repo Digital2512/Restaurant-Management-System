@@ -55,7 +55,7 @@
             this.lblAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddCustomer.Location = new System.Drawing.Point(393, 64);
             this.lblAddCustomer.Name = "lblAddCustomer";
-            this.lblAddCustomer.Size = new System.Drawing.Size(246, 39);
+            this.lblAddCustomer.Size = new System.Drawing.Size(238, 38);
             this.lblAddCustomer.TabIndex = 0;
             this.lblAddCustomer.Text = "Add Customer";
             // 
@@ -133,24 +133,23 @@
             // rdbtnFemale
             // 
             this.rdbtnFemale.AutoSize = true;
-            this.rdbtnFemale.Location = new System.Drawing.Point(7, 49);
+            this.rdbtnFemale.Location = new System.Drawing.Point(7, 57);
             this.rdbtnFemale.Name = "rdbtnFemale";
             this.rdbtnFemale.Size = new System.Drawing.Size(91, 24);
-            this.rdbtnFemale.TabIndex = 1;
-            this.rdbtnFemale.TabStop = true;
+            this.rdbtnFemale.TabIndex = 3;
             this.rdbtnFemale.Text = "Female";
             this.rdbtnFemale.UseVisualStyleBackColor = true;
             // 
             // rdbtnMale
             // 
             this.rdbtnMale.AutoSize = true;
-            this.rdbtnMale.Location = new System.Drawing.Point(7, 22);
+            this.rdbtnMale.Location = new System.Drawing.Point(7, 26);
             this.rdbtnMale.Name = "rdbtnMale";
             this.rdbtnMale.Size = new System.Drawing.Size(70, 24);
-            this.rdbtnMale.TabIndex = 0;
-            this.rdbtnMale.TabStop = true;
+            this.rdbtnMale.TabIndex = 2;
             this.rdbtnMale.Text = "Male";
             this.rdbtnMale.UseVisualStyleBackColor = true;
+
             // 
             // txtFullName
             // 
@@ -251,8 +250,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblphoneNumber;
         private System.Windows.Forms.GroupBox grpboxGender;
-        private System.Windows.Forms.RadioButton rdbtnFemale;
-        private System.Windows.Forms.RadioButton rdbtnMale;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.TextBox txtphoneNumber;
@@ -260,5 +257,7 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.RadioButton rdbtnMale;
+        private System.Windows.Forms.RadioButton rdbtnFemale;
     }
 }
