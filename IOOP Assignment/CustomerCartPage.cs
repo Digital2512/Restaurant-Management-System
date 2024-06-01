@@ -181,7 +181,7 @@ namespace IOOP_Assignment
 
                 foreach (string orderDetailsID in orderDetailsIDArray)
                 {
-                    query = $"SELECT ProductID, Name, Price, Quantity, SpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
+                    query = $"SELECT ProductID, Name, Price, Quantity, OrderSpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
                     DataTable cartDataTable = database.getDataTable(query);
 
                     foreach (DataRow row in cartDataTable.Rows)
@@ -190,7 +190,7 @@ namespace IOOP_Assignment
                         string productName = row["Name"].ToString();
                         string productPrice = row["Price"].ToString();
                         string productQuantity = row["Quantity"].ToString();
-                        string productSpecialInstructions = row["SpecialInstructions"].ToString();
+                        string productSpecialInstructions = row["OrderSpecialInstructions"].ToString();
 
                         decimal intProductPrice = Convert.ToDecimal(productPrice);
                         int intProductQuantity = Convert.ToInt32(productQuantity);
