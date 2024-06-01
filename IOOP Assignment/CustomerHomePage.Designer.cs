@@ -57,6 +57,7 @@
             this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
             this.lblOrderIDTitle = new System.Windows.Forms.Label();
             this.pastOrderPnl = new System.Windows.Forms.Panel();
+            this.notedButton = new System.Windows.Forms.Button();
             this.lblReservationStatus = new System.Windows.Forms.Label();
             this.lblReservationStatusTitle = new System.Windows.Forms.Label();
             this.lblPlaceName = new System.Windows.Forms.Label();
@@ -351,6 +352,7 @@
             // 
             // pastOrderPnl
             // 
+            this.pastOrderPnl.Controls.Add(this.notedButton);
             this.pastOrderPnl.Controls.Add(this.lblReservationStatus);
             this.pastOrderPnl.Controls.Add(this.lblReservationStatusTitle);
             this.pastOrderPnl.Controls.Add(this.lblPlaceName);
@@ -364,6 +366,16 @@
             this.pastOrderPnl.Name = "pastOrderPnl";
             this.pastOrderPnl.Size = new System.Drawing.Size(575, 151);
             this.pastOrderPnl.TabIndex = 5;
+            // 
+            // notedButton
+            // 
+            this.notedButton.Location = new System.Drawing.Point(354, 116);
+            this.notedButton.Name = "notedButton";
+            this.notedButton.Size = new System.Drawing.Size(96, 34);
+            this.notedButton.TabIndex = 13;
+            this.notedButton.Text = "NOTED!";
+            this.notedButton.UseVisualStyleBackColor = true;
+            this.notedButton.Click += new System.EventHandler(this.notedButton_Click);
             // 
             // lblReservationStatus
             // 
@@ -410,7 +422,7 @@
             this.lblDateTimeRange.Name = "lblDateTimeRange";
             this.lblDateTimeRange.Size = new System.Drawing.Size(35, 20);
             this.lblDateTimeRange.TabIndex = 8;
-            this.lblDateTimeRange.Text = "N/A";            
+            this.lblDateTimeRange.Text = "N/A";
             // 
             // lblReservationID
             // 
@@ -523,5 +535,6 @@
         private System.Windows.Forms.Label lblOrderStatusTitle;
         private System.Windows.Forms.Label lblReservationStatus;
         private System.Windows.Forms.Label lblReservationStatusTitle;
+        private System.Windows.Forms.Button notedButton;
     }
 }
