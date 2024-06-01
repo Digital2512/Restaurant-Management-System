@@ -77,10 +77,5 @@ namespace IOOP_Assignment
             this.Hide();
             hp.Show();
         }
-
-        private void AdminManageUsers_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

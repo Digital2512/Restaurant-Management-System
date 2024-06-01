@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewSalesReport : Form
     {
-        string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        string conectionString = "";
         private DataTable salesData = new DataTable();
         public AdminViewSalesReport()
         {
@@ -28,44 +28,20 @@ namespace IOOP_Assignment
         {
             using (SqlConnection con = new SqlConnection(conectionString))
             {
-                string query = @"
-                    Select
-                        NewID() AS ReportID, 
-                        O.OrderID,
-                        M.Cuisine,
-                        U.UserID As ChefID, 
-                        O.OrderDateTime,
-                        OD.Price,
-                        OD.Quantity,
-                        (OD.Price* OD.Quantity) As TotalAmount
-                    from 
-                        Orders O
-                    Inner join
-                        OrderDetails OD on O.OrderID = OD.OrderID
-                    Inner Join
-                        Menu M on OD.ProductID = M.ProductID
-                    Inner Join
-                        Users U on O.CustomerID = U.UserID";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(salesData);
-
-                }
-
+                string query = "Select * From SalesReport";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(salesData);
             }
         }
         private void FilterData()
         {
-            cmbMonth.Items.Clear();
             cmbMonth.Items.AddRange(new string[]
             {
                 "January","February","March","April","May","June", "July","August","September","October","November","Dcemeber"
             });
 
-            cmbMonth.Items.Clear();
+
             using (SqlConnection con = new SqlConnection(conectionString))
             {
                 string query = "Select Distinct Cuisine from Menu";
@@ -81,10 +57,6 @@ namespace IOOP_Assignment
                     }
                 }
             }
-
-
-            cmbMonth.Items.Clear();
-
             using (SqlConnection con = new SqlConnection(conectionString))
             {
                 string query = "Select distinct UserID from Users where UserID like 'CH%'";
@@ -107,67 +79,39 @@ namespace IOOP_Assignment
 
         }
 
-        private void LoadSalesData(int month, string cuisines, string chefID)
+        private void LoadSalesData(int month, string Cuisines, string chefID)
         {
             DataTable salesData = new DataTable();
 
             using (SqlConnection con = new SqlConnection(conectionString))
             {
-                string query = @"
-                    Select
-                        NewID() As ReportID,
-                        O.OrderID,
-                        M.Cuisine,
-                        U.UserID As ChefID,
-                        O.OrderDateTime,
-                        OD.Price,
-                        OD.Quantity,
-                        (OD.Price*OD.Quantity) As TotalAmount
-                    From
-                        Orders O
-                    Inner Join
-                        OrderDetails OD on O.OrderID = OD.OrderID
-                    Inner Join
-                        Menu M on OD.ProductID = M.ProductID
-                    Inner Join
-                        Users U on O.CustomerID = U.UserID
-                    Where
-                        Month(O.orderDateTime) = @month
-                        And M.Cuisine = @cuisine
-                        And U.UserID = @chefID";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                string query = @"Select ReportID,ProductID, Cuisines,ChefID,OrderDateTime,Price,Quantity,(Price*Quantity) As TotalAmount From SalesReport where Month(OrderDateTime) = @month and Cuisines = @cuisines and ChefID = @chefID";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@month", month);
+                cmd.Parameters.AddWithValue("@cuisines", Cuisines);
+                cmd.Parameters.AddWithValue("@chefID", chefID);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvSalesReport.DataSource = dt;
+
+                decimal totalAmount = 0;
+                int orderCount = 0;
+                foreach (DataGridViewRow row in dgvSalesReport.Rows)
                 {
-                    cmd.Parameters.AddWithValue("@month", month);
-                    cmd.Parameters.AddWithValue("@cuisine", cuisines);
-                    cmd.Parameters.AddWithValue("@chefID", chefID);
-
-                    con.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    if (row.Cells["TotalAmount"].Value != null)
                     {
-                        salesData.Load(reader);
+                        totalAmount += Convert.ToDecimal(row.Cells["TotalAmount"].Value);
                     }
+                    orderCount++;
                 }
 
+                lblTotalAmount.Text = $"Total Amount: {totalAmount:C}";
+                lblOrderCount.Text = $"Order Count: {orderCount}";
             }
-            dgvSalesReport.DataSource = salesData;
-
-            decimal totalAmount = 0;
-            int orderCount = 0;
-            foreach (DataRow row in salesData.Rows)
-            {
-                totalAmount += Convert.ToDecimal(row["TotalAmount"]);
-                orderCount++;
-            }
-
-
-            lblTotalAmount.Text = $"RM{totalAmount:F2}";
-            lblOrderCount.Text = $"{orderCount}";
-
-
         }
-
-
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -177,13 +121,6 @@ namespace IOOP_Assignment
 
             LoadSalesData(month, category, chefID);
         }
-
-
-        private void AdminViewSalesReport_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {

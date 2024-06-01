@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteChef()
         {
             InitializeComponent();
-            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True"; 
+            string connectionString = "";
             chef = new Chef(connectionString);
         }
 
