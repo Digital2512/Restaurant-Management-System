@@ -257,9 +257,9 @@
             // 
             // lstchefPosition
             // 
-            this.lstchefPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstchefPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstchefPosition.FormattingEnabled = true;
-            this.lstchefPosition.ItemHeight = 20;
+            this.lstchefPosition.ItemHeight = 16;
             this.lstchefPosition.Items.AddRange(new object[] {
             "Executive chef",
             "Head chef",
@@ -267,7 +267,7 @@
             "Sushi chef"});
             this.lstchefPosition.Location = new System.Drawing.Point(735, 140);
             this.lstchefPosition.Name = "lstchefPosition";
-            this.lstchefPosition.Size = new System.Drawing.Size(197, 44);
+            this.lstchefPosition.Size = new System.Drawing.Size(197, 36);
             this.lstchefPosition.TabIndex = 14;
             // 
             // lblchefPosition

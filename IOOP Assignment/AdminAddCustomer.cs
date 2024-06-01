@@ -14,7 +14,8 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddCustomer : Form
     {
-        SqlConnection con = new SqlConnection("");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True");
+
         public AdminAddCustomer()
         {
             InitializeComponent();

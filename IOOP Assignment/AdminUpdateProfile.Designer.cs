@@ -249,6 +249,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminUpdateProfile";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.AdminUpdateProfile_Load);
             this.grpboxGender.ResumeLayout(false);
             this.grpboxGender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAdmin)).EndInit();

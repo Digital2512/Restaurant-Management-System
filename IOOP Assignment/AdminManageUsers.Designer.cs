@@ -217,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminManageUsers";
             this.Text = "AdminManageUsercs";
+            this.Load += new System.EventHandler(this.AdminManageUsers_Load_1);
             this.paneHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -135,7 +135,7 @@
             // 
             this.lblTotalAmountTilte.AutoSize = true;
             this.lblTotalAmountTilte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmountTilte.Location = new System.Drawing.Point(772, 505);
+            this.lblTotalAmountTilte.Location = new System.Drawing.Point(708, 513);
             this.lblTotalAmountTilte.Name = "lblTotalAmountTilte";
             this.lblTotalAmountTilte.Size = new System.Drawing.Size(126, 20);
             this.lblTotalAmountTilte.TabIndex = 9;
@@ -145,7 +145,7 @@
             // 
             this.lblOrderCountTitle.AutoSize = true;
             this.lblOrderCountTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderCountTitle.Location = new System.Drawing.Point(772, 474);
+            this.lblOrderCountTitle.Location = new System.Drawing.Point(708, 482);
             this.lblOrderCountTitle.Name = "lblOrderCountTitle";
             this.lblOrderCountTitle.Size = new System.Drawing.Size(118, 20);
             this.lblOrderCountTitle.TabIndex = 10;
@@ -155,7 +155,7 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalAmount.Location = new System.Drawing.Point(916, 508);
+            this.lblTotalAmount.Location = new System.Drawing.Point(852, 516);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(2, 18);
             this.lblTotalAmount.TabIndex = 11;
@@ -164,7 +164,7 @@
             // 
             this.lblOrderCount.AutoSize = true;
             this.lblOrderCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOrderCount.Location = new System.Drawing.Point(916, 476);
+            this.lblOrderCount.Location = new System.Drawing.Point(852, 484);
             this.lblOrderCount.Name = "lblOrderCount";
             this.lblOrderCount.Size = new System.Drawing.Size(2, 18);
             this.lblOrderCount.TabIndex = 12;

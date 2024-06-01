@@ -17,7 +17,9 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteManager()
         {
             InitializeComponent();
-            string connctionString = "";
+
+            string connctionString ="Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
             manager = new Manager(connctionString);
         }
 

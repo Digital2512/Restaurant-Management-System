@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewChef()
         {
             InitializeComponent();
-            string conectionString = "";
+            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
             con = new SqlConnection(conectionString);
             chef = new Chef(conectionString);
         }
