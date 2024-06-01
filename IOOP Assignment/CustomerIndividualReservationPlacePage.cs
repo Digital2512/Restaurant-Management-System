@@ -13,14 +13,16 @@ namespace IOOP_Assignment
     public partial class CustomerIndividualReservationPlacePage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string placeID;
         public CustomerIndividualReservationPlacePage()
         {
             InitializeComponent();
+            startTimeCBox.Enabled = false;
             endTimeCBox.Enabled = false;
 
             Database database = new Database(connectionString);
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
-            string placeID = database.getString(query);
+            placeID = database.getString(query);
             this.lblPlaceID.Text = placeID;
             query = $"SELECT Name FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceName.Text = database.getString(query);
@@ -274,7 +276,6 @@ namespace IOOP_Assignment
 
         private void startTimeCBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblReservedEndTime.Visible = true;
             endTimeCBox.Enabled = true;
 
             string startTimeString = startTimeCBox.Text;
@@ -363,6 +364,67 @@ namespace IOOP_Assignment
                     previousPlaceTime = placeTime;
                 }
             }
+        }
+
+        private void reservedDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            startTimeCBox.Enabled = true;
+
+            string currentReservedDateString = reservedDateTimePicker.Value.ToString();
+            Database database = new Database(connectionString);
+            string query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}'";
+
+            DataTable reservationDataTable = database.getDataTable(query);
+            foreach(DataRow row in reservationDataTable.Rows)
+            {
+                string reservedStartTime = row["ReservedStartTime"].ToString();
+                string reservedEndTime = row["ReservedEndTime"].ToString();
+                string duration = row["Duration"].ToString();
+                int durationInt = int.Parse(duration);
+
+                int reservationTimeTimes = durationInt / 60;
+                int startTimeDatabase = int.Parse(reservedStartTime);
+                for(int i = 0; i < reservationTimeTimes; i++)
+                {
+                    query = $"UPDATE ReservationTimeTable SET TimeStatus = 'UNAVAILABLE' WHERE PlaceTime = '{startTimeDatabase}'";
+                    database.insertOrUpdateValuesIntoDatabase(query);
+
+                    startTimeDatabase = startTimeDatabase + 100;
+                }
+            }
+            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND TimeStatus = 'AVAILABLE';";
+            DataTable checkReservationStartTimeDataTable = database.getDataTable(query);
+            string placeStartTimeCBoxInput = "";
+            startTimeCBox.Items.Clear();
+            
+            foreach(DataRow row in checkReservationStartTimeDataTable.Rows)
+            {
+                string placeTimeString = row["PlaceTime"].ToString();
+                int placeStartTime = int.Parse(placeTimeString);
+
+                if (placeStartTime == 1700)
+                {
+                    placeStartTimeCBoxInput = "17:00 (5:00 PM)";
+                }
+                else if (placeStartTime == 1800)
+                {
+                    placeStartTimeCBoxInput = "18:00 (6:00 PM)";
+                }
+                else if (placeStartTime == 1900)
+                {
+                    placeStartTimeCBoxInput = "19:00 (7:00 PM)";
+                }
+                else if (placeStartTime == 2000)
+                {
+                    placeStartTimeCBoxInput = "20:00 (8:00 PM)";
+                }
+                else if (placeStartTime == 2100)
+                {
+                    placeStartTimeCBoxInput = "21:00 (9:00 PM)";
+                }
+                startTimeCBox.Items.Add(placeStartTimeCBoxInput);
+            }
+            startTimeCBox.Enabled = true;
         }
     }
 }

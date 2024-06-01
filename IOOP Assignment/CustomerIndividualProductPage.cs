@@ -112,10 +112,6 @@ namespace IOOP_Assignment
         }
         private void addButton_Click(object sender, EventArgs e)
         {
-            int productQuantity = int.Parse(this.lblProductQuantity.Text);
-            int newProductQuantity = productQuantity + 1;
-            this.lblProductQuantity.Text = newProductQuantity.ToString();
-            /*
             try
             {
                 int productQuantity = int.Parse(this.lblProductQuantity.Text);
@@ -145,17 +141,16 @@ namespace IOOP_Assignment
 
                         int quantityNeeded = stockQuantityInt * newProductQuantity;
 
-                        query = $"SELECT Quantity FROM Inventory WHERE StockID = @StockID";
+                        query = $"SELECT Quantity FROM Inventory WHERE StockID = '{stockQuantityPart[0]}'";
                         cmd.CommandText = query;
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@StockID", stockQuantityPart[0]);
 
                         int currentQuantity = Convert.ToInt32(cmd.ExecuteScalar());
 
                         if (quantityNeeded > currentQuantity)
                         {
                             shouldDisableButton = true;
-                            break; // No need to continue if one stock is not enough
+                            break; 
                         }
                     }
 
@@ -173,7 +168,7 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
-            */
+            
         }
 
         private void minusBtn_Click(object sender, EventArgs e)

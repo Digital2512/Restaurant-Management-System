@@ -182,9 +182,9 @@
             this.lblReservedDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblReservedDateTime.Location = new System.Drawing.Point(19, 569);
             this.lblReservedDateTime.Name = "lblReservedDateTime";
-            this.lblReservedDateTime.Size = new System.Drawing.Size(239, 25);
+            this.lblReservedDateTime.Size = new System.Drawing.Size(157, 25);
             this.lblReservedDateTime.TabIndex = 20;
-            this.lblReservedDateTime.Text = "Reserved Date and Time: ";
+            this.lblReservedDateTime.Text = "Reserved Date:  ";
             // 
             // reservedDateTimePicker
             // 
@@ -194,6 +194,7 @@
             this.reservedDateTimePicker.Name = "reservedDateTimePicker";
             this.reservedDateTimePicker.Size = new System.Drawing.Size(234, 26);
             this.reservedDateTimePicker.TabIndex = 19;
+            this.reservedDateTimePicker.ValueChanged += new System.EventHandler(this.reservedDateTimePicker_ValueChanged);
             // 
             // lblPlaceEventType
             // 
