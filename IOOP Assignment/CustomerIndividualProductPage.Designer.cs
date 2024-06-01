@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualProductPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.minusBtn = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.lblProductQuantity = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addToCartBtn = new System.Windows.Forms.Button();
+            this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblSpecialInstructions = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
-            this.productImagePBox = new System.Windows.Forms.PictureBox();
-            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +67,18 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DimGray;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(-34, -7);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(104, 59);
+            this.backButton.TabIndex = 0;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // minusBtn
             // 
@@ -127,6 +139,15 @@
             this.addToCartBtn.UseVisualStyleBackColor = true;
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
+            // productImagePBox
+            // 
+            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
+            this.productImagePBox.Name = "productImagePBox";
+            this.productImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.productImagePBox.TabIndex = 14;
+            this.productImagePBox.TabStop = false;
+            this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);
+            // 
             // specialInstructionsRTxtBox
             // 
             this.specialInstructionsRTxtBox.Location = new System.Drawing.Point(20, 608);
@@ -183,28 +204,6 @@
             this.lblProductPrice.Size = new System.Drawing.Size(80, 25);
             this.lblProductPrice.TabIndex = 10;
             this.lblProductPrice.Text = "RM5.00";
-            // 
-            // productImagePBox
-            // 
-            //this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
-            this.productImagePBox.Location = new System.Drawing.Point(0, 0);
-            this.productImagePBox.Name = "productImagePBox";
-            this.productImagePBox.Size = new System.Drawing.Size(596, 334);
-            this.productImagePBox.TabIndex = 14;
-            this.productImagePBox.TabStop = false;
-            this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerIndividualProductPage
             // 
