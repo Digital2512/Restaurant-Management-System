@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.headerPnl = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnSidebar = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,7 +41,7 @@
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutPnl = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.emptyPanel = new System.Windows.Forms.Panel();
             this.profilePnl = new System.Windows.Forms.Panel();
             this.profileBtn = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
@@ -68,7 +68,7 @@
             this.lblDateTimeTitle = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.headerPnl.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.reservationPnl.SuspendLayout();
             this.orderPnl.SuspendLayout();
@@ -81,16 +81,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // headerPnl
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblWelcome);
-            this.panel1.Controls.Add(this.btnSidebar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 62);
-            this.panel1.TabIndex = 0;
+            this.headerPnl.BackColor = System.Drawing.Color.White;
+            this.headerPnl.Controls.Add(this.lblWelcome);
+            this.headerPnl.Controls.Add(this.btnSidebar);
+            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPnl.Location = new System.Drawing.Point(0, 0);
+            this.headerPnl.Name = "headerPnl";
+            this.headerPnl.Size = new System.Drawing.Size(954, 62);
+            this.headerPnl.TabIndex = 0;
             // 
             // lblWelcome
             // 
@@ -118,7 +118,7 @@
             this.sidebar.Controls.Add(this.orderPnl);
             this.sidebar.Controls.Add(this.feedbackPnl);
             this.sidebar.Controls.Add(this.logoutPnl);
-            this.sidebar.Controls.Add(this.panel2);
+            this.sidebar.Controls.Add(this.emptyPanel);
             this.sidebar.Controls.Add(this.profilePnl);
             this.sidebar.Location = new System.Drawing.Point(0, 61);
             this.sidebar.Name = "sidebar";
@@ -213,12 +213,12 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // panel2
+            // emptyPanel
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 251);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(179, 57);
-            this.panel2.TabIndex = 5;
+            this.emptyPanel.Location = new System.Drawing.Point(3, 251);
+            this.emptyPanel.Name = "emptyPanel";
+            this.emptyPanel.Size = new System.Drawing.Size(179, 57);
+            this.emptyPanel.TabIndex = 5;
             // 
             // profilePnl
             // 
@@ -485,13 +485,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerHomePage";
             this.Text = "CustomerHomePage";
             this.Load += new System.EventHandler(this.CustomerHomePage_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.headerPnl.ResumeLayout(false);
+            this.headerPnl.PerformLayout();
             this.sidebar.ResumeLayout(false);
             this.reservationPnl.ResumeLayout(false);
             this.orderPnl.ResumeLayout(false);
@@ -511,7 +511,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnSidebar;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
@@ -535,7 +535,7 @@
         private System.Windows.Forms.Label lblOrderIDTitle;
         private System.Windows.Forms.Panel pastOrderPnl;
         private System.Windows.Forms.PictureBox reservationStatusPBox;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel emptyPanel;
         private System.Windows.Forms.Panel profilePnl;
         private System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Label lblDateTimeRange;

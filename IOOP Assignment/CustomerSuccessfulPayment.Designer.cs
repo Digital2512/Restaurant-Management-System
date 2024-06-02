@@ -70,6 +70,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.homePageBtn);
             this.Controls.Add(this.approvedPBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerSuccessfulPayment";
             this.Text = "CustomerSuccessfulPayment";
             ((System.ComponentModel.ISupportInitialize)(this.approvedPBox)).EndInit();

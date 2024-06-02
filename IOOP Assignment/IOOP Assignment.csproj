@@ -339,6 +339,9 @@
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfilePage.resx">
+      <DependentUpon>CustomerProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerReservationPage.resx">
       <DependentUpon>CustomerReservationPage.cs</DependentUpon>
     </EmbeddedResource>

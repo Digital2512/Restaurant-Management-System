@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerProfilePage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblViewProfile = new System.Windows.Forms.Label();
             this.backBtnPnl = new System.Windows.Forms.Panel();
@@ -91,7 +90,6 @@
             // 
             this.backButton.BackColor = System.Drawing.Color.DimGray;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            //this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.Location = new System.Drawing.Point(-34, -7);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(104, 59);
@@ -279,6 +277,7 @@
             this.profilePBox.Location = new System.Drawing.Point(512, 59);
             this.profilePBox.Name = "profilePBox";
             this.profilePBox.Size = new System.Drawing.Size(249, 180);
+            this.profilePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.profilePBox.TabIndex = 53;
             this.profilePBox.TabStop = false;
             // 

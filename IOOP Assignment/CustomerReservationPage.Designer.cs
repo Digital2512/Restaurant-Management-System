@@ -34,7 +34,7 @@
             this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchPnl = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
             this.placeDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -45,7 +45,7 @@
             this.minOfPaxCBox = new System.Windows.Forms.ComboBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.searchPnl.SuspendLayout();
             this.productDisplayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,15 +96,15 @@
             this.searchTxtBox.Size = new System.Drawing.Size(651, 26);
             this.searchTxtBox.TabIndex = 7;
             // 
-            // panel1
+            // searchPnl
             // 
-            this.panel1.Controls.Add(this.lblSearch);
-            this.panel1.Controls.Add(this.searchButton);
-            this.panel1.Controls.Add(this.searchTxtBox);
-            this.panel1.Location = new System.Drawing.Point(26, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(792, 62);
-            this.panel1.TabIndex = 13;
+            this.searchPnl.Controls.Add(this.lblSearch);
+            this.searchPnl.Controls.Add(this.searchButton);
+            this.searchPnl.Controls.Add(this.searchTxtBox);
+            this.searchPnl.Location = new System.Drawing.Point(26, 64);
+            this.searchPnl.Name = "searchPnl";
+            this.searchPnl.Size = new System.Drawing.Size(792, 62);
+            this.searchPnl.TabIndex = 13;
             // 
             // searchButton
             // 
@@ -199,15 +199,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.headerPnl);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.searchPnl);
             this.Controls.Add(this.productDisplayPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerReservationPage";
             this.Text = "customerReservation";
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.searchPnl.ResumeLayout(false);
+            this.searchPnl.PerformLayout();
             this.productDisplayPanel.ResumeLayout(false);
             this.productDisplayPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchTxtBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel searchPnl;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.FlowLayoutPanel placeDisplayFlowPanel;
         private System.Windows.Forms.Panel productDisplayPanel;

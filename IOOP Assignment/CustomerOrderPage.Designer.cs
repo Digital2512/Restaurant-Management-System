@@ -36,7 +36,7 @@
             this.backButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchAndFilterPanel = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
             this.priceRangeCBox = new System.Windows.Forms.ComboBox();
             this.cuisineCBox = new System.Windows.Forms.ComboBox();
@@ -46,7 +46,7 @@
             this.headerPnl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.searchAndFilterPanel.SuspendLayout();
             this.productDisplayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,20 +124,20 @@
             this.searchTxtBox.Size = new System.Drawing.Size(591, 26);
             this.searchTxtBox.TabIndex = 7;
             // 
-            // panel1
+            // searchAndFilterPanel
             // 
-            this.panel1.Controls.Add(this.lblFilter);
-            this.panel1.Controls.Add(this.priceRangeCBox);
-            this.panel1.Controls.Add(this.cuisineCBox);
-            this.panel1.Controls.Add(this.lblSearch);
-            this.panel1.Controls.Add(this.searchButton);
-            this.panel1.Controls.Add(this.searchTxtBox);
-            this.panel1.Location = new System.Drawing.Point(26, 51);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(735, 99);
-            this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.searchAndFilterPanel.Controls.Add(this.lblFilter);
+            this.searchAndFilterPanel.Controls.Add(this.priceRangeCBox);
+            this.searchAndFilterPanel.Controls.Add(this.cuisineCBox);
+            this.searchAndFilterPanel.Controls.Add(this.lblSearch);
+            this.searchAndFilterPanel.Controls.Add(this.searchButton);
+            this.searchAndFilterPanel.Controls.Add(this.searchTxtBox);
+            this.searchAndFilterPanel.Location = new System.Drawing.Point(26, 51);
+            this.searchAndFilterPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchAndFilterPanel.Name = "searchAndFilterPanel";
+            this.searchAndFilterPanel.Size = new System.Drawing.Size(735, 99);
+            this.searchAndFilterPanel.TabIndex = 9;
+            this.searchAndFilterPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblFilter
             // 
@@ -220,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 520);
             this.Controls.Add(this.productDisplayPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.searchAndFilterPanel);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -229,8 +229,8 @@
             this.headerPnl.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.searchAndFilterPanel.ResumeLayout(false);
+            this.searchAndFilterPanel.PerformLayout();
             this.productDisplayPanel.ResumeLayout(false);
             this.productDisplayPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchTxtBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel searchAndFilterPanel;
         private System.Windows.Forms.ComboBox priceRangeCBox;
         private System.Windows.Forms.ComboBox cuisineCBox;
         private System.Windows.Forms.Label lblFilter;
