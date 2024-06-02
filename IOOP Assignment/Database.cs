@@ -393,7 +393,6 @@ namespace IOOP_Assignment
                         SqlCommand cmd = new SqlCommand(query, connection);
                         cmd.Parameters.AddWithValue("@uniqueIdentifier", uniqueIdentifier);
                         object result = cmd.ExecuteScalar();
-                        MessageBox.Show(result.ToString());
 
                         if (result != DBNull.Value)
                         {
@@ -440,7 +439,7 @@ namespace IOOP_Assignment
                         SqlCommand cmd = new SqlCommand(query, connection);
                         int rowsAffected = cmd.ExecuteNonQuery();
                         connection.Close();
-                        return rowsAffected == 1;
+                        return rowsAffected >= 1;
                     }
                     else
                     {

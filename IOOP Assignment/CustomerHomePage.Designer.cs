@@ -49,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.orderStatusPnl = new System.Windows.Forms.Panel();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.lblOrderStatus = new System.Windows.Forms.Label();
             this.lblOrderStatusTitle = new System.Windows.Forms.Label();
             this.lblEstimatedTime = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.lblDateTimeTitle = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.reservationPnl.SuspendLayout();
@@ -89,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 62);
+            this.panel1.Size = new System.Drawing.Size(954, 62);
             this.panel1.TabIndex = 0;
             // 
             // lblWelcome
@@ -283,8 +283,18 @@
             this.orderStatusPnl.Controls.Add(this.lblOrderIDTitle);
             this.orderStatusPnl.Location = new System.Drawing.Point(237, 119);
             this.orderStatusPnl.Name = "orderStatusPnl";
-            this.orderStatusPnl.Size = new System.Drawing.Size(575, 104);
+            this.orderStatusPnl.Size = new System.Drawing.Size(694, 104);
             this.orderStatusPnl.TabIndex = 4;
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(458, 58);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(96, 34);
+            this.refreshButton.TabIndex = 14;
+            this.refreshButton.Text = "REFRESH";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // lblOrderStatus
             // 
@@ -325,7 +335,7 @@
             // 
             // orderStatusPBox
             // 
-            this.orderStatusPBox.Location = new System.Drawing.Point(452, 0);
+            this.orderStatusPBox.Location = new System.Drawing.Point(571, 0);
             this.orderStatusPBox.Name = "orderStatusPBox";
             this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
             this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -366,12 +376,12 @@
             this.pastOrderPnl.Controls.Add(this.reservationStatusPBox);
             this.pastOrderPnl.Location = new System.Drawing.Point(237, 281);
             this.pastOrderPnl.Name = "pastOrderPnl";
-            this.pastOrderPnl.Size = new System.Drawing.Size(575, 151);
+            this.pastOrderPnl.Size = new System.Drawing.Size(694, 151);
             this.pastOrderPnl.TabIndex = 5;
             // 
             // notedButton
             // 
-            this.notedButton.Location = new System.Drawing.Point(354, 116);
+            this.notedButton.Location = new System.Drawing.Point(458, 107);
             this.notedButton.Name = "notedButton";
             this.notedButton.Size = new System.Drawing.Size(96, 34);
             this.notedButton.TabIndex = 13;
@@ -457,28 +467,19 @@
             // 
             // reservationStatusPBox
             // 
-            this.reservationStatusPBox.Location = new System.Drawing.Point(452, 0);
+            this.reservationStatusPBox.Location = new System.Drawing.Point(571, 0);
             this.reservationStatusPBox.Name = "reservationStatusPBox";
             this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
             this.reservationStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.reservationStatusPBox.TabIndex = 2;
             this.reservationStatusPBox.TabStop = false;
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Location = new System.Drawing.Point(354, 68);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(96, 34);
-            this.refreshButton.TabIndex = 14;
-            this.refreshButton.Text = "REFRESH";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.reservationStatusPBox.Click += new System.EventHandler(this.reservationStatusPBox_Click);
             // 
             // CustomerHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 450);
+            this.ClientSize = new System.Drawing.Size(954, 450);
             this.Controls.Add(this.pastOrderPnl);
             this.Controls.Add(this.orderStatusPnl);
             this.Controls.Add(this.label3);

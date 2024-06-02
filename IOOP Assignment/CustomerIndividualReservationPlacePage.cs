@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
@@ -36,7 +37,7 @@ namespace IOOP_Assignment
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.placeImagePBox.Image = database.getImage(query);
             
-            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND TimeStatus = 'AVAILABLE';";
+            /*query = $"SELECT PlaceTime FROM ReservationTimeTable TimeStatus = 'AVAILABLE';";
             startTimeCBox.Items.Clear();
             string placeStartTimeCBoxInput = null;
             DataTable placeStartTimeDataTable =  database.getDataTable(query);
@@ -67,7 +68,7 @@ namespace IOOP_Assignment
                     placeStartTimeCBoxInput = "22:00 (10:00 PM)";
                 }
                 startTimeCBox.Items.Add(placeStartTimeCBoxInput);
-            }
+            }*/
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)
@@ -78,11 +79,13 @@ namespace IOOP_Assignment
             query = $"SELECT MinOfPax FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}';";
             int minOfPax = database.getInt(query);
             query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            int noOfPax = 0;
             string noOfPaxString = noOfPaxTxtBox.Text;
-            int noOfPax = int.Parse(noOfPaxString);
+            noOfPax = int.Parse(noOfPaxString);
             string customerID = database.getString(query);
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
-            string reservedDateTime = reservedDateTimePicker.Text;
+            DateTime reservedDateTime = reservedDateTimePicker.Value;
+            string reservedDate = reservedDateTime.ToString("yyyy-MM-dd");
             query = $"SELECT Name FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
             string placeName = database.getString(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
@@ -140,36 +143,27 @@ namespace IOOP_Assignment
                 endTime = 2200;
             }
 
-
-            MessageBox.Show(startTime.ToString());
-            MessageBox.Show(endTime.ToString());
             int durationInt = endTime - startTime;
-            MessageBox.Show(durationInt.ToString());
             int durationTime = 0;
             if (durationInt == 100)
             {
                 durationTime = 60;
-                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 200)
             {
                 durationTime = 120;
-                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 300)
             {
                 durationTime = 180;
-                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 400)
             {
                 durationTime = 240;
-                MessageBox.Show(durationTime.ToString());
             }
             else if (durationInt == 500)
             {
                 durationTime = 300;
-                MessageBox.Show(durationTime.ToString());
             }
 
             if (noOfPax != 0)
@@ -207,14 +201,13 @@ namespace IOOP_Assignment
                 if (noOfPaxChanged == true && durationTimeChanged == true && startTimeChanged == true)
                 {
                     bool reservationChanged = false;
-                    bool dateReservationChanged = false;
-                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDateTime}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
+                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDate}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
                     if(database.insertOrUpdateValuesIntoDatabase(query) == true)
                     {
                         reservationChanged = true;
                     }
 
-
+                    /*
                     int reservationTimeTimes = durationTime / 60;
                     int startTimeDatabase = startTime;
                     for(int i = 0; i < reservationTimeTimes; i++)
@@ -231,15 +224,21 @@ namespace IOOP_Assignment
                             dateReservationChanged = false;
                             break;
                         }
-                    }
+                    }*/
 
-                    if (reservationChanged == true && dateReservationChanged == true)
+                    if (reservationChanged == true)
                     {
                         MessageBox.Show("Reservation Request Sent");
                         query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
-                        this.Hide();
-                        CustomerHomePage customerHomePage = new CustomerHomePage();
-                        customerHomePage.Show();
+                        if (database.insertOrUpdateValuesIntoDatabase(query) == true) {
+                            this.Hide();
+                            CustomerHomePage customerHomePage = new CustomerHomePage();
+                            customerHomePage.Show();
+                        }
+                        else if(database.insertOrUpdateValuesIntoDatabase(query) == true)
+                        {
+                            MessageBox.Show("Loading failed");
+                        }
                     }
                     else if (database.insertOrUpdateValuesIntoDatabase(query) != true)
                     {
@@ -269,9 +268,18 @@ namespace IOOP_Assignment
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CustomerReservationPage customerReservationPage = new CustomerReservationPage();
-            customerReservationPage.Show();
+            Database database = new Database(connectionString);
+            string query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{placeID}';";
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+            {
+                this.Hide();
+                CustomerReservationPage customerReservationPage = new CustomerReservationPage();
+                customerReservationPage.Show();
+            }
+            else if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+            {
+                MessageBox.Show("Loading failed");
+            }
         }
 
         private void startTimeCBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,7 +317,7 @@ namespace IOOP_Assignment
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             string placeID = database.getString(query);
 
-            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND PlaceTime > {startTime} AND TimeStatus = 'AVAILABLE';";
+            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceTime > {startTime} AND TimeStatus = 'AVAILABLE';";
             endTimeCBox.Items.Clear();
             string placeEndTimeCBoxInput = null;
             DataTable placeEndTimeDataTable = database.getDataTable(query);
@@ -370,61 +378,103 @@ namespace IOOP_Assignment
         {
             startTimeCBox.Enabled = true;
 
-            string currentReservedDateString = reservedDateTimePicker.Value.ToString();
             Database database = new Database(connectionString);
-            string query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}'";
 
-            DataTable reservationDataTable = database.getDataTable(query);
-            foreach(DataRow row in reservationDataTable.Rows)
+            string query = $"UPDATE ReservationTimeTable SET TimeStatus = 'AVAILABLE';";
+
+            /*using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string reservedStartTime = row["ReservedStartTime"].ToString();
-                string reservedEndTime = row["ReservedEndTime"].ToString();
-                string duration = row["Duration"].ToString();
-                int durationInt = int.Parse(duration);
-
-                int reservationTimeTimes = durationInt / 60;
-                int startTimeDatabase = int.Parse(reservedStartTime);
-                for(int i = 0; i < reservationTimeTimes; i++)
+                try
                 {
-                    query = $"UPDATE ReservationTimeTable SET TimeStatus = 'UNAVAILABLE' WHERE PlaceTime = '{startTimeDatabase}'";
-                    database.insertOrUpdateValuesIntoDatabase(query);
-
-                    startTimeDatabase = startTimeDatabase + 100;
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        connection.Close();
+                    }
                 }
-            }
-            query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE PlaceID = '{placeID}' AND TimeStatus = 'AVAILABLE';";
-            DataTable checkReservationStartTimeDataTable = database.getDataTable(query);
-            string placeStartTimeCBoxInput = "";
-            startTimeCBox.Items.Clear();
-            
-            foreach(DataRow row in checkReservationStartTimeDataTable.Rows)
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("An Error Occurred: " + ex.Message);
+                    connection.Close();
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                        connection.Close();
+                }
+            }*/
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                string placeTimeString = row["PlaceTime"].ToString();
-                int placeStartTime = int.Parse(placeTimeString);
+                DateTime currentReservedDateTime = reservedDateTimePicker.Value;
+                string currentReservedDateString = currentReservedDateTime.ToString("yyyy-MM-dd");
+                MessageBox.Show(currentReservedDateString);
+                query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}';";
 
-                if (placeStartTime == 1700)
+                DataTable reservationDataTable = database.getDataTable(query);
+                foreach (DataRow row in reservationDataTable.Rows)
                 {
-                    placeStartTimeCBoxInput = "17:00 (5:00 PM)";
+                    string reservedStartTime = row["ReservedStartTime"].ToString();
+                    string reservedEndTime = row["ReservedEndTime"].ToString();
+                    string duration = row["Duration"].ToString();
+                    int durationInt = int.Parse(duration);
+
+                    int reservationTimeTimes = durationInt / 60;
+                    int startTimeDatabase = int.Parse(reservedStartTime);
+                    for (int i = 0; i < reservationTimeTimes; i++)
+                    {
+                        query = $"UPDATE ReservationTimeTable SET TimeStatus = 'UNAVAILABLE' WHERE PlaceTime = '{startTimeDatabase}'";
+                        database.insertOrUpdateValuesIntoDatabase(query);
+
+                        startTimeDatabase = startTimeDatabase + 100;
+                    }
                 }
-                else if (placeStartTime == 1800)
+                query = $"SELECT PlaceTime FROM ReservationTimeTable WHERE TimeStatus = 'AVAILABLE';";
+                DataTable checkReservationStartTimeDataTable = database.getDataTable(query);
+                string placeStartTimeCBoxInput = "";
+                startTimeCBox.Items.Clear();
+
+                foreach (DataRow row in checkReservationStartTimeDataTable.Rows)
                 {
-                    placeStartTimeCBoxInput = "18:00 (6:00 PM)";
+                    string placeTimeString = row["PlaceTime"].ToString();
+                    int placeStartTime = int.Parse(placeTimeString);
+
+                    if (placeStartTime == 1700)
+                    {
+                        placeStartTimeCBoxInput = "17:00 (5:00 PM)";
+                    }
+                    else if (placeStartTime == 1800)
+                    {
+                        placeStartTimeCBoxInput = "18:00 (6:00 PM)";
+                    }
+                    else if (placeStartTime == 1900)
+                    {
+                        placeStartTimeCBoxInput = "19:00 (7:00 PM)";
+                    }
+                    else if (placeStartTime == 2000)
+                    {
+                        placeStartTimeCBoxInput = "20:00 (8:00 PM)";
+                    }
+                    else if (placeStartTime == 2100)
+                    {
+                        placeStartTimeCBoxInput = "21:00 (9:00 PM)";
+                    }
+                    startTimeCBox.Items.Add(placeStartTimeCBoxInput);
                 }
-                else if (placeStartTime == 1900)
-                {
-                    placeStartTimeCBoxInput = "19:00 (7:00 PM)";
-                }
-                else if (placeStartTime == 2000)
-                {
-                    placeStartTimeCBoxInput = "20:00 (8:00 PM)";
-                }
-                else if (placeStartTime == 2100)
-                {
-                    placeStartTimeCBoxInput = "21:00 (9:00 PM)";
-                }
-                startTimeCBox.Items.Add(placeStartTimeCBoxInput);
+                startTimeCBox.Enabled = true;
+            }else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
+            {
+                MessageBox.Show("Table not Cleared");
             }
-            startTimeCBox.Enabled = true;
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            }
         }
     }
-}

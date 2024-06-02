@@ -26,6 +26,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             notedButton.Visible = false;
+            refreshButton.Visible = false;
             Database database = new Database(ConnectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             customerID = database.getString(query);
@@ -57,6 +58,7 @@ namespace IOOP_Assignment
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = "N/A";
+                    refreshButton.Visible = true;
                     //orderStatusPBox.Image = Properties.Resources.completedResized;
                 }
                 else if (orderStatus == "WAITING_FOR_CHEF")
@@ -294,6 +296,11 @@ namespace IOOP_Assignment
             {
                 notedButton.Visible = false;
             }
+
+        }
+
+        private void reservationStatusPBox_Click(object sender, EventArgs e)
+        {
 
         }
     }
