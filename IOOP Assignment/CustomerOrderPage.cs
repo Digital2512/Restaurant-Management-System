@@ -101,27 +101,6 @@ namespace IOOP_Assignment
                         break;
                 }
             }
-            if (ratingsCBox.Text != null)
-            {
-                switch (ratingsCBox.Text)
-                {
-                    case "0.00 - 1.00":
-                        query += $" AND Ratings BETWEEN 0.00 AND 1.00";
-                        break;
-                    case "1.00 - 2.00":
-                        query += $" AND Ratings BETWEEN 1.00 AND 2.00";
-                        break;
-                    case "2.00 - 3.00":
-                        query += $" AND Ratings BETWEEN 2.00 AND 3.00";
-                        break;
-                    case "3.00 - 4.00":
-                        query += $" AND Ratings BETWEEN 3.00 AND 4.00";
-                        break;
-                    case "4.00 - 5.00":
-                        query += $" AND Ratings BETWEEN 4.00 AND 5.00";
-                        break;
-                }
-            }
 
             MessageBox.Show(query);
             DataTable searchDataTable = database.getDataTable(query);
@@ -169,5 +148,9 @@ namespace IOOP_Assignment
 
         }
 
+        private void priceRangeCBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
