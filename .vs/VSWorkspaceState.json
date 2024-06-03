@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MANAGER COPY IOOP"
+    "\\IOOP Assignment",
+    "\\IOOP Assignment\\bin",
+    "\\IOOP Assignment\\obj"
   ],
-  "SelectedNode": "\\MANAGER COPY IOOP.sln",
+  "SelectedNode": "\\IOOP Assignment\\obj",
   "PreviewInSolutionExplorer": false
 }
