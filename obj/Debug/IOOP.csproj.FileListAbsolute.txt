@@ -1,0 +1,16 @@
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.csproj.AssemblyReference.cache
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.Properties.Resources.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.csproj.GenerateResource.cache
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.csproj.CoreCompileInputs.cache
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\bin\Debug\IOOP.exe.config
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\bin\Debug\IOOP.exe
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\bin\Debug\IOOP.pdb
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.exe
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.pdb
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerHomePage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerMenuPage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerTablesPage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerViewProfilePage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerUpdateProfilePage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerReservationReportPage.resources
+C:\Users\QiaoQian\Documents\IOOP-T\IOOP\IOOP\obj\Debug\IOOP.ManagerPendingPage.resources
