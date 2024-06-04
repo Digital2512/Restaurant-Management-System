@@ -77,7 +77,7 @@ namespace IOOP_Assignment
             }
             
             string orderDetailsID = database.GenerateUniqueID("OD", "OrderDetailsID", "OrderDetails");
-            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, specialInstructions) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}')";
+            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, OrderSpecialInstructions) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}')";
             bool orderDetailsRecorded = database.insertOrUpdateValuesIntoDatabase(query);
             query = $"SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
             string previousOrderDetailsIDs = database.getString(query);

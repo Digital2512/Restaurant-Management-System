@@ -22,7 +22,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Admin_Manager.OpenManagerHomePage();
+            Manager.OpenManagerHomePage();
         }
 
         private void ManagerReservationReportPage_Load(object sender, EventArgs e)

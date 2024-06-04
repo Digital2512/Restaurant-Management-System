@@ -15,14 +15,13 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private string ProductID { get; set; }
-        public productButton(string productID,string productName, string productPrice, string productDescription, string productRatingText, Image productImage)
+        public productButton(string productID,string productName, string productPrice, string productDescription, Image productImage)
         {
             InitializeComponent();
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;
             this.lblProductPrice.Text = productPrice;
             this.lblProductDescription.Text = productDescription;
-            this.lblProductRating.Text = $"{productRatingText} / 5.0";
             this.productImagePBox.Image = productImage;
             ProductID = productID;
                 

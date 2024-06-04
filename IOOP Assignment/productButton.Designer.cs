@@ -33,13 +33,10 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
-            this.lblProductRating = new System.Windows.Forms.Label();
             this.addButtonPnl = new System.Windows.Forms.Panel();
             this.addButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.addButtonPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +80,6 @@
             this.lblProductPrice.TabIndex = 4;
             this.lblProductPrice.Text = "Product\'s Price";
             // 
-            // lblProductRating
-            // 
-            this.lblProductRating.AutoSize = true;
-            this.lblProductRating.Location = new System.Drawing.Point(395, 41);
-            this.lblProductRating.Name = "lblProductRating";
-            this.lblProductRating.Size = new System.Drawing.Size(57, 20);
-            this.lblProductRating.TabIndex = 6;
-            this.lblProductRating.Text = "5.0/5.0";
-            // 
             // addButtonPnl
             // 
             this.addButtonPnl.Controls.Add(this.addButton);
@@ -112,14 +100,6 @@
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(357, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 34);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // productImagePBox
             // 
             this.productImagePBox.Dock = System.Windows.Forms.DockStyle.Left;
@@ -136,8 +116,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.addButtonPnl);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblProductRating);
             this.Controls.Add(this.lblProductPrice);
             this.Controls.Add(this.lblProductDescription);
             this.Controls.Add(this.lblProductName);
@@ -147,7 +125,6 @@
             this.Size = new System.Drawing.Size(475, 150);
             this.Load += new System.EventHandler(this.foodButton_Load);
             this.addButtonPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,8 +137,6 @@
         private System.Windows.Forms.Label lblProductDescription;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.PictureBox productImagePBox;
-        private System.Windows.Forms.Label lblProductRating;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Panel addButtonPnl;
     }

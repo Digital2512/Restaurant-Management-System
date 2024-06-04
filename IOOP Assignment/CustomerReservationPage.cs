@@ -17,13 +17,13 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(connectionString);
-            string query = "SELECT PlaceID, Name, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL";
+            string query = "SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL";
             DataTable placeDataTable = database.getDataTable(query);
 
             foreach (DataRow rows in placeDataTable.Rows)
             {
                 string placeID = rows["PlaceID"].ToString();
-                string placeName = rows["Name"].ToString();
+                string placeName = rows["PlaceName"].ToString();
                 string placeDescription = rows["Description"].ToString();
                 string placeMinofPax = $"{rows["MinOfPax"].ToString()} People";
                 string placeEventType = rows["EventType"].ToString();
@@ -43,7 +43,7 @@ namespace IOOP_Assignment
 
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
-            string query = $"SELECT PlaceID, Name, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL AND Name LIKE '{searchString}%'";
+            string query = $"SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL AND PlaceName LIKE '{searchString}%'";
 
             string minOfPaxFilter = minOfPaxCBox.Text;
 

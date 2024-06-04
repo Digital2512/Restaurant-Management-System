@@ -41,8 +41,13 @@ namespace IOOP_Assignment
             if (database.getString(query) == "PAID")
             {
                 query = $"UPDATE Orders SET OrderStatus = 'WAITING_FOR_CHEF' WHERE OrderID = '{orderID}';";
-                database.insertOrUpdateValuesIntoDatabase(query);
-                query = $"SELECT OrderDetailsIDs FROM Orders where OrderID = '{orderID}';";
+                if(database.insertOrUpdateValuesIntoDatabase(query) == true)
+                {
+                    this.Hide();
+                    CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();
+                    customerSuccessfulPayment.Show();
+                }
+                /*query = $"SELECT OrderDetailsIDs FROM Orders where OrderID = '{orderID}';";
                 List<String> orderDetailsIDsList = new List<String>(database.getString(query).Split(','));
                 MessageBox.Show(orderDetailsIDsList.ToString());
                 foreach (string orderIDInOrderIDsList in orderDetailsIDsList)
@@ -53,7 +58,7 @@ namespace IOOP_Assignment
                     }
                     else
                     {
-                        query = $"SELECT ProductID FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
+                        /*query = $"SELECT ProductID FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
                         string productID = database.getString(query);
                         query = $"SELECT Name FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
                         string productName = database.getString(query);
@@ -62,9 +67,10 @@ namespace IOOP_Assignment
                         query = $"SELECT Price FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
                         decimal productPrice = database.getDecimal(query);
                         decimal totalPrice = productPrice * productQuantity;
+
                         query = $"SELECT ReportID FROM SalesReport WHERE ReportStatus = 'IN_PROGRESS' AND ProductID = '{productID}';";
                         string reportID = database.getString(query);
-                        if (reportID != null)
+                         if (reportID != null)
                         {
                             string reportDetailsID = database.GenerateUniqueID("RD", "ReportDetailsID", "ReportDetails");
                             query = $"INSERT INTO ReportDetails(ReportDetailsID, ProductID, Name, Quantity, IndividualPrice, TotalPrice, ReportID) VALUES ('{reportDetailsID}', '{productID}', '{productName}', '{productQuantity}', '{productPrice}', '{totalPrice}', '{reportID}');";
@@ -124,11 +130,13 @@ namespace IOOP_Assignment
                                     break;
                             }
                             int currentYear = currentDateTime.Year;
+                            string currentYearString = currentYear.ToString();
+                            
                             string currentDateTimeString = currentDateTime.ToString();
                             DateTime dateTime = DateTime.ParseExact(currentDateTimeString, "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                             string formattedDateTimeString = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
                             MessageBox.Show(formattedDateTimeString);
-                            query = $"INSERT INTO SalesReport(ReportID, ReportDateTime, Month, Year, ProductID, ReportStatus) VALUES ('{reportID}', '{formattedDateTimeString}', '{currentMonthString}', '{currentYear}', '{productID}', 'IN_PROGRESS')";
+                            /*query = $"INSERT INTO SalesReport(ReportID, ReportDateTime, Month, Year, ProductID, ReportStatus) VALUES ('{reportID}', '{formattedDateTimeString}', '{currentMonthString}', '{currentYear}', '{productID}', 'IN_PROGRESS')";
                             if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                             {
                                 MessageBox.Show("Sales Report Created");
@@ -148,12 +156,8 @@ namespace IOOP_Assignment
                             {
                                 MessageBox.Show("Not added to Sales Report");
                             }
-                        }
                     }
-                }
-                this.Hide();
-                CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();
-                customerSuccessfulPayment.Show();
+                }*/
             }
             else
             {

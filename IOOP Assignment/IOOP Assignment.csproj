@@ -192,6 +192,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
@@ -332,7 +333,7 @@
     <Compile Include="placeButton.Designer.cs">
       <DependentUpon>placeButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
+    <Compile Include="Admin_Manager.cs" />
     <Compile Include="Chef.cs" />
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>

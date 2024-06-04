@@ -21,7 +21,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             Database database = new Database(connectionString);
-            string query = "SELECT ProductID, Name, Price, Description, Ratings FROM Menu";
+            string query = "SELECT ProductID, Name, Price, Description FROM Menu";
 
             DataTable foodsData = database.getDataTable(query);
 
@@ -31,12 +31,11 @@ namespace IOOP_Assignment
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();
-                string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                 Image productImage = database.getImage(query);
 
-                var productButton = new productButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
+                var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
 
                 productDisplayFlowPanel.Controls.Add(productButton);
             }
@@ -58,7 +57,7 @@ namespace IOOP_Assignment
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
             //string query = $"SELECT ProductID, Name, Price, Description, ImageDescription, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
-            string query = $"SELECT ProductID, Name, Price, Description, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
+            string query = $"SELECT ProductID, Name, Price, Description FROM Menu WHERE Name LIKE '{searchString}%'";
             
             if (cuisineCBox.Text != null && cuisineCBox.Text != "")
             {
@@ -113,12 +112,11 @@ namespace IOOP_Assignment
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();
-                string productRatingText = row["Ratings"].ToString();
 
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                 Image productImage = database.getImage(query);
 
-                var productButton = new productButton(productID, productName, productPrice, productDescription, productRatingText, productImage);
+                var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
 
                 productDisplayFlowPanel.Controls.Add(productButton);
             }
