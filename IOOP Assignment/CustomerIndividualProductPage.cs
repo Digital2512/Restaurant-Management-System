@@ -156,7 +156,7 @@ namespace IOOP_Assignment
 
                     if (shouldDisableButton)
                     {
-                        this.addButton.Enabled = false;
+                        this.addBtn.Enabled = false;
                     }
                     else
                     {

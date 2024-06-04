@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualReservationPlacePage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.placeDetailsPnl = new System.Windows.Forms.Panel();
             this.startTimeCBox = new System.Windows.Forms.ComboBox();
             this.lblReservedStartTime = new System.Windows.Forms.Label();
             this.endTimeCBox = new System.Windows.Forms.ComboBox();
             this.lblReservedEndTime = new System.Windows.Forms.Label();
             this.noOfPaxTxtBox = new System.Windows.Forms.TextBox();
             this.lblNoOfPax = new System.Windows.Forms.Label();
-            this.lblReservedDateTime = new System.Windows.Forms.Label();
+            this.lblReservedDate = new System.Windows.Forms.Label();
             this.reservedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lblPlaceEventType = new System.Windows.Forms.Label();
             this.lblEventType = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.lblPlaceMinOfPax = new System.Windows.Forms.Label();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.placeDetailsPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,50 +70,50 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
+            // backBtn
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // panel2
+            // placeDetailsPnl
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.startTimeCBox);
-            this.panel2.Controls.Add(this.lblReservedStartTime);
-            this.panel2.Controls.Add(this.endTimeCBox);
-            this.panel2.Controls.Add(this.lblReservedEndTime);
-            this.panel2.Controls.Add(this.noOfPaxTxtBox);
-            this.panel2.Controls.Add(this.lblNoOfPax);
-            this.panel2.Controls.Add(this.lblReservedDateTime);
-            this.panel2.Controls.Add(this.reservedDateTimePicker);
-            this.panel2.Controls.Add(this.lblPlaceEventType);
-            this.panel2.Controls.Add(this.lblEventType);
-            this.panel2.Controls.Add(this.lblMinOfPax);
-            this.panel2.Controls.Add(this.reserveBtn);
-            this.panel2.Controls.Add(this.placeImagePBox);
-            this.panel2.Controls.Add(this.specialInstructionsRTxtBox);
-            this.panel2.Controls.Add(this.lblPlaceID);
-            this.panel2.Controls.Add(this.lblSpecialInstructions);
-            this.panel2.Controls.Add(this.lblPlaceName);
-            this.panel2.Controls.Add(this.lblPlaceDescription);
-            this.panel2.Controls.Add(this.lblPlaceMinOfPax);
-            this.panel2.Location = new System.Drawing.Point(-1, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(574, 730);
-            this.panel2.TabIndex = 12;
+            this.placeDetailsPnl.AutoScroll = true;
+            this.placeDetailsPnl.Controls.Add(this.startTimeCBox);
+            this.placeDetailsPnl.Controls.Add(this.lblReservedStartTime);
+            this.placeDetailsPnl.Controls.Add(this.endTimeCBox);
+            this.placeDetailsPnl.Controls.Add(this.lblReservedEndTime);
+            this.placeDetailsPnl.Controls.Add(this.noOfPaxTxtBox);
+            this.placeDetailsPnl.Controls.Add(this.lblNoOfPax);
+            this.placeDetailsPnl.Controls.Add(this.lblReservedDate);
+            this.placeDetailsPnl.Controls.Add(this.reservedDateTimePicker);
+            this.placeDetailsPnl.Controls.Add(this.lblPlaceEventType);
+            this.placeDetailsPnl.Controls.Add(this.lblEventType);
+            this.placeDetailsPnl.Controls.Add(this.lblMinOfPax);
+            this.placeDetailsPnl.Controls.Add(this.reserveBtn);
+            this.placeDetailsPnl.Controls.Add(this.placeImagePBox);
+            this.placeDetailsPnl.Controls.Add(this.specialInstructionsRTxtBox);
+            this.placeDetailsPnl.Controls.Add(this.lblPlaceID);
+            this.placeDetailsPnl.Controls.Add(this.lblSpecialInstructions);
+            this.placeDetailsPnl.Controls.Add(this.lblPlaceName);
+            this.placeDetailsPnl.Controls.Add(this.lblPlaceDescription);
+            this.placeDetailsPnl.Controls.Add(this.lblPlaceMinOfPax);
+            this.placeDetailsPnl.Location = new System.Drawing.Point(-1, 47);
+            this.placeDetailsPnl.Name = "placeDetailsPnl";
+            this.placeDetailsPnl.Size = new System.Drawing.Size(574, 730);
+            this.placeDetailsPnl.TabIndex = 12;
             // 
             // startTimeCBox
             // 
@@ -176,15 +176,15 @@
             this.lblNoOfPax.TabIndex = 21;
             this.lblNoOfPax.Text = "Number Of Pax: ";
             // 
-            // lblReservedDateTime
+            // lblReservedDate
             // 
-            this.lblReservedDateTime.AutoSize = true;
-            this.lblReservedDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblReservedDateTime.Location = new System.Drawing.Point(19, 569);
-            this.lblReservedDateTime.Name = "lblReservedDateTime";
-            this.lblReservedDateTime.Size = new System.Drawing.Size(157, 25);
-            this.lblReservedDateTime.TabIndex = 20;
-            this.lblReservedDateTime.Text = "Reserved Date:  ";
+            this.lblReservedDate.AutoSize = true;
+            this.lblReservedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReservedDate.Location = new System.Drawing.Point(19, 569);
+            this.lblReservedDate.Name = "lblReservedDate";
+            this.lblReservedDate.Size = new System.Drawing.Size(157, 25);
+            this.lblReservedDate.TabIndex = 20;
+            this.lblReservedDate.Text = "Reserved Date:  ";
             // 
             // reservedDateTimePicker
             // 
@@ -311,14 +311,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 775);
             this.Controls.Add(this.headerPnl);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.placeDetailsPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerIndividualReservationPlacePage";
             this.Text = "CustomerIndividualReservationPlacePage";
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.placeDetailsPnl.ResumeLayout(false);
+            this.placeDetailsPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.placeImagePBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -328,8 +328,8 @@
 
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Panel backBtnPnl;
-        private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Panel placeDetailsPnl;
         private System.Windows.Forms.Button reserveBtn;
         private System.Windows.Forms.PictureBox placeImagePBox;
         private System.Windows.Forms.RichTextBox specialInstructionsRTxtBox;
@@ -341,7 +341,7 @@
         private System.Windows.Forms.Label lblPlaceEventType;
         private System.Windows.Forms.Label lblEventType;
         private System.Windows.Forms.Label lblMinOfPax;
-        private System.Windows.Forms.Label lblReservedDateTime;
+        private System.Windows.Forms.Label lblReservedDate;
         private System.Windows.Forms.DateTimePicker reservedDateTimePicker;
         private System.Windows.Forms.TextBox noOfPaxTxtBox;
         private System.Windows.Forms.Label lblNoOfPax;

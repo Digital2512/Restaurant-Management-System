@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReservationPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.searchPnl = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
-            this.placeDisplayFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.placeDisplayFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMinOfPax = new System.Windows.Forms.Label();
+            this.lblEvents = new System.Windows.Forms.Label();
             this.eventsCListBox = new System.Windows.Forms.CheckedListBox();
             this.minOfPaxCBox = new System.Windows.Forms.ComboBox();
             this.headerPnl.SuspendLayout();
@@ -61,23 +61,23 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
+            // backBtn
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblSearch
             // 
@@ -99,21 +99,21 @@
             // searchPnl
             // 
             this.searchPnl.Controls.Add(this.lblSearch);
-            this.searchPnl.Controls.Add(this.searchButton);
+            this.searchPnl.Controls.Add(this.searchBtn);
             this.searchPnl.Controls.Add(this.searchTxtBox);
             this.searchPnl.Location = new System.Drawing.Point(26, 64);
             this.searchPnl.Name = "searchPnl";
             this.searchPnl.Size = new System.Drawing.Size(792, 62);
             this.searchPnl.TabIndex = 13;
             // 
-            // searchButton
+            // searchBtn
             // 
-            this.searchButton.Location = new System.Drawing.Point(739, 6);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(45, 42);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchBtn.Location = new System.Drawing.Point(739, 6);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(45, 42);
+            this.searchBtn.TabIndex = 8;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // lblFilter
             // 
@@ -124,41 +124,41 @@
             this.lblFilter.TabIndex = 12;
             this.lblFilter.Text = "Filter By:";
             // 
-            // placeDisplayFlowPanel
+            // placeDisplayFlowPnl
             // 
-            this.placeDisplayFlowPanel.AutoSize = true;
-            this.placeDisplayFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.placeDisplayFlowPanel.Location = new System.Drawing.Point(3, 0);
-            this.placeDisplayFlowPanel.Name = "placeDisplayFlowPanel";
-            this.placeDisplayFlowPanel.Size = new System.Drawing.Size(789, 407);
-            this.placeDisplayFlowPanel.TabIndex = 10;
+            this.placeDisplayFlowPnl.AutoSize = true;
+            this.placeDisplayFlowPnl.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.placeDisplayFlowPnl.Location = new System.Drawing.Point(3, 0);
+            this.placeDisplayFlowPnl.Name = "placeDisplayFlowPnl";
+            this.placeDisplayFlowPnl.Size = new System.Drawing.Size(789, 407);
+            this.placeDisplayFlowPnl.TabIndex = 10;
             // 
             // productDisplayPanel
             // 
             this.productDisplayPanel.AutoScroll = true;
-            this.productDisplayPanel.Controls.Add(this.placeDisplayFlowPanel);
+            this.productDisplayPanel.Controls.Add(this.placeDisplayFlowPnl);
             this.productDisplayPanel.Location = new System.Drawing.Point(26, 132);
             this.productDisplayPanel.Name = "productDisplayPanel";
             this.productDisplayPanel.Size = new System.Drawing.Size(792, 389);
             this.productDisplayPanel.TabIndex = 14;
             // 
-            // label1
+            // lblMinOfPax
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(832, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Min of Pax";
+            this.lblMinOfPax.AutoSize = true;
+            this.lblMinOfPax.Location = new System.Drawing.Point(832, 94);
+            this.lblMinOfPax.Name = "lblMinOfPax";
+            this.lblMinOfPax.Size = new System.Drawing.Size(82, 20);
+            this.lblMinOfPax.TabIndex = 15;
+            this.lblMinOfPax.Text = "Min of Pax";
             // 
-            // label2
+            // lblEvents
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(832, 168);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Events";
+            this.lblEvents.AutoSize = true;
+            this.lblEvents.Location = new System.Drawing.Point(832, 168);
+            this.lblEvents.Name = "lblEvents";
+            this.lblEvents.Size = new System.Drawing.Size(58, 20);
+            this.lblEvents.TabIndex = 17;
+            this.lblEvents.Text = "Events";
             // 
             // eventsCListBox
             // 
@@ -194,9 +194,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 526);
             this.Controls.Add(this.minOfPaxCBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblEvents);
             this.Controls.Add(this.eventsCListBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMinOfPax);
             this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.searchPnl);
@@ -217,18 +217,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Panel backBtnPnl;
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchTxtBox;
         private System.Windows.Forms.Panel searchPnl;
         private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.FlowLayoutPanel placeDisplayFlowPanel;
+        private System.Windows.Forms.FlowLayoutPanel placeDisplayFlowPnl;
         private System.Windows.Forms.Panel productDisplayPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMinOfPax;
+        private System.Windows.Forms.Label lblEvents;
         private System.Windows.Forms.CheckedListBox eventsCListBox;
         private System.Windows.Forms.ComboBox minOfPaxCBox;
     }

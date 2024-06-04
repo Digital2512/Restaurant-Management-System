@@ -58,6 +58,9 @@ namespace IOOP_Assignment
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
             profilePBox.Image = database.getImage(query);
+            maleRBtn.Enabled = false;
+            femaleRBtn.Enabled = false;
+            ratherNotSayRBtn.Enabled = false;
 
         }
 
@@ -96,3 +99,4 @@ namespace IOOP_Assignment
         }
     }
 }
+

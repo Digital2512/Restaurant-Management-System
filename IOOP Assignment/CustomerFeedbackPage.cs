@@ -34,7 +34,7 @@ namespace IOOP_Assignment
             string customerID = database.getString(query);
 
             string feedbackTopicChosen = topicCBox.Text;
-            string feedbackTitle = titleTxtBoc.Text;
+            string feedbackTitle = titleTxtBox.Text;
             string feedbackDescription = descriptionRBox.Text;
 
             lblCustomerID.Text = customerID.ToString();

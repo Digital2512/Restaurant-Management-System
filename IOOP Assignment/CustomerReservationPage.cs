@@ -33,13 +33,13 @@ namespace IOOP_Assignment
 
                 var placeButton = new placeButton(placeID, placeName, placeMinofPax, placeDescription, placeEventType, PlaceImage);
 
-                placeDisplayFlowPanel.Controls.Add(placeButton);
+                placeDisplayFlowPnl.Controls.Add(placeButton);
             }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            placeDisplayFlowPanel.Controls.Clear();
+            placeDisplayFlowPnl.Controls.Clear();
 
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
@@ -87,7 +87,7 @@ namespace IOOP_Assignment
 
                 var placeButton = new placeButton(placeID, placeName, placeMinOfPax, placeDescription, placeEventType, PlaceImage);
 
-                placeDisplayFlowPanel.Controls.Add(placeButton);
+                placeDisplayFlowPnl.Controls.Add(placeButton);
             }
         }
 

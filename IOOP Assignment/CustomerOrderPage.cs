@@ -37,7 +37,7 @@ namespace IOOP_Assignment
 
                 var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
 
-                productDisplayFlowPanel.Controls.Add(productButton);
+                productDisplayFlowPnl.Controls.Add(productButton);
             }
         }
 
@@ -53,7 +53,7 @@ namespace IOOP_Assignment
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            productDisplayFlowPanel.Controls.Clear();
+            productDisplayFlowPnl.Controls.Clear();
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
             //string query = $"SELECT ProductID, Name, Price, Description, ImageDescription, Ratings FROM Menu WHERE Name LIKE '{searchString}%'";
@@ -118,7 +118,7 @@ namespace IOOP_Assignment
 
                 var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
 
-                productDisplayFlowPanel.Controls.Add(productButton);
+                productDisplayFlowPnl.Controls.Add(productButton);
             }
         }
 

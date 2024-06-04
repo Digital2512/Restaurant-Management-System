@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerFeedbackPage));
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFeedbackForm = new System.Windows.Forms.Label();
+            this.feedbackFormDetailsPnl = new System.Windows.Forms.Panel();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.descriptionRBox = new System.Windows.Forms.RichTextBox();
             this.topicCBox = new System.Windows.Forms.ComboBox();
             this.lblFeedbackDescription = new System.Windows.Forms.Label();
-            this.titleTxtBoc = new System.Windows.Forms.TextBox();
+            this.titleTxtBox = new System.Windows.Forms.TextBox();
             this.lblFeedbackTitle = new System.Windows.Forms.Label();
             this.lblFeedbackTopic = new System.Windows.Forms.Label();
             this.lblFeedbackCustomerID = new System.Windows.Forms.Label();
-            this.sendButton = new System.Windows.Forms.Button();
+            this.sendBtn = new System.Windows.Forms.Button();
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.feedbackFormDetailsPnl.SuspendLayout();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblFeedbackForm
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "FEEDBACK FORM";
+            this.lblFeedbackForm.AutoSize = true;
+            this.lblFeedbackForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackForm.Location = new System.Drawing.Point(237, 67);
+            this.lblFeedbackForm.Name = "lblFeedbackForm";
+            this.lblFeedbackForm.Size = new System.Drawing.Size(377, 46);
+            this.lblFeedbackForm.TabIndex = 0;
+            this.lblFeedbackForm.Text = "FEEDBACK FORM";
             // 
-            // panel1
+            // feedbackFormDetailsPnl
             // 
-            this.panel1.Controls.Add(this.lblCustomerID);
-            this.panel1.Controls.Add(this.descriptionRBox);
-            this.panel1.Controls.Add(this.topicCBox);
-            this.panel1.Controls.Add(this.lblFeedbackDescription);
-            this.panel1.Controls.Add(this.titleTxtBoc);
-            this.panel1.Controls.Add(this.lblFeedbackTitle);
-            this.panel1.Controls.Add(this.lblFeedbackTopic);
-            this.panel1.Controls.Add(this.lblFeedbackCustomerID);
-            this.panel1.Location = new System.Drawing.Point(26, 145);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 391);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.feedbackFormDetailsPnl.Controls.Add(this.lblCustomerID);
+            this.feedbackFormDetailsPnl.Controls.Add(this.descriptionRBox);
+            this.feedbackFormDetailsPnl.Controls.Add(this.topicCBox);
+            this.feedbackFormDetailsPnl.Controls.Add(this.lblFeedbackDescription);
+            this.feedbackFormDetailsPnl.Controls.Add(this.titleTxtBox);
+            this.feedbackFormDetailsPnl.Controls.Add(this.lblFeedbackTitle);
+            this.feedbackFormDetailsPnl.Controls.Add(this.lblFeedbackTopic);
+            this.feedbackFormDetailsPnl.Controls.Add(this.lblFeedbackCustomerID);
+            this.feedbackFormDetailsPnl.Location = new System.Drawing.Point(26, 145);
+            this.feedbackFormDetailsPnl.Name = "feedbackFormDetailsPnl";
+            this.feedbackFormDetailsPnl.Size = new System.Drawing.Size(799, 391);
+            this.feedbackFormDetailsPnl.TabIndex = 1;
+            this.feedbackFormDetailsPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblCustomerID
             // 
@@ -113,12 +113,12 @@
             this.lblFeedbackDescription.TabIndex = 6;
             this.lblFeedbackDescription.Text = "FEEDBACK\'S DESCRIPTION";
             // 
-            // titleTxtBoc
+            // titleTxtBox
             // 
-            this.titleTxtBoc.Location = new System.Drawing.Point(23, 197);
-            this.titleTxtBoc.Name = "titleTxtBoc";
-            this.titleTxtBoc.Size = new System.Drawing.Size(751, 26);
-            this.titleTxtBoc.TabIndex = 5;
+            this.titleTxtBox.Location = new System.Drawing.Point(23, 197);
+            this.titleTxtBox.Name = "titleTxtBox";
+            this.titleTxtBox.Size = new System.Drawing.Size(751, 26);
+            this.titleTxtBox.TabIndex = 5;
             // 
             // lblFeedbackTitle
             // 
@@ -150,17 +150,17 @@
             this.lblFeedbackCustomerID.TabIndex = 0;
             this.lblFeedbackCustomerID.Text = "CUSTOMER ID";
             // 
-            // sendButton
+            // sendBtn
             // 
-            this.sendButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.sendButton.Location = new System.Drawing.Point(0, 542);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(853, 54);
-            this.sendButton.TabIndex = 2;
-            this.sendButton.Text = "SEND";
-            this.sendButton.UseVisualStyleBackColor = true;
-            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
+            this.sendBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.sendBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.sendBtn.Location = new System.Drawing.Point(0, 542);
+            this.sendBtn.Name = "sendBtn";
+            this.sendBtn.Size = new System.Drawing.Size(853, 54);
+            this.sendBtn.TabIndex = 2;
+            this.sendBtn.Text = "SEND";
+            this.sendBtn.UseVisualStyleBackColor = true;
+            this.sendBtn.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // headerPnl
             // 
@@ -174,23 +174,23 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
+            // backBtn
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerFeedbackPage
             // 
@@ -198,14 +198,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 596);
             this.Controls.Add(this.headerPnl);
-            this.Controls.Add(this.sendButton);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.sendBtn);
+            this.Controls.Add(this.feedbackFormDetailsPnl);
+            this.Controls.Add(this.lblFeedbackForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerFeedbackPage";
             this.Text = "CustomerFeedbackPage";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.feedbackFormDetailsPnl.ResumeLayout(false);
+            this.feedbackFormDetailsPnl.PerformLayout();
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -215,18 +215,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblFeedbackForm;
+        private System.Windows.Forms.Panel feedbackFormDetailsPnl;
         private System.Windows.Forms.RichTextBox descriptionRBox;
         private System.Windows.Forms.ComboBox topicCBox;
         private System.Windows.Forms.Label lblFeedbackDescription;
-        private System.Windows.Forms.TextBox titleTxtBoc;
+        private System.Windows.Forms.TextBox titleTxtBox;
         private System.Windows.Forms.Label lblFeedbackTitle;
         private System.Windows.Forms.Label lblFeedbackTopic;
         private System.Windows.Forms.Label lblFeedbackCustomerID;
-        private System.Windows.Forms.Button sendButton;
+        private System.Windows.Forms.Button sendBtn;
         private System.Windows.Forms.Panel headerPnl;
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Label lblCustomerID;
     }

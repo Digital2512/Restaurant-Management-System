@@ -34,7 +34,7 @@
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.addButtonPnl = new System.Windows.Forms.Panel();
-            this.addButton = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.addButtonPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
@@ -82,23 +82,23 @@
             // 
             // addButtonPnl
             // 
-            this.addButtonPnl.Controls.Add(this.addButton);
+            this.addButtonPnl.Controls.Add(this.addBtn);
             this.addButtonPnl.Location = new System.Drawing.Point(435, 114);
             this.addButtonPnl.Name = "addButtonPnl";
             this.addButtonPnl.Size = new System.Drawing.Size(42, 38);
             this.addButtonPnl.TabIndex = 9;
             // 
-            // addButton
+            // addBtn
             // 
-            this.addButton.BackColor = System.Drawing.Color.White;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(-2, -11);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(46, 52);
-            this.addButton.TabIndex = 8;
-            this.addButton.Text = "+";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addBtn.BackColor = System.Drawing.Color.White;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(-2, -11);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(46, 52);
+            this.addBtn.TabIndex = 8;
+            this.addBtn.Text = "+";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addButton_Click);
             // 
             // productImagePBox
             // 
@@ -137,7 +137,7 @@
         private System.Windows.Forms.Label lblProductDescription;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.PictureBox productImagePBox;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Panel addButtonPnl;
     }
 }

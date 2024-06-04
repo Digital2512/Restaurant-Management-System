@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.homePageBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPaymentSuccessfulTitle = new System.Windows.Forms.Label();
             this.approvedPBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.approvedPBox)).BeginInit();
             this.SuspendLayout();
@@ -44,15 +44,15 @@
             this.homePageBtn.UseVisualStyleBackColor = true;
             this.homePageBtn.Click += new System.EventHandler(this.homePageBtn_Click);
             // 
-            // label1
+            // lblPaymentSuccessfulTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(207, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Payment Successful";
+            this.lblPaymentSuccessfulTitle.AutoSize = true;
+            this.lblPaymentSuccessfulTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblPaymentSuccessfulTitle.Location = new System.Drawing.Point(207, 27);
+            this.lblPaymentSuccessfulTitle.Name = "lblPaymentSuccessfulTitle";
+            this.lblPaymentSuccessfulTitle.Size = new System.Drawing.Size(383, 46);
+            this.lblPaymentSuccessfulTitle.TabIndex = 2;
+            this.lblPaymentSuccessfulTitle.Text = "Payment Successful";
             // 
             // approvedPBox
             // 
@@ -67,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPaymentSuccessfulTitle);
             this.Controls.Add(this.homePageBtn);
             this.Controls.Add(this.approvedPBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -83,6 +83,6 @@
 
         private System.Windows.Forms.PictureBox approvedPBox;
         private System.Windows.Forms.Button homePageBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPaymentSuccessfulTitle;
     }
 }

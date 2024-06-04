@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerIndividualProductPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.minusBtn = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.lblProductQuantity = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.productDetailsPnl = new System.Windows.Forms.Panel();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.specialInstructionsRTxtBox = new System.Windows.Forms.RichTextBox();
@@ -46,7 +46,7 @@
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.productDetailsPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,23 +62,23 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
+            // backBtn
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // minusBtn
             // 
@@ -90,15 +90,15 @@
             this.minusBtn.UseVisualStyleBackColor = true;
             this.minusBtn.Click += new System.EventHandler(this.minusBtn_Click);
             // 
-            // addButton
+            // addBtn
             // 
-            this.addButton.Location = new System.Drawing.Point(145, 705);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(41, 34);
-            this.addButton.TabIndex = 8;
-            this.addButton.Text = "+";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addBtn.Location = new System.Drawing.Point(145, 705);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(41, 34);
+            this.addBtn.TabIndex = 8;
+            this.addBtn.Text = "+";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addButton_Click);
             // 
             // lblProductQuantity
             // 
@@ -109,24 +109,24 @@
             this.lblProductQuantity.TabIndex = 9;
             this.lblProductQuantity.Text = "1";
             // 
-            // panel2
+            // productDetailsPnl
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.addToCartBtn);
-            this.panel2.Controls.Add(this.productImagePBox);
-            this.panel2.Controls.Add(this.addButton);
-            this.panel2.Controls.Add(this.lblProductQuantity);
-            this.panel2.Controls.Add(this.specialInstructionsRTxtBox);
-            this.panel2.Controls.Add(this.lblProductID);
-            this.panel2.Controls.Add(this.minusBtn);
-            this.panel2.Controls.Add(this.lblSpecialInstructions);
-            this.panel2.Controls.Add(this.lblProductName);
-            this.panel2.Controls.Add(this.lblProductDescription);
-            this.panel2.Controls.Add(this.lblProductPrice);
-            this.panel2.Location = new System.Drawing.Point(0, 41);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 737);
-            this.panel2.TabIndex = 10;
+            this.productDetailsPnl.AutoScroll = true;
+            this.productDetailsPnl.Controls.Add(this.addToCartBtn);
+            this.productDetailsPnl.Controls.Add(this.productImagePBox);
+            this.productDetailsPnl.Controls.Add(this.addBtn);
+            this.productDetailsPnl.Controls.Add(this.lblProductQuantity);
+            this.productDetailsPnl.Controls.Add(this.specialInstructionsRTxtBox);
+            this.productDetailsPnl.Controls.Add(this.lblProductID);
+            this.productDetailsPnl.Controls.Add(this.minusBtn);
+            this.productDetailsPnl.Controls.Add(this.lblSpecialInstructions);
+            this.productDetailsPnl.Controls.Add(this.lblProductName);
+            this.productDetailsPnl.Controls.Add(this.lblProductDescription);
+            this.productDetailsPnl.Controls.Add(this.lblProductPrice);
+            this.productDetailsPnl.Location = new System.Drawing.Point(0, 41);
+            this.productDetailsPnl.Name = "productDetailsPnl";
+            this.productDetailsPnl.Size = new System.Drawing.Size(596, 737);
+            this.productDetailsPnl.TabIndex = 10;
             // 
             // addToCartBtn
             // 
@@ -210,28 +210,28 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 775);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.productDetailsPnl);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerIndividualProductPage";
             this.Text = "customerIndividualProductView";
             this.headerPnl.ResumeLayout(false);
             this.backBtnPnl.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.productDetailsPnl.ResumeLayout(false);
+            this.productDetailsPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Button minusBtn;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Label lblProductQuantity;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel productDetailsPnl;
         private System.Windows.Forms.PictureBox productImagePBox;
         private System.Windows.Forms.RichTextBox specialInstructionsRTxtBox;
         private System.Windows.Forms.Label lblProductID;

@@ -35,7 +35,7 @@
             this.lblEventsTitle = new System.Windows.Forms.Label();
             this.lblEvents = new System.Windows.Forms.Label();
             this.lblDescriptions = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPlaceID = new System.Windows.Forms.Label();
             this.placeImagePBox = new System.Windows.Forms.PictureBox();
@@ -103,21 +103,21 @@
             this.lblDescriptions.TabIndex = 16;
             this.lblDescriptions.Text = resources.GetString("lblDescriptions.Text");
             // 
-            // addButton
+            // addBtn
             // 
-            this.addButton.BackColor = System.Drawing.Color.White;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(-4, -3);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(46, 52);
-            this.addButton.TabIndex = 17;
-            this.addButton.Text = "+";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addBtn.BackColor = System.Drawing.Color.White;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(-4, -3);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(46, 52);
+            this.addBtn.TabIndex = 17;
+            this.addBtn.Text = "+";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addButton_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.addButton);
+            this.panel1.Controls.Add(this.addBtn);
             this.panel1.Location = new System.Drawing.Point(661, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(39, 49);
@@ -174,7 +174,7 @@
         private System.Windows.Forms.Label lblEventsTitle;
         private System.Windows.Forms.Label lblEvents;
         private System.Windows.Forms.Label lblDescriptions;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPlaceID;
     }

@@ -37,12 +37,12 @@
             this.maleRBtn = new System.Windows.Forms.RadioButton();
             this.lblCustomerIDTitle = new System.Windows.Forms.Label();
             this.genderGBox = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblBirthday = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
             this.lblUserIDTitle = new System.Windows.Forms.Label();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.lblFullName = new System.Windows.Forms.Label();
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblUpdateProfile = new System.Windows.Forms.Label();
@@ -145,16 +145,16 @@
             this.genderGBox.TabStop = false;
             this.genderGBox.Text = "Gender: ";
             // 
-            // label7
+            // lblBirthday
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(435, 241);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 29);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Birthday:";
+            this.lblBirthday.AutoSize = true;
+            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblBirthday.ForeColor = System.Drawing.Color.Black;
+            this.lblBirthday.Location = new System.Drawing.Point(435, 241);
+            this.lblBirthday.Name = "lblBirthday";
+            this.lblBirthday.Size = new System.Drawing.Size(106, 29);
+            this.lblBirthday.TabIndex = 24;
+            this.lblBirthday.Text = "Birthday:";
             // 
             // lblPassword
             // 
@@ -191,23 +191,23 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backButton
+            // backBtn
             // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblFullName
             // 
@@ -329,7 +329,7 @@
             this.Controls.Add(this.lblCustomerID);
             this.Controls.Add(this.lblCustomerIDTitle);
             this.Controls.Add(this.genderGBox);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblBirthday);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.lblUserIDTitle);
@@ -360,11 +360,11 @@
         private System.Windows.Forms.RadioButton maleRBtn;
         private System.Windows.Forms.Label lblCustomerIDTitle;
         private System.Windows.Forms.GroupBox genderGBox;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblBirthday;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label lblUserIDTitle;
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Panel headerPnl;
