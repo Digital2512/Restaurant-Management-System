@@ -178,32 +178,32 @@ namespace IOOP_Assignment
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 10;
-                if (sidebar.Width <= 40)
+                sidebarFlowLayoutPnl.Width -= 10;
+                if (sidebarFlowLayoutPnl.Width <= 40)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
 
-                    reservationPnl.Width = sidebar.Width;
-                    orderPnl.Width = sidebar.Width;
-                    feedbackPnl.Width = sidebar.Width;
-                    logoutPnl.Width = sidebar.Width;
-                    profilePnl.Width = sidebar.Width;
+                    reservationPnl.Width = sidebarFlowLayoutPnl.Width;
+                    orderPnl.Width = sidebarFlowLayoutPnl.Width;
+                    feedbackPnl.Width = sidebarFlowLayoutPnl.Width;
+                    logoutPnl.Width = sidebarFlowLayoutPnl.Width;
+                    profilePnl.Width = sidebarFlowLayoutPnl.Width;
                 }
             }
             else
             {
-                sidebar.Width += 10;
-                if (sidebar.Width >= 120)
+                sidebarFlowLayoutPnl.Width += 10;
+                if (sidebarFlowLayoutPnl.Width >= 120)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
 
-                    reservationPnl.Width = sidebar.Width;
-                    orderPnl.Width = sidebar.Width;
-                    feedbackPnl.Width = sidebar.Width;
-                    logoutPnl.Width = sidebar.Width;
-                    profilePnl.Width = sidebar.Width;
+                    reservationPnl.Width = sidebarFlowLayoutPnl.Width;
+                    orderPnl.Width = sidebarFlowLayoutPnl.Width;
+                    feedbackPnl.Width = sidebarFlowLayoutPnl.Width;
+                    logoutPnl.Width = sidebarFlowLayoutPnl.Width;
+                    profilePnl.Width = sidebarFlowLayoutPnl.Width;
                 }
             }
         }

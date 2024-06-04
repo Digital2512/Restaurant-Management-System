@@ -20,8 +20,8 @@ namespace IOOP_Assignment
         private void homePageBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
-            customerOrderPage.Show();
+            CustomerHomePage customerHomePage = new CustomerHomePage();
+            customerHomePage.Show();
         }
     }
 }

@@ -32,7 +32,7 @@
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnSidebar = new System.Windows.Forms.Button();
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.sidebarFlowLayoutPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.reservationPnl = new System.Windows.Forms.Panel();
             this.reservationBtn = new System.Windows.Forms.Button();
             this.orderPnl = new System.Windows.Forms.Panel();
@@ -41,7 +41,7 @@
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutPnl = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.emptyPanel = new System.Windows.Forms.Panel();
+            this.emptyPnl = new System.Windows.Forms.Panel();
             this.profilePnl = new System.Windows.Forms.Panel();
             this.profileBtn = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
@@ -57,7 +57,7 @@
             this.orderStatusPBox = new System.Windows.Forms.PictureBox();
             this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
             this.lblOrderIDTitle = new System.Windows.Forms.Label();
-            this.pastOrderPnl = new System.Windows.Forms.Panel();
+            this.reservationStatusPnl = new System.Windows.Forms.Panel();
             this.notedButton = new System.Windows.Forms.Button();
             this.lblReservationStatus = new System.Windows.Forms.Label();
             this.lblReservationStatusTitle = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
             this.headerPnl.SuspendLayout();
-            this.sidebar.SuspendLayout();
+            this.sidebarFlowLayoutPnl.SuspendLayout();
             this.reservationPnl.SuspendLayout();
             this.orderPnl.SuspendLayout();
             this.feedbackPnl.SuspendLayout();
@@ -77,7 +77,7 @@
             this.profilePnl.SuspendLayout();
             this.orderStatusPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).BeginInit();
-            this.pastOrderPnl.SuspendLayout();
+            this.reservationStatusPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,19 +111,19 @@
             this.btnSidebar.UseVisualStyleBackColor = true;
             this.btnSidebar.Click += new System.EventHandler(this.btnSidebar_Click);
             // 
-            // sidebar
+            // sidebarFlowLayoutPnl
             // 
-            this.sidebar.BackColor = System.Drawing.Color.DimGray;
-            this.sidebar.Controls.Add(this.reservationPnl);
-            this.sidebar.Controls.Add(this.orderPnl);
-            this.sidebar.Controls.Add(this.feedbackPnl);
-            this.sidebar.Controls.Add(this.logoutPnl);
-            this.sidebar.Controls.Add(this.emptyPanel);
-            this.sidebar.Controls.Add(this.profilePnl);
-            this.sidebar.Location = new System.Drawing.Point(0, 61);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(188, 393);
-            this.sidebar.TabIndex = 1;
+            this.sidebarFlowLayoutPnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidebarFlowLayoutPnl.Controls.Add(this.reservationPnl);
+            this.sidebarFlowLayoutPnl.Controls.Add(this.orderPnl);
+            this.sidebarFlowLayoutPnl.Controls.Add(this.feedbackPnl);
+            this.sidebarFlowLayoutPnl.Controls.Add(this.logoutPnl);
+            this.sidebarFlowLayoutPnl.Controls.Add(this.emptyPnl);
+            this.sidebarFlowLayoutPnl.Controls.Add(this.profilePnl);
+            this.sidebarFlowLayoutPnl.Location = new System.Drawing.Point(0, 61);
+            this.sidebarFlowLayoutPnl.Name = "sidebarFlowLayoutPnl";
+            this.sidebarFlowLayoutPnl.Size = new System.Drawing.Size(188, 393);
+            this.sidebarFlowLayoutPnl.TabIndex = 1;
             // 
             // reservationPnl
             // 
@@ -213,12 +213,12 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // emptyPanel
+            // emptyPnl
             // 
-            this.emptyPanel.Location = new System.Drawing.Point(3, 251);
-            this.emptyPanel.Name = "emptyPanel";
-            this.emptyPanel.Size = new System.Drawing.Size(179, 57);
-            this.emptyPanel.TabIndex = 5;
+            this.emptyPnl.Location = new System.Drawing.Point(3, 251);
+            this.emptyPnl.Name = "emptyPnl";
+            this.emptyPnl.Size = new System.Drawing.Size(179, 57);
+            this.emptyPnl.TabIndex = 5;
             // 
             // profilePnl
             // 
@@ -362,22 +362,22 @@
             this.lblOrderIDTitle.TabIndex = 0;
             this.lblOrderIDTitle.Text = "Order ID: ";
             // 
-            // pastOrderPnl
+            // reservationStatusPnl
             // 
-            this.pastOrderPnl.Controls.Add(this.notedButton);
-            this.pastOrderPnl.Controls.Add(this.lblReservationStatus);
-            this.pastOrderPnl.Controls.Add(this.lblReservationStatusTitle);
-            this.pastOrderPnl.Controls.Add(this.lblPlaceName);
-            this.pastOrderPnl.Controls.Add(this.lblPlaceNameTitle);
-            this.pastOrderPnl.Controls.Add(this.lblDateTimeRange);
-            this.pastOrderPnl.Controls.Add(this.lblReservationID);
-            this.pastOrderPnl.Controls.Add(this.lblDateTimeTitle);
-            this.pastOrderPnl.Controls.Add(this.lblReservationIDTitle);
-            this.pastOrderPnl.Controls.Add(this.reservationStatusPBox);
-            this.pastOrderPnl.Location = new System.Drawing.Point(237, 281);
-            this.pastOrderPnl.Name = "pastOrderPnl";
-            this.pastOrderPnl.Size = new System.Drawing.Size(694, 151);
-            this.pastOrderPnl.TabIndex = 5;
+            this.reservationStatusPnl.Controls.Add(this.notedButton);
+            this.reservationStatusPnl.Controls.Add(this.lblReservationStatus);
+            this.reservationStatusPnl.Controls.Add(this.lblReservationStatusTitle);
+            this.reservationStatusPnl.Controls.Add(this.lblPlaceName);
+            this.reservationStatusPnl.Controls.Add(this.lblPlaceNameTitle);
+            this.reservationStatusPnl.Controls.Add(this.lblDateTimeRange);
+            this.reservationStatusPnl.Controls.Add(this.lblReservationID);
+            this.reservationStatusPnl.Controls.Add(this.lblDateTimeTitle);
+            this.reservationStatusPnl.Controls.Add(this.lblReservationIDTitle);
+            this.reservationStatusPnl.Controls.Add(this.reservationStatusPBox);
+            this.reservationStatusPnl.Location = new System.Drawing.Point(237, 281);
+            this.reservationStatusPnl.Name = "reservationStatusPnl";
+            this.reservationStatusPnl.Size = new System.Drawing.Size(694, 151);
+            this.reservationStatusPnl.TabIndex = 5;
             // 
             // notedButton
             // 
@@ -480,11 +480,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 450);
-            this.Controls.Add(this.pastOrderPnl);
+            this.Controls.Add(this.reservationStatusPnl);
             this.Controls.Add(this.orderStatusPnl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.sidebarFlowLayoutPnl);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerHomePage";
@@ -492,7 +492,7 @@
             this.Load += new System.EventHandler(this.CustomerHomePage_Load);
             this.headerPnl.ResumeLayout(false);
             this.headerPnl.PerformLayout();
-            this.sidebar.ResumeLayout(false);
+            this.sidebarFlowLayoutPnl.ResumeLayout(false);
             this.reservationPnl.ResumeLayout(false);
             this.orderPnl.ResumeLayout(false);
             this.feedbackPnl.ResumeLayout(false);
@@ -501,8 +501,8 @@
             this.orderStatusPnl.ResumeLayout(false);
             this.orderStatusPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).EndInit();
-            this.pastOrderPnl.ResumeLayout(false);
-            this.pastOrderPnl.PerformLayout();
+            this.reservationStatusPnl.ResumeLayout(false);
+            this.reservationStatusPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -514,7 +514,7 @@
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnSidebar;
-        private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.FlowLayoutPanel sidebarFlowLayoutPnl;
         private System.Windows.Forms.Panel reservationPnl;
         private System.Windows.Forms.Panel orderPnl;
         private System.Windows.Forms.Panel feedbackPnl;
@@ -533,9 +533,9 @@
         private System.Windows.Forms.PictureBox orderStatusPBox;
         private System.Windows.Forms.Label lblEstimatedTimeLeftTitle;
         private System.Windows.Forms.Label lblOrderIDTitle;
-        private System.Windows.Forms.Panel pastOrderPnl;
+        private System.Windows.Forms.Panel reservationStatusPnl;
         private System.Windows.Forms.PictureBox reservationStatusPBox;
-        private System.Windows.Forms.Panel emptyPanel;
+        private System.Windows.Forms.Panel emptyPnl;
         private System.Windows.Forms.Panel profilePnl;
         private System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Label lblDateTimeRange;
