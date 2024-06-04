@@ -1,4 +1,8 @@
-
 *.vsidx
 *.sqlite
 *.cache
+<<<<<<< HEAD
+=======
+*.sqlite
+*.json
+>>>>>>> Valerie
