@@ -25,8 +25,8 @@ namespace IOOP_Assignment
         public CustomerHomePage()
         {
             InitializeComponent();
-            notedButton.Visible = false;
-            refreshButton.Visible = false;
+            refreshReservationBtn.Visible = false;
+            refreshOrderBtn.Visible = false;
             Database database = new Database(ConnectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
             customerID = database.getString(query);
@@ -58,7 +58,7 @@ namespace IOOP_Assignment
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = "N/A";
-                    refreshButton.Visible = true;
+                    refreshOrderBtn.Visible = true;
                     //orderStatusPBox.Image = Properties.Resources.completedResized;
                 }
                 else if (orderStatus == "WAITING_FOR_CHEF")
@@ -121,7 +121,7 @@ namespace IOOP_Assignment
                 // Display reservation details based on status
                 if (reservationStatus == "APPROVED")
                 {
-                    notedButton.Visible = true;
+                    refreshReservationBtn.Visible = true;
                     startTimeFormatted = (reservedStartTime / 100) + ":" + (reservedStartTime % 100).ToString("00");
                     endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
 
@@ -272,7 +272,7 @@ namespace IOOP_Assignment
 
             if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                notedButton.Visible = false;
+                refreshReservationBtn.Visible = false;
             }
 
         }
@@ -294,7 +294,7 @@ namespace IOOP_Assignment
 
             if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                notedButton.Visible = false;
+                refreshReservationBtn.Visible = false;
             }
 
         }

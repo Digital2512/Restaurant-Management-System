@@ -49,7 +49,7 @@
             this.lblOrderStatusHeader = new System.Windows.Forms.Label();
             this.lblReservationStatusHeader = new System.Windows.Forms.Label();
             this.orderStatusPnl = new System.Windows.Forms.Panel();
-            this.refreshButton = new System.Windows.Forms.Button();
+            this.refreshOrderBtn = new System.Windows.Forms.Button();
             this.lblOrderStatus = new System.Windows.Forms.Label();
             this.lblOrderStatusTitle = new System.Windows.Forms.Label();
             this.lblEstimatedTime = new System.Windows.Forms.Label();
@@ -58,14 +58,14 @@
             this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
             this.lblOrderIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPnl = new System.Windows.Forms.Panel();
-            this.notedButton = new System.Windows.Forms.Button();
+            this.refreshReservationBtn = new System.Windows.Forms.Button();
             this.lblReservationStatus = new System.Windows.Forms.Label();
             this.lblReservationStatusTitle = new System.Windows.Forms.Label();
             this.lblPlaceName = new System.Windows.Forms.Label();
             this.lblPlaceNameTitle = new System.Windows.Forms.Label();
             this.lblDateTimeRange = new System.Windows.Forms.Label();
             this.lblReservationID = new System.Windows.Forms.Label();
-            this.lblDateTimeTitle = new System.Windows.Forms.Label();
+            this.cc = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
             this.headerPnl.SuspendLayout();
@@ -273,7 +273,7 @@
             // 
             // orderStatusPnl
             // 
-            this.orderStatusPnl.Controls.Add(this.refreshButton);
+            this.orderStatusPnl.Controls.Add(this.refreshOrderBtn);
             this.orderStatusPnl.Controls.Add(this.lblOrderStatus);
             this.orderStatusPnl.Controls.Add(this.lblOrderStatusTitle);
             this.orderStatusPnl.Controls.Add(this.lblEstimatedTime);
@@ -286,15 +286,15 @@
             this.orderStatusPnl.Size = new System.Drawing.Size(694, 104);
             this.orderStatusPnl.TabIndex = 4;
             // 
-            // refreshButton
+            // refreshOrderBtn
             // 
-            this.refreshButton.Location = new System.Drawing.Point(458, 58);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(96, 34);
-            this.refreshButton.TabIndex = 14;
-            this.refreshButton.Text = "REFRESH";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.refreshOrderBtn.Location = new System.Drawing.Point(458, 58);
+            this.refreshOrderBtn.Name = "refreshOrderBtn";
+            this.refreshOrderBtn.Size = new System.Drawing.Size(96, 34);
+            this.refreshOrderBtn.TabIndex = 14;
+            this.refreshOrderBtn.Text = "REFRESH";
+            this.refreshOrderBtn.UseVisualStyleBackColor = true;
+            this.refreshOrderBtn.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // lblOrderStatus
             // 
@@ -364,14 +364,14 @@
             // 
             // reservationStatusPnl
             // 
-            this.reservationStatusPnl.Controls.Add(this.notedButton);
+            this.reservationStatusPnl.Controls.Add(this.refreshReservationBtn);
             this.reservationStatusPnl.Controls.Add(this.lblReservationStatus);
             this.reservationStatusPnl.Controls.Add(this.lblReservationStatusTitle);
             this.reservationStatusPnl.Controls.Add(this.lblPlaceName);
             this.reservationStatusPnl.Controls.Add(this.lblPlaceNameTitle);
             this.reservationStatusPnl.Controls.Add(this.lblDateTimeRange);
             this.reservationStatusPnl.Controls.Add(this.lblReservationID);
-            this.reservationStatusPnl.Controls.Add(this.lblDateTimeTitle);
+            this.reservationStatusPnl.Controls.Add(this.cc);
             this.reservationStatusPnl.Controls.Add(this.lblReservationIDTitle);
             this.reservationStatusPnl.Controls.Add(this.reservationStatusPBox);
             this.reservationStatusPnl.Location = new System.Drawing.Point(237, 281);
@@ -379,15 +379,15 @@
             this.reservationStatusPnl.Size = new System.Drawing.Size(694, 151);
             this.reservationStatusPnl.TabIndex = 5;
             // 
-            // notedButton
+            // refreshReservationBtn
             // 
-            this.notedButton.Location = new System.Drawing.Point(458, 107);
-            this.notedButton.Name = "notedButton";
-            this.notedButton.Size = new System.Drawing.Size(96, 34);
-            this.notedButton.TabIndex = 13;
-            this.notedButton.Text = "NOTED";
-            this.notedButton.UseVisualStyleBackColor = true;
-            this.notedButton.Click += new System.EventHandler(this.notedButton_Click);
+            this.refreshReservationBtn.Location = new System.Drawing.Point(458, 107);
+            this.refreshReservationBtn.Name = "refreshReservationBtn";
+            this.refreshReservationBtn.Size = new System.Drawing.Size(96, 34);
+            this.refreshReservationBtn.TabIndex = 13;
+            this.refreshReservationBtn.Text = "REFRESH";
+            this.refreshReservationBtn.UseVisualStyleBackColor = true;
+            this.refreshReservationBtn.Click += new System.EventHandler(this.notedButton_Click);
             // 
             // lblReservationStatus
             // 
@@ -445,15 +445,15 @@
             this.lblReservationID.TabIndex = 7;
             this.lblReservationID.Text = "N/A";
             // 
-            // lblDateTimeTitle
+            // cc
             // 
-            this.lblDateTimeTitle.AutoSize = true;
-            this.lblDateTimeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDateTimeTitle.Location = new System.Drawing.Point(4, 80);
-            this.lblDateTimeTitle.Name = "lblDateTimeTitle";
-            this.lblDateTimeTitle.Size = new System.Drawing.Size(146, 25);
-            this.lblDateTimeTitle.TabIndex = 6;
-            this.lblDateTimeTitle.Text = "Date and Time:";
+            this.cc.AutoSize = true;
+            this.cc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cc.Location = new System.Drawing.Point(4, 80);
+            this.cc.Name = "cc";
+            this.cc.Size = new System.Drawing.Size(146, 25);
+            this.cc.TabIndex = 6;
+            this.cc.Text = "Date and Time:";
             // 
             // lblReservationIDTitle
             // 
@@ -540,7 +540,7 @@
         private System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Label lblDateTimeRange;
         private System.Windows.Forms.Label lblReservationID;
-        private System.Windows.Forms.Label lblDateTimeTitle;
+        private System.Windows.Forms.Label cc;
         private System.Windows.Forms.Label lblReservationIDTitle;
         private System.Windows.Forms.Label lblPlaceName;
         private System.Windows.Forms.Label lblPlaceNameTitle;
@@ -548,7 +548,7 @@
         private System.Windows.Forms.Label lblOrderStatusTitle;
         private System.Windows.Forms.Label lblReservationStatus;
         private System.Windows.Forms.Label lblReservationStatusTitle;
-        private System.Windows.Forms.Button notedButton;
-        private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button refreshReservationBtn;
+        private System.Windows.Forms.Button refreshOrderBtn;
     }
 }
