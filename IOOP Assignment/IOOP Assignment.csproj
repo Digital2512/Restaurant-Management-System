@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="AdminAddChef.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,17 +79,6 @@
     <Compile Include="AdminAddManager.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-    <Compile Include="AdminAddChef.cs" />
-    <Compile Include="AdminAddChef.Designer.cs">
-      <DependentUpon>AdminAddChef.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminAddCustomer.cs" />
-    <Compile Include="AdminAddCustomer.Designer.cs">
-      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminAddManager.cs" />
->>>>>>> Qiao-Qian
     <Compile Include="AdminAddManager.Designer.cs">
       <DependentUpon>AdminAddManager.cs</DependentUpon>
     </Compile>
@@ -106,7 +94,6 @@
     <Compile Include="cartProductButton.Designer.cs">
       <DependentUpon>cartProductButton.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="AdminManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,45 +151,6 @@
     <Compile Include="AdminViewSalesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-    <Compile Include="AdminManageUsers.cs" />
-    <Compile Include="AdminManageUsers.Designer.cs">
-      <DependentUpon>AdminManageUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminUpdateDeleteChef.cs" />
-    <Compile Include="AdminUpdateDeleteChef.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteChef.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminUpdateDeleteCustomer.cs" />
-    <Compile Include="AdminUpdateDeleteCustomer.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminUpdateDeleteManager.cs" />
-    <Compile Include="AdminUpdateDeleteManager.Designer.cs">
-      <DependentUpon>AdminUpdateDeleteManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminUpdateProfile.cs" />
-    <Compile Include="AdminUpdateProfile.Designer.cs">
-      <DependentUpon>AdminUpdateProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewChef.cs" />
-    <Compile Include="AdminViewChef.Designer.cs">
-      <DependentUpon>AdminViewChef.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewCustomer.cs" />
-    <Compile Include="AdminViewCustomer.Designer.cs">
-      <DependentUpon>AdminViewCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewFeedback.cs" />
-    <Compile Include="AdminViewFeedback.Designer.cs">
-      <DependentUpon>AdminViewFeedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewManager.cs" />
-    <Compile Include="AdminViewManager.Designer.cs">
-      <DependentUpon>AdminViewManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewSalesReport.cs" />
->>>>>>> Qiao-Qian
     <Compile Include="AdminViewSalesReport.Designer.cs">
       <DependentUpon>AdminViewSalesReport.cs</DependentUpon>
     </Compile>
@@ -222,7 +170,6 @@
     <Compile Include="CustomerCartPage.Designer.cs">
       <DependentUpon>CustomerCartPage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="ChefOrderDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,13 +179,6 @@
     <Compile Include="ChefRecipeManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-    <Compile Include="ChefOrderDetailsForm.cs" />
-    <Compile Include="ChefOrderDetailsForm.Designer.cs">
-      <DependentUpon>ChefOrderDetailsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChefRecipeManagement.cs" />
->>>>>>> Qiao-Qian
     <Compile Include="ChefRecipeManagement.Designer.cs">
       <DependentUpon>ChefRecipeManagement.cs</DependentUpon>
     </Compile>
@@ -309,7 +249,6 @@
     </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
-<<<<<<< HEAD
     <Compile Include="ChefInventoryPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,13 +258,6 @@
     <Compile Include="ChefProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-    <Compile Include="ChefInventoryPage.cs" />
-    <Compile Include="ChefInventoryPage.Designer.cs">
-      <DependentUpon>ChefInventoryPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChefProfileForm.cs" />
->>>>>>> Qiao-Qian
     <Compile Include="ChefProfileForm.Designer.cs">
       <DependentUpon>ChefProfileForm.cs</DependentUpon>
     </Compile>
@@ -342,6 +274,51 @@
     </Compile>
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerHomePage.Designer.cs">
+      <DependentUpon>ManagerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAddPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAddPlace.Designer.cs">
+      <DependentUpon>ManagerAddPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMenuPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMenuPage.Designer.cs">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPendingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPendingPage.Designer.cs">
+      <DependentUpon>ManagerPendingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReservationReportPage.Designer.cs">
+      <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTablesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTablesPage.Designer.cs">
+      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUpdateProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUpdateProfilePage.Designer.cs">
+      <DependentUpon>ManagerUpdateProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewProfilePage.Designer.cs">
+      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
     </Compile>
     <Compile Include="productButton.cs">
       <SubType>UserControl</SubType>

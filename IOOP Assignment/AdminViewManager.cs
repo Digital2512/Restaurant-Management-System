@@ -14,14 +14,14 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewManager : Form
     {
-        private Manager manager;
+        private Admin_Manager manager;
         private SqlConnection con;
         public AdminViewManager()
         {
             InitializeComponent();
             string conectionString = "";
             con = new SqlConnection(conectionString);
-            manager = new Manager(conectionString);
+            manager = new Admin_Manager(conectionString);
         }
 
         private void AdminViewManager_Load(object sender, EventArgs e)

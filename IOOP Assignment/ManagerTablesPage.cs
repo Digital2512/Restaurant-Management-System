@@ -22,7 +22,7 @@ namespace IOOP_Assignment
         }
 
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
-        private Manager manager = new Manager();
+        private Admin_Manager manager = new Manager();
         private string reservationID;
 
         private void ManagerTablesPage_Load(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Manager.OpenManagerHomePage();
+            Admin_Manager.OpenManagerHomePage();
         }
 
 
@@ -309,7 +309,7 @@ namespace IOOP_Assignment
                         updateCustomerCmd.Parameters.AddWithValue("@ReservationID", reservationID);
                         updateCustomerCmd.ExecuteNonQuery();
 
-                        Manager.DeleteReservationById(con, placeID, reservationIDToDelete);
+                        Admin_Manager.DeleteReservationById(con, placeID, reservationIDToDelete);
 
                         SqlCommand deleteReservationCmd = new SqlCommand("DELETE FROM Reservation WHERE ReservationID = @ReservationID", con);
                         deleteReservationCmd.Parameters.AddWithValue("@ReservationID", reservationID);
@@ -386,7 +386,7 @@ namespace IOOP_Assignment
 
                 if (count > 0)
                 {
-                    Manager.ShowAvailableTimeSlots(placeID, reservedDate);
+                    Admin_Manager.ShowAvailableTimeSlots(placeID, reservedDate);
                     return;
                 }
 
@@ -422,7 +422,7 @@ namespace IOOP_Assignment
                 updateCustomerCmd.ExecuteNonQuery();
 
                 // Update PlaceOfReservation Reservation
-                Manager.GetReservationIdByPlaceId(con, placeID, newReservationID);
+                Admin_Manager.GetReservationIdByPlaceId(con, placeID, newReservationID);
 
                 // Refresh DataGridView
                 RefreshDataGridView();
@@ -518,8 +518,8 @@ namespace IOOP_Assignment
                     RefreshDataGridView();
 
                     // Assuming GetReservationIdByPlaceId and DeleteReservationById should update the PlaceOfReservation table
-                    Manager.DeleteReservationById(con, oldPlaceID, reservationID);
-                    string newReservationID = Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
+                    Admin_Manager.DeleteReservationById(con, oldPlaceID, reservationID);
+                    string newReservationID = Admin_Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
                     HideReservationForm();
                     MessageBox.Show("Reservation Updated Successfully!");
                 }
@@ -569,7 +569,7 @@ namespace IOOP_Assignment
 
                                 if (rowsAffectedReservation > 0 && rowsAffectedCustomer > 0)
                                 {
-                                    Manager.DeleteReservationById(con, placeID, reservationIDToDelete);
+                                    Admin_Manager.DeleteReservationById(con, placeID, reservationIDToDelete);
                                     MessageBox.Show("Table cleared successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     RefreshDataGridView();
                                 }
@@ -605,58 +605,58 @@ namespace IOOP_Assignment
 
         private void btnT01_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T01");
+            Admin_Manager.DisplayTableInformation("T01");
         }
         private void btnT02_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T02");
+            Admin_Manager.DisplayTableInformation("T02");
         }
         private void btnT03_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T03");
+            Admin_Manager.DisplayTableInformation("T03");
         }
 
         private void btnT04_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T04");
+            Admin_Manager.DisplayTableInformation("T04");
         }
 
         private void btnT05_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T05");
+            Admin_Manager.DisplayTableInformation("T05");
         }
         private void btnT06_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T06");
+            Admin_Manager.DisplayTableInformation("T06");
         }
 
         private void btnT07_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T07");
+            Admin_Manager.DisplayTableInformation("T07");
         }
         private void btnT08_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T08");
+            Admin_Manager.DisplayTableInformation("T08");
         }
 
         private void btnT09_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T09");
+            Admin_Manager.DisplayTableInformation("T09");
         }
 
         private void btnT10_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("T10");
+            Admin_Manager.DisplayTableInformation("T10");
         }
 
         private void btnVIP1_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("VIP01");
+            Admin_Manager.DisplayTableInformation("VIP01");
         }
 
         private void btnVIP2_Click(object sender, EventArgs e)
         {
-            Manager.DisplayTableInformation("VIP02");
+            Admin_Manager.DisplayTableInformation("VIP02");
         }
     }
 }

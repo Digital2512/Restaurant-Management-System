@@ -13,12 +13,12 @@ namespace IOOP_Assignment
 {
     public partial class AdminUpdateDeleteManager : Form
     {
-        private Manager manager;
+        private Admin_Manager manager;
         public AdminUpdateDeleteManager()
         {
             InitializeComponent();
             string connctionString = "";
-            manager = new Manager(connctionString);
+            manager = new Admin_Manager(connctionString);
         }
 
         private void FillComboSearchCode()

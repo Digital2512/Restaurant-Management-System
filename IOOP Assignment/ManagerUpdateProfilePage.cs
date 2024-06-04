@@ -22,7 +22,7 @@ namespace IOOP_Assignment
         }
 
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
-        private Manager manager = new Manager();
+        private Admin_Manager manager = new Manager();
         private string imgLocation;
 
         private void ManagerUpdateProfilePage_Load(object sender, EventArgs e)

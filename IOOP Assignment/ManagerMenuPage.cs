@@ -21,7 +21,7 @@ namespace IOOP_Assignment
         private string imgLocation;
 
         public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
-        private Manager manager = new Manager();
+        private Admin_Manager manager = new Manager();
         private void Menu_Load(object sender, EventArgs e)
         {
             lblProID.Visible = false;
@@ -47,7 +47,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Manager.OpenManagerHomePage();
+            Admin_Manager.OpenManagerHomePage();
 
         }
 

@@ -73,7 +73,7 @@ namespace IOOP_Assignment
             string newId = AutoNewId();
 
 
-            Manager obj1 = new Manager(newId, txtfullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text, skills, educationalBackground);
+            Admin_Manager obj1 = new Admin_Manager(newId, txtfullName.Text, dtpDob.Text, gender, txtphoneNumber.Text, txtEmail.Text, skills, educationalBackground);
             MessageBox.Show(obj1.addManager());
         }
 
