@@ -277,7 +277,7 @@
             this.profilePBox.Location = new System.Drawing.Point(512, 59);
             this.profilePBox.Name = "profilePBox";
             this.profilePBox.Size = new System.Drawing.Size(249, 180);
-            this.profilePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.profilePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePBox.TabIndex = 53;
             this.profilePBox.TabStop = false;
             // 

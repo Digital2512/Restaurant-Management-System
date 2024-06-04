@@ -13,6 +13,7 @@ namespace IOOP_Assignment
     public partial class CustomerProfilePage : Form
     {
         public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string password;
         public CustomerProfilePage()
         {
             InitializeComponent();
@@ -23,7 +24,8 @@ namespace IOOP_Assignment
             query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
             lblFullName.Text = database.getString(query);
             query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
-            lblPasswordValue.Text = database.getString(query);
+            password = database.getString(query);
+            lblPasswordValue.Text = "********";
             query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}';";
             string birthdayDateTimeString = database.getDateTime(query).ToString();
             if (birthdayDateTimeString == DateTime.MinValue.ToString())
@@ -76,10 +78,7 @@ namespace IOOP_Assignment
             Database database = new Database(ConnectionString);
             if (lblPasswordValue.Text == "********")
             {
-                string query = $"SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-                string userID = database.getString(query);
-                query = $"SELECT password FROM Users WHERE UserID = '{userID}';";
-                lblPasswordValue.Text = database.getString(query);
+                lblPasswordValue.Text = password;
                 //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
             else if (lblPasswordValue.Text != "********")

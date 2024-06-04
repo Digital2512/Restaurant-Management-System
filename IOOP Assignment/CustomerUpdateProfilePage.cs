@@ -162,7 +162,7 @@ namespace IOOP_Assignment
                 passwordMTextBox.PasswordChar = '*';
                 //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
             }
-            else
+            else if (passwordMTextBox.PasswordChar == '*')
             {
                 passwordMTextBox.PasswordChar = '\0';
                 //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
@@ -171,12 +171,12 @@ namespace IOOP_Assignment
 
         private void confirmPasswordShowHideBtn_Click(object sender, EventArgs e)
         {
-            if (passwordMTextBox.PasswordChar == '\0')
+            if (confirmPasswordMTextBox.PasswordChar == '\0')
             {
                 confirmPasswordMTextBox.PasswordChar = '*';
                 //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
             }
-            else
+            else if (confirmPasswordMTextBox.PasswordChar == '*')
             {
                 confirmPasswordMTextBox.PasswordChar = '\0';
                 //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
