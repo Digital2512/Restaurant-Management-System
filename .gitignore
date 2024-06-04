@@ -1,5 +1,5 @@
-
 *.vsidx
 *.sqlite
 *.cache
+*.json
 IOOP Assignment/.vs/IOOP Assignment/v17/.suo
