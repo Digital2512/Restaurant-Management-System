@@ -165,6 +165,7 @@ namespace IOOP_Assignment
             else if (passwordMTextBox.PasswordChar == '*')
             {
                 passwordMTextBox.PasswordChar = '\0';
+
                 //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
             }
         }
