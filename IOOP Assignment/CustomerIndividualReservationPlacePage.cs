@@ -25,7 +25,7 @@ namespace IOOP_Assignment
             string query = $"SELECT PlaceID FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             placeID = database.getString(query);
             this.lblPlaceID.Text = placeID;
-            query = $"SELECT Name FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
+            query = $"SELECT PlaceName FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceName.Text = database.getString(query);
             query = $"SELECT Description FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.lblPlaceDescription.Text = database.getString(query);
@@ -86,7 +86,7 @@ namespace IOOP_Assignment
             string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
             DateTime reservedDateTime = reservedDateTimePicker.Value;
             string reservedDate = reservedDateTime.ToString("yyyy-MM-dd");
-            query = $"SELECT Name FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
+            query = $"SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";
             string placeName = database.getString(query);
             string placeSpecialInstructions = specialInstructionsRTxtBox.Text;
 
@@ -201,7 +201,7 @@ namespace IOOP_Assignment
                 if (noOfPaxChanged == true && durationTimeChanged == true && startTimeChanged == true)
                 {
                     bool reservationChanged = false;
-                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, PlaceCustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDate}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
+                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, CustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDate}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
                     if(database.insertOrUpdateValuesIntoDatabase(query) == true)
                     {
                         reservationChanged = true;
