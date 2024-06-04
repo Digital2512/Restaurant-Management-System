@@ -46,8 +46,8 @@
             this.profileBtn = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblOrderStatusHeader = new System.Windows.Forms.Label();
+            this.lblReservationStatusHeader = new System.Windows.Forms.Label();
             this.orderStatusPnl = new System.Windows.Forms.Panel();
             this.refreshButton = new System.Windows.Forms.Button();
             this.lblOrderStatus = new System.Windows.Forms.Label();
@@ -251,25 +251,25 @@
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // label2
+            // lblOrderStatusHeader
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Order Status";
+            this.lblOrderStatusHeader.AutoSize = true;
+            this.lblOrderStatusHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderStatusHeader.Location = new System.Drawing.Point(231, 75);
+            this.lblOrderStatusHeader.Name = "lblOrderStatusHeader";
+            this.lblOrderStatusHeader.Size = new System.Drawing.Size(211, 37);
+            this.lblOrderStatusHeader.TabIndex = 2;
+            this.lblOrderStatusHeader.Text = "Order Status";
             // 
-            // label3
+            // lblReservationStatusHeader
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(232, 238);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(303, 37);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Reservation Status";
+            this.lblReservationStatusHeader.AutoSize = true;
+            this.lblReservationStatusHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationStatusHeader.Location = new System.Drawing.Point(232, 238);
+            this.lblReservationStatusHeader.Name = "lblReservationStatusHeader";
+            this.lblReservationStatusHeader.Size = new System.Drawing.Size(303, 37);
+            this.lblReservationStatusHeader.TabIndex = 3;
+            this.lblReservationStatusHeader.Text = "Reservation Status";
             // 
             // orderStatusPnl
             // 
@@ -482,8 +482,8 @@
             this.ClientSize = new System.Drawing.Size(954, 450);
             this.Controls.Add(this.reservationStatusPnl);
             this.Controls.Add(this.orderStatusPnl);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblReservationStatusHeader);
+            this.Controls.Add(this.lblOrderStatusHeader);
             this.Controls.Add(this.sidebarFlowLayoutPnl);
             this.Controls.Add(this.headerPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -525,8 +525,8 @@
         private System.Windows.Forms.Button reservationBtn;
         private System.Windows.Forms.Panel logoutPnl;
         private System.Windows.Forms.Button logoutBtn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblOrderStatusHeader;
+        private System.Windows.Forms.Label lblReservationStatusHeader;
         private System.Windows.Forms.Panel orderStatusPnl;
         private System.Windows.Forms.Label lblEstimatedTime;
         private System.Windows.Forms.Label lblOrderID;
