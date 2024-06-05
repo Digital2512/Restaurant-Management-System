@@ -3,36 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\cheforderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:cheforderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\cheforderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:cheforderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\chefrecipemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefrecipemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\chefrecipemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefrecipemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\chefinventorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefinventorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\chefinventorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:chefinventorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerviewprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managerviewprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerviewprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 273,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -53,84 +89,125 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChefOrderDetailsForm.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefOrderDetailsForm.cs",
+              "RelativeDocumentMoniker": "ChefOrderDetailsForm.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefOrderDetailsForm.cs",
+              "RelativeToolTip": "ChefOrderDetailsForm.cs",
+              "ViewState": "AQIAAAcBAAAAAAAAAAAewBgBAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:42:22.336Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ManagerViewProfilePage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs",
-              "RelativeDocumentMoniker": "ManagerViewProfilePage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs [Design]",
-              "RelativeToolTip": "ManagerViewProfilePage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:14.418Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ManagerUpdateProfilePage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs",
-              "RelativeDocumentMoniker": "ManagerUpdateProfilePage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs [Design]",
-              "RelativeToolTip": "ManagerUpdateProfilePage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:10.844Z",
-              "EditorCaption": " [Design]"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ManagerTablesPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
-              "RelativeDocumentMoniker": "ManagerTablesPage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs [Design]",
-              "RelativeToolTip": "ManagerTablesPage.cs [Design]",
+              "Title": "ChefOrderDetailsForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefOrderDetailsForm.cs",
+              "RelativeDocumentMoniker": "ChefOrderDetailsForm.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefOrderDetailsForm.cs [Design]",
+              "RelativeToolTip": "ChefOrderDetailsForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:09Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-05T21:05:47.369Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ManagerReservationReportPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs",
-              "RelativeDocumentMoniker": "ManagerReservationReportPage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs [Design]",
-              "RelativeToolTip": "ManagerReservationReportPage.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "ChefRecipeManagement.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefRecipeManagement.cs",
+              "RelativeDocumentMoniker": "ChefRecipeManagement.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefRecipeManagement.cs",
+              "RelativeToolTip": "ChefRecipeManagement.cs",
+              "ViewState": "AQIAAAEBAAAAAAAAAAAiwB8BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:07.254Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-05T20:57:05.124Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ManagerPendingPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
-              "RelativeDocumentMoniker": "ManagerPendingPage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs [Design]",
-              "RelativeToolTip": "ManagerPendingPage.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "ChefRecipeManagement.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefRecipeManagement.cs",
+              "RelativeDocumentMoniker": "ChefRecipeManagement.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefRecipeManagement.cs [Design]",
+              "RelativeToolTip": "ChefRecipeManagement.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:05.31Z",
+              "WhenOpened": "2024-06-05T20:56:32.525Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ManagerMenuPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs",
-              "RelativeDocumentMoniker": "ManagerMenuPage.cs",
-              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs [Design]",
-              "RelativeToolTip": "ManagerMenuPage.cs [Design]",
+              "Title": "ChefInventoryPage.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefInventoryPage.cs",
+              "RelativeDocumentMoniker": "ChefInventoryPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefInventoryPage.cs",
+              "RelativeToolTip": "ChefInventoryPage.cs",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T20:01:03.231Z",
+              "WhenOpened": "2024-06-05T20:42:05.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChefInventoryPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefInventoryPage.cs",
+              "RelativeDocumentMoniker": "ChefInventoryPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefInventoryPage.cs [Design]",
+              "RelativeToolTip": "ChefInventoryPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:41:59.999Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Utility.cs",
+              "RelativeDocumentMoniker": "Utility.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Utility.cs",
+              "RelativeToolTip": "Utility.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:40:45.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChefHomePage.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefHomePage.cs",
+              "RelativeDocumentMoniker": "ChefHomePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ChefHomePage.cs",
+              "RelativeToolTip": "ChefHomePage.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAYwGsAAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:28:31.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA1wFsAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:25:25.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ManagerHomePage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs",
               "RelativeDocumentMoniker": "ManagerHomePage.cs",
@@ -142,7 +219,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
+              "Title": "ManagerViewProfilePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs",
+              "RelativeDocumentMoniker": "ManagerViewProfilePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs [Design]",
+              "RelativeToolTip": "ManagerViewProfilePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:14.418Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ManagerUpdateProfilePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs",
+              "RelativeDocumentMoniker": "ManagerUpdateProfilePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs [Design]",
+              "RelativeToolTip": "ManagerUpdateProfilePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:10.844Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ManagerTablesPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
+              "RelativeDocumentMoniker": "ManagerTablesPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs [Design]",
+              "RelativeToolTip": "ManagerTablesPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:09Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ManagerReservationReportPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs",
+              "RelativeDocumentMoniker": "ManagerReservationReportPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs [Design]",
+              "RelativeToolTip": "ManagerReservationReportPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:07.254Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ManagerPendingPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
+              "RelativeDocumentMoniker": "ManagerPendingPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs [Design]",
+              "RelativeToolTip": "ManagerPendingPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:05.31Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ManagerMenuPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs",
+              "RelativeDocumentMoniker": "ManagerMenuPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs [Design]",
+              "RelativeToolTip": "ManagerMenuPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:03.231Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ManagerAddPlace.cs [Design]",
               "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerAddPlace.cs",
               "RelativeDocumentMoniker": "ManagerAddPlace.cs",

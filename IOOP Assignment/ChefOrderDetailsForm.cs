@@ -11,7 +11,7 @@ namespace IOOP_Assignment
     public partial class ChefOrderDetailsForm : Form
     {
         private System.Timers.Timer timer;
-        private string[] ButtonsToUpdate = { "V01", "V02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
+        private string[] ButtonsToUpdate = { "VIP01", "VIP02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
         private string userid;
         private string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
@@ -50,11 +50,11 @@ namespace IOOP_Assignment
 
             this.BeginInvoke((MethodInvoker)delegate
             {
-                if (orderStatus == "In Progress")
+                if (orderStatus == "IN PROGRESS")
                 {
                     button.BackColor = Color.Red;
                 }
-                else if (orderStatus == "Pending")
+                else if (orderStatus == "PENDING")
                 {
                     button.BackColor = Color.Yellow;
                 }
@@ -96,7 +96,7 @@ namespace IOOP_Assignment
                 // Set table number in label
                 LblTableSelectedShow.Text = tableNumber;
 
-                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'Pending' OR Status = 'In Progress')";
+                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'PENDING' OR Status = 'IN PROGRESS')";
                 SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
@@ -246,7 +246,7 @@ namespace IOOP_Assignment
                     DataRow row = dataTable.Rows[0];
                     string status = row["Status"].ToString();
 
-                    if (status == "Pending")
+                    if (status == "PENDING")
                     {
                         int totalQuantity = CalculateTotalQuantity(orderID);
                         string productNames = GetProductNamesFromOrder(orderID);
@@ -254,11 +254,11 @@ namespace IOOP_Assignment
                         // Calculate estimated time left (10 minutes per product)
                         int estimatedTimeLeft = totalQuantity * 10;
 
-                        var result = MessageBox.Show($"Do you want to update the order status to 'In Progress'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var result = MessageBox.Show($"Do you want to update the order status to 'IN PROGRESS'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
-                            string updateQuery = "UPDATE Orders SET Status = 'In Progress', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET Status = 'IN PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = {
                                 new SqlParameter("@OrderID", orderID),
                                 new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft + " minutes"),
@@ -270,18 +270,18 @@ namespace IOOP_Assignment
                             LoadChefOrders();
                         }
                     }
-                    else if (status == "In Progress")
+                    else if (status == "IN PROGRESS")
                     {
                         string productID = GetProductIDFromOrder(orderID);
                         int quantity = GetQuantityFromOrder(orderID);
 
-                        var result = MessageBox.Show($"Do you want to update the order status to 'Completed'?\n\nOrder ID: {orderID}\nProduct Name: {productID}", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var result = MessageBox.Show($"Do you want to update the order status to 'COMPLETED'?\n\nOrder ID: {orderID}\nProduct Name: {productID}", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
                             DeductInventory(productID, quantity);
 
-                            string updateQuery = "UPDATE Orders SET Status = 'Completed', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET Status = 'COMPLETED', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = { new SqlParameter("@OrderID", orderID) };
                             ExecuteSqlCommand(updateQuery, updateParameters);
                             MessageBox.Show("Order status updated to Completed.");
@@ -290,7 +290,7 @@ namespace IOOP_Assignment
                             UpdateButtonColorAfterCompletion(orderID);
                         }
                     }
-                    else if (status == "Completed")
+                    else if (status == "COMPLETED")
                     {
                         MessageBox.Show("Order is already completed.");
                     }
@@ -399,7 +399,7 @@ namespace IOOP_Assignment
         private void LoadChefOrders()
         {
             comboBoxChefReceived.Items.Clear();
-            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (Status = 'Pending' OR Status = 'In Progress')";
+            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (Status = 'PENDING' OR Status = 'IN PROGRESS')";
             SqlParameter[] parameters = { new SqlParameter("@ChefID", this.userid) };
 
             DataTable dataTable = ExecuteSqlQuery(query, parameters);
