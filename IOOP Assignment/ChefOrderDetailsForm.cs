@@ -13,7 +13,7 @@ namespace IOOP_Assignment
         private System.Timers.Timer timer;
         private string[] ButtonsToUpdate = { "V01", "V02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
         private string userid;
-        private string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
+        private string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public ChefOrderDetailsForm(string userid)
         {
@@ -511,6 +511,11 @@ namespace IOOP_Assignment
         private void BbackH_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void T01_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

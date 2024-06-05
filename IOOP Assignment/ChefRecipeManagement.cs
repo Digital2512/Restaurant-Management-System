@@ -278,5 +278,10 @@ namespace IOOP_Assignment
         {
             this.Close();
         }
+
+        private void ListRecipeInventory_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
