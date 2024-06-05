@@ -167,6 +167,7 @@ namespace IOOP_Assignment
             return result;
         }
 
+        // get integer from database
         public int getInt(string query)
         {
             int result = 0;
@@ -202,9 +203,9 @@ namespace IOOP_Assignment
         }
 
         //get decimal, from database, which would be converted to an integer
-        public int getDecimal(string query)
+        public float getDecimal(string query)
         {
-            int result = 0;
+            float result = 0.00f;  
             using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
@@ -219,10 +220,8 @@ namespace IOOP_Assignment
                         {
                             while (reader.Read())
                             {
-                                decimal decimalValue = reader.GetDecimal(0);
-
-                                result = Decimal.ToInt32(decimalValue);
-
+                                decimal dbValue = reader.GetDecimal(0); 
+                                result = (float)dbValue; 
                                 break;
                             }
                         }
@@ -240,7 +239,7 @@ namespace IOOP_Assignment
             }
             return result;
         }
-        
+
         //get data table from the database
         public DataTable getDataTable(string query)
         {
@@ -321,6 +320,7 @@ namespace IOOP_Assignment
         // insert or update into the database or delete values from the database
         public bool insertOrUpdateValuesIntoDatabase(string query)
         {
+            MessageBox.Show(query);
             using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try

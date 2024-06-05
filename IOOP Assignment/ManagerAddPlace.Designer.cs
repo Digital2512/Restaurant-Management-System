@@ -41,7 +41,6 @@
             this.lblPax = new System.Windows.Forms.Label();
             this.lblEventType = new System.Windows.Forms.Label();
             this.eventTypeCBox = new System.Windows.Forms.ComboBox();
-            this.txtEventType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +77,11 @@
             // 
             this.lblPlaceID.AutoSize = true;
             this.lblPlaceID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaceID.Location = new System.Drawing.Point(226, 81);
+            this.lblPlaceID.Location = new System.Drawing.Point(212, 81);
             this.lblPlaceID.Name = "lblPlaceID";
-            this.lblPlaceID.Size = new System.Drawing.Size(77, 22);
+            this.lblPlaceID.Size = new System.Drawing.Size(94, 22);
             this.lblPlaceID.TabIndex = 29;
-            this.lblPlaceID.Text = "PlaceID:";
+            this.lblPlaceID.Text = "ProductID:";
             // 
             // lblProDesc
             // 
@@ -105,11 +104,11 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(241, 155);
+            this.lblName.Location = new System.Drawing.Point(184, 155);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(62, 22);
+            this.lblName.Size = new System.Drawing.Size(129, 22);
             this.lblName.TabIndex = 26;
-            this.lblName.Text = "Name:";
+            this.lblName.Text = "Product Name:";
             // 
             // btnUpload
             // 
@@ -143,9 +142,9 @@
             this.lblPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPax.Location = new System.Drawing.Point(210, 199);
             this.lblPax.Name = "lblPax";
-            this.lblPax.Size = new System.Drawing.Size(93, 22);
+            this.lblPax.Size = new System.Drawing.Size(56, 22);
             this.lblPax.TabIndex = 40;
-            this.lblPax.Text = "MinOfPax:";
+            this.lblPax.Text = "Price:";
             // 
             // lblEventType
             // 
@@ -153,31 +152,22 @@
             this.lblEventType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEventType.Location = new System.Drawing.Point(201, 227);
             this.lblEventType.Name = "lblEventType";
-            this.lblEventType.Size = new System.Drawing.Size(102, 22);
+            this.lblEventType.Size = new System.Drawing.Size(75, 22);
             this.lblEventType.TabIndex = 42;
-            this.lblEventType.Text = "EventType:";
+            this.lblEventType.Text = "Cuisine:";
             // 
             // eventTypeCBox
             // 
             this.eventTypeCBox.FormattingEnabled = true;
             this.eventTypeCBox.Items.AddRange(new object[] {
-            "Birthday",
-            "Gathering",
-            "Wedding Party",
-            "Corporate Party",
-            "Dining",
-            "Private Dining"});
-            this.eventTypeCBox.Location = new System.Drawing.Point(468, 224);
+            "Korean",
+            "Japanese",
+            "Western",
+            "Beverages"});
+            this.eventTypeCBox.Location = new System.Drawing.Point(311, 229);
             this.eventTypeCBox.Name = "eventTypeCBox";
             this.eventTypeCBox.Size = new System.Drawing.Size(121, 28);
             this.eventTypeCBox.TabIndex = 44;
-            // 
-            // txtEventType
-            // 
-            this.txtEventType.Location = new System.Drawing.Point(309, 227);
-            this.txtEventType.Name = "txtEventType";
-            this.txtEventType.Size = new System.Drawing.Size(117, 26);
-            this.txtEventType.TabIndex = 43;
             // 
             // ManagerAddPlace
             // 
@@ -185,7 +175,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.eventTypeCBox);
-            this.Controls.Add(this.txtEventType);
             this.Controls.Add(this.lblEventType);
             this.Controls.Add(this.txtPax);
             this.Controls.Add(this.lblPax);
@@ -221,6 +210,5 @@
         private System.Windows.Forms.Label lblPax;
         private System.Windows.Forms.Label lblEventType;
         private System.Windows.Forms.ComboBox eventTypeCBox;
-        private System.Windows.Forms.TextBox txtEventType;
     }
 }

@@ -244,7 +244,8 @@
             this.placeImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
             this.placeImagePBox.Location = new System.Drawing.Point(0, 0);
             this.placeImagePBox.Name = "placeImagePBox";
-            this.placeImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.placeImagePBox.Size = new System.Drawing.Size(574, 334);
+            this.placeImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.placeImagePBox.TabIndex = 14;
             this.placeImagePBox.TabStop = false;
             // 

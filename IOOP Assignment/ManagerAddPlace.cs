@@ -20,7 +20,7 @@ namespace IOOP_Assignment
 
         private string imgLocation;
 
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -35,14 +35,13 @@ namespace IOOP_Assignment
                 con.Open();
 
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO PlaceOfReservation (PlaceID, PlaceName, Description, EventType, MinOfPax, PlaceImage, EventType) VALUES (@PlaceID, @PlaceName, @Description, @EventType, @MinOfPax, @PlaceImage, @EventType)", con);
-                cmd.Parameters.AddWithValue("@PlaceID", txtPlaceID.Text);
-                cmd.Parameters.AddWithValue("@PlaceName", txtPlaceName.Text);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, ProductImage) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @ProductImage)", con);
+                cmd.Parameters.AddWithValue("@ProductID", txtPlaceID.Text);
+                cmd.Parameters.AddWithValue("@Name", txtPlaceName.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDesc.Text);
-                cmd.Parameters.AddWithValue("@EventType", txtEventType.Text);
-                cmd.Parameters.AddWithValue("@MinOfPax", txtPax.Text);
-                cmd.Parameters.AddWithValue("@PlaceImage", images);
-                cmd.Parameters.AddWithValue("@EventType", eventTypeCBox.Text);
+                cmd.Parameters.AddWithValue("@Price", txtPax.Text);
+                cmd.Parameters.AddWithValue("@ProductImage", images);
+                cmd.Parameters.AddWithValue("@Cuisine", eventTypeCBox.Text);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Table Added Successfully!");

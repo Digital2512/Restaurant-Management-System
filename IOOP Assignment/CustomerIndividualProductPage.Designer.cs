@@ -145,6 +145,7 @@
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(596, 334);
+            this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productImagePBox.TabIndex = 14;
             this.productImagePBox.TabStop = false;
             this.productImagePBox.Click += new System.EventHandler(this.productImagePBox_Click);

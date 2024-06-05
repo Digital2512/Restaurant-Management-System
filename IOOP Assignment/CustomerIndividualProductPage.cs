@@ -26,7 +26,7 @@ namespace IOOP_Assignment
             query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
             string productName = database.getString(query);
             query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
-            int productPrice = database.getDecimal(query);
+            float productPrice = database.getDecimal(query);
             query = $"SELECT Description FROM Menu WHERE Chosen = 'TRUE';";
             string productDescription = database.getString(query);
             query = $"SELECT ProductImage FROM Menu WHERE Chosen = 'TRUE';";
@@ -49,7 +49,7 @@ namespace IOOP_Assignment
             query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
             string productName = database.getString(query);
             query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
-            int productPrice = database.getDecimal(query);
+            float productPrice = database.getDecimal(query);
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
             string productSpecialInstructions = this.specialInstructionsRTxtBox.Text;
             query = "SELECT OrderID FROM Orders WHERE OrderStatus = 'ORDERING'";
@@ -79,7 +79,7 @@ namespace IOOP_Assignment
             }
             
             string orderDetailsID = database.GenerateUniqueID("OD", "OrderDetailsID", "OrderDetails");
-            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, OrderSpecialInstructions, Name) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}', '{productName}')";
+            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, OrderSpecialInstructions, Name) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', {productQuantity}, {productPrice.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)}, '{productSpecialInstructions}', '{productName}');";
             bool orderDetailsRecorded = database.insertOrUpdateValuesIntoDatabase(query);
             query = $"SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
             string previousOrderDetailsIDs = database.getString(query);
