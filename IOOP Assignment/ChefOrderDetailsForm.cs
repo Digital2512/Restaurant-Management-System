@@ -96,7 +96,7 @@ namespace IOOP_Assignment
                 // Set table number in label
                 LblTableSelectedShow.Text = tableNumber;
 
-                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'PENDING' OR Status = 'IN PROGRESS')";
+                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'PENDING' OR Status = 'IN_PROGRESS')";
                 SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
@@ -258,7 +258,7 @@ namespace IOOP_Assignment
 
                         if (result == DialogResult.Yes)
                         {
-                            string updateQuery = "UPDATE Orders SET Status = 'IN PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET Status = 'IN_PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = {
                                 new SqlParameter("@OrderID", orderID),
                                 new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft + " minutes"),
@@ -270,7 +270,7 @@ namespace IOOP_Assignment
                             LoadChefOrders();
                         }
                     }
-                    else if (status == "IN PROGRESS")
+                    else if (status == "IN_PROGRESS")
                     {
                         string productID = GetProductIDFromOrder(orderID);
                         int quantity = GetQuantityFromOrder(orderID);
