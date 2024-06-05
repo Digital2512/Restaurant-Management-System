@@ -50,6 +50,8 @@ namespace IOOP_Assignment
                             switch (role)
                             {
                                 case "Admin":
+                                    loginButton.BackColor = Color.LimeGreen;
+                                    loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Admin");
                                     string loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
                                     cmd = new SqlCommand(loggedInUpdateQuery, connection);
@@ -61,6 +63,8 @@ namespace IOOP_Assignment
                                     adminHomePage.Show();
                                     break;
                                 case "Manager":
+                                    loginButton.BackColor = Color.LimeGreen;
+                                    loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Manager");
                                     loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
                                     cmd = new SqlCommand(loggedInUpdateQuery, connection);
@@ -72,6 +76,8 @@ namespace IOOP_Assignment
                                     managerHomePage.Show();
                                     break;
                                 case "Chef":
+                                    loginButton.BackColor = Color.LimeGreen;
+                                    loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Chef");
                                     loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
                                     cmd = new SqlCommand(loggedInUpdateQuery, connection);
@@ -84,6 +90,8 @@ namespace IOOP_Assignment
                                     
                                     break;
                                 case "Customer":
+                                    loginButton.BackColor = Color.LimeGreen;
+                                    loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Customer");
                                     loggedInUpdateQuery = $"UPDATE Users SET LoggedIn = 'TRUE' WHERE UserID = @username;";
 

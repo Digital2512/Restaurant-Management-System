@@ -33,7 +33,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLoginForm = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.passwordMTxtBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -74,23 +73,14 @@
             // 
             // loginButton
             // 
+            this.loginButton.BackColor = System.Drawing.Color.White;
             this.loginButton.Location = new System.Drawing.Point(108, 209);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(121, 34);
+            this.loginButton.Size = new System.Drawing.Size(283, 34);
             this.loginButton.TabIndex = 5;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Text = "LOGIN";
+            this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(262, 209);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(121, 34);
-            this.exitButton.TabIndex = 6;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // passwordMTxtBox
             // 
@@ -106,7 +96,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 314);
             this.Controls.Add(this.passwordMTxtBox);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.lblLoginForm);
             this.Controls.Add(this.txtUsername);
@@ -126,7 +115,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblLoginForm;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.MaskedTextBox passwordMTxtBox;
     }
 }
