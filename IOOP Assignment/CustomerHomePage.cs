@@ -35,9 +35,9 @@ namespace IOOP_Assignment
             lblWelcome.Text = $"Welcome,{customerName}";
 
             query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING_FOR_CHEF';";
-            orderID = database.getTopString(query);
+            orderID = database.getString(query);
             query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
-            reservationID = database.getTopString(query);
+            reservationID = database.getString(query);
             if (orderID != null || orderID != "")
             {
                 query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";

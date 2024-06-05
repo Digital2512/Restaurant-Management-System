@@ -19,19 +19,19 @@ namespace IOOP_Assignment
 
         public string connectionString { get => ConnectionString; set => ConnectionString = value; }
 
-        private string Query;
 
-        public string query { get => Query; set => Query = value; }
-
+        //main constructor (you would need to create an object first and define it with a connection string first to use the methods)
         public Database(string ConnectionString)
         {
-            this.ConnectionString = ConnectionString;
+            this.connectionString = ConnectionString;
         }
 
+
+        //get the first row's string from the database
         public string getString(string query)
         {
             string result = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -85,102 +85,12 @@ namespace IOOP_Assignment
             return result;
         }
 
-        public List<string> getListOfStrings(string query)
-        {
-            List<string> result = new List<string>();
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                string stringExtracted = reader.GetString(0);
-                                result.Add(stringExtracted);
-                            }
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("An Error Occurred: " + ex.Message);
-                    connection.Close();
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                        connection.Close();
-                }
-            }
-            return result;
-        }
-
-        public string getTopString(string query)
-        {
-            string result = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.HasRows)
-                        {
-                            // Only read the first row
-                            if (reader.Read())
-                            {
-                                try
-                                {
-                                    if (!reader.IsDBNull(0))
-                                    {
-                                        result = reader.GetString(0);
-                                        if (result == null)
-                                        {
-                                            result = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        result = "";
-                                    }
-                                }
-                                catch (SqlException ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("An Error Occurred: " + ex.Message);
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                        connection.Close();
-                }
-            }
-            return result;
-        }
-
+        // get date time from the database
         public DateTime getDateTime(string query)
         {
             DateTime result = DateTime.MinValue;
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -210,10 +120,12 @@ namespace IOOP_Assignment
             return result;
         }
 
+
+        // get date time, with a boolean value attached to it which would identify if the date time is null or not, from the database 
         public DateTime? getDateTimeToProcess(string query)
         {
             DateTime? result = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -258,7 +170,7 @@ namespace IOOP_Assignment
         public int getInt(string query)
         {
             int result = 0;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -289,10 +201,11 @@ namespace IOOP_Assignment
             return result;
         }
 
+        //get decimal from database
         public int getDecimal(string query)
         {
             int result = 0;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -327,39 +240,12 @@ namespace IOOP_Assignment
             }
             return result;
         }
-        public int getRecipeStockInt(string query)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                object result = command.ExecuteScalar();
-                return result != null ? Convert.ToInt32(result) : 0;
-            }
-        }
-        /*
-        public DataTable getDataTable(string query)
-        {
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-            return dataTable;
-        }*/
-
+        
+        //get data table from the database
         public DataTable getDataTable(string query)
         {
             var dataTable = new DataTable();
-            using (var connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -379,10 +265,14 @@ namespace IOOP_Assignment
             }
             return dataTable;
         }
+        //generate a Unique ID, by checking the database first to identify if this ID exist or not and
+        //if not, it will return the ID,
+        //but if yes then it add a number increment to it,
+        //but if the very first ID is not detected at all then it will return the very first ID of that table
         public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
         {
             string newID = null;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -427,9 +317,11 @@ namespace IOOP_Assignment
             return newID;
         }
 
+
+        // insert or update into the database or delete values from the database
         public bool insertOrUpdateValuesIntoDatabase(string query)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -461,10 +353,11 @@ namespace IOOP_Assignment
             }
         }
 
+        //get image from the database, which would be converted from an image byte string
         public Image getImage(string query)
         {
             Image resultImage = Properties.Resources.errorImage;
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -507,6 +400,8 @@ namespace IOOP_Assignment
             }
             return resultImage;
         }
+
+        //insert image into database
         public bool insertOrUpdateImageToFile(string imagePath, string query)
         {
             bool result = false;
