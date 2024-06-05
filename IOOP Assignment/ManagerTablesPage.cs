@@ -395,9 +395,12 @@ namespace IOOP_Assignment
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
+                //Fetch the event type
+                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlaceOfReservation WHERE PlaceID = '{placeID}'", con);
+                string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
                 // Insert the reservation into the database
-                SqlCommand cmd = new SqlCommand("INSERT INTO Reservation (ReservationID, CustomerID, CustomerPax, PlaceID, PlaceName, ReservedDate, ReservedStartTime, ReservedEndTime, Duration, PlaceSpecialInstructions) VALUES (@ReservationID, @CustomerID, @CustomerPax, @PlaceID, @PlaceName, @ReservedDate, @ReservedStartTime, @ReservedEndTime, @Duration, @PlaceSpecialInstructions)", con);
+                SqlCommand cmd = new SqlCommand($"INSERT INTO Reservation (ReservationID, CustomerID, CustomerPax, PlaceID, PlaceName, ReservedDate, ReservedStartTime, ReservedEndTime, Duration, PlaceSpecialInstructions, EventType) VALUES (@ReservationID, @CustomerID, @CustomerPax, @PlaceID, @PlaceName, @ReservedDate, @ReservedStartTime, @ReservedEndTime, @Duration, @PlaceSpecialInstructions, '{eventType}')", con);
                 cmd.Parameters.AddWithValue("@ReservationID", reservationID);
                 cmd.Parameters.AddWithValue("@CustomerID", cbbCustomerID.Text); // Assuming CustomerID is selected from ComboBox
                 cmd.Parameters.AddWithValue("@CustomerPax", txtPax.Text);
@@ -498,9 +501,12 @@ namespace IOOP_Assignment
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
+                //Fetch the event type
+                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlaceOfReservation WHERE PlaceID = '{placeID}'", con);
+                string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
                 // Update the reservation into the database
-                SqlCommand cmd = new SqlCommand("UPDATE Reservation SET CustomerPax=@CustomerPax, PlaceID=@PlaceID, PlaceName=@PlaceName, ReservedDate=@ReservedDate, ReservedStartTime=@ReservedStartTime, ReservedEndTime=@ReservedEndTime, Duration=@Duration, PlaceSpecialInstructions=@PlaceSpecialInstructions WHERE ReservationID=@ReservationID", con);
+                SqlCommand cmd = new SqlCommand($"UPDATE Reservation SET CustomerPax=@CustomerPax, PlaceID=@PlaceID, PlaceName=@PlaceName, ReservedDate=@ReservedDate, ReservedStartTime=@ReservedStartTime, ReservedEndTime=@ReservedEndTime, Duration=@Duration, PlaceSpecialInstructions=@PlaceSpecialInstructions, EventType='{eventType}' WHERE ReservationID=@ReservationID", con);
                 cmd.Parameters.AddWithValue("@ReservationID", reservationID);
                 cmd.Parameters.AddWithValue("@CustomerPax", txtPax.Text);
                 cmd.Parameters.AddWithValue("@PlaceID", cbbPlaceID.Text);
@@ -659,5 +665,6 @@ namespace IOOP_Assignment
             Manager.DisplayTableInformation("VIP02");
         }
     }
+
 }
 

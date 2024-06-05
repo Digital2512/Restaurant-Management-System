@@ -41,6 +41,32 @@ namespace IOOP_Assignment
 
         }
 
+        private void ShowApprovalForm()
+        {
+            lblCustomerID.Visible = true;
+            lblDuration.Visible = true;
+            lblPax.Visible = true;
+            lblPlaceID.Visible = true;
+            lblResv.Visible = true;
+            lblResvID.Visible = true;
+            lblTime.Visible = true;
+            btnApprove.Visible = true;
+            btnDeny.Visible = true;
+        }
+
+        private void HideApprovalForm()
+        {
+            lblCustomerID.Visible = false;
+            lblDuration.Visible = false;
+            lblPax.Visible = false;
+            lblPlaceID.Visible = false;
+            lblResv.Visible = false;
+            lblResvID.Visible = false;
+            lblTime.Visible = false;
+            btnApprove.Visible = false;
+            btnDeny.Visible = false;
+        }
+
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -72,15 +98,7 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    lblCustomerID.Visible = true;
-                    lblDuration.Visible = true;
-                    lblPax.Visible = true;
-                    lblPlaceID.Visible = true;
-                    lblResv.Visible = true;
-                    lblResvID.Visible = true;
-                    lblTime.Visible = true;
-                    btnApprove.Visible = true;
-                    btnDeny.Visible = true;
+                    ShowApprovalForm();
 
                     lblCustomerID.Text = "CustomerID: " + row.Cells["CustomerID"].Value.ToString();
                     lblDuration.Text = "Duration: " + row.Cells["Duration"].Value.ToString();
@@ -122,6 +140,7 @@ namespace IOOP_Assignment
                             Manager.GetReservationIdByPlaceId(con, placeID, newReservationId);
 
                             RefreshDataGridView();
+                            HideApprovalForm();
                             MessageBox.Show("Reservation Approved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
@@ -150,16 +169,22 @@ namespace IOOP_Assignment
                 {
                     // Get the ReservationID from the selected row
                     string reservationID = dataGridViewPending.SelectedRows[0].Cells["ReservationID"].Value.ToString();
+                    string placeID = dataGridViewPending.SelectedRows[0].Cells["PlaceID"].Value.ToString();
+
                     SqlConnection con = new SqlConnection(connetionString);
                     con.Open();
-                    SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = 'NULL' WHERE ReservationID=@ReservationID", con);
-                    updateCustomerCmd.ExecuteNonQuery();
+
+                    Manager.DeleteReservationById(con, placeID, reservationID);
+
+
                     SqlCommand cmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'DENIED' WHERE ReservationID=@ReservationID", con);
                     cmd.Parameters.AddWithValue("@ReservationID", reservationID);
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
+                        RefreshDataGridView();
+                        HideApprovalForm();
                         MessageBox.Show("Reservation Denied!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -186,4 +211,3 @@ namespace IOOP_Assignment
         }
     }
 }
-
