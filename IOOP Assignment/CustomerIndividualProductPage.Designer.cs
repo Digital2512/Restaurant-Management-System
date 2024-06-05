@@ -141,6 +141,7 @@
             // 
             // productImagePBox
             // 
+            this.productImagePBox.Image = global::IOOP_Assignment.Properties.Resources.errorImage;
             this.productImagePBox.Location = new System.Drawing.Point(0, 0);
             this.productImagePBox.Name = "productImagePBox";
             this.productImagePBox.Size = new System.Drawing.Size(596, 334);

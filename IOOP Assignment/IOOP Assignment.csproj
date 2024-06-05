@@ -193,6 +193,11 @@
       <DependentUpon>IOOPDatabaseDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="CustomerFeedbackPage.cs">
       <SubType>Form</SubType>
@@ -484,11 +489,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -518,58 +518,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-    <None Include="PictureFolder\inKitchenResized.png" />
-    <None Include="PictureFolder\searchIconResized.png" />
-    <None Include="PictureFolder\starResized.png" />
     <None Include="PictureFolder\errorImageSmaller.png" />
     <None Include="PictureFolder\errorImage.png" />
-    <None Include="PictureFolder\pendingResized.png" />
-    <None Include="PictureFolder\deniedResized.png" />
-    <None Include="PictureFolder\completedResized.png" />
-    <None Include="PictureFolder\approvedResized.png" />
-    <None Include="PictureFolder\cartResized.png" />
-    <None Include="PictureFolder\logoutResized.png" />
-    <None Include="PictureFolder\feedbackResized.png" />
-    <None Include="PictureFolder\orderReszied.png" />
-    <None Include="PictureFolder\reservationResized.png" />
-    <None Include="PictureFolder\orderResized.png" />
-    <None Include="PictureFolder\menuResized.png" />
-    <None Include="PictureFolder\passwordlHideIconResized.png" />
-    <None Include="PictureFolder\passwordShowIconResized.png" />
-    <None Include="PictureFolder\passwordlHideIcon.png" />
-    <None Include="PictureFolder\checkedResized.png" />
-    <None Include="PictureFolder\checked.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\success.png" />
     <None Include="Resources\recycle-bin.png" />
     <None Include="Resources\menu icon %281%29.png" />
     <None Include="Resources\menu icon.png" />
     <None Include="Resources\eye.png" />
-    <None Include="PictureFolder\addIcon.png" />
     <None Include="Resources\add.png" />
-    <None Include="PictureFolder\star.png" />
-    <None Include="PictureFolder\pastaImage.jpg" />
-    <None Include="PictureFolder\saladImage.jpg" />
-    <None Include="PictureFolder\smoothieImage.jpg" />
-    <None Include="PictureFolder\pizzaImage.jpg" />
-    <None Include="PictureFolder\burgerImage.jpg" />
     <None Include="Resources\Burger.bmp" />
-    <None Include="PictureFolder\searchIcon.png" />
-    <None Include="PictureFolder\passwordShowIcon.png" />
-    <None Include="PictureFolder\passwordHideIcon.png" />
-    <None Include="PictureFolder\backIcon.png" />
-    <None Include="PictureFolder\profileIcon.png" />
-    <None Include="PictureFolder\logoutIcon.png" />
-    <None Include="PictureFolder\feedbackIcon.png" />
-    <None Include="PictureFolder\orderIcon.png" />
-    <None Include="PictureFolder\reservationIcon.png" />
     <None Include="Resources\booking.png" />
-    <None Include="PictureFolder\OrderButtonResized.png" />
-    <None Include="PictureFolder\ReservationButton.png" />
-    <None Include="PictureFolder\ReservationButtonBGChanged.png" />
-    <None Include="PictureFolder\OrderButtonBGChangedResized1.png" />
-    <None Include="PictureFolder\OrderButtonBGChangedResized.png" />
-    <None Include="PictureFolder\OrderButtonBGChanged.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

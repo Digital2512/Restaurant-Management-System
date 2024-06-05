@@ -80,7 +80,7 @@ namespace IOOP_Assignment
             if (rowsAffected > 0)
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand("insert into Users(UserID, password, role, LoggedIn) values(@id,'123','customer','True')", con);
+                SqlCommand cmd2 = new SqlCommand("insert into Users(UserID, role, LoggedIn) values(@id, 'customer','TRUE')", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
 
                 int userRowsAffected = cmd2.ExecuteNonQuery();

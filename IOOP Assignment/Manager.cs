@@ -162,7 +162,7 @@ namespace IOOP_Assignment
         {
             using (SqlConnection con = new SqlConnection(connetionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday, ProfileImage FROM Users WHERE Role = 'Manager' and Loggedin = 'TRUE'", con);
+                SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday, ProfileImage FROM Users WHERE Role = 'Manager' and LoggedIn = 'TRUE'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

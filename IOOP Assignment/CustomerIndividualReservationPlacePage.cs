@@ -210,25 +210,6 @@ namespace IOOP_Assignment
                         reservationChanged = true;
                     }
 
-                    /*
-                    int reservationTimeTimes = durationTime / 60;
-                    int startTimeDatabase = startTime;
-                    for(int i = 0; i < reservationTimeTimes; i++)
-                    {
-                        query = $"UPDATE ReservationTimeTable SET TimeStatus = 'PENDING' WHERE PlaceID = '{PlaceID}' AND PlaceTime = '{startTimeDatabase}';";
-                        if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-                        {
-                            startTimeDatabase = startTimeDatabase + 100;
-                            dateReservationChanged = true;
-                            continue;
-                        }
-                        else
-                        {
-                            dateReservationChanged = false;
-                            break;
-                        }
-                    }*/
-
                     if (reservationChanged == true)
                     {
                         MessageBox.Show("Reservation Request Sent");
@@ -385,33 +366,6 @@ namespace IOOP_Assignment
 
             string query = $"UPDATE ReservationTimeTable SET TimeStatus = 'AVAILABLE';";
 
-            /*using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                    else
-                    {
-                        connection.Close();
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("An Error Occurred: " + ex.Message);
-                    connection.Close();
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                        connection.Close();
-                }
-            }*/
             if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
                 DateTime currentReservedDateTime = reservedDateTimePicker.Value;
