@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewChef()
         {
             InitializeComponent();
-            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
             con = new SqlConnection(conectionString);
             chef = new Chef(conectionString);
         }
@@ -78,8 +78,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
         }
     }
 }

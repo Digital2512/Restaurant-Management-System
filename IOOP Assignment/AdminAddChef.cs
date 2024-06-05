@@ -14,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddChef : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True");
         public AdminAddChef()
         {
             InitializeComponent();
@@ -83,8 +83,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
         }
     }
 }

@@ -8,17 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
-namespace IOOP_Assignment.Properties
-{
-
-
-=======
 namespace IOOP_Assignment.Properties {
     using System;
     
     
->>>>>>> parent of 777523d (commit admin)
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -43,18 +36,9 @@ namespace IOOP_Assignment.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< HEAD
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
-=======
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
->>>>>>> parent of 777523d (commit admin)
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IOOP_Assignment.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

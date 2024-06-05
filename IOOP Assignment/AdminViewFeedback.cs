@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+  using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -14,7 +15,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewFeedback : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True");
         public AdminViewFeedback()
         {
             InitializeComponent();
@@ -82,8 +83,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminHomePage hp = new AdminHomePage();
-            this.Hide();
-            hp.Show();
+            this.Close();
+            hp.ShowDialog();
         }
     }
 }

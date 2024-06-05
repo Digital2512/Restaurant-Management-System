@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUpdateProfile));
             this.lblAdminUpdateProfile = new System.Windows.Forms.Label();
             this.lblUserIDTitle = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -54,20 +55,22 @@
             // lblAdminUpdateProfile
             // 
             this.lblAdminUpdateProfile.AutoSize = true;
-            this.lblAdminUpdateProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdminUpdateProfile.Location = new System.Drawing.Point(306, 54);
+            this.lblAdminUpdateProfile.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminUpdateProfile.ForeColor = System.Drawing.Color.Navy;
+            this.lblAdminUpdateProfile.Location = new System.Drawing.Point(311, 57);
             this.lblAdminUpdateProfile.Name = "lblAdminUpdateProfile";
-            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(344, 38);
+            this.lblAdminUpdateProfile.Size = new System.Drawing.Size(373, 41);
             this.lblAdminUpdateProfile.TabIndex = 0;
-            this.lblAdminUpdateProfile.Text = "Admin Update Profile";
+            this.lblAdminUpdateProfile.Text = "ADMIN UPDATE PROFILE";
             // 
             // lblUserIDTitle
             // 
             this.lblUserIDTitle.AutoSize = true;
-            this.lblUserIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserIDTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserIDTitle.ForeColor = System.Drawing.Color.Navy;
             this.lblUserIDTitle.Location = new System.Drawing.Point(135, 154);
             this.lblUserIDTitle.Name = "lblUserIDTitle";
-            this.lblUserIDTitle.Size = new System.Drawing.Size(74, 20);
+            this.lblUserIDTitle.Size = new System.Drawing.Size(68, 23);
             this.lblUserIDTitle.TabIndex = 1;
             this.lblUserIDTitle.Text = "UserID:";
             // 
@@ -83,30 +86,33 @@
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.ForeColor = System.Drawing.Color.Navy;
             this.lblFullName.Location = new System.Drawing.Point(135, 219);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(100, 20);
+            this.lblFullName.Size = new System.Drawing.Size(96, 23);
             this.lblFullName.TabIndex = 3;
             this.lblFullName.Text = "Full Name:";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.Navy;
             this.lblPassword.Location = new System.Drawing.Point(135, 296);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(97, 20);
+            this.lblPassword.Size = new System.Drawing.Size(90, 23);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             // 
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthday.ForeColor = System.Drawing.Color.Navy;
             this.lblBirthday.Location = new System.Drawing.Point(135, 379);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(85, 20);
+            this.lblBirthday.Size = new System.Drawing.Size(84, 23);
             this.lblBirthday.TabIndex = 5;
             this.lblBirthday.Text = "Birthday:";
             // 
@@ -136,7 +142,8 @@
             // 
             this.grpboxGender.Controls.Add(this.rdbFemale);
             this.grpboxGender.Controls.Add(this.rdbMale);
-            this.grpboxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxGender.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxGender.ForeColor = System.Drawing.Color.Navy;
             this.grpboxGender.Location = new System.Drawing.Point(607, 315);
             this.grpboxGender.Name = "grpboxGender";
             this.grpboxGender.Size = new System.Drawing.Size(212, 145);
@@ -149,7 +156,7 @@
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Location = new System.Drawing.Point(37, 91);
             this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(91, 24);
+            this.rdbFemale.Size = new System.Drawing.Size(88, 27);
             this.rdbFemale.TabIndex = 1;
             this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
@@ -160,7 +167,7 @@
             this.rdbMale.AutoSize = true;
             this.rdbMale.Location = new System.Drawing.Point(37, 44);
             this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(70, 24);
+            this.rdbMale.Size = new System.Drawing.Size(70, 27);
             this.rdbMale.TabIndex = 0;
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "Male";
@@ -168,16 +175,19 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(-3, 481);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(1006, 44);
             this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pboxAdmin
             // 
+            this.pboxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pboxAdmin.Image")));
             this.pboxAdmin.Location = new System.Drawing.Point(609, 154);
             this.pboxAdmin.Name = "pboxAdmin";
             this.pboxAdmin.Size = new System.Drawing.Size(210, 127);
@@ -187,27 +197,30 @@
             // 
             // btnUpload
             // 
+            this.btnUpload.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpload.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(841, 200);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(96, 39);
             this.btnUpload.TabIndex = 12;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Text = "UPLOAD";
+            this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lblProfile
             // 
             this.lblProfile.AutoSize = true;
-            this.lblProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.ForeColor = System.Drawing.Color.Navy;
             this.lblProfile.Location = new System.Drawing.Point(609, 132);
             this.lblProfile.Name = "lblProfile";
-            this.lblProfile.Size = new System.Drawing.Size(136, 20);
+            this.lblProfile.Size = new System.Drawing.Size(129, 23);
             this.lblProfile.TabIndex = 13;
             this.lblProfile.Text = "Proflie Picture:";
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
@@ -230,6 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1001, 525);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.lblProfile);

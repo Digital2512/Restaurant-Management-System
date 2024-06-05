@@ -23,7 +23,7 @@ namespace IOOP_Assignment
 
         }
         //change the connection string when using a different laptop to connect to the database
-        public string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
         private void loginButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);

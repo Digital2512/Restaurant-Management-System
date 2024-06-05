@@ -18,7 +18,7 @@ namespace IOOP_Assignment
         private string phoneNumber;
         private string email;
 
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }

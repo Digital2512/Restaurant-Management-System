@@ -63,20 +63,22 @@
             // lblUpdateDeleteManager
             // 
             this.lblUpdateDeleteManager.AutoSize = true;
-            this.lblUpdateDeleteManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateDeleteManager.Location = new System.Drawing.Point(320, 46);
+            this.lblUpdateDeleteManager.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateDeleteManager.ForeColor = System.Drawing.Color.Navy;
+            this.lblUpdateDeleteManager.Location = new System.Drawing.Point(285, 47);
             this.lblUpdateDeleteManager.Name = "lblUpdateDeleteManager";
-            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(450, 38);
+            this.lblUpdateDeleteManager.Size = new System.Drawing.Size(479, 41);
             this.lblUpdateDeleteManager.TabIndex = 0;
-            this.lblUpdateDeleteManager.Text = "Update and Delete Manager";
+            this.lblUpdateDeleteManager.Text = "UPDATE AND DELETE MANAGER";
             // 
             // lblManagerIDTitle
             // 
             this.lblManagerIDTitle.AutoSize = true;
-            this.lblManagerIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerIDTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerIDTitle.ForeColor = System.Drawing.Color.Navy;
             this.lblManagerIDTitle.Location = new System.Drawing.Point(89, 131);
             this.lblManagerIDTitle.Name = "lblManagerIDTitle";
-            this.lblManagerIDTitle.Size = new System.Drawing.Size(112, 20);
+            this.lblManagerIDTitle.Size = new System.Drawing.Size(109, 23);
             this.lblManagerIDTitle.TabIndex = 1;
             this.lblManagerIDTitle.Text = "Manager ID:";
             // 
@@ -87,11 +89,12 @@
             this.grpboxSkills.Controls.Add(this.checkBox4);
             this.grpboxSkills.Controls.Add(this.checkBox3);
             this.grpboxSkills.Controls.Add(this.checkBox1);
-            this.grpboxSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxSkills.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxSkills.ForeColor = System.Drawing.Color.Navy;
             this.grpboxSkills.Location = new System.Drawing.Point(548, 230);
             this.grpboxSkills.Name = "grpboxSkills";
             this.grpboxSkills.Size = new System.Drawing.Size(413, 177);
-            this.grpboxSkills.TabIndex = 31;
+            this.grpboxSkills.TabIndex = 8;
             this.grpboxSkills.TabStop = false;
             this.grpboxSkills.Text = "Skills";
             // 
@@ -100,7 +103,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(6, 47);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(219, 24);
+            this.checkBox2.Size = new System.Drawing.Size(220, 27);
             this.checkBox2.TabIndex = 23;
             this.checkBox2.Text = "Inventory Management";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -110,7 +113,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(6, 125);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(180, 24);
+            this.checkBox5.Size = new System.Drawing.Size(164, 27);
             this.checkBox5.TabIndex = 22;
             this.checkBox5.Text = "Sales Techniques";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -120,7 +123,7 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(6, 99);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(210, 24);
+            this.checkBox4.Size = new System.Drawing.Size(203, 27);
             this.checkBox4.TabIndex = 21;
             this.checkBox4.Text = "Communication skills";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -130,7 +133,7 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(6, 73);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(219, 24);
+            this.checkBox3.Size = new System.Drawing.Size(213, 27);
             this.checkBox3.TabIndex = 20;
             this.checkBox3.Text = "Financial Management";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -140,16 +143,17 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(6, 21);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(291, 24);
+            this.checkBox1.Size = new System.Drawing.Size(284, 27);
             this.checkBox1.TabIndex = 18;
             this.checkBox1.Text = "Food And Beverage Knowledge";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // lsteducationalBackground
             // 
-            this.lsteducationalBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsteducationalBackground.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsteducationalBackground.ForeColor = System.Drawing.Color.Navy;
             this.lsteducationalBackground.FormattingEnabled = true;
-            this.lsteducationalBackground.ItemHeight = 16;
+            this.lsteducationalBackground.ItemHeight = 17;
             this.lsteducationalBackground.Items.AddRange(new object[] {
             "Diploma",
             "Bachelor Degree",
@@ -157,16 +161,17 @@
             "Certification"});
             this.lsteducationalBackground.Location = new System.Drawing.Point(799, 182);
             this.lsteducationalBackground.Name = "lsteducationalBackground";
-            this.lsteducationalBackground.Size = new System.Drawing.Size(162, 36);
-            this.lsteducationalBackground.TabIndex = 30;
+            this.lsteducationalBackground.Size = new System.Drawing.Size(162, 38);
+            this.lsteducationalBackground.TabIndex = 7;
             // 
             // lblDob
             // 
             this.lblDob.AutoSize = true;
-            this.lblDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDob.ForeColor = System.Drawing.Color.Navy;
             this.lblDob.Location = new System.Drawing.Point(89, 229);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(124, 20);
+            this.lblDob.Size = new System.Drawing.Size(120, 23);
             this.lblDob.TabIndex = 29;
             this.lblDob.Text = "Date of Birth:";
             // 
@@ -176,17 +181,18 @@
             this.dtpDob.Location = new System.Drawing.Point(262, 229);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(186, 22);
-            this.dtpDob.TabIndex = 28;
+            this.dtpDob.TabIndex = 3;
             // 
             // grpboxGender
             // 
             this.grpboxGender.Controls.Add(this.rdbtnFemale);
             this.grpboxGender.Controls.Add(this.rdbtnMale);
-            this.grpboxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxGender.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxGender.ForeColor = System.Drawing.Color.Navy;
             this.grpboxGender.Location = new System.Drawing.Point(93, 267);
             this.grpboxGender.Name = "grpboxGender";
             this.grpboxGender.Size = new System.Drawing.Size(172, 100);
-            this.grpboxGender.TabIndex = 27;
+            this.grpboxGender.TabIndex = 4;
             this.grpboxGender.TabStop = false;
             this.grpboxGender.Text = "Gender";
             // 
@@ -195,7 +201,7 @@
             this.rdbtnFemale.AutoSize = true;
             this.rdbtnFemale.Location = new System.Drawing.Point(7, 58);
             this.rdbtnFemale.Name = "rdbtnFemale";
-            this.rdbtnFemale.Size = new System.Drawing.Size(91, 24);
+            this.rdbtnFemale.Size = new System.Drawing.Size(88, 27);
             this.rdbtnFemale.TabIndex = 1;
             this.rdbtnFemale.TabStop = true;
             this.rdbtnFemale.Text = "Female";
@@ -206,7 +212,7 @@
             this.rdbtnMale.AutoSize = true;
             this.rdbtnMale.Location = new System.Drawing.Point(7, 31);
             this.rdbtnMale.Name = "rdbtnMale";
-            this.rdbtnMale.Size = new System.Drawing.Size(70, 24);
+            this.rdbtnMale.Size = new System.Drawing.Size(70, 27);
             this.rdbtnMale.TabIndex = 0;
             this.rdbtnMale.TabStop = true;
             this.rdbtnMale.Text = "Male";
@@ -217,70 +223,76 @@
             this.txtEmail.Location = new System.Drawing.Point(262, 432);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(186, 22);
-            this.txtEmail.TabIndex = 26;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtphoneNumber
             // 
             this.txtphoneNumber.Location = new System.Drawing.Point(262, 385);
             this.txtphoneNumber.Name = "txtphoneNumber";
             this.txtphoneNumber.Size = new System.Drawing.Size(186, 22);
-            this.txtphoneNumber.TabIndex = 25;
+            this.txtphoneNumber.TabIndex = 5;
             // 
             // txtfullName
             // 
             this.txtfullName.Location = new System.Drawing.Point(262, 182);
             this.txtfullName.Name = "txtfullName";
             this.txtfullName.Size = new System.Drawing.Size(186, 22);
-            this.txtfullName.TabIndex = 24;
+            this.txtfullName.TabIndex = 2;
             // 
             // lbleducationalBackground
             // 
             this.lbleducationalBackground.AutoSize = true;
-            this.lbleducationalBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbleducationalBackground.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbleducationalBackground.ForeColor = System.Drawing.Color.Navy;
             this.lbleducationalBackground.Location = new System.Drawing.Point(544, 182);
             this.lbleducationalBackground.Name = "lbleducationalBackground";
-            this.lbleducationalBackground.Size = new System.Drawing.Size(218, 20);
+            this.lbleducationalBackground.Size = new System.Drawing.Size(210, 23);
             this.lbleducationalBackground.TabIndex = 23;
             this.lbleducationalBackground.Text = "Educational Background:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Navy;
             this.lblEmail.Location = new System.Drawing.Point(89, 432);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(62, 20);
+            this.lblEmail.Size = new System.Drawing.Size(59, 23);
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email:";
             // 
             // lblphoneNumber
             // 
             this.lblphoneNumber.AutoSize = true;
-            this.lblphoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblphoneNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblphoneNumber.ForeColor = System.Drawing.Color.Navy;
             this.lblphoneNumber.Location = new System.Drawing.Point(89, 387);
             this.lblphoneNumber.Name = "lblphoneNumber";
-            this.lblphoneNumber.Size = new System.Drawing.Size(138, 20);
+            this.lblphoneNumber.Size = new System.Drawing.Size(136, 23);
             this.lblphoneNumber.TabIndex = 21;
             this.lblphoneNumber.Text = "Phone Number:";
             // 
             // lblfullName
             // 
             this.lblfullName.AutoSize = true;
-            this.lblfullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfullName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfullName.ForeColor = System.Drawing.Color.Navy;
             this.lblfullName.Location = new System.Drawing.Point(89, 184);
             this.lblfullName.Name = "lblfullName";
-            this.lblfullName.Size = new System.Drawing.Size(100, 20);
+            this.lblfullName.Size = new System.Drawing.Size(96, 23);
             this.lblfullName.TabIndex = 20;
             this.lblfullName.Text = "Full Name:";
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(415, 483);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(87, 35);
             this.btnUpdate.TabIndex = 32;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cmbManagerID
@@ -289,31 +301,35 @@
             this.cmbManagerID.Location = new System.Drawing.Point(262, 125);
             this.cmbManagerID.Name = "cmbManagerID";
             this.cmbManagerID.Size = new System.Drawing.Size(143, 24);
-            this.cmbManagerID.TabIndex = 33;
+            this.cmbManagerID.TabIndex = 1;
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(432, 125);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 30);
             this.btnSearch.TabIndex = 34;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(548, 483);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 35);
             this.btnDelete.TabIndex = 35;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
             this.panelHeader.Name = "panelHeader";
@@ -334,6 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1025, 541);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnDelete);
@@ -357,7 +374,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminUpdateDeleteManager";
             this.Text = "AdminUpdateManager";
-            this.Load += new System.EventHandler(this.AdminUpdateDeleteManager_Load);
+            this.Load += new System.EventHandler(this.AdminUpdateDeleteManager_Load_1);
             this.grpboxSkills.ResumeLayout(false);
             this.grpboxSkills.PerformLayout();
             this.grpboxGender.ResumeLayout(false);

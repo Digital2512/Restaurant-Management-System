@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteChef()
         {
             InitializeComponent();
-            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True"; 
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True"; 
             chef = new Chef(connectionString);
         }
 
@@ -159,8 +159,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
         }
     }
 

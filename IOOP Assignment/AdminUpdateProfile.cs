@@ -21,8 +21,8 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
 
-            connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
-            Database database = new Database(connectionString);
+            connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+            Databases database = new Databases(connectionString);
 
             string query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.GetString(query);
@@ -121,8 +121,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminHomePage hp = new AdminHomePage();
-            this.Hide();
-            hp.Show();
+            this.Close();
+            hp.ShowDialog();
         }
 
         private void AdminUpdateProfile_Load(object sender, EventArgs e)
