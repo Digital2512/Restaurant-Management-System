@@ -89,7 +89,7 @@
             this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.panel5);
             this.sidebar.Controls.Add(this.panel4);
-            this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.Location = new System.Drawing.Point(-2, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(193, 405);
             this.sidebar.MinimumSize = new System.Drawing.Size(48, 405);
             this.sidebar.Name = "sidebar";
@@ -101,7 +101,7 @@
             this.MenusidearButton.Controls.Add(this.MenuButton);
             this.MenusidearButton.Location = new System.Drawing.Point(3, 3);
             this.MenusidearButton.Name = "MenusidearButton";
-            this.MenusidearButton.Size = new System.Drawing.Size(190, 57);
+            this.MenusidearButton.Size = new System.Drawing.Size(249, 68);
             this.MenusidearButton.TabIndex = 6;
             // 
             // MenuButton
@@ -111,7 +111,7 @@
             this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuButton.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuButton.Location = new System.Drawing.Point(-26, -6);
+            this.MenuButton.Location = new System.Drawing.Point(-17, -6);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.MenuButton.Size = new System.Drawing.Size(238, 86);
@@ -125,10 +125,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ButtonRecipe);
-            this.panel2.Location = new System.Drawing.Point(3, 66);
+            this.panel2.Controls.Add(this.buttonViewOrder);
+            this.panel2.Location = new System.Drawing.Point(3, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 69);
+            this.panel2.Size = new System.Drawing.Size(249, 62);
             this.panel2.TabIndex = 4;
             // 
             // ButtonRecipe
@@ -138,12 +138,12 @@
             this.ButtonRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRecipe.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonRecipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonRecipe.Location = new System.Drawing.Point(-16, -7);
+            this.ButtonRecipe.Location = new System.Drawing.Point(-6, -16);
             this.ButtonRecipe.Name = "ButtonRecipe";
             this.ButtonRecipe.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ButtonRecipe.Size = new System.Drawing.Size(219, 83);
+            this.ButtonRecipe.Size = new System.Drawing.Size(219, 104);
             this.ButtonRecipe.TabIndex = 4;
-            this.ButtonRecipe.Text = "Recipe Management";
+            this.ButtonRecipe.Text = "Recipe";
             this.ButtonRecipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonRecipe.UseMnemonic = false;
             this.ButtonRecipe.UseVisualStyleBackColor = false;
@@ -151,10 +151,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonViewOrder);
-            this.panel1.Location = new System.Drawing.Point(3, 141);
+            this.panel1.Controls.Add(this.buttonInventory);
+            this.panel1.Location = new System.Drawing.Point(3, 145);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 57);
+            this.panel1.Size = new System.Drawing.Size(249, 51);
             this.panel1.TabIndex = 5;
             // 
             // buttonViewOrder
@@ -164,12 +164,12 @@
             this.buttonViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewOrder.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonViewOrder.Location = new System.Drawing.Point(-16, -10);
+            this.buttonViewOrder.Location = new System.Drawing.Point(-28, -19);
             this.buttonViewOrder.Name = "buttonViewOrder";
             this.buttonViewOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonViewOrder.Size = new System.Drawing.Size(228, 73);
+            this.buttonViewOrder.Size = new System.Drawing.Size(277, 113);
             this.buttonViewOrder.TabIndex = 5;
-            this.buttonViewOrder.Text = "Order Details";
+            this.buttonViewOrder.Text = "Orders";
             this.buttonViewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonViewOrder.UseMnemonic = false;
             this.buttonViewOrder.UseVisualStyleBackColor = false;
@@ -177,10 +177,10 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonInventory);
-            this.panel3.Location = new System.Drawing.Point(3, 204);
+            this.panel3.Controls.Add(this.ButtonRecipe);
+            this.panel3.Location = new System.Drawing.Point(3, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(190, 57);
+            this.panel3.Size = new System.Drawing.Size(249, 60);
             this.panel3.TabIndex = 6;
             // 
             // buttonInventory
@@ -190,12 +190,12 @@
             this.buttonInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInventory.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonInventory.Location = new System.Drawing.Point(-16, -16);
+            this.buttonInventory.Location = new System.Drawing.Point(-3, -6);
             this.buttonInventory.Name = "buttonInventory";
             this.buttonInventory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonInventory.Size = new System.Drawing.Size(228, 84);
+            this.buttonInventory.Size = new System.Drawing.Size(238, 84);
             this.buttonInventory.TabIndex = 6;
-            this.buttonInventory.Text = "Inventory stock";
+            this.buttonInventory.Text = "Inventory";
             this.buttonInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonInventory.UseMnemonic = false;
             this.buttonInventory.UseVisualStyleBackColor = false;
@@ -204,9 +204,9 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.buttonProfile);
-            this.panel5.Location = new System.Drawing.Point(3, 267);
+            this.panel5.Location = new System.Drawing.Point(3, 268);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 57);
+            this.panel5.Size = new System.Drawing.Size(249, 68);
             this.panel5.TabIndex = 6;
             // 
             // buttonProfile
@@ -216,10 +216,10 @@
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.Location = new System.Drawing.Point(-16, -9);
+            this.buttonProfile.Location = new System.Drawing.Point(-17, -19);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonProfile.Size = new System.Drawing.Size(228, 92);
+            this.buttonProfile.Size = new System.Drawing.Size(248, 92);
             this.buttonProfile.TabIndex = 6;
             this.buttonProfile.Text = " Profile";
             this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -230,9 +230,9 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(3, 330);
+            this.panel4.Location = new System.Drawing.Point(3, 342);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(190, 75);
+            this.panel4.Size = new System.Drawing.Size(249, 56);
             this.panel4.TabIndex = 9;
             // 
             // button1
@@ -242,7 +242,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Russo One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-16, -22);
+            this.button1.Location = new System.Drawing.Point(-6, -34);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(219, 116);

@@ -89,7 +89,7 @@
             this.lblrealtime.AutoSize = true;
             this.lblrealtime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrealtime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblrealtime.Location = new System.Drawing.Point(607, 12);
+            this.lblrealtime.Location = new System.Drawing.Point(851, 31);
             this.lblrealtime.Name = "lblrealtime";
             this.lblrealtime.Size = new System.Drawing.Size(40, 19);
             this.lblrealtime.TabIndex = 1;
@@ -99,7 +99,7 @@
             // 
             this.LBvieworder.AutoSize = true;
             this.LBvieworder.Font = new System.Drawing.Font("Russo One", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBvieworder.Location = new System.Drawing.Point(44, 31);
+            this.LBvieworder.Location = new System.Drawing.Point(36, 23);
             this.LBvieworder.Name = "LBvieworder";
             this.LBvieworder.Size = new System.Drawing.Size(191, 27);
             this.LBvieworder.TabIndex = 0;
@@ -354,9 +354,9 @@
             // 
             // BtnOrderUpdate
             // 
-            this.BtnOrderUpdate.Location = new System.Drawing.Point(723, 610);
+            this.BtnOrderUpdate.Location = new System.Drawing.Point(728, 610);
             this.BtnOrderUpdate.Name = "BtnOrderUpdate";
-            this.BtnOrderUpdate.Size = new System.Drawing.Size(78, 57);
+            this.BtnOrderUpdate.Size = new System.Drawing.Size(158, 57);
             this.BtnOrderUpdate.TabIndex = 23;
             this.BtnOrderUpdate.Text = "Update Status";
             this.BtnOrderUpdate.UseVisualStyleBackColor = true;
@@ -435,7 +435,7 @@
             // 
             this.BtnOrderCancel.Location = new System.Drawing.Point(249, 630);
             this.BtnOrderCancel.Name = "BtnOrderCancel";
-            this.BtnOrderCancel.Size = new System.Drawing.Size(78, 57);
+            this.BtnOrderCancel.Size = new System.Drawing.Size(120, 62);
             this.BtnOrderCancel.TabIndex = 34;
             this.BtnOrderCancel.Text = "cancel";
             this.BtnOrderCancel.UseVisualStyleBackColor = true;
