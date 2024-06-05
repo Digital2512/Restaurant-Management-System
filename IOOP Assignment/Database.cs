@@ -17,13 +17,13 @@ namespace IOOP_Assignment
     {
         private string ConnectionString;
 
-        public string connectionString { get => ConnectionString; set => ConnectionString = value; }
+        public string connectionStringGetSet { get => ConnectionString; set => ConnectionString = value; }
 
 
         //main constructor (you would need to create an object first and define it with a connection string first to use the methods)
         public Database(string ConnectionString)
         {
-            this.connectionString = ConnectionString;
+            this.connectionStringGetSet = ConnectionString;
         }
 
 
@@ -31,7 +31,7 @@ namespace IOOP_Assignment
         public string getString(string query)
         {
             string result = null;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -90,7 +90,7 @@ namespace IOOP_Assignment
         {
             DateTime result = DateTime.MinValue;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -125,7 +125,7 @@ namespace IOOP_Assignment
         public DateTime? getDateTimeToProcess(string query)
         {
             DateTime? result = null;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -170,7 +170,7 @@ namespace IOOP_Assignment
         public int getInt(string query)
         {
             int result = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -201,11 +201,11 @@ namespace IOOP_Assignment
             return result;
         }
 
-        //get decimal from database
+        //get decimal, from database, which would be converted to an integer
         public int getDecimal(string query)
         {
             int result = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -245,7 +245,7 @@ namespace IOOP_Assignment
         public DataTable getDataTable(string query)
         {
             var dataTable = new DataTable();
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -272,7 +272,7 @@ namespace IOOP_Assignment
         public string GenerateUniqueID(string uniqueIdentifier, string idName, string tableName)
         {
             string newID = null;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -321,7 +321,7 @@ namespace IOOP_Assignment
         // insert or update into the database or delete values from the database
         public bool insertOrUpdateValuesIntoDatabase(string query)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -357,7 +357,7 @@ namespace IOOP_Assignment
         public Image getImage(string query)
         {
             Image resultImage = Properties.Resources.errorImage;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
@@ -408,7 +408,7 @@ namespace IOOP_Assignment
 
             byte[] imageBytes = File.ReadAllBytes(imagePath);
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try
                 {
