@@ -60,17 +60,15 @@ namespace IOOP_Assignment
         {
             if (lastId.Length < 3 || !lastId.StartsWith("CH") || !int.TryParse(lastId.Substring(2), out int numericPart))
             {
-                // If the format is invalid, return a default ID
                 return "CH00";
             }
 
-            // Increment the numeric part
             string newNumericPart = (numericPart + 1).ToString("D2");
 
             return "CH" + newNumericPart;
         }
-        //add Chef
 
+        //add chef
         public string addChef()
         {
             string status;

@@ -20,29 +20,37 @@ namespace IOOP_Assignment
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
         }
 
         private void btnViewSalesReport_Click(object sender, EventArgs e)
         {
             AdminViewSalesReport vsr = new AdminViewSalesReport();
-            this.Hide();
-            vsr.Show();
+            this.Close();
+            vsr.ShowDialog();
         }
 
         private void btnViewFeedback_Click(object sender, EventArgs e)
         {
             AdminViewFeedback vf = new AdminViewFeedback();
-            this.Hide();
-            vf.Show();
+            this.Close();
+            vf.ShowDialog();
         }
 
-        private void btnUpdateProfile_Click(object sender, EventArgs e)
+
+        private void btnUpdateProfile_Click_1(object sender, EventArgs e)
         {
             AdminUpdateProfile up = new AdminUpdateProfile();
             this.Hide();
-            up.Show();  
+            up.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm lg = new loginForm();
+            this.Close();
+            lg.ShowDialog();
         }
     }
 }

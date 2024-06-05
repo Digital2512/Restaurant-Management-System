@@ -82,8 +82,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminHomePage hp = new AdminHomePage();
-            this.Hide();
-            hp.Show();
+            this.Close();
+            hp.ShowDialog();
         }
     }
 }

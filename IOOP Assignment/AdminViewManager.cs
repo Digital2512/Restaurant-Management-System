@@ -77,8 +77,8 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
         }
     }
 }

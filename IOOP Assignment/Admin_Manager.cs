@@ -109,9 +109,6 @@ namespace IOOP_Assignment
         }
 
 
-
-
-
         public Admin_Manager(string connectionString)
         {
             con = new SqlConnection(connectionString);

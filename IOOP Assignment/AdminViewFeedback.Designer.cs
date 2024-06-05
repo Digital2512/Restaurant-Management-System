@@ -42,43 +42,50 @@
             // lblViewFeedback
             // 
             this.lblViewFeedback.AutoSize = true;
-            this.lblViewFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewFeedback.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewFeedback.ForeColor = System.Drawing.Color.Navy;
             this.lblViewFeedback.Location = new System.Drawing.Point(388, 61);
             this.lblViewFeedback.Name = "lblViewFeedback";
-            this.lblViewFeedback.Size = new System.Drawing.Size(254, 38);
+            this.lblViewFeedback.Size = new System.Drawing.Size(251, 41);
             this.lblViewFeedback.TabIndex = 0;
-            this.lblViewFeedback.Text = "View Feedback";
+            this.lblViewFeedback.Text = "VIEW FEEDBACK";
             // 
             // lblFeedbackID
             // 
             this.lblFeedbackID.AutoSize = true;
-            this.lblFeedbackID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackID.ForeColor = System.Drawing.Color.Navy;
             this.lblFeedbackID.Location = new System.Drawing.Point(235, 144);
             this.lblFeedbackID.Name = "lblFeedbackID";
-            this.lblFeedbackID.Size = new System.Drawing.Size(120, 20);
+            this.lblFeedbackID.Size = new System.Drawing.Size(114, 23);
             this.lblFeedbackID.TabIndex = 1;
             this.lblFeedbackID.Text = "Feedback ID:";
             // 
             // cmbFeedbackID
             // 
             this.cmbFeedbackID.FormattingEnabled = true;
-            this.cmbFeedbackID.Location = new System.Drawing.Point(419, 140);
+            this.cmbFeedbackID.Location = new System.Drawing.Point(420, 144);
             this.cmbFeedbackID.Name = "cmbFeedbackID";
             this.cmbFeedbackID.Size = new System.Drawing.Size(219, 24);
             this.cmbFeedbackID.TabIndex = 2;
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Location = new System.Drawing.Point(708, 140);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 26);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvViewFeedback
             // 
+            this.dgvViewFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvViewFeedback.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvViewFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewFeedback.Location = new System.Drawing.Point(95, 190);
             this.dgvViewFeedback.Name = "dgvViewFeedback";
@@ -89,7 +96,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
             this.panelHeader.Name = "panelHeader";
@@ -110,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1025, 541);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.dgvViewFeedback);

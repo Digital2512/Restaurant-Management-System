@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Database Table Folder",
+    "\\obj",
+    "\\PictureFolder"
   ],
   "SelectedNode": "\\IOOP Assignment.sln",
   "PreviewInSolutionExplorer": false

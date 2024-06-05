@@ -50,25 +50,28 @@
             // lblViewSalesReport
             // 
             this.lblViewSalesReport.AutoSize = true;
-            this.lblViewSalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewSalesReport.Location = new System.Drawing.Point(355, 57);
+            this.lblViewSalesReport.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewSalesReport.ForeColor = System.Drawing.Color.Navy;
+            this.lblViewSalesReport.Location = new System.Drawing.Point(359, 49);
             this.lblViewSalesReport.Name = "lblViewSalesReport";
-            this.lblViewSalesReport.Size = new System.Drawing.Size(303, 38);
+            this.lblViewSalesReport.Size = new System.Drawing.Size(311, 41);
             this.lblViewSalesReport.TabIndex = 0;
-            this.lblViewSalesReport.Text = "View Sales Report";
+            this.lblViewSalesReport.Text = "VIEW SALES REPORT";
             // 
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.ForeColor = System.Drawing.Color.Navy;
             this.lblMonth.Location = new System.Drawing.Point(29, 120);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(66, 20);
+            this.lblMonth.Size = new System.Drawing.Size(68, 23);
             this.lblMonth.TabIndex = 1;
             this.lblMonth.Text = "Month:";
             // 
             // dgvSalesReport
             // 
+            this.dgvSalesReport.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvSalesReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesReport.Location = new System.Drawing.Point(109, 159);
             this.dgvSalesReport.Name = "dgvSalesReport";
@@ -79,38 +82,42 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(928, 116);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(85, 31);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.Navy;
             this.lblCategory.Location = new System.Drawing.Point(312, 120);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(90, 20);
+            this.lblCategory.Size = new System.Drawing.Size(89, 23);
             this.lblCategory.TabIndex = 4;
             this.lblCategory.Text = "Category:";
             // 
             // lblChefID
             // 
             this.lblChefID.AutoSize = true;
-            this.lblChefID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChefID.Location = new System.Drawing.Point(655, 120);
+            this.lblChefID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChefID.ForeColor = System.Drawing.Color.Navy;
+            this.lblChefID.Location = new System.Drawing.Point(653, 120);
             this.lblChefID.Name = "lblChefID";
-            this.lblChefID.Size = new System.Drawing.Size(79, 20);
+            this.lblChefID.Size = new System.Drawing.Size(75, 23);
             this.lblChefID.TabIndex = 5;
             this.lblChefID.Text = "Chef ID:";
             // 
             // cmbMonth
             // 
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(101, 120);
+            this.cmbMonth.Location = new System.Drawing.Point(109, 120);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(171, 24);
             this.cmbMonth.TabIndex = 6;
@@ -126,28 +133,31 @@
             // cmbChefID
             // 
             this.cmbChefID.FormattingEnabled = true;
-            this.cmbChefID.Location = new System.Drawing.Point(758, 120);
+            this.cmbChefID.Location = new System.Drawing.Point(755, 122);
             this.cmbChefID.Name = "cmbChefID";
             this.cmbChefID.Size = new System.Drawing.Size(132, 24);
             this.cmbChefID.TabIndex = 8;
+            this.cmbChefID.DropDown += new System.EventHandler(this.cmbChefID_DropDown);
             // 
             // lblTotalAmountTilte
             // 
             this.lblTotalAmountTilte.AutoSize = true;
-            this.lblTotalAmountTilte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmountTilte.Location = new System.Drawing.Point(772, 505);
+            this.lblTotalAmountTilte.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmountTilte.ForeColor = System.Drawing.Color.Navy;
+            this.lblTotalAmountTilte.Location = new System.Drawing.Point(708, 513);
             this.lblTotalAmountTilte.Name = "lblTotalAmountTilte";
-            this.lblTotalAmountTilte.Size = new System.Drawing.Size(126, 20);
+            this.lblTotalAmountTilte.Size = new System.Drawing.Size(124, 23);
             this.lblTotalAmountTilte.TabIndex = 9;
             this.lblTotalAmountTilte.Text = "Total Amount:";
             // 
             // lblOrderCountTitle
             // 
             this.lblOrderCountTitle.AutoSize = true;
-            this.lblOrderCountTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderCountTitle.Location = new System.Drawing.Point(772, 474);
+            this.lblOrderCountTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderCountTitle.ForeColor = System.Drawing.Color.Navy;
+            this.lblOrderCountTitle.Location = new System.Drawing.Point(708, 482);
             this.lblOrderCountTitle.Name = "lblOrderCountTitle";
-            this.lblOrderCountTitle.Size = new System.Drawing.Size(118, 20);
+            this.lblOrderCountTitle.Size = new System.Drawing.Size(115, 23);
             this.lblOrderCountTitle.TabIndex = 10;
             this.lblOrderCountTitle.Text = "Order Count:";
             // 
@@ -155,7 +165,7 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalAmount.Location = new System.Drawing.Point(916, 508);
+            this.lblTotalAmount.Location = new System.Drawing.Point(852, 516);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(2, 18);
             this.lblTotalAmount.TabIndex = 11;
@@ -164,14 +174,14 @@
             // 
             this.lblOrderCount.AutoSize = true;
             this.lblOrderCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOrderCount.Location = new System.Drawing.Point(916, 476);
+            this.lblOrderCount.Location = new System.Drawing.Point(852, 484);
             this.lblOrderCount.Name = "lblOrderCount";
             this.lblOrderCount.Size = new System.Drawing.Size(2, 18);
             this.lblOrderCount.TabIndex = 12;
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
             this.panelHeader.Name = "panelHeader";
@@ -192,6 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1025, 541);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.lblOrderCount);
