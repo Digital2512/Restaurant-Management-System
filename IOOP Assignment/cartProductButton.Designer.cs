@@ -37,8 +37,10 @@
             this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.editBtn = new System.Windows.Forms.Button();
             this.lblProductID = new System.Windows.Forms.Label();
+            this.editBtnPnl = new System.Windows.Forms.Panel();
             this.deleteBtnPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
+            this.editBtnPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -83,7 +85,7 @@
             // deleteBtnPnl
             // 
             this.deleteBtnPnl.Controls.Add(this.deleteBtn);
-            this.deleteBtnPnl.Location = new System.Drawing.Point(642, 45);
+            this.deleteBtnPnl.Location = new System.Drawing.Point(642, 13);
             this.deleteBtnPnl.Name = "deleteBtnPnl";
             this.deleteBtnPnl.Size = new System.Drawing.Size(46, 56);
             this.deleteBtnPnl.TabIndex = 6;
@@ -91,7 +93,7 @@
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.Location = new System.Drawing.Point(-3, -7);
+            this.deleteBtn.Location = new System.Drawing.Point(-2, -8);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(54, 66);
             this.deleteBtn.TabIndex = 5;
@@ -109,9 +111,9 @@
             // 
             // editBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(642, 111);
+            this.editBtn.Location = new System.Drawing.Point(-7, -3);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(61, 39);
+            this.editBtn.Size = new System.Drawing.Size(61, 63);
             this.editBtn.TabIndex = 7;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
@@ -126,12 +128,20 @@
             this.lblProductID.TabIndex = 8;
             this.lblProductID.Text = "P001";
             // 
+            // editBtnPnl
+            // 
+            this.editBtnPnl.Controls.Add(this.editBtn);
+            this.editBtnPnl.Location = new System.Drawing.Point(642, 75);
+            this.editBtnPnl.Name = "editBtnPnl";
+            this.editBtnPnl.Size = new System.Drawing.Size(46, 56);
+            this.editBtnPnl.TabIndex = 7;
+            // 
             // cartProductButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editBtnPnl);
             this.Controls.Add(this.lblProductID);
-            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.deleteBtnPnl);
             this.Controls.Add(this.lblProductQuantity);
             this.Controls.Add(this.lblProductPrice);
@@ -142,6 +152,7 @@
             this.Size = new System.Drawing.Size(700, 150);
             this.deleteBtnPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).EndInit();
+            this.editBtnPnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +169,6 @@
         private System.Windows.Forms.Panel deleteBtnPnl;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Panel editBtnPnl;
     }
 }

@@ -96,8 +96,8 @@
             // 
             this.topicCBox.FormattingEnabled = true;
             this.topicCBox.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2"});
+            "Menu",
+            "Reservation"});
             this.topicCBox.Location = new System.Drawing.Point(23, 126);
             this.topicCBox.Name = "topicCBox";
             this.topicCBox.Size = new System.Drawing.Size(751, 28);

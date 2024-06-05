@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerCartPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.cartDetailsPnl = new System.Windows.Forms.Panel();
             this.cartProductShowFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubtotalAmountTitle = new System.Windows.Forms.Label();
-            this.lblTaxAmountNaming = new System.Windows.Forms.Label();
+            this.lblTaxAmountTitle = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.lblTotalAmountNaming = new System.Windows.Forms.Label();
+            this.lblTotalAmountTitle = new System.Windows.Forms.Label();
             this.lblSubtotalAmount = new System.Windows.Forms.Label();
             this.lblTaxAmount = new System.Windows.Forms.Label();
             this.payBtn = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.cartDetailsPnl.SuspendLayout();
@@ -58,11 +58,23 @@
             // 
             // backBtnPnl
             // 
-            this.backBtnPnl.Controls.Add(this.backButton);
+            this.backBtnPnl.Controls.Add(this.backBtn);
             this.backBtnPnl.Location = new System.Drawing.Point(1, 0);
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // cartDetailsPnl
             // 
@@ -91,14 +103,14 @@
             this.lblSubtotalAmountTitle.TabIndex = 6;
             this.lblSubtotalAmountTitle.Text = "Subtotal Amount: ";
             // 
-            // lblTaxAmountNaming
+            // lblTaxAmountTitle
             // 
-            this.lblTaxAmountNaming.AutoSize = true;
-            this.lblTaxAmountNaming.Location = new System.Drawing.Point(16, 356);
-            this.lblTaxAmountNaming.Name = "lblTaxAmountNaming";
-            this.lblTaxAmountNaming.Size = new System.Drawing.Size(108, 20);
-            this.lblTaxAmountNaming.TabIndex = 7;
-            this.lblTaxAmountNaming.Text = "Tax (GST 6%)";
+            this.lblTaxAmountTitle.AutoSize = true;
+            this.lblTaxAmountTitle.Location = new System.Drawing.Point(16, 356);
+            this.lblTaxAmountTitle.Name = "lblTaxAmountTitle";
+            this.lblTaxAmountTitle.Size = new System.Drawing.Size(108, 20);
+            this.lblTaxAmountTitle.TabIndex = 7;
+            this.lblTaxAmountTitle.Text = "Tax (GST 6%)";
             // 
             // lblTotalAmount
             // 
@@ -109,14 +121,14 @@
             this.lblTotalAmount.Size = new System.Drawing.Size(2, 22);
             this.lblTotalAmount.TabIndex = 9;
             // 
-            // lblTotalAmountNaming
+            // lblTotalAmountTitle
             // 
-            this.lblTotalAmountNaming.AutoSize = true;
-            this.lblTotalAmountNaming.Location = new System.Drawing.Point(565, 440);
-            this.lblTotalAmountNaming.Name = "lblTotalAmountNaming";
-            this.lblTotalAmountNaming.Size = new System.Drawing.Size(112, 20);
-            this.lblTotalAmountNaming.TabIndex = 10;
-            this.lblTotalAmountNaming.Text = "Total Amount: ";
+            this.lblTotalAmountTitle.AutoSize = true;
+            this.lblTotalAmountTitle.Location = new System.Drawing.Point(565, 440);
+            this.lblTotalAmountTitle.Name = "lblTotalAmountTitle";
+            this.lblTotalAmountTitle.Size = new System.Drawing.Size(112, 20);
+            this.lblTotalAmountTitle.TabIndex = 10;
+            this.lblTotalAmountTitle.Text = "Total Amount: ";
             // 
             // lblSubtotalAmount
             // 
@@ -146,18 +158,6 @@
             this.payBtn.UseVisualStyleBackColor = true;
             this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DimGray;
-            this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(-34, -7);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 59);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // CustomerCartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -166,9 +166,9 @@
             this.Controls.Add(this.payBtn);
             this.Controls.Add(this.lblTaxAmount);
             this.Controls.Add(this.lblSubtotalAmount);
-            this.Controls.Add(this.lblTotalAmountNaming);
+            this.Controls.Add(this.lblTotalAmountTitle);
             this.Controls.Add(this.lblTotalAmount);
-            this.Controls.Add(this.lblTaxAmountNaming);
+            this.Controls.Add(this.lblTaxAmountTitle);
             this.Controls.Add(this.lblSubtotalAmountTitle);
             this.Controls.Add(this.cartDetailsPnl);
             this.Controls.Add(this.headerPnl);
@@ -186,15 +186,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel headerPnl;
         private System.Windows.Forms.Panel backBtnPnl;
         private System.Windows.Forms.Panel cartDetailsPnl;
         private System.Windows.Forms.FlowLayoutPanel cartProductShowFlowPnl;
         private System.Windows.Forms.Label lblSubtotalAmountTitle;
-        private System.Windows.Forms.Label lblTaxAmountNaming;
+        private System.Windows.Forms.Label lblTaxAmountTitle;
         private System.Windows.Forms.Label lblTotalAmount;
-        private System.Windows.Forms.Label lblTotalAmountNaming;
+        private System.Windows.Forms.Label lblTotalAmountTitle;
         private System.Windows.Forms.Label lblSubtotalAmount;
         private System.Windows.Forms.Label lblTaxAmount;
         private System.Windows.Forms.Button payBtn;
