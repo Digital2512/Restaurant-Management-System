@@ -48,9 +48,15 @@ namespace IOOP_Assignment
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            loginForm lg = new loginForm();
-            this.Close();
-            lg.ShowDialog();
+            loginForm loginForm = new loginForm();
+            string connectionString = "";
+            this.Visible = false;
+            loginForm.Show();
+            Database database = new Database(connectionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
+            database.insertOrUpdateValuesIntoDatabase(query);
         }
     }
 }
