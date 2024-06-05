@@ -34,7 +34,7 @@ namespace IOOP_Assignment
             string customerName = database.getString(query);
             lblWelcome.Text = $"Welcome,{customerName}";
 
-            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'WAITING_FOR_CHEF';";
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'PENDING';";
             orderID = database.getString(query);
             query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
             reservationID = database.getString(query);
@@ -61,7 +61,7 @@ namespace IOOP_Assignment
                     refreshOrderBtn.Visible = true;
                     //orderStatusPBox.Image = Properties.Resources.completedResized;
                 }
-                else if (orderStatus == "WAITING_FOR_CHEF")
+                else if (orderStatus == "PENDING")
                 {
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
@@ -280,7 +280,7 @@ namespace IOOP_Assignment
         private void refreshButton_Click(object sender, EventArgs e)
         {
             Database database = new Database(ConnectionString);
-            string query = $"SELECT OrderID WHERE CustomerID = '{customerID}' AND (OrderStatus = 'WAITING_FOR_CHEF' OR OrderStatus = 'IN_PROGRESS');";
+            string query = $"SELECT OrderID WHERE CustomerID = '{customerID}' AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS');";
             string updatedOrderID = database.getString(query);
 
             if(updatedOrderID != null || updatedOrderID != "")

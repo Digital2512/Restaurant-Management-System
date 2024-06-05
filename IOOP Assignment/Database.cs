@@ -320,7 +320,6 @@ namespace IOOP_Assignment
         // insert or update into the database or delete values from the database
         public bool insertOrUpdateValuesIntoDatabase(string query)
         {
-            MessageBox.Show(query);
             using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
             {
                 try

@@ -41,6 +41,8 @@
             this.lblSubtotalAmount = new System.Windows.Forms.Label();
             this.lblTaxAmount = new System.Windows.Forms.Label();
             this.payBtn = new System.Windows.Forms.Button();
+            this.lblPlaceID = new System.Windows.Forms.Label();
+            this.placeIDCBox = new System.Windows.Forms.ComboBox();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.cartDetailsPnl.SuspendLayout();
@@ -158,11 +160,43 @@
             this.payBtn.UseVisualStyleBackColor = true;
             this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
+            // lblPlaceID
+            // 
+            this.lblPlaceID.AutoSize = true;
+            this.lblPlaceID.Location = new System.Drawing.Point(20, 439);
+            this.lblPlaceID.Name = "lblPlaceID";
+            this.lblPlaceID.Size = new System.Drawing.Size(77, 20);
+            this.lblPlaceID.TabIndex = 14;
+            this.lblPlaceID.Text = "Place ID: ";
+            // 
+            // placeIDCBox
+            // 
+            this.placeIDCBox.FormattingEnabled = true;
+            this.placeIDCBox.Items.AddRange(new object[] {
+            "T01",
+            "T02",
+            "T03",
+            "T04",
+            "T05",
+            "T06",
+            "T07",
+            "T08",
+            "T09",
+            "T10",
+            "VIP01",
+            "VIP02"});
+            this.placeIDCBox.Location = new System.Drawing.Point(103, 434);
+            this.placeIDCBox.Name = "placeIDCBox";
+            this.placeIDCBox.Size = new System.Drawing.Size(164, 28);
+            this.placeIDCBox.TabIndex = 15;
+            // 
             // CustomerCartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.placeIDCBox);
+            this.Controls.Add(this.lblPlaceID);
             this.Controls.Add(this.payBtn);
             this.Controls.Add(this.lblTaxAmount);
             this.Controls.Add(this.lblSubtotalAmount);
@@ -198,5 +232,7 @@
         private System.Windows.Forms.Label lblSubtotalAmount;
         private System.Windows.Forms.Label lblTaxAmount;
         private System.Windows.Forms.Button payBtn;
+        private System.Windows.Forms.Label lblPlaceID;
+        private System.Windows.Forms.ComboBox placeIDCBox;
     }
 }

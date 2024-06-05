@@ -44,7 +44,7 @@ namespace IOOP_Assignment
 
         private DataTable GetChefIDs()
         {
-            string connectionString = "";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             string query = "SELECT DISTINCT ChefID FROM Orders WHERE ChefID IS NOT NULL";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

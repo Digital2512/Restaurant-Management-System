@@ -20,7 +20,7 @@ namespace IOOP_Assignment
         public AdminUpdateProfile()
         {
             InitializeComponent();
-            connectionString = "";
+            connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             Database database = new Database(connectionString);
             string query = "Select UserID from Users where LoggedIn = 'True';";
             string userID = database.getString(query);

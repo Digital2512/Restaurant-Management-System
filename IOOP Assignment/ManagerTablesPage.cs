@@ -21,7 +21,7 @@ namespace IOOP_Assignment
             dtPickerDate.CustomFormat = "dd/MM/yyyy";
         }
 
-        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+        public string connetionString = "DataData Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string reservationID;
 

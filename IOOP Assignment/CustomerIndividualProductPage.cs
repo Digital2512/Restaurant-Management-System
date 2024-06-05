@@ -128,13 +128,13 @@ namespace IOOP_Assignment
                     cmd.Parameters.AddWithValue("@ProductID", productID);
 
                     string stockQuantityList = Convert.ToString(cmd.ExecuteScalar());
-                    string[] stockQuantityParts = stockQuantityList.Split(',');
+                    string[] stockQuantityParts = stockQuantityList.Trim().Split(',');
 
                     bool shouldDisableButton = false;
 
                     foreach (string part in stockQuantityParts)
                     {
-                        string[] stockQuantityPart = part.Split('*');
+                        string[] stockQuantityPart = part.Trim().Split('*');
 
                         if (stockQuantityPart.Length != 2 || !int.TryParse(stockQuantityPart[1], out int stockQuantityInt))
                         {
@@ -170,19 +170,18 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
-            
         }
 
         private void minusBtn_Click(object sender, EventArgs e)
         {
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
-            if (productQuantity <= 1)
+            int newProductQuantity = productQuantity - 1;
+            if (newProductQuantity < 1)
             {
                 minusBtn.Enabled = false;
             }
             else
             {
-                int newProductQuantity = productQuantity - 1;
                 this.lblProductQuantity.Text = newProductQuantity.ToString();
             }
         }

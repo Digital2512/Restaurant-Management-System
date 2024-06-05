@@ -67,8 +67,8 @@ namespace IOOP_Assignment
 
         private string GetOrderStatusForTable(string tableNumber)
         {
-            string query = $"SELECT TOP 1 Status FROM Orders WHERE TableNumber = @TableNumber ORDER BY OrderDateTime DESC";
-            SqlParameter[] parameters = { new SqlParameter("@TableNumber", tableNumber) };
+            string query = $"SELECT TOP 1 OrderStatus FROM Orders WHERE PlaceNumber = @PlaceNumber ORDER BY OrderDateTime DESC";
+            SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
             DataTable dataTable = ExecuteSqlQuery(query, parameters);
 
@@ -96,8 +96,8 @@ namespace IOOP_Assignment
                 // Set table number in label
                 LblTableSelectedShow.Text = tableNumber;
 
-                string query = "SELECT OrderID FROM Orders WHERE TableNumber = @TableNumber AND (Status = 'Pending' OR Status = 'In Progress')";
-                SqlParameter[] parameters = { new SqlParameter("@TableNumber", tableNumber) };
+                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'Pending' OR Status = 'In Progress')";
+                SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
 
@@ -187,7 +187,7 @@ namespace IOOP_Assignment
                     od.Price,
                     o.Status,
                     o.ChefID,
-                    o.TableNumber,
+                    o.PlaceNumber,
                     o.EstimatedTimeLeft,
                     m.Name AS ProductName
                 FROM 
@@ -218,7 +218,7 @@ namespace IOOP_Assignment
                 label7.Text = firstRow["Quantity"].ToString();
                 label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
                 label9.Text = firstRow["Status"].ToString();
-                LblTableSelectedShow.Text = firstRow["TableNumber"].ToString();
+                LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
                 label12.Text = firstRow["EstimatedTimeLeft"].ToString();
 
                 comboBoxProductID.SelectedIndex = 0; // Select the first item by default
@@ -349,13 +349,13 @@ namespace IOOP_Assignment
 
         private void UpdateButtonColorAfterCompletion(string orderID)
         {
-            string query = "SELECT TableNumber FROM Orders WHERE OrderID = @OrderID";
+            string query = "SELECT PlaceNumber FROM Orders WHERE OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
             DataTable dataTable = ExecuteSqlQuery(query, parameters);
             if (dataTable.Rows.Count > 0)
             {
-                string tableNumber = dataTable.Rows[0]["TableNumber"].ToString();
+                string tableNumber = dataTable.Rows[0]["PlaceNumber"].ToString();
                 Button button = Controls.Find(tableNumber, true).FirstOrDefault() as Button;
                 if (button != null)
                 {
@@ -514,6 +514,11 @@ namespace IOOP_Assignment
         }
 
         private void T01_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void V01_Click(object sender, EventArgs e)
         {
 
         }

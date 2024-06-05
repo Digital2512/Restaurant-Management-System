@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         public AdminViewCustomer()
         {
             InitializeComponent();
-            string connectionString = "";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             con = new SqlConnection(connectionString);
             customer = new Customer(connectionString);
         }

@@ -31,137 +31,36 @@ namespace IOOP_Assignment
         }
         private void payBtn_Click(object sender, EventArgs e)
         {
-            Database database = new Database(connectionString);
-            string query = "SELECT OrderID FROM Orders WHERE OrderStatus = 'ORDERING';";
-            string orderID = database.getString(query);
-            query = $"UPDATE Orders SET PaymentStatus = 'PAID' WHERE OrderID = '{orderID}';";
-            database.insertOrUpdateValuesIntoDatabase(query);
-            query = $"SELECT PaymentStatus FROM Orders WHERE OrderID = '{orderID}';";
-
-            if (database.getString(query) == "PAID")
+            if(placeIDCBox.Text != "")
             {
-                query = $"UPDATE Orders SET OrderStatus = 'WAITING_FOR_CHEF' WHERE OrderID = '{orderID}';";
-                if(database.insertOrUpdateValuesIntoDatabase(query) == true)
-                {
-                    this.Hide();
-                    CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();
-                    customerSuccessfulPayment.Show();
-                }
-                /*query = $"SELECT OrderDetailsIDs FROM Orders where OrderID = '{orderID}';";
-                List<String> orderDetailsIDsList = new List<String>(database.getString(query).Split(','));
-                MessageBox.Show(orderDetailsIDsList.ToString());
-                foreach (string orderIDInOrderIDsList in orderDetailsIDsList)
-                {
-                    if (orderIDInOrderIDsList == null || orderIDInOrderIDsList == "")
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        /*query = $"SELECT ProductID FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
-                        string productID = database.getString(query);
-                        query = $"SELECT Name FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
-                        string productName = database.getString(query);
-                        query = $"SELECT Quantity FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
-                        int productQuantity = database.getInt(query);
-                        query = $"SELECT Price FROM OrderDetails WHERE OrderDetailsID = '{orderIDInOrderIDsList}';";
-                        decimal productPrice = database.getDecimal(query);
-                        decimal totalPrice = productPrice * productQuantity;
+                Database database = new Database(connectionString);
+                string query = "SELECT OrderID FROM Orders WHERE OrderStatus = 'ORDERING';";
+                string orderID = database.getString(query);
+                query = $"UPDATE Orders SET PaymentStatus = 'PAID' WHERE OrderID = '{orderID}';";
+                database.insertOrUpdateValuesIntoDatabase(query);
+                string placeNumber = placeIDCBox.Text;
+                query = $"UPDATE Orders SET PlaceNumber = '{placeNumber}' WHERE OrderID = '{orderID}';";
+                database.insertOrUpdateValuesIntoDatabase(query);
+                query = $"SELECT PaymentStatus FROM Orders WHERE OrderID = '{orderID}';";
 
-                        query = $"SELECT ReportID FROM SalesReport WHERE ReportStatus = 'IN_PROGRESS' AND ProductID = '{productID}';";
-                        string reportID = database.getString(query);
-                         if (reportID != null)
-                        {
-                            string reportDetailsID = database.GenerateUniqueID("RD", "ReportDetailsID", "ReportDetails");
-                            query = $"INSERT INTO ReportDetails(ReportDetailsID, ProductID, Name, Quantity, IndividualPrice, TotalPrice, ReportID) VALUES ('{reportDetailsID}', '{productID}', '{productName}', '{productQuantity}', '{productPrice}', '{totalPrice}', '{reportID}');";
-                            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-                            {
-                                MessageBox.Show("Added to Sales Report");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Not added to Sales Report");
-                            }
-                        }
-                        else
-                        {
-                            reportID = database.GenerateUniqueID("R", "ReportID", "SalesReport");
-                            MessageBox.Show(reportID);
-                            DateTime currentDateTime = DateTime.Now;
-                            int currentMonth = currentDateTime.Month;
-                            string currentMonthString = "";
-                            switch (currentMonth)
-                            {
-                                case 1:
-                                    currentMonthString = "JANUARY";
-                                    break;
-                                case 2:
-                                    currentMonthString = "FEBRUARY";
-                                    break;
-                                case 3:
-                                    currentMonthString = "MARCH";
-                                    break;
-                                case 4:
-                                    currentMonthString = "APRIL";
-                                    break;
-                                case 5:
-                                    currentMonthString = "MAY";
-                                    break;
-                                case 6:
-                                    currentMonthString = "JUNE";
-                                    break;
-                                case 7:
-                                    currentMonthString = "JULY";
-                                    break;
-                                case 8:
-                                    currentMonthString = "AUGUST";
-                                    break;
-                                case 9:
-                                    currentMonthString = "SEPTEMBER";
-                                    break;
-                                case 10:
-                                    currentMonthString = "OCTOBER";
-                                    break;
-                                case 11:
-                                    currentMonthString = "NOVEMBER";
-                                    break;
-                                case 12:
-                                    currentMonthString = "DECEMBER";
-                                    break;
-                            }
-                            int currentYear = currentDateTime.Year;
-                            string currentYearString = currentYear.ToString();
-                            
-                            string currentDateTimeString = currentDateTime.ToString();
-                            DateTime dateTime = DateTime.ParseExact(currentDateTimeString, "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                            string formattedDateTimeString = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
-                            MessageBox.Show(formattedDateTimeString);
-                            /*query = $"INSERT INTO SalesReport(ReportID, ReportDateTime, Month, Year, ProductID, ReportStatus) VALUES ('{reportID}', '{formattedDateTimeString}', '{currentMonthString}', '{currentYear}', '{productID}', 'IN_PROGRESS')";
-                            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-                            {
-                                MessageBox.Show("Sales Report Created");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Sales Report not Created");
-                            }
-                            string reportDetailsID = database.GenerateUniqueID("RD", "ReportDetailsID", "ReportDetails");
-                            MessageBox.Show(reportDetailsID);
-                            query = $"INSERT INTO ReportDetails(ReportDetailsID, ProductID, Name, Quantity, IndividualPrice, TotalPrice, ReportID) VALUES ('{reportDetailsID}', '{productID}', '{productName}', '{productQuantity}', '{productPrice}', '{totalPrice}', '{reportID}');";
-                            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-                            {
-                                MessageBox.Show("Added to Sales Report");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Not added to Sales Report");
-                            }
+                if (database.getString(query) == "PAID")
+                {
+                    query = $"UPDATE Orders SET OrderStatus = 'PENDING' WHERE OrderID = '{orderID}';";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        this.Hide();
+                        CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();
+                        customerSuccessfulPayment.Show();
                     }
-                }*/
+                }
+                else
+                {
+                    MessageBox.Show("Order has not been paid. Please pay first");
+                }
             }
             else
             {
-                MessageBox.Show("Order has not been paid. Please pay first");
+                MessageBox.Show("Please select a Place ID");
             }
         }
 

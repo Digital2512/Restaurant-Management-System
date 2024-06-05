@@ -32,8 +32,8 @@
             this.lblrealtime = new System.Windows.Forms.Label();
             this.LBvieworder = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.V02 = new System.Windows.Forms.Button();
-            this.V01 = new System.Windows.Forms.Button();
+            this.VIP02 = new System.Windows.Forms.Button();
+            this.VIP01 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.T10 = new System.Windows.Forms.Button();
             this.T09 = new System.Windows.Forms.Button();
@@ -108,8 +108,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.V02);
-            this.groupBox1.Controls.Add(this.V01);
+            this.groupBox1.Controls.Add(this.VIP02);
+            this.groupBox1.Controls.Add(this.VIP01);
             this.groupBox1.Location = new System.Drawing.Point(39, 125);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
@@ -119,25 +119,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "VIP Rooms";
             // 
-            // V02
+            // VIP02
             // 
-            this.V02.Location = new System.Drawing.Point(65, 251);
-            this.V02.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.V02.Name = "V02";
-            this.V02.Size = new System.Drawing.Size(109, 69);
-            this.V02.TabIndex = 1;
-            this.V02.Text = "Hall 2";
-            this.V02.UseVisualStyleBackColor = true;
+            this.VIP02.Location = new System.Drawing.Point(65, 251);
+            this.VIP02.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.VIP02.Name = "VIP02";
+            this.VIP02.Size = new System.Drawing.Size(109, 69);
+            this.VIP02.TabIndex = 1;
+            this.VIP02.Text = "VIP Room 2";
+            this.VIP02.UseVisualStyleBackColor = true;
             // 
-            // V01
+            // VIP01
             // 
-            this.V01.Location = new System.Drawing.Point(65, 110);
-            this.V01.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.V01.Name = "V01";
-            this.V01.Size = new System.Drawing.Size(109, 69);
-            this.V01.TabIndex = 0;
-            this.V01.Text = "Hall 1";
-            this.V01.UseVisualStyleBackColor = true;
+            this.VIP01.Location = new System.Drawing.Point(65, 110);
+            this.VIP01.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.VIP01.Name = "VIP01";
+            this.VIP01.Size = new System.Drawing.Size(109, 69);
+            this.VIP01.TabIndex = 0;
+            this.VIP01.Text = "VIP Room 1";
+            this.VIP01.UseVisualStyleBackColor = true;
+            this.VIP01.Click += new System.EventHandler(this.V01_Click);
             // 
             // groupBox2
             // 
@@ -514,8 +515,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button V01;
-        private System.Windows.Forms.Button V02;
+        private System.Windows.Forms.Button VIP01;
+        private System.Windows.Forms.Button VIP02;
         private System.Windows.Forms.Button T01;
         private System.Windows.Forms.Button T02;
         private System.Windows.Forms.Button T03;

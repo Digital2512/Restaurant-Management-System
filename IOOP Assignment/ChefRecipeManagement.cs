@@ -9,7 +9,7 @@ namespace IOOP_Assignment
 {
     public partial class ChefRecipeManagement : Form
     {
-        private string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
+        private string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public ChefRecipeManagement()
         {
