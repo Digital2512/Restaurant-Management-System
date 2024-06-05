@@ -74,7 +74,7 @@ namespace IOOP_Assignment
 
             if (dataTable.Rows.Count > 0)
             {
-                return dataTable.Rows[0]["Status"].ToString();
+                return dataTable.Rows[0]["OrderStatus"].ToString();
             }
 
             return "Unknown";
@@ -96,7 +96,7 @@ namespace IOOP_Assignment
                 // Set table number in label
                 LblTableSelectedShow.Text = tableNumber;
 
-                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (Status = 'PENDING' OR Status = 'IN_PROGRESS')";
+                string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS')";
                 SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
@@ -185,7 +185,7 @@ namespace IOOP_Assignment
                     od.ProductID,
                     od.Quantity,
                     od.Price,
-                    o.Status,
+                    o.OrderStatus,
                     o.ChefID,
                     o.PlaceNumber,
                     o.EstimatedTimeLeft,
@@ -217,7 +217,7 @@ namespace IOOP_Assignment
                 label6.Text = firstRow["ProductName"].ToString();
                 label7.Text = firstRow["Quantity"].ToString();
                 label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
-                label9.Text = firstRow["Status"].ToString();
+                label9.Text = firstRow["OrderStatus"].ToString();
                 LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
                 label12.Text = firstRow["EstimatedTimeLeft"].ToString();
 
@@ -237,14 +237,14 @@ namespace IOOP_Assignment
             if (comboBoxOrderTable.SelectedItem != null || comboBoxChefReceived.SelectedItem != null)
             {
                 string orderID = comboBoxOrderTable.SelectedItem != null ? comboBoxOrderTable.SelectedItem.ToString() : comboBoxChefReceived.SelectedItem.ToString();
-                string query = "SELECT Status FROM Orders WHERE OrderID = @OrderID";
+                string query = "SELECT OrderStatus FROM Orders WHERE OrderID = @OrderID";
                 SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    string status = row["Status"].ToString();
+                    string status = row["OrderStatus"].ToString();
 
                     if (status == "PENDING")
                     {
@@ -258,7 +258,7 @@ namespace IOOP_Assignment
 
                         if (result == DialogResult.Yes)
                         {
-                            string updateQuery = "UPDATE Orders SET Status = 'IN_PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET OrderStatus = 'IN_PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = {
                                 new SqlParameter("@OrderID", orderID),
                                 new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft + " minutes"),
@@ -281,7 +281,7 @@ namespace IOOP_Assignment
                         {
                             DeductInventory(productID, quantity);
 
-                            string updateQuery = "UPDATE Orders SET Status = 'COMPLETED', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET OrderStatus = 'COMPLETED', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = { new SqlParameter("@OrderID", orderID) };
                             ExecuteSqlCommand(updateQuery, updateParameters);
                             MessageBox.Show("Order status updated to Completed.");
@@ -399,7 +399,7 @@ namespace IOOP_Assignment
         private void LoadChefOrders()
         {
             comboBoxChefReceived.Items.Clear();
-            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (Status = 'PENDING' OR Status = 'IN PROGRESS')";
+            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN PROGRESS')";
             SqlParameter[] parameters = { new SqlParameter("@ChefID", this.userid) };
 
             DataTable dataTable = ExecuteSqlQuery(query, parameters);
