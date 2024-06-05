@@ -1,175 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
+  "WorkspaceRootPath": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Chef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Chef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminviewfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminviewfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:manageraddplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminviewfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminviewfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerupdateprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\AppData\\Local\\Temp\\.vsdbgsrc\\dc3403d57784f8f9169cb8d44668ebc485c2f08670b3e39cd7862bca7888fa16\\AdminViewFeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerviewprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerviewprofilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managermenupage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewSalesReport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewFeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewFeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminUpdateProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminUpdateDeleteManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminUpdateDeleteCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminUpdateDeleteChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminManageUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminHomePage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminUpdateDeleteChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminManageUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminViewSalesReport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminHomePage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddCustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddChef.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdminAddChef.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\Resources.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\Resources.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminaddcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminaddcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminupdatedeletemanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminupdatedeletemanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminupdatedeletemanager.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminupdatedeletemanager.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminviewsalesreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminviewsalesreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminaddmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminaddmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminaddcustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminaddcustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\yaphu\\onedrive - asia pacific university\\documents\\github\\ioop-assignment\\ioop assignment\\adminaddchef.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:adminaddchef.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\customerfeedbackpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:customerfeedbackpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\CustomerFeedbackPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:CustomerFeedbackPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\onedrive\\\u6587\u6863\\github\\ioop-assignment\\ioop assignment\\managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\onedrive\\\u6587\u6863\\github\\ioop-assignment\\ioop assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\vivobook\\onedrive\\documents\\github\\ioop-assignment\\ioop assignment\\managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerreservationreportpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -179,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 273,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -187,365 +50,107 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Chef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Chef.cs",
-              "RelativeDocumentMoniker": "Chef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Chef.cs",
-              "RelativeToolTip": "Chef.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "ManagerViewProfilePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs",
+              "RelativeDocumentMoniker": "ManagerViewProfilePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerViewProfilePage.cs [Design]",
+              "RelativeToolTip": "ManagerViewProfilePage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:18:43.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminViewManager.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewManager.cs",
-              "RelativeDocumentMoniker": "AdminViewManager.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewManager.cs",
-              "RelativeToolTip": "AdminViewManager.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:17:56.131Z"
+              "WhenOpened": "2024-06-05T20:01:14.418Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AdminViewSalesReport.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs",
-              "RelativeDocumentMoniker": "AdminViewSalesReport.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs",
-              "RelativeToolTip": "AdminViewSalesReport.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwEgAAAApAAAA",
+              "Title": "ManagerUpdateProfilePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs",
+              "RelativeDocumentMoniker": "ManagerUpdateProfilePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerUpdateProfilePage.cs [Design]",
+              "RelativeToolTip": "ManagerUpdateProfilePage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:07:12.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminViewFeedback.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewFeedback.cs",
-              "RelativeDocumentMoniker": "AdminViewFeedback.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewFeedback.cs",
-              "RelativeToolTip": "AdminViewFeedback.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:17:21.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminViewCustomer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewCustomer.cs",
-              "RelativeDocumentMoniker": "AdminViewCustomer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewCustomer.cs",
-              "RelativeToolTip": "AdminViewCustomer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:16:57.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminViewChef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewChef.cs",
-              "RelativeDocumentMoniker": "AdminViewChef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewChef.cs",
-              "RelativeToolTip": "AdminViewChef.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:16:23.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminUpdateProfile.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateProfile.cs",
-              "RelativeDocumentMoniker": "AdminUpdateProfile.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateProfile.cs",
-              "RelativeToolTip": "AdminUpdateProfile.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAmwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:15:35.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminUpdateDeleteManager.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteManager.cs",
-              "RelativeDocumentMoniker": "AdminUpdateDeleteManager.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteManager.cs",
-              "RelativeToolTip": "AdminUpdateDeleteManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:15:09.496Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AdminUpdateDeleteCustomer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteCustomer.cs",
-              "RelativeDocumentMoniker": "AdminUpdateDeleteCustomer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteCustomer.cs",
-              "RelativeToolTip": "AdminUpdateDeleteCustomer.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:14:05.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AdminUpdateDeleteChef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs",
-              "RelativeDocumentMoniker": "AdminUpdateDeleteChef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs",
-              "RelativeToolTip": "AdminUpdateDeleteChef.cs",
-              "ViewState": "AQIAAH0AAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:13:29.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AdminManageUsers.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs",
-              "RelativeDocumentMoniker": "AdminManageUsers.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs",
-              "RelativeToolTip": "AdminManageUsers.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:13:20.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminHomePage.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs",
-              "RelativeDocumentMoniker": "AdminHomePage.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs",
-              "RelativeToolTip": "AdminHomePage.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:13:07.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminAddManager.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs",
-              "RelativeDocumentMoniker": "AdminAddManager.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs",
-              "RelativeToolTip": "AdminAddManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T04:12:17.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdminAddChef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs",
-              "RelativeDocumentMoniker": "AdminAddChef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs",
-              "RelativeToolTip": "AdminAddChef.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAACBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T13:01:19.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdminAddCustomer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs",
-              "RelativeDocumentMoniker": "AdminAddCustomer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs",
-              "RelativeToolTip": "AdminAddCustomer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T13:01:28.706Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AdminAddChef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs",
-              "RelativeDocumentMoniker": "AdminAddChef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs",
-              "RelativeToolTip": "AdminAddChef.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T02:20:03.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AdminUpdateDeleteChef.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs",
-              "RelativeDocumentMoniker": "AdminUpdateDeleteChef.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminUpdateDeleteChef.cs",
-              "RelativeToolTip": "AdminUpdateDeleteChef.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:48:01.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdminManageUsers.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs",
-              "RelativeDocumentMoniker": "AdminManageUsers.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminManageUsers.cs",
-              "RelativeToolTip": "AdminManageUsers.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:35:38.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AdminViewSalesReport.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs",
-              "RelativeDocumentMoniker": "AdminViewSalesReport.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminViewSalesReport.cs",
-              "RelativeToolTip": "AdminViewSalesReport.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:07:04.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdminHomePage.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs",
-              "RelativeDocumentMoniker": "AdminHomePage.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminHomePage.cs",
-              "RelativeToolTip": "AdminHomePage.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:26:33.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AdminAddCustomer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs",
-              "RelativeDocumentMoniker": "AdminAddCustomer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddCustomer.cs",
-              "RelativeToolTip": "AdminAddCustomer.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:21:16.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminAddManager.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs",
-              "RelativeDocumentMoniker": "AdminAddManager.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddManager.cs",
-              "RelativeToolTip": "AdminAddManager.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:18:49.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AdminAddChef.resx",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.resx",
-              "RelativeDocumentMoniker": "AdminAddChef.resx",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.resx",
-              "RelativeToolTip": "AdminAddChef.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-06-03T13:01:25.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AdminAddChef.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.Designer.cs",
-              "RelativeDocumentMoniker": "AdminAddChef.Designer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.Designer.cs",
-              "RelativeToolTip": "AdminAddChef.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T13:01:23.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Resources.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\Resources.Designer.cs",
-              "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\Resources.Designer.cs",
-              "RelativeToolTip": "Properties\\Resources.Designer.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwCkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:17:44.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "Properties\\AssemblyInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:17:27.035Z",
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManagerTablesPage.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
-              "RelativeDocumentMoniker": "ManagerTablesPage.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
-              "RelativeToolTip": "ManagerTablesPage.cs",
-              "ViewState": "AQIAAHsBAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T08:41:40.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminViewFeedback.cs",
-              "DocumentMoniker": "C:\\Users\\yaphu\\AppData\\Local\\Temp\\.vsdbgsrc\\dc3403d57784f8f9169cb8d44668ebc485c2f08670b3e39cd7862bca7888fa16\\AdminViewFeedback.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\dc3403d57784f8f9169cb8d44668ebc485c2f08670b3e39cd7862bca7888fa16\\AdminViewFeedback.cs",
-              "ToolTip": "C:\\Users\\yaphu\\AppData\\Local\\Temp\\.vsdbgsrc\\dc3403d57784f8f9169cb8d44668ebc485c2f08670b3e39cd7862bca7888fa16\\AdminViewFeedback.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\dc3403d57784f8f9169cb8d44668ebc485c2f08670b3e39cd7862bca7888fa16\\AdminViewFeedback.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADoAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T07:38:47.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "ManagerPendingPage.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
-              "RelativeDocumentMoniker": "ManagerPendingPage.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
-              "RelativeToolTip": "ManagerPendingPage.cs",
-              "ViewState": "AQIAAL4AAAAAAAAAAAAQwNMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T08:25:26.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T20:01:10.844Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Title": "ManagerTablesPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
+              "RelativeDocumentMoniker": "ManagerTablesPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs [Design]",
+              "RelativeToolTip": "ManagerTablesPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T07:34:14.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T20:01:09Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManagerReservationReportPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs",
+              "RelativeDocumentMoniker": "ManagerReservationReportPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerReservationReportPage.cs [Design]",
+              "RelativeToolTip": "ManagerReservationReportPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:07.254Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManagerPendingPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
+              "RelativeDocumentMoniker": "ManagerPendingPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs [Design]",
+              "RelativeToolTip": "ManagerPendingPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:05.31Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManagerMenuPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs",
+              "RelativeDocumentMoniker": "ManagerMenuPage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerMenuPage.cs [Design]",
+              "RelativeToolTip": "ManagerMenuPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:01:03.231Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagerHomePage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs",
+              "RelativeDocumentMoniker": "ManagerHomePage.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerHomePage.cs [Design]",
+              "RelativeToolTip": "ManagerHomePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:00:46.607Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerAddPlace.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerAddPlace.cs",
+              "RelativeDocumentMoniker": "ManagerAddPlace.cs",
+              "ToolTip": "C:\\Users\\VIVOBOOK\\OneDrive\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerAddPlace.cs [Design]",
+              "RelativeToolTip": "ManagerAddPlace.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T20:00:39.71Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
