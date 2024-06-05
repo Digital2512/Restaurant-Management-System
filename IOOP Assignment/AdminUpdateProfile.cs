@@ -28,7 +28,7 @@ namespace IOOP_Assignment
             string userID = database.GetString(query);
             lblUserID.Text = userID;
 
-            query = $"Select fullName From Users where UserID = '{userID} ';";
+            query = $"Select FullName From Users where UserID = '{userID} ';";
             txtFullName.Text = database.GetString(query);
 
             query = $"Select Password from Users where UserID = '{userID} ';";
@@ -71,7 +71,7 @@ namespace IOOP_Assignment
                 Image = ConvertImageToByteArray(pboxAdmin.Image);
             }
 
-            query = $"Update Users Set fullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, Image= @profile where UserID =@userID";
+            query = $"Update Users Set FullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, Image= @profile where UserID =@userID";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
