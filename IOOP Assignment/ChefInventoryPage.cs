@@ -63,7 +63,7 @@ namespace IOOP_Assignment
 
         private void LoadInventoryData()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=IOOPDatabase;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             string query = "SELECT StockID, Name, Quantity, IndividualPrice, Status FROM Inventory ORDER BY StockID ASC";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
