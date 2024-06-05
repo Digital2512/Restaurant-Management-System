@@ -42,20 +42,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(392, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 38);
+            this.label1.Size = new System.Drawing.Size(255, 41);
             this.label1.TabIndex = 1;
-            this.label1.Text = "View Manager";
+            this.label1.Text = "VIEW MANAGER";
             // 
             // lblManagerID
             // 
             this.lblManagerID.AutoSize = true;
-            this.lblManagerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerID.ForeColor = System.Drawing.Color.Navy;
             this.lblManagerID.Location = new System.Drawing.Point(212, 120);
             this.lblManagerID.Name = "lblManagerID";
-            this.lblManagerID.Size = new System.Drawing.Size(112, 20);
+            this.lblManagerID.Size = new System.Drawing.Size(109, 23);
             this.lblManagerID.TabIndex = 2;
             this.lblManagerID.Text = "Manager ID:";
             // 
@@ -69,16 +71,19 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(725, 120);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(104, 24);
+            this.btnSearch.Size = new System.Drawing.Size(96, 24);
             this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvViewManager
             // 
+            this.dgvViewManager.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvViewManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewManager.Location = new System.Drawing.Point(104, 160);
             this.dgvViewManager.Name = "dgvViewManager";
@@ -89,7 +94,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
             this.panelHeader.Name = "panelHeader";
@@ -110,6 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1025, 541);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.dgvViewManager);
@@ -120,7 +126,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminViewManager";
             this.Text = "ViewManager";
-            this.Load += new System.EventHandler(this.AdminViewManager_Load);
+            this.Load += new System.EventHandler(this.AdminViewManager_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewManager)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);

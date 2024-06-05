@@ -18,7 +18,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
 
-            string connctionString ="Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+            string connctionString ="Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
 
             manager = new Manager(connctionString);
         }
@@ -151,16 +151,17 @@ namespace IOOP_Assignment
             }
         }
 
-        private void AdminUpdateDeleteManager_Load(object sender, EventArgs e)
-        {
-            FillComboSearchCode();
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
+        }
+
+        private void AdminUpdateDeleteManager_Load_1(object sender, EventArgs e)
+        {
+            FillComboSearchCode();
         }
     }
 }

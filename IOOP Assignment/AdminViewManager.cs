@@ -19,16 +19,11 @@ namespace IOOP_Assignment
         public AdminViewManager()
         {
             InitializeComponent();
-            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
+            string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
             con = new SqlConnection(conectionString);
             manager = new Manager(conectionString);
         }
 
-        private void AdminViewManager_Load(object sender, EventArgs e)
-        {
-            FillData();
-            FillComboSearchCode();
-        }
 
         private void FillData(string managerId = null)
         {
@@ -77,8 +72,14 @@ namespace IOOP_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
-            this.Hide();
-            mu.Show();
+            this.Close();
+            mu.ShowDialog();
+        }
+
+        private void AdminViewManager_Load_1(object sender, EventArgs e)
+        {
+            FillData();
+            FillComboSearchCode();
         }
     }
 }

@@ -11,185 +11,185 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
-{
+{ 
     public partial class AdminViewSalesReport : Form
     {
-        string conectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        private DataTable salesData = new DataTable();
+        private static readonly string[] Months =
+        { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+        private static readonly string[] Categories =
+        { "Japanese", "Western", "Korea", "Beverages"};
         public AdminViewSalesReport()
         {
             InitializeComponent();
-            LoadSalesData();
-            dgvSalesReport.DataSource = salesData;
-            FilterData();
+            lblTotalAmount.Text = "RM0.00";
+            lblOrderCount.Text = "0";
+            InitializeComboBoxes();
+            LoadAllSalesReportData();
         }
 
-        private void LoadSalesData()
+        private void InitializeComboBoxes()
         {
-            using (SqlConnection con = new SqlConnection(conectionString))
-            {
-                string query = @"
-                    Select
-                        NewID() AS ReportID, 
-                        O.OrderID,
-                        M.Cuisine,
-                        U.UserID As ChefID, 
-                        O.OrderDateTime,
-                        OD.Price,
-                        OD.Quantity,
-                        (OD.Price* OD.Quantity) As TotalAmount
-                    from 
-                        Orders O
-                    Inner join
-                        OrderDetails OD on O.OrderID = OD.OrderID
-                    Inner Join
-                        Menu M on OD.ProductID = M.ProductID
-                    Inner Join
-                        Users U on O.CustomerID = U.UserID";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(salesData);
-
-                }
-
-            }
+            cmbMonth.Items.AddRange(Months);
+            cmbCategory.Items.AddRange(Categories);
         }
-        private void FilterData()
+
+        private void LoadChefIDs()
         {
-            cmbMonth.Items.Clear();
-            cmbMonth.Items.AddRange(new string[]
-            {
-                "January","February","March","April","May","June", "July","August","September","October","November","Dcemeber"
-            });
+            DataTable chefIDs = GetChefIDs();
+            cmbChefID.DataSource = chefIDs;
+            cmbChefID.DisplayMember = "ChefID";
+            cmbChefID.ValueMember = "ChefID";
+        }
 
-            cmbMonth.Items.Clear();
-            using (SqlConnection con = new SqlConnection(conectionString))
+
+        private DataTable GetChefIDs()
+        {
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+            string query = "SELECT DISTINCT ChefID FROM Orders WHERE ChefID IS NOT NULL";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "Select Distinct Cuisine from Menu";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    con.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            cmbCategory.Items.Add(reader["Cuisines"].ToString());
-                        }
-                    }
-                }
-            }
-
-
-            cmbMonth.Items.Clear();
-
-            using (SqlConnection con = new SqlConnection(conectionString))
-            {
-                string query = "Select distinct UserID from Users where UserID like 'CH%'";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    con.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            cmbChefID.Items.Add(reader["UserID"].ToString());
-                        }
-                    }
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
                 }
             }
         }
 
-        private void AdminViewSalesReport_Load(object sender, EventArgs e)
+
+        private void LoadAllSalesReportData()
         {
+            DataTable salesReportData = GetSalesReportData(null, null, null);
+            dgvSalesReport.DataSource = salesReportData;
+            UpdateChefIDComboBox(salesReportData);
+        }
+        private void UpdateChefIDComboBox(DataTable salesReportData)
+        {
+            var chefIDs = salesReportData.AsEnumerable()
+                                         .Select(row => row.Field<string>("ChefID"))
+                                         .Distinct()
+                                         .ToList();
+
+            cmbChefID.Items.Clear();
+            cmbChefID.Items.AddRange(chefIDs.ToArray());
 
         }
 
-        private void LoadSalesData(int month, string cuisines, string chefID)
+        private void UpdateSummary(DataTable salesReportData)
         {
-            DataTable salesData = new DataTable();
+            int orderCount = salesReportData.Rows.Count;
+            decimal totalAmount = salesReportData.AsEnumerable().Sum(row => row.Field<decimal>("TotalPrice"));
 
-            using (SqlConnection con = new SqlConnection(conectionString))
-            {
-                string query = @"
-                    Select
-                        NewID() As ReportID,
-                        O.OrderID,
-                        M.Cuisine,
-                        U.UserID As ChefID,
-                        O.OrderDateTime,
-                        OD.Price,
-                        OD.Quantity,
-                        (OD.Price*OD.Quantity) As TotalAmount
-                    From
-                        Orders O
-                    Inner Join
-                        OrderDetails OD on O.OrderID = OD.OrderID
-                    Inner Join
-                        Menu M on OD.ProductID = M.ProductID
-                    Inner Join
-                        Users U on O.CustomerID = U.UserID
-                    Where
-                        Month(O.orderDateTime) = @month
-                        And M.Cuisine = @cuisine
-                        And U.UserID = @chefID";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@month", month);
-                    cmd.Parameters.AddWithValue("@cuisine", cuisines);
-                    cmd.Parameters.AddWithValue("@chefID", chefID);
-
-                    con.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        salesData.Load(reader);
-                    }
-                }
-
-            }
-            dgvSalesReport.DataSource = salesData;
-
-            decimal totalAmount = 0;
-            int orderCount = 0;
-            foreach (DataRow row in salesData.Rows)
-            {
-                totalAmount += Convert.ToDecimal(row["TotalAmount"]);
-                orderCount++;
-            }
-
-
-            lblTotalAmount.Text = $"RM{totalAmount:F2}";
-            lblOrderCount.Text = $"{orderCount}";
-
-
+            lblOrderCount.Text = $"Order Count: {orderCount}";
+            lblTotalAmount.Text = $"Total Amount: RM{totalAmount:N2}";
         }
-
-
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int month = cmbMonth.SelectedIndex + 1; //Month is 1 -based
-            string category = cmbCategory.SelectedItem?.ToString();
-            string chefID = cmbChefID.SelectedItem?.ToString();
+            int? selectedMonth = cmbMonth.SelectedIndex >= 0 ? cmbMonth.SelectedIndex + 1 : (int?)null;
+            string selectedCategory = cmbCategory.SelectedItem as string;
+            string selectedChefId = cmbChefID.SelectedValue as string;
 
-            LoadSalesData(month, category, chefID);
+            if (string.IsNullOrEmpty(selectedChefId))
+            {
+                MessageBox.Show("Please select a ChefID.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Console.WriteLine($"Selected Month: {selectedMonth}");
+            Console.WriteLine($"Selected Category: {selectedCategory}");
+            Console.WriteLine($"Selected ChefID: {selectedChefId}");
+
+            DataTable salesReportData = GetSalesReportData(selectedMonth, selectedCategory, selectedChefId);
+            dgvSalesReport.DataSource = salesReportData;
+            UpdateSummary(salesReportData);
+
         }
-
-
-        private void AdminViewSalesReport_Load(object sender, EventArgs e)
+        private DataTable GetSalesReportData(int? month, string category, string chefId)
         {
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+            string query = @"
+            SELECT 
+                ProductID, 
+                ProductName, 
+                Quantity, 
+                IndividualPrice, 
+                TotalPrice, 
+                OrderDateTime, 
+                Cuisine, 
+                ChefID 
+            FROM 
+                SalesReport1
+            WHERE 
+                (@SelectedChefID IS NULL OR ChefID = @SelectedChefID) AND
+                (@SelectedMonth IS NULL OR MONTH(OrderDateTime) = @SelectedMonth) AND
+                (@SelectedCategory IS NULL OR Cuisine = @SelectedCategory)";
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SelectedMonth", (object)month ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@SelectedCategory", (object)category ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@SelectedChefID",(object)chefId ?? DBNull.Value);
+
+                    Console.WriteLine($"Executing Query: {command.CommandText}");
+                    foreach (SqlParameter param in command.Parameters)
+                    {
+                        Console.WriteLine($"{param.ParameterName}: {param.Value}");
+                    }
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    Console.WriteLine($"Rows returned: {dataTable.Rows.Count}");
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        Console.WriteLine($"ProductID: {row["ProductID"]}, ProductName: {row["ProductName"]}, ChefID: {row["ChefID"]}");
+                    }
+
+                    return dataTable;
+                }
+            }
         }
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminHomePage hp = new AdminHomePage();
-            this.Hide();
-            hp.Show();
+            this.Close();
+            hp.ShowDialog();
+        }
+
+
+
+        private void AdminViewSalesReport_Load(object sender, EventArgs e)
+        {
+            LoadAllSalesReportData();
+        }
+
+        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbChefID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbChefID_DropDown(object sender, EventArgs e)
+        {
+            LoadChefIDs();
+        }
+
+        private void cmbCategory_DropDown(object sender, EventArgs e)
+        {
+
         }
     }
 }

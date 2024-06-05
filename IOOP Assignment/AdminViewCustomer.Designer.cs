@@ -42,20 +42,22 @@
             // lblViewCustomer
             // 
             this.lblViewCustomer.AutoSize = true;
-            this.lblViewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewCustomer.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewCustomer.ForeColor = System.Drawing.Color.Navy;
             this.lblViewCustomer.Location = new System.Drawing.Point(385, 64);
             this.lblViewCustomer.Name = "lblViewCustomer";
-            this.lblViewCustomer.Size = new System.Drawing.Size(252, 38);
+            this.lblViewCustomer.Size = new System.Drawing.Size(266, 41);
             this.lblViewCustomer.TabIndex = 0;
-            this.lblViewCustomer.Text = "View Customer";
+            this.lblViewCustomer.Text = "VIEW CUSTOMER";
             // 
             // lblCustomerID
             // 
             this.lblCustomerID.AutoSize = true;
-            this.lblCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerID.ForeColor = System.Drawing.Color.Navy;
             this.lblCustomerID.Location = new System.Drawing.Point(249, 139);
             this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(121, 20);
+            this.lblCustomerID.Size = new System.Drawing.Size(115, 23);
             this.lblCustomerID.TabIndex = 1;
             this.lblCustomerID.Text = "Customer ID:";
             // 
@@ -69,16 +71,20 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(706, 139);
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Location = new System.Drawing.Point(700, 137);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(88, 24);
+            this.btnSearch.Size = new System.Drawing.Size(91, 28);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvViewCustomer
             // 
+            this.dgvViewCustomer.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewCustomer.Location = new System.Drawing.Point(111, 184);
             this.dgvViewCustomer.Name = "dgvViewCustomer";
@@ -89,7 +95,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackColor = System.Drawing.Color.Lavender;
             this.panelHeader.Controls.Add(this.btnBack);
             this.panelHeader.Location = new System.Drawing.Point(-1, -1);
             this.panelHeader.Name = "panelHeader";
@@ -110,6 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1025, 541);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.dgvViewCustomer);
