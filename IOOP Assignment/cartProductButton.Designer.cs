@@ -35,6 +35,8 @@
             this.deleteBtnPnl = new System.Windows.Forms.Panel();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.productImagePBox = new System.Windows.Forms.PictureBox();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.lblProductID = new System.Windows.Forms.Label();
             this.deleteBtnPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +45,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblProductName.Location = new System.Drawing.Point(280, 25);
+            this.lblProductName.Location = new System.Drawing.Point(280, 51);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(125, 29);
             this.lblProductName.TabIndex = 1;
@@ -105,10 +107,31 @@
             this.productImagePBox.TabIndex = 0;
             this.productImagePBox.TabStop = false;
             // 
+            // editBtn
+            // 
+            this.editBtn.Location = new System.Drawing.Point(642, 111);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(61, 39);
+            this.editBtn.TabIndex = 7;
+            this.editBtn.Text = "Edit";
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(281, 25);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(46, 20);
+            this.lblProductID.TabIndex = 8;
+            this.lblProductID.Text = "P001";
+            // 
             // cartProductButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblProductID);
+            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.deleteBtnPnl);
             this.Controls.Add(this.lblProductQuantity);
             this.Controls.Add(this.lblProductPrice);
@@ -133,5 +156,7 @@
         private System.Windows.Forms.Label lblProductQuantity;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Panel deleteBtnPnl;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Label lblProductID;
     }
 }

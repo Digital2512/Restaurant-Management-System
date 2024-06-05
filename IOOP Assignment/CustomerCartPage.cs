@@ -192,6 +192,7 @@ namespace IOOP_Assignment
                     {
                         string productID = row["ProductID"].ToString();
                         string productName = row["Name"].ToString();
+                        MessageBox.Show(productName);
                         string productPrice = row["Price"].ToString();
                         string productQuantity = row["Quantity"].ToString();
                         string productSpecialInstructions = row["OrderSpecialInstructions"].ToString();
@@ -205,7 +206,7 @@ namespace IOOP_Assignment
                         query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                         Image productImage = database.getImage(query);
 
-                        var cartProductButton = new cartProductButton(productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
+                        var cartProductButton = new cartProductButton(productID, productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);
                     }
                 }

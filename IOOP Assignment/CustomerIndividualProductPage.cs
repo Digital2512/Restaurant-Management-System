@@ -46,6 +46,8 @@ namespace IOOP_Assignment
             string customerID = database.getString(query);
             query = $"SELECT ProductID FROM Menu WHERE Chosen = 'TRUE';";
             string productID = database.getString(query);
+            query = $"SELECT Name FROM Menu WHERE Chosen = 'TRUE';";
+            string productName = database.getString(query);
             query = $"SELECT Price FROM Menu WHERE Chosen = 'TRUE';";
             int productPrice = database.getDecimal(query);
             int productQuantity = int.Parse(this.lblProductQuantity.Text);
@@ -77,7 +79,7 @@ namespace IOOP_Assignment
             }
             
             string orderDetailsID = database.GenerateUniqueID("OD", "OrderDetailsID", "OrderDetails");
-            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, OrderSpecialInstructions) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}')";
+            query = $"INSERT INTO OrderDetails(OrderID, OrderDetailsID, ProductID, Quantity, Price, OrderSpecialInstructions, Name) VALUES ('{orderID}', '{orderDetailsID}', '{productID}', '{productQuantity}', '{productPrice}', '{productSpecialInstructions}', '{productName}')";
             bool orderDetailsRecorded = database.insertOrUpdateValuesIntoDatabase(query);
             query = $"SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
             string previousOrderDetailsIDs = database.getString(query);
