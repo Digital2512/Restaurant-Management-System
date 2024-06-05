@@ -436,6 +436,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAddPlace.resx">
+      <DependentUpon>ManagerAddPlace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="productButton.resx">
       <DependentUpon>productButton.cs</DependentUpon>
     </EmbeddedResource>

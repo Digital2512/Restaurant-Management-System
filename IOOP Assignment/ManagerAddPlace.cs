@@ -15,7 +15,7 @@ namespace IOOP_Assignment
     {
         public ManagerAddPlace()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private string imgLocation;
@@ -35,13 +35,14 @@ namespace IOOP_Assignment
                 con.Open();
 
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO PlaceOfReservation (PlaceID, PlaceName, Description, EventType, MinOfPax, PlaceImage) VALUES (@PlaceID, @PlaceName, @Description, @EventType, @MinOfPax, @PlaceImage)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO PlaceOfReservation (PlaceID, PlaceName, Description, EventType, MinOfPax, PlaceImage, EventType) VALUES (@PlaceID, @PlaceName, @Description, @EventType, @MinOfPax, @PlaceImage, @EventType)", con);
                 cmd.Parameters.AddWithValue("@PlaceID", txtPlaceID.Text);
                 cmd.Parameters.AddWithValue("@PlaceName", txtPlaceName.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDesc.Text);
                 cmd.Parameters.AddWithValue("@EventType", txtEventType.Text);
                 cmd.Parameters.AddWithValue("@MinOfPax", txtPax.Text);
                 cmd.Parameters.AddWithValue("@PlaceImage", images);
+                cmd.Parameters.AddWithValue("@EventType", eventTypeCBox.Text);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Table Added Successfully!");

@@ -39,8 +39,9 @@
             this.txtPlaceID = new System.Windows.Forms.TextBox();
             this.txtPax = new System.Windows.Forms.TextBox();
             this.lblPax = new System.Windows.Forms.Label();
-            this.txtEventType = new System.Windows.Forms.TextBox();
             this.lblEventType = new System.Windows.Forms.Label();
+            this.eventTypeCBox = new System.Windows.Forms.ComboBox();
+            this.txtEventType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,13 +147,6 @@
             this.lblPax.TabIndex = 40;
             this.lblPax.Text = "MinOfPax:";
             // 
-            // txtEventType
-            // 
-            this.txtEventType.Location = new System.Drawing.Point(309, 227);
-            this.txtEventType.Name = "txtEventType";
-            this.txtEventType.Size = new System.Drawing.Size(117, 26);
-            this.txtEventType.TabIndex = 43;
-            // 
             // lblEventType
             // 
             this.lblEventType.AutoSize = true;
@@ -163,11 +157,34 @@
             this.lblEventType.TabIndex = 42;
             this.lblEventType.Text = "EventType:";
             // 
-            // AddPlace
+            // eventTypeCBox
+            // 
+            this.eventTypeCBox.FormattingEnabled = true;
+            this.eventTypeCBox.Items.AddRange(new object[] {
+            "Birthday",
+            "Gathering",
+            "Wedding Party",
+            "Corporate Party",
+            "Dining",
+            "Private Dining"});
+            this.eventTypeCBox.Location = new System.Drawing.Point(468, 224);
+            this.eventTypeCBox.Name = "eventTypeCBox";
+            this.eventTypeCBox.Size = new System.Drawing.Size(121, 28);
+            this.eventTypeCBox.TabIndex = 44;
+            // 
+            // txtEventType
+            // 
+            this.txtEventType.Location = new System.Drawing.Point(309, 227);
+            this.txtEventType.Name = "txtEventType";
+            this.txtEventType.Size = new System.Drawing.Size(117, 26);
+            this.txtEventType.TabIndex = 43;
+            // 
+            // ManagerAddPlace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.eventTypeCBox);
             this.Controls.Add(this.txtEventType);
             this.Controls.Add(this.lblEventType);
             this.Controls.Add(this.txtPax);
@@ -181,7 +198,7 @@
             this.Controls.Add(this.txtPlaceName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnUpload);
-            this.Name = "AddPlace";
+            this.Name = "ManagerAddPlace";
             this.Text = "AddPlace";
             ((System.ComponentModel.ISupportInitialize)(this.picPlace)).EndInit();
             this.ResumeLayout(false);
@@ -202,7 +219,8 @@
         private System.Windows.Forms.TextBox txtPlaceID;
         private System.Windows.Forms.TextBox txtPax;
         private System.Windows.Forms.Label lblPax;
-        private System.Windows.Forms.TextBox txtEventType;
         private System.Windows.Forms.Label lblEventType;
+        private System.Windows.Forms.ComboBox eventTypeCBox;
+        private System.Windows.Forms.TextBox txtEventType;
     }
 }
