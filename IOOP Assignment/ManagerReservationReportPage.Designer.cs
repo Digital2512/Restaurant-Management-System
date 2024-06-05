@@ -35,6 +35,9 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbbMonth = new System.Windows.Forms.ComboBox();
+            this.cbbEvent = new System.Windows.Forms.ComboBox();
+            this.lblEvent = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResvReport)).BeginInit();
             this.SuspendLayout();
@@ -103,24 +106,58 @@
             // 
             this.cbbMonth.FormattingEnabled = true;
             this.cbbMonth.Items.AddRange(new object[] {
-            "All",
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cbbMonth.Location = new System.Drawing.Point(664, 103);
+        "All",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"});
+            this.cbbMonth.Location = new System.Drawing.Point(429, 104);
             this.cbbMonth.Name = "cbbMonth";
             this.cbbMonth.Size = new System.Drawing.Size(121, 28);
             this.cbbMonth.TabIndex = 30;
             this.cbbMonth.SelectedIndexChanged += new System.EventHandler(this.cbbMonth_SelectedIndexChanged);
+            // 
+            // cbbEvent
+            // 
+            this.cbbEvent.FormattingEnabled = true;
+            this.cbbEvent.Items.AddRange(new object[] {
+        "All",
+        "Birthday",
+        "Corporate Party",
+        "Dining",
+        "Gathering",
+        "Wedding Party"});
+            this.cbbEvent.Location = new System.Drawing.Point(682, 103);
+            this.cbbEvent.Name = "cbbEvent";
+            this.cbbEvent.Size = new System.Drawing.Size(121, 28);
+            this.cbbEvent.TabIndex = 31;
+            this.cbbEvent.TextChanged += new System.EventHandler(this.cbbEvent_TextChanged);
+            // 
+            // lblEvent
+            // 
+            this.lblEvent.AutoSize = true;
+            this.lblEvent.Location = new System.Drawing.Point(584, 107);
+            this.lblEvent.Name = "lblEvent";
+            this.lblEvent.Size = new System.Drawing.Size(92, 20);
+            this.lblEvent.TabIndex = 32;
+            this.lblEvent.Text = "Event Type:";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(365, 107);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(58, 20);
+            this.lblMonth.TabIndex = 33;
+            this.lblMonth.Text = "Month:";
             // 
             // ManagerReservationReportPage
             // 
@@ -128,6 +165,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1052, 578);
+            this.Controls.Add(this.lblMonth);
+            this.Controls.Add(this.lblEvent);
+            this.Controls.Add(this.cbbEvent);
             this.Controls.Add(this.cbbMonth);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
@@ -153,5 +193,8 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbbMonth;
+        private System.Windows.Forms.ComboBox cbbEvent;
+        private System.Windows.Forms.Label lblEvent;
+        private System.Windows.Forms.Label lblMonth;
     }
 }

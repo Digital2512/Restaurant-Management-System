@@ -28,10 +28,16 @@ namespace IOOP_Assignment
         private void ManagerReservationReportPage_Load(object sender, EventArgs e)
         {
             cbbMonth.SelectedIndex = 0;
+            cbbEvent.SelectedIndex = 0;
             LoadReservationReport();
         }
 
         private void cbbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadReservationReport();
+        }
+
+        private void cbbEvent_TextChanged(object sender, EventArgs e)
         {
             LoadReservationReport();
         }
@@ -46,16 +52,21 @@ namespace IOOP_Assignment
                     SqlCommand cmd = new SqlCommand();
                     StringBuilder query = new StringBuilder();
 
-                    query.Append("SELECT R.ReservationID, R.PlaceID, R.CustomerID, R.CustomerPax, R.ReservedDate, R.ReservedStartTime, R.ReservedEndTime, POR.EventType ");
-                    query.Append("FROM Reservation AS R ");
-                    query.Append("JOIN PlaceOfReservation AS POR ON R.PlaceID = POR.PlaceID ");
-                    query.Append("WHERE R.ReservationStatus = 'COMPLETED' ");
+                    query.Append("SELECT ReservationID, PlaceID, CustomerID, CustomerPax, ReservedDate, ReservedStartTime, ReservedEndTime, EventType, ReservationStatus FROM Reservation WHERE 1=1");
+
 
                     // Add month filter if a specific month is selected
                     if (cbbMonth.SelectedIndex > 0)
                     {
-                        query.Append("AND MONTH(R.ReservedDate) = @SelectedMonth ");
+                        query.Append(" AND MONTH(ReservedDate) = @SelectedMonth ");
                         cmd.Parameters.AddWithValue("@SelectedMonth", cbbMonth.SelectedIndex);
+                    }
+
+                    // Add event type filter if a specific event type is selected
+                    if (cbbEvent.SelectedIndex > 0)
+                    {
+                        query.Append(" AND EventType = @SelectedEventType ");
+                        cmd.Parameters.AddWithValue("@SelectedEventType", cbbEvent.SelectedItem.ToString());
                     }
 
                     cmd.CommandText = query.ToString();
@@ -96,8 +107,7 @@ namespace IOOP_Assignment
                 string searchInput = txtSearch.Text.Trim();
                 SqlConnection con = new SqlConnection(connetionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT R.ReservationID, R.PlaceID, R.CustomerID, R.CustomerPax, R.ReservedDate, R.ReservedStartTime, R.ReservedEndTime, POR.EventType FROM Reservation AS R JOIN PlaceOfReservation AS POR ON R.PlaceID = POR.PlaceID " +
-                            "WHERE R.ReservationID LIKE @SearchInput OR R.PlaceID LIKE @SearchInput OR R.CustomerID LIKE @SearchInput OR R.CustomerPax LIKE @SearchInput OR R.ReservedDate LIKE @SearchInput OR R.ReservedStartTime LIKE @SearchInput OR R.ReservedEndTime LIKE @SearchInput OR POR.EventType LIKE @SearchInput", con);
+                SqlCommand cmd = new SqlCommand("SELECT ReservationID, PlaceID, CustomerID, CustomerPax, ReservedDate, ReservedStartTime, ReservedEndTime, EventType, ReservationStatus FROM Reservation WHERE ReservationID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR CustomerPax LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput OR EventType LIKE @SearchInput OR ReservationStatus LIKE @SearchInput", con);
                 cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -111,6 +121,9 @@ namespace IOOP_Assignment
                 MessageBox.Show($"An error occurred while searching: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }
+
 

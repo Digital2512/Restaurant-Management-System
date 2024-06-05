@@ -3,7 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\",
   "Documents": [
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:AdminAddChef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -156,11 +155,17 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\yaphu\\OneDrive - Asia Pacific University\\Documents\\GitHub\\IOOP-Assignment\\IOOP Assignment\\CustomerFeedbackPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:CustomerFeedbackPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:CustomerFeedbackPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managertablespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\onedrive\\\u6587\u6863\\github\\ioop-assignment\\ioop assignment\\managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:managerpendingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|c:\\users\\qiaoqian\\onedrive\\\u6587\u6863\\github\\ioop-assignment\\ioop assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33ABFCBE-ECB3-4B6A-9EDB-A07FAF8AA28D}|IOOP Assignment.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Qiao-Qian
     }
   ],
   "DocumentGroupContainers": [
@@ -170,7 +175,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 273,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -189,7 +194,6 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AdminViewFeedback.cs",
@@ -677,17 +681,38 @@
               "ViewState": "AQIAAFUAAAAAAAAAAAAEwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T20:59:45.625Z"
-=======
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagerTablesPage.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
+              "RelativeDocumentMoniker": "ManagerTablesPage.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerTablesPage.cs",
+              "RelativeToolTip": "ManagerTablesPage.cs",
+              "ViewState": "AQIAAHsBAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T08:41:40.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ManagerPendingPage.cs",
+              "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
+              "RelativeDocumentMoniker": "ManagerPendingPage.cs",
+              "ToolTip": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\ManagerPendingPage.cs",
+              "RelativeToolTip": "ManagerPendingPage.cs",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAQwNMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T08:25:26.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\QiaoQian\\OneDrive\\\u6587\u6863\\GitHub\\IOOP-Assignment\\IOOP Assignment\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -697,7 +722,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T07:34:14.883Z",
               "EditorCaption": ""
->>>>>>> Qiao-Qian
             }
           ]
         }
