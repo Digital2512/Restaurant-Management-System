@@ -401,7 +401,7 @@ namespace IOOP_Assignment
             return resultImage;
         }
 
-        //insert image into database
+        //insert image into database, which is converted from a defined image path, which is a string of image bytes
         public bool insertOrUpdateImageToFile(string imagePath, string query)
         {
             bool result = false;
