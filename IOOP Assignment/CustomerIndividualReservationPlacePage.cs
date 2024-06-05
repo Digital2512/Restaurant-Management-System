@@ -15,6 +15,7 @@ namespace IOOP_Assignment
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string placeID;
+        public string eventType;
         public CustomerIndividualReservationPlacePage()
         {
             InitializeComponent();
@@ -33,7 +34,9 @@ namespace IOOP_Assignment
             string MinOfPax = database.getInt(query).ToString();
             this.lblPlaceMinOfPax.Text = $"{MinOfPax} People";
             query = $"SELECT EventType FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
-            this.lblPlaceEventType.Text = database.getString(query);
+            string eventTypeFromDatabase = database.getString(query);
+            this.eventType = eventTypeFromDatabase;
+            this.lblPlaceEventType.Text = eventType;
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.placeImagePBox.Image = database.getImage(query);
             
@@ -201,7 +204,7 @@ namespace IOOP_Assignment
                 if (noOfPaxChanged == true && durationTimeChanged == true && startTimeChanged == true)
                 {
                     bool reservationChanged = false;
-                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, CustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDate}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}')";
+                    query = $"INSERT INTO Reservation(ReservationID, CustomerID, PlaceName, CustomerPax, PlaceSpecialInstructions, ReservedDate, ReservationStatus, PlaceID, Duration, ReservedStartTime, ReservedEndTime, EventType) VALUES ('{reservationID}', '{customerID}', '{placeName}', '{noOfPax}', '{placeSpecialInstructions}', '{reservedDate}', 'PENDING', '{PlaceID}', {durationTime}, '{startTime}', '{endTime}', '{eventType}')";
                     if(database.insertOrUpdateValuesIntoDatabase(query) == true)
                     {
                         reservationChanged = true;

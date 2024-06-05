@@ -167,7 +167,9 @@
             "Birthday",
             "Gathering",
             "Wedding Party",
-            "Corporate Party"});
+            "Corporate Party",
+            "Dining",
+            "Private Dining"});
             this.eventsCListBox.Location = new System.Drawing.Point(832, 194);
             this.eventsCListBox.Name = "eventsCListBox";
             this.eventsCListBox.Size = new System.Drawing.Size(138, 211);

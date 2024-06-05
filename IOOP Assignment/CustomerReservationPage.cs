@@ -78,7 +78,7 @@ namespace IOOP_Assignment
             foreach(DataRow rows in searchDataTable.Rows)
             {
                 string placeID = rows["PlaceID"].ToString().ToLower();
-                string placeName = rows["Name"].ToString().ToLower();
+                string placeName = rows["PlaceName"].ToString().ToLower();
                 string placeDescription = rows["Description"].ToString().ToLower();
                 string placeMinOfPax = rows["MinOfPax"].ToString();
                 string placeEventType = rows["EventType"].ToString();
