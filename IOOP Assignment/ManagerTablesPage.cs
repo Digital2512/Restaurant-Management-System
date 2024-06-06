@@ -21,7 +21,7 @@ namespace IOOP_Assignment
             dtPickerDate.CustomFormat = "dd/MM/yyyy";
         }
 
-        public string connetionString = "DataData Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string reservationID;
 
@@ -37,6 +37,7 @@ namespace IOOP_Assignment
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewUpcoming.DataSource = dt;
+            con.Close();
 
         }
 
@@ -53,6 +54,7 @@ namespace IOOP_Assignment
                     da.Fill(dtCustomer);
                     cbbCustomerID.DataSource = dtCustomer;
                     cbbCustomerID.DisplayMember = "CustomerID";
+                    con.Close();
                 }
             }
             catch (Exception ex)
@@ -116,12 +118,13 @@ namespace IOOP_Assignment
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
+            con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'APPROVED' ORDER BY ReservedDate, ReservedStartTime", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewUpcoming.DataSource = dt;
-
+            con.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -172,6 +175,7 @@ namespace IOOP_Assignment
                     {
                         MessageBox.Show("No matching records found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    con.Close();
                 }
             }
             catch (Exception ex)
@@ -324,6 +328,7 @@ namespace IOOP_Assignment
                         {
                             MessageBox.Show("No rows deleted. The reservation might have already been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        con.Close();
                     }
                 }
             }
@@ -432,6 +437,7 @@ namespace IOOP_Assignment
 
                 HideReservationForm();
                 MessageBox.Show("Reservation Added Successfully!");
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -533,6 +539,7 @@ namespace IOOP_Assignment
                 {
                     MessageBox.Show("No changes made to the reservation.");
                 }
+                con.Close();
             }
 
             catch (Exception ex)
@@ -584,6 +591,7 @@ namespace IOOP_Assignment
                                     MessageBox.Show("No table cleared. The reservation might have already been cleared.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
+                            con.Close();
                         }
                         else
                         {
