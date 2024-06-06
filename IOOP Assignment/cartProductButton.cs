@@ -13,9 +13,10 @@ namespace IOOP_Assignment
     public partial class cartProductButton : UserControl
     {
         public string orderDetailsID;
-        public string productID;
+        public string ProductID;
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string UserID;
+
         public cartProductButton(string userID,string productID, string productName, string productSpecialInstructions, string productPrice, string productQuantity, Image productImage, string orderDetailsID)
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace IOOP_Assignment
             lblProductQuantity.Text = productQuantity;
             productImagePBox.Image = productImage;
             this.orderDetailsID = orderDetailsID;
-            this.productID = productID;
+            this.ProductID = productID;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -88,8 +89,13 @@ namespace IOOP_Assignment
         private void editBtn_Click(object sender, EventArgs e)
         {
             Database database = new Database(connectionString);
+            string query = $"SELECT OrderSpecialInstructions FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}'";
+            string orderSpecialInstructions = database.getString(query);
+            query = $"SELECT Quantity FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}'";
+            int orderQuantity = database.getInt(query);
+            
             MessageBox.Show(orderDetailsID);
-            string query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
+            query = "SELECT OrderDetailsIDs FROM Orders WHERE OrderStatus = 'ORDERING';";
             string orderDetailsIDs = database.getString(query);
 
             List<string> orderDetailsIDsList = new List<string>(orderDetailsIDs.Split(','));
@@ -102,8 +108,8 @@ namespace IOOP_Assignment
             query = $"UPDATE Orders SET OrderDetailsIDs = '{newOrderDetailsIDsString}' WHERE OrderStatus = 'ORDERING';";
             if (database.insertOrUpdateValuesIntoDatabase(query))
             {
-                MessageBox.Show(productID);
-                query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{productID}'";
+                MessageBox.Show(ProductID);
+                query = $"UPDATE Menu SET Chosen = 'TRUE' WHERE ProductID = '{ProductID}'";
                 if(database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
                     query = $"DELETE FROM OrderDetails WHERE OrderDetailsID = '{orderDetailsID}';";
@@ -114,7 +120,7 @@ namespace IOOP_Assignment
                     if (mainForm != null)
                     {
                         mainForm.Hide();
-                        CustomerIndividualProductPage customerIndividualProductPage = new CustomerIndividualProductPage(UserID);
+                        CustomerIndividualProductPage customerIndividualProductPage = new CustomerIndividualProductPage(UserID, orderSpecialInstructions, orderQuantity);
                         customerIndividualProductPage.Show();
                     }
                 }

@@ -16,7 +16,7 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string productID;
         public string UserID;
-        public CustomerIndividualProductPage(string userID)
+        public CustomerIndividualProductPage(string userID, string previousSpecialInstructions, int previousQuantity)
         {
             InitializeComponent();
             this.UserID = userID;
@@ -39,6 +39,8 @@ namespace IOOP_Assignment
             this.lblProductPrice.Text = $"RM {productPrice}";
             this.lblProductDescription.Text = productDescription;
             this.lblProductQuantity.Text = "1";
+            this.specialInstructionsRTxtBox.Text = previousSpecialInstructions;
+            this.lblProductQuantity.Text = previousQuantity.ToString();
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e)

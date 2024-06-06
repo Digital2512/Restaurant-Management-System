@@ -52,7 +52,7 @@ namespace IOOP_Assignment
                     parentForm.Close();
                 }
 
-                CustomerIndividualProductPage customerIndividualProductView = new CustomerIndividualProductPage(UserID);
+                CustomerIndividualProductPage customerIndividualProductView = new CustomerIndividualProductPage(UserID, "", 1);
                 customerIndividualProductView.Show();
             }
             catch (Exception ex)
