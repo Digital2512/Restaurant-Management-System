@@ -160,7 +160,7 @@ namespace IOOP_Assignment
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR Duration LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR EndTime LIKE @SearchInput", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR Duration LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput", con);
                     cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -396,12 +396,12 @@ namespace IOOP_Assignment
                 }
 
                 // Fetch the place name
-                SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlaceOfReservation WHERE PlaceID = @PlaceID", con);
+                SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = @PlaceID", con);
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
                 //Fetch the event type
-                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlaceOfReservation WHERE PlaceID = '{placeID}'", con);
+                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
                 // Insert the reservation into the database
@@ -503,12 +503,12 @@ namespace IOOP_Assignment
                 string oldPlaceID = (string)oldPlaceIDCommand.ExecuteScalar();
 
                 // Fetch the place name
-                SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlaceOfReservation WHERE PlaceID = @PlaceID", con);
+                SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = @PlaceID", con);
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
                 //Fetch the event type
-                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlaceOfReservation WHERE PlaceID = '{placeID}'", con);
+                SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
                 // Update the reservation into the database

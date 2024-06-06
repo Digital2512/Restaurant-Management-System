@@ -88,7 +88,7 @@ namespace IOOP_Assignment
             string noOfPaxString = noOfPaxTxtBox.Text;
             noOfPax = int.Parse(noOfPaxString);
             string customerID = database.getString(query);
-            string reservationID = database.GenerateUniqueID("R", "ReservationID", "Reservation");
+            string reservationID = database.GenerateUniqueID("RSV", "ReservationID", "Reservation");
             DateTime reservedDateTime = reservedDateTimePicker.Value;
             string reservedDate = reservedDateTime.ToString("yyyy-MM-dd");
             query = $"SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = '{PlaceID}'";

@@ -27,7 +27,7 @@ namespace IOOP_Assignment
             password = database.getString(query);
             lblPasswordValue.Text = "********";
             query = $"SELECT Birthday FROM Users WHERE UserID = '{UserID}';";
-            string birthdayDateTimeString = database.getDateTime(query).ToString();
+            string birthdayDateTimeString = database.getDateTime(query).ToShortDateString();
             if (birthdayDateTimeString == DateTime.MinValue.ToString())
             {
                 lblBirthday.Text = DateTime.Now.ToString();
