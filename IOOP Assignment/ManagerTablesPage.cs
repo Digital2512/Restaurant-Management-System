@@ -417,7 +417,7 @@ namespace IOOP_Assignment
                 cmd.Parameters.AddWithValue("@Duration", cbbDuration.Text);
                 cmd.Parameters.AddWithValue("@PlaceSpecialInstructions", richtxtInstruction.Text);
                 cmd.ExecuteNonQuery();
-
+                
                 // Update ReservationStatus
                 SqlCommand updateCmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'APPROVED' WHERE ReservationID = @ReservationID", con);
                 updateCmd.Parameters.AddWithValue("@ReservationID", reservationID);

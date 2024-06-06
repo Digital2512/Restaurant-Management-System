@@ -128,7 +128,7 @@ namespace IOOP_Assignment
                 Cuisine, 
                 ChefID 
             FROM 
-                SalesReport1
+                SalesReport
             WHERE 
                 (@SelectedChefID IS NULL OR ChefID = @SelectedChefID) AND
                 (@SelectedMonth IS NULL OR MONTH(OrderDateTime) = @SelectedMonth) AND
