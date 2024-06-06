@@ -386,7 +386,7 @@ namespace IOOP_Assignment
 
                 if (count > 0)
                 {
-                    Manager.ShowAvailableTimeSlots(placeID, reservedDate);
+                    Manager.ShowReservedTimeSlots(placeID, reservedDate);
                     return;
                 }
 
@@ -487,7 +487,7 @@ namespace IOOP_Assignment
 
                 if (count > 0)
                 {
-                    MessageBox.Show("The selected place is already booked for the chosen time and date. Please select a different time or place.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Manager.ShowReservedTimeSlots(placeID, reservedDate);
                     return;
                 }
 

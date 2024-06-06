@@ -35,20 +35,6 @@ namespace IOOP_Assignment
 
         }
 
-        public static string SelectAndDisplayImage(PictureBox pictureBox)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg)|*.jpg|All files (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                string imgLocation = dialog.FileName;
-                pictureBox.ImageLocation = imgLocation;
-                return imgLocation;
-            }
-
-            return null; // User cancelled the dialog
-        }
 
         //managermenu
         public string GenerateProductID()
@@ -184,7 +170,6 @@ namespace IOOP_Assignment
                 command.Parameters.AddWithValue("@PlaceID ", placeID);
                 SqlDataReader reader = command.ExecuteReader();
 
-                // 读取查询结果
                 string reservationID = "";
                 while (reader.Read())
                 {
@@ -194,7 +179,6 @@ namespace IOOP_Assignment
                 }
                 reader.Close();
 
-                // 更新数据库中的 reservationid
                 if (!string.IsNullOrEmpty(newReservationID))
                 {
                     // get old reservationid
@@ -349,7 +333,7 @@ namespace IOOP_Assignment
             }
         }
 
-        public static void ShowAvailableTimeSlots(string placeID, DateTime reservedDate)
+        public static void ShowReservedTimeSlots(string placeID, DateTime reservedDate)
         {
             StringBuilder messageBuilder = new StringBuilder();
 
