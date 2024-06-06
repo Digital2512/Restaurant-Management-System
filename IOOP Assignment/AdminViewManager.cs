@@ -24,11 +24,7 @@ namespace IOOP_Assignment
             manager = new Admin_Manager(conectionString);
         }
 
-        private void AdminViewManager_Load(object sender, EventArgs e)
-        {
-            FillData();
-            FillComboSearchCode();
-        }
+
 
         private void FillData(string managerId = null)
         {
@@ -79,6 +75,12 @@ namespace IOOP_Assignment
             AdminManageUsers mu = new AdminManageUsers();
             this.Close();
             mu.ShowDialog();
+        }
+
+        private void AdminViewManager_Load_1(object sender, EventArgs e)
+        {
+            FillData();
+            FillComboSearchCode();
         }
     }
 }

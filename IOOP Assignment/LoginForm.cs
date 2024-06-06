@@ -49,7 +49,7 @@ namespace IOOP_Assignment
                         {
                             switch (role)
                             {
-                                case "Admin":
+                                case "ADMIN":
                                     loginButton.BackColor = Color.LimeGreen;
                                     loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Admin");
@@ -62,7 +62,7 @@ namespace IOOP_Assignment
                                     AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();
                                     break;
-                                case "Manager":
+                                case "MANAGER":
                                     loginButton.BackColor = Color.LimeGreen;
                                     loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Manager");
@@ -75,7 +75,7 @@ namespace IOOP_Assignment
                                     ManagerHomePage managerHomePage = new ManagerHomePage();
                                     managerHomePage.Show();
                                     break;
-                                case "Chef":
+                                case "CHEF":
                                     loginButton.BackColor = Color.LimeGreen;
                                     loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Chef");
@@ -89,7 +89,7 @@ namespace IOOP_Assignment
                                     chefHomePage.Show();
                                     
                                     break;
-                                case "Customer":
+                                case "CUSTOMER":
                                     loginButton.BackColor = Color.LimeGreen;
                                     loginButton.Text = " ٩(◕‿◕)۶";
                                     MessageBox.Show("Login Successful. User's Role: Customer");

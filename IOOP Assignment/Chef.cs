@@ -20,7 +20,7 @@ namespace IOOP_Assignment
         private string skills;
         private string chefPositions;
 
-        static SqlConnection con = new SqlConnection("");
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
@@ -92,7 +92,7 @@ namespace IOOP_Assignment
             if (rowsAffected > 0)
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand("Insert into Users(UserID,role,LoggedIn) values(@id,'chef','TRUE')", con);
+                SqlCommand cmd2 = new SqlCommand("Insert into Users(UserID,role,LoggedIn) values(@id,'Chef','TRUE')", con);
                 cmd2.Parameters.AddWithValue("@id", newID);
 
                 int usersRowAffected = cmd2.ExecuteNonQuery();

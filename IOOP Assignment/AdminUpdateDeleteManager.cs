@@ -149,16 +149,17 @@ namespace IOOP_Assignment
             }
         }
 
-        private void AdminUpdateDeleteManager_Load(object sender, EventArgs e)
-        {
-            FillComboSearchCode();
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
             this.Close();
             mu.ShowDialog();
+        }
+
+        private void AdminUpdateDeleteManager_Load_1(object sender, EventArgs e)
+        {
+            FillComboSearchCode();
         }
     }
 }

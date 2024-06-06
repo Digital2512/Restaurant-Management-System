@@ -50,27 +50,16 @@ namespace IOOP_Assignment
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
-            // Use 'using' to ensure the connection is properly disposed of
-            using (SqlConnection con = new SqlConnection(connetionString))
-            {
-                // Open the connection
-                con.Open();
-
-                // Create the SQL command to update the LoggedIn status
-                string query = "UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = (SELECT UserID FROM Users WHERE LoggedIn = 'TRUE')";
-                SqlCommand updateUserCmd = new SqlCommand(query, con);
-
-                // Execute the command
-                updateUserCmd.ExecuteNonQuery();
-            }
-
-            // Hide the current form
-            this.Hide();
-
-            // Show the login form
-            loginForm frmLogin = new loginForm();
-            frmLogin.ShowDialog();
+            this.Visible = false;
+            loginForm loginForm = new loginForm();
+            loginForm.Visible = true;
+            Database database = new Database(connetionString);
+            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
+            string userID = database.getString(query);
+            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
+            database.insertOrUpdateValuesIntoDatabase(query);
+            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
+            database.insertOrUpdateValuesIntoDatabase(query);
 
         }
     }

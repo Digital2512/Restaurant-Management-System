@@ -88,7 +88,7 @@ namespace IOOP_Assignment
             {
                 // If manager insertion was successful, insert into the 'Users' table
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,LoggedIn) VALUES(@id, 'manager','TRUE')", con);
+                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,LoggedIn) VALUES(@id, 'Manager','TRUE')", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
 
 

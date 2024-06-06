@@ -33,7 +33,15 @@ namespace IOOP_Assignment
             txtPassword.Text = database.getString(query);
 
             query = $"Select Birthday from Users where UserID = '{userID}';";
-            dtpBirthday.Text = database.getDateTime(query).ToString();
+            DateTime birthday = database.getDateTime(query);
+                if (birthday>= dtpBirthday.MinDate && birthday<= dtpBirthday.MaxDate)
+                {
+                    dtpBirthday.Value = birthday;
+                }
+                else
+                {
+                    dtpBirthday.Value = dtpBirthday.MinDate;
+                }
 
             query = $"Select Gender from Users where UserID = '{userID}';";
             string gender = database.getString(query);
@@ -60,7 +68,7 @@ namespace IOOP_Assignment
             string userID = database.getString(query);
             string FullName = txtFullName.Text;
             string Password = txtPassword.Text;
-            string Birthday = dtpBirthday.Text;
+            DateTime Birthday = dtpBirthday.Value;
             string Gender = rdbMale.Checked ? "Male" : rdbFemale.Checked ? "Female" : "";
 
             byte[] Image = null;
@@ -69,7 +77,7 @@ namespace IOOP_Assignment
                 Image = ConvertImageToByteArray(pboxAdmin.Image);
             }
 
-            query = $"Update Users Set fullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, Image= @profile where UserID =@userID";
+            query = $"Update Users Set fullName= @fn, Password = @pw, Birthday = @birthday, Gender = @gender, ProfileImage= @profile where UserID =@userID";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

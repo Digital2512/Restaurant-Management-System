@@ -18,7 +18,7 @@ namespace IOOP_Assignment
          { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         private static readonly string[] Categories =
-        { "Japanese", "Western", "Korea", "Beverages"};
+        { "Japanese", "Western", "Korean", "Beverages"};
         public AdminViewSalesReport()
         {
             InitializeComponent();
@@ -116,7 +116,7 @@ namespace IOOP_Assignment
 
         private DataTable GetSalesReportData(int? month, string category, string chefId)
         {
-            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=IOOPDatabase1;Integrated Security=True";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             string query = @"
             SELECT 
                 ProductID, 

@@ -77,16 +77,16 @@ namespace IOOP_Assignment
             MessageBox.Show(obj1.addManager());
         }
 
-        private void AdminAddManager_Load(object sender, EventArgs e)
-        {
-            lblManagerID.Text = AutoNewId();
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminManageUsers mu = new AdminManageUsers();
             this.Hide();
             mu.Show();
+        }
+
+        private void AdminAddManager_Load_1(object sender, EventArgs e)
+        {
+            lblManagerID.Text = AutoNewId();
         }
     }
 }
