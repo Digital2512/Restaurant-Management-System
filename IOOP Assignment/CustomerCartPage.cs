@@ -108,7 +108,7 @@ namespace IOOP_Assignment
                         query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                         Image productImage = database.getImage(query);
 
-                        var cartProductButton = new cartProductButton(UserID, productID, productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
+                        var cartProductButton = new cartProductButton(UserID, productID, productName, productSpecialInstructions, intProductPrice, productQuantity, productImage, orderDetailsID);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);
                     }
                 }

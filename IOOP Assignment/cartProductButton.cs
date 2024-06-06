@@ -17,15 +17,17 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string UserID;
 
-        public cartProductButton(string userID,string productID, string productName, string productSpecialInstructions, string productPrice, string productQuantity, Image productImage, string orderDetailsID)
+        public cartProductButton(string userID,string productID, string productName, string productSpecialInstructions, decimal productPrice, string productQuantity, Image productImage, string orderDetailsID)
         {
             InitializeComponent();
             this.UserID = userID;
             lblProductID.Text = productID;
             lblProductName.Text = productName;
             lblProductSpecialInstructions.Text = productSpecialInstructions;
-            lblProductPrice.Text = productPrice;
             lblProductQuantity.Text = productQuantity;
+            int productQuantityint = int.Parse(productQuantity);
+            decimal totalIndividualProductPrice = productPrice * productQuantityint; 
+            lblProductPrice.Text = $"RM {totalIndividualProductPrice.ToString()}";
             productImagePBox.Image = productImage;
             this.orderDetailsID = orderDetailsID;
             this.ProductID = productID;
