@@ -50,7 +50,7 @@ namespace IOOP_Assignment
 
             this.BeginInvoke((MethodInvoker)delegate
             {
-                if (orderStatus == "IN PROGRESS")
+                if (orderStatus == "IN_PROGRESS")
                 {
                     button.BackColor = Color.Red;
                 }
@@ -254,14 +254,14 @@ namespace IOOP_Assignment
                         // Calculate estimated time left (10 minutes per product)
                         int estimatedTimeLeft = totalQuantity * 10;
 
-                        var result = MessageBox.Show($"Do you want to update the order status to 'IN PROGRESS'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var result = MessageBox.Show($"Do you want to update the order status to 'IN_3PROGRESS'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
                             string updateQuery = "UPDATE Orders SET OrderStatus = 'IN_PROGRESS', EstimatedTimeLeft = @EstimatedTimeLeft, ChefID = @ChefID WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = {
                                 new SqlParameter("@OrderID", orderID),
-                                new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft + " minutes"),
+                                new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft),
                                 new SqlParameter("@ChefID", this.userid)
                             };
                             ExecuteSqlCommand(updateQuery, updateParameters);
@@ -281,7 +281,7 @@ namespace IOOP_Assignment
                         {
                             DeductInventory(productID, quantity);
 
-                            string updateQuery = "UPDATE Orders SET OrderStatus = 'COMPLETED', EstimatedTimeLeft = '0 minutes' WHERE OrderID = @OrderID";
+                            string updateQuery = "UPDATE Orders SET OrderStatus = 'COMPLETED', EstimatedTimeLeft = '0' WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = { new SqlParameter("@OrderID", orderID) };
                             ExecuteSqlCommand(updateQuery, updateParameters);
                             MessageBox.Show("Order status updated to Completed.");
@@ -399,7 +399,7 @@ namespace IOOP_Assignment
         private void LoadChefOrders()
         {
             comboBoxChefReceived.Items.Clear();
-            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN PROGRESS')";
+            string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS')";
             SqlParameter[] parameters = { new SqlParameter("@ChefID", this.userid) };
 
             DataTable dataTable = ExecuteSqlQuery(query, parameters);

@@ -136,9 +136,6 @@ namespace IOOP_Assignment
 
                         if (rowsAffected > 0)
                         {
-                            // Call the method to handle reservation ID updates related to the place
-                            Manager.GetReservationIdByPlaceId(con, placeID, newReservationId);
-
                             RefreshDataGridView();
                             HideApprovalForm();
                             MessageBox.Show("Reservation Approved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

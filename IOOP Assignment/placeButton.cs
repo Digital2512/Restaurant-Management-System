@@ -15,9 +15,11 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public string PlaceID { get; set; }
-        public placeButton(string placeID, string placeName, string placeMinOfPax, string placeDescription, string placeEvents, Image placeImage)
+        public string UserID;
+        public placeButton(string userID, string placeID, string placeName, string placeMinOfPax, string placeDescription, string placeEvents, Image placeImage)
         {
             InitializeComponent();
+            this.UserID = userID;
             this.lblPlaceID.Text = placeID;
             this.lblPlaceName.Text = placeName;
             this.lblDescriptions.Text = placeDescription;
@@ -47,7 +49,7 @@ namespace IOOP_Assignment
                     parentForm.Close();
                 }
 
-                CustomerIndividualReservationPlacePage customerIndividualReservationPlace = new CustomerIndividualReservationPlacePage();
+                CustomerIndividualReservationPlacePage customerIndividualReservationPlace = new CustomerIndividualReservationPlacePage(UserID);
                 customerIndividualReservationPlace.Show();
             }
             catch (Exception ex)

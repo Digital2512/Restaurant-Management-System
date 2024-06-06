@@ -67,7 +67,7 @@
             // 
             this.lblProductPrice.AutoSize = true;
             this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblProductPrice.Location = new System.Drawing.Point(556, 60);
+            this.lblProductPrice.Location = new System.Drawing.Point(524, 60);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(80, 25);
             this.lblProductPrice.TabIndex = 3;

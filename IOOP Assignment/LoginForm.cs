@@ -104,7 +104,7 @@ namespace IOOP_Assignment
                                     secondcmd.ExecuteNonQuery();
 
                                     this.Hide();
-                                    CustomerHomePage customerHomePage = new CustomerHomePage();
+                                    CustomerHomePage customerHomePage = new CustomerHomePage(username);
                                     customerHomePage.Show();
                                     break;
                             }

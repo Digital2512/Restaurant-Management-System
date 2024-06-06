@@ -15,14 +15,14 @@ namespace IOOP_Assignment
     public partial class CustomerUpdateProfilePage : Form
     {
         public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public CustomerUpdateProfilePage()
+        public string UserID;
+        public CustomerUpdateProfilePage(string userID)
         {
             InitializeComponent();
             Database database = new Database(ConnectionString);
-            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-            string userID = database.getString(query);
+            this.UserID = userID;
             lblUserID.Text = userID;
-            query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
+            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID;
             query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
@@ -141,7 +141,7 @@ namespace IOOP_Assignment
                 {
                     MessageBox.Show("Profile updated successfully!");
                     this.Hide();
-                    CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+                    CustomerProfilePage customerProfilePage = new CustomerProfilePage(UserID);
                     customerProfilePage.Show();
                 }
                 else
@@ -191,7 +191,7 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerProfilePage customerProfilePage = new CustomerProfilePage();
+            CustomerProfilePage customerProfilePage = new CustomerProfilePage(UserID);
             customerProfilePage.Show();
         }
     }

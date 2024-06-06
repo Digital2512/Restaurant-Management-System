@@ -8,6 +8,7 @@ namespace IOOP_Assignment
     public partial class CustomerOrderPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string UserID;
 
         private decimal subtotalAmount;
         public decimal getSetSubtotalAmount { get { return subtotalAmount; } set { subtotalAmount = value; } }
@@ -17,9 +18,10 @@ namespace IOOP_Assignment
 
         private decimal totalAmount;
         public decimal getSetTotalAmount { get { return totalAmount; } set { totalAmount = value; } }
-        public CustomerOrderPage()
+        public CustomerOrderPage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             Database database = new Database(connectionString);
             string query = "SELECT ProductID, Name, Price, Description FROM Menu";
 
@@ -35,7 +37,7 @@ namespace IOOP_Assignment
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                 Image productImage = database.getImage(query);
 
-                var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
+                var productButton = new productButton(UserID, productID, productName, productPrice, productDescription, productImage);
 
                 productDisplayFlowPnl.Controls.Add(productButton);
             }
@@ -116,7 +118,7 @@ namespace IOOP_Assignment
                 query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                 Image productImage = database.getImage(query);
 
-                var productButton = new productButton(productID, productName, productPrice, productDescription, productImage);
+                var productButton = new productButton(UserID, productID, productName, productPrice, productDescription, productImage);
 
                 productDisplayFlowPnl.Controls.Add(productButton);
             }
@@ -125,14 +127,14 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerHomePage customerHomePage = new CustomerHomePage();
+            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
             customerHomePage.Show();
         }
 
         private void cartButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerCartPage customerCartPage = new CustomerCartPage();
+            CustomerCartPage customerCartPage = new CustomerCartPage(UserID);
             customerCartPage.Show();       
         }
 

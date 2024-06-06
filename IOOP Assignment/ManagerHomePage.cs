@@ -69,8 +69,8 @@ namespace IOOP_Assignment
             this.Hide();
 
             // Show the login form
-            //loginForm frmLogin = new loginForm();
-            // frmLogin.ShowDialog();
+            loginForm frmLogin = new loginForm();
+            frmLogin.ShowDialog();
 
         }
     }

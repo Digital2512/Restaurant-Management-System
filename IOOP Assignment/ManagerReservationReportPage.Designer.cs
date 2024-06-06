@@ -106,19 +106,19 @@
             // 
             this.cbbMonth.FormattingEnabled = true;
             this.cbbMonth.Items.AddRange(new object[] {
-        "All",
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"});
+            "All",
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cbbMonth.Location = new System.Drawing.Point(429, 104);
             this.cbbMonth.Name = "cbbMonth";
             this.cbbMonth.Size = new System.Drawing.Size(121, 28);
@@ -129,12 +129,13 @@
             // 
             this.cbbEvent.FormattingEnabled = true;
             this.cbbEvent.Items.AddRange(new object[] {
-        "All",
-        "Birthday",
-        "Corporate Party",
-        "Dining",
-        "Gathering",
-        "Wedding Party"});
+            "All",
+            "Birthday",
+            "Corporate Party",
+            "Private Dining",
+            "Dining",
+            "Gathering",
+            "Wedding Party"});
             this.cbbEvent.Location = new System.Drawing.Point(682, 103);
             this.cbbEvent.Name = "cbbEvent";
             this.cbbEvent.Size = new System.Drawing.Size(121, 28);

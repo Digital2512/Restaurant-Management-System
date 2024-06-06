@@ -226,9 +226,9 @@ namespace IOOP_Assignment
                     txtProductDesc.Text = row.Cells["Description"].Value.ToString();
                     txtProductPrice.Text = row.Cells["Price"].Value.ToString();
                     cbbCuisine.Text = row.Cells["Cuisine"].Value.ToString();
-                    //picMenu.Image = Properties.Resources.FoodIcon;
+                    /*picMenu.Image = Properties.Resources.FoodIcon;
 
-                    /*if (row.Cells["Image"].Value != DBNull.Value)
+                    if (row.Cells["Image"].Value != DBNull.Value)
                     {
                         byte[] imageData = (byte[])row.Cells["Image"].Value;
                         using (MemoryStream memoryStream = new MemoryStream(imageData))

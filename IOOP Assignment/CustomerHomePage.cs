@@ -16,19 +16,16 @@ namespace IOOP_Assignment
         public string customerID;
         public string reservationID;
         public string orderID;
-
-        CustomerReservationPage customerReservationPage = new CustomerReservationPage();
-        CustomerOrderPage customerOrderPage = new CustomerOrderPage();
-        CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage();
-        CustomerProfilePage customerProfilePage = new CustomerProfilePage();
-        loginForm loginForm = new loginForm();
-        public CustomerHomePage()
+        public string UserID;
+        
+        public CustomerHomePage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             refreshReservationBtn.Visible = false;
             refreshOrderBtn.Visible = false;
             Database database = new Database(ConnectionString);
-            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}';";
             customerID = database.getString(query);
             query = $"SELECT FullName FROM Users WHERE UserID = (SELECT UserID FROM Customer WHERE CustomerID = '{customerID}');";
             string customerName = database.getString(query);
@@ -216,23 +213,27 @@ namespace IOOP_Assignment
         private void reservationBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            CustomerReservationPage customerReservationPage = new CustomerReservationPage(UserID);
             customerReservationPage.Visible = true;
         }
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            CustomerOrderPage customerOrderPage = new CustomerOrderPage(UserID);
             customerOrderPage.Visible = true;
         }
 
         private void feedbackBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            CustomerFeedbackPage customerFeedbackPage = new CustomerFeedbackPage(UserID);
             customerFeedbackPage.Visible = true;
         }
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            loginForm loginForm = new loginForm();
             loginForm.Visible = true;
             Database database = new Database(ConnectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
@@ -247,6 +248,7 @@ namespace IOOP_Assignment
         private void profileBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            CustomerProfilePage customerProfilePage = new CustomerProfilePage(UserID);
             customerProfilePage.Visible = true;
         }
 
