@@ -15,12 +15,14 @@ namespace IOOP_Assignment
     {
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public CustomerFeedbackPage()
+        public string UserID;
+        public CustomerFeedbackPage(string userID)
         {
             InitializeComponent();
             Database database;
+            this.UserID = userID;
             database = new Database(connectionString);
-            string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";
+            string query = $"SELECT CustomerID FROM Customer WHERE UserID = '{UserID}';";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID.ToString();
         }
@@ -43,7 +45,7 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("Feedback Sent! ");
                 this.Hide();
-                CustomerHomePage customerHomePage = new CustomerHomePage();
+                CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
                 customerHomePage.Show();
             }
             else
@@ -60,7 +62,7 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerHomePage customerHomePage = new CustomerHomePage();
+            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
             customerHomePage.Show();
         }
     }

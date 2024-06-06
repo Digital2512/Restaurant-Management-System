@@ -15,6 +15,8 @@ namespace IOOP_Assignment
         //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
+        public string UserID;
+
         private decimal subtotalAmount;
         public decimal getSetSubtotalAmount { get { return subtotalAmount; } set { subtotalAmount = value; } }
 
@@ -24,9 +26,10 @@ namespace IOOP_Assignment
         private decimal totalAmount;
         public decimal getSetTotalAmount { get { return totalAmount; } set { totalAmount = value; } }
 
-        public CustomerCartPage()
+        public CustomerCartPage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             loadCartDetails();
         }
         private void payBtn_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace IOOP_Assignment
                     if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                     {
                         this.Hide();
-                        CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment();
+                        CustomerSuccessfulPayment customerSuccessfulPayment = new CustomerSuccessfulPayment(UserID);
                         customerSuccessfulPayment.Show();
                     }
                 }
@@ -67,7 +70,7 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerOrderPage customerOrderPage = new CustomerOrderPage();
+            CustomerOrderPage customerOrderPage = new CustomerOrderPage(UserID);
             customerOrderPage.Show();
         }
 
@@ -105,7 +108,7 @@ namespace IOOP_Assignment
                         query = $"SELECT ProductImage FROM Menu WHERE ProductID = '{productID}';";
                         Image productImage = database.getImage(query);
 
-                        var cartProductButton = new cartProductButton(productID, productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
+                        var cartProductButton = new cartProductButton(UserID, productID, productName, productSpecialInstructions, productPrice, productQuantity, productImage, orderDetailsID);
                         cartProductShowFlowPnl.Controls.Add(cartProductButton);
                     }
                 }

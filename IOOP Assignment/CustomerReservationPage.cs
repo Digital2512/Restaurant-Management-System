@@ -13,9 +13,11 @@ namespace IOOP_Assignment
     public partial class CustomerReservationPage : Form
     {
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public CustomerReservationPage()
+        public string UserID;
+        public CustomerReservationPage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             Database database = new Database(connectionString);
             string query = "SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL";
             DataTable placeDataTable = database.getDataTable(query);
@@ -31,7 +33,7 @@ namespace IOOP_Assignment
                 query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
                 Image PlaceImage = database.getImage(query);
 
-                var placeButton = new placeButton(placeID, placeName, placeMinofPax, placeDescription, placeEventType, PlaceImage);
+                var placeButton = new placeButton(UserID, placeID, placeName, placeMinofPax, placeDescription, placeEventType, PlaceImage);
 
                 placeDisplayFlowPnl.Controls.Add(placeButton);
             }
@@ -85,7 +87,7 @@ namespace IOOP_Assignment
                 query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE PlaceID = '{placeID}';";
                 Image PlaceImage = database.getImage(query);
 
-                var placeButton = new placeButton(placeID, placeName, placeMinOfPax, placeDescription, placeEventType, PlaceImage);
+                var placeButton = new placeButton(UserID, placeID, placeName, placeMinOfPax, placeDescription, placeEventType, PlaceImage);
 
                 placeDisplayFlowPnl.Controls.Add(placeButton);
             }
@@ -94,7 +96,7 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerHomePage customerHomePage = new CustomerHomePage();
+            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
             customerHomePage.Show();
         }
     }

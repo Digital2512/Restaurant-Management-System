@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
-{
+{ 
     public partial class CustomerProfilePage : Form
     {
         public string ConnectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string UserID;
         public string password;
-        public CustomerProfilePage()
+        public CustomerProfilePage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             Database database = new Database(ConnectionString);
-            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-            string userID = database.getString(query);
-            lblUserID.Text = userID;
-            query = $"SELECT FullName FROM Users WHERE UserID = '{userID}';";
+            lblUserID.Text = UserID;
+            string query = $"SELECT FullName FROM Users WHERE UserID = '{UserID}';";
             lblFullName.Text = database.getString(query);
-            query = $"SELECT Password FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Password FROM Users WHERE UserID = '{UserID}';";
             password = database.getString(query);
             lblPasswordValue.Text = "********";
-            query = $"SELECT Birthday FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Birthday FROM Users WHERE UserID = '{UserID}';";
             string birthdayDateTimeString = database.getDateTime(query).ToString();
             if (birthdayDateTimeString == DateTime.MinValue.ToString())
             {
@@ -36,9 +36,9 @@ namespace IOOP_Assignment
             {
                 lblBirthday.Text = birthdayDateTimeString;
             }
-            query = $"SELECT CustomerID FROM Customer WHERE UserID = '{userID}'";
+            query = $"SELECT CustomerID FROM Customer WHERE UserID = '{UserID}'";
             lblCustomerID.Text = database.getString(query);
-            query = $"SELECT Gender FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT Gender FROM Users WHERE UserID = '{UserID}';";
             string gender = database.getString(query);
             if (gender == "MALE")
             {
@@ -56,7 +56,7 @@ namespace IOOP_Assignment
                 femaleRBtn.Checked = false;
                 ratherNotSayRBtn.Checked = true;
             }
-            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
+            query = $"SELECT ProfileImage FROM Users WHERE UserID = '{UserID}';";
             profilePBox.Image = database.getImage(query);
             maleRBtn.Enabled = false;
             femaleRBtn.Enabled = false;
@@ -72,7 +72,7 @@ namespace IOOP_Assignment
         private void updateBtn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            CustomerUpdateProfilePage customerUpdateProfilePage = new CustomerUpdateProfilePage();
+            CustomerUpdateProfilePage customerUpdateProfilePage = new CustomerUpdateProfilePage(UserID);
             customerUpdateProfilePage.Visible = true;
         }
 
@@ -94,7 +94,7 @@ namespace IOOP_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerHomePage customerHomePage = new CustomerHomePage();
+            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
             customerHomePage.Show();
         }
     }

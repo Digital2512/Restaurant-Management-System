@@ -15,9 +15,11 @@ namespace IOOP_Assignment
         public string orderDetailsID;
         public string productID;
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
-        public cartProductButton(string productID, string productName, string productSpecialInstructions, string productPrice, string productQuantity, Image productImage, string orderDetailsID)
+        public string UserID;
+        public cartProductButton(string userID,string productID, string productName, string productSpecialInstructions, string productPrice, string productQuantity, Image productImage, string orderDetailsID)
         {
             InitializeComponent();
+            this.UserID = userID;
             lblProductID.Text = productID;
             lblProductName.Text = productName;
             lblProductSpecialInstructions.Text = productSpecialInstructions;
@@ -69,7 +71,7 @@ namespace IOOP_Assignment
                 if(mainForm != null)
                 {
                     mainForm.Hide();
-                    CustomerCartPage CustomerCartPage = new CustomerCartPage();
+                    CustomerCartPage CustomerCartPage = new CustomerCartPage(UserID);
                     CustomerCartPage.Show();
                 }
                 else
@@ -112,7 +114,7 @@ namespace IOOP_Assignment
                     if (mainForm != null)
                     {
                         mainForm.Hide();
-                        CustomerIndividualProductPage customerIndividualProductPage = new CustomerIndividualProductPage();
+                        CustomerIndividualProductPage customerIndividualProductPage = new CustomerIndividualProductPage(UserID);
                         customerIndividualProductPage.Show();
                     }
                 }

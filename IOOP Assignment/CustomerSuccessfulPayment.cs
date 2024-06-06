@@ -12,15 +12,17 @@ namespace IOOP_Assignment
 {
     public partial class CustomerSuccessfulPayment : Form
     {
-        public CustomerSuccessfulPayment()
+        public string UserID;
+        public CustomerSuccessfulPayment(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
         }
 
         private void homePageBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerHomePage customerHomePage = new CustomerHomePage();
+            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
             customerHomePage.Show();
         }
     }

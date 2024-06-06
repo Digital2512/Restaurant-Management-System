@@ -15,9 +15,11 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private string ProductID { get; set; }
-        public productButton(string productID,string productName, string productPrice, string productDescription, Image productImage)
+        public string UserID;
+        public productButton(string userID, string productID,string productName, string productPrice, string productDescription, Image productImage)
         {
             InitializeComponent();
+            this.UserID = userID;
             this.lblProductID.Text = productID;
             this.lblProductName.Text = productName;
             this.lblProductPrice.Text = productPrice;
@@ -50,7 +52,7 @@ namespace IOOP_Assignment
                     parentForm.Close();
                 }
 
-                CustomerIndividualProductPage customerIndividualProductView = new CustomerIndividualProductPage();
+                CustomerIndividualProductPage customerIndividualProductView = new CustomerIndividualProductPage(UserID);
                 customerIndividualProductView.Show();
             }
             catch (Exception ex)

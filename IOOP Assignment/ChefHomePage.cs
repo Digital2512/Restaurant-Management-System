@@ -48,7 +48,7 @@ namespace IOOP_Assignment
         private void button1_Click(object sender, EventArgs e)
         {
             loginForm loginForm = new loginForm();
-            string connectionString = "";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             this.Visible = false;
             loginForm.Show();
             Database database = new Database(connectionString);

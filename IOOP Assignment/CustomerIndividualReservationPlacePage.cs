@@ -16,9 +16,11 @@ namespace IOOP_Assignment
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string placeID;
         public string eventType;
-        public CustomerIndividualReservationPlacePage()
+        public string UserID;
+        public CustomerIndividualReservationPlacePage(string userID)
         {
             InitializeComponent();
+            this.UserID = userID;
             startTimeCBox.Enabled = false;
             endTimeCBox.Enabled = false;
 
@@ -216,7 +218,7 @@ namespace IOOP_Assignment
                         query = $"UPDATE PlacesOfReservation SET Chosen = 'FALSE' WHERE PlaceID = '{PlaceID}';";
                         if (database.insertOrUpdateValuesIntoDatabase(query) == true) {
                             this.Hide();
-                            CustomerHomePage customerHomePage = new CustomerHomePage();
+                            CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
                             customerHomePage.Show();
                         }
                         else if(database.insertOrUpdateValuesIntoDatabase(query) == true)
@@ -257,7 +259,7 @@ namespace IOOP_Assignment
             if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
                 this.Hide();
-                CustomerReservationPage customerReservationPage = new CustomerReservationPage();
+                CustomerReservationPage customerReservationPage = new CustomerReservationPage(UserID);
                 customerReservationPage.Show();
             }
             else if (database.insertOrUpdateValuesIntoDatabase(query) == true)
