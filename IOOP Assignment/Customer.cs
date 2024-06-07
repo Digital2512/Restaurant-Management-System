@@ -86,6 +86,17 @@ namespace IOOP_Assignment
                 int userRowsAffected = cmd2.ExecuteNonQuery();
                 con.Close();
 
+                if(userRowsAffected > 0)
+                {
+                    con.Open();
+                    SqlCommand cmd3 = new SqlCommand("insert into Customer(CustomerID, UserID) values (@customerid,@userid)", con);
+                    cmd3.Parameters.AddWithValue("@customerid", newId);
+                    cmd3.Parameters.AddWithValue("@userid", newId);
+
+                    int customerRowsAffected = cmd3.ExecuteNonQuery();
+                    con.Close();
+                }
+
                 if (userRowsAffected > 0)
                     status = "Customer Registration Successful.";
                 else
