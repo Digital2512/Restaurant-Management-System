@@ -31,10 +31,10 @@ namespace IOOP_Assignment
             string customerName = database.getString(query);
             lblWelcome.Text = $"Welcome,{customerName}";
 
-            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus = 'PENDING';";
-            orderID = database.getString(query);
-            query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
-            reservationID = database.getString(query);
+            query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND OrderStatus IN ('PENDING', 'IN_PROGRESS', 'COMPLETED')";
+            this.orderID = database.getString(query);
+            query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus IN ('PENDING', 'APPROVED', 'DEINED');";
+            this.reservationID = database.getString(query);
             if (orderID != null || orderID != "")
             {
                 query = $"SELECT EstimatedTimeLeft FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
@@ -48,6 +48,7 @@ namespace IOOP_Assignment
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = estimatedTimeString;
+                    refreshOrderBtn.Visible = false;
                     orderStatusPBox.Image = Properties.Resources.inKitchenIcon;
                 }
                 else if (orderStatus == "COMPLETED")
@@ -63,6 +64,7 @@ namespace IOOP_Assignment
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = "N/A";
+                    refreshOrderBtn.Visible = false;
                     orderStatusPBox.Image = Properties.Resources.pendingIcon;
                 }
                 else
@@ -81,6 +83,7 @@ namespace IOOP_Assignment
                 string placeID = database.getString(query);
                 query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = '{reservationID}';";
                 string reservationStatus = database.getString(query);
+                MessageBox.Show(reservationStatus);
                 query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 string placeName = database.getString(query);
                 query = $"SELECT Duration FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
@@ -114,8 +117,6 @@ namespace IOOP_Assignment
                         endTimeFormatted = (reservedEndTime / 100) + ":" + (reservedEndTime % 100).ToString("00");
                     }
 
-
-                // Display reservation details based on status
                 if (reservationStatus == "APPROVED")
                 {
                     refreshReservationBtn.Visible = true;
@@ -126,6 +127,7 @@ namespace IOOP_Assignment
                     this.lblPlaceName.Text = $"{placeName}";
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
+                    refreshReservationBtn.Visible = true;
                     reservationStatusPBox.Image = Properties.Resources.approvedIcon;
                 }
                 else if (reservationStatus == "DENIED")
@@ -138,6 +140,7 @@ namespace IOOP_Assignment
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
                     reservationStatusPBox.Image = Properties.Resources.deniedIcon;
+                    refreshReservationBtn.Visible = true;
                 }
                 else if (reservationStatus == "PENDING")
                 {
@@ -149,9 +152,11 @@ namespace IOOP_Assignment
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
                     reservationStatusPBox.Image = Properties.Resources.pendingIcon;
+                    refreshReservationBtn.Visible = false;
                 }
                 else
                 {
+                    refreshReservationBtn.Visible = false;
                     this.lblReservationID.Text = "N/A";
                     this.lblPlaceName.Text = "N/A";
                     this.lblDateTimeRange.Text = "N/A";
@@ -257,48 +262,97 @@ namespace IOOP_Assignment
 
         }
 
-        private void notedButton_Click(object sender, EventArgs e)
+        private void refreshReservationButton_Click(object sender, EventArgs e)
         {
             Database database = new Database(ConnectionString);
-            string query = $"SELECT ReservationID WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
-            string updatedReservationID = database.getString(query);
-
-            if (updatedReservationID != null || updatedReservationID != "")
+            string query = $"UPDATE Reservation SET ReservationStatus = 'COMPLETED' WHERE ReservationID = '{reservationID}';";
+            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                query = $"UPDATE Customer SET ReservationID = '{updatedReservationID}' WHERE ReservationID = '{reservationID}'";
+                query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
+                string updatedReservationID = database.getString(query);
+                MessageBox.Show(updatedReservationID);
+
+                if (updatedReservationID != null || updatedReservationID != "")
+                {
+                    query = $"UPDATE Customer SET ReservationID = '{updatedReservationID}' WHERE CustomerID = '{customerID}';";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        refreshReservationBtn.Visible = false;
+                        this.Close();
+                        CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
+                        customerHomePage.Show();
+                    }
+                    else if (database.insertOrUpdateValuesIntoDatabase(query) == false)
+                    {
+                        MessageBox.Show("Reservation ID Not Updated");
+                        MessageBox.Show(query);
+                    }
+                }
+                else
+                {
+                    query = $"UPDATE Customer SET ReservationID = NULL WHERE ReservationID = '{reservationID}' WHERE CustomerID = '{customerID}';";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        refreshReservationBtn.Visible = false;
+                        this.Close();
+                        CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
+                        customerHomePage.Show();
+                    }
+                }
+            } else if (database.insertOrUpdateValuesIntoDatabase(query) == false)
+            {
+                MessageBox.Show("Reservation Status Not Updated");
             }
             else
             {
-                query = $"UPDATE Customer SET OrderID = NULL WHERE ReservationID = '{reservationID}'";
+                MessageBox.Show("An Error Occured");
             }
-
-            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-            {
-                refreshReservationBtn.Visible = false;
-            }
-
         }
 
-        private void refreshButton_Click(object sender, EventArgs e)
+        private void refreshOrderButton_Click(object sender, EventArgs e)
         {
             Database database = new Database(ConnectionString);
-            string query = $"SELECT OrderID WHERE CustomerID = '{customerID}' AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS');";
-            string updatedOrderID = database.getString(query);
-
-            if(updatedOrderID != null || updatedOrderID != "")
+            string query = $"UPDATE Orders SET OrderStatus = 'COMPLETED_ORDER' WHERE OrderID = '{orderID}';";
+            if(database.insertOrUpdateValuesIntoDatabase(query) == true)
             {
-                query = $"UPDATE Customer SET OrderID = '{updatedOrderID}' WHERE OrderID = '{orderID}'";
+                query = $"SELECT OrderID FROM Orders WHERE CustomerID = '{customerID}' AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS');";
+                string updatedOrderID = database.getString(query);
+
+                if (updatedOrderID != null || updatedOrderID != "")
+                {
+                    query = $"UPDATE Customer SET OrderID = '{updatedOrderID}'  WHERE CustomerID = '{customerID}';";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        refreshReservationBtn.Visible = false;
+                        this.Close();
+                        CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
+                        customerHomePage.Show();
+                    }else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
+                    {
+                        MessageBox.Show("Order ID Not Updated");
+                        MessageBox.Show(query);
+                    }
+                }
+                else
+                {
+                    query = $"UPDATE Customer SET OrderID = NULL  WHERE CustomerID = '{customerID}';";
+                    if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                    {
+                        refreshReservationBtn.Visible = false;
+                        this.Close();
+                        CustomerHomePage customerHomePage = new CustomerHomePage(UserID);
+                        customerHomePage.Show();
+                    }
+                }
+            }
+            else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
+            {
+                MessageBox.Show("Order Status Not Updated");
             }
             else
             {
-                query = $"UPDATE Customer SET OrderID = NULL WHERE OrderID = '{orderID}'";
+                MessageBox.Show("An Error Occured");
             }
-
-            if (database.insertOrUpdateValuesIntoDatabase(query) == true)
-            {
-                refreshReservationBtn.Visible = false;
-            }
-
         }
 
         private void reservationStatusPBox_Click(object sender, EventArgs e)

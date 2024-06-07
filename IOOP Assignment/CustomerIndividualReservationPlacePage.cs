@@ -373,7 +373,7 @@ namespace IOOP_Assignment
                 DateTime currentReservedDateTime = reservedDateTimePicker.Value;
                 string currentReservedDateString = currentReservedDateTime.ToString("yyyy-MM-dd");
                 MessageBox.Show(currentReservedDateString);
-                query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}';";
+                query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}' AND ReservationStatus = 'APPROVED';";
 
                 DataTable reservationDataTable = database.getDataTable(query);
                 foreach (DataRow row in reservationDataTable.Rows)
