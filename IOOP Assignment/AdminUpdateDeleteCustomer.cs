@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteCustomer()
         {
             InitializeComponent();
-            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+            string connectionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True";
             customer = new Customer(connectionString);
         }
 
