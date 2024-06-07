@@ -18,7 +18,7 @@ namespace IOOP_Assignment
         private string phoneNumber;
         private string email;
 
-        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
