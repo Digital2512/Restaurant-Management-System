@@ -152,9 +152,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(659, 12);
+            this.btnExit.Image = global::IOOP_Assignment.Properties.Resources.exitIcon1;
+            this.btnExit.Location = new System.Drawing.Point(649, 7);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 63;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);

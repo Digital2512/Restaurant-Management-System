@@ -31,13 +31,13 @@
             this.lblGreetMng = new System.Windows.Forms.Label();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblResv = new System.Windows.Forms.Label();
             this.btnResvReport = new System.Windows.Forms.Button();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.picManager = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picManager = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
@@ -71,16 +71,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 213);
             this.panel1.TabIndex = 17;
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Location = new System.Drawing.Point(-12, -15);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(269, 231);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 21;
-            this.picLogo.TabStop = false;
             // 
             // lblResv
             // 
@@ -134,10 +124,32 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Image = global::IOOP_Assignment.Properties.Resources.exitIcon1;
+            this.btnLogout.Location = new System.Drawing.Point(22, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(40, 40);
+            this.btnLogout.TabIndex = 21;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = global::IOOP_Assignment.Properties.Resources.DeliciousIcon;
+            this.picLogo.Location = new System.Drawing.Point(-12, -15);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(269, 231);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 21;
+            this.picLogo.TabStop = false;
+            // 
             // picManager
             // 
             this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.userIcon;
             this.picManager.Location = new System.Drawing.Point(554, 30);
             this.picManager.Name = "picManager";
             this.picManager.Size = new System.Drawing.Size(146, 140);
@@ -145,15 +157,6 @@
             this.picManager.TabIndex = 15;
             this.picManager.TabStop = false;
             this.picManager.Click += new System.EventHandler(this.picManager_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(22, 12);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(32, 32);
-            this.btnLogout.TabIndex = 21;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // ManagerHomePage
             // 

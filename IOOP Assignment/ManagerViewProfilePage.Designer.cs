@@ -30,6 +30,7 @@
         {
             this.lblHeaderProfile = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lblUserID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.lblPsw = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.picManager = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 61);
             this.panel1.TabIndex = 2;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = global::IOOP_Assignment.Properties.Resources.exitIcon1;
+            this.btnExit.Location = new System.Drawing.Point(348, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblUserID
             // 
@@ -132,21 +142,13 @@
             // picManager
             // 
             this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.userIcon;
             this.picManager.Location = new System.Drawing.Point(143, 67);
             this.picManager.Name = "picManager";
             this.picManager.Size = new System.Drawing.Size(110, 110);
             this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picManager.TabIndex = 18;
             this.picManager.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(358, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // ManagerViewProfilePage
             // 

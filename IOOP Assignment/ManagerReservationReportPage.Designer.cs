@@ -55,6 +55,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Image = global::IOOP_Assignment.Properties.Resources.exitIcon1;
             this.btnExit.Location = new System.Drawing.Point(1000, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 40);
@@ -95,6 +96,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
             this.btnSearch.Location = new System.Drawing.Point(951, 97);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(34, 34);
