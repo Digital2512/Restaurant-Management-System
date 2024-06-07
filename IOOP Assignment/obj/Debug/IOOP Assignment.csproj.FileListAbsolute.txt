@@ -69,3 +69,55 @@ C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assign
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerAddPlace.resources
 C:\Users\Valerie Annabella\OneDrive\Documents\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationReportPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer.mdf
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOPServer_log.ldf
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe.config
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.exe
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\bin\Debug\IOOP Assignment.pdb
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.AssemblyReference.cache
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.cartProductButton.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerCartPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefHomePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefOrderDetailsForm.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefProfileForm.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerFeedbackPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminAddChef.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminAddCustomer.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerHomePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualProductPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerIndividualReservationPlacePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerOrderPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminAddManager.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminHomePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerProfilePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerReservationPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerSuccessfulPayment.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.CustomerUpdateProfilePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminManageUsers.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateDeleteChef.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateDeleteCustomer.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateDeleteManager.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminUpdateProfile.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewChef.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewCustomer.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewFeedback.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewManager.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.AdminViewSalesReport.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefInventoryForm.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ChefRecipeManagement.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.loginForm.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerAddPlace.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerMenuPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerReservationReportPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerTablesPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerUpdateProfilePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.productButton.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.placeButton.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.Properties.Resources.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.GenerateResource.cache
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerHomePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerPendingPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerViewProfilePage.resources

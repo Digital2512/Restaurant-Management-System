@@ -18,10 +18,10 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-
+        
         private string imgLocation;
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=FINAL DATABASE;Integrated Security=True";
         private Manager manager = new Manager();
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(connetionString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, Description, Price, Cuisine, Chosen, ProductImage FROM Menu", con))
+                SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, Description, Price, Cuisine, Chosen, ProductImage FROM Menu", con);
                 {
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -38,6 +38,7 @@ namespace IOOP_Assignment
                         dataGridViewMenu.DataSource = dt;
                     }
                 }
+                con.Close();
             }
         }
 
@@ -80,18 +81,32 @@ namespace IOOP_Assignment
             cbbCuisine.Visible = true;
         }
 
-        private void ClearSearchAndRefreshDataGridView()
+        private void HideMenuForm()
         {
-            txtSearchProduct.Text = ""; // Clear the search textbox
-            RefreshDataGridView(); // Refresh the DataGridView to show all records
+            lblProID.Visible = false;
+            lblProDesc.Visible = false;
+            lblCuisine.Visible = false;
+            lblProPrice.Visible = false;
+            lblName.Visible = false;
+            picMenu.Visible = false;
+            btnAdd.Visible = false;
+            btnUpdate.Visible = false;
+            btnDelete.Visible = false;
+            btnUpload.Visible = false;
+            txtProductDesc.Visible = false;
+            txtProductPrice.Visible = false;
+            txtProductName.Visible = false;
+            cbbCuisine.Visible = false;
         }
+
+
 
         private void txtSearchProduct_Enter(object sender, EventArgs e)
         {
             if (txtSearchProduct.Text == "Search...")
             {
                 txtSearchProduct.Text = "";
-                ClearSearchAndRefreshDataGridView();
+                RefreshDataGridView();
             }
         }
 
@@ -100,6 +115,7 @@ namespace IOOP_Assignment
             if (string.IsNullOrWhiteSpace(txtSearchProduct.Text))
             {
                 txtSearchProduct.Text = "Search...";
+                RefreshDataGridView();
             }
         }
 
@@ -111,7 +127,7 @@ namespace IOOP_Assignment
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     con.Open();
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Menu WHERE ProductID LIKE @SearchInput OR Name LIKE @SearchInput OR Description LIKE @SearchInput OR Cuisine LIKE @SearchInput OR Chosen LIKE @SearchInput", con))
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Menu WHERE ProductID LIKE @SearchInput OR Name LIKE @SearchInput OR Description LIKE @SearchInput OR Cuisine LIKE @SearchInput OR Chosen LIKE @SearchInput", con);
                     {
                         cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -121,6 +137,7 @@ namespace IOOP_Assignment
                             dataGridViewMenu.DataSource = dt;
                         }
                     }
+                    con.Close();
                 }
             }
             catch (Exception ex)
@@ -155,45 +172,7 @@ namespace IOOP_Assignment
             }
         }
 
-        private void btnUpdateProduct_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lblProID.Visible = true;
-                string productID = lblProID.Text.Replace("ProductID: ", "");
-                byte[] images = manager.LoadImage(imgLocation);
-                using (SqlConnection con = new SqlConnection(connetionString))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, ProductImage=@ProductImage WHERE ProductID=@ProductID", con))
-                    {
-                        cmd.Parameters.AddWithValue("@ProductID", productID);
-                        cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
-                        cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
-                        cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
-                        cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
-                        cmd.Parameters.AddWithValue("@ProductImage", images);
-                        int rowsAffected = cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            // Refresh the DataGridView
-                            RefreshDataGridView();
-
-                            MessageBox.Show("Product Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("No rows were updated. Please check the selected product ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while updating the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void dataGridViewMenu_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -217,7 +196,7 @@ namespace IOOP_Assignment
                     txtProductPrice.Text = "";
                     cbbCuisine.Text = "";
                     // Clear picMenu
-                    picMenu.Image = null;
+                    picMenu.Image = Properties.Resources.FoodIcon;
                 }
                 else
                 {
@@ -226,43 +205,22 @@ namespace IOOP_Assignment
                     txtProductDesc.Text = row.Cells["Description"].Value.ToString();
                     txtProductPrice.Text = row.Cells["Price"].Value.ToString();
                     cbbCuisine.Text = row.Cells["Cuisine"].Value.ToString();
-                    /*picMenu.Image = Properties.Resources.FoodIcon;
+                    picMenu.Image = Properties.Resources.FoodIcon;
 
-                    if (row.Cells["Image"].Value != DBNull.Value)
+                    if (row.Cells["ProductImage"].Value != DBNull.Value)
                     {
-                        byte[] imageData = (byte[])row.Cells["Image"].Value;
+                        byte[] imageData = (byte[])row.Cells["ProductImage"].Value;
                         using (MemoryStream memoryStream = new MemoryStream(imageData))
                         {
                             picMenu.Image = Image.FromStream(memoryStream);
                         }
-                    }*/
+                    }
                 }
-            }
-        }
-
-        private bool TestDatabaseConnection()
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connetionString))
-                {
-                    con.Open();
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Connection test failed: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!TestDatabaseConnection())
-            {
-                return; // Exit if the connection test fails
-            }
             try
             {
                 if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
@@ -285,44 +243,11 @@ namespace IOOP_Assignment
                 string recipeID = manager.GenerateRecipeID();
                 byte[] images = manager.LoadImage(imgLocation);
 
-                using (SqlConnection con = new SqlConnection(connetionString))
-                {
-                    con.Open();
-
-                    // Check if the RecipeID exists in the Recipe table
-                    SqlCommand checkRecipeCmd = new SqlCommand("SELECT COUNT(*) FROM RecipeStock WHERE RecipeID = @RecipeID", con);
-                    checkRecipeCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                    int recipeCount = (int)checkRecipeCmd.ExecuteScalar();
-
-                    if (recipeCount == 0)
-                    {
-                        SqlCommand insertRecipeCmd = new SqlCommand("INSERT INTO RecipeStock (RecipeID) VALUES (@RecipeID)", con);
-                        insertRecipeCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                        insertRecipeCmd.Parameters.AddWithValue("@ProductID", productID);
-                        insertRecipeCmd.ExecuteNonQuery();
-                    }
-
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, ProductImage) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @ProductImage)", con);
-                    cmd.Parameters.AddWithValue("@ProductID", productID);
-                    cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
-                    cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
-                    cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
-                    cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
-                    cmd.Parameters.AddWithValue("@ProductImage", images);
-                    cmd.ExecuteNonQuery();
-
-                    SqlCommand updateCmd = new SqlCommand("UPDATE RecipeStock SET ProductID = @ProductID WHERE RecipeID = @RecipeID", con);
-                    updateCmd.Parameters.AddWithValue("@ProductID", productID);
-                    updateCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                    updateCmd.ExecuteNonQuery();
-                }
+                manager.AddProduct(productID, txtProductName.Text, txtProductDesc.Text, decimal.Parse(txtProductPrice.Text), cbbCuisine.Text, images, recipeID);
 
                 RefreshDataGridView();
+
                 MessageBox.Show("Product Added Successfully!");
-            }
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show($"A SQL error occurred: {sqlEx.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -338,44 +263,20 @@ namespace IOOP_Assignment
                 {
                     string productIdToDelete = dataGridViewMenu.SelectedRows[0].Cells["ProductID"].Value.ToString();
 
-                    using (SqlConnection con = new SqlConnection(connetionString))
-                    {
-                        con.Open();
+                    manager.DeleteProduct(productIdToDelete);
 
-                        using (SqlCommand deleteRecipeCmd = new SqlCommand("DELETE FROM RecipeStock WHERE ProductID = @ProductID", con))
-                        {
-                            deleteRecipeCmd.Parameters.AddWithValue("@ProductID", productIdToDelete);
-                            deleteRecipeCmd.ExecuteNonQuery();
-                        }
+                    // Refresh the DataGridView to reflect the changes
+                    RefreshDataGridView();
 
-                        using (SqlCommand deleteProductCmd = new SqlCommand("DELETE FROM Menu WHERE ProductID = @ProductID", con))
-                        {
-                            deleteProductCmd.Parameters.AddWithValue("@ProductID", productIdToDelete);
+                    // Clear the textboxes and other UI elements
+                    lblProID.Text = "";
+                    txtProductName.Text = "";
+                    txtProductDesc.Text = "";
+                    txtProductPrice.Text = "";
+                    cbbCuisine.Text = "";
+                    picMenu.Image = Properties.Resources.FoodIcon;
 
-                            int rowsAffected = deleteProductCmd.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                // Refresh the DataGridView to reflect the changes
-                                RefreshDataGridView();
-
-                                // Clear the textboxes and other UI elements
-                                lblProID.Text = "";
-                                txtProductName.Text = "";
-                                txtProductDesc.Text = "";
-                                txtProductPrice.Text = "";
-                                cbbCuisine.Text = "";
-                                picMenu.Image = null;
-
-                                MessageBox.Show("Product Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show($"{productIdToDelete}");
-                                MessageBox.Show("No rows were deleted. Please check the selected product ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                    }
+                    MessageBox.Show("Product Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -395,38 +296,14 @@ namespace IOOP_Assignment
                 lblProID.Visible = true;
                 string productID = lblProID.Text.Replace("ProductID: ", "");
                 byte[] images = manager.LoadImage(imgLocation);
-                using (SqlConnection con = new SqlConnection(connetionString))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, ProductImage=@ProductImage WHERE ProductID=@ProductID", con))
-                    {
-                        cmd.Parameters.AddWithValue("@ProductID", productID);
-                        cmd.Parameters.AddWithValue("@Name", txtProductName.Text.ToUpper());
-                        cmd.Parameters.AddWithValue("@Description", txtProductDesc.Text);
-                        cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtProductPrice.Text));
-                        cmd.Parameters.AddWithValue("@Cuisine", cbbCuisine.Text);
-                        cmd.Parameters.AddWithValue("@ProductImage", images);
-                        int rowsAffected = cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            // Refresh the DataGridView
-                            RefreshDataGridView();
 
-                            MessageBox.Show("Product Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            lblProID.Text = "";
-                            txtProductName.Text = "";
-                            txtProductDesc.Text = "";
-                            txtProductPrice.Text = "";
-                            cbbCuisine.Text = "";
-                            picMenu.Image = null;
-                        }
-                        else
-                        {
-                            MessageBox.Show("No rows were updated. Please check the selected product ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
+                manager.UpdateProduct(productID, txtProductName.Text, txtProductDesc.Text, decimal.Parse(txtProductPrice.Text), cbbCuisine.Text, images);
+                // Refresh the DataGridView
+                RefreshDataGridView();
+                HideMenuForm();
+                MessageBox.Show("Product Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {

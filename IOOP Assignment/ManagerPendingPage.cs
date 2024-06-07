@@ -18,7 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=FINAL DATABASE;Integrated Security=True";
         private void ManagerPendingPage_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -203,8 +203,6 @@ namespace IOOP_Assignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManagerTablesPage frmTables = new ManagerTablesPage();
-            frmTables.ShowDialog();
         }
     }
 }

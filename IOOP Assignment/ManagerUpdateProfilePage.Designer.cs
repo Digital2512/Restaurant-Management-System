@@ -33,8 +33,6 @@
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPsw = new System.Windows.Forms.TextBox();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.picManager = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderProfile = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
@@ -44,8 +42,10 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
             this.pickerDOB = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
+            this.picManager = new System.Windows.Forms.PictureBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picManager)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -95,25 +95,6 @@
             this.txtPsw.Name = "txtPsw";
             this.txtPsw.Size = new System.Drawing.Size(100, 26);
             this.txtPsw.TabIndex = 28;
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.Location = new System.Drawing.Point(256, 139);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(44, 38);
-            this.btnUpload.TabIndex = 25;
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
-            // picManager
-            // 
-            this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picManager.Location = new System.Drawing.Point(142, 67);
-            this.picManager.Name = "picManager";
-            this.picManager.Size = new System.Drawing.Size(110, 110);
-            this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picManager.TabIndex = 33;
-            this.picManager.TabStop = false;
             // 
             // panel2
             // 
@@ -198,6 +179,27 @@
             this.pickerDOB.Size = new System.Drawing.Size(121, 26);
             this.pickerDOB.TabIndex = 40;
             // 
+            // picManager
+            // 
+            this.picManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picManager.Image = global::IOOP_Assignment.Properties.Resources.userIcon;
+            this.picManager.Location = new System.Drawing.Point(142, 67);
+            this.picManager.Name = "picManager";
+            this.picManager.Size = new System.Drawing.Size(110, 110);
+            this.picManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picManager.TabIndex = 33;
+            this.picManager.TabStop = false;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Image = global::IOOP_Assignment.Properties.Resources.editIcon4;
+            this.btnUpload.Location = new System.Drawing.Point(258, 132);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(45, 45);
+            this.btnUpload.TabIndex = 25;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // ManagerUpdateProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -222,9 +224,9 @@
             this.Name = "ManagerUpdateProfilePage";
             this.Text = "UpcomingList";
             this.Load += new System.EventHandler(this.ManagerUpdateProfilePage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picManager)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
