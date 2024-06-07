@@ -118,3 +118,6 @@ C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Deb
 C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.csproj.CoreCompileInputs.cache
 C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.exe
 C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP Assignment.pdb
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerHomePage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerPendingPage.resources
+C:\Users\QiaoQian\OneDrive\文档\GitHub\IOOP-Assignment\IOOP Assignment\obj\Debug\IOOP_Assignment.ManagerViewProfilePage.resources

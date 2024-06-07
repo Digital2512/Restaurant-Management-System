@@ -18,7 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=FINAL DATABASE;Integrated Security=True";
         private Manager manager = new Manager();
         private string imgLocation;
 
@@ -35,7 +35,7 @@ namespace IOOP_Assignment
                 lblName.Text = "Name: " + row["FullName"].ToString();
                 lblGender.Text = "Gender: " + row["Gender"].ToString();
 
-                // Retrieve the birthday as a DateTime and format it
+
                 DateTime birthday = Convert.ToDateTime(row["Birthday"]);
                 lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
                 // Check if ProfileImage column contains data
