@@ -31,19 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnSidebar = new System.Windows.Forms.Button();
             this.sidebarFlowLayoutPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.reservationPnl = new System.Windows.Forms.Panel();
-            this.reservationBtn = new System.Windows.Forms.Button();
             this.orderPnl = new System.Windows.Forms.Panel();
-            this.orderBtn = new System.Windows.Forms.Button();
             this.feedbackPnl = new System.Windows.Forms.Panel();
-            this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutPnl = new System.Windows.Forms.Panel();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.emptyPnl = new System.Windows.Forms.Panel();
             this.profilePnl = new System.Windows.Forms.Panel();
-            this.profileBtn = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.lblOrderStatusHeader = new System.Windows.Forms.Label();
@@ -54,7 +48,6 @@
             this.lblOrderStatusTitle = new System.Windows.Forms.Label();
             this.lblEstimatedTime = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
-            this.orderStatusPBox = new System.Windows.Forms.PictureBox();
             this.lblEstimatedTimeLeftTitle = new System.Windows.Forms.Label();
             this.lblOrderIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPnl = new System.Windows.Forms.Panel();
@@ -68,6 +61,13 @@
             this.cc = new System.Windows.Forms.Label();
             this.lblReservationIDTitle = new System.Windows.Forms.Label();
             this.reservationStatusPBox = new System.Windows.Forms.PictureBox();
+            this.orderStatusPBox = new System.Windows.Forms.PictureBox();
+            this.reservationBtn = new System.Windows.Forms.Button();
+            this.orderBtn = new System.Windows.Forms.Button();
+            this.feedbackBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.profileBtn = new System.Windows.Forms.Button();
+            this.btnSidebar = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.sidebarFlowLayoutPnl.SuspendLayout();
             this.reservationPnl.SuspendLayout();
@@ -76,9 +76,9 @@
             this.logoutPnl.SuspendLayout();
             this.profilePnl.SuspendLayout();
             this.orderStatusPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).BeginInit();
             this.reservationStatusPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).BeginInit();
             this.SuspendLayout();
             // 
             // headerPnl
@@ -102,15 +102,6 @@
             this.lblWelcome.TabIndex = 2;
             this.lblWelcome.Text = "Welcome, Customer";
             // 
-            // btnSidebar
-            // 
-            this.btnSidebar.Location = new System.Drawing.Point(0, 0);
-            this.btnSidebar.Name = "btnSidebar";
-            this.btnSidebar.Size = new System.Drawing.Size(51, 62);
-            this.btnSidebar.TabIndex = 1;
-            this.btnSidebar.UseVisualStyleBackColor = true;
-            this.btnSidebar.Click += new System.EventHandler(this.btnSidebar_Click);
-            // 
             // sidebarFlowLayoutPnl
             // 
             this.sidebarFlowLayoutPnl.BackColor = System.Drawing.Color.DimGray;
@@ -133,20 +124,6 @@
             this.reservationPnl.Size = new System.Drawing.Size(179, 57);
             this.reservationPnl.TabIndex = 2;
             // 
-            // reservationBtn
-            // 
-            this.reservationBtn.BackColor = System.Drawing.Color.DimGray;
-            this.reservationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationBtn.ForeColor = System.Drawing.Color.White;
-            this.reservationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reservationBtn.Location = new System.Drawing.Point(-3, -10);
-            this.reservationBtn.Name = "reservationBtn";
-            this.reservationBtn.Size = new System.Drawing.Size(198, 75);
-            this.reservationBtn.TabIndex = 2;
-            this.reservationBtn.Text = "        Reservation";
-            this.reservationBtn.UseVisualStyleBackColor = false;
-            this.reservationBtn.Click += new System.EventHandler(this.reservationBtn_Click);
-            // 
             // orderPnl
             // 
             this.orderPnl.Controls.Add(this.orderBtn);
@@ -154,20 +131,6 @@
             this.orderPnl.Name = "orderPnl";
             this.orderPnl.Size = new System.Drawing.Size(179, 53);
             this.orderPnl.TabIndex = 3;
-            // 
-            // orderBtn
-            // 
-            this.orderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.orderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderBtn.ForeColor = System.Drawing.Color.White;
-            this.orderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.orderBtn.Location = new System.Drawing.Point(-3, -7);
-            this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(198, 69);
-            this.orderBtn.TabIndex = 1;
-            this.orderBtn.Text = "Order";
-            this.orderBtn.UseVisualStyleBackColor = false;
-            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // feedbackPnl
             // 
@@ -177,20 +140,6 @@
             this.feedbackPnl.Size = new System.Drawing.Size(179, 57);
             this.feedbackPnl.TabIndex = 3;
             // 
-            // feedbackBtn
-            // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
-            this.feedbackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackBtn.ForeColor = System.Drawing.Color.White;
-            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(-3, -7);
-            this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(198, 74);
-            this.feedbackBtn.TabIndex = 2;
-            this.feedbackBtn.Text = "      Feedback";
-            this.feedbackBtn.UseVisualStyleBackColor = false;
-            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
-            // 
             // logoutPnl
             // 
             this.logoutPnl.Controls.Add(this.logoutBtn);
@@ -198,20 +147,6 @@
             this.logoutPnl.Name = "logoutPnl";
             this.logoutPnl.Size = new System.Drawing.Size(179, 57);
             this.logoutPnl.TabIndex = 4;
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
-            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.ForeColor = System.Drawing.Color.White;
-            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(-3, -6);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(198, 69);
-            this.logoutBtn.TabIndex = 3;
-            this.logoutBtn.Text = "  Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // emptyPnl
             // 
@@ -227,20 +162,6 @@
             this.profilePnl.Name = "profilePnl";
             this.profilePnl.Size = new System.Drawing.Size(179, 57);
             this.profilePnl.TabIndex = 6;
-            // 
-            // profileBtn
-            // 
-            this.profileBtn.BackColor = System.Drawing.Color.DimGray;
-            this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileBtn.ForeColor = System.Drawing.Color.White;
-            this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profileBtn.Location = new System.Drawing.Point(-3, -6);
-            this.profileBtn.Name = "profileBtn";
-            this.profileBtn.Size = new System.Drawing.Size(198, 70);
-            this.profileBtn.TabIndex = 0;
-            this.profileBtn.Text = "  Profile";
-            this.profileBtn.UseVisualStyleBackColor = false;
-            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
             // menuTransition
             // 
@@ -332,15 +253,6 @@
             this.lblOrderID.Size = new System.Drawing.Size(35, 20);
             this.lblOrderID.TabIndex = 3;
             this.lblOrderID.Text = "N/A";
-            // 
-            // orderStatusPBox
-            // 
-            this.orderStatusPBox.Location = new System.Drawing.Point(571, 0);
-            this.orderStatusPBox.Name = "orderStatusPBox";
-            this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
-            this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.orderStatusPBox.TabIndex = 2;
-            this.orderStatusPBox.TabStop = false;
             // 
             // lblEstimatedTimeLeftTitle
             // 
@@ -467,6 +379,7 @@
             // 
             // reservationStatusPBox
             // 
+            this.reservationStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.pendingIcon;
             this.reservationStatusPBox.Location = new System.Drawing.Point(571, 0);
             this.reservationStatusPBox.Name = "reservationStatusPBox";
             this.reservationStatusPBox.Size = new System.Drawing.Size(123, 151);
@@ -474,6 +387,102 @@
             this.reservationStatusPBox.TabIndex = 2;
             this.reservationStatusPBox.TabStop = false;
             this.reservationStatusPBox.Click += new System.EventHandler(this.reservationStatusPBox_Click);
+            // 
+            // orderStatusPBox
+            // 
+            this.orderStatusPBox.Image = global::IOOP_Assignment.Properties.Resources.pendingIcon;
+            this.orderStatusPBox.Location = new System.Drawing.Point(571, 0);
+            this.orderStatusPBox.Name = "orderStatusPBox";
+            this.orderStatusPBox.Size = new System.Drawing.Size(123, 104);
+            this.orderStatusPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.orderStatusPBox.TabIndex = 2;
+            this.orderStatusPBox.TabStop = false;
+            // 
+            // reservationBtn
+            // 
+            this.reservationBtn.BackColor = System.Drawing.Color.DimGray;
+            this.reservationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationBtn.ForeColor = System.Drawing.Color.White;
+            this.reservationBtn.Image = global::IOOP_Assignment.Properties.Resources.reservationIcon;
+            this.reservationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reservationBtn.Location = new System.Drawing.Point(-3, -10);
+            this.reservationBtn.Name = "reservationBtn";
+            this.reservationBtn.Size = new System.Drawing.Size(198, 75);
+            this.reservationBtn.TabIndex = 2;
+            this.reservationBtn.Text = "        Reservation";
+            this.reservationBtn.UseVisualStyleBackColor = false;
+            this.reservationBtn.Click += new System.EventHandler(this.reservationBtn_Click);
+            // 
+            // orderBtn
+            // 
+            this.orderBtn.BackColor = System.Drawing.Color.DimGray;
+            this.orderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderBtn.ForeColor = System.Drawing.Color.White;
+            this.orderBtn.Image = global::IOOP_Assignment.Properties.Resources.orderIcon;
+            this.orderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.orderBtn.Location = new System.Drawing.Point(-3, -7);
+            this.orderBtn.Name = "orderBtn";
+            this.orderBtn.Size = new System.Drawing.Size(198, 69);
+            this.orderBtn.TabIndex = 1;
+            this.orderBtn.Text = "Order";
+            this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.White;
+            this.feedbackBtn.Image = global::IOOP_Assignment.Properties.Resources.feedbackIcon;
+            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feedbackBtn.Location = new System.Drawing.Point(-3, -7);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(198, 74);
+            this.feedbackBtn.TabIndex = 2;
+            this.feedbackBtn.Text = "      Feedback";
+            this.feedbackBtn.UseVisualStyleBackColor = false;
+            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.White;
+            this.logoutBtn.Image = global::IOOP_Assignment.Properties.Resources.logoutIcon;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(-3, -6);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(198, 69);
+            this.logoutBtn.TabIndex = 3;
+            this.logoutBtn.Text = "  Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
+            // profileBtn
+            // 
+            this.profileBtn.BackColor = System.Drawing.Color.DimGray;
+            this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileBtn.ForeColor = System.Drawing.Color.White;
+            this.profileBtn.Image = global::IOOP_Assignment.Properties.Resources.profileIcon;
+            this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.profileBtn.Location = new System.Drawing.Point(-3, -6);
+            this.profileBtn.Name = "profileBtn";
+            this.profileBtn.Size = new System.Drawing.Size(198, 70);
+            this.profileBtn.TabIndex = 0;
+            this.profileBtn.Text = "  Profile";
+            this.profileBtn.UseVisualStyleBackColor = false;
+            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
+            // 
+            // btnSidebar
+            // 
+            this.btnSidebar.Image = global::IOOP_Assignment.Properties.Resources.sidebarIcon;
+            this.btnSidebar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnSidebar.Location = new System.Drawing.Point(0, 0);
+            this.btnSidebar.Name = "btnSidebar";
+            this.btnSidebar.Size = new System.Drawing.Size(51, 62);
+            this.btnSidebar.TabIndex = 1;
+            this.btnSidebar.UseVisualStyleBackColor = true;
+            this.btnSidebar.Click += new System.EventHandler(this.btnSidebar_Click);
             // 
             // CustomerHomePage
             // 
@@ -500,10 +509,10 @@
             this.profilePnl.ResumeLayout(false);
             this.orderStatusPnl.ResumeLayout(false);
             this.orderStatusPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).EndInit();
             this.reservationStatusPnl.ResumeLayout(false);
             this.reservationStatusPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusPBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderStatusPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

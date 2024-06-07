@@ -521,6 +521,22 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\cartIcon.png" />
+    <None Include="PictureFolder\searchIcon.png" />
+    <None Include="PictureFolder\completedIcon.png" />
+    <None Include="PictureFolder\inKitchenIcon.png" />
+    <None Include="PictureFolder\pendingIcon.png" />
+    <None Include="PictureFolder\deniedIcon.png" />
+    <None Include="PictureFolder\approvedIcon.png" />
+    <None Include="PictureFolder\profileIcon.png" />
+    <None Include="PictureFolder\logoutIcon.png" />
+    <None Include="PictureFolder\feedbackIcon.png" />
+    <None Include="PictureFolder\orderIcon.png" />
+    <None Include="PictureFolder\reservationIcon.png" />
+    <None Include="PictureFolder\sidebarIcon.png" />
+    <None Include="Resources\feedbackResized.png" />
+    <None Include="Resources\reservationResized1.png" />
+    <None Include="Resources\reservationResized.png" />
     <None Include="PictureFolder\errorImageSmaller.png" />
     <None Include="PictureFolder\errorImage.png" />
     <None Include="Resources\close.png" />

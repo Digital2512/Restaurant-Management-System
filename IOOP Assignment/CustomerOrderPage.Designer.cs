@@ -33,16 +33,16 @@
             this.cartPnl = new System.Windows.Forms.Panel();
             this.cartBtn = new System.Windows.Forms.Button();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backBtn = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.searchAndFilterPnl = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
             this.priceRangeCBox = new System.Windows.Forms.ComboBox();
             this.cuisineCBox = new System.Windows.Forms.ComboBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.productDisplayFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.productDisplayPanel = new System.Windows.Forms.Panel();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.cartPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
@@ -59,14 +59,14 @@
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(800, 45);
+            this.headerPnl.Size = new System.Drawing.Size(769, 45);
             this.headerPnl.TabIndex = 5;
             this.headerPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPnl_Paint);
             // 
             // cartPnl
             // 
             this.cartPnl.Controls.Add(this.cartBtn);
-            this.cartPnl.Location = new System.Drawing.Point(687, 0);
+            this.cartPnl.Location = new System.Drawing.Point(643, 0);
             this.cartPnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cartPnl.Name = "cartPnl";
             this.cartPnl.Size = new System.Drawing.Size(213, 56);
@@ -74,8 +74,9 @@
             // 
             // cartBtn
             // 
+            this.cartBtn.Image = global::IOOP_Assignment.Properties.Resources.cartIcon;
             this.cartBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cartBtn.Location = new System.Drawing.Point(-34, -9);
+            this.cartBtn.Location = new System.Drawing.Point(-5, -4);
             this.cartBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cartBtn.Name = "cartBtn";
             this.cartBtn.Size = new System.Drawing.Size(177, 56);
@@ -92,19 +93,6 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.DimGray;
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(-38, -9);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(117, 74);
-            this.backBtn.TabIndex = 0;
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblSearch
             // 
@@ -162,10 +150,10 @@
             "RM70.00 - 80.00",
             "RM80.00 - 90.00",
             "RM90.00 - 100.00"});
-            this.priceRangeCBox.Location = new System.Drawing.Point(393, 52);
+            this.priceRangeCBox.Location = new System.Drawing.Point(426, 52);
             this.priceRangeCBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priceRangeCBox.Name = "priceRangeCBox";
-            this.priceRangeCBox.Size = new System.Drawing.Size(280, 28);
+            this.priceRangeCBox.Size = new System.Drawing.Size(292, 28);
             this.priceRangeCBox.TabIndex = 10;
             this.priceRangeCBox.SelectedIndexChanged += new System.EventHandler(this.priceRangeCBox_SelectedIndexChanged);
             // 
@@ -180,18 +168,8 @@
             this.cuisineCBox.Location = new System.Drawing.Point(82, 52);
             this.cuisineCBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cuisineCBox.Name = "cuisineCBox";
-            this.cuisineCBox.Size = new System.Drawing.Size(305, 28);
+            this.cuisineCBox.Size = new System.Drawing.Size(323, 28);
             this.cuisineCBox.TabIndex = 9;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Location = new System.Drawing.Point(679, 10);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(51, 80);
-            this.searchBtn.TabIndex = 8;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // productDisplayFlowPnl
             // 
@@ -214,11 +192,35 @@
             this.productDisplayPanel.Size = new System.Drawing.Size(735, 355);
             this.productDisplayPanel.TabIndex = 11;
             // 
+            // searchBtn
+            // 
+            this.searchBtn.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
+            this.searchBtn.Location = new System.Drawing.Point(679, 10);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(39, 37);
+            this.searchBtn.TabIndex = 8;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-38, -9);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(117, 74);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // CustomerOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.ClientSize = new System.Drawing.Size(769, 520);
             this.Controls.Add(this.productDisplayPanel);
             this.Controls.Add(this.searchAndFilterPnl);
             this.Controls.Add(this.headerPnl);

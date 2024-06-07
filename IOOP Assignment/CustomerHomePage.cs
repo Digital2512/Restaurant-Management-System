@@ -48,7 +48,7 @@ namespace IOOP_Assignment
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = estimatedTimeString;
-                    //orderStatusPBox.Image = Properties.Resources.inKitchenResized;
+                    orderStatusPBox.Image = Properties.Resources.inKitchenIcon;
                 }
                 else if (orderStatus == "COMPLETED")
                 {
@@ -56,14 +56,14 @@ namespace IOOP_Assignment
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = "N/A";
                     refreshOrderBtn.Visible = true;
-                    //orderStatusPBox.Image = Properties.Resources.completedResized;
+                    orderStatusPBox.Image = Properties.Resources.completedIcon;
                 }
                 else if (orderStatus == "PENDING")
                 {
                     this.lblOrderID.Text = orderID;
                     this.lblOrderStatus.Text = orderStatus;
                     this.lblEstimatedTime.Text = "N/A";
-                    //orderStatusPBox.Image = Properties.Resources.completedResized;
+                    orderStatusPBox.Image = Properties.Resources.pendingIcon;
                 }
                 else
                 {
@@ -126,7 +126,7 @@ namespace IOOP_Assignment
                     this.lblPlaceName.Text = $"{placeName}";
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
-                    //reservationStatusPBox.Image = Properties.Resources.approvedResized;
+                    reservationStatusPBox.Image = Properties.Resources.approvedIcon;
                 }
                 else if (reservationStatus == "DENIED")
                 {
@@ -137,7 +137,7 @@ namespace IOOP_Assignment
                     this.lblPlaceName.Text = $"{placeName}";
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
-                    //reservationStatusPBox.Image = Properties.Resources.deniedResized;
+                    reservationStatusPBox.Image = Properties.Resources.deniedIcon;
                 }
                 else if (reservationStatus == "PENDING")
                 {
@@ -148,7 +148,7 @@ namespace IOOP_Assignment
                     this.lblPlaceName.Text = $"{placeName}";
                     this.lblDateTimeRange.Text = $"{reservedDate} {startTimeFormatted} - {endTimeFormatted}";
                     this.lblReservationStatus.Text = reservationStatus;
-                    //reservationStatusPBox.Image = Properties.Resources.pendingResized;
+                    reservationStatusPBox.Image = Properties.Resources.pendingIcon;
                 }
                 else
                 {
