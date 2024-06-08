@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReservationPage));
             this.headerPnl = new System.Windows.Forms.Panel();
             this.backBtnPnl = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.searchPnl = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.lblEvents = new System.Windows.Forms.Label();
             this.eventsCListBox = new System.Windows.Forms.CheckedListBox();
             this.minOfPaxCBox = new System.Windows.Forms.ComboBox();
-            this.backBtn = new System.Windows.Forms.Button();
             this.headerPnl.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
             this.searchPnl.SuspendLayout();
@@ -66,6 +66,18 @@
             this.backBtnPnl.Name = "backBtnPnl";
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // lblSearch
             // 
@@ -168,28 +180,14 @@
             // 
             this.minOfPaxCBox.FormattingEnabled = true;
             this.minOfPaxCBox.Items.AddRange(new object[] {
-            "> 5",
-            "> 10",
-            "> 15",
-            "> 20",
-            "> 25",
-            ">30"});
+            ">= 1",
+            ">= 3",
+            ">= 6",
+            ">= 8"});
             this.minOfPaxCBox.Location = new System.Drawing.Point(836, 122);
             this.minOfPaxCBox.Name = "minOfPaxCBox";
             this.minOfPaxCBox.Size = new System.Drawing.Size(121, 28);
             this.minOfPaxCBox.TabIndex = 18;
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.DimGray;
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(-34, -7);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(104, 59);
-            this.backBtn.TabIndex = 0;
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerReservationPage
             // 

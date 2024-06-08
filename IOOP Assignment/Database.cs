@@ -402,49 +402,5 @@ namespace IOOP_Assignment
             }
             return resultImage;
         }
-
-        //insert image into database, which is converted from a defined image path, which is a string of image bytes
-        public bool insertOrUpdateImageToFile(string imagePath, string query)
-        {
-            bool result = false;
-
-            byte[] imageBytes = File.ReadAllBytes(imagePath);
-
-            using (SqlConnection connection = new SqlConnection(connectionStringGetSet))
-            {
-                try
-                {
-                    connection.Open();
-
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@ImageData", imageBytes);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            result = true;
-                        }
-                        else
-                        {
-                            result = false;
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(query);
-                    MessageBox.Show("An error occured: " + ex.Message);
-                }
-                finally
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
-                }
-                return result;
-            }
-        }
     }
 }

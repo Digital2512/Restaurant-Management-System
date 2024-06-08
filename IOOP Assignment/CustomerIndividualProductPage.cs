@@ -43,7 +43,7 @@ namespace IOOP_Assignment
             this.lblProductQuantity.Text = previousQuantity.ToString();
         }
 
-        private void addToCartBtn_Click(object sender, EventArgs e)
+        private void addToCartBtn_Click(object sender, EventArgs e) 
         {
             Database database = new Database(connectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";

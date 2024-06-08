@@ -42,18 +42,18 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.lblUserIDTitle = new System.Windows.Forms.Label();
             this.backBtnPnl = new System.Windows.Forms.Panel();
-            this.backBtn = new System.Windows.Forms.Button();
             this.lblFullName = new System.Windows.Forms.Label();
             this.headerPnl = new System.Windows.Forms.Panel();
             this.lblUpdateProfile = new System.Windows.Forms.Label();
             this.passwordMTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.passwordShowBtn = new System.Windows.Forms.Button();
             this.fullNameTxtBox = new System.Windows.Forms.TextBox();
-            this.confirmPasswordShowHideBtn = new System.Windows.Forms.Button();
             this.confirmPasswordMTextBox = new System.Windows.Forms.MaskedTextBox();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
-            this.profilePBox = new System.Windows.Forms.PictureBox();
             this.birthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.profilePBox = new System.Windows.Forms.PictureBox();
+            this.confirmPasswordShowHideBtn = new System.Windows.Forms.Button();
+            this.passwordShowBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.updatePnl.SuspendLayout();
             this.genderGBox.SuspendLayout();
             this.backBtnPnl.SuspendLayout();
@@ -197,18 +197,6 @@
             this.backBtnPnl.Size = new System.Drawing.Size(36, 55);
             this.backBtnPnl.TabIndex = 1;
             // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.DimGray;
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(-34, -7);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(104, 59);
-            this.backBtn.TabIndex = 0;
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
@@ -249,16 +237,6 @@
             this.passwordMTextBox.Size = new System.Drawing.Size(308, 26);
             this.passwordMTextBox.TabIndex = 31;
             // 
-            // passwordShowBtn
-            // 
-            this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
-            this.passwordShowBtn.Location = new System.Drawing.Point(352, 355);
-            this.passwordShowBtn.Name = "passwordShowBtn";
-            this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
-            this.passwordShowBtn.TabIndex = 32;
-            this.passwordShowBtn.UseVisualStyleBackColor = false;
-            this.passwordShowBtn.Click += new System.EventHandler(this.passwordShowHideBtn_Click);
-            // 
             // fullNameTxtBox
             // 
             this.fullNameTxtBox.Location = new System.Drawing.Point(35, 277);
@@ -266,15 +244,6 @@
             this.fullNameTxtBox.Size = new System.Drawing.Size(312, 26);
             this.fullNameTxtBox.TabIndex = 33;
             this.fullNameTxtBox.TextChanged += new System.EventHandler(this.fullNameTxtBox_TextChanged);
-            // 
-            // confirmPasswordShowHideBtn
-            // 
-            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(353, 442);
-            this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
-            this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
-            this.confirmPasswordShowHideBtn.TabIndex = 36;
-            this.confirmPasswordShowHideBtn.UseVisualStyleBackColor = false;
-            this.confirmPasswordShowHideBtn.Click += new System.EventHandler(this.confirmPasswordShowHideBtn_Click);
             // 
             // confirmPasswordMTextBox
             // 
@@ -295,6 +264,13 @@
             this.lblConfirmPassword.TabIndex = 34;
             this.lblConfirmPassword.Text = "Confirm Password: ";
             // 
+            // birthdayDateTimePicker
+            // 
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(440, 275);
+            this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
+            this.birthdayDateTimePicker.Size = new System.Drawing.Size(307, 26);
+            this.birthdayDateTimePicker.TabIndex = 38;
+            // 
             // profilePBox
             // 
             this.profilePBox.Location = new System.Drawing.Point(43, 58);
@@ -305,12 +281,38 @@
             this.profilePBox.TabStop = false;
             this.profilePBox.Click += new System.EventHandler(this.profilePBox_Click);
             // 
-            // birthdayDateTimePicker
+            // confirmPasswordShowHideBtn
             // 
-            this.birthdayDateTimePicker.Location = new System.Drawing.Point(440, 275);
-            this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
-            this.birthdayDateTimePicker.Size = new System.Drawing.Size(307, 26);
-            this.birthdayDateTimePicker.TabIndex = 38;
+            this.confirmPasswordShowHideBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordShowIcon;
+            this.confirmPasswordShowHideBtn.Location = new System.Drawing.Point(353, 442);
+            this.confirmPasswordShowHideBtn.Name = "confirmPasswordShowHideBtn";
+            this.confirmPasswordShowHideBtn.Size = new System.Drawing.Size(35, 24);
+            this.confirmPasswordShowHideBtn.TabIndex = 36;
+            this.confirmPasswordShowHideBtn.UseVisualStyleBackColor = false;
+            this.confirmPasswordShowHideBtn.Click += new System.EventHandler(this.confirmPasswordShowHideBtn_Click);
+            // 
+            // passwordShowBtn
+            // 
+            this.passwordShowBtn.BackColor = System.Drawing.Color.Transparent;
+            this.passwordShowBtn.Image = global::IOOP_Assignment.Properties.Resources.passwordShowIcon;
+            this.passwordShowBtn.Location = new System.Drawing.Point(352, 355);
+            this.passwordShowBtn.Name = "passwordShowBtn";
+            this.passwordShowBtn.Size = new System.Drawing.Size(35, 24);
+            this.passwordShowBtn.TabIndex = 32;
+            this.passwordShowBtn.UseVisualStyleBackColor = false;
+            this.passwordShowBtn.Click += new System.EventHandler(this.passwordShowHideBtn_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.DimGray;
+            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(-34, -7);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(104, 59);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CustomerUpdateProfilePage
             // 

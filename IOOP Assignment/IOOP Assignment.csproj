@@ -521,6 +521,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
+    <None Include="PictureFolder\passwordShowIcon.png" />
+    <None Include="PictureFolder\passwordHideIcon.png" />
+    <None Include="PictureFolder\deleteIcon.png" />
+    <None Include="PictureFolder\editIcon.png" />
     <None Include="PictureFolder\cartIcon.png" />
     <None Include="PictureFolder\searchIcon.png" />
     <None Include="PictureFolder\completedIcon.png" />

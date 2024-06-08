@@ -307,7 +307,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerProfilePage";
             this.Text = "CustomerProfilePage";
-            this.Load += new System.EventHandler(this.CustomerProfilePage_Load);
             this.headerPnl.ResumeLayout(false);
             this.headerPnl.PerformLayout();
             this.backBtnPnl.ResumeLayout(false);

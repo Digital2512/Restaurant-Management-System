@@ -33,14 +33,14 @@
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductQuantity = new System.Windows.Forms.Label();
             this.deleteBtnPnl = new System.Windows.Forms.Panel();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.productImagePBox = new System.Windows.Forms.PictureBox();
-            this.editBtn = new System.Windows.Forms.Button();
             this.lblProductID = new System.Windows.Forms.Label();
             this.editBtnPnl = new System.Windows.Forms.Panel();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.productImagePBox = new System.Windows.Forms.PictureBox();
             this.deleteBtnPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
             this.editBtnPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -90,35 +90,6 @@
             this.deleteBtnPnl.Size = new System.Drawing.Size(46, 56);
             this.deleteBtnPnl.TabIndex = 6;
             // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.Location = new System.Drawing.Point(-2, -8);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(54, 66);
-            this.deleteBtn.TabIndex = 5;
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // productImagePBox
-            // 
-            this.productImagePBox.Location = new System.Drawing.Point(103, 0);
-            this.productImagePBox.Name = "productImagePBox";
-            this.productImagePBox.Size = new System.Drawing.Size(170, 150);
-            this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.productImagePBox.TabIndex = 0;
-            this.productImagePBox.TabStop = false;
-            // 
-            // editBtn
-            // 
-            this.editBtn.Location = new System.Drawing.Point(-7, -3);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(61, 63);
-            this.editBtn.TabIndex = 7;
-            this.editBtn.Text = "Edit";
-            this.editBtn.UseVisualStyleBackColor = true;
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
             // lblProductID
             // 
             this.lblProductID.AutoSize = true;
@@ -136,6 +107,36 @@
             this.editBtnPnl.Size = new System.Drawing.Size(46, 56);
             this.editBtnPnl.TabIndex = 7;
             // 
+            // editBtn
+            // 
+            this.editBtn.Image = global::IOOP_Assignment.Properties.Resources.editIcon5;
+            this.editBtn.Location = new System.Drawing.Point(-7, -3);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(61, 63);
+            this.editBtn.TabIndex = 7;
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.Image = global::IOOP_Assignment.Properties.Resources.deleteIcon;
+            this.deleteBtn.Location = new System.Drawing.Point(-2, -8);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(54, 66);
+            this.deleteBtn.TabIndex = 5;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // productImagePBox
+            // 
+            this.productImagePBox.Location = new System.Drawing.Point(103, 0);
+            this.productImagePBox.Name = "productImagePBox";
+            this.productImagePBox.Size = new System.Drawing.Size(170, 150);
+            this.productImagePBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.productImagePBox.TabIndex = 0;
+            this.productImagePBox.TabStop = false;
+            // 
             // cartProductButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -151,8 +152,8 @@
             this.Name = "cartProductButton";
             this.Size = new System.Drawing.Size(700, 150);
             this.deleteBtnPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).EndInit();
             this.editBtnPnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productImagePBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

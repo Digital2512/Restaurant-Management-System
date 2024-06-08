@@ -22,6 +22,8 @@ namespace IOOP_Assignment
             Database database = new Database(ConnectionString);
             this.UserID = userID;
             lblUserID.Text = userID;
+            passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+            confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE'";
             string customerID = database.getString(query);
             lblCustomerID.Text = customerID;
@@ -62,6 +64,9 @@ namespace IOOP_Assignment
             }
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
             profilePBox.Image = database.getImage(query);
+
+            passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+            confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
@@ -72,8 +77,60 @@ namespace IOOP_Assignment
         private void profilePBox_Click(object sender, EventArgs e)
         {
             Database database = new Database(ConnectionString);
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " png files( *. png)| *. png| jpg files( *. jpg)| *. jpg| All files( *.* )| *.* ";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string imgLocation = dialog.FileName.ToString();
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(stream);
+                byte[] images = br.ReadBytes((int)stream.Length);
+                MessageBox.Show(images.ToString());
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        string query = $"UPDATE Users SET ProfileImage = @ImageData WHERE UserID = '{UserID}';";
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@ImageData", images);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Profile Image Updated");
+
+                                query = $"SELECT ProfileImage FROM Users WHERE UserID = '{UserID}';"; 
+                                profilePBox.Image = database.getImage(query);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Profile Image Not Updated");
+                            }
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("An error occured: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (connection.State == System.Data.ConnectionState.Open)
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+            
+            /*
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
@@ -84,24 +141,26 @@ namespace IOOP_Assignment
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string imagePath = openFileDialog.FileName;
-
-                    byte[] imageData = File.ReadAllBytes(imagePath);
                     query = $"UPDATE Users SET ProfileImage = @ImageData WHERE UserID = '{userID}';";
 
-                    if (database.insertOrUpdateImageToFile(imagePath, query) == true)
+                    // Use the method with three parameters
+                    bool isUpdated = database.insertOrUpdateImageToFile(imagePath, query);
+
+                    if (isUpdated)
                     {
+                        MessageBox.Show("Profile image updated successfully");
                         query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
-                        profilePBox.Image = database.getImage(query);
+                        updateProfilePBox.Image = database.getImage(query);
                     }
                     else
                     {
                         MessageBox.Show("Picture not updated");
-                        //profilePBox.Image = Properties.Resources.errorImage;
                     }
                 }
             }
-
+            */
         }
+
 
         private void fullNameTxtBox_TextChanged(object sender, EventArgs e)
         {
@@ -112,8 +171,6 @@ namespace IOOP_Assignment
         {
             string query;
             Database database = new Database(ConnectionString);
-            query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-            string userID = database.getString(query);
             string fullName = fullNameTxtBox.Text;
             string password = passwordMTextBox.Text;
             string confirmPassword = confirmPasswordMTextBox.Text;
@@ -136,10 +193,10 @@ namespace IOOP_Assignment
             }
             if (password == confirmPassword)
             {
-                query = $"UPDATE Users SET [FullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{userID}';";
+                query = $"UPDATE Users SET [FullName] = '{fullName}', [Gender] = '{gender}', [Birthday] = '{birthday}', [Password] = '{password}' WHERE [UserID] = '{UserID}';";
                 if (database.insertOrUpdateValuesIntoDatabase(query) == true)
                 {
-                    MessageBox.Show("Profile updated successfully!");
+                    MessageBox.Show("Profile Details updated successfully!");
                     this.Hide();
                     CustomerProfilePage customerProfilePage = new CustomerProfilePage(UserID);
                     customerProfilePage.Show();
@@ -160,12 +217,12 @@ namespace IOOP_Assignment
             if(passwordMTextBox.PasswordChar == '\0')
             {
                 passwordMTextBox.PasswordChar = '*';
-                //passwordShowBtn.Image = Properties.Resources.passwordShowIconResized;
+                passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
             }
             else if (passwordMTextBox.PasswordChar == '*')
             {
                 passwordMTextBox.PasswordChar = '\0';
-                //passwordShowBtn.Image = Properties.Resources.passwordlHideIconResized;
+                passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
             }
         }
 
@@ -174,12 +231,12 @@ namespace IOOP_Assignment
             if (confirmPasswordMTextBox.PasswordChar == '\0')
             {
                 confirmPasswordMTextBox.PasswordChar = '*';
-                //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIconResized;
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordHideIcon;
             }
             else if (confirmPasswordMTextBox.PasswordChar == '*')
             {
                 confirmPasswordMTextBox.PasswordChar = '\0';
-                //confirmPasswordShowHideBtn.Image = Properties.Resources.passwordlHideIconResized;
+                confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
             }
         }
 

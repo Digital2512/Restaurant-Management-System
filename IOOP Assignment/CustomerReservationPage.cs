@@ -45,7 +45,7 @@ namespace IOOP_Assignment
 
             Database database = new Database(connectionString);
             string searchString = searchTxtBox.Text;
-            string query = $"SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL AND PlaceName LIKE '{searchString}%'";
+            string query = $"SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE PlaceName LIKE '{searchString}%'";
 
             string minOfPaxFilter = minOfPaxCBox.Text;
 
@@ -60,9 +60,7 @@ namespace IOOP_Assignment
                 {
                     eventFilter += $"'{eventsCListBox.CheckedItems[i].ToString()}',";
                 }
-                MessageBox.Show(eventFilter);
             }
-            MessageBox.Show(eventFilter);
 
             if (minOfPaxFilter != "")
             {
