@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace IOOP_Assignment
 {
@@ -16,9 +17,25 @@ namespace IOOP_Assignment
         public ManagerHomePage()
         {
             InitializeComponent();
+            Manager manager = new Manager();  
+            byte[] profileImage = manager.GetManagerProfileImage();
+
+            if (profileImage != null)
+            {
+                using (MemoryStream memoryStream = new MemoryStream(profileImage))
+                {
+                    picManager.Image = Image.FromStream(memoryStream);
+                }
+            }
+            else
+            {
+                // Optionally set a default image if no image is found
+                picManager.Image = Properties.Resources.userIcon; // Ensure you have a default image in your resources
+            }
         }
 
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+
 
         private void picManager_Click(object sender, EventArgs e)
         {

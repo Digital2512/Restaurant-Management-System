@@ -35,6 +35,24 @@ namespace IOOP_Assignment
 
         }
 
+        public byte[] GetManagerProfileImage()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT ProfileImage FROM Users WHERE Role = 'MANAGER' AND LoggedIn = 'TRUE'";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+                    var result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        return (byte[])result;
+                    }
+                    return null;
+                }
+            }
+        }
+
 
         //managermenu
         public string GenerateProductID()
@@ -386,41 +404,26 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                // Check if the RecipeID exists in the Recipe table
-                using (SqlCommand checkRecipeCmd = new SqlCommand("SELECT COUNT(*) FROM RecipeStock WHERE RecipeID = @RecipeID", con))
+
+
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, ProductImage) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @ProductImage)", con))
                 {
-                    checkRecipeCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                    int recipeCount = (int)checkRecipeCmd.ExecuteScalar();
-
-                    // If the RecipeID does not exist, insert a new record into the Recipe table
-                    if (recipeCount == 0)
-                    {
-                        using (SqlCommand insertRecipeCmd = new SqlCommand("INSERT INTO RecipeStock (RecipeID) VALUES (@RecipeID)", con))
-                        {
-                            insertRecipeCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                            insertRecipeCmd.Parameters.AddWithValue("@ProductID", productID);
-                            insertRecipeCmd.ExecuteNonQuery();
-                        }
-                    }
-
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Menu (ProductID, Name, Description, Price, Cuisine, ProductImage) VALUES (@ProductID, @Name, @Description, @Price, @Cuisine, @ProductImage)", con))
-                    {
-                        cmd.Parameters.AddWithValue("@ProductID", productID);
-                        cmd.Parameters.AddWithValue("@Name", name.ToUpper());
-                        cmd.Parameters.AddWithValue("@Description", description);
-                        cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Cuisine", cuisine);
-                        cmd.Parameters.AddWithValue("@ProductImage", image);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    using (SqlCommand updateCmd = new SqlCommand("UPDATE RecipeStock SET ProductID = @ProductID WHERE RecipeID = @RecipeID", con))
-                    {
-                        updateCmd.Parameters.AddWithValue("@ProductID", productID);
-                        updateCmd.Parameters.AddWithValue("@RecipeID", recipeID);
-                        updateCmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.AddWithValue("@ProductID", productID);
+                    cmd.Parameters.AddWithValue("@Name", name.ToUpper());
+                    cmd.Parameters.AddWithValue("@Description", description);
+                    cmd.Parameters.AddWithValue("@Price", price);
+                    cmd.Parameters.AddWithValue("@Cuisine", cuisine);
+                    cmd.Parameters.AddWithValue("@ProductImage", image);
+                    cmd.ExecuteNonQuery();
                 }
+
+                using (SqlCommand updateCmd = new SqlCommand("INSERT INTO RecipeStock (ProductID, RecipeID) VALUES (@ProductID, @RecipeID)", con))
+                {
+                    updateCmd.Parameters.AddWithValue("@ProductID", productID);
+                    updateCmd.Parameters.AddWithValue("@RecipeID", recipeID);
+                    updateCmd.ExecuteNonQuery();
+                }
+
             }
         }
 

@@ -133,7 +133,7 @@ namespace IOOP_Assignment
 
         private void txtResvSearch_Enter(object sender, EventArgs e)
         {
-            if (txtResvSearch.Text == "Search...")
+            if (txtResvSearch.Text == "Search..")
             {
                 txtResvSearch.Text = "";
                 RefreshDataGridView();
@@ -149,6 +149,8 @@ namespace IOOP_Assignment
 
             }
         }
+
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
