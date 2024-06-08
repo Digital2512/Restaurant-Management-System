@@ -64,7 +64,7 @@ namespace IOOP_Assignment
             femaleRBtn.Enabled = false;
             ratherNotSayRBtn.Enabled = false;
 
-            passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
+            passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

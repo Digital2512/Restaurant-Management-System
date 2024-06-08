@@ -65,8 +65,8 @@ namespace IOOP_Assignment
             query = $"SELECT ProfileImage FROM Users WHERE UserID = '{userID}';";
             profilePBox.Image = database.getImage(query);
 
-            passwordShowBtn.Image = Properties.Resources.passwordShowIcon;
-            confirmPasswordShowHideBtn.Image = Properties.Resources.passwordShowIcon;
+            passwordShowBtn.Image = Properties.Resources.passwordHideIcon;
+            confirmPasswordShowHideBtn.Image = Properties.Resources.passwordHideIcon;
         }
 
         private void lblUserIDTitle_Click(object sender, EventArgs e)
