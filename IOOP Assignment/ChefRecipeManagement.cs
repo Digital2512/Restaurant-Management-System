@@ -9,11 +9,13 @@ namespace IOOP_Assignment
 {
     public partial class ChefRecipeManagement : Form
     {
-        private string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        private string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
+        private Form parentForm;
 
-        public ChefRecipeManagement()
+        public ChefRecipeManagement(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
             this.Load += RecipeManagementForm_Load;
             RecipeDataView.SelectionChanged += dataGridViewRecipes_SelectionChanged;
             ListRecipeInventory.SelectedIndexChanged += ListRecipeInventory_SelectedIndexChanged;
@@ -40,6 +42,8 @@ namespace IOOP_Assignment
             RecipeDataView.Columns["RecipeID"].DataPropertyName = "RecipeID";
             RecipeDataView.Columns["ProductID"].DataPropertyName = "ProductID";
             RecipeDataView.Columns["StockQuantityUsed"].DataPropertyName = "StockQuantityUsed";
+
+            RecipeDataView.Columns["StockQuantityUsed"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void LoadRecipeDetails()
@@ -113,9 +117,11 @@ namespace IOOP_Assignment
             if (dataTable.Rows.Count > 0)
             {
                 DataRow row = dataTable.Rows[0];
-                string productDetails = $"Product Name: {row["Name"]}\nDescription: {row["Description"]}\n";
+                string productName = $"Product Name: {row["Name"]} \n";
+                string productDescription = $"Description: {row["Description"]}\n";
                 InventoryRecipeBox.Items.Clear();
-                InventoryRecipeBox.Items.Add(productDetails);
+                InventoryRecipeBox.Items.Add(productName);
+                InventoryRecipeBox.Items.Add(productDescription);
             }
         }
 
@@ -168,9 +174,9 @@ namespace IOOP_Assignment
             {
                 DataRow row = dataTable.Rows[0];
                 string inventoryDetails = $"Inventory Name: {row["Name"]}\nQuantity: {row["Quantity"]}\nPrice: {row["IndividualPrice"]}\n";
-                if (InventoryRecipeBox.Items.Count > 1)
+                if (InventoryRecipeBox.Items.Count > 2)
                 {
-                    InventoryRecipeBox.Items.RemoveAt(1);  // Remove the existing inventory details
+                    InventoryRecipeBox.Items.RemoveAt(2);  // Remove the existing inventory details
                 }
                 InventoryRecipeBox.Items.Add(inventoryDetails);
             }
@@ -209,6 +215,10 @@ namespace IOOP_Assignment
                 DataTable dataTable = ExecuteSqlQuery(query, parameters);
                 DataRow row = dataTable.Rows[0];
                 string inventoryDetails = $"Inventory Name: {row["Name"]}\nQuantity: {row["Quantity"]}\nPrice: {row["IndividualPrice"]}\n";
+                if (InventoryRecipeBox.Items.Count > 2)
+                {
+                    InventoryRecipeBox.Items.RemoveAt(2);  // Remove the existing inventory details
+                }
                 InventoryRecipeBox.Items.Add(inventoryDetails);
                 NumericQuantityUsed.Visible = true;
                 NumericQuantityUsed.Value = 1;
@@ -277,11 +287,7 @@ namespace IOOP_Assignment
         private void BtnRecipeBack_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ListRecipeInventory_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
+            parentForm.Show();
         }
     }
 }

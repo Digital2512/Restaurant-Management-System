@@ -48,9 +48,9 @@ namespace IOOP_Assignment
         private void button1_Click(object sender, EventArgs e)
         {
             loginForm loginForm = new loginForm();
-            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             this.Visible = false;
             loginForm.Show();
+            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
             Database database = new Database(connectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
             string userID = database.getString(query);
@@ -79,7 +79,7 @@ namespace IOOP_Assignment
         private void ButtonHome_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Now navigating to Recipe Management Page");
-            Utility.OpenForm(this, new ChefRecipeManagement());
+            Utility.OpenForm(this, new ChefRecipeManagement(this));
         }
 
         private void LoadChefInfo(string chefId)
@@ -114,6 +114,5 @@ namespace IOOP_Assignment
             label13.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
             label14.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
         }
-
     }
 }

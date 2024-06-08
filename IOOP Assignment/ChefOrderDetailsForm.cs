@@ -70,7 +70,7 @@ namespace IOOP_Assignment
             string query = $"SELECT TOP 1 OrderStatus FROM Orders WHERE PlaceNumber = @PlaceNumber ORDER BY OrderDateTime DESC";
             SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -99,7 +99,7 @@ namespace IOOP_Assignment
                 string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS')";
                 SqlParameter[] parameters = { new SqlParameter("@PlaceNumber", tableNumber) };
 
-                DataTable dataTable = ExecuteSqlQuery(query, parameters);
+                DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
                 comboBoxOrderTable.Items.Clear();
                 foreach (DataRow row in dataTable.Rows)
@@ -156,14 +156,13 @@ namespace IOOP_Assignment
                         new SqlParameter("@ProductID", productID)
                     };
 
-                    DataTable dataTable = ExecuteSqlQuery(query, parameters);
+                    DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
                     if (dataTable.Rows.Count > 0)
                     {
                         DataRow row = dataTable.Rows[0];
                         label6.Text = row["ProductName"].ToString();
                         label7.Text = row["Quantity"].ToString();
-                        label8.Text = row["Price"].ToString(); // Ensure this label is updated if it exists
                     }
                     else
                     {
@@ -200,7 +199,7 @@ namespace IOOP_Assignment
                     o.OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             comboBoxProductID.Items.Clear(); // Clear previous items
 
@@ -216,7 +215,7 @@ namespace IOOP_Assignment
                 LblChefIDShow.Text = firstRow["ChefID"].ToString();
                 label6.Text = firstRow["ProductName"].ToString();
                 label7.Text = firstRow["Quantity"].ToString();
-                label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
+
                 label9.Text = firstRow["OrderStatus"].ToString();
                 LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
                 label12.Text = firstRow["EstimatedTimeLeft"].ToString();
@@ -240,7 +239,7 @@ namespace IOOP_Assignment
                 string query = "SELECT OrderStatus FROM Orders WHERE OrderID = @OrderID";
                 SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-                DataTable dataTable = ExecuteSqlQuery(query, parameters);
+                DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
@@ -254,7 +253,7 @@ namespace IOOP_Assignment
                         // Calculate estimated time left (10 minutes per product)
                         int estimatedTimeLeft = totalQuantity * 10;
 
-                        var result = MessageBox.Show($"Do you want to update the order status to 'IN_3PROGRESS'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var result = MessageBox.Show($"Do you want to update the order status to 'IN_PROGRESS'?\n\nOrder ID: {orderID}\nProduct Names: {productNames}\nEstimated Time Left: {estimatedTimeLeft} minutes", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
@@ -264,7 +263,7 @@ namespace IOOP_Assignment
                                 new SqlParameter("@EstimatedTimeLeft", estimatedTimeLeft),
                                 new SqlParameter("@ChefID", this.userid)
                             };
-                            ExecuteSqlCommand(updateQuery, updateParameters);
+                            Utility.ExecuteSqlCommand(updateQuery, updateParameters);
                             MessageBox.Show("Order status updated to In Progress.");
                             LoadOrderDetails(orderID); // Update the labels with the new details
                             LoadChefOrders();
@@ -283,7 +282,7 @@ namespace IOOP_Assignment
 
                             string updateQuery = "UPDATE Orders SET OrderStatus = 'COMPLETED', EstimatedTimeLeft = '0' WHERE OrderID = @OrderID";
                             SqlParameter[] updateParameters = { new SqlParameter("@OrderID", orderID) };
-                            ExecuteSqlCommand(updateQuery, updateParameters);
+                            Utility.ExecuteSqlCommand(updateQuery, updateParameters);
                             MessageBox.Show("Order status updated to Completed.");
                             LoadOrderDetails(orderID); // Update the labels with the new details
                             LoadChefOrders();
@@ -303,7 +302,7 @@ namespace IOOP_Assignment
             string query = "SELECT SUM(Quantity) AS TotalQuantity FROM OrderDetails WHERE OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
             if (dataTable.Rows.Count > 0)
             {
                 return Convert.ToInt32(dataTable.Rows[0]["TotalQuantity"]);
@@ -316,7 +315,7 @@ namespace IOOP_Assignment
             string query = "SELECT m.Name FROM OrderDetails od JOIN Menu m ON od.ProductID = m.ProductID WHERE od.OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
             string productNames = string.Join(", ", dataTable.Rows.Cast<DataRow>().Select(row => row["Name"].ToString()));
             return productNames;
         }
@@ -326,7 +325,7 @@ namespace IOOP_Assignment
             string query = "SELECT TOP 1 ProductID FROM OrderDetails WHERE OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
             if (dataTable.Rows.Count > 0)
             {
                 return dataTable.Rows[0]["ProductID"].ToString();
@@ -339,7 +338,7 @@ namespace IOOP_Assignment
             string query = "SELECT SUM(Quantity) AS TotalQuantity FROM OrderDetails WHERE OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
             if (dataTable.Rows.Count > 0)
             {
                 return Convert.ToInt32(dataTable.Rows[0]["TotalQuantity"]);
@@ -352,7 +351,7 @@ namespace IOOP_Assignment
             string query = "SELECT PlaceNumber FROM Orders WHERE OrderID = @OrderID";
             SqlParameter[] parameters = { new SqlParameter("@OrderID", orderID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
             if (dataTable.Rows.Count > 0)
             {
                 string tableNumber = dataTable.Rows[0]["PlaceNumber"].ToString();
@@ -383,14 +382,12 @@ namespace IOOP_Assignment
             LblChefIDShow.Text = string.Empty;
             label6.Text = string.Empty;
             label7.Text = string.Empty;
-            label8.Text = string.Empty;
             label9.Text = string.Empty;
             label12.Text = string.Empty;
 
             // Hide the labels
             label6.Visible = false;
             label7.Visible = false;
-            label8.Visible = false;
             label9.Visible = false;
             LblTableSelectedShow.Visible = false;
             label12.Visible = false;
@@ -402,7 +399,7 @@ namespace IOOP_Assignment
             string query = "SELECT OrderID FROM Orders WHERE ChefID = @ChefID AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS')";
             SqlParameter[] parameters = { new SqlParameter("@ChefID", this.userid) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -423,7 +420,7 @@ namespace IOOP_Assignment
             string query = "SELECT StockQuantityUsed FROM RecipeStock WHERE ProductID = @ProductID";
             SqlParameter[] parameters = { new SqlParameter("@ProductID", productID) };
 
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -449,7 +446,7 @@ namespace IOOP_Assignment
                 new SqlParameter("@StockID", inventoryID)
             };
 
-            ExecuteSqlCommand(query, parameters);
+            Utility.ExecuteSqlCommand(query, parameters);
         }
 
         private void UpdateTimeLabel(object sender, ElapsedEventArgs e)
@@ -465,52 +462,9 @@ namespace IOOP_Assignment
             }
         }
 
-        private DataTable ExecuteSqlQuery(string query, SqlParameter[] parameters)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    if (parameters != null)
-                    {
-                        foreach (var param in parameters)
-                        {
-                            command.Parameters.Add(param);
-                        }
-                    }
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        return dataTable;
-                    }
-                }
-            }
-        }
-
-        private void ExecuteSqlCommand(string query, SqlParameter[] parameters)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    if (parameters != null)
-                    {
-                        foreach (var param in parameters)
-                        {
-                            command.Parameters.Add(param);
-                        }
-                    }
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
         private void BbackH_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Utility.OpenForm(this, new ChefHomePage(userid));
         }
 
         private void T01_Click(object sender, EventArgs e)
