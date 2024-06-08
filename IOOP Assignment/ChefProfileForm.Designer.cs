@@ -110,7 +110,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(201, 197);
+            this.txtPassword.Location = new System.Drawing.Point(210, 194);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 31;
@@ -118,7 +118,7 @@
             // checkBoxMale
             // 
             this.checkBoxMale.AutoSize = true;
-            this.checkBoxMale.Location = new System.Drawing.Point(201, 290);
+            this.checkBoxMale.Location = new System.Drawing.Point(210, 291);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(59, 20);
             this.checkBoxMale.TabIndex = 28;
@@ -127,13 +127,13 @@
             // 
             // monthCalendarBirthday
             // 
-            this.monthCalendarBirthday.Location = new System.Drawing.Point(196, 321);
+            this.monthCalendarBirthday.Location = new System.Drawing.Point(210, 321);
             this.monthCalendarBirthday.Name = "monthCalendarBirthday";
             this.monthCalendarBirthday.TabIndex = 29;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(201, 262);
+            this.txtName.Location = new System.Drawing.Point(210, 256);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 22);
             this.txtName.TabIndex = 33;

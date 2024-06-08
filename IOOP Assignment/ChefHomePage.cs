@@ -90,9 +90,9 @@ namespace IOOP_Assignment
             if (dataTable.Rows.Count > 0)
             {
                 DataRow row = dataTable.Rows[0];
-                label1.Text = row["FullName"].ToString();
-                label11.Text = row["Gender"].ToString();
-                label7.Text = row["Role"].ToString();
+                LblHomeName.Text = row["FullName"].ToString();
+                LblHomeGender.Text = row["Gender"].ToString();
+                LblHomeRole.Text = row["Role"].ToString();
             }
             else
             {
@@ -108,9 +108,9 @@ namespace IOOP_Assignment
 
             SqlParameter[] parameters = { new SqlParameter("@chefID", chefID) };
 
-            label12.Text = Utility.ExecuteSqlQuery(queryCompleted, parameters).Rows[0][0].ToString();
-            label13.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
-            label14.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
+            LblHomeOrderComplete.Text = Utility.ExecuteSqlQuery(queryCompleted, parameters).Rows[0][0].ToString();
+            LblHomeOrderProgress.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
+            LblHomeOrderPending.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
         }
     }
 }

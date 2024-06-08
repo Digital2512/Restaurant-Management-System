@@ -29,6 +29,8 @@ namespace IOOP_Assignment
             LoadInventoryData();
             dataGridView1.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView1_CellFormatting);
             dataGridView1.SelectionChanged += new EventHandler(dataGridView1_SelectionChanged);
+            BtnInventorySearch.Click += BtnInventorySearch_Click; // Add this line for search functionality
+            BtnInventoryCancel.Click += BtnInventoryCancel_Click; // Add this line for cancel functionality
 
             ToggleTextBoxVisibility(false);
             BtnDone.Visible = false;
@@ -104,16 +106,63 @@ namespace IOOP_Assignment
             if (dataGridView1.SelectedRows.Count > 0 && currentAction == ActionState.None)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                LBLStockID.Text = selectedRow.Cells["StockID"].Value.ToString();
-                LBLName.Text = selectedRow.Cells["Name"].Value.ToString();
-                LBLQuantity.Text = selectedRow.Cells["Quantity"].Value.ToString();
-                LBLPrice.Text = selectedRow.Cells["IndividualPrice"].Value.ToString();
-                LBLStatus.Text = selectedRow.Cells["Status"].Value.ToString();
+                LblinventoryStockIDShow.Text = selectedRow.Cells["StockID"].Value.ToString();
+                LblInventoryNameShow.Text = selectedRow.Cells["Name"].Value.ToString();
+                LblInventoryQuantityShow.Text = selectedRow.Cells["Quantity"].Value.ToString();
+                LblInventoryPriceShow.Text = selectedRow.Cells["IndividualPrice"].Value.ToString();
+                LblInventoryStatusShow.Text = selectedRow.Cells["Status"].Value.ToString();
 
                 numericUpDownQuantity.Value = Convert.ToDecimal(selectedRow.Cells["Quantity"].Value);
                 numericUpDownPrice.Value = Convert.ToDecimal(selectedRow.Cells["IndividualPrice"].Value);
                 ToggleCheckBox(selectedRow.Cells["Status"].Value.ToString());
             }
+        }
+
+        private void BtnInventorySearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = TbSearch.Text.Trim();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                string query = "SELECT StockID, Name, Quantity, IndividualPrice, Status FROM Inventory WHERE Name LIKE @Name ORDER BY StockID ASC";
+                SqlParameter[] parameters = {
+                    new SqlParameter("@Name", "%" + searchQuery + "%")
+                };
+
+                DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
+                dataGridView1.DataSource = dataTable;
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[0];
+                    LblinventoryStockIDShow.Text = selectedRow.Cells["StockID"].Value.ToString();
+                    LblInventoryNameShow.Text = selectedRow.Cells["Name"].Value.ToString();
+                    LblInventoryQuantityShow.Text = selectedRow.Cells["Quantity"].Value.ToString();
+                    LblInventoryPriceShow.Text = selectedRow.Cells["IndividualPrice"].Value.ToString();
+                    LblInventoryStatusShow.Text = selectedRow.Cells["Status"].Value.ToString();
+
+                    numericUpDownQuantity.Value = Convert.ToDecimal(selectedRow.Cells["Quantity"].Value);
+                    numericUpDownPrice.Value = Convert.ToDecimal(selectedRow.Cells["IndividualPrice"].Value);
+                    ToggleCheckBox(selectedRow.Cells["Status"].Value.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No inventory item found with the given name.");
+                }
+
+                BtnInventoryCancel.Visible = true; // Show the cancel button after a search
+            }
+            else
+            {
+                MessageBox.Show("Please enter an inventory name to search.");
+            }
+        }
+
+        private void BtnInventoryCancel_Click(object sender, EventArgs e)
+        {
+            LoadInventoryData();
+            ClearDetails();
+            TbSearch.Text = string.Empty;
+            BtnInventoryCancel.Visible = false; // Hide the cancel button
         }
 
         private bool ConfirmAction(string details)
@@ -126,7 +175,7 @@ namespace IOOP_Assignment
             currentAction = ActionState.NewItem;
             ClearDetails();
             ToggleTextBoxVisibility(true);
-            LBLStockID.Text = GenerateNewID();
+            LblinventoryStockIDShow.Text = GenerateNewID();
             BtnDone.Visible = true;
             BtnInventoryCancel.Visible = true;
             DisableActionButtons();
@@ -134,7 +183,7 @@ namespace IOOP_Assignment
 
         private void BtnInventoryDelete_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(LBLStockID.Text))
+            if (string.IsNullOrEmpty(LblinventoryStockIDShow.Text))
             {
                 MessageBox.Show("Please select an item to delete.");
                 return;
@@ -149,7 +198,7 @@ namespace IOOP_Assignment
         private void BtnInventoryAdd_Click(object sender, EventArgs e)
         //update inventory
         {
-            if (string.IsNullOrEmpty(LBLStockID.Text))
+            if (string.IsNullOrEmpty(LblinventoryStockIDShow.Text))
             {
                 MessageBox.Show("Please select an item to update.");
                 return;
@@ -163,7 +212,7 @@ namespace IOOP_Assignment
 
         private void BtnDone_Click_1(object sender, EventArgs e)
         {
-            string id = LBLStockID.Text.Trim();
+            string id = LblinventoryStockIDShow.Text.Trim();
             string name = TBInventoryName.Text.Trim();
             int quantity = (int)numericUpDownQuantity.Value;
             decimal price = numericUpDownPrice.Value;
@@ -191,10 +240,10 @@ namespace IOOP_Assignment
             else if (currentAction == ActionState.UpdateItem)
             {
                 string details = "Are you sure you want to update the following fields?\n";
-                if (name != LBLName.Text) details += $"Name: {LBLName.Text} -> {name}\n";
-                if (quantity.ToString() != LBLQuantity.Text) details += $"Quantity: {LBLQuantity.Text} -> {quantity}\n";
-                if (price.ToString() != LBLPrice.Text) details += $"Price: {LBLPrice.Text} -> {price}\n";
-                if (status != LBLStatus.Text) details += $"Status: {LBLStatus.Text} -> {status}\n";
+                if (name != LblInventoryNameShow.Text) details += $"Name: {LblInventoryNameShow.Text} -> {name}\n";
+                if (quantity.ToString() != LblInventoryQuantityShow.Text) details += $"Quantity: {LblInventoryQuantityShow.Text} -> {quantity}\n";
+                if (price.ToString() != LblInventoryPriceShow.Text) details += $"Price: {LblInventoryPriceShow.Text} -> {price}\n";
+                if (status != LblInventoryStatusShow.Text) details += $"Status: {LblInventoryStatusShow.Text} -> {status}\n";
 
                 if (ConfirmAction(details))
                 {
@@ -329,19 +378,19 @@ namespace IOOP_Assignment
             checkBoxLack.Visible = visible;
             checkBoxOut.Visible = visible;
 
-            LBLName.Visible = !visible;
-            LBLQuantity.Visible = !visible;
-            LBLPrice.Visible = !visible;
-            LBLStatus.Visible = !visible;
+            LblInventoryNameShow.Visible = !visible;
+            LblInventoryQuantityShow.Visible = !visible;
+            LblInventoryPriceShow.Visible = !visible;
+            LblInventoryStatusShow.Visible = !visible;
         }
 
         private void ClearDetails()
         {
-            LBLStockID.Text = string.Empty;
-            LBLName.Text = string.Empty;
-            LBLQuantity.Text = string.Empty;
-            LBLPrice.Text = string.Empty;
-            LBLStatus.Text = string.Empty;
+            LblinventoryStockIDShow.Text = string.Empty;
+            LblInventoryNameShow.Text = string.Empty;
+            LblInventoryQuantityShow.Text = string.Empty;
+            LblInventoryPriceShow.Text = string.Empty;
+            LblInventoryStatusShow.Text = string.Empty;
 
             numericUpDownQuantity.Value = 0;
             numericUpDownPrice.Value = 0;

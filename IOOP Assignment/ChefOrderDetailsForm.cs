@@ -160,8 +160,8 @@ namespace IOOP_Assignment
                     if (dataTable.Rows.Count > 0)
                     {
                         DataRow row = dataTable.Rows[0];
-                        label6.Text = row["ProductName"].ToString();
-                        label7.Text = row["Quantity"].ToString();
+                        LblOrderProductNameShow.Text = row["ProductName"].ToString();
+                        LblOrderQuantityShow.Text = row["Quantity"].ToString();
                     }
                     else
                     {
@@ -212,21 +212,21 @@ namespace IOOP_Assignment
                 // Load the first product details by default
                 DataRow firstRow = dataTable.Rows[0];
                 LblChefIDShow.Text = firstRow["ChefID"].ToString();
-                label6.Text = firstRow["ProductName"].ToString();
-                label7.Text = firstRow["Quantity"].ToString();
-                label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
-                label9.Text = firstRow["OrderStatus"].ToString();
+                LblOrderProductNameShow.Text = firstRow["ProductName"].ToString();
+                LblOrderQuantityShow.Text = firstRow["Quantity"].ToString();
+                LblOrderProductIDShow.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
+                LblOrderStatusShow.Text = firstRow["OrderStatus"].ToString();
                 LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
-                label12.Text = firstRow["EstimatedTimeLeft"].ToString();
+                LblOrderTimeLeftShow.Text = firstRow["EstimatedTimeLeft"].ToString();
 
                 comboBoxProductID.SelectedIndex = 0; // Select the first item by default
 
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                label9.Visible = true;
+                LblOrderProductNameShow.Visible = true;
+                LblOrderQuantityShow.Visible = true;
+                LblOrderProductIDShow.Visible = true;
+                LblOrderStatusShow.Visible = true;
                 LblTableSelectedShow.Visible = true;
-                label12.Visible = true;
+                LblOrderTimeLeftShow.Visible = true;
             }
         }
 
@@ -379,17 +379,17 @@ namespace IOOP_Assignment
             // Clear the labels
             LblTableSelectedShow.Text = string.Empty;
             LblChefIDShow.Text = string.Empty;
-            label6.Text = string.Empty;
-            label7.Text = string.Empty;
-            label9.Text = string.Empty;
-            label12.Text = string.Empty;
+            LblOrderProductNameShow.Text = string.Empty;
+            LblOrderQuantityShow.Text = string.Empty;
+            LblOrderStatusShow.Text = string.Empty;
+            LblOrderTimeLeftShow.Text = string.Empty;
 
             // Hide the labels
-            label6.Visible = false;
-            label7.Visible = false;
-            label9.Visible = false;
+            LblOrderProductNameShow.Visible = false;
+            LblOrderQuantityShow.Visible = false;
+            LblOrderStatusShow.Visible = false;
             LblTableSelectedShow.Visible = false;
-            label12.Visible = false;
+            LblOrderTimeLeftShow.Visible = false;
         }
 
         private void LoadChefOrders()
@@ -472,6 +472,11 @@ namespace IOOP_Assignment
         }
 
         private void V01_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBvieworder_Click(object sender, EventArgs e)
         {
 
         }

@@ -33,6 +33,9 @@
             this.TimelblRecipe = new System.Windows.Forms.Label();
             this.LBLTopicRecipe = new System.Windows.Forms.Label();
             this.RecipeDataView = new System.Windows.Forms.DataGridView();
+            this.recipeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockQuantityUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recipeStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iOOPDatabaseDataSet1 = new IOOP_Assignment.IOOPDatabaseDataSet1();
             this.recipeStockTableAdapter = new IOOP_Assignment.IOOPDatabaseDataSet1TableAdapters.RecipeStockTableAdapter();
@@ -53,9 +56,6 @@
             this.ListRecipeInventory = new System.Windows.Forms.ListBox();
             this.NumericQuantityUsed = new System.Windows.Forms.NumericUpDown();
             this.InventoryRecipeBox = new System.Windows.Forms.ListBox();
-            this.recipeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockQuantityUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecipePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecipeDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recipeStockBindingSource)).BeginInit();
@@ -78,7 +78,7 @@
             // TimelblRecipe
             // 
             this.TimelblRecipe.AutoSize = true;
-            this.TimelblRecipe.Location = new System.Drawing.Point(610, 34);
+            this.TimelblRecipe.Location = new System.Drawing.Point(584, 17);
             this.TimelblRecipe.Name = "TimelblRecipe";
             this.TimelblRecipe.Size = new System.Drawing.Size(38, 16);
             this.TimelblRecipe.TabIndex = 2;
@@ -87,9 +87,10 @@
             // LBLTopicRecipe
             // 
             this.LBLTopicRecipe.AutoSize = true;
-            this.LBLTopicRecipe.Location = new System.Drawing.Point(19, 34);
+            this.LBLTopicRecipe.Font = new System.Drawing.Font("Russo One", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLTopicRecipe.Location = new System.Drawing.Point(12, 34);
             this.LBLTopicRecipe.Name = "LBLTopicRecipe";
-            this.LBLTopicRecipe.Size = new System.Drawing.Size(133, 16);
+            this.LBLTopicRecipe.Size = new System.Drawing.Size(341, 36);
             this.LBLTopicRecipe.TabIndex = 1;
             this.LBLTopicRecipe.Text = "Recipe Management";
             // 
@@ -108,6 +109,34 @@
             this.RecipeDataView.RowTemplate.Height = 24;
             this.RecipeDataView.Size = new System.Drawing.Size(698, 221);
             this.RecipeDataView.TabIndex = 1;
+            // 
+            // recipeIDDataGridViewTextBoxColumn
+            // 
+            this.recipeIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.recipeIDDataGridViewTextBoxColumn.DataPropertyName = "RecipeID";
+            this.recipeIDDataGridViewTextBoxColumn.FillWeight = 500F;
+            this.recipeIDDataGridViewTextBoxColumn.HeaderText = "RecipeID";
+            this.recipeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.recipeIDDataGridViewTextBoxColumn.Name = "recipeIDDataGridViewTextBoxColumn";
+            this.recipeIDDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // stockQuantityUsedDataGridViewTextBoxColumn
+            // 
+            this.stockQuantityUsedDataGridViewTextBoxColumn.DataPropertyName = "StockQuantityUsed";
+            this.stockQuantityUsedDataGridViewTextBoxColumn.FillWeight = 400F;
+            this.stockQuantityUsedDataGridViewTextBoxColumn.HeaderText = "StockQuantityUsed";
+            this.stockQuantityUsedDataGridViewTextBoxColumn.MaxInputLength = 100000;
+            this.stockQuantityUsedDataGridViewTextBoxColumn.MinimumWidth = 1000;
+            this.stockQuantityUsedDataGridViewTextBoxColumn.Name = "stockQuantityUsedDataGridViewTextBoxColumn";
+            this.stockQuantityUsedDataGridViewTextBoxColumn.Width = 1000;
             // 
             // recipeStockBindingSource
             // 
@@ -210,9 +239,9 @@
             this.LBLInventoryID.AutoSize = true;
             this.LBLInventoryID.Location = new System.Drawing.Point(95, 404);
             this.LBLInventoryID.Name = "LBLInventoryID";
-            this.LBLInventoryID.Size = new System.Drawing.Size(78, 16);
+            this.LBLInventoryID.Size = new System.Drawing.Size(86, 16);
             this.LBLInventoryID.TabIndex = 12;
-            this.LBLInventoryID.Text = "Product ID : ";
+            this.LBLInventoryID.Text = "Inventory ID : ";
             // 
             // LBLQuantityRecipeShow
             // 
@@ -264,34 +293,6 @@
             this.InventoryRecipeBox.Name = "InventoryRecipeBox";
             this.InventoryRecipeBox.Size = new System.Drawing.Size(367, 196);
             this.InventoryRecipeBox.TabIndex = 18;
-            // 
-            // recipeIDDataGridViewTextBoxColumn
-            // 
-            this.recipeIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.recipeIDDataGridViewTextBoxColumn.DataPropertyName = "RecipeID";
-            this.recipeIDDataGridViewTextBoxColumn.FillWeight = 500F;
-            this.recipeIDDataGridViewTextBoxColumn.HeaderText = "RecipeID";
-            this.recipeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.recipeIDDataGridViewTextBoxColumn.Name = "recipeIDDataGridViewTextBoxColumn";
-            this.recipeIDDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // stockQuantityUsedDataGridViewTextBoxColumn
-            // 
-            this.stockQuantityUsedDataGridViewTextBoxColumn.DataPropertyName = "StockQuantityUsed";
-            this.stockQuantityUsedDataGridViewTextBoxColumn.FillWeight = 400F;
-            this.stockQuantityUsedDataGridViewTextBoxColumn.HeaderText = "StockQuantityUsed";
-            this.stockQuantityUsedDataGridViewTextBoxColumn.MaxInputLength = 100000;
-            this.stockQuantityUsedDataGridViewTextBoxColumn.MinimumWidth = 1000;
-            this.stockQuantityUsedDataGridViewTextBoxColumn.Name = "stockQuantityUsedDataGridViewTextBoxColumn";
-            this.stockQuantityUsedDataGridViewTextBoxColumn.Width = 1000;
             // 
             // ChefRecipeManagement
             // 

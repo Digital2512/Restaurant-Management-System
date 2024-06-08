@@ -22,14 +22,6 @@ public static class Utility
         return connection;
     }
 
-    // Method to close a SQL connection
-    public static void CloseSqlConnection(SqlConnection connection)
-    {
-        if (connection != null && connection.State == ConnectionState.Open)
-        {
-            connection.Close();
-        }
-    }
 
     // Method to execute a SQL command
     public static int ExecuteSqlCommand(string query, SqlParameter[] parameters)
