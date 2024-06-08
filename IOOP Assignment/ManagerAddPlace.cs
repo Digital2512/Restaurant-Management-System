@@ -20,7 +20,7 @@ namespace IOOP_Assignment
 
         private string imgLocation;
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace IOOP_Assignment
                 byte[] images = manager.LoadImage(imgLocation);
 
 
-                SqlConnection con = new SqlConnection(connetionString);
+                SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
 
 

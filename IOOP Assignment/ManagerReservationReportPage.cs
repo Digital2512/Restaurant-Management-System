@@ -18,7 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace IOOP_Assignment
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -105,7 +105,7 @@ namespace IOOP_Assignment
             try
             {
                 string searchInput = txtSearch.Text.Trim();
-                SqlConnection con = new SqlConnection(connetionString);
+                SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT ReservationID, PlaceID, CustomerID, CustomerPax, ReservedDate, ReservedStartTime, ReservedEndTime, EventType, ReservationStatus FROM Reservation WHERE ReservationID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR CustomerPax LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput OR EventType LIKE @SearchInput OR ReservationStatus LIKE @SearchInput", con);
                 cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");

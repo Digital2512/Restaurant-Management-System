@@ -21,12 +21,12 @@ namespace IOOP_Assignment
         
         private string imgLocation;
 
-        public string connetionString = "";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private void Menu_Load(object sender, EventArgs e)
         {
             lblProID.Visible = false;
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, Description, Price, Cuisine, Chosen, ProductImage FROM Menu", con);
@@ -44,7 +44,7 @@ namespace IOOP_Assignment
 
         private void RefreshDataGridView()
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM Menu", con))
                 {
@@ -124,7 +124,7 @@ namespace IOOP_Assignment
             try
             {
                 string searchInput = txtSearchProduct.Text.Trim();
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Menu WHERE ProductID LIKE @SearchInput OR Name LIKE @SearchInput OR Description LIKE @SearchInput OR Cuisine LIKE @SearchInput OR Chosen LIKE @SearchInput", con);
@@ -160,7 +160,7 @@ namespace IOOP_Assignment
 
         private bool IsProductNameExists(string productName)
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Menu WHERE Name = @ProductName", con))
