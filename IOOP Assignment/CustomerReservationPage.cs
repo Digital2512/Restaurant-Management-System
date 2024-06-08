@@ -19,7 +19,7 @@ namespace IOOP_Assignment
             InitializeComponent();
             this.UserID = userID;
             Database database = new Database(connectionString);
-            string query = "SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation WHERE ReservationID IS NULL";
+            string query = "SELECT PlaceID, PlaceName, Description, MinOfPax, EventType FROM PlacesOfReservation";
             DataTable placeDataTable = database.getDataTable(query);
 
             foreach (DataRow rows in placeDataTable.Rows)

@@ -110,11 +110,7 @@ namespace IOOP_Assignment
             btnCancel.Visible = true;
         }
 
-        private void ClearSearchAndRefreshDataGridView()
-        {
-            txtResvSearch.Text = ""; // Clear the search textbox
-            RefreshDataGridView(); // Refresh the DataGridView to show all records
-        }
+
         private void RefreshDataGridView()
         {
             SqlConnection con = new SqlConnection(connetionString);
@@ -140,6 +136,7 @@ namespace IOOP_Assignment
             if (txtResvSearch.Text == "Search...")
             {
                 txtResvSearch.Text = "";
+                RefreshDataGridView();
             }
         }
 
@@ -148,7 +145,8 @@ namespace IOOP_Assignment
             if (string.IsNullOrWhiteSpace(txtResvSearch.Text))
             {
                 txtResvSearch.Text = "Search...";
-                ClearSearchAndRefreshDataGridView();
+                RefreshDataGridView();
+
             }
         }
 
@@ -160,7 +158,7 @@ namespace IOOP_Assignment
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR Duration LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE (ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR Duration LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput) AND ReservationStatus = 'APPROVED'", con);
                     cmd.Parameters.AddWithValue("@SearchInput", "%" + searchInput + "%");
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -404,46 +402,26 @@ namespace IOOP_Assignment
                 SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
-                // Insert the reservation into the database
-                SqlCommand cmd = new SqlCommand($"INSERT INTO Reservation (ReservationID, CustomerID, CustomerPax, PlaceID, PlaceName, ReservedDate, ReservedStartTime, ReservedEndTime, Duration, PlaceSpecialInstructions, EventType) VALUES (@ReservationID, @CustomerID, @CustomerPax, @PlaceID, @PlaceName, @ReservedDate, @ReservedStartTime, @ReservedEndTime, @Duration, @PlaceSpecialInstructions, '{eventType}')", con);
-                cmd.Parameters.AddWithValue("@ReservationID", reservationID);
-                cmd.Parameters.AddWithValue("@CustomerID", cbbCustomerID.Text); // Assuming CustomerID is selected from ComboBox
-                cmd.Parameters.AddWithValue("@CustomerPax", txtPax.Text);
-                cmd.Parameters.AddWithValue("@PlaceID", cbbPlaceID.Text);
-                cmd.Parameters.AddWithValue("@PlaceName", placeName);
-                cmd.Parameters.AddWithValue("@ReservedDate", dtPickerDate.Value);
-                cmd.Parameters.AddWithValue("@ReservedStartTime", cbbTime.Text);
-                cmd.Parameters.AddWithValue("@ReservedEndTime", endTime);
-                cmd.Parameters.AddWithValue("@Duration", cbbDuration.Text);
-                cmd.Parameters.AddWithValue("@PlaceSpecialInstructions", richtxtInstruction.Text);
-                cmd.ExecuteNonQuery();
-                
-                // Update ReservationStatus
-                SqlCommand updateCmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'APPROVED' WHERE ReservationID = @ReservationID", con);
-                updateCmd.Parameters.AddWithValue("@ReservationID", reservationID);
-                updateCmd.ExecuteNonQuery();
+                // Add reservation
+                Manager.AddReservation(con, reservationID, cbbCustomerID.Text, txtPax.Text, placeID, placeName, reservedDate, startTime, endTime, duration, richtxtInstruction.Text, eventType);
 
-                // Update Customer ReservationID
-                SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = @ReservationID WHERE CustomerID = @CustomerID", con);
-                updateCustomerCmd.Parameters.AddWithValue("@ReservationID", reservationID);
-                updateCustomerCmd.Parameters.AddWithValue("@CustomerID", cbbCustomerID.Text);
-                updateCustomerCmd.ExecuteNonQuery();
-
-                // Update PlaceOfReservation Reservation
-                Manager.GetReservationIdByPlaceId(con, placeID, newReservationID);
+                // Update PlaceOfReservation with new reservation ID
+                Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
 
                 // Refresh DataGridView
                 RefreshDataGridView();
 
                 HideReservationForm();
                 MessageBox.Show("Reservation Added Successfully!");
-                con.Close();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while adding the reservation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -511,35 +489,16 @@ namespace IOOP_Assignment
                 SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
-                // Update the reservation into the database
-                SqlCommand cmd = new SqlCommand($"UPDATE Reservation SET CustomerPax=@CustomerPax, PlaceID=@PlaceID, PlaceName=@PlaceName, ReservedDate=@ReservedDate, ReservedStartTime=@ReservedStartTime, ReservedEndTime=@ReservedEndTime, Duration=@Duration, PlaceSpecialInstructions=@PlaceSpecialInstructions, EventType='{eventType}' WHERE ReservationID=@ReservationID", con);
-                cmd.Parameters.AddWithValue("@ReservationID", reservationID);
-                cmd.Parameters.AddWithValue("@CustomerPax", txtPax.Text);
-                cmd.Parameters.AddWithValue("@PlaceID", cbbPlaceID.Text);
-                cmd.Parameters.AddWithValue("@PlaceName", placeName);
-                cmd.Parameters.AddWithValue("@ReservedDate", dtPickerDate.Value);
-                cmd.Parameters.AddWithValue("@ReservedStartTime", cbbTime.Text);
-                cmd.Parameters.AddWithValue("@ReservedEndTime", endTime);
-                cmd.Parameters.AddWithValue("@Duration", cbbDuration.Text);
-                cmd.Parameters.AddWithValue("@PlaceSpecialInstructions", richtxtInstruction.Text);
+                // Update the reservation
+                Manager.UpdateReservation(con, reservationID, txtPax.Text, placeID, placeName, reservedDate, startTime, endTime, duration, richtxtInstruction.Text, eventType);
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                // Assuming GetReservationIdByPlaceId and DeleteReservationById should update the PlaceOfReservation table
+                Manager.DeleteReservationById(con, oldPlaceID, reservationID);
+                Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
 
-                if (rowsAffected > 0)
-                {
-                    RefreshDataGridView();
-
-                    // Assuming GetReservationIdByPlaceId and DeleteReservationById should update the PlaceOfReservation table
-                    Manager.DeleteReservationById(con, oldPlaceID, reservationID);
-                    string newReservationID = Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
-                    HideReservationForm();
-                    MessageBox.Show("Reservation Updated Successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("No changes made to the reservation.");
-                }
-                con.Close();
+                RefreshDataGridView();
+                HideReservationForm();
+                MessageBox.Show("Reservation Updated Successfully!");
             }
 
             catch (Exception ex)
@@ -550,66 +509,33 @@ namespace IOOP_Assignment
 
 
 
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime currentDateTime = DateTime.Now;
                 DataGridViewRow row = dataGridViewUpcoming.CurrentRow;
                 if (row != null)
                 {
                     string reservationIDToDelete = row.Cells["ReservationID"].Value.ToString();
                     string placeID = row.Cells["PlaceID"].Value.ToString();
-                    using (SqlConnection con = new SqlConnection(connetionString))
-                    {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("SELECT ReservedDate FROM Reservation WHERE ReservationID = @ReservationID", con);
-                        cmd.Parameters.AddWithValue("@ReservationID", reservationIDToDelete);
-                        DateTime reservationDateTime = (DateTime)cmd.ExecuteScalar();
 
-                        if (reservationDateTime <= currentDateTime)
-                        {
-
-                            // Reservation time is in the past or at the current date and time, proceed with clearing the table
-                            using (SqlCommand updateReservationCmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'COMPLETED' WHERE ReservationID = @ReservationID ", con))
-                            using (SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = NULL WHERE ReservationID = @ReservationID", con))
-                            {
-
-                                updateReservationCmd.Parameters.AddWithValue("@ReservationID", reservationIDToDelete);
-                                updateCustomerCmd.Parameters.AddWithValue("@ReservationID", reservationIDToDelete);
-                                int rowsAffectedReservation = updateReservationCmd.ExecuteNonQuery();
-                                int rowsAffectedCustomer = updateCustomerCmd.ExecuteNonQuery();
-
-                                if (rowsAffectedReservation > 0 && rowsAffectedCustomer > 0)
-                                {
-                                    Manager.DeleteReservationById(con, placeID, reservationIDToDelete);
-                                    MessageBox.Show("Table cleared successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    RefreshDataGridView();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No table cleared. The reservation might have already been cleared.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            con.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Reservation is yet to come!"); // Debugging statement
-                        }
-                    }
+                    manager.ClearReservation(reservationIDToDelete, placeID);
+                    MessageBox.Show("Table cleared successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshDataGridView();
                 }
                 else
                 {
-                    MessageBox.Show("No row selected!"); // Debugging statement
+                    MessageBox.Show("No row selected!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while clearing the reservation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void btnPending_Click(object sender, EventArgs e)
         {

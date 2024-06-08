@@ -373,7 +373,7 @@ namespace IOOP_Assignment
                 DateTime currentReservedDateTime = reservedDateTimePicker.Value;
                 string currentReservedDateString = currentReservedDateTime.ToString("yyyy-MM-dd");
                 MessageBox.Show(currentReservedDateString);
-                query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}';";
+                query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}' AND ReservationStatus NOT IN ('COMPLETED', 'DENIED');";
 
                 DataTable reservationDataTable = database.getDataTable(query);
                 foreach (DataRow row in reservationDataTable.Rows)
@@ -401,6 +401,7 @@ namespace IOOP_Assignment
                 foreach (DataRow row in checkReservationStartTimeDataTable.Rows)
                 {
                     string placeTimeString = row["PlaceTime"].ToString();
+                    MessageBox.Show(placeTimeString);
                     int placeStartTime = int.Parse(placeTimeString);
 
                     if (placeStartTime == 1700)
@@ -425,6 +426,7 @@ namespace IOOP_Assignment
                     }
                     startTimeCBox.Items.Add(placeStartTimeCBoxInput);
                 }
+                startTimeCBox.Items.Remove("21:00 (9:00 PM)");
                 startTimeCBox.Enabled = true;
             }else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
             {

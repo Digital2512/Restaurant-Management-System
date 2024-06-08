@@ -215,7 +215,7 @@
             this.refreshOrderBtn.TabIndex = 14;
             this.refreshOrderBtn.Text = "REFRESH";
             this.refreshOrderBtn.UseVisualStyleBackColor = true;
-            this.refreshOrderBtn.Click += new System.EventHandler(this.refreshButton_Click);
+            this.refreshOrderBtn.Click += new System.EventHandler(this.refreshOrderButton_Click);
             // 
             // lblOrderStatus
             // 
@@ -299,7 +299,7 @@
             this.refreshReservationBtn.TabIndex = 13;
             this.refreshReservationBtn.Text = "REFRESH";
             this.refreshReservationBtn.UseVisualStyleBackColor = true;
-            this.refreshReservationBtn.Click += new System.EventHandler(this.notedButton_Click);
+            this.refreshReservationBtn.Click += new System.EventHandler(this.refreshReservationButton_Click);
             // 
             // lblReservationStatus
             // 

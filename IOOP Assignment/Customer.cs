@@ -18,7 +18,7 @@ namespace IOOP_Assignment
         private string phoneNumber;
         private string email;
 
-        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
@@ -85,6 +85,17 @@ namespace IOOP_Assignment
 
                 int userRowsAffected = cmd2.ExecuteNonQuery();
                 con.Close();
+
+                if(userRowsAffected > 0)
+                {
+                    con.Open();
+                    SqlCommand cmd3 = new SqlCommand("insert into Customer(CustomerID, UserID) values (@customerid,@userid)", con);
+                    cmd3.Parameters.AddWithValue("@customerid", newId);
+                    cmd3.Parameters.AddWithValue("@userid", newId);
+
+                    int customerRowsAffected = cmd3.ExecuteNonQuery();
+                    con.Close();
+                }
 
                 if (userRowsAffected > 0)
                     status = "Customer Registration Successful.";

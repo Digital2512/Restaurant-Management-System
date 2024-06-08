@@ -50,17 +50,39 @@ namespace IOOP_Assignment
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            loginForm loginForm = new loginForm();
-            loginForm.Visible = true;
-            Database database = new Database(connetionString);
-            string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-            string userID = database.getString(query);
-            query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
-            database.insertOrUpdateValuesIntoDatabase(query);
-            query = $"UPDATE Customer SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
-            database.insertOrUpdateValuesIntoDatabase(query);
 
+            // Use 'using' to ensure the connection is properly disposed of
+            string userID;
+
+            // Use 'using' to ensure the connection is properly disposed of
+            using (SqlConnection con = new SqlConnection(connetionString))
+            {
+                // Open the connection
+                con.Open();
+
+                // Retrieve the UserID of the logged-in manager
+                string selectQuery = "SELECT UserID FROM Users WHERE Role = 'MANAGER' AND LoggedIn = 'TRUE'";
+                SqlCommand selectCmd = new SqlCommand(selectQuery, con);
+                userID = (string)selectCmd.ExecuteScalar();
+
+                if (userID != null)
+                {
+                    // Create the SQL command to update the LoggedIn status
+                    string updateQuery = "UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = @UserID";
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, con);
+                    updateCmd.Parameters.AddWithValue("@UserID", userID);
+
+                    // Execute the update command
+                    updateCmd.ExecuteNonQuery();
+                }
+            }
+
+            // Hide the current form
+            this.Hide();
+
+            // Show the login form
+            loginForm frmLogin = new loginForm();
+            frmLogin.ShowDialog();
         }
     }
 }

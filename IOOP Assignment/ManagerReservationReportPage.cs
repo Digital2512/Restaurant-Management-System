@@ -121,8 +121,6 @@ namespace IOOP_Assignment
                 MessageBox.Show($"An error occurred while searching: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
 

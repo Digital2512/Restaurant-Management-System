@@ -34,6 +34,7 @@
             this.lblLoginForm = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.passwordMTxtBox = new System.Windows.Forms.MaskedTextBox();
+            this.forgotPasswordLinkLbl = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -90,11 +91,23 @@
             this.passwordMTxtBox.Size = new System.Drawing.Size(195, 26);
             this.passwordMTxtBox.TabIndex = 7;
             // 
+            // forgotPasswordLinkLbl
+            // 
+            this.forgotPasswordLinkLbl.AutoSize = true;
+            this.forgotPasswordLinkLbl.Location = new System.Drawing.Point(108, 250);
+            this.forgotPasswordLinkLbl.Name = "forgotPasswordLinkLbl";
+            this.forgotPasswordLinkLbl.Size = new System.Drawing.Size(142, 20);
+            this.forgotPasswordLinkLbl.TabIndex = 8;
+            this.forgotPasswordLinkLbl.TabStop = true;
+            this.forgotPasswordLinkLbl.Text = "Forgot Password? ";
+            this.forgotPasswordLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPasswordLinkLbl_LinkClicked);
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 314);
+            this.Controls.Add(this.forgotPasswordLinkLbl);
             this.Controls.Add(this.passwordMTxtBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.lblLoginForm);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label lblLoginForm;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.MaskedTextBox passwordMTxtBox;
+        private System.Windows.Forms.LinkLabel forgotPasswordLinkLbl;
     }
 }

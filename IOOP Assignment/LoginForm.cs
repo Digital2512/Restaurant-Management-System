@@ -136,6 +136,41 @@ namespace IOOP_Assignment
         {
             Application.Exit();
         }
+
+        private void forgotPasswordLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Database database = new Database(connectionString);
+            string username = txtUsername.Text;
+            string query = $"SELECT UserID FROM Users WHERE UserID = '{username}';";
+            if (database.getString(query) == username)
+            {
+                query = $"UPDATE Users SET Password = 'Test123' WHERE UserID = '{username}';";
+                if (database.insertOrUpdateValuesIntoDatabase(query) == true)
+                {
+                    MessageBox.Show("Password reseted back to Default Password");
+                }
+                else
+                {
+                    MessageBox.Show("Password reset failed");
+                }
+            }else if(database.getString(query) != username)
+            {
+                MessageBox.Show("Username not found");
+            }
+            else
+            {
+                MessageBox.Show("An Error Occured");
+            }
+            /*
+            else if (database.insertOrUpdateValuesIntoDatabase(query) == false)
+            {
+                MessageBox.Show("Username not found or not filled");
+            }
+            else
+            {
+                MessageBox.Show("An error occured");
+            }*/
+        }
     }
 }
 

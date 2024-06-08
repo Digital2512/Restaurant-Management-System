@@ -29,21 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.lblHeaderTables = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVIP2 = new System.Windows.Forms.Button();
             this.btnVIP1 = new System.Windows.Forms.Button();
-            this.picVIP02 = new System.Windows.Forms.PictureBox();
-            this.picVIP01 = new System.Windows.Forms.PictureBox();
             this.btnT06 = new System.Windows.Forms.Button();
             this.btnT01 = new System.Windows.Forms.Button();
-            this.picT10 = new System.Windows.Forms.PictureBox();
-            this.picT09 = new System.Windows.Forms.PictureBox();
-            this.picT08 = new System.Windows.Forms.PictureBox();
-            this.picT07 = new System.Windows.Forms.PictureBox();
-            this.picT06 = new System.Windows.Forms.PictureBox();
-            this.picT05 = new System.Windows.Forms.PictureBox();
             this.btnT10 = new System.Windows.Forms.Button();
             this.btnT09 = new System.Windows.Forms.Button();
             this.btnT08 = new System.Windows.Forms.Button();
@@ -52,12 +43,7 @@
             this.btnT04 = new System.Windows.Forms.Button();
             this.btnT03 = new System.Windows.Forms.Button();
             this.btnT02 = new System.Windows.Forms.Button();
-            this.picT04 = new System.Windows.Forms.PictureBox();
-            this.picT03 = new System.Windows.Forms.PictureBox();
-            this.picT02 = new System.Windows.Forms.PictureBox();
-            this.picT01 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtResvSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -85,8 +71,25 @@
             this.lblInstruction = new System.Windows.Forms.Label();
             this.richtxtInstruction = new System.Windows.Forms.RichTextBox();
             this.cbbTime = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.picVIP02 = new System.Windows.Forms.PictureBox();
+            this.picVIP01 = new System.Windows.Forms.PictureBox();
+            this.picT10 = new System.Windows.Forms.PictureBox();
+            this.picT09 = new System.Windows.Forms.PictureBox();
+            this.picT08 = new System.Windows.Forms.PictureBox();
+            this.picT07 = new System.Windows.Forms.PictureBox();
+            this.picT06 = new System.Windows.Forms.PictureBox();
+            this.picT05 = new System.Windows.Forms.PictureBox();
+            this.picT04 = new System.Windows.Forms.PictureBox();
+            this.picT03 = new System.Windows.Forms.PictureBox();
+            this.picT02 = new System.Windows.Forms.PictureBox();
+            this.picT01 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVIP02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVIP01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT10)).BeginInit();
@@ -99,9 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picT03)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT01)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -114,15 +114,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1277, 58);
             this.panel2.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(1216, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblHeaderTables
             // 
@@ -188,24 +179,6 @@
             this.btnVIP1.UseVisualStyleBackColor = false;
             this.btnVIP1.Click += new System.EventHandler(this.btnVIP1_Click);
             // 
-            // picVIP02
-            // 
-            this.picVIP02.Location = new System.Drawing.Point(438, 313);
-            this.picVIP02.Name = "picVIP02";
-            this.picVIP02.Size = new System.Drawing.Size(90, 80);
-            this.picVIP02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picVIP02.TabIndex = 76;
-            this.picVIP02.TabStop = false;
-            // 
-            // picVIP01
-            // 
-            this.picVIP01.Location = new System.Drawing.Point(24, 313);
-            this.picVIP01.Name = "picVIP01";
-            this.picVIP01.Size = new System.Drawing.Size(90, 80);
-            this.picVIP01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picVIP01.TabIndex = 75;
-            this.picVIP01.TabStop = false;
-            // 
             // btnT06
             // 
             this.btnT06.BackColor = System.Drawing.Color.LightGreen;
@@ -227,60 +200,6 @@
             this.btnT01.Text = "T01";
             this.btnT01.UseVisualStyleBackColor = false;
             this.btnT01.Click += new System.EventHandler(this.btnT01_Click);
-            // 
-            // picT10
-            // 
-            this.picT10.Location = new System.Drawing.Point(301, 305);
-            this.picT10.Name = "picT10";
-            this.picT10.Size = new System.Drawing.Size(90, 90);
-            this.picT10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT10.TabIndex = 72;
-            this.picT10.TabStop = false;
-            // 
-            // picT09
-            // 
-            this.picT09.Location = new System.Drawing.Point(160, 305);
-            this.picT09.Name = "picT09";
-            this.picT09.Size = new System.Drawing.Size(90, 90);
-            this.picT09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT09.TabIndex = 71;
-            this.picT09.TabStop = false;
-            // 
-            // picT08
-            // 
-            this.picT08.Location = new System.Drawing.Point(449, 154);
-            this.picT08.Name = "picT08";
-            this.picT08.Size = new System.Drawing.Size(70, 70);
-            this.picT08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT08.TabIndex = 70;
-            this.picT08.TabStop = false;
-            // 
-            // picT07
-            // 
-            this.picT07.Location = new System.Drawing.Point(310, 154);
-            this.picT07.Name = "picT07";
-            this.picT07.Size = new System.Drawing.Size(70, 70);
-            this.picT07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT07.TabIndex = 69;
-            this.picT07.TabStop = false;
-            // 
-            // picT06
-            // 
-            this.picT06.Location = new System.Drawing.Point(170, 154);
-            this.picT06.Name = "picT06";
-            this.picT06.Size = new System.Drawing.Size(70, 70);
-            this.picT06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT06.TabIndex = 68;
-            this.picT06.TabStop = false;
-            // 
-            // picT05
-            // 
-            this.picT05.Location = new System.Drawing.Point(35, 154);
-            this.picT05.Name = "picT05";
-            this.picT05.Size = new System.Drawing.Size(70, 70);
-            this.picT05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT05.TabIndex = 67;
-            this.picT05.TabStop = false;
             // 
             // btnT10
             // 
@@ -370,42 +289,6 @@
             this.btnT02.UseVisualStyleBackColor = false;
             this.btnT02.Click += new System.EventHandler(this.btnT02_Click);
             // 
-            // picT04
-            // 
-            this.picT04.Location = new System.Drawing.Point(449, 34);
-            this.picT04.Name = "picT04";
-            this.picT04.Size = new System.Drawing.Size(60, 60);
-            this.picT04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT04.TabIndex = 58;
-            this.picT04.TabStop = false;
-            // 
-            // picT03
-            // 
-            this.picT03.Location = new System.Drawing.Point(312, 34);
-            this.picT03.Name = "picT03";
-            this.picT03.Size = new System.Drawing.Size(60, 60);
-            this.picT03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT03.TabIndex = 57;
-            this.picT03.TabStop = false;
-            // 
-            // picT02
-            // 
-            this.picT02.Location = new System.Drawing.Point(171, 34);
-            this.picT02.Name = "picT02";
-            this.picT02.Size = new System.Drawing.Size(60, 60);
-            this.picT02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT02.TabIndex = 56;
-            this.picT02.TabStop = false;
-            // 
-            // picT01
-            // 
-            this.picT01.Location = new System.Drawing.Point(37, 34);
-            this.picT01.Name = "picT01";
-            this.picT01.Size = new System.Drawing.Size(60, 60);
-            this.picT01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picT01.TabIndex = 55;
-            this.picT01.TabStop = false;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Linen;
@@ -416,15 +299,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(591, 45);
             this.panel4.TabIndex = 3;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(534, 7);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(34, 34);
-            this.btnSearch.TabIndex = 23;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtResvSearch
             // 
@@ -695,6 +569,146 @@
             this.cbbTime.Size = new System.Drawing.Size(121, 28);
             this.cbbTime.TabIndex = 65;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
+            this.btnSearch.Location = new System.Drawing.Point(534, 7);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 34);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // picVIP02
+            // 
+            this.picVIP02.Image = global::IOOP_Assignment.Properties.Resources.vip;
+            this.picVIP02.Location = new System.Drawing.Point(438, 313);
+            this.picVIP02.Name = "picVIP02";
+            this.picVIP02.Size = new System.Drawing.Size(90, 80);
+            this.picVIP02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picVIP02.TabIndex = 76;
+            this.picVIP02.TabStop = false;
+            // 
+            // picVIP01
+            // 
+            this.picVIP01.Image = global::IOOP_Assignment.Properties.Resources.vip;
+            this.picVIP01.Location = new System.Drawing.Point(24, 313);
+            this.picVIP01.Name = "picVIP01";
+            this.picVIP01.Size = new System.Drawing.Size(90, 80);
+            this.picVIP01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picVIP01.TabIndex = 75;
+            this.picVIP01.TabStop = false;
+            // 
+            // picT10
+            // 
+            this.picT10.Image = global::IOOP_Assignment.Properties.Resources._5_8pax;
+            this.picT10.Location = new System.Drawing.Point(301, 305);
+            this.picT10.Name = "picT10";
+            this.picT10.Size = new System.Drawing.Size(90, 90);
+            this.picT10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT10.TabIndex = 72;
+            this.picT10.TabStop = false;
+            // 
+            // picT09
+            // 
+            this.picT09.Image = global::IOOP_Assignment.Properties.Resources._5_8pax;
+            this.picT09.Location = new System.Drawing.Point(160, 305);
+            this.picT09.Name = "picT09";
+            this.picT09.Size = new System.Drawing.Size(90, 90);
+            this.picT09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT09.TabIndex = 71;
+            this.picT09.TabStop = false;
+            // 
+            // picT08
+            // 
+            this.picT08.Image = global::IOOP_Assignment.Properties.Resources._3_4_pax;
+            this.picT08.Location = new System.Drawing.Point(449, 154);
+            this.picT08.Name = "picT08";
+            this.picT08.Size = new System.Drawing.Size(70, 70);
+            this.picT08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT08.TabIndex = 70;
+            this.picT08.TabStop = false;
+            // 
+            // picT07
+            // 
+            this.picT07.Image = global::IOOP_Assignment.Properties.Resources._3_4_pax;
+            this.picT07.Location = new System.Drawing.Point(310, 154);
+            this.picT07.Name = "picT07";
+            this.picT07.Size = new System.Drawing.Size(70, 70);
+            this.picT07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT07.TabIndex = 69;
+            this.picT07.TabStop = false;
+            // 
+            // picT06
+            // 
+            this.picT06.Image = global::IOOP_Assignment.Properties.Resources._3_4_pax;
+            this.picT06.Location = new System.Drawing.Point(170, 154);
+            this.picT06.Name = "picT06";
+            this.picT06.Size = new System.Drawing.Size(70, 70);
+            this.picT06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT06.TabIndex = 68;
+            this.picT06.TabStop = false;
+            // 
+            // picT05
+            // 
+            this.picT05.Image = global::IOOP_Assignment.Properties.Resources._3_4_pax;
+            this.picT05.Location = new System.Drawing.Point(35, 154);
+            this.picT05.Name = "picT05";
+            this.picT05.Size = new System.Drawing.Size(70, 70);
+            this.picT05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT05.TabIndex = 67;
+            this.picT05.TabStop = false;
+            // 
+            // picT04
+            // 
+            this.picT04.Image = global::IOOP_Assignment.Properties.Resources._1_2pax;
+            this.picT04.Location = new System.Drawing.Point(449, 34);
+            this.picT04.Name = "picT04";
+            this.picT04.Size = new System.Drawing.Size(60, 60);
+            this.picT04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT04.TabIndex = 58;
+            this.picT04.TabStop = false;
+            // 
+            // picT03
+            // 
+            this.picT03.Image = global::IOOP_Assignment.Properties.Resources._1_2pax;
+            this.picT03.Location = new System.Drawing.Point(312, 34);
+            this.picT03.Name = "picT03";
+            this.picT03.Size = new System.Drawing.Size(60, 60);
+            this.picT03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT03.TabIndex = 57;
+            this.picT03.TabStop = false;
+            // 
+            // picT02
+            // 
+            this.picT02.Image = global::IOOP_Assignment.Properties.Resources._1_2pax;
+            this.picT02.Location = new System.Drawing.Point(171, 34);
+            this.picT02.Name = "picT02";
+            this.picT02.Size = new System.Drawing.Size(60, 60);
+            this.picT02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT02.TabIndex = 56;
+            this.picT02.TabStop = false;
+            // 
+            // picT01
+            // 
+            this.picT01.Image = global::IOOP_Assignment.Properties.Resources._1_2pax;
+            this.picT01.Location = new System.Drawing.Point(37, 34);
+            this.picT01.Name = "picT01";
+            this.picT01.Size = new System.Drawing.Size(60, 60);
+            this.picT01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picT01.TabIndex = 55;
+            this.picT01.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = global::IOOP_Assignment.Properties.Resources.exitIcon1;
+            this.btnExit.Location = new System.Drawing.Point(1216, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // ManagerTablesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -735,6 +749,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVIP02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVIP01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT10)).EndInit();
@@ -747,10 +765,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picT03)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picT01)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpcoming)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

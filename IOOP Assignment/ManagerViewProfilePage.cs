@@ -35,7 +35,7 @@ namespace IOOP_Assignment
                 lblName.Text = "Name: " + row["FullName"].ToString();
                 lblGender.Text = "Gender: " + row["Gender"].ToString();
 
-                // Retrieve the birthday as a DateTime and format it
+
                 DateTime birthday = Convert.ToDateTime(row["Birthday"]);
                 lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
                 // Check if ProfileImage column contains data
