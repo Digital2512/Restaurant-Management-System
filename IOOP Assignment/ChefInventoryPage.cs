@@ -63,16 +63,10 @@ namespace IOOP_Assignment
 
         private void LoadInventoryData()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
             string query = "SELECT StockID, Name, Quantity, IndividualPrice, Status FROM Inventory ORDER BY StockID ASC";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable;
-            }
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
+            dataGridView1.DataSource = dataTable;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -233,7 +227,6 @@ namespace IOOP_Assignment
             currentAction = ActionState.None;
         }
 
-
         private void AddNewInventory(string id, string name, int quantity, decimal price, string status)
         {
             string query = "INSERT INTO Inventory (StockID, Name, Quantity, IndividualPrice, Status) VALUES (@StockID, @Name, @Quantity, @Price, @Status)";
@@ -308,7 +301,12 @@ namespace IOOP_Assignment
         private string GenerateNewID()
         {
             string query = "SELECT MAX(CAST(SUBSTRING(StockID, 4, LEN(StockID) - 3) AS INT)) FROM Inventory";
-            int maxID = (int)Utility.ExecuteSqlQuery(query, null).Rows[0][0];
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
+            int maxID = 0;
+            if (dataTable.Rows.Count > 0 && dataTable.Rows[0][0] != DBNull.Value)
+            {
+                maxID = Convert.ToInt32(dataTable.Rows[0][0]);
+            }
             return "INV" + (maxID + 1).ToString("D3");
         }
 

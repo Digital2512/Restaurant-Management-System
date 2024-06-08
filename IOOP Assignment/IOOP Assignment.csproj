@@ -441,26 +441,8 @@
     <EmbeddedResource Include="ManagerAddPlace.resx">
       <DependentUpon>ManagerAddPlace.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerHomePage.resx">
-      <DependentUpon>ManagerHomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerMenuPage.resx">
-      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPendingPage.resx">
-      <DependentUpon>ManagerPendingPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerReservationReportPage.resx">
       <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerTablesPage.resx">
-      <DependentUpon>ManagerTablesPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUpdateProfilePage.resx">
-      <DependentUpon>ManagerUpdateProfilePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerViewProfilePage.resx">
-      <DependentUpon>ManagerViewProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productButton.resx">
       <DependentUpon>productButton.cs</DependentUpon>
@@ -539,14 +521,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IOOPServer.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\editIcon3.png" />
-    <None Include="Resources\editIcon2.png" />
-    <None Include="Resources\5-8pax.png" />
-    <None Include="Resources\vip.png" />
-    <None Include="Resources\3-4 pax1.jpg" />
-    <None Include="Resources\FoodIcon1.png" />
-    <None Include="Resources\menuIcon1.png" />
-    <None Include="Resources\exitIcon1.png" />
     <None Include="PictureFolder\cartIcon.png" />
     <None Include="PictureFolder\searchIcon.png" />
     <None Include="PictureFolder\completedIcon.png" />

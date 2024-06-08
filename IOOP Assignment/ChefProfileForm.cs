@@ -296,5 +296,10 @@ namespace IOOP_Assignment
         {
             Utility.OpenForm(this, new ChefHomePage(username));
         }
+
+        private void ChefProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

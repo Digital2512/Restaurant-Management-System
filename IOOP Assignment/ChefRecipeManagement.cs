@@ -9,7 +9,6 @@ namespace IOOP_Assignment
 {
     public partial class ChefRecipeManagement : Form
     {
-        private string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
         private Form parentForm;
 
         public ChefRecipeManagement(Form parentForm)
@@ -49,44 +48,8 @@ namespace IOOP_Assignment
         private void LoadRecipeDetails()
         {
             string query = "SELECT RecipeID, ProductID, StockQuantityUsed FROM RecipeStock";
-            DataTable dataTable = ExecuteSqlQuery(query, null);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
             RecipeDataView.DataSource = dataTable;
-        }
-
-        private DataTable ExecuteSqlQuery(string query, SqlParameter[] parameters)
-        {
-            DataTable dataTable = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    if (parameters != null)
-                    {
-                        command.Parameters.AddRange(parameters);
-                    }
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-            return dataTable;
-        }
-
-        private void ExecuteSqlCommand(string query, SqlParameter[] parameters)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    if (parameters != null)
-                    {
-                        command.Parameters.AddRange(parameters);
-                    }
-                    command.ExecuteNonQuery();
-                }
-            }
         }
 
         private void dataGridViewRecipes_SelectionChanged(object sender, EventArgs e)
@@ -112,7 +75,7 @@ namespace IOOP_Assignment
         {
             string query = "SELECT Name, Description FROM Menu WHERE ProductID = @ProductID";
             SqlParameter[] parameters = { new SqlParameter("@ProductID", productID) };
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -168,7 +131,7 @@ namespace IOOP_Assignment
         {
             string query = "SELECT * FROM Inventory WHERE StockID = @StockID";
             SqlParameter[] parameters = { new SqlParameter("@StockID", inventoryID) };
-            DataTable dataTable = ExecuteSqlQuery(query, parameters);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -197,7 +160,7 @@ namespace IOOP_Assignment
         private void LoadAllInventory()
         {
             string query = "SELECT StockID FROM Inventory";
-            DataTable dataTable = ExecuteSqlQuery(query, null);
+            DataTable dataTable = Utility.ExecuteSqlQuery(query, null);
             ListRecipeInventory.Items.Clear();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -212,7 +175,7 @@ namespace IOOP_Assignment
                 string selectedInventory = ListRecipeInventory.SelectedItem.ToString();
                 string query = "SELECT * FROM Inventory WHERE StockID = @StockID";
                 SqlParameter[] parameters = { new SqlParameter("@StockID", selectedInventory) };
-                DataTable dataTable = ExecuteSqlQuery(query, parameters);
+                DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
                 DataRow row = dataTable.Rows[0];
                 string inventoryDetails = $"Inventory Name: {row["Name"]}\nQuantity: {row["Quantity"]}\nPrice: {row["IndividualPrice"]}\n";
                 if (InventoryRecipeBox.Items.Count > 2)
@@ -256,7 +219,7 @@ namespace IOOP_Assignment
                 var confirmation = MessageBox.Show($"Add Inventory:\nInventory ID: {selectedInventory}\nQuantity: {quantityUsed}", "Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
-                    ExecuteSqlCommand(query, parameters);
+                    Utility.ExecuteSqlCommand(query, parameters);
                     LoadRecipeDetails();
                     ClearAddInventoryForm();
                 }

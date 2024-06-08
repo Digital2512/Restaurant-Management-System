@@ -50,12 +50,10 @@ namespace IOOP_Assignment
             loginForm loginForm = new loginForm();
             this.Visible = false;
             loginForm.Show();
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
-            Database database = new Database(connectionString);
             string query = "SELECT UserID FROM Users WHERE LoggedIn = 'TRUE';";
-            string userID = database.getString(query);
+            string userID = Utility.ExecuteSqlQuery(query, new SqlParameter[0]).Rows[0][0].ToString();
             query = $"UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = '{userID}'";
-            database.insertOrUpdateValuesIntoDatabase(query);
+            Utility.ExecuteSqlCommand(query, new SqlParameter[0]);
         }
 
         private void buttonViewOrder_Click(object sender, EventArgs e)

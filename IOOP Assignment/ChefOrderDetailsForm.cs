@@ -13,7 +13,6 @@ namespace IOOP_Assignment
         private System.Timers.Timer timer;
         private string[] ButtonsToUpdate = { "VIP01", "VIP02", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10" };
         private string userid;
-        private string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         public ChefOrderDetailsForm(string userid)
         {
@@ -215,7 +214,7 @@ namespace IOOP_Assignment
                 LblChefIDShow.Text = firstRow["ChefID"].ToString();
                 label6.Text = firstRow["ProductName"].ToString();
                 label7.Text = firstRow["Quantity"].ToString();
-
+                label8.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
                 label9.Text = firstRow["OrderStatus"].ToString();
                 LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
                 label12.Text = firstRow["EstimatedTimeLeft"].ToString();

@@ -34,6 +34,7 @@
             this.checkBoxFemale = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.checkBoxMale = new System.Windows.Forms.CheckBox();
+            this.monthCalendarBirthday = new System.Windows.Forms.MonthCalendar();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBirthday = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.BtnBirthday = new System.Windows.Forms.Button();
             this.ButtonProfileCancel = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.monthCalendarBirthday = new System.Windows.Forms.MonthCalendar();
             this.BtnProfilePicture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +93,7 @@
             this.groupBox1.Controls.Add(this.ProfileRole);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 534);
+            this.groupBox1.Size = new System.Drawing.Size(524, 534);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Current Profile";
@@ -124,6 +124,12 @@
             this.checkBoxMale.TabIndex = 28;
             this.checkBoxMale.Text = "Male";
             this.checkBoxMale.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendarBirthday
+            // 
+            this.monthCalendarBirthday.Location = new System.Drawing.Point(196, 321);
+            this.monthCalendarBirthday.Name = "monthCalendarBirthday";
+            this.monthCalendarBirthday.TabIndex = 29;
             // 
             // txtName
             // 
@@ -241,7 +247,7 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(565, 344);
+            this.BtnUpdate.Location = new System.Drawing.Point(602, 382);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
             this.BtnUpdate.TabIndex = 20;
@@ -251,7 +257,7 @@
             // 
             // ButtonBack
             // 
-            this.ButtonBack.Location = new System.Drawing.Point(634, 384);
+            this.ButtonBack.Location = new System.Drawing.Point(799, 517);
             this.ButtonBack.Name = "ButtonBack";
             this.ButtonBack.Size = new System.Drawing.Size(75, 23);
             this.ButtonBack.TabIndex = 21;
@@ -262,7 +268,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(542, 177);
+            this.label1.Location = new System.Drawing.Point(574, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 16);
             this.label1.TabIndex = 22;
@@ -270,7 +276,7 @@
             // 
             // BtnPassword
             // 
-            this.BtnPassword.Location = new System.Drawing.Point(634, 209);
+            this.BtnPassword.Location = new System.Drawing.Point(671, 247);
             this.BtnPassword.Name = "BtnPassword";
             this.BtnPassword.Size = new System.Drawing.Size(94, 23);
             this.BtnPassword.TabIndex = 23;
@@ -280,7 +286,7 @@
             // 
             // BtnUsername
             // 
-            this.BtnUsername.Location = new System.Drawing.Point(634, 238);
+            this.BtnUsername.Location = new System.Drawing.Point(671, 276);
             this.BtnUsername.Name = "BtnUsername";
             this.BtnUsername.Size = new System.Drawing.Size(94, 23);
             this.BtnUsername.TabIndex = 24;
@@ -290,7 +296,7 @@
             // 
             // BtnGender
             // 
-            this.BtnGender.Location = new System.Drawing.Point(634, 267);
+            this.BtnGender.Location = new System.Drawing.Point(671, 305);
             this.BtnGender.Name = "BtnGender";
             this.BtnGender.Size = new System.Drawing.Size(94, 23);
             this.BtnGender.TabIndex = 25;
@@ -300,7 +306,7 @@
             // 
             // BtnBirthday
             // 
-            this.BtnBirthday.Location = new System.Drawing.Point(634, 296);
+            this.BtnBirthday.Location = new System.Drawing.Point(671, 334);
             this.BtnBirthday.Name = "BtnBirthday";
             this.BtnBirthday.Size = new System.Drawing.Size(94, 23);
             this.BtnBirthday.TabIndex = 26;
@@ -310,7 +316,7 @@
             // 
             // ButtonProfileCancel
             // 
-            this.ButtonProfileCancel.Location = new System.Drawing.Point(710, 344);
+            this.ButtonProfileCancel.Location = new System.Drawing.Point(747, 382);
             this.ButtonProfileCancel.Name = "ButtonProfileCancel";
             this.ButtonProfileCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonProfileCancel.TabIndex = 27;
@@ -324,15 +330,9 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // monthCalendarBirthday
-            // 
-            this.monthCalendarBirthday.Location = new System.Drawing.Point(196, 321);
-            this.monthCalendarBirthday.Name = "monthCalendarBirthday";
-            this.monthCalendarBirthday.TabIndex = 29;
-            // 
             // BtnProfilePicture
             // 
-            this.BtnProfilePicture.Location = new System.Drawing.Point(743, 212);
+            this.BtnProfilePicture.Location = new System.Drawing.Point(657, 217);
             this.BtnProfilePicture.Name = "BtnProfilePicture";
             this.BtnProfilePicture.Size = new System.Drawing.Size(120, 28);
             this.BtnProfilePicture.TabIndex = 28;
@@ -357,6 +357,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ChefProfileForm";
             this.Text = "Chef Profile ";
+            this.Load += new System.EventHandler(this.ChefProfileForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
