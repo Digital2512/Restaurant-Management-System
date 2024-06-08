@@ -18,10 +18,10 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "DataData Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private void ManagerPendingPage_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'PENDING'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -69,7 +69,7 @@ namespace IOOP_Assignment
 
         private void RefreshDataGridView()
         {
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'PENDING'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -125,7 +125,7 @@ namespace IOOP_Assignment
                     string placeID = dataGridViewPending.SelectedRows[0].Cells["PlaceID"].Value.ToString();
                     string newReservationId = reservationID;
 
-                    using (SqlConnection con = new SqlConnection(connetionString))
+                    using (SqlConnection con = new SqlConnection(connectionString))
                     {
                         con.Open();
 
@@ -168,7 +168,7 @@ namespace IOOP_Assignment
                     string reservationID = dataGridViewPending.SelectedRows[0].Cells["ReservationID"].Value.ToString();
                     string placeID = dataGridViewPending.SelectedRows[0].Cells["PlaceID"].Value.ToString();
 
-                    SqlConnection con = new SqlConnection(connetionString);
+                    SqlConnection con = new SqlConnection(connectionString);
                     con.Open();
 
                     Manager.DeleteReservationById(con, placeID, reservationID);

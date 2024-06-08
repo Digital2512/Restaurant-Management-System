@@ -13,7 +13,7 @@ namespace IOOP_Assignment
 {
     internal class Manager
     {
-        private static string connetionString = "Data Source=DESKTOP-0LAGVB0;Initial Catalog=FINAL DATABASE;Integrated Security=True";
+        private static string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public static void OpenManagerHomePage()
         {
             // Hide the current form
@@ -39,7 +39,7 @@ namespace IOOP_Assignment
         //managermenu
         public string GenerateProductID()
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT ProductID FROM Menu ORDER BY ProductID", con);
@@ -76,7 +76,7 @@ namespace IOOP_Assignment
         public string GenerateReservationID()
         {
             // Fetch all ReservationIDs
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT ReservationID FROM [Reservation] ORDER BY ReservationID", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -111,7 +111,7 @@ namespace IOOP_Assignment
         public string GenerateRecipeID()
         {
             // Fetch all RecipeIDs
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT RecipeID FROM RecipeStock ORDER BY RecipeID", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -146,7 +146,7 @@ namespace IOOP_Assignment
         //ViewProfile and UpdateProfile
         public DataTable GetManagerProfile()
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand("SELECT UserID, Password, Role, FullName, Gender, Birthday, ProfileImage FROM Users WHERE Role = 'MANAGER' and LoggedIn = 'TRUE'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -272,7 +272,7 @@ namespace IOOP_Assignment
             try
             {
                 // Open a connection to the database
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -339,7 +339,7 @@ namespace IOOP_Assignment
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     // SQL query to retrieve available time slots for the specified placeID and reservedDate
@@ -383,7 +383,7 @@ namespace IOOP_Assignment
 
         public void AddProduct(string productID, string name, string description, decimal price, string cuisine, byte[] image, string recipeID)
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 // Check if the RecipeID exists in the Recipe table
@@ -426,7 +426,7 @@ namespace IOOP_Assignment
 
         public void UpdateProduct(string productID, string name, string description, decimal price, string cuisine, byte[] image)
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("UPDATE Menu SET Name=@Name, Description=@Description, Price=@Price, Cuisine=@Cuisine, ProductImage=@ProductImage WHERE ProductID=@ProductID", con))
@@ -454,7 +454,7 @@ namespace IOOP_Assignment
 
         public void DeleteProduct(string productIdToDelete)
         {
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
@@ -522,7 +522,7 @@ namespace IOOP_Assignment
             try
             {
                 DateTime currentDateTime = DateTime.Now;
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT ReservedDate FROM Reservation WHERE ReservationID = @ReservationID", con);

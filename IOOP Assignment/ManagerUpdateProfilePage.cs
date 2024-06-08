@@ -21,7 +21,7 @@ namespace IOOP_Assignment
             pickerDOB.CustomFormat = "dd-MM-yyyy";
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string imgLocation;
 
@@ -88,7 +88,7 @@ namespace IOOP_Assignment
                     images = manager.LoadImage(imgLocation);
                 }
 
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("UPDATE Users SET Password=@Password", con);

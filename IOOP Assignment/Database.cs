@@ -259,6 +259,7 @@ namespace IOOP_Assignment
                 }
                 catch (SqlException ex)
                 {
+                    MessageBox.Show(query);
                     MessageBox.Show("An Error Occurred: " + ex.Message); ;
                 }
             }
@@ -340,6 +341,7 @@ namespace IOOP_Assignment
                 }
                 catch (SqlException ex)
                 {
+                    MessageBox.Show(query);
                     MessageBox.Show("An Error Occurred: " + ex.Message);
                     connection.Close();
                     return false;
@@ -388,6 +390,7 @@ namespace IOOP_Assignment
                 }
                 catch (SqlException ex)
                 {
+                    MessageBox.Show(query);
                     MessageBox.Show("An Error Occurred: " + ex.Message);
                     connection.Close();
                 }
@@ -430,6 +433,7 @@ namespace IOOP_Assignment
                 }
                 catch (SqlException ex)
                 {
+                    MessageBox.Show(query);
                     MessageBox.Show("An error occured: " + ex.Message);
                 }
                 finally

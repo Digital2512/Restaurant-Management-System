@@ -18,7 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private void picManager_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace IOOP_Assignment
             string userID;
 
             // Use 'using' to ensure the connection is properly disposed of
-            using (SqlConnection con = new SqlConnection(connetionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // Open the connection
                 con.Open();

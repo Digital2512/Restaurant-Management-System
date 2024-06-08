@@ -21,7 +21,7 @@ namespace IOOP_Assignment
             dtPickerDate.CustomFormat = "dd/MM/yyyy";
         }
 
-        public string connetionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string reservationID;
 
@@ -30,7 +30,7 @@ namespace IOOP_Assignment
             HideReservationForm();
 
             //datagridviewupcoming
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'APPROVED' ORDER BY ReservedDate, ReservedStartTime", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -45,7 +45,7 @@ namespace IOOP_Assignment
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT CustomerID FROM [Customer] WHERE ReservationID IS NULL", con);
@@ -113,7 +113,7 @@ namespace IOOP_Assignment
 
         private void RefreshDataGridView()
         {
-            SqlConnection con = new SqlConnection(connetionString);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'APPROVED' ORDER BY ReservedDate, ReservedStartTime", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -155,7 +155,7 @@ namespace IOOP_Assignment
             try
             {
                 string searchInput = txtResvSearch.Text.Trim();
-                using (SqlConnection con = new SqlConnection(connetionString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE (ReservationID LIKE @SearchInput OR CustomerID LIKE @SearchInput OR PlaceID LIKE @SearchInput OR PlaceName LIKE @SearchInput OR ReservedDate LIKE @SearchInput OR Duration LIKE @SearchInput OR ReservedStartTime LIKE @SearchInput OR ReservedEndTime LIKE @SearchInput) AND ReservationStatus = 'APPROVED'", con);
@@ -304,7 +304,7 @@ namespace IOOP_Assignment
                 {
                     string reservationIDToDelete = row.Cells["ReservationID"].Value.ToString();
                     string placeID = row.Cells["PlaceID"].Value.ToString();
-                    using (SqlConnection con = new SqlConnection(connetionString))
+                    using (SqlConnection con = new SqlConnection(connectionString))
                     {
                         con.Open();
                         SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = NULL WHERE ReservationID = @ReservationID", con);
@@ -375,7 +375,7 @@ namespace IOOP_Assignment
                 }
 
 
-                SqlConnection con = new SqlConnection(connetionString);
+                SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
 
                 // Check for availability
@@ -456,7 +456,7 @@ namespace IOOP_Assignment
                 }
 
 
-                SqlConnection con = new SqlConnection(connetionString);
+                SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
 
                 // Check for availability, excluding the current reservation being updated
