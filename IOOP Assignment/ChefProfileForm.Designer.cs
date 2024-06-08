@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.ProfileUserID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxFemale = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.checkBoxMale = new System.Windows.Forms.CheckBox();
+            this.monthCalendarBirthday = new System.Windows.Forms.MonthCalendar();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.txtBirthday = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBirthday = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.BtnBirthday = new System.Windows.Forms.Button();
             this.ButtonProfileCancel = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BtnProfilePicture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,10 +73,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxFemale);
             this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.checkBoxMale);
+            this.groupBox1.Controls.Add(this.monthCalendarBirthday);
             this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtGender);
-            this.groupBox1.Controls.Add(this.txtBirthday);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.lblBirthday);
             this.groupBox1.Controls.Add(this.lblGender);
@@ -88,44 +91,56 @@
             this.groupBox1.Controls.Add(this.ProfilePassword);
             this.groupBox1.Controls.Add(this.ProfileName);
             this.groupBox1.Controls.Add(this.ProfileRole);
-            this.groupBox1.Location = new System.Drawing.Point(24, 69);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 354);
+            this.groupBox1.Size = new System.Drawing.Size(524, 534);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Current Profile";
             // 
+            // checkBoxFemale
+            // 
+            this.checkBoxFemale.AutoSize = true;
+            this.checkBoxFemale.Location = new System.Drawing.Point(266, 291);
+            this.checkBoxFemale.Name = "checkBoxFemale";
+            this.checkBoxFemale.Size = new System.Drawing.Size(75, 20);
+            this.checkBoxFemale.TabIndex = 30;
+            this.checkBoxFemale.Text = "Female";
+            this.checkBoxFemale.UseVisualStyleBackColor = true;
+            // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(210, 200);
+            this.txtPassword.Location = new System.Drawing.Point(201, 197);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 31;
             // 
+            // checkBoxMale
+            // 
+            this.checkBoxMale.AutoSize = true;
+            this.checkBoxMale.Location = new System.Drawing.Point(201, 290);
+            this.checkBoxMale.Name = "checkBoxMale";
+            this.checkBoxMale.Size = new System.Drawing.Size(59, 20);
+            this.checkBoxMale.TabIndex = 28;
+            this.checkBoxMale.Text = "Male";
+            this.checkBoxMale.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendarBirthday
+            // 
+            this.monthCalendarBirthday.Location = new System.Drawing.Point(196, 321);
+            this.monthCalendarBirthday.Name = "monthCalendarBirthday";
+            this.monthCalendarBirthday.TabIndex = 29;
+            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(210, 262);
+            this.txtName.Location = new System.Drawing.Point(201, 262);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 22);
             this.txtName.TabIndex = 33;
             // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(210, 291);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(100, 22);
-            this.txtGender.TabIndex = 34;
-            // 
-            // txtBirthday
-            // 
-            this.txtBirthday.Location = new System.Drawing.Point(210, 322);
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(100, 22);
-            this.txtBirthday.TabIndex = 35;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(93, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(125, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 121);
             this.pictureBox1.TabIndex = 12;
@@ -232,7 +247,7 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(466, 353);
+            this.BtnUpdate.Location = new System.Drawing.Point(602, 382);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
             this.BtnUpdate.TabIndex = 20;
@@ -242,17 +257,18 @@
             // 
             // ButtonBack
             // 
-            this.ButtonBack.Location = new System.Drawing.Point(652, 460);
+            this.ButtonBack.Location = new System.Drawing.Point(799, 517);
             this.ButtonBack.Name = "ButtonBack";
             this.ButtonBack.Size = new System.Drawing.Size(75, 23);
             this.ButtonBack.TabIndex = 21;
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(443, 186);
+            this.label1.Location = new System.Drawing.Point(574, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 16);
             this.label1.TabIndex = 22;
@@ -260,7 +276,7 @@
             // 
             // BtnPassword
             // 
-            this.BtnPassword.Location = new System.Drawing.Point(535, 218);
+            this.BtnPassword.Location = new System.Drawing.Point(671, 247);
             this.BtnPassword.Name = "BtnPassword";
             this.BtnPassword.Size = new System.Drawing.Size(94, 23);
             this.BtnPassword.TabIndex = 23;
@@ -270,7 +286,7 @@
             // 
             // BtnUsername
             // 
-            this.BtnUsername.Location = new System.Drawing.Point(535, 247);
+            this.BtnUsername.Location = new System.Drawing.Point(671, 276);
             this.BtnUsername.Name = "BtnUsername";
             this.BtnUsername.Size = new System.Drawing.Size(94, 23);
             this.BtnUsername.TabIndex = 24;
@@ -280,7 +296,7 @@
             // 
             // BtnGender
             // 
-            this.BtnGender.Location = new System.Drawing.Point(535, 276);
+            this.BtnGender.Location = new System.Drawing.Point(671, 305);
             this.BtnGender.Name = "BtnGender";
             this.BtnGender.Size = new System.Drawing.Size(94, 23);
             this.BtnGender.TabIndex = 25;
@@ -290,7 +306,7 @@
             // 
             // BtnBirthday
             // 
-            this.BtnBirthday.Location = new System.Drawing.Point(535, 305);
+            this.BtnBirthday.Location = new System.Drawing.Point(671, 334);
             this.BtnBirthday.Name = "BtnBirthday";
             this.BtnBirthday.Size = new System.Drawing.Size(94, 23);
             this.BtnBirthday.TabIndex = 26;
@@ -300,7 +316,7 @@
             // 
             // ButtonProfileCancel
             // 
-            this.ButtonProfileCancel.Location = new System.Drawing.Point(611, 353);
+            this.ButtonProfileCancel.Location = new System.Drawing.Point(747, 382);
             this.ButtonProfileCancel.Name = "ButtonProfileCancel";
             this.ButtonProfileCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonProfileCancel.TabIndex = 27;
@@ -314,11 +330,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // BtnProfilePicture
+            // 
+            this.BtnProfilePicture.Location = new System.Drawing.Point(657, 217);
+            this.BtnProfilePicture.Name = "BtnProfilePicture";
+            this.BtnProfilePicture.Size = new System.Drawing.Size(120, 28);
+            this.BtnProfilePicture.TabIndex = 28;
+            this.BtnProfilePicture.Text = "Profile picture";
+            this.BtnProfilePicture.UseVisualStyleBackColor = true;
+            this.BtnProfilePicture.Click += new System.EventHandler(this.BtnProfilePicture_Click);
+            // 
             // ChefProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 495);
+            this.ClientSize = new System.Drawing.Size(886, 558);
+            this.Controls.Add(this.BtnProfilePicture);
             this.Controls.Add(this.ButtonProfileCancel);
             this.Controls.Add(this.BtnBirthday);
             this.Controls.Add(this.BtnGender);
@@ -330,6 +357,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ChefProfileForm";
             this.Text = "Chef Profile ";
+            this.Load += new System.EventHandler(this.ChefProfileForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -364,8 +392,10 @@
         private System.Windows.Forms.Button ButtonProfileCancel;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtGender;
-        private System.Windows.Forms.TextBox txtBirthday;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.CheckBox checkBoxMale;
+        private System.Windows.Forms.MonthCalendar monthCalendarBirthday;
+        private System.Windows.Forms.CheckBox checkBoxFemale;
+        private System.Windows.Forms.Button BtnProfilePicture;
     }
 }

@@ -1,20 +1,17 @@
-﻿using System;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-
-
 
 public static class Utility
 {
-    private static string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
+    private static string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
 
     // Method to open a form
     public static void OpenForm(Form currentForm, Form newForm)
     {
         currentForm.Hide();
-        newForm.ShowDialog();
-        currentForm.Show();
+        newForm.FormClosed += (s, args) => currentForm.Show();
+        newForm.Show();
     }
 
     // Method to open a SQL connection
@@ -45,7 +42,13 @@ public static class Utility
                 {
                     foreach (var param in parameters)
                     {
-                        command.Parameters.Add(param.Clone());
+                        command.Parameters.Add(new SqlParameter(param.ParameterName, param.Value)
+                        {
+                            SqlDbType = param.SqlDbType,
+                            Direction = param.Direction,
+                            IsNullable = param.IsNullable,
+                            Size = param.Size
+                        });
                     }
                 }
                 return command.ExecuteNonQuery();
@@ -64,7 +67,13 @@ public static class Utility
                 {
                     foreach (var param in parameters)
                     {
-                        command.Parameters.Add(param.Clone()); // Clone the parameter to avoid reuse issues
+                        command.Parameters.Add(new SqlParameter(param.ParameterName, param.Value)
+                        {
+                            SqlDbType = param.SqlDbType,
+                            Direction = param.Direction,
+                            IsNullable = param.IsNullable,
+                            Size = param.Size
+                        });
                     }
                 }
                 using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -83,22 +92,3 @@ public static class Utility
         return MessageBox.Show(message, "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
     }
 }
-
-// SqlParameterExtensions class
-
-public static class SqlParameterExtensions
-{
-    public static SqlParameter Clone(this SqlParameter original)
-    {
-        return new SqlParameter
-        {
-            ParameterName = original.ParameterName,
-            SqlDbType = original.SqlDbType,
-            Direction = original.Direction,
-            IsNullable = original.IsNullable,
-            Size = original.Size,
-            Value = original.Value
-        };
-    }
-}
-
