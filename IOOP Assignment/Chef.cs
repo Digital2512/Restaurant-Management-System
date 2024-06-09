@@ -67,7 +67,6 @@ namespace IOOP_Assignment
 
             return "CH" + newNumericPart;
         }
-
         //add chef
         public string addChef()
         {
@@ -75,11 +74,18 @@ namespace IOOP_Assignment
 
             string newID = AutoNewID();
 
+            DateTime dob;
+            if (!DateTime.TryParse(dateOfBirth, out dob))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dob.ToString("yyyy-MM-dd");
+
             con.Open();
             SqlCommand cmd = new SqlCommand("Insert into chef(Id,fullName,dateOfBirth,Gender,phoneNumber,Email,Skills,chefPositions) values(@id,@name,@dob,@gender,@num,@em,@skills,@cp)", con);
             cmd.Parameters.AddWithValue("@id", newID);
             cmd.Parameters.AddWithValue("@name", fullName);
-            cmd.Parameters.AddWithValue("@dob", dateOfBirth);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", Gender);
             cmd.Parameters.AddWithValue("@num", phoneNumber);
             cmd.Parameters.AddWithValue("@em", Email);
@@ -92,11 +98,12 @@ namespace IOOP_Assignment
             if (rowsAffected > 0)
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,fullname, gender, birthday) VALUES(@id, 'CHEF', @fullname, @gender, @birthday)", con);
+                SqlCommand cmd2 = new SqlCommand("Insert into Users(UserID,role,LoggedIn,FullName,Gender,Birthday) values(@id, 'CHEF','TRUE',@name,@gender,@dob)", con);
                 cmd2.Parameters.AddWithValue("@id", newID);
-                cmd2.Parameters.AddWithValue("@fullname", fullName);
-                cmd2.Parameters.AddWithValue("@gender", gender);
-                cmd2.Parameters.AddWithValue("@birthday", dateOfBirth);
+                cmd2.Parameters.AddWithValue("@name", FullName);
+                cmd2.Parameters.AddWithValue("@gender", Gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
+
                 int usersRowAffected = cmd2.ExecuteNonQuery();
                 con.Close();
 
@@ -142,17 +149,23 @@ namespace IOOP_Assignment
             return dt;
         }
 
-
         //update chef
         public string updateChef(string id, string fullName, string dob, string gender, string phoneNumber, string email, string chefPositions, string skills)
         {
             string status;
 
+            DateTime dateOfBirth;
+            if (!DateTime.TryParse(dob, out dateOfBirth))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dateOfBirth.ToString("yyyy-MM-dd");
+
             con.Open();
             SqlCommand cmd = new SqlCommand("update chef set fullName = @fn, dateOfBirth = @dob, Gender = @gender, phoneNumber = @pn,Email=@em, chefPositions = @cp,Skills= @skills where Id =@id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fn", fullName);
-            cmd.Parameters.AddWithValue("@dob", dob);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@pn", phoneNumber);
             cmd.Parameters.AddWithValue("@em", email);
@@ -161,19 +174,31 @@ namespace IOOP_Assignment
 
             int rowAffected = cmd.ExecuteNonQuery();
 
-            if (rowAffected != 0)
+            if (rowAffected > 0)
             {
-                status = "Chef update successful.";
+                SqlCommand cmd2 = new SqlCommand("UPDATE Users SET fullName = @fn, Gender = @gender, Birthday = @dob WHERE UserID = @id", con);
+                cmd2.Parameters.AddWithValue("@id", id);
+                cmd2.Parameters.AddWithValue("@fn", fullName);
+                cmd2.Parameters.AddWithValue("@gender", gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
+
+                int usersRowsAffected = cmd2.ExecuteNonQuery();
+
+                if (usersRowsAffected > 0)
+                {
+                    status = "Chef Update Successful.";
+                }
+                else
+                    status = "Unable to update chef in Users table.";
             }
             else
             {
                 status = "Unable to update chef.";
             }
+
             con.Close();
             return status;
-
         }
-
 
         //delete chef
         public string deleteChef(string id)

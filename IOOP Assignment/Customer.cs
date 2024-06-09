@@ -65,11 +65,18 @@ namespace IOOP_Assignment
 
             string newId = AutoNewID();
 
+            DateTime dob;
+            if (!DateTime.TryParse(dateOfBirth, out dob))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dob.ToString("yyyy-MM-dd");
+
             con.Open();
             SqlCommand cmd = new SqlCommand("Insert into customers(Id,fullName,dateOfBirth,Gender,phoneNumber,Email) values (@id,@name,@dob,@gender,@num,@em)", con);
             cmd.Parameters.AddWithValue("@id", newId);
             cmd.Parameters.AddWithValue("@name", fullName);
-            cmd.Parameters.AddWithValue("@dob", dateOfBirth);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", Gender);
             cmd.Parameters.AddWithValue("@num", phoneNumber);
             cmd.Parameters.AddWithValue("@em", Email);
@@ -80,16 +87,16 @@ namespace IOOP_Assignment
             if (rowsAffected > 0)
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,fullname, gender, birthday) VALUES(@id, 'CUSTOMER', @fullname, @gender, @birthday)", con);
+                SqlCommand cmd2 = new SqlCommand("insert into Users(UserID,role,LoggedIn,FullName,Gender,Birthday) values(@id, 'CUSTOMER','TRUE',@name,@gender,@dob)", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
-                cmd2.Parameters.AddWithValue("@fullname", fullName);
-                cmd2.Parameters.AddWithValue("@gender", gender);
-                cmd2.Parameters.AddWithValue("@birthday", dateOfBirth);
+                cmd2.Parameters.AddWithValue("@name", FullName);
+                cmd2.Parameters.AddWithValue("@gender", Gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
 
                 int userRowsAffected = cmd2.ExecuteNonQuery();
                 con.Close();
 
-                if(userRowsAffected > 0)
+                if (userRowsAffected > 0)
                 {
                     con.Open();
                     SqlCommand cmd3 = new SqlCommand("insert into Customer(CustomerID, UserID) values (@customerid,@userid)", con);
@@ -148,28 +155,50 @@ namespace IOOP_Assignment
             string status;
             con.Open();
 
+            DateTime dateOfBirth;
+            if (!DateTime.TryParse(dob, out dateOfBirth))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dateOfBirth.ToString("yyyy-MM-dd");
+
+
             SqlCommand cmd = new SqlCommand("Update customers set fullName = @fn, dateOfBirth = @dob, Gender =@gender, phoneNumber = @pn, Email = @em where Id = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fn", fullName);
-            cmd.Parameters.AddWithValue("@dob", dob);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@pn", phoneNumber);
             cmd.Parameters.AddWithValue("@em", email);
 
             int rowAffected = cmd.ExecuteNonQuery();
 
-            if (rowAffected != 0)
+            if (rowAffected > 0)
             {
-                status = "Customer update successful.";
+                SqlCommand cmd2 = new SqlCommand("UPDATE Users SET fullName = @fn, Gender = @gender, Birthday = @dob WHERE UserID = @id", con);
+                cmd2.Parameters.AddWithValue("@id", id);
+                cmd2.Parameters.AddWithValue("@fn", fullName);
+                cmd2.Parameters.AddWithValue("@gender", gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
 
+                int usersRowsAffected = cmd2.ExecuteNonQuery();
+
+                if (usersRowsAffected > 0)
+                {
+                    status = "Customer Update Successful.";
+                }
+                else
+                    status = "Unable to update customer in Users table.";
             }
             else
             {
                 status = "Unable to update customer.";
             }
+
             con.Close();
             return status;
         }
+
 
         //delete manager
         public string deleteCustomer(string id)

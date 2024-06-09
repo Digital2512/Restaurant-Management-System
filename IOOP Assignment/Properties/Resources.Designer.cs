@@ -133,6 +133,16 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deliciousDinerLogo {
+            get {
+                object obj = ResourceManager.GetObject("deliciousDinerLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeliciousIcon {
             get {
                 object obj = ResourceManager.GetObject("DeliciousIcon", resourceCulture);

@@ -86,7 +86,6 @@ namespace IOOP_Assignment
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(stream);
                 byte[] images = br.ReadBytes((int)stream.Length);
-                MessageBox.Show(images.ToString());
 
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {

@@ -21,11 +21,17 @@ namespace IOOP_Assignment
         { "Japanese", "Western", "Korean", "Beverages"};
         public AdminViewSalesReport()
         {
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             InitializeComponent();
             lblTotalAmount.Text = "RM0.00";
             lblOrderCount.Text = "0";
             InitializeComboBoxes();
             LoadAllSalesReportData();
+            Database database = new Database(connectionString);
+            string query = $"SELECT * FROM Orders";
+            DataTable salesReportDataTable = database.getDataTable(query);
+            dgvSalesReport.DataSource = salesReportDataTable;
+            UpdateChefIDComboBox(salesReportDataTable);
         }
 
         private void InitializeComboBoxes()

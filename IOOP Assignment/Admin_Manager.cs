@@ -61,7 +61,6 @@ namespace IOOP_Assignment
             string newNumericPart = (numericPart + 1).ToString("D2"); // Increment numeric part
             return "M" + newNumericPart;
         }
-
         //Add Manager
         public string addManager()
         {
@@ -69,12 +68,19 @@ namespace IOOP_Assignment
 
             string newId = AutoNewId();
 
+            DateTime dob;
+            if (!DateTime.TryParse(dateOfBirth, out dob))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dob.ToString("yyyy-MM-dd");
+
             con.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO manager(Id,fullName, dateOfBirth, Gender, phoneNumber, Email, Skills, educationalBackground) VALUES (@id,@name, @dob, @gender, @num, @em, @skills, @eb)", con);
             // Execute the command to insert into the 'manager' table
             cmd.Parameters.AddWithValue("@id", newId);
             cmd.Parameters.AddWithValue("@name", fullName);
-            cmd.Parameters.AddWithValue("@dob", dateOfBirth);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", Gender);
             cmd.Parameters.AddWithValue("@num", phoneNumber);
             cmd.Parameters.AddWithValue("@em", Email);
@@ -88,11 +94,11 @@ namespace IOOP_Assignment
             {
                 // If manager insertion was successful, insert into the 'Users' table
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,fullname, gender, birthday) VALUES(@id, 'MANAGER', @fullname, @gender, @birthday)", con);
+                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,LoggedIn,FullName,Gender,Birthday) VALUES(@id, 'MANAGER','TRUE',@name,@gender,@dob)", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
-                cmd2.Parameters.AddWithValue("@fullname", fullName);
-                cmd2.Parameters.AddWithValue("@gender", gender);
-                cmd2.Parameters.AddWithValue("@birthday", dateOfBirth);
+                cmd2.Parameters.AddWithValue("@name", FullName);
+                cmd2.Parameters.AddWithValue("@gender", Gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
 
 
                 int usersRowsAffected = cmd2.ExecuteNonQuery(); // Execute the command to insert into 'Users' table
@@ -110,7 +116,6 @@ namespace IOOP_Assignment
 
             return status;
         }
-
 
         public Admin_Manager(string connectionString)
         {
@@ -138,18 +143,24 @@ namespace IOOP_Assignment
             }
             return dt;
         }
-
         //update manager
         public string updateManager(string id, string fullName, string dob, string gender, string phoneNumber, string email, string educationalBackground, string skills)
         {
             string status;
+
+            DateTime dateOfBirth;
+            if (!DateTime.TryParse(dob, out dateOfBirth))
+            {
+                return "Invalid date of birth format.";
+            }
+            string Dob = dateOfBirth.ToString("yyyy-MM-dd");
 
             con.Open();
             //update manager table
             SqlCommand cmd = new SqlCommand("Update manager set fullName= @fn,dateOfBirth =@dob, Gender =@gender,phoneNumber = @pn,Email = @em, educationalBackground = @eb,Skills =@skills where Id = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fn", fullName);
-            cmd.Parameters.AddWithValue("@dob", dob);
+            cmd.Parameters.AddWithValue("@dob", Dob);
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@pn", phoneNumber);
             cmd.Parameters.AddWithValue("@em", email);
@@ -158,18 +169,33 @@ namespace IOOP_Assignment
 
             int rowAffected = cmd.ExecuteNonQuery();
 
-            if (rowAffected != 0)
+            if (rowAffected > 0)
             {
-                status = "Manager update successful.";
+                SqlCommand cmd2 = new SqlCommand("UPDATE Users SET fullName = @fn, Gender = @gender, Birthday = @dob WHERE UserID = @id", con);
+                cmd2.Parameters.AddWithValue("@id", id);
+                cmd2.Parameters.AddWithValue("@fn", fullName);
+                cmd2.Parameters.AddWithValue("@gender", gender);
+                cmd2.Parameters.AddWithValue("@dob", Dob);
+
+                int usersRowsAffected = cmd2.ExecuteNonQuery();
+
+                if (usersRowsAffected > 0)
+                {
+                    status = "Manager Update Successful.";
+                }
+                else
+                    status = "Unable to update manager in Users table.";
             }
             else
             {
                 status = "Unable to update manager.";
             }
+
             con.Close();
             return status;
 
         }
+
         //delete manager
         public string deleteManager(string id)
         {
