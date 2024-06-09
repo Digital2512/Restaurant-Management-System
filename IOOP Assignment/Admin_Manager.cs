@@ -19,7 +19,7 @@ namespace IOOP_Assignment
         private string email;
         private string skills;
         private string educationalBackground;
-        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True");
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
@@ -88,8 +88,11 @@ namespace IOOP_Assignment
             {
                 // If manager insertion was successful, insert into the 'Users' table
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,LoggedIn) VALUES(@id, 'Manager','TRUE')", con);
+                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,fullname, gender, birthday) VALUES(@id, 'MANAGER', @fullname, @gender, @birthday)", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
+                cmd2.Parameters.AddWithValue("@fullname", fullName);
+                cmd2.Parameters.AddWithValue("@gender", gender);
+                cmd2.Parameters.AddWithValue("@birthday", dateOfBirth);
 
 
                 int usersRowsAffected = cmd2.ExecuteNonQuery(); // Execute the command to insert into 'Users' table

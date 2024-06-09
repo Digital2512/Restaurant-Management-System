@@ -41,7 +41,6 @@ namespace IOOP_Assignment
                 string estimatedTimeString = $"{database.getInt(query).ToString()} Mins Left";
                 query = $"SELECT OrderStatus FROM Orders WHERE CustomerID = '{customerID}' AND OrderID = '{orderID}';";
                 string orderStatus = database.getString(query);
-                MessageBox.Show(orderStatus);
                 this.lblOrderStatus.Text = orderStatus;
                 if (orderStatus == "IN_PROGRESS")
                 {
@@ -83,7 +82,6 @@ namespace IOOP_Assignment
                 string placeID = database.getString(query);
                 query = $"SELECT ReservationStatus FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationID = '{reservationID}';";
                 string reservationStatus = database.getString(query);
-                MessageBox.Show(reservationStatus);
                 query = $"SELECT PlaceName FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
                 string placeName = database.getString(query);
                 query = $"SELECT Duration FROM Reservation WHERE CustomerID = '{customerID}' AND PlaceID = '{placeID}';";
@@ -270,7 +268,6 @@ namespace IOOP_Assignment
             {
                 query = $"SELECT ReservationID FROM Reservation WHERE CustomerID = '{customerID}' AND ReservationStatus = 'PENDING';";
                 string updatedReservationID = database.getString(query);
-                MessageBox.Show(updatedReservationID);
 
                 if (updatedReservationID != null || updatedReservationID != "")
                 {
@@ -285,7 +282,6 @@ namespace IOOP_Assignment
                     else if (database.insertOrUpdateValuesIntoDatabase(query) == false)
                     {
                         MessageBox.Show("Reservation ID Not Updated");
-                        MessageBox.Show(query);
                     }
                 }
                 else
@@ -330,7 +326,6 @@ namespace IOOP_Assignment
                     }else if(database.insertOrUpdateValuesIntoDatabase(query) == false)
                     {
                         MessageBox.Show("Order ID Not Updated");
-                        MessageBox.Show(query);
                     }
                 }
                 else

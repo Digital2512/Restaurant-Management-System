@@ -39,8 +39,15 @@ namespace IOOP_Assignment
                 cbbGender.Text = row["Gender"].ToString();
 
                 // Retrieve the birthday as a DateTime and format it
-                DateTime birthday = Convert.ToDateTime(row["Birthday"]);
-                pickerDOB.Value = birthday;
+                if (row["Birthday"] != DBNull.Value)
+                {
+                    DateTime birthday = Convert.ToDateTime(row["Birthday"]);
+                    pickerDOB.Value = birthday;
+                }
+                else
+                {
+                    pickerDOB.Value = DateTime.Today;
+                }
 
                 // Check if ProfileImage column contains data
                 if (row["ProfileImage"] != DBNull.Value)

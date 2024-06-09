@@ -36,8 +36,15 @@ namespace IOOP_Assignment
                 lblGender.Text = "Gender: " + row["Gender"].ToString();
 
 
-                DateTime birthday = Convert.ToDateTime(row["Birthday"]);
-                lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
+                if (row["Birthday"] != DBNull.Value)
+                {
+                    DateTime birthday = Convert.ToDateTime(row["Birthday"]);
+                    lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
+                }
+                else
+                {
+                    lblBirthday.Text = "Birthday: ";
+                }
                 // Check if ProfileImage column contains data
                 if (row["ProfileImage"] != DBNull.Value)
                 {

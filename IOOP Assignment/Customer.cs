@@ -18,7 +18,7 @@ namespace IOOP_Assignment
         private string phoneNumber;
         private string email;
 
-        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True");
+        static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
@@ -80,8 +80,11 @@ namespace IOOP_Assignment
             if (rowsAffected > 0)
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand("insert into Users(UserID, role, LoggedIn) values(@id, 'Customer','TRUE')", con);
+                SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,fullname, gender, birthday) VALUES(@id, 'CUSTOMER', @fullname, @gender, @birthday)", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
+                cmd2.Parameters.AddWithValue("@fullname", fullName);
+                cmd2.Parameters.AddWithValue("@gender", gender);
+                cmd2.Parameters.AddWithValue("@birthday", dateOfBirth);
 
                 int userRowsAffected = cmd2.ExecuteNonQuery();
                 con.Close();
@@ -174,9 +177,12 @@ namespace IOOP_Assignment
             string status = "Unable to delete customer";
             bool success = true;
             con.Open();
-            SqlCommand cmd = new SqlCommand("delete from users where UserId = @userid", con);
+            SqlCommand cmd = new SqlCommand("delete from customer where UserId = @userid", con);
             cmd.Parameters.AddWithValue("@userid", id);
             int rowAffected = cmd.ExecuteNonQuery();
+            SqlCommand cmd1 = new SqlCommand("delete from users where UserId = @userid", con);
+            cmd1.Parameters.AddWithValue("@userid", id);
+            rowAffected = cmd1.ExecuteNonQuery();
 
             if (rowAffected == 0)
             {

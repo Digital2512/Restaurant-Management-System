@@ -102,7 +102,7 @@ namespace IOOP_Assignment
 
         private void LoadOrderInfo(string chefID)
         {
-            string queryCompleted = "SELECT count(*) FROM Orders WHERE OrderStatus = 'COMPLETED' AND ChefID = @chefID";
+            string queryCompleted = "SELECT count(*) FROM Orders WHERE OrderStatus IN ('COMPLETED', 'COMPLETED_ORDER') AND ChefID = @chefID";
             string queryUncompleted = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'IN_PROGRESS' AND ChefID = @chefID";
             string queryPending = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'PENDING'";
 

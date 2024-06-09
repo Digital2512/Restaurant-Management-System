@@ -339,7 +339,6 @@ namespace IOOP_Assignment
             {
                 DateTime currentReservedDateTime = reservedDateTimePicker.Value;
                 string currentReservedDateString = currentReservedDateTime.ToString("yyyy-MM-dd");
-                MessageBox.Show(currentReservedDateString);
                 query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}' AND ReservationStatus NOT IN ('COMPLETED', 'DENIED');";
 
                 DataTable reservationDataTable = database.getDataTable(query);
@@ -368,7 +367,6 @@ namespace IOOP_Assignment
                 foreach (DataRow row in checkReservationStartTimeDataTable.Rows)
                 {
                     string placeTimeString = row["PlaceTime"].ToString();
-                    MessageBox.Show(placeTimeString);
                     int placeStartTime = int.Parse(placeTimeString);
 
                     if (placeStartTime == 1700)

@@ -102,15 +102,11 @@ namespace IOOP_Assignment
                         break;
                 }
             }
-
-            MessageBox.Show(query);
             DataTable searchDataTable = database.getDataTable(query);
-            MessageBox.Show(searchDataTable.ToString());
 
             foreach (DataRow row in searchDataTable.Rows)
             {
                 string productID = row["ProductID"].ToString();
-                MessageBox.Show(productID);
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();
