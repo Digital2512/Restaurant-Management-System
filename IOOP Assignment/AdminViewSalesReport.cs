@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
@@ -18,26 +12,22 @@ namespace IOOP_Assignment
          { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         private static readonly string[] Categories =
-        { "Japanese", "Western", "Korean", "Beverages"};
+        { "Japanese", "Western", "Korean", "Beverages" };
+
         public AdminViewSalesReport()
         {
-            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             InitializeComponent();
             lblTotalAmount.Text = "RM0.00";
             lblOrderCount.Text = "0";
             InitializeComboBoxes();
-            LoadAllSalesReportData();
-            Database database = new Database(connectionString);
-            string query = $"SELECT * FROM Orders";
-            DataTable salesReportDataTable = database.getDataTable(query);
-            dgvSalesReport.DataSource = salesReportDataTable;
-            UpdateChefIDComboBox(salesReportDataTable);
+            this.Load += AdminViewSalesReport_Load;
         }
 
         private void InitializeComboBoxes()
         {
             cmbMonth.Items.AddRange(Months);
             cmbCategory.Items.AddRange(Categories);
+            LoadChefIDs();
         }
 
         private void LoadChefIDs()
@@ -47,6 +37,7 @@ namespace IOOP_Assignment
             cmbChefID.DisplayMember = "ChefID";
             cmbChefID.ValueMember = "ChefID";
         }
+
 
         private DataTable GetChefIDs()
         {
@@ -70,6 +61,7 @@ namespace IOOP_Assignment
             DataTable salesReportData = GetSalesReportData(null, null, null);
             dgvSalesReport.DataSource = salesReportData;
             UpdateChefIDComboBox(salesReportData);
+            UpdateSummary(salesReportData);
         }
 
         private void UpdateChefIDComboBox(DataTable salesReportData)
@@ -79,10 +71,21 @@ namespace IOOP_Assignment
                                          .Distinct()
                                          .ToList();
 
-            cmbChefID.Items.Clear();
-            cmbChefID.Items.AddRange(chefIDs.ToArray());
+            // Create a new DataTable to hold the distinct Chef IDs
+            DataTable chefIDTable = new DataTable();
+            chefIDTable.Columns.Add("ChefID", typeof(string));
 
+            foreach (var chefID in chefIDs)
+            {
+                chefIDTable.Rows.Add(chefID);
+            }
+
+            // Set the DataSource property of the ComboBox
+            cmbChefID.DataSource = chefIDTable;
+            cmbChefID.DisplayMember = "ChefID";
+            cmbChefID.ValueMember = "ChefID";
         }
+
 
         private void UpdateSummary(DataTable salesReportData)
         {
@@ -97,7 +100,6 @@ namespace IOOP_Assignment
         {
             LoadAllSalesReportData();
         }
-
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
