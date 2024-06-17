@@ -16,13 +16,12 @@ namespace IOOP_Assignment
         private static string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public static void OpenManagerHomePage()
         {
-            // Hide the current form
             Form frmcurrent = Form.ActiveForm;
             if (frmcurrent != null)
             {
                 frmcurrent.Hide();
             }
-            // Open ManagerHomePage
+         
             ManagerHomePage frmMngHome = new ManagerHomePage();
             frmMngHome.ShowDialog();
         }
@@ -72,7 +71,6 @@ namespace IOOP_Assignment
                 }
                 reader.Close();
 
-                // Find the first gap in the sequence
                 int newID = 1;
                 for (int i = 1; i <= existingIDs.Count + 1; i++)
                 {
@@ -93,7 +91,6 @@ namespace IOOP_Assignment
         //add reservation
         public string GenerateReservationID()
         {
-            // Fetch all ReservationIDs
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT ReservationID FROM [Reservation] ORDER BY ReservationID", con);
@@ -128,7 +125,6 @@ namespace IOOP_Assignment
         //menu 
         public string GenerateRecipeID()
         {
-            // Fetch all RecipeIDs
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT RecipeID FROM RecipeStock ORDER BY RecipeID", con);
@@ -199,10 +195,8 @@ namespace IOOP_Assignment
 
                 if (!string.IsNullOrEmpty(newReservationID))
                 {
-                    // get old reservationid
                     string updatedReservationIDs = reservationID + "," + newReservationID;
 
-                    // update
                     string updateQuery = "UPDATE PlacesOfReservation SET ReservationID = @newReservationIds WHERE PlaceID = @PlaceID ";
                     SqlCommand updateCommand = new SqlCommand(updateQuery, con);
                     updateCommand.Parameters.AddWithValue("@newReservationIds", updatedReservationIDs);
@@ -215,7 +209,7 @@ namespace IOOP_Assignment
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                return null; // return null if there is mistake
+                return null; 
             }
         }
 
@@ -224,7 +218,6 @@ namespace IOOP_Assignment
         {
             try
             {
-                // Retrieve the existing reservation IDs for the place
                 string query = "SELECT ReservationID FROM PlacesOfReservation WHERE PlaceID = @PlaceID";
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
@@ -245,10 +238,8 @@ namespace IOOP_Assignment
                     }
 
 
-                    // Split the existing reservation IDs by comma
                     string[] reservationIDs = existingReservationIDs.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-                    // Remove the reservation ID to be deleted from the array
                     List<string> updatedReservationIDs = new List<string>(reservationIDs);
 
                     if (!updatedReservationIDs.Remove(reservationIDToDelete))
@@ -258,10 +249,8 @@ namespace IOOP_Assignment
                     }
 
 
-                    // Join the remaining reservation IDs back into a string
                     string newReservationIDs = string.Join(",", updatedReservationIDs);
 
-                    // Update the PlacesOfReservation table with the new reservation IDs
                     string updateQuery = "UPDATE PlacesOfReservation SET ReservationID = @newReservationIds WHERE PlaceID = @PlaceID";
                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, con))
                     {
@@ -281,50 +270,37 @@ namespace IOOP_Assignment
         //display tableinfo new
         public static void DisplayTableInformation(string placeID)
         {
-            // Get the current date
             DateTime currentDate = DateTime.Today;
 
-            // Create a StringBuilder to construct the message
             StringBuilder messageBuilder = new StringBuilder();
 
             try
             {
-                // Open a connection to the database
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
-                    // SQL query to retrieve reservations for the current date and specified placeID
                     string query = "SELECT r.ReservedStartTime, r.ReservedEndTime, p.PlaceID, p.PlaceName, p.Description FROM Reservation r JOIN PlacesOfReservation p ON r.PlaceID = p.PlaceID WHERE r.PlaceID = @PlaceID AND r.ReservedDate = @CurrentDate AND ReservationStatus = 'APPROVED'";
 
-
-                    // Create a command with parameters
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@PlaceID", placeID);
                         cmd.Parameters.AddWithValue("@CurrentDate", currentDate);
 
 
-                        // Execute the query
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Check if there are reservations
                             if (reader.HasRows)
                             {
-                                // Read the first row to get PlaceName and Description
                                 reader.Read();
                                 string placeName = reader.GetString(reader.GetOrdinal("PlaceName"));
                                 string description = reader.GetString(reader.GetOrdinal("Description"));
 
-                                // Append PlaceName and Description to the message
                                 messageBuilder.AppendLine(placeName);
                                 messageBuilder.AppendLine(description);
                                 messageBuilder.AppendLine();
 
-                                // Append reservations to the message
                                 messageBuilder.AppendLine("Reservations for today:");
-
-                                // Read the rest of the rows to get reservations
                                 do
                                 {
                                     int startTime = reader.GetInt32(reader.GetOrdinal("ReservedStartTime"));
@@ -334,19 +310,16 @@ namespace IOOP_Assignment
                             }
                             else
                             {
-                                // If no reservations, indicate so
                                 messageBuilder.AppendLine("No reservations for today.");
                             }
                         }
                     }
                 }
 
-                // Display the message box
                 MessageBox.Show(messageBuilder.ToString(), placeID, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                // Show error message if an exception occurs
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -360,23 +333,18 @@ namespace IOOP_Assignment
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    // SQL query to retrieve available time slots for the specified placeID and reservedDate
                     string query = @"SELECT ReservedStartTime, ReservedEndTime FROM Reservation
                              WHERE PlaceID = @PlaceID AND ReservedDate = @ReservedDate AND ReservationStatus = 'APPROVED'";
 
-                    // Create a command with parameters
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@PlaceID", placeID);
                         cmd.Parameters.AddWithValue("@ReservedDate", reservedDate);
 
-                        // Execute the query
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Append message to inform user about available time slots
                             messageBuilder.AppendLine("The selected place is already booked for the chosen time and date. Following unvailable time slots:");
 
-                            // Read all reserved time slots
                             while (reader.Read())
                             {
                                 int startTime = reader.GetInt32(0);
@@ -386,7 +354,6 @@ namespace IOOP_Assignment
                         }
                     }
 
-                    // Display the available time slots to the user
                     MessageBox.Show(messageBuilder.ToString(), "Available Time Slots", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -440,7 +407,6 @@ namespace IOOP_Assignment
                     cmd.Parameters.AddWithValue("@Price", price);
                     cmd.Parameters.AddWithValue("@Cuisine", cuisine);
 
-                    // Ensure the @ProductImage parameter is always supplied
                     if (image != null)
                     {
                         cmd.Parameters.Add("@ProductImage", SqlDbType.VarBinary).Value = image;
@@ -477,7 +443,6 @@ namespace IOOP_Assignment
 
         public static void AddReservation(SqlConnection con, string reservationID, string customerID, string customerPax, string placeID, string placeName, DateTime reservedDate, int reservedStartTime, int reservedEndTime, int duration, string placeSpecialInstructions, string eventType)
         {
-            // Insert the reservation into the database
             SqlCommand cmd = new SqlCommand($"INSERT INTO Reservation (ReservationID, CustomerID, CustomerPax, PlaceID, PlaceName, ReservedDate, ReservedStartTime, ReservedEndTime, Duration, PlaceSpecialInstructions, EventType) VALUES (@ReservationID, @CustomerID, @CustomerPax, @PlaceID, @PlaceName, @ReservedDate, @ReservedStartTime, @ReservedEndTime, @Duration, @PlaceSpecialInstructions, @EventType)", con);
             cmd.Parameters.AddWithValue("@ReservationID", reservationID);
             cmd.Parameters.AddWithValue("@CustomerID", customerID);
@@ -492,12 +457,10 @@ namespace IOOP_Assignment
             cmd.Parameters.AddWithValue("@EventType", eventType);
             cmd.ExecuteNonQuery();
 
-            // Update ReservationStatus
             SqlCommand updateCmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'APPROVED' WHERE ReservationID = @ReservationID", con);
             updateCmd.Parameters.AddWithValue("@ReservationID", reservationID);
             updateCmd.ExecuteNonQuery();
 
-            // Update Customer ReservationID
             SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = @ReservationID WHERE CustomerID = @CustomerID", con);
             updateCustomerCmd.Parameters.AddWithValue("@ReservationID", reservationID);
             updateCustomerCmd.Parameters.AddWithValue("@CustomerID", customerID);
@@ -534,7 +497,6 @@ namespace IOOP_Assignment
 
                     if (reservationDateTime <= currentDateTime)
                     {
-                        // Reservation time is in the past or at the current date and time, proceed with clearing the table
                         using (SqlCommand updateReservationCmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'COMPLETED' WHERE ReservationID = @ReservationID ", con))
                         using (SqlCommand updateCustomerCmd = new SqlCommand("UPDATE Customer SET ReservationID = NULL WHERE ReservationID = @ReservationID", con))
                         {

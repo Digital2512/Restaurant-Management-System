@@ -14,6 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminViewFeedback : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
         public AdminViewFeedback()
         {

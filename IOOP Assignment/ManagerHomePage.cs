@@ -29,11 +29,11 @@ namespace IOOP_Assignment
             }
             else
             {
-                // Optionally set a default image if no image is found
-                picManager.Image = Properties.Resources.userIcon; // Ensure you have a default image in your resources
+                picManager.Image = Properties.Resources.userIcon; 
             }
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
 
@@ -66,38 +66,26 @@ namespace IOOP_Assignment
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
-        {
-
-            // Use 'using' to ensure the connection is properly disposed of
+        {            
             string userID;
-
-            // Use 'using' to ensure the connection is properly disposed of
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Open the connection
                 con.Open();
-
-                // Retrieve the UserID of the logged-in manager
                 string selectQuery = "SELECT UserID FROM Users WHERE Role = 'MANAGER' AND LoggedIn = 'TRUE'";
                 SqlCommand selectCmd = new SqlCommand(selectQuery, con);
                 userID = (string)selectCmd.ExecuteScalar();
 
                 if (userID != null)
                 {
-                    // Create the SQL command to update the LoggedIn status
                     string updateQuery = "UPDATE Users SET LoggedIn = 'FALSE' WHERE UserID = @UserID";
                     SqlCommand updateCmd = new SqlCommand(updateQuery, con);
                     updateCmd.Parameters.AddWithValue("@UserID", userID);
 
-                    // Execute the update command
                     updateCmd.ExecuteNonQuery();
                 }
             }
-
-            // Hide the current form
             this.Hide();
 
-            // Show the login form
             loginForm frmLogin = new loginForm();
             frmLogin.ShowDialog();
         }

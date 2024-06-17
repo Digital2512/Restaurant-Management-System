@@ -19,6 +19,8 @@ namespace IOOP_Assignment
         private string email;
         private string skills;
         private string educationalBackground;
+
+        //change the connection string when using a different laptop to connect to the database
         static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }
@@ -57,10 +59,11 @@ namespace IOOP_Assignment
 
         private string GenerateNextId(string lastId)
         {
-            int numericPart = int.Parse(lastId.Substring(1)); // Extract numeric part
-            string newNumericPart = (numericPart + 1).ToString("D2"); // Increment numeric part
+            int numericPart = int.Parse(lastId.Substring(1)); 
+            string newNumericPart = (numericPart + 1).ToString("D2"); 
             return "M" + newNumericPart;
         }
+
         //Add Manager
         public string addManager()
         {
@@ -76,8 +79,7 @@ namespace IOOP_Assignment
             string Dob = dob.ToString("yyyy-MM-dd");
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO manager(Id,fullName, dateOfBirth, Gender, phoneNumber, Email, Skills, educationalBackground) VALUES (@id,@name, @dob, @gender, @num, @em, @skills, @eb)", con);
-            // Execute the command to insert into the 'manager' table
+            SqlCommand cmd = new SqlCommand("INSERT INTO manager(Id,fullName, dateOfBirth, Gender, phoneNumber, Email, Skills, educationalBackground) VALUES (@id,@name, @dob, @gender, @num, @em, @skills, @eb)", con);            
             cmd.Parameters.AddWithValue("@id", newId);
             cmd.Parameters.AddWithValue("@name", fullName);
             cmd.Parameters.AddWithValue("@dob", Dob);
@@ -87,12 +89,11 @@ namespace IOOP_Assignment
             cmd.Parameters.AddWithValue("@skills", Skills);
             cmd.Parameters.AddWithValue("@eb", educationalBackground);
 
-            int rowsAffected = cmd.ExecuteNonQuery(); // Execute the command
+            int rowsAffected = cmd.ExecuteNonQuery(); 
             con.Close();
 
             if (rowsAffected > 0)
             {
-                // If manager insertion was successful, insert into the 'Users' table
                 con.Open();
                 SqlCommand cmd2 = new SqlCommand($"INSERT INTO Users(UserID,role,LoggedIn,FullName,Gender,Birthday) VALUES(@id, 'MANAGER','TRUE',@name,@gender,@dob)", con);
                 cmd2.Parameters.AddWithValue("@id", newId);
@@ -101,7 +102,7 @@ namespace IOOP_Assignment
                 cmd2.Parameters.AddWithValue("@dob", Dob);
 
 
-                int usersRowsAffected = cmd2.ExecuteNonQuery(); // Execute the command to insert into 'Users' table
+                int usersRowsAffected = cmd2.ExecuteNonQuery(); 
                 con.Close();
 
                 if (usersRowsAffected > 0)
@@ -121,7 +122,7 @@ namespace IOOP_Assignment
         {
             con = new SqlConnection(connectionString);
         }
-        public DataTable GetManagerId() //retrieve a list of all manager IDs
+        public DataTable GetManagerId() 
         {
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("SELECT Id FROM manager", con))
@@ -132,7 +133,7 @@ namespace IOOP_Assignment
             return dt;
         }
 
-        public DataTable GetManagerById(string id)// retrieve specific manager based on their IDs
+        public DataTable GetManagerById(string id)
         {
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("SELECT * FROM manager WHERE Id = @id", con))
@@ -143,6 +144,7 @@ namespace IOOP_Assignment
             }
             return dt;
         }
+
         //update manager
         public string updateManager(string id, string fullName, string dob, string gender, string phoneNumber, string email, string educationalBackground, string skills)
         {
@@ -156,7 +158,6 @@ namespace IOOP_Assignment
             string Dob = dateOfBirth.ToString("yyyy-MM-dd");
 
             con.Open();
-            //update manager table
             SqlCommand cmd = new SqlCommand("Update manager set fullName= @fn,dateOfBirth =@dob, Gender =@gender,phoneNumber = @pn,Email = @em, educationalBackground = @eb,Skills =@skills where Id = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fn", fullName);
@@ -212,7 +213,6 @@ namespace IOOP_Assignment
                 status = "Unable to delete manager from Users table.";
                 success = false;
             }
-            //delete from manager table if deletion from Users table was success
             else
             {
                 SqlCommand cmd2 = new SqlCommand("Delete from manager where Id = @id", con);

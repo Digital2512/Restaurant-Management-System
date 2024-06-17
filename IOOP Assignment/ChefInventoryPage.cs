@@ -29,8 +29,8 @@ namespace IOOP_Assignment
             LoadInventoryData();
             dataGridView1.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView1_CellFormatting);
             dataGridView1.SelectionChanged += new EventHandler(dataGridView1_SelectionChanged);
-            BtnInventorySearch.Click += BtnInventorySearch_Click; // Add this line for search functionality
-            BtnInventoryCancel.Click += BtnInventoryCancel_Click; // Add this line for cancel functionality
+            BtnInventorySearch.Click += BtnInventorySearch_Click; 
+            BtnInventoryCancel.Click += BtnInventoryCancel_Click; 
 
             ToggleTextBoxVisibility(false);
             BtnDone.Visible = false;
@@ -46,16 +46,14 @@ namespace IOOP_Assignment
 
         private void InitializeDataGridView()
         {
-            dataGridView1.Columns.Clear(); // Clear existing columns if any
+            dataGridView1.Columns.Clear(); 
 
-            // Adding columns programmatically
             dataGridView1.Columns.Add("StockID", "StockID");
             dataGridView1.Columns.Add("Name", "Name");
             dataGridView1.Columns.Add("Quantity", "Quantity");
             dataGridView1.Columns.Add("IndividualPrice", "Individual Price");
             dataGridView1.Columns.Add("Status", "Status");
 
-            // Set DataPropertyName for each column
             dataGridView1.Columns["StockID"].DataPropertyName = "StockID";
             dataGridView1.Columns["Name"].DataPropertyName = "Name";
             dataGridView1.Columns["Quantity"].DataPropertyName = "Quantity";
@@ -149,7 +147,7 @@ namespace IOOP_Assignment
                     MessageBox.Show("No inventory item found with the given name.");
                 }
 
-                BtnInventoryCancel.Visible = true; // Show the cancel button after a search
+                BtnInventoryCancel.Visible = true; 
             }
             else
             {
@@ -162,7 +160,7 @@ namespace IOOP_Assignment
             LoadInventoryData();
             ClearDetails();
             TbSearch.Text = string.Empty;
-            BtnInventoryCancel.Visible = false; // Hide the cancel button
+            BtnInventoryCancel.Visible = false; 
         }
 
         private bool ConfirmAction(string details)
@@ -196,7 +194,6 @@ namespace IOOP_Assignment
         }
 
         private void BtnInventoryAdd_Click(object sender, EventArgs e)
-        //update inventory
         {
             if (string.IsNullOrEmpty(LblinventoryStockIDShow.Text))
             {

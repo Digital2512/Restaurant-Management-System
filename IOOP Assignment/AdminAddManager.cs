@@ -14,6 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddManager : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
         public AdminAddManager()
         {
@@ -47,7 +48,6 @@ namespace IOOP_Assignment
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
 
-            // Generate the ID in the format "MXX"
             string newId = "M" + (count + 1).ToString("D2");
             return newId;
         }
@@ -57,12 +57,11 @@ namespace IOOP_Assignment
             if (!CheckedGender())
             {
                 MessageBox.Show("Choose a gender");
-                return; // return to prevent further execution
+                return; 
             }
 
             string skills = string.Join(", ", grpboxSkills.Controls.OfType<CheckBox>().Where(cb => cb.Checked).Select(cb => cb.Text));
 
-            // Ensuring the selected item in lsteducationalBackground is not null
             if (lsteducationalBackground.SelectedItem == null)
             {
                 MessageBox.Show("Select an educational background");
@@ -87,6 +86,11 @@ namespace IOOP_Assignment
         private void AdminAddManager_Load_1(object sender, EventArgs e)
         {
             lblManagerID.Text = AutoNewId();
+        }
+
+        private void txtfullName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,6 +20,7 @@ namespace IOOP_Assignment
         private string skills;
         private string chefPositions;
 
+        //change the connection string when using a different laptop to connect to the database
         static SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
 
         public string Id { get => id; set => id = value; }

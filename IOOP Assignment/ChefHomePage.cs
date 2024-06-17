@@ -112,5 +112,10 @@ namespace IOOP_Assignment
             LblHomeOrderProgress.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
             LblHomeOrderPending.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
         }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerOrderPage : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string UserID;
 

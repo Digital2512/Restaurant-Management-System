@@ -21,6 +21,7 @@ namespace IOOP_Assignment
             pickerDOB.CustomFormat = "dd-MM-yyyy";
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string imgLocation;
@@ -38,7 +39,6 @@ namespace IOOP_Assignment
                 txtName.Text = row["FullName"].ToString();
                 cbbGender.Text = row["Gender"].ToString();
 
-                // Retrieve the birthday as a DateTime and format it
                 if (row["Birthday"] != DBNull.Value)
                 {
                     DateTime birthday = Convert.ToDateTime(row["Birthday"]);
@@ -49,10 +49,8 @@ namespace IOOP_Assignment
                     pickerDOB.Value = DateTime.Today;
                 }
 
-                // Check if ProfileImage column contains data
                 if (row["ProfileImage"] != DBNull.Value)
                 {
-                    // Convert byte array to image
                     byte[] imgData = (byte[])row["ProfileImage"];
                     using (MemoryStream ms = new MemoryStream(imgData))
                     {
@@ -61,8 +59,7 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    // Display a placeholder image or handle the absence of image
-                    picManager.Image = null; // or assign a placeholder image
+                    picManager.Image = null; 
                 }
 
             }
@@ -100,35 +97,29 @@ namespace IOOP_Assignment
                     con.Open();
                     SqlCommand cmd = new SqlCommand("UPDATE Users SET Password=@Password", con);
 
-                    // Add other parameters
                     cmd.Parameters.AddWithValue("@Password", txtPsw.Text);
 
-                    // Add FullName parameter if not null or empty
                     if (!string.IsNullOrEmpty(txtName.Text))
                     {
                         cmd.CommandText += ", FullName=@FullName";
                         cmd.Parameters.AddWithValue("@FullName", txtName.Text);
                     }
 
-                    // Add Gender parameter if not null or empty
                     if (!string.IsNullOrEmpty(cbbGender.Text))
                     {
                         cmd.CommandText += ", Gender=@Gender";
                         cmd.Parameters.AddWithValue("@Gender", cbbGender.Text);
                     }
 
-                    // Add Birthday parameter
                     cmd.CommandText += ", Birthday=@Birthday";
                     cmd.Parameters.AddWithValue("@Birthday", pickerDOB.Value);
 
-                    // Add ProfileImage parameter only if an image is selected
                     if (images != null)
                     {
                         cmd.CommandText += ", ProfileImage=@ProfileImage";
                         cmd.Parameters.AddWithValue("@ProfileImage", images);
                     }
 
-                    // Add WHERE clause
                     cmd.CommandText += " WHERE Role = 'Manager' and Loggedin = 'TRUE'";
 
                     int rowsAffected = cmd.ExecuteNonQuery();

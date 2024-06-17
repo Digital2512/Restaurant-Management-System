@@ -120,6 +120,7 @@
             this.txtfullName.Name = "txtfullName";
             this.txtfullName.Size = new System.Drawing.Size(224, 26);
             this.txtfullName.TabIndex = 1;
+            this.txtfullName.TextChanged += new System.EventHandler(this.txtfullName_TextChanged);
             // 
             // txtphoneNumber
             // 

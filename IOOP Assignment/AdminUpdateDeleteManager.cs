@@ -119,7 +119,6 @@ namespace IOOP_Assignment
                 }
             }
 
-            // Join the selected skills into a comma-separated string
             return string.Join(",", selectedSkills);
         }
 
@@ -129,7 +128,7 @@ namespace IOOP_Assignment
             string status = manager.deleteManager(id);
             MessageBox.Show(status);
 
-            FillComboSearchCode(); //refresh the combo box
+            FillComboSearchCode(); 
             ClearForm();
         }
 

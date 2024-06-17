@@ -131,7 +131,7 @@ namespace IOOP_Assignment
             string status = chef.deleteChef(id);
             MessageBox.Show(status);
 
-            FillComboSearchCode(); //refresh combo box
+            FillComboSearchCode(); 
             ClearForm();
         }
         private void ClearForm()

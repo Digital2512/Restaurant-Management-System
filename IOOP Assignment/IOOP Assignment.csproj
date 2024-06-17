@@ -441,6 +441,9 @@
     <EmbeddedResource Include="ManagerAddPlace.resx">
       <DependentUpon>ManagerAddPlace.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMenuPage.resx">
+      <DependentUpon>ManagerMenuPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerReservationReportPage.resx">
       <DependentUpon>ManagerReservationReportPage.cs</DependentUpon>
     </EmbeddedResource>

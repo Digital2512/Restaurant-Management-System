@@ -71,7 +71,6 @@ namespace IOOP_Assignment
                                          .Distinct()
                                          .ToList();
 
-            // Create a new DataTable to hold the distinct Chef IDs
             DataTable chefIDTable = new DataTable();
             chefIDTable.Columns.Add("ChefID", typeof(string));
 
@@ -80,7 +79,6 @@ namespace IOOP_Assignment
                 chefIDTable.Rows.Add(chefID);
             }
 
-            // Set the DataSource property of the ComboBox
             cmbChefID.DataSource = chefIDTable;
             cmbChefID.DisplayMember = "ChefID";
             cmbChefID.ValueMember = "ChefID";

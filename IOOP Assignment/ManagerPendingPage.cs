@@ -18,6 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private void ManagerPendingPage_Load(object sender, EventArgs e)
         {
@@ -87,7 +88,6 @@ namespace IOOP_Assignment
 
                 if (string.IsNullOrEmpty(Convert.ToString(row.Cells["ReservationID"].Value)))
                 {
-                    // Clear other textboxes
                     lblCustomerID.Text = "";
                     lblDuration.Text = "";
                     lblPax.Text = "";
@@ -120,7 +120,6 @@ namespace IOOP_Assignment
             {
                 if (dataGridViewPending.SelectedRows.Count > 0)
                 {
-                    // Get the ReservationID and PlaceID from the selected row
                     string reservationID = dataGridViewPending.SelectedRows[0].Cells["ReservationID"].Value.ToString();
                     string placeID = dataGridViewPending.SelectedRows[0].Cells["PlaceID"].Value.ToString();
                     string newReservationId = reservationID;
@@ -129,7 +128,6 @@ namespace IOOP_Assignment
                     {
                         con.Open();
 
-                        // Update reservation status to 'APPROVED'
                         Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
                         SqlCommand cmd = new SqlCommand("UPDATE Reservation SET ReservationStatus = 'APPROVED' WHERE ReservationID=@ReservationID", con);
                         cmd.Parameters.AddWithValue("@ReservationID", reservationID);
@@ -165,7 +163,6 @@ namespace IOOP_Assignment
             {
                 if (dataGridViewPending.SelectedRows.Count > 0)
                 {
-                    // Get the ReservationID from the selected row
                     string reservationID = dataGridViewPending.SelectedRows[0].Cells["ReservationID"].Value.ToString();
                     string placeID = dataGridViewPending.SelectedRows[0].Cells["PlaceID"].Value.ToString();
 

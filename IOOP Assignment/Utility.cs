@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 public static class Utility
 {
+    //change the connection string when using a different laptop to connect to the database
     private static string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True;";
 
     // Method to open a form

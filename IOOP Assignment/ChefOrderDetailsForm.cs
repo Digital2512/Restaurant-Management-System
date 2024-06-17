@@ -89,10 +89,8 @@ namespace IOOP_Assignment
                 MessageBox.Show($"Table {tableNumber} chosen. Please select the order ID from the combo box below.");
                 comboBoxChefReceived.Enabled = false;
 
-                // Clear previous selection and reset UI
                 BtnOrderCancel_Click_1(sender, e);
 
-                // Set table number in label
                 LblTableSelectedShow.Text = tableNumber;
 
                 string query = "SELECT OrderID FROM Orders WHERE PlaceNumber = @PlaceNumber AND (OrderStatus = 'PENDING' OR OrderStatus = 'IN_PROGRESS')";
@@ -200,7 +198,7 @@ namespace IOOP_Assignment
 
             DataTable dataTable = Utility.ExecuteSqlQuery(query, parameters);
 
-            comboBoxProductID.Items.Clear(); // Clear previous items
+            comboBoxProductID.Items.Clear(); 
 
             if (dataTable.Rows.Count > 0)
             {
@@ -209,17 +207,16 @@ namespace IOOP_Assignment
                     comboBoxProductID.Items.Add(row["ProductID"].ToString());
                 }
 
-                // Load the first product details by default
                 DataRow firstRow = dataTable.Rows[0];
                 LblChefIDShow.Text = firstRow["ChefID"].ToString();
                 LblOrderProductNameShow.Text = firstRow["ProductName"].ToString();
                 LblOrderQuantityShow.Text = firstRow["Quantity"].ToString();
-                LblOrderProductIDShow.Text = firstRow["Price"].ToString(); // Ensure this label is updated if it exists
+                LblOrderProductIDShow.Text = firstRow["Price"].ToString(); 
                 LblOrderStatusShow.Text = firstRow["OrderStatus"].ToString();
                 LblTableSelectedShow.Text = firstRow["PlaceNumber"].ToString();
                 LblOrderTimeLeftShow.Text = firstRow["EstimatedTimeLeft"].ToString();
 
-                comboBoxProductID.SelectedIndex = 0; // Select the first item by default
+                comboBoxProductID.SelectedIndex = 0; 
 
                 LblOrderProductNameShow.Visible = true;
                 LblOrderQuantityShow.Visible = true;
@@ -364,19 +361,15 @@ namespace IOOP_Assignment
 
         private void BtnOrderCancel_Click_1(object sender, EventArgs e)
         {
-            // Clear the selected items in the combo boxes
             comboBoxOrderTable.SelectedItem = null;
             comboBoxChefReceived.SelectedItem = null;
             comboBoxProductID.SelectedItem = null;
 
-            // Re-enable the combo boxes
             comboBoxOrderTable.Enabled = true;
             comboBoxChefReceived.Enabled = true;
 
-            // Clear the product ID combo box items
             comboBoxProductID.Items.Clear();
 
-            // Clear the labels
             LblTableSelectedShow.Text = string.Empty;
             LblChefIDShow.Text = string.Empty;
             LblOrderProductNameShow.Text = string.Empty;
@@ -384,7 +377,6 @@ namespace IOOP_Assignment
             LblOrderStatusShow.Text = string.Empty;
             LblOrderTimeLeftShow.Text = string.Empty;
 
-            // Hide the labels
             LblOrderProductNameShow.Visible = false;
             LblOrderQuantityShow.Visible = false;
             LblOrderStatusShow.Visible = false;
