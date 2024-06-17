@@ -22,7 +22,6 @@ public static class Utility
         return connection;
     }
 
-
     // Method to execute a SQL command
     public static int ExecuteSqlCommand(string query, SqlParameter[] parameters)
     {

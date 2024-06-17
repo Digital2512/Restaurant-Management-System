@@ -101,7 +101,7 @@
             // checkBoxFemale
             // 
             this.checkBoxFemale.AutoSize = true;
-            this.checkBoxFemale.Location = new System.Drawing.Point(266, 291);
+            this.checkBoxFemale.Location = new System.Drawing.Point(287, 291);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(75, 20);
             this.checkBoxFemale.TabIndex = 30;

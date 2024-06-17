@@ -64,10 +64,11 @@ namespace IOOP_Assignment
                 LoadProductDetails(selectedRow.Cells["ProductID"].Value.ToString());
                 LoadInventoryList(stockQuantityUsed);
 
-                // Enable or disable Add Inventory button based on whether stockQuantityUsed is empty
                 BtnRecipeAdd.Enabled = true;
                 BtnRecipeDone.Enabled = false;
                 BtnRecipeCancel.Enabled = false;
+                LBLQuantityRecipeShow.Visible = true;
+                NumericQuantityUsed.Visible = false;
             }
         }
 
@@ -115,6 +116,7 @@ namespace IOOP_Assignment
                     {
                         LBLQuantityRecipeShow.Text = parts[1];
                         LBLQuantityRecipeShow.Visible = true;
+                        NumericQuantityUsed.Visible = false;
                         LoadInventoryDetails(selectedInventory);
                         return;
                     }
@@ -204,8 +206,15 @@ namespace IOOP_Assignment
                 string recipeID = LBLRecipeIDShow.Text;
                 string productID = LblProductIDShow.Text;
 
-                // Get existing StockQuantityUsed and append the new entry
                 string existingStockQuantityUsed = RecipeDataView.SelectedRows[0].Cells["StockQuantityUsed"].Value.ToString();
+
+
+                if (existingStockQuantityUsed.Contains(selectedInventory))
+                {
+                    MessageBox.Show("The inventory ID already exists for the selected recipe. Please choose another inventory ID.");
+                    return;
+                }
+
                 string newStockQuantityUsed = string.IsNullOrEmpty(existingStockQuantityUsed) ? stockQuantityUsed : $"{existingStockQuantityUsed}, {stockQuantityUsed}";
 
                 string query = "UPDATE RecipeStock SET StockQuantityUsed = @StockQuantityUsed WHERE RecipeID = @RecipeID AND ProductID = @ProductID";
@@ -251,6 +260,11 @@ namespace IOOP_Assignment
         {
             this.Close();
             parentForm.Show();
+        }
+
+        private void BtnRecipeAdd_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

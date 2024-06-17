@@ -170,6 +170,7 @@
             this.BtnRecipeAdd.TabIndex = 3;
             this.BtnRecipeAdd.Text = "Add Inventory";
             this.BtnRecipeAdd.UseVisualStyleBackColor = true;
+            this.BtnRecipeAdd.Click += new System.EventHandler(this.BtnRecipeAdd_Click_1);
             // 
             // BtnRecipeDone
             // 
@@ -279,7 +280,7 @@
             // 
             // NumericQuantityUsed
             // 
-            this.NumericQuantityUsed.Location = new System.Drawing.Point(274, 481);
+            this.NumericQuantityUsed.Location = new System.Drawing.Point(207, 481);
             this.NumericQuantityUsed.Name = "NumericQuantityUsed";
             this.NumericQuantityUsed.Size = new System.Drawing.Size(120, 22);
             this.NumericQuantityUsed.TabIndex = 17;
