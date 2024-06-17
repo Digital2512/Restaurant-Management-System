@@ -13,6 +13,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerIndividualReservationPlacePage : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string placeID;
         public string eventType;
@@ -41,39 +42,6 @@ namespace IOOP_Assignment
             this.lblPlaceEventType.Text = eventType;
             query = $"SELECT PlaceImage FROM PlacesOfReservation WHERE Chosen = 'TRUE';";
             this.placeImagePBox.Image = database.getImage(query);
-            
-            /*query = $"SELECT PlaceTime FROM ReservationTimeTable TimeStatus = 'AVAILABLE';";
-            startTimeCBox.Items.Clear();
-            string placeStartTimeCBoxInput = null;
-            DataTable placeStartTimeDataTable =  database.getDataTable(query);
-            foreach(DataRow row in placeStartTimeDataTable.Rows)
-            {
-                int PlaceTime = int.Parse(row["PlaceTime"].ToString());
-                if(PlaceTime == 1700)
-                {
-                    placeStartTimeCBoxInput = "17:00 (5:00 PM)";
-                }else if (PlaceTime == 1800)
-                {
-                    placeStartTimeCBoxInput = "18:00 (6:00 PM)";
-                }
-                else if (PlaceTime == 1900)
-                {
-                    placeStartTimeCBoxInput = "19:00 (7:00 PM)";
-                }
-                else if (PlaceTime == 2000)
-                {
-                    placeStartTimeCBoxInput = "20:00 (8:00 PM)";
-                }
-                else if (PlaceTime == 2100)
-                {
-                    placeStartTimeCBoxInput = "21:00 (9:00 PM)";
-                }
-                else if (PlaceTime == 2200)
-                {
-                    placeStartTimeCBoxInput = "22:00 (10:00 PM)";
-                }
-                startTimeCBox.Items.Add(placeStartTimeCBoxInput);
-            }*/
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)
@@ -372,7 +340,6 @@ namespace IOOP_Assignment
             {
                 DateTime currentReservedDateTime = reservedDateTimePicker.Value;
                 string currentReservedDateString = currentReservedDateTime.ToString("yyyy-MM-dd");
-                MessageBox.Show(currentReservedDateString);
                 query = $"SELECT * FROM Reservation WHERE ReservedDate = '{currentReservedDateString}' AND PlaceID = '{placeID}' AND ReservationStatus NOT IN ('COMPLETED', 'DENIED');";
 
                 DataTable reservationDataTable = database.getDataTable(query);
@@ -401,7 +368,6 @@ namespace IOOP_Assignment
                 foreach (DataRow row in checkReservationStartTimeDataTable.Rows)
                 {
                     string placeTimeString = row["PlaceTime"].ToString();
-                    MessageBox.Show(placeTimeString);
                     int placeStartTime = int.Parse(placeTimeString);
 
                     if (placeStartTime == 1700)

@@ -13,6 +13,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerIndividualProductPage : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string productID;
         public string UserID;
@@ -43,7 +44,7 @@ namespace IOOP_Assignment
             this.lblProductQuantity.Text = previousQuantity.ToString();
         }
 
-        private void addToCartBtn_Click(object sender, EventArgs e)
+        private void addToCartBtn_Click(object sender, EventArgs e) 
         {
             Database database = new Database(connectionString);
             string query = $"SELECT CustomerID FROM Customer WHERE LoggedIn = 'TRUE';";

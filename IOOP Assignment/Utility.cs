@@ -4,7 +4,8 @@ using System.Windows.Forms;
 
 public static class Utility
 {
-    private static string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
+    //change the connection string when using a different laptop to connect to the database
+    private static string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True;";
 
     // Method to open a form
     public static void OpenForm(Form currentForm, Form newForm)

@@ -41,7 +41,7 @@ namespace IOOP_Assignment
 
         private DataTable GetChefIDs()
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             string query = "SELECT DISTINCT ChefID FROM Orders WHERE ChefID IS NOT NULL";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -71,7 +71,6 @@ namespace IOOP_Assignment
                                          .Distinct()
                                          .ToList();
 
-            // Create a new DataTable to hold the distinct Chef IDs
             DataTable chefIDTable = new DataTable();
             chefIDTable.Columns.Add("ChefID", typeof(string));
 
@@ -80,7 +79,6 @@ namespace IOOP_Assignment
                 chefIDTable.Rows.Add(chefID);
             }
 
-            // Set the DataSource property of the ComboBox
             cmbChefID.DataSource = chefIDTable;
             cmbChefID.DisplayMember = "ChefID";
             cmbChefID.ValueMember = "ChefID";
@@ -124,7 +122,7 @@ namespace IOOP_Assignment
 
         private DataTable GetSalesReportData(int? month, string category, string chefId)
         {
-            string connectionString = "Data Source=LAPTOP-DJK50SEM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             string query = @"
             SELECT 
                 ProductID, 

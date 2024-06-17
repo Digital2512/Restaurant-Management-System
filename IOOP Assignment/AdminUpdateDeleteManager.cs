@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public AdminUpdateDeleteManager()
         {
             InitializeComponent();
-            string connctionString = "Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True";
+            string connctionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
             manager = new Admin_Manager(connctionString);
         }
 
@@ -119,7 +119,6 @@ namespace IOOP_Assignment
                 }
             }
 
-            // Join the selected skills into a comma-separated string
             return string.Join(",", selectedSkills);
         }
 
@@ -129,7 +128,7 @@ namespace IOOP_Assignment
             string status = manager.deleteManager(id);
             MessageBox.Show(status);
 
-            FillComboSearchCode(); //refresh the combo box
+            FillComboSearchCode(); 
             ClearForm();
         }
 

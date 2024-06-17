@@ -18,6 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string imgLocation;
@@ -36,12 +37,17 @@ namespace IOOP_Assignment
                 lblGender.Text = "Gender: " + row["Gender"].ToString();
 
 
-                DateTime birthday = Convert.ToDateTime(row["Birthday"]);
-                lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
-                // Check if ProfileImage column contains data
+                if (row["Birthday"] != DBNull.Value)
+                {
+                    DateTime birthday = Convert.ToDateTime(row["Birthday"]);
+                    lblBirthday.Text = "Birthday: " + birthday.ToString("yyyy-MM-dd");
+                }
+                else
+                {
+                    lblBirthday.Text = "Birthday: ";
+                }
                 if (row["ProfileImage"] != DBNull.Value)
                 {
-                    // Convert byte array to image
                     byte[] imgData = (byte[])row["ProfileImage"];
                     using (MemoryStream ms = new MemoryStream(imgData))
                     {
@@ -50,8 +56,7 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    // Display a placeholder image or handle the absence of image
-                    picManager.Image = null; // or assign a placeholder image
+                    picManager.Image = null; 
                 }
 
             }

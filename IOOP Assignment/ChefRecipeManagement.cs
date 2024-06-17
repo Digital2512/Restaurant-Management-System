@@ -67,8 +67,6 @@ namespace IOOP_Assignment
                 BtnRecipeAdd.Enabled = true;
                 BtnRecipeDone.Enabled = false;
                 BtnRecipeCancel.Enabled = false;
-                LBLQuantityRecipeShow.Visible = true;
-                NumericQuantityUsed.Visible = false;
             }
         }
 
@@ -116,7 +114,6 @@ namespace IOOP_Assignment
                     {
                         LBLQuantityRecipeShow.Text = parts[1];
                         LBLQuantityRecipeShow.Visible = true;
-                        NumericQuantityUsed.Visible = false;
                         LoadInventoryDetails(selectedInventory);
                         return;
                     }
@@ -141,7 +138,7 @@ namespace IOOP_Assignment
                 string inventoryDetails = $"Inventory Name: {row["Name"]}\nQuantity: {row["Quantity"]}\nPrice: {row["IndividualPrice"]}\n";
                 if (InventoryRecipeBox.Items.Count > 2)
                 {
-                    InventoryRecipeBox.Items.RemoveAt(2);  // Remove the existing inventory details
+                    InventoryRecipeBox.Items.RemoveAt(2);  
                 }
                 InventoryRecipeBox.Items.Add(inventoryDetails);
             }
@@ -224,7 +221,6 @@ namespace IOOP_Assignment
                     new SqlParameter("@ProductID", productID)
                 };
 
-                // Confirmation message
                 var confirmation = MessageBox.Show($"Add Inventory:\nInventory ID: {selectedInventory}\nQuantity: {quantityUsed}", "Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
@@ -262,7 +258,7 @@ namespace IOOP_Assignment
             parentForm.Show();
         }
 
-        private void BtnRecipeAdd_Click_1(object sender, EventArgs e)
+        private void BtnRecipeDone_Click_1(object sender, EventArgs e)
         {
 
         }

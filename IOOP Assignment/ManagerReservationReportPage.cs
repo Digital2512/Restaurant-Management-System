@@ -18,6 +18,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -54,15 +55,12 @@ namespace IOOP_Assignment
 
                     query.Append("SELECT ReservationID, PlaceID, CustomerID, CustomerPax, ReservedDate, ReservedStartTime, ReservedEndTime, EventType, ReservationStatus FROM Reservation WHERE 1=1");
 
-
-                    // Add month filter if a specific month is selected
                     if (cbbMonth.SelectedIndex > 0)
                     {
                         query.Append(" AND MONTH(ReservedDate) = @SelectedMonth ");
                         cmd.Parameters.AddWithValue("@SelectedMonth", cbbMonth.SelectedIndex);
                     }
 
-                    // Add event type filter if a specific event type is selected
                     if (cbbEvent.SelectedIndex > 0)
                     {
                         query.Append(" AND EventType = @SelectedEventType ");

@@ -80,17 +80,17 @@
             this.TimelblRecipe.AutoSize = true;
             this.TimelblRecipe.Location = new System.Drawing.Point(584, 17);
             this.TimelblRecipe.Name = "TimelblRecipe";
-            this.TimelblRecipe.Size = new System.Drawing.Size(38, 16);
+            this.TimelblRecipe.Size = new System.Drawing.Size(43, 20);
             this.TimelblRecipe.TabIndex = 2;
             this.TimelblRecipe.Text = "Time";
             // 
             // LBLTopicRecipe
             // 
             this.LBLTopicRecipe.AutoSize = true;
-            this.LBLTopicRecipe.Font = new System.Drawing.Font("Russo One", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLTopicRecipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLTopicRecipe.Location = new System.Drawing.Point(12, 34);
             this.LBLTopicRecipe.Name = "LBLTopicRecipe";
-            this.LBLTopicRecipe.Size = new System.Drawing.Size(341, 36);
+            this.LBLTopicRecipe.Size = new System.Drawing.Size(366, 40);
             this.LBLTopicRecipe.TabIndex = 1;
             this.LBLTopicRecipe.Text = "Recipe Management";
             // 
@@ -118,7 +118,7 @@
             this.recipeIDDataGridViewTextBoxColumn.HeaderText = "RecipeID";
             this.recipeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.recipeIDDataGridViewTextBoxColumn.Name = "recipeIDDataGridViewTextBoxColumn";
-            this.recipeIDDataGridViewTextBoxColumn.Width = 93;
+            this.recipeIDDataGridViewTextBoxColumn.Width = 112;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -170,7 +170,6 @@
             this.BtnRecipeAdd.TabIndex = 3;
             this.BtnRecipeAdd.Text = "Add Inventory";
             this.BtnRecipeAdd.UseVisualStyleBackColor = true;
-            this.BtnRecipeAdd.Click += new System.EventHandler(this.BtnRecipeAdd_Click_1);
             // 
             // BtnRecipeDone
             // 
@@ -180,6 +179,7 @@
             this.BtnRecipeDone.TabIndex = 4;
             this.BtnRecipeDone.Text = "Done";
             this.BtnRecipeDone.UseVisualStyleBackColor = true;
+            this.BtnRecipeDone.Click += new System.EventHandler(this.BtnRecipeDone_Click_1);
             // 
             // BtnRecipeCancel
             // 
@@ -195,7 +195,7 @@
             this.LBLRecipeID.AutoSize = true;
             this.LBLRecipeID.Location = new System.Drawing.Point(97, 330);
             this.LBLRecipeID.Name = "LBLRecipeID";
-            this.LBLRecipeID.Size = new System.Drawing.Size(76, 16);
+            this.LBLRecipeID.Size = new System.Drawing.Size(92, 20);
             this.LBLRecipeID.TabIndex = 6;
             this.LBLRecipeID.Text = "Recipe ID : ";
             // 
@@ -204,7 +204,7 @@
             this.LBLProductID.AutoSize = true;
             this.LBLProductID.Location = new System.Drawing.Point(97, 366);
             this.LBLProductID.Name = "LBLProductID";
-            this.LBLProductID.Size = new System.Drawing.Size(78, 16);
+            this.LBLProductID.Size = new System.Drawing.Size(97, 20);
             this.LBLProductID.TabIndex = 7;
             this.LBLProductID.Text = "Product ID : ";
             // 
@@ -213,7 +213,7 @@
             this.LBLQuantityUsedRecipe.AutoSize = true;
             this.LBLQuantityUsedRecipe.Location = new System.Drawing.Point(78, 483);
             this.LBLQuantityUsedRecipe.Name = "LBLQuantityUsedRecipe";
-            this.LBLQuantityUsedRecipe.Size = new System.Drawing.Size(100, 16);
+            this.LBLQuantityUsedRecipe.Size = new System.Drawing.Size(122, 20);
             this.LBLQuantityUsedRecipe.TabIndex = 8;
             this.LBLQuantityUsedRecipe.Text = "Quantity Used : ";
             // 
@@ -222,7 +222,7 @@
             this.LBLRecipeIDShow.AutoSize = true;
             this.LBLRecipeIDShow.Location = new System.Drawing.Point(204, 330);
             this.LBLRecipeIDShow.Name = "LBLRecipeIDShow";
-            this.LBLRecipeIDShow.Size = new System.Drawing.Size(44, 16);
+            this.LBLRecipeIDShow.Size = new System.Drawing.Size(51, 20);
             this.LBLRecipeIDShow.TabIndex = 9;
             this.LBLRecipeIDShow.Text = "label4";
             // 
@@ -231,7 +231,7 @@
             this.LblProductIDShow.AutoSize = true;
             this.LblProductIDShow.Location = new System.Drawing.Point(204, 366);
             this.LblProductIDShow.Name = "LblProductIDShow";
-            this.LblProductIDShow.Size = new System.Drawing.Size(44, 16);
+            this.LblProductIDShow.Size = new System.Drawing.Size(51, 20);
             this.LblProductIDShow.TabIndex = 10;
             this.LblProductIDShow.Text = "label5";
             // 
@@ -240,7 +240,7 @@
             this.LBLInventoryID.AutoSize = true;
             this.LBLInventoryID.Location = new System.Drawing.Point(95, 404);
             this.LBLInventoryID.Name = "LBLInventoryID";
-            this.LBLInventoryID.Size = new System.Drawing.Size(86, 16);
+            this.LBLInventoryID.Size = new System.Drawing.Size(107, 20);
             this.LBLInventoryID.TabIndex = 12;
             this.LBLInventoryID.Text = "Inventory ID : ";
             // 
@@ -249,7 +249,7 @@
             this.LBLQuantityRecipeShow.AutoSize = true;
             this.LBLQuantityRecipeShow.Location = new System.Drawing.Point(209, 483);
             this.LBLQuantityRecipeShow.Name = "LBLQuantityRecipeShow";
-            this.LBLQuantityRecipeShow.Size = new System.Drawing.Size(44, 16);
+            this.LBLQuantityRecipeShow.Size = new System.Drawing.Size(51, 20);
             this.LBLQuantityRecipeShow.TabIndex = 13;
             this.LBLQuantityRecipeShow.Text = "label1";
             // 
@@ -271,28 +271,28 @@
             // 
             this.ListRecipeInventory.BackColor = System.Drawing.SystemColors.Window;
             this.ListRecipeInventory.FormattingEnabled = true;
-            this.ListRecipeInventory.ItemHeight = 16;
+            this.ListRecipeInventory.ItemHeight = 20;
             this.ListRecipeInventory.Location = new System.Drawing.Point(207, 400);
             this.ListRecipeInventory.Name = "ListRecipeInventory";
-            this.ListRecipeInventory.Size = new System.Drawing.Size(139, 52);
+            this.ListRecipeInventory.Size = new System.Drawing.Size(139, 44);
             this.ListRecipeInventory.TabIndex = 16;
             this.ListRecipeInventory.SelectedIndexChanged += new System.EventHandler(this.ListRecipeInventory_SelectedIndexChanged);
             // 
             // NumericQuantityUsed
             // 
-            this.NumericQuantityUsed.Location = new System.Drawing.Point(207, 481);
+            this.NumericQuantityUsed.Location = new System.Drawing.Point(206, 481);
             this.NumericQuantityUsed.Name = "NumericQuantityUsed";
-            this.NumericQuantityUsed.Size = new System.Drawing.Size(120, 22);
+            this.NumericQuantityUsed.Size = new System.Drawing.Size(120, 26);
             this.NumericQuantityUsed.TabIndex = 17;
             // 
             // InventoryRecipeBox
             // 
             this.InventoryRecipeBox.BackColor = System.Drawing.SystemColors.Window;
             this.InventoryRecipeBox.FormattingEnabled = true;
-            this.InventoryRecipeBox.ItemHeight = 16;
+            this.InventoryRecipeBox.ItemHeight = 20;
             this.InventoryRecipeBox.Location = new System.Drawing.Point(400, 330);
             this.InventoryRecipeBox.Name = "InventoryRecipeBox";
-            this.InventoryRecipeBox.Size = new System.Drawing.Size(367, 196);
+            this.InventoryRecipeBox.Size = new System.Drawing.Size(367, 184);
             this.InventoryRecipeBox.TabIndex = 18;
             // 
             // ChefRecipeManagement

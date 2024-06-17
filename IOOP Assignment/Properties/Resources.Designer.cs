@@ -123,6 +123,26 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deleteIcon {
+            get {
+                object obj = ResourceManager.GetObject("deleteIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deliciousDinerLogo {
+            get {
+                object obj = ResourceManager.GetObject("deliciousDinerLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeliciousIcon {
             get {
                 object obj = ResourceManager.GetObject("DeliciousIcon", resourceCulture);
@@ -186,6 +206,16 @@ namespace IOOP_Assignment.Properties {
         internal static System.Drawing.Bitmap editIcon4 {
             get {
                 object obj = ResourceManager.GetObject("editIcon4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editIcon5 {
+            get {
+                object obj = ResourceManager.GetObject("editIcon5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +353,26 @@ namespace IOOP_Assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap passwordHideIcon {
+            get {
+                object obj = ResourceManager.GetObject("passwordHideIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap passwordShowIcon {
+            get {
+                object obj = ResourceManager.GetObject("passwordShowIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pendingIcon {
             get {
                 object obj = ResourceManager.GetObject("pendingIcon", resourceCulture);
@@ -376,6 +426,16 @@ namespace IOOP_Assignment.Properties {
         internal static System.Drawing.Bitmap sidebarIcon {
             get {
                 object obj = ResourceManager.GetObject("sidebarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap successfulIcon {
+            get {
+                object obj = ResourceManager.GetObject("successfulIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

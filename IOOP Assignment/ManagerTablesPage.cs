@@ -16,11 +16,11 @@ namespace IOOP_Assignment
         public ManagerTablesPage()
         {
             InitializeComponent();
-            // Set custom format for the dtPickerDate control
             dtPickerDate.Format = DateTimePickerFormat.Custom;
             dtPickerDate.CustomFormat = "dd/MM/yyyy";
         }
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private string reservationID;
@@ -29,7 +29,6 @@ namespace IOOP_Assignment
         {
             HideReservationForm();
 
-            //datagridviewupcoming
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Reservation WHERE ReservationStatus = 'APPROVED' ORDER BY ReservedDate, ReservedStartTime", con);
@@ -192,11 +191,10 @@ namespace IOOP_Assignment
             cbbTime.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbDuration.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // Clear ComboBox and TextBox
             lblCustomerID.Text = "CustomerID: ";
             cbbCustomerID.SelectedIndex = -1;
-            txtPax.Text = ""; // Clear text
-            cbbPlaceID.SelectedIndex = -1; // Clear selection
+            txtPax.Text = ""; 
+            cbbPlaceID.SelectedIndex = -1; 
             dtPickerDate.Value = DateTime.Today;
             cbbTime.SelectedIndex = -1;
             cbbDuration.SelectedIndex = -1;
@@ -245,13 +243,11 @@ namespace IOOP_Assignment
 
                 if (customerPax >= min && customerPax <= max)
                 {
-                    // Load available places from the list
                     cbbPlaceID.DataSource = kvp.Value;
-                    return; // Exit the method once places are loaded
+                    return; 
                 }
             }
 
-            // If no matching range is found, clear the ComboBox
             cbbPlaceID.DataSource = null;
         }
 
@@ -264,16 +260,13 @@ namespace IOOP_Assignment
 
             try
             {
-                // Check if a row is selected
                 if (dataGridViewUpcoming.SelectedRows.Count > 0)
                 {
                     cbbCustomerID.Visible = false;
                     lblResv.Visible = true;
                     btnUpdate.Visible = true;
-                    // Get the selected row
                     DataGridViewRow selectedRow = dataGridViewUpcoming.SelectedRows[0];
 
-                    // Populate the controls with data from the selected row
                     lblResv.Text = "ReservationID: " + selectedRow.Cells["ReservationID"].Value.ToString();
                     lblCustomerID.Text = "CustomerID: " + selectedRow.Cells["CustomerID"].Value.ToString();
                     txtPax.Text = selectedRow.Cells["CustomerPax"].Value.ToString();
@@ -283,7 +276,6 @@ namespace IOOP_Assignment
                     cbbDuration.Text = selectedRow.Cells["Duration"].Value.ToString();
                     richtxtInstruction.Text = selectedRow.Cells["PlaceSpecialInstructions"].Value.ToString();
 
-                    // Show the form for editing
                     ShowReservationForm();
                 }
                 else
@@ -342,7 +334,6 @@ namespace IOOP_Assignment
         {
             try
             {
-                // Check if all required fields are filled
                 if (string.IsNullOrWhiteSpace(cbbCustomerID.Text) ||
                     string.IsNullOrWhiteSpace(txtPax.Text) ||
                     string.IsNullOrWhiteSpace(cbbPlaceID.Text) ||
@@ -356,19 +347,15 @@ namespace IOOP_Assignment
                     return;
                 }
 
-                // Generate a reservation ID
                 string reservationID = manager.GenerateReservationID();
                 string newReservationID = reservationID;
                 string placeID = cbbPlaceID.Text.Trim();
 
                 DateTime reservedDate = dtPickerDate.Value.Date;
 
-                // Get the selected time from cbbTime
                 int startTime = int.Parse(cbbTime.Text);
-                // Get the selected duration from cbbDuration
                 int duration = int.Parse(cbbDuration.Text);
 
-                // Calculate the end time
                 int endTime = startTime + (duration * 100);
                 if (endTime > 2200)
                 {
@@ -380,7 +367,6 @@ namespace IOOP_Assignment
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
 
-                // Check for availability
                 SqlCommand cmdCheckAvailability = new SqlCommand("SELECT COUNT(*) FROM Reservation WHERE PlaceID = @PlaceID AND ReservedDate = @ReservedDate AND (@ReservedStartTime < ReservedEndTime AND @ReservedEndTime > ReservedStartTime) AND ReservationStatus = 'APPROVED'", con);
                 cmdCheckAvailability.Parameters.AddWithValue("@PlaceID", placeID);
                 cmdCheckAvailability.Parameters.AddWithValue("@ReservedDate", reservedDate);
@@ -395,22 +381,17 @@ namespace IOOP_Assignment
                     return;
                 }
 
-                // Fetch the place name
                 SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = @PlaceID", con);
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
-                //Fetch the event type
                 SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
-                // Add reservation
                 Manager.AddReservation(con, reservationID, cbbCustomerID.Text, txtPax.Text, placeID, placeName, reservedDate, startTime, endTime, duration, richtxtInstruction.Text, eventType);
 
-                // Update PlaceOfReservation with new reservation ID
                 Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
 
-                // Refresh DataGridView
                 RefreshDataGridView();
 
                 HideReservationForm();
@@ -437,19 +418,15 @@ namespace IOOP_Assignment
             try
             {
 
-                // Extract the actual ReservationID from lblResv.Text
                 string reservationID = lblResv.Text.Replace("ReservationID: ", "").Trim();
                 string customerID = lblCustomerID.Text.Replace("CustomerID: ", "").Trim();
                 string placeID = cbbPlaceID.Text.Trim();
 
                 DateTime reservedDate = dtPickerDate.Value.Date;
 
-                // Get the selected time from cbbTime
                 int startTime = int.Parse(cbbTime.Text);
-                // Get the selected duration from cbbDuration
                 int duration = int.Parse(cbbDuration.Text);
 
-                // Calculate the end time
                 int endTime = startTime + (duration * 100);
                 if (endTime > 2200)
                 {
@@ -461,7 +438,6 @@ namespace IOOP_Assignment
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
 
-                // Check for availability, excluding the current reservation being updated
                 SqlCommand cmdCheckAvailability = new SqlCommand("SELECT COUNT(*) FROM Reservation WHERE PlaceID = @PlaceID AND ReservedDate = @ReservedDate AND (@ReservedStartTime < ReservedEndTime AND @ReservedEndTime > ReservedStartTime) AND ReservationID != @ReservationID", con);
                 cmdCheckAvailability.Parameters.AddWithValue("@PlaceID", placeID);
                 cmdCheckAvailability.Parameters.AddWithValue("@ReservedDate", reservedDate);
@@ -482,19 +458,15 @@ namespace IOOP_Assignment
                 oldPlaceIDCommand.Parameters.AddWithValue("@ReservationID", reservationID);
                 string oldPlaceID = (string)oldPlaceIDCommand.ExecuteScalar();
 
-                // Fetch the place name
                 SqlCommand cmdFetchPlaceName = new SqlCommand("SELECT PlaceName FROM PlacesOfReservation WHERE PlaceID = @PlaceID", con);
                 cmdFetchPlaceName.Parameters.AddWithValue("@PlaceID", cbbPlaceID.SelectedItem.ToString());
                 string placeName = (string)cmdFetchPlaceName.ExecuteScalar();
 
-                //Fetch the event type
                 SqlCommand cmdFetchEventType = new SqlCommand($"SELECT EventType FROM PlacesOfReservation WHERE PlaceID = '{placeID}'", con);
                 string eventType = (string)cmdFetchEventType.ExecuteScalar();
 
-                // Update the reservation
                 Manager.UpdateReservation(con, reservationID, txtPax.Text, placeID, placeName, reservedDate, startTime, endTime, duration, richtxtInstruction.Text, eventType);
 
-                // Assuming GetReservationIdByPlaceId and DeleteReservationById should update the PlaceOfReservation table
                 Manager.DeleteReservationById(con, oldPlaceID, reservationID);
                 Manager.GetReservationIdByPlaceId(con, placeID, reservationID);
 

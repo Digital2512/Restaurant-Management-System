@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logoutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\PictureFolder\logoutIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="successfulIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\successfulIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editIcon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editIcon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FoodIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FoodIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profileIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\profileIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deleteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\deleteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editIcon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,6 +148,9 @@
   <data name="editIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orderIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\orderIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1-2pax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1-2pax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +162,9 @@
   </data>
   <data name="vip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passwordHideIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\passwordHideIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3-4 pax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3-4 pax1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,11 +178,17 @@
   <data name="feedbackIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\feedbackIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exitIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exitIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="passwordShowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\passwordShowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="managerIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\managerIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editIcon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\editIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="completedIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\completedIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\editIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,11 +217,11 @@
   <data name="errorImageSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\errorImageSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="completedIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\PictureFolder\completedIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exitIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exitIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="orderIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\PictureFolder\orderIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\logoutIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,7 +235,7 @@
   <data name="deniedIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PictureFolder\deniedIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editIcon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editIcon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deliciousDinerLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\PictureFolder\deliciousDinerLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

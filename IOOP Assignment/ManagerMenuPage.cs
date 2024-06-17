@@ -21,6 +21,7 @@ namespace IOOP_Assignment
         
         private string imgLocation;
 
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         private Manager manager = new Manager();
         private void Menu_Load(object sender, EventArgs e)
@@ -180,7 +181,6 @@ namespace IOOP_Assignment
             {
                 ShowMenuForm();
                 DataGridViewRow row = dataGridViewMenu.Rows[e.RowIndex];
-                // Enable editing for Name, Description, Price, and Cuisine textboxes
                 txtProductName.Enabled = true;
                 txtProductDesc.Enabled = true;
                 txtProductPrice.Enabled = true;
@@ -190,12 +190,10 @@ namespace IOOP_Assignment
                 if (string.IsNullOrEmpty(Convert.ToString(row.Cells["ProductID"].Value)))
                 {
                     lblProID.Text = "";
-                    // Clear other textboxes
                     txtProductName.Text = "";
                     txtProductDesc.Text = "";
                     txtProductPrice.Text = "";
                     cbbCuisine.Text = "";
-                    // Clear picMenu
                     picMenu.Image = Properties.Resources.FoodIcon;
                 }
                 else
@@ -232,7 +230,6 @@ namespace IOOP_Assignment
                     return;
                 }
 
-                // Check if the product name already exists
                 if (IsProductNameExists(txtProductName.Text.ToUpper()))
                 {
                     MessageBox.Show("Product name already exists. Please choose a different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -265,10 +262,7 @@ namespace IOOP_Assignment
 
                     manager.DeleteProduct(productIdToDelete);
 
-                    // Refresh the DataGridView to reflect the changes
                     RefreshDataGridView();
-
-                    // Clear the textboxes and other UI elements
                     lblProID.Text = "";
                     txtProductName.Text = "";
                     txtProductDesc.Text = "";
@@ -299,7 +293,6 @@ namespace IOOP_Assignment
 
 
                 manager.UpdateProduct(productID, txtProductName.Text, txtProductDesc.Text, decimal.Parse(txtProductPrice.Text), cbbCuisine.Text, images);
-                // Refresh the DataGridView
                 RefreshDataGridView();
                 HideMenuForm();
                 MessageBox.Show("Product Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -309,6 +302,11 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show($"An error occurred while updating the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

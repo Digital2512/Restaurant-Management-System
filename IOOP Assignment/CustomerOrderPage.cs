@@ -7,6 +7,7 @@ namespace IOOP_Assignment
 {
     public partial class CustomerOrderPage : Form
     {
+        //change the connection string when using a different laptop to connect to the database
         public string connectionString = "Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True";
         public string UserID;
 
@@ -102,15 +103,11 @@ namespace IOOP_Assignment
                         break;
                 }
             }
-
-            MessageBox.Show(query);
             DataTable searchDataTable = database.getDataTable(query);
-            MessageBox.Show(searchDataTable.ToString());
 
             foreach (DataRow row in searchDataTable.Rows)
             {
                 string productID = row["ProductID"].ToString();
-                MessageBox.Show(productID);
                 string productName = row["Name"].ToString();
                 string productPrice = row["Price"].ToString();
                 string productDescription = row["Description"].ToString();

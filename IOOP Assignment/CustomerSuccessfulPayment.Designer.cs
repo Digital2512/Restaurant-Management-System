@@ -56,9 +56,11 @@
             // 
             // approvedPBox
             // 
-            this.approvedPBox.Location = new System.Drawing.Point(288, 112);
+            this.approvedPBox.Image = global::IOOP_Assignment.Properties.Resources.successfulIcon;
+            this.approvedPBox.Location = new System.Drawing.Point(255, 111);
             this.approvedPBox.Name = "approvedPBox";
-            this.approvedPBox.Size = new System.Drawing.Size(204, 199);
+            this.approvedPBox.Size = new System.Drawing.Size(266, 231);
+            this.approvedPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.approvedPBox.TabIndex = 0;
             this.approvedPBox.TabStop = false;
             // 

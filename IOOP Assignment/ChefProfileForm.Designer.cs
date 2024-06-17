@@ -65,9 +65,9 @@
             // ProfileUserID
             // 
             this.ProfileUserID.AutoSize = true;
-            this.ProfileUserID.Location = new System.Drawing.Point(122, 167);
+            this.ProfileUserID.Location = new System.Drawing.Point(137, 209);
             this.ProfileUserID.Name = "ProfileUserID";
-            this.ProfileUserID.Size = new System.Drawing.Size(55, 16);
+            this.ProfileUserID.Size = new System.Drawing.Size(68, 20);
             this.ProfileUserID.TabIndex = 0;
             this.ProfileUserID.Text = "UserID: ";
             // 
@@ -91,9 +91,11 @@
             this.groupBox1.Controls.Add(this.ProfilePassword);
             this.groupBox1.Controls.Add(this.ProfileName);
             this.groupBox1.Controls.Add(this.ProfileRole);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(14, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 534);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(590, 668);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Current Profile";
@@ -101,155 +103,163 @@
             // checkBoxFemale
             // 
             this.checkBoxFemale.AutoSize = true;
-            this.checkBoxFemale.Location = new System.Drawing.Point(287, 291);
+            this.checkBoxFemale.Location = new System.Drawing.Point(330, 364);
+            this.checkBoxFemale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxFemale.Name = "checkBoxFemale";
-            this.checkBoxFemale.Size = new System.Drawing.Size(75, 20);
+            this.checkBoxFemale.Size = new System.Drawing.Size(88, 24);
             this.checkBoxFemale.TabIndex = 30;
             this.checkBoxFemale.Text = "Female";
             this.checkBoxFemale.UseVisualStyleBackColor = true;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(210, 194);
+            this.txtPassword.Location = new System.Drawing.Point(236, 242);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(112, 26);
             this.txtPassword.TabIndex = 31;
             // 
             // checkBoxMale
             // 
             this.checkBoxMale.AutoSize = true;
-            this.checkBoxMale.Location = new System.Drawing.Point(210, 291);
+            this.checkBoxMale.Location = new System.Drawing.Point(236, 364);
+            this.checkBoxMale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxMale.Name = "checkBoxMale";
-            this.checkBoxMale.Size = new System.Drawing.Size(59, 20);
+            this.checkBoxMale.Size = new System.Drawing.Size(69, 24);
             this.checkBoxMale.TabIndex = 28;
             this.checkBoxMale.Text = "Male";
             this.checkBoxMale.UseVisualStyleBackColor = true;
             // 
             // monthCalendarBirthday
             // 
-            this.monthCalendarBirthday.Location = new System.Drawing.Point(210, 321);
+            this.monthCalendarBirthday.Location = new System.Drawing.Point(236, 401);
+            this.monthCalendarBirthday.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.monthCalendarBirthday.Name = "monthCalendarBirthday";
             this.monthCalendarBirthday.TabIndex = 29;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(210, 256);
+            this.txtName.Location = new System.Drawing.Point(236, 320);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 22);
+            this.txtName.Size = new System.Drawing.Size(112, 26);
             this.txtName.TabIndex = 33;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(125, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(141, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(224, 151);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Location = new System.Drawing.Point(207, 322);
+            this.lblBirthday.Location = new System.Drawing.Point(233, 402);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(44, 16);
+            this.lblBirthday.Size = new System.Drawing.Size(51, 20);
             this.lblBirthday.TabIndex = 11;
             this.lblBirthday.Text = "label6";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(207, 291);
+            this.lblGender.Location = new System.Drawing.Point(233, 364);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(44, 16);
+            this.lblGender.Size = new System.Drawing.Size(51, 20);
             this.lblGender.TabIndex = 10;
             this.lblGender.Text = "label5";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(207, 262);
+            this.lblUsername.Location = new System.Drawing.Point(233, 328);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(44, 16);
+            this.lblUsername.Size = new System.Drawing.Size(51, 20);
             this.lblUsername.TabIndex = 9;
             this.lblUsername.Text = "label4";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(207, 231);
+            this.lblRole.Location = new System.Drawing.Point(233, 289);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(44, 16);
+            this.lblRole.Size = new System.Drawing.Size(51, 20);
             this.lblRole.TabIndex = 8;
             this.lblRole.Text = "label3";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(207, 200);
+            this.lblPassword.Location = new System.Drawing.Point(233, 250);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(44, 16);
+            this.lblPassword.Size = new System.Drawing.Size(51, 20);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "label2";
             // 
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(207, 167);
+            this.lblUserID.Location = new System.Drawing.Point(233, 209);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(44, 16);
+            this.lblUserID.Size = new System.Drawing.Size(51, 20);
             this.lblUserID.TabIndex = 2;
             this.lblUserID.Text = "label1";
             // 
             // ProfileBirthday
             // 
             this.ProfileBirthday.AutoSize = true;
-            this.ProfileBirthday.Location = new System.Drawing.Point(122, 322);
+            this.ProfileBirthday.Location = new System.Drawing.Point(137, 402);
             this.ProfileBirthday.Name = "ProfileBirthday";
-            this.ProfileBirthday.Size = new System.Drawing.Size(62, 16);
+            this.ProfileBirthday.Size = new System.Drawing.Size(75, 20);
             this.ProfileBirthday.TabIndex = 6;
             this.ProfileBirthday.Text = "Birthday: ";
             // 
             // ProfileGender
             // 
             this.ProfileGender.AutoSize = true;
-            this.ProfileGender.Location = new System.Drawing.Point(122, 291);
+            this.ProfileGender.Location = new System.Drawing.Point(137, 364);
             this.ProfileGender.Name = "ProfileGender";
-            this.ProfileGender.Size = new System.Drawing.Size(58, 16);
+            this.ProfileGender.Size = new System.Drawing.Size(71, 20);
             this.ProfileGender.TabIndex = 5;
             this.ProfileGender.Text = "Gender: ";
             // 
             // ProfilePassword
             // 
             this.ProfilePassword.AutoSize = true;
-            this.ProfilePassword.Location = new System.Drawing.Point(122, 200);
+            this.ProfilePassword.Location = new System.Drawing.Point(137, 250);
             this.ProfilePassword.Name = "ProfilePassword";
-            this.ProfilePassword.Size = new System.Drawing.Size(73, 16);
+            this.ProfilePassword.Size = new System.Drawing.Size(86, 20);
             this.ProfilePassword.TabIndex = 2;
             this.ProfilePassword.Text = "Password: ";
             // 
             // ProfileName
             // 
             this.ProfileName.AutoSize = true;
-            this.ProfileName.Location = new System.Drawing.Point(122, 262);
+            this.ProfileName.Location = new System.Drawing.Point(137, 328);
             this.ProfileName.Name = "ProfileName";
-            this.ProfileName.Size = new System.Drawing.Size(50, 16);
+            this.ProfileName.Size = new System.Drawing.Size(59, 20);
             this.ProfileName.TabIndex = 4;
             this.ProfileName.Text = "Name: ";
             // 
             // ProfileRole
             // 
             this.ProfileRole.AutoSize = true;
-            this.ProfileRole.Location = new System.Drawing.Point(122, 231);
+            this.ProfileRole.Location = new System.Drawing.Point(137, 289);
             this.ProfileRole.Name = "ProfileRole";
-            this.ProfileRole.Size = new System.Drawing.Size(42, 16);
+            this.ProfileRole.Size = new System.Drawing.Size(50, 20);
             this.ProfileRole.TabIndex = 3;
             this.ProfileRole.Text = "Role: ";
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(602, 382);
+            this.BtnUpdate.Location = new System.Drawing.Point(677, 478);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.BtnUpdate.Size = new System.Drawing.Size(84, 29);
             this.BtnUpdate.TabIndex = 20;
             this.BtnUpdate.Text = "Update";
             this.BtnUpdate.UseVisualStyleBackColor = true;
@@ -257,9 +267,10 @@
             // 
             // ButtonBack
             // 
-            this.ButtonBack.Location = new System.Drawing.Point(799, 517);
+            this.ButtonBack.Location = new System.Drawing.Point(899, 646);
+            this.ButtonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonBack.Name = "ButtonBack";
-            this.ButtonBack.Size = new System.Drawing.Size(75, 23);
+            this.ButtonBack.Size = new System.Drawing.Size(84, 29);
             this.ButtonBack.TabIndex = 21;
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = true;
@@ -268,17 +279,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(574, 179);
+            this.label1.Location = new System.Drawing.Point(646, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 16);
+            this.label1.Size = new System.Drawing.Size(348, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "Choose the information that you want to change";
             // 
             // BtnPassword
             // 
-            this.BtnPassword.Location = new System.Drawing.Point(671, 247);
+            this.BtnPassword.Location = new System.Drawing.Point(755, 309);
+            this.BtnPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnPassword.Name = "BtnPassword";
-            this.BtnPassword.Size = new System.Drawing.Size(94, 23);
+            this.BtnPassword.Size = new System.Drawing.Size(106, 29);
             this.BtnPassword.TabIndex = 23;
             this.BtnPassword.Text = "Password";
             this.BtnPassword.UseVisualStyleBackColor = true;
@@ -286,9 +298,10 @@
             // 
             // BtnUsername
             // 
-            this.BtnUsername.Location = new System.Drawing.Point(671, 276);
+            this.BtnUsername.Location = new System.Drawing.Point(755, 345);
+            this.BtnUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnUsername.Name = "BtnUsername";
-            this.BtnUsername.Size = new System.Drawing.Size(94, 23);
+            this.BtnUsername.Size = new System.Drawing.Size(106, 29);
             this.BtnUsername.TabIndex = 24;
             this.BtnUsername.Text = "Username";
             this.BtnUsername.UseVisualStyleBackColor = true;
@@ -296,9 +309,10 @@
             // 
             // BtnGender
             // 
-            this.BtnGender.Location = new System.Drawing.Point(671, 305);
+            this.BtnGender.Location = new System.Drawing.Point(755, 381);
+            this.BtnGender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnGender.Name = "BtnGender";
-            this.BtnGender.Size = new System.Drawing.Size(94, 23);
+            this.BtnGender.Size = new System.Drawing.Size(106, 29);
             this.BtnGender.TabIndex = 25;
             this.BtnGender.Text = "Gender";
             this.BtnGender.UseVisualStyleBackColor = true;
@@ -306,9 +320,10 @@
             // 
             // BtnBirthday
             // 
-            this.BtnBirthday.Location = new System.Drawing.Point(671, 334);
+            this.BtnBirthday.Location = new System.Drawing.Point(755, 418);
+            this.BtnBirthday.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnBirthday.Name = "BtnBirthday";
-            this.BtnBirthday.Size = new System.Drawing.Size(94, 23);
+            this.BtnBirthday.Size = new System.Drawing.Size(106, 29);
             this.BtnBirthday.TabIndex = 26;
             this.BtnBirthday.Text = "Birthday";
             this.BtnBirthday.UseVisualStyleBackColor = true;
@@ -316,9 +331,10 @@
             // 
             // ButtonProfileCancel
             // 
-            this.ButtonProfileCancel.Location = new System.Drawing.Point(747, 382);
+            this.ButtonProfileCancel.Location = new System.Drawing.Point(840, 478);
+            this.ButtonProfileCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonProfileCancel.Name = "ButtonProfileCancel";
-            this.ButtonProfileCancel.Size = new System.Drawing.Size(75, 23);
+            this.ButtonProfileCancel.Size = new System.Drawing.Size(84, 29);
             this.ButtonProfileCancel.TabIndex = 27;
             this.ButtonProfileCancel.Text = "Cancel";
             this.ButtonProfileCancel.UseVisualStyleBackColor = true;
@@ -332,9 +348,10 @@
             // 
             // BtnProfilePicture
             // 
-            this.BtnProfilePicture.Location = new System.Drawing.Point(657, 217);
+            this.BtnProfilePicture.Location = new System.Drawing.Point(739, 271);
+            this.BtnProfilePicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnProfilePicture.Name = "BtnProfilePicture";
-            this.BtnProfilePicture.Size = new System.Drawing.Size(120, 28);
+            this.BtnProfilePicture.Size = new System.Drawing.Size(135, 35);
             this.BtnProfilePicture.TabIndex = 28;
             this.BtnProfilePicture.Text = "Profile picture";
             this.BtnProfilePicture.UseVisualStyleBackColor = true;
@@ -342,9 +359,9 @@
             // 
             // ChefProfileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 558);
+            this.ClientSize = new System.Drawing.Size(997, 698);
             this.Controls.Add(this.BtnProfilePicture);
             this.Controls.Add(this.ButtonProfileCancel);
             this.Controls.Add(this.BtnBirthday);
@@ -355,6 +372,7 @@
             this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ChefProfileForm";
             this.Text = "Chef Profile ";
             this.Load += new System.EventHandler(this.ChefProfileForm_Load);

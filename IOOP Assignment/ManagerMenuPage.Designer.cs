@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picMenu = new System.Windows.Forms.PictureBox();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.dataGridViewMenu = new System.Windows.Forms.DataGridView();
             this.cbbCuisine = new System.Windows.Forms.ComboBox();
             this.txtProductDesc = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -46,12 +48,10 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.picMenu = new System.Windows.Forms.PictureBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,17 @@
             this.panel1.Size = new System.Drawing.Size(875, 489);
             this.panel1.TabIndex = 1;
             // 
+            // picMenu
+            // 
+            this.picMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMenu.Image = global::IOOP_Assignment.Properties.Resources.FoodIcon1;
+            this.picMenu.Location = new System.Drawing.Point(86, 281);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(140, 140);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMenu.TabIndex = 21;
+            this.picMenu.TabStop = false;
+            // 
             // txtSearchProduct
             // 
             this.txtSearchProduct.ForeColor = System.Drawing.Color.DarkGray;
@@ -89,6 +100,7 @@
             this.txtSearchProduct.Size = new System.Drawing.Size(126, 26);
             this.txtSearchProduct.TabIndex = 26;
             this.txtSearchProduct.Text = "Search...";
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             this.txtSearchProduct.Enter += new System.EventHandler(this.txtSearchProduct_Enter);
             this.txtSearchProduct.Leave += new System.EventHandler(this.txtSearchProduct_Leave);
             // 
@@ -124,6 +136,16 @@
             this.txtProductDesc.Name = "txtProductDesc";
             this.txtProductDesc.Size = new System.Drawing.Size(167, 26);
             this.txtProductDesc.TabIndex = 23;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
+            this.btnSearch.Location = new System.Drawing.Point(780, 9);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 34);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDelete
             // 
@@ -258,27 +280,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // picMenu
-            // 
-            this.picMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picMenu.Image = global::IOOP_Assignment.Properties.Resources.FoodIcon1;
-            this.picMenu.Location = new System.Drawing.Point(86, 281);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(140, 140);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMenu.TabIndex = 21;
-            this.picMenu.TabStop = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::IOOP_Assignment.Properties.Resources.searchIcon;
-            this.btnSearch.Location = new System.Drawing.Point(780, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(34, 34);
-            this.btnSearch.TabIndex = 22;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SandyBrown;
@@ -306,8 +307,8 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

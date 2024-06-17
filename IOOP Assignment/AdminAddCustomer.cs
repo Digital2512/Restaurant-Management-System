@@ -14,7 +14,8 @@ namespace IOOP_Assignment
 {
     public partial class AdminAddCustomer : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-SHIU3PM;Initial Catalog=\"FINAL DATABASE\";Integrated Security=True");
+        //change the connection string when using a different laptop to connect to the database
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-9JG6P7V;Initial Catalog=IOOPDatabase;Integrated Security=True");
         public AdminAddCustomer()
         {
             InitializeComponent();
@@ -74,6 +75,11 @@ namespace IOOP_Assignment
             AdminManageUsers mu = new AdminManageUsers();
             this.Hide();
             mu.Show();
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

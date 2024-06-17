@@ -102,7 +102,7 @@ namespace IOOP_Assignment
 
         private void LoadOrderInfo(string chefID)
         {
-            string queryCompleted = "SELECT count(*) FROM Orders WHERE OrderStatus = 'COMPLETED' AND ChefID = @chefID";
+            string queryCompleted = "SELECT count(*) FROM Orders WHERE OrderStatus IN ('COMPLETED', 'COMPLETED_ORDER') AND ChefID = @chefID";
             string queryUncompleted = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'IN_PROGRESS' AND ChefID = @chefID";
             string queryPending = "SELECT COUNT(*) FROM Orders WHERE OrderStatus = 'PENDING'";
 
@@ -111,6 +111,11 @@ namespace IOOP_Assignment
             LblHomeOrderComplete.Text = Utility.ExecuteSqlQuery(queryCompleted, parameters).Rows[0][0].ToString();
             LblHomeOrderProgress.Text = Utility.ExecuteSqlQuery(queryUncompleted, parameters).Rows[0][0].ToString();
             LblHomeOrderPending.Text = Utility.ExecuteSqlQuery(queryPending, parameters).Rows[0][0].ToString();
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
